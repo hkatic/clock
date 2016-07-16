@@ -128,15 +128,25 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		ui.message(secondsToString(self.stopwatch.elapsedTime()))
 	script_timeDisplay.__doc__=_("Speaks current stopwatch or timer countdown.")
 
+	def script_stopwatchReset(self, gesture):
+		if self.stopwatch.startTime == None and self.stopwatch.stopTime == None and self.stopwatch.running == False:
+			ui.message(_("The stopwatch is already reset to 0. Use the clock layer command followed by s to start it."))
+			return
+		self.stopwatch.reset()
+		ui.message(_("Stopwatch reset."))
+	script_stopwatchReset.__doc__=_("Resets the stopwatch to 0 seconds, with out starting it.")
+
 	def script_getHelp(self, gesture):
 		ui.message(_("""
-S: Start, stop or reset stopwatch.
+S: Start, stop or reset and restart the stopwatch.
+R: Reset the stopwatch with out starting it again.
 Spacebar: Speak current stopwatch or count-down timer."""))
 	script_getHelp.__doc__=_("Lists available commands in clock command layer.")
 
 	__clockLayerGestures={
 		"kb:s":"stopwatchRun",
 		"kb:space":"timeDisplay",
+		"kb:r":"stopwatchReset",
 		"kb:h":"getHelp",
 	}
 
