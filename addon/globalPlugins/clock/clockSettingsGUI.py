@@ -14,7 +14,8 @@ import nvwave
 import gui
 import os
 import wx
-
+import addonHandler
+addonHandler.initTranslation()
 class clockSettingsDialog(gui.SettingsDialog):
 	title=_("Clock Settings")
 
