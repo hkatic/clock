@@ -2,7 +2,7 @@
 
 """
 Clock Add-on for NVDA
-@author: Hrvoje Katich <hrvojekatic@gmail.com>
+@author: Hrvoje Katić <hrvojekatic@gmail.com>
 @license: GNU General Public License version 2.0
 """
 
@@ -24,6 +24,6 @@ For other instructions, press Add-on help button in add-ons manager."""),
 
 import os.path
 
-pythonSources = []
+pythonSources = [os.path.join("addon", "globalPlugins", "clock", "*.py"), ]
 i18nSources = pythonSources + ["buildVars.py"]
 excludedFiles = []
