@@ -18,7 +18,7 @@ Press NVDA + F12 for current time, press it twice for current date, or press it 
 For other instructions, press Add-on help button in add-ons manager."""),
 	"addon_version" : "1.0dev",
 	"addon_author" : u"Hrvoje Katić <hrvojekatic@gmail.com>",
-	"addon_url" : "https://www.bitbucket.org/HKatic/nvda-addon-clock",
+	"addon_url" : "https://github.com/hkatic/clock",
 	"addon_docFileName" : "readme.html",
 }
 
