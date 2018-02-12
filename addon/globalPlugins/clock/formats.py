@@ -25,10 +25,10 @@ timeDisplayFormats = [
 	]
 
 dateDisplayFormats = [
-		"%A, %B %d, %Y",
-		"%Y-%d-%m",
-		"%d-%m-%Y",
-		"%m-%d-%Y",
-		"%m/%d/%Y",
-		"%d/%m/%Y"
+		_("%A, %B %d, %Y"),
+		_("%Y-%d-%m"),
+		_("%d-%m-%Y"),
+		_("%m-%d-%Y"),
+		_("%m/%d/%Y"),
+		_("%d/%m/%Y")
 	]
