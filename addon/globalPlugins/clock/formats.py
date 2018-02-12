@@ -6,19 +6,22 @@ Clock Add-on for NVDA
 @license: GNU General Public License version 2.0
 """
 
+import addonHandler
+addonHandler.initTranslation()
+
 timeDisplayFormats = [
-		"It's %H hours and %M minutes",
-		"It's %H hours, %M minutes and %S seconds",
-		"%H hours, %M minutes",
-		"%H hours, %M minutes, %S seconds",
-		"%H h, %M min",
-		"%H h, %M min, %S sec",
-		"%H:%M:%S",
-		"%H:%M",
-		"It's %I:%M %p",
-		"It's %I:%M:%S %p",
-		"%I:%M %p",
-		"%I:%M:%S %p"
+		_("It's %H hours and %M minutes"),
+		_("It's %H hours, %M minutes and %S seconds"),
+		_("%H hours, %M minutes"),
+		_("%H hours, %M minutes, %S seconds"),
+		_("%H h, %M min"),
+		_("%H h, %M min, %S sec"),
+		_("%H:%M:%S"),
+		_("%H:%M"),
+		_("It's %I:%M %p"),
+		_("It's %I:%M:%S %p"),
+		_("%I:%M %p"),
+		_("%I:%M:%S %p")
 	]
 
 dateDisplayFormats = [
