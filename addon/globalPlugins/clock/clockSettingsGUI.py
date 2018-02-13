@@ -125,9 +125,15 @@ class clockSettingsDialog(gui.SettingsDialog):
 			self.quietEndTimeSizer.ShowItems(show=False)
 
 	def postInit(self):
-		self._timeDisplayFormatChoice.SetSelection(formats.timeDisplayFormats.index(config.conf["clockAndCalendar"]["timeDisplayFormat"]))
+		try:
+			self._timeDisplayFormatChoice.SetSelection(formats.timeDisplayFormats.index(config.conf["clockAndCalendar"]["timeDisplayFormat"]))
+		except ValueError:
+			pass
 		self._timeDisplayFormatChoice.SetFocus()
-		self._dateDisplayFormatChoice.SetSelection(formats.dateDisplayFormats.index(config.conf["clockAndCalendar"]["dateDisplayFormat"]))
+		try:
+			self._dateDisplayFormatChoice.SetSelection(formats.dateDisplayFormats.index(config.conf["clockAndCalendar"]["dateDisplayFormat"]))
+		except ValueError:
+			pass
 		self.input24HourFormatCheckBox.SetValue(config.conf["clockAndCalendar"]["input24HourFormat"])
 		self._autoAnnounceChoice.SetSelection(config.conf["clockAndCalendar"]["autoAnnounce"])
 		self._timeReportChoice.SetSelection(config.conf["clockAndCalendar"]["timeReporting"])
