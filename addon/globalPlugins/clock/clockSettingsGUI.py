@@ -28,7 +28,7 @@ class clockSettingsDialog(gui.SettingsDialog):
 		timeDisplaySizer=wx.BoxSizer(wx.HORIZONTAL)
 		timeDisplayFormatLabel=wx.StaticText(self, label=_("&Time display format:"))
 		timeDisplaySizer.Add(timeDisplayFormatLabel)
-		self._timeDisplayFormatChoice=wx.Choice(self, choices=[datetime.now().strftime(x) for x in formats.timeDisplayFormats])
+		self._timeDisplayFormatChoice=wx.Choice(self, choices=[x for x in formats.timeDisplayFormats])
 		timeDisplaySizer.Add(self._timeDisplayFormatChoice)
 		sizer.Add(timeDisplaySizer)
 
@@ -36,7 +36,7 @@ class clockSettingsDialog(gui.SettingsDialog):
 		dateDisplaySizer=wx.BoxSizer(wx.HORIZONTAL)
 		dateDisplayFormatLabel=wx.StaticText(self, label=_("&Date display format:"))
 		dateDisplaySizer.Add(dateDisplayFormatLabel)
-		self._dateDisplayFormatChoice=wx.Choice(self, choices=[datetime.now().strftime(x) for x in formats.dateDisplayFormats])
+		self._dateDisplayFormatChoice=wx.Choice(self, choices=[x for x in formats.dateDisplayFormats])
 		dateDisplaySizer.Add(self._dateDisplayFormatChoice)
 		sizer.Add(dateDisplaySizer)
 
