@@ -28,7 +28,7 @@ This addon enables the advanced clock and calendar functionality for NVDA. Inste
 
 To use layered commands, press NVDA+Shift+F12 followed by one of the following keys:
 
-- S: Stops, resets or stops the stopwatch.
+- S: Starts, resets or stops the stopwatch.
 - R: Resets stopwatch to 0 without restarting it.
 - Spacebar: Speaks current stopwatch or count-down timer.
 - H: List all layered commands (Help).
