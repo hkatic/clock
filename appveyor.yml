@@ -4,7 +4,7 @@ environment:
 install:
   - py -m pip install --upgrade pip
   - py -m pip install markdown
-  - py -m pip install --egg scons
+  - py -m pip install scons
   
 
 build_script:
