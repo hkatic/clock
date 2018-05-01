@@ -1,7 +1,7 @@
 # Clock and calendar Add-on for NVDA #
 
 * Authors: Hrvoje Katić.
-* Download [development version](https://ci.appveyor.com/project/HrvojeKati/clock/build/artifacts)
+* Download [development version](https://github.com/hkatic/clock/releases/download/untagged-f0a8e8a85c97dce2ed7d/clock-1.0dev.nvda-addon)
 
 This addon enables the advanced clock and calendar functionality for NVDA. Instead of always getting time and date from Windows, you can customize how times and dates should be spoken and brailled by NVDA. Additionally, you can obtain the current day and week number of the current year, and you can also set automatic time announcement on specified interval.
 
