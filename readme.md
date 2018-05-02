@@ -1,6 +1,6 @@
 # Clock and calendar Add-on for NVDA #
 
-* Authors: Hrvoje Katić.
+* Authors: Hrvoje Katić and NVDA contributors.
 * Download [development version](https://ci.appveyor.com/project/HrvojeKati/clock/build/artifacts)
 
 This addon enables the advanced clock and calendar functionality for NVDA. Instead of always getting time and date from Windows, you can customize how times and dates should be spoken and brailled by NVDA. Additionally, you can obtain the current day and week number of the current year, and you can also set automatic time announcement on specified interval. There's also a stopwatch feature built-in to the addon, that lets you time your tasks, such as copying files, installing programs, or cooking meals.
@@ -15,7 +15,7 @@ This addon enables the advanced clock and calendar functionality for NVDA. Inste
 	*	The Combo box control labeled "Clock chime sound" lets you choose between various clock sounds that will be played when automatic time announcement is working and reported with sound.
 	*	The Checkbox control labeled "Quiet hours" lets you configure time range when automatic time announcement shouldn't occure, no matter if automatic time announcement is enabled or not.
 	*	The Edit box controls for start and end time (only visible if quiet hours are enabled) let you configure time range for quiet hours. The time should be entered in HH:MM format.
-	*	When done, tab to the OK button and activate it to save your settings.
+	*	When done, tab to the OK button and activate it by pressing Enter to save your settings.
 *	Press NVDA+F12 once to get current time, twice to get current date, or thrice to get the current day and week number of the current year.
 
 ## Key commands
