@@ -4,7 +4,9 @@ environment:
 install:
   - py -m pip install --upgrade pip
   - py -m pip install markdown
-  - py -m pip install scons
+  - py -m pip install -U setuptools
+  - py -m pip install -U wheel
+  - py -m pip install -U scons
 
 build_script:
   - scons
