@@ -60,6 +60,8 @@ def secondsToString(seconds, precision=0):
 	return string
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
+	# Translators: Script category for Clock addon commands in input gestures dialog.
+	scriptCategory=_("Clock")
 
 	def __init__(self):
 		super(globalPluginHandler.GlobalPlugin, self).__init__()
