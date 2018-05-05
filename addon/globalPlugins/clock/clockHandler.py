@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
-
-"""
-Clock Add-on for NVDA
-@author: Hrvoje Katich <hrvojekatic@gmail.com>
-@license: GNU General Public License version 2.0
-"""
+# Clock Add-on for NVDA
+# Author: Hrvoje Katich
+# Copyright 2013-2018, released under GPL.
 
 from datetime import datetime
 import dtfunctions
