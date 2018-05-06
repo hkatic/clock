@@ -5,10 +5,9 @@ environment:
 
 install:
 - cmd: >-
-    py -m pip install -U setuptools
-    py -m pip install -U wheel
-    py -m pip install -U scons
-    py -m pip install -U markdown
+    python -m pip install wheel
+    py -m pip install scons
+    py -m pip install markdown
 
 build_script:
 - cmd: >-
