@@ -44,6 +44,7 @@ class ClockSettingsPanel(gui.SettingsPanel):
 		self.quietStartTimeText = clockSettingsGuiHelper.addLabeledControl(_("Quiet hours start time:"), wx.TextCtrl)
 		# Translators: This is the label for an edit field in the Clock settings dialog.
 		self.quietEndTimeText = clockSettingsGuiHelper.addLabeledControl(_("Quiet hours end time:"), wx.TextCtrl)
+		self.setValues()
 
 	def onAutoAnnounce(self, evt):
 		evt.Skip()
@@ -76,7 +77,7 @@ class ClockSettingsPanel(gui.SettingsPanel):
 			self.quietStartTimeText.Show(False)
 			self.quietEndTimeText.Show(False)
 
-	def onPanelActivated(self):
+	def setValues(self):
 		try:
 			self._timeDisplayFormatChoice.SetSelection(formats.timeDisplayFormats.index(config.conf["clockAndCalendar"]["timeDisplayFormat"]))
 		except ValueError:
@@ -93,7 +94,6 @@ class ClockSettingsPanel(gui.SettingsPanel):
 		self.quietEndTimeText.SetValue(config.conf["clockAndCalendar"]["quietHoursEndTime"])
 		self.checkAutoAnnounceSetup()
 		self.checkQuietHoursSetup()
-		super(ClockSettingsPanel, self).onPanelActivated()
 
 	def onSave(self):
 		config.conf["clockAndCalendar"]["timeDisplayFormat"]=formats.timeDisplayFormats[self._timeDisplayFormatChoice.GetSelection()]
