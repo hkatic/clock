@@ -6,12 +6,15 @@ environment:
 install:
 - cmd: >-
     python -m pip install wheel
+
     py -m pip install scons
+
     py -m pip install markdown
 
 build_script:
 - cmd: >-
     scons
+
     scons pot
 
 artifacts:
