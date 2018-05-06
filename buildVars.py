@@ -1,10 +1,7 @@
 # -*- coding: UTF-8 -*-
-
-"""
-Clock Add-on for NVDA
-@author: Hrvoje Katić <hrvojekatic@gmail.com>
-@license: GNU General Public License version 2.0
-"""
+# Clock Add-on for NVDA
+# Author: Hrvoje Katich
+# Copyright 2013-2018, released under GPL.
 
 _ = lambda x : x
 
@@ -16,7 +13,7 @@ addon_info = {
 	"addon_description" : _("""An advanced clock and calendar for NVDA.
 Press NVDA + F12 for current time, press it twice for current date, or press it thrice to get current day and week of the year.
 For other instructions, press Add-on help button in add-ons manager."""),
-	"addon_version" : "18.05",
+	"addon_version" : "18.05dev",
 	"addon_author" : u"Hrvoje Katić <hrvojekatic@gmail.com>",
 	"addon_url" : "https://github.com/hkatic/clock",
 	"addon_docFileName" : "readme.html",
