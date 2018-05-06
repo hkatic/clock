@@ -14,9 +14,9 @@ import wx
 import addonHandler
 addonHandler.initTranslation()
 
-class clockSettingsDialog(gui.SettingsDialog):
-	# Translators: This is the title of the Clock settings dialog.
-	title=_("Clock Settings")
+class ClockSettingsPanel(gui.SettingsPanel):
+	# Translators: This is the label for the clock settings panel.
+	title = _("Clock")
 
 	def makeSettings(self, settingsSizer):
 		clockSettingsGuiHelper = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
@@ -76,12 +76,11 @@ class clockSettingsDialog(gui.SettingsDialog):
 			self.quietStartTimeText.Show(False)
 			self.quietEndTimeText.Show(False)
 
-	def postInit(self):
+	def onPanelActivated(self):
 		try:
 			self._timeDisplayFormatChoice.SetSelection(formats.timeDisplayFormats.index(config.conf["clockAndCalendar"]["timeDisplayFormat"]))
 		except ValueError:
 			pass
-		self._timeDisplayFormatChoice.SetFocus()
 		try:
 			self._dateDisplayFormatChoice.SetSelection(formats.dateDisplayFormats.index(config.conf["clockAndCalendar"]["dateDisplayFormat"]))
 		except ValueError:
@@ -94,8 +93,9 @@ class clockSettingsDialog(gui.SettingsDialog):
 		self.quietEndTimeText.SetValue(config.conf["clockAndCalendar"]["quietHoursEndTime"])
 		self.checkAutoAnnounceSetup()
 		self.checkQuietHoursSetup()
+		super(ClockSettingsPanel, self).onPanelActivated()
 
-	def onOk(self, evt):
+	def onSave(self):
 		config.conf["clockAndCalendar"]["timeDisplayFormat"]=formats.timeDisplayFormats[self._timeDisplayFormatChoice.GetSelection()]
 		config.conf["clockAndCalendar"]["dateDisplayFormat"]=formats.dateDisplayFormats[self._dateDisplayFormatChoice.GetSelection()]
 		config.conf["clockAndCalendar"]["input24HourFormat"]=self.input24HourFormatCheckBox.GetValue()
@@ -105,4 +105,3 @@ class clockSettingsDialog(gui.SettingsDialog):
 		config.conf["clockAndCalendar"]["quietHours"]=self.quietHoursCheckBox.GetValue()
 		config.conf["clockAndCalendar"]["quietHoursStartTime"]=self.quietStartTimeText.GetValue()
 		config.conf["clockAndCalendar"]["quietHoursEndTime"]=self.quietEndTimeText.GetValue()
-		super(clockSettingsDialog, self).onOk(evt)

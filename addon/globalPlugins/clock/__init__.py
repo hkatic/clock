@@ -8,9 +8,10 @@ import globalPluginHandler
 import gui
 import scriptHandler
 import ui
+from gui import NVDASettingsDialog
 import clockHandler
 import stopwatchHandler
-import clockSettingsGUI
+from clockSettingsGUI import ClockSettingsPanel
 import configuration
 import config
 import tones
@@ -62,16 +63,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def __init__(self):
 		super(globalPluginHandler.GlobalPlugin, self).__init__()
-		self.prefsMenu=gui.mainFrame.sysTrayIcon.menu.GetMenuItems()[0].GetSubMenu()
-		self.clockSettingsItem=self.prefsMenu.Append(wx.ID_ANY, _("&Clock Settings..."), _("Clock and calendar setup"))
-		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU , lambda evt: gui.mainFrame._popupSettingsDialog(clockSettingsGUI.clockSettingsDialog), self.clockSettingsItem)
+		NVDASettingsDialog.categoryClasses.append(ClockSettingsPanel)
 		self.clock=clockHandler.clock()
 		self.stopwatch=stopwatchHandler.stopwatch()
 		self.clockLayerModeActive=False
 
 	def terminate(self):
 		try:
-			self.prefsMenu.RemoveItem(self.clockSettingsItem)
+			NVDASettingsDialog.categoryClasses.remove(ClockSettingsPanel)
 		except wx.PyDeadObjectError:
 			pass
 		self.clock.terminate()
