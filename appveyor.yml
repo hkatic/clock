@@ -22,7 +22,7 @@ artifacts:
   name: addon
   type: WebDeployPackage
 - path: '*.pot'
-    type: application/x-pot
+  type: WebDeployPackage
 
 before_deploy:
 - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
