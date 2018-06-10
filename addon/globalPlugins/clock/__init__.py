@@ -3,6 +3,7 @@
 # Author: Hrvoje Katich
 # Copyright 2013-2018, released under GPL.
 
+from __future__ import unicode_literals
 from functools import wraps
 import globalPluginHandler
 import gui
