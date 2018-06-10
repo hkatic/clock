@@ -3,7 +3,6 @@
 # Author: Hrvoje Katich
 # Copyright 2013-2018, released under GPL.
 
-from __future__ import unicode_literals
 from functools import wraps
 import globalPluginHandler
 import gui
@@ -82,7 +81,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		elif scriptHandler.getLastScriptRepeatCount() == 1:
 			ui.message(datetime.now().strftime(config.conf["clockAndCalendar"]["dateDisplayFormat"]).decode("mbcs"))
 		else:
-			ui.message(datetime.now().strftime(_("Day %j, week %W of %Y.").decode("mbcs")))
+			ui.message(datetime.now().strftime(_("Day %j, week %W of %Y.".decode("mbcs"))))
 	script_reportTimeAndDate.__doc__=_("Speaks current time. If pressed twice quickly, speaks current date. If pressed thrice quickly, reports the current day and week number of the year.")
 
 	def getScript(self, gesture):
