@@ -121,3 +121,6 @@ class ClockSettingsPanel(SettingsDialog):
 		config.conf["clockAndCalendar"]["quietHoursStartTime"]=self.quietStartTimeText.GetValue()
 		config.conf["clockAndCalendar"]["quietHoursEndTime"]=self.quietEndTimeText.GetValue()
 		super (ClockSettingsPanel, self).onOk (evt)
+
+	def postInit(self):
+		self._timeDisplayFormatChoice.SetFocus()
