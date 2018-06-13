@@ -8,7 +8,6 @@ import globalPluginHandler
 import gui
 import scriptHandler
 import ui
-from gui import NVDASettingsDialog
 import clockHandler
 import stopwatchHandler
 from clockSettingsGUI import ClockSettingsPanel
@@ -63,7 +62,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def __init__(self):
 		super(globalPluginHandler.GlobalPlugin, self).__init__()
-		NVDASettingsDialog.categoryClasses.append(ClockSettingsPanel)
+		try:
+			from gui import NVDASettingsDialog
+			NVDASettingsDialog.categoryClasses.append(ClockSettingsPanel)
+		except ImportError:
+			self.prefsMenu=gui.mainFrame.sysTrayIcon.menu.GetMenuItems()[0].GetSubMenu()
+			self.clockSettingsItem=self.prefsMenu.Append(wx.ID_ANY, _("&Clock Settings..."), _("Clock and calendar setup"))
+			gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU , lambda evt: gui.mainFrame._popupSettingsDialog(clockSettingsGUI.ClockSettingsPanel), self.clockSettingsItem)
+		
 		self.clock=clockHandler.clock()
 		self.stopwatch=stopwatchHandler.stopwatch()
 		self.clockLayerModeActive=False
@@ -73,7 +79,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			NVDASettingsDialog.categoryClasses.remove(ClockSettingsPanel)
 		except wx.PyDeadObjectError:
 			pass
-		self.clock.terminate()
+		try:
+			self.prefsMenu.RemoveItem(self.clockSettingsItem)
+		except wx.PyDeadObjectError:
+			pass
+		self.cloqck.terminate()
 
 	def script_reportTimeAndDate(self, gesture):
 		if scriptHandler.getLastScriptRepeatCount() == 0:

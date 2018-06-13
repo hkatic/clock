@@ -9,12 +9,16 @@ import formats
 import config
 import nvwave
 import gui
+try:
+	from gui import SettingsPanel as SettingsDialog
+except ImportError:
+	from gui.settingsDialogs import SettingsDialog
 import os
 import wx
 import addonHandler
 addonHandler.initTranslation()
 
-class ClockSettingsPanel(gui.SettingsPanel):
+class ClockSettingsPanel(SettingsDialog):
 	# Translators: This is the label for the clock settings panel.
 	title = _("Clock")
 
@@ -105,3 +109,15 @@ class ClockSettingsPanel(gui.SettingsPanel):
 		config.conf["clockAndCalendar"]["quietHours"]=self.quietHoursCheckBox.GetValue()
 		config.conf["clockAndCalendar"]["quietHoursStartTime"]=self.quietStartTimeText.GetValue()
 		config.conf["clockAndCalendar"]["quietHoursEndTime"]=self.quietEndTimeText.GetValue()
+
+	def onOk(self, evt):
+		config.conf["clockAndCalendar"]["timeDisplayFormat"]=formats.timeDisplayFormats[self._timeDisplayFormatChoice.GetSelection()]
+		config.conf["clockAndCalendar"]["dateDisplayFormat"]=formats.dateDisplayFormats[self._dateDisplayFormatChoice.GetSelection()]
+		config.conf["clockAndCalendar"]["input24HourFormat"]=self.input24HourFormatCheckBox.GetValue()
+		config.conf["clockAndCalendar"]["autoAnnounce"]=self._autoAnnounceChoice.GetSelection()
+		config.conf["clockAndCalendar"]["timeReporting"]=self._timeReportChoice.GetSelection()
+		config.conf["clockAndCalendar"]["timeReportSound"]=self._timeReportSoundChoice.GetStringSelection()
+		config.conf["clockAndCalendar"]["quietHours"]=self.quietHoursCheckBox.GetValue()
+		config.conf["clockAndCalendar"]["quietHoursStartTime"]=self.quietStartTimeText.GetValue()
+		config.conf["clockAndCalendar"]["quietHoursEndTime"]=self.quietEndTimeText.GetValue()
+		super (ClockSettingsPanel, self).onOk (evt)
