@@ -21,6 +21,7 @@ import gettext
 import languageHandler
 import addonHandler
 addonHandler.initTranslation()
+import locale
 
 #Command layer environment.
 def finally_(func, final):
@@ -78,9 +79,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_reportTimeAndDate(self, gesture):
 		now=datetime.now()
 		if scriptHandler.getLastScriptRepeatCount() == 0:
-			msg=now.strftime(config.conf["clockAndCalendar"]["timeDisplayFormat"])
+			msg=now.strftime(config.conf["clockAndCalendar"]["timeDisplayFormat"]).decode(locale.getlocale()[1])
 		elif scriptHandler.getLastScriptRepeatCount() == 1:
-			msg=now.strftime(config.conf["clockAndCalendar"]["dateDisplayFormat"])
+			msg=now.strftime(config.conf["clockAndCalendar"]["dateDisplayFormat"]).decode(locale.getlocale()[1])
 		else:
 			msg=_("Day {day}, week {week} of {year}").format(day=now.timetuple()[7], week=now.isocalendar()[1], year=now.year)
 		ui.message(msg)
