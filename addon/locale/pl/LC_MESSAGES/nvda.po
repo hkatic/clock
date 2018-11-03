@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
-"POT-Creation-Date: 2018-05-06 17:59+0200\n"
-"PO-Revision-Date: 2018-05-06 18:00+0100\n"
+"POT-Creation-Date: 2018-11-03 12:09+0100\n"
+"PO-Revision-Date: 2018-11-03 12:15+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pl_PL\n"
@@ -15,32 +15,32 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
-#: addon/globalPlugins/clock/__init__.py:47
+#: addon/globalPlugins/clock/__init__.py:48
 #, python-format
 msgid "%d hour, "
 msgstr "%d godzina, "
 
-#: addon/globalPlugins/clock/__init__.py:49
+#: addon/globalPlugins/clock/__init__.py:50
 #, python-format
 msgid "%d hours, "
 msgstr "%d godzin, "
 
-#: addon/globalPlugins/clock/__init__.py:51
+#: addon/globalPlugins/clock/__init__.py:52
 #, python-format
 msgid "%d minute, "
 msgstr "%d minuta, "
 
-#: addon/globalPlugins/clock/__init__.py:53
+#: addon/globalPlugins/clock/__init__.py:54
 #, python-format
 msgid "%d minutes, "
 msgstr "%d minut, "
 
-#: addon/globalPlugins/clock/__init__.py:55
+#: addon/globalPlugins/clock/__init__.py:56
 #, python-format
 msgid "%s second"
 msgstr "%s sekunda"
 
-#: addon/globalPlugins/clock/__init__.py:57
+#: addon/globalPlugins/clock/__init__.py:58
 #, python-format
 msgid "%s seconds"
 msgstr "%s sekundy"
@@ -48,16 +48,17 @@ msgstr "%s sekundy"
 #. Translators: Script category for Clock addon commands in input gestures dialog.
 #. Translators: This is the label for the clock settings panel.
 #. Translators: Summary for this add-on to be shown on installation and add-on information.
-#: addon/globalPlugins/clock/__init__.py:62
-#: addon/globalPlugins/clock/clockSettingsGUI.py:19 buildVars.py:11
+#: addon/globalPlugins/clock/__init__.py:63
+#: addon/globalPlugins/clock/clockSettingsGUI.py:20 buildVars.py:11
 msgid "Clock"
 msgstr "Zegar"
 
-#: addon/globalPlugins/clock/__init__.py:84
-msgid "Day %j, week %W of %Y."
-msgstr "Dzień %j, tydzień %W z %Y."
+#: addon/globalPlugins/clock/__init__.py:86
+#, python-brace-format
+msgid "Day {day}, week {week} of {year}"
+msgstr "Dzień {day}, tydzień {week} w roku {year}"
 
-#: addon/globalPlugins/clock/__init__.py:85
+#: addon/globalPlugins/clock/__init__.py:88
 msgid ""
 "Speaks current time. If pressed twice quickly, speaks current date. If "
 "pressed thrice quickly, reports the current day and week number of the year."
@@ -66,7 +67,7 @@ msgstr ""
 "datę. jeżeli jest naciśnięte trzy razy, wymawia aktualny dzień w tygodniu i "
 "liczbę tygodnia w roku."
 
-#: addon/globalPlugins/clock/__init__.py:110
+#: addon/globalPlugins/clock/__init__.py:113
 msgid ""
 "Clock and calendar layer commands. After pressing this keystroke, press H "
 "for additional help."
@@ -74,28 +75,28 @@ msgstr ""
 "Polecenia warstwowe zegara i kalendarza. Po naciśnięciu tego skrótu "
 "klawiszowego, naciśnij \"h\", dla dodatkowej pomocy."
 
-#: addon/globalPlugins/clock/__init__.py:116
+#: addon/globalPlugins/clock/__init__.py:119
 msgid "Reset. Running."
 msgstr "Ponowne uruchomienie. Uruchomione."
 
-#: addon/globalPlugins/clock/__init__.py:119
+#: addon/globalPlugins/clock/__init__.py:122
 msgid "Running."
 msgstr "Uruchomione."
 
-#: addon/globalPlugins/clock/__init__.py:122
+#: addon/globalPlugins/clock/__init__.py:125
 #, python-format
 msgid "%s stopped."
 msgstr "%s zatrzymane."
 
-#: addon/globalPlugins/clock/__init__.py:123
+#: addon/globalPlugins/clock/__init__.py:126
 msgid "Starts, stops or resets stopwatch."
 msgstr "rozpoczyna, zatrzymuje lub ponownie uruchamia stopera."
 
-#: addon/globalPlugins/clock/__init__.py:127
+#: addon/globalPlugins/clock/__init__.py:130
 msgid "Speaks current stopwatch or timer countdown."
 msgstr "Wymawia aktualne odliczanie stopera lub licznika."
 
-#: addon/globalPlugins/clock/__init__.py:131
+#: addon/globalPlugins/clock/__init__.py:134
 msgid ""
 "The stopwatch is already reset to 0. Use the clock layer command followed by "
 "s to start it."
@@ -103,15 +104,15 @@ msgstr ""
 "stoper jest już wyzerowany. Użyj polecenia  warstwowego  ,a po nim literę s "
 "aby go uruchomić."
 
-#: addon/globalPlugins/clock/__init__.py:134
+#: addon/globalPlugins/clock/__init__.py:137
 msgid "Stopwatch reset."
 msgstr "Stoper zresetowany."
 
-#: addon/globalPlugins/clock/__init__.py:135
+#: addon/globalPlugins/clock/__init__.py:138
 msgid "Resets the stopwatch to 0 seconds, with out starting it."
 msgstr "Kompletnie wyzerowuje stoper, bez konieczności ponownego uruchamiania."
 
-#: addon/globalPlugins/clock/__init__.py:138
+#: addon/globalPlugins/clock/__init__.py:141
 msgid ""
 "\n"
 "S: Start, stop or reset and restart the stopwatch.\n"
@@ -123,84 +124,84 @@ msgstr ""
 "R: Reset the stopwatch with out starting it again.\n"
 "Spacebar: Speak current stopwatch or count-down timer."
 
-#: addon/globalPlugins/clock/__init__.py:142
+#: addon/globalPlugins/clock/__init__.py:145
 msgid "Lists available commands in clock command layer."
 msgstr "Podaje dostępne klawisze warstwowe zegara."
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
-#: addon/globalPlugins/clock/clockSettingsGUI.py:24
+#: addon/globalPlugins/clock/clockSettingsGUI.py:25
 msgid "&Time display format:"
 msgstr "&format wyświetlania czasu:"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
-#: addon/globalPlugins/clock/clockSettingsGUI.py:26
+#: addon/globalPlugins/clock/clockSettingsGUI.py:27
 msgid "&Date display format:"
 msgstr "&Format wyświetlania daty:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
-#: addon/globalPlugins/clock/clockSettingsGUI.py:28
+#: addon/globalPlugins/clock/clockSettingsGUI.py:29
 msgid "Input in &24-hour format"
 msgstr "Wprowadzanie w formacie&24-godzinnym"
 
-#: addon/globalPlugins/clock/clockSettingsGUI.py:29
+#: addon/globalPlugins/clock/clockSettingsGUI.py:30
 msgid "off"
 msgstr "wyłączone"
 
-#: addon/globalPlugins/clock/clockSettingsGUI.py:29
+#: addon/globalPlugins/clock/clockSettingsGUI.py:30
 msgid "every 10 minutes"
 msgstr "co 10 minut"
 
-#: addon/globalPlugins/clock/clockSettingsGUI.py:29
+#: addon/globalPlugins/clock/clockSettingsGUI.py:30
 msgid "every 15 minutes"
 msgstr "co 15 minut"
 
-#: addon/globalPlugins/clock/clockSettingsGUI.py:29
+#: addon/globalPlugins/clock/clockSettingsGUI.py:30
 msgid "every 30 minutes"
 msgstr "co 30 minut"
 
-#: addon/globalPlugins/clock/clockSettingsGUI.py:29
+#: addon/globalPlugins/clock/clockSettingsGUI.py:30
 msgid "every hour"
 msgstr "co godzinę"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
-#: addon/globalPlugins/clock/clockSettingsGUI.py:31
+#: addon/globalPlugins/clock/clockSettingsGUI.py:32
 msgid "Auto announce &interval:"
 msgstr "&Interwał automatycznego wypowiadania:"
 
-#: addon/globalPlugins/clock/clockSettingsGUI.py:33
+#: addon/globalPlugins/clock/clockSettingsGUI.py:34
 msgid "speech and sound"
 msgstr "Dźwięk i mowa"
 
-#: addon/globalPlugins/clock/clockSettingsGUI.py:33
+#: addon/globalPlugins/clock/clockSettingsGUI.py:34
 msgid "speech only"
 msgstr "tylko mowa"
 
-#: addon/globalPlugins/clock/clockSettingsGUI.py:33
+#: addon/globalPlugins/clock/clockSettingsGUI.py:34
 msgid "sound only"
 msgstr "tylko dźwięk"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
-#: addon/globalPlugins/clock/clockSettingsGUI.py:35
+#: addon/globalPlugins/clock/clockSettingsGUI.py:36
 msgid "Time &announcement:"
 msgstr "&oznajmianie czasu"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
-#: addon/globalPlugins/clock/clockSettingsGUI.py:37
+#: addon/globalPlugins/clock/clockSettingsGUI.py:38
 msgid "Clock chime &sound:"
 msgstr "Dźwięk oznajmiania &godziny"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
-#: addon/globalPlugins/clock/clockSettingsGUI.py:41
+#: addon/globalPlugins/clock/clockSettingsGUI.py:42
 msgid "&Quiet hours"
 msgstr "godziny &ciszy"
 
 #. Translators: This is the label for an edit field in the Clock settings dialog.
-#: addon/globalPlugins/clock/clockSettingsGUI.py:44
+#: addon/globalPlugins/clock/clockSettingsGUI.py:45
 msgid "Quiet hours start time:"
 msgstr "początek godzin ciszy:"
 
 #. Translators: This is the label for an edit field in the Clock settings dialog.
-#: addon/globalPlugins/clock/clockSettingsGUI.py:46
+#: addon/globalPlugins/clock/clockSettingsGUI.py:47
 msgid "Quiet hours end time:"
 msgstr "koniec godzin ciszy:"
 
@@ -294,6 +295,9 @@ msgstr ""
 "roku.\n"
 "Dla pozostałych instrukcji, naciśnij pomoc o dodatku w menedżerze dodatków "
 "NVDA."
+
+#~ msgid "Day %j, week %W of %Y."
+#~ msgstr "Dzień %j, tydzień %W z %Y."
 
 #~ msgid "&Clock Settings..."
 #~ msgstr "&Ustawienia Zegara..."
