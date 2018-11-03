@@ -13,6 +13,7 @@ import os
 import wx
 import addonHandler
 addonHandler.initTranslation()
+import locale
 
 class ClockSettingsPanel(gui.SettingsPanel):
 	# Translators: This is the label for the clock settings panel.
@@ -23,7 +24,7 @@ class ClockSettingsPanel(gui.SettingsPanel):
 		# Translators: This is the label for a combo box in the Clock settings dialog.
 		self._timeDisplayFormatChoice = clockSettingsGuiHelper.addLabeledControl(_("&Time display format:"), wx.Choice, choices=[datetime.now().strftime(x) for x in formats.timeDisplayFormats])
 		# Translators: This is the label for a combo box in the Clock settings dialog.
-		self._dateDisplayFormatChoice = clockSettingsGuiHelper.addLabeledControl(_("&Date display format:"), wx.Choice, choices=[datetime.now().strftime(x) for x in formats.dateDisplayFormats])
+		self._dateDisplayFormatChoice = clockSettingsGuiHelper.addLabeledControl(_("&Date display format:"), wx.Choice, choices=[datetime.now().strftime(x).decode(locale.getlocale()[1]) for x in formats.dateDisplayFormats])
 		# Translators: This is the label for a checkbox in the Clock settings dialog.
 		self.input24HourFormatCheckBox = clockSettingsGuiHelper.addItem(wx.CheckBox(self, label=_("Input in &24-hour format")))
 		autoAnnounceChoices=(_("off"), _("every 10 minutes"), _("every 15 minutes"), _("every 30 minutes"), _("every hour"))

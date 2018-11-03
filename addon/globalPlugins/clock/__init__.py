@@ -21,6 +21,7 @@ import gettext
 import languageHandler
 import addonHandler
 addonHandler.initTranslation()
+import locale
 
 #Command layer environment.
 def finally_(func, final):
@@ -76,12 +77,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.clock.terminate()
 
 	def script_reportTimeAndDate(self, gesture):
+		now=datetime.now()
 		if scriptHandler.getLastScriptRepeatCount() == 0:
-			ui.message(datetime.now().strftime(config.conf["clockAndCalendar"]["timeDisplayFormat"]).decode("mbcs"))
+			msg=now.strftime(config.conf["clockAndCalendar"]["timeDisplayFormat"]).decode(locale.getlocale()[1])
 		elif scriptHandler.getLastScriptRepeatCount() == 1:
-			ui.message(datetime.now().strftime(config.conf["clockAndCalendar"]["dateDisplayFormat"]).decode("mbcs"))
+			msg=now.strftime(config.conf["clockAndCalendar"]["dateDisplayFormat"]).decode(locale.getlocale()[1])
 		else:
-			ui.message(datetime.now().strftime(_("Day %j, week %W of %Y.")).decode("mbcs"))
+			msg=_("Day {day}, week {week} of {year}").format(day=now.timetuple()[7], week=now.isocalendar()[1], year=now.year)
+		ui.message(msg)
 	script_reportTimeAndDate.__doc__=_("Speaks current time. If pressed twice quickly, speaks current date. If pressed thrice quickly, reports the current day and week number of the year.")
 
 	def getScript(self, gesture):
