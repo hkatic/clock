@@ -8,6 +8,7 @@ import globalPluginHandler
 import gui
 import scriptHandler
 import ui
+import winKernel
 from gui import NVDASettingsDialog
 import clockHandler
 import stopwatchHandler
@@ -79,11 +80,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_reportTimeAndDate(self, gesture):
 		now=datetime.now()
 		if scriptHandler.getLastScriptRepeatCount() == 0:
-			msg=now.strftime(config.conf["clockAndCalendar"]["timeDisplayFormat"]).decode(locale.getlocale()[1])
+			msg=winKernel.GetTimeFormatEx(winKernel.LOCALE_NAME_USER_DEFAULT, None, None, config.conf["clockAndCalendar"]["timeDisplayFormat"])
 		elif scriptHandler.getLastScriptRepeatCount() == 1:
-			msg=now.strftime(config.conf["clockAndCalendar"]["dateDisplayFormat"]).decode(locale.getlocale()[1])
+			msg=winKernel.GetDateFormatEx(winKernel.LOCALE_NAME_USER_DEFAULT, None, None, config.conf["clockAndCalendar"]["dateDisplayFormat"])
 		else:
-			msg=_("Day {day}, week {week} of {year}").format(day=now.timetuple()[7], week=now.isocalendar()[1], year=now.year)
+			msg=_("Day {day}, week {week} of {year}").format(day=now.timetuple()[7], week=now.isocalendar()[1], year=winKernel.GetDateFormatEx(winKernel.LOCALE_NAME_USER_DEFAULT, None, None, u"yyyy"))
 		ui.message(msg)
 	script_reportTimeAndDate.__doc__=_("Speaks current time. If pressed twice quickly, speaks current date. If pressed thrice quickly, reports the current day and week number of the year.")
 

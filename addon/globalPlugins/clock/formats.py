@@ -2,31 +2,44 @@
 # Clock Add-on for NVDA
 # Author: Hrvoje Katich
 # Copyright 2013-2018, released under GPL.
-
+import collections
+import winKernel
 import addonHandler
 addonHandler.initTranslation()
 
-timeDisplayFormats = [
-		_("It's %H hours and %M minutes"),
-		_("It's %H hours, %M minutes and %S seconds"),
-		_("%H hours, %M minutes"),
-		_("%H hours, %M minutes, %S seconds"),
-		_("%H h, %M min"),
-		_("%H h, %M min, %S sec"),
-		_("%H:%M:%S"),
-		_("%H:%M"),
-		_("It's %I:%M %p"),
-		_("It's %I:%M:%S %p"),
-		_("%I:%M %p"),
-		_("%I:%M:%S %p")
+timeFormats = [
+		_(u"'It''s' H 'o''clock' and mm 'minutes'"),
+		_(u"'It''s' H 'o''clock', mm 'minutes' and ss 'seconds'"),
+		_(u"h 'o''clock', mm 'minutes'"),
+		_(u"hh 'o''clock', mm 'minutes', ss 'seconds'"),
+		_(u"'It''s' mm 'past' H"),
+		_(u"hh 'h', mm 'min'"),
+		_(u"hh 'h', mm 'min', ss 'sec'"),
+		u"hh:mm:ss",
+		u"hh:mm",
+		_(u"'It''s' H:mm"),
+		_(u"'It''s' HH:mm:ss"),
+		u"HH:mm"
 	]
 
-dateDisplayFormats = [
-		_("%A, %B %d, %Y"),
-		_("%Y-%d-%m"),
-		_("%Y-%m-%d"),
-		_("%d-%m-%Y"),
-		_("%m-%d-%Y"),
-		_("%m/%d/%Y"),
-		_("%d/%m/%Y")
+timeFormatsDic = collections.OrderedDict()
+for fmt in timeFormats:
+	timeFormatsDic[fmt] = winKernel.GetTimeFormatEx (winKernel.LOCALE_NAME_USER_DEFAULT, None, None, fmt)
+
+timeDisplayFormats = timeFormatsDic.values()
+
+dateFormats = [
+		u"dddd, MMMM dd, yyyy",
+		u"dddd dd MMMM yyyy",
+		u"yyyy-dd-MM",
+		u"yyyy-MM-dd",
+		u"dd-MM-yyyy",
+		u"MM-dd-yyyy",
+		u"MM/dd/yyyy",
+		u"dd/MM/yyyy"
 	]
+
+dateFormatsDic = collections.OrderedDict()
+for fmt in dateFormats:
+	dateFormatsDic[fmt] = winKernel.GetDateFormatEx (winKernel.LOCALE_NAME_USER_DEFAULT, None, None, fmt)
+dateDisplayFormats = dateFormatsDic.values()

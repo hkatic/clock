@@ -22,9 +22,9 @@ class ClockSettingsPanel(gui.SettingsPanel):
 	def makeSettings(self, settingsSizer):
 		clockSettingsGuiHelper = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
 		# Translators: This is the label for a combo box in the Clock settings dialog.
-		self._timeDisplayFormatChoice = clockSettingsGuiHelper.addLabeledControl(_("&Time display format:"), wx.Choice, choices=[datetime.now().strftime(x) for x in formats.timeDisplayFormats])
+		self._timeDisplayFormatChoice = clockSettingsGuiHelper.addLabeledControl(_("&Time display format:"), wx.Choice, choices=formats.timeDisplayFormats)
 		# Translators: This is the label for a combo box in the Clock settings dialog.
-		self._dateDisplayFormatChoice = clockSettingsGuiHelper.addLabeledControl(_("&Date display format:"), wx.Choice, choices=[datetime.now().strftime(x).decode(locale.getlocale()[1]) for x in formats.dateDisplayFormats])
+		self._dateDisplayFormatChoice = clockSettingsGuiHelper.addLabeledControl(_("&Date display format:"), wx.Choice, choices=formats.dateDisplayFormats)
 		# Translators: This is the label for a checkbox in the Clock settings dialog.
 		self.input24HourFormatCheckBox = clockSettingsGuiHelper.addItem(wx.CheckBox(self, label=_("Input in &24-hour format")))
 		autoAnnounceChoices=(_("off"), _("every 10 minutes"), _("every 15 minutes"), _("every 30 minutes"), _("every hour"))
@@ -80,11 +80,11 @@ class ClockSettingsPanel(gui.SettingsPanel):
 
 	def setValues(self):
 		try:
-			self._timeDisplayFormatChoice.SetSelection(formats.timeDisplayFormats.index(config.conf["clockAndCalendar"]["timeDisplayFormat"]))
+			self._timeDisplayFormatChoice.SetSelection(formats.timeFormats.index(config.conf["clockAndCalendar"]["timeDisplayFormat"]))
 		except ValueError:
 			pass
 		try:
-			self._dateDisplayFormatChoice.SetSelection(formats.dateDisplayFormats.index(config.conf["clockAndCalendar"]["dateDisplayFormat"]))
+			self._dateDisplayFormatChoice.SetSelection(formats.dateFormats.index(config.conf["clockAndCalendar"]["dateDisplayFormat"]))
 		except ValueError:
 			pass
 		self.input24HourFormatCheckBox.SetValue(config.conf["clockAndCalendar"]["input24HourFormat"])
@@ -97,8 +97,8 @@ class ClockSettingsPanel(gui.SettingsPanel):
 		self.checkQuietHoursSetup()
 
 	def onSave(self):
-		config.conf["clockAndCalendar"]["timeDisplayFormat"]=formats.timeDisplayFormats[self._timeDisplayFormatChoice.GetSelection()]
-		config.conf["clockAndCalendar"]["dateDisplayFormat"]=formats.dateDisplayFormats[self._dateDisplayFormatChoice.GetSelection()]
+		config.conf["clockAndCalendar"]["timeDisplayFormat"]=formats.timeFormats[self._timeDisplayFormatChoice.GetSelection()]
+		config.conf["clockAndCalendar"]["dateDisplayFormat"]=formats.dateFormats[self._dateDisplayFormatChoice.GetSelection()]
 		config.conf["clockAndCalendar"]["input24HourFormat"]=self.input24HourFormatCheckBox.GetValue()
 		config.conf["clockAndCalendar"]["autoAnnounce"]=self._autoAnnounceChoice.GetSelection()
 		config.conf["clockAndCalendar"]["timeReporting"]=self._timeReportChoice.GetSelection()
