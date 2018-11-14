@@ -5,17 +5,17 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 'clock' '1.0dev'\n"
+"Project-Id-Version: Clock 18.11dev\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@freelists.org'\n"
-"POT-Creation-Date: 2018-04-30 15:02+0200\n"
-"PO-Revision-Date: 2018-04-30 15:24+0100\n"
+"POT-Creation-Date: 2018-11-14 08:25+0100\n"
+"PO-Revision-Date: 2018-11-14 08:26+0100\n"
 "Last-Translator: Hrvoje Katić <hrvojekatic@gmail.com>\n"
 "Language-Team: HR <hrvojekatic@gmail.com>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.11\n"
+"X-Generator: Poedit 2.0.2\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -50,19 +50,19 @@ msgstr "%s sekunda"
 msgid "%s seconds"
 msgstr "%s sekunde"
 
-#: addon\globalPlugins\clock\__init__.py:67
-msgid "&Clock Settings..."
-msgstr "Postavke &sata..."
-
-#: addon\globalPlugins\clock\__init__.py:67
-msgid "Clock and calendar setup"
-msgstr "Postavke sata i kalendara"
-
-#: addon\globalPlugins\clock\__init__.py:86
-msgid "Day %j, week %W of %Y."
-msgstr "%j. dan, %W. tjedan u godini %Y."
+#. Translators: Script category for Clock addon commands in input gestures dialog.
+#. Translators: This is the label for the clock settings panel.
+#. Translators: Summary for this add-on to be shown on installation and add-on information.
+#: addon\globalPlugins\clock\__init__.py:64
+#: addon\globalPlugins\clock\clockSettingsGUI.py:21 buildVars.py:11
+msgid "Clock"
+msgstr "Sat"
 
 #: addon\globalPlugins\clock\__init__.py:87
+msgid "Day {day}, week {week} of {year}"
+msgstr ""
+
+#: addon\globalPlugins\clock\__init__.py:89
 msgid ""
 "Speaks current time. If pressed twice quickly, speaks current date. If "
 "pressed thrice quickly, reports the current day and week number of the year."
@@ -70,7 +70,7 @@ msgstr ""
 "Najavljuje trenutni sat. Ako se pritisne dvaput brzo, govori trenutni datum. "
 "Ako se pritisne triput brzo, izgovara koji je dan i tjedan u tekućoj godini."
 
-#: addon\globalPlugins\clock\__init__.py:112
+#: addon\globalPlugins\clock\__init__.py:114
 msgid ""
 "Clock and calendar layer commands. After pressing this keystroke, press H "
 "for additional help."
@@ -78,28 +78,28 @@ msgstr ""
 "Povezane naredbe za sat i kalendar. Nakon što pritisnete ovu kombinaciju "
 "tipki, pritisnite H za dodatnu pomoć."
 
-#: addon\globalPlugins\clock\__init__.py:118
+#: addon\globalPlugins\clock\__init__.py:120
 msgid "Reset. Running."
 msgstr "Resetiranje. Kreni."
 
-#: addon\globalPlugins\clock\__init__.py:121
+#: addon\globalPlugins\clock\__init__.py:123
 msgid "Running."
 msgstr "Kreni."
 
-#: addon\globalPlugins\clock\__init__.py:124
+#: addon\globalPlugins\clock\__init__.py:126
 #, python-format
 msgid "%s stopped."
 msgstr "%s zaustavljen."
 
-#: addon\globalPlugins\clock\__init__.py:125
+#: addon\globalPlugins\clock\__init__.py:127
 msgid "Starts, stops or resets stopwatch."
 msgstr "Pokreće, zaustavlja ili resetira štopericu."
 
-#: addon\globalPlugins\clock\__init__.py:129
+#: addon\globalPlugins\clock\__init__.py:131
 msgid "Speaks current stopwatch or timer countdown."
 msgstr "Izgovara trenutno stanje štoperice ili odbrojavanja vremena."
 
-#: addon\globalPlugins\clock\__init__.py:133
+#: addon\globalPlugins\clock\__init__.py:135
 msgid ""
 "The stopwatch is already reset to 0. Use the clock layer command followed by "
 "s to start it."
@@ -107,15 +107,15 @@ msgstr ""
 "Štoperica je već resetirana na nulu. Koristite kombinaciju tipki za povezane "
 "naredbe sata a zatim tipku S da biste pokrenuli štopericu."
 
-#: addon\globalPlugins\clock\__init__.py:136
+#: addon\globalPlugins\clock\__init__.py:138
 msgid "Stopwatch reset."
 msgstr "Resetiranje štoperice."
 
-#: addon\globalPlugins\clock\__init__.py:137
+#: addon\globalPlugins\clock\__init__.py:139
 msgid "Resets the stopwatch to 0 seconds, with out starting it."
 msgstr "Resetira štopericu na 0 sekundi bez ponovnog pokretanja."
 
-#: addon\globalPlugins\clock\__init__.py:140
+#: addon\globalPlugins\clock\__init__.py:142
 msgid ""
 "\n"
 "S: Start, stop or reset and restart the stopwatch.\n"
@@ -127,163 +127,133 @@ msgstr ""
 "R: Resetiraj štopericu bez ponovnog pokretanja.\n"
 "Razmaknica: Izgovori trenutno stanje štoperice ili odbrojavanja vremena."
 
-#: addon\globalPlugins\clock\__init__.py:144
+#: addon\globalPlugins\clock\__init__.py:146
 msgid "Lists available commands in clock command layer."
 msgstr "Ispisuje dostupne naredbe u povezanim naredbama za sat."
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:20
-msgid "Clock Settings"
-msgstr "Postavke sata"
-
-#: addon\globalPlugins\clock\clockSettingsGUI.py:29
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:26
 msgid "&Time display format:"
 msgstr "Oblik prikazivanja &vremena:"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:37
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:28
 msgid "&Date display format:"
 msgstr "Oblik prikazivanja &datuma:"
 
-#. check box for 24-hour input
-#: addon\globalPlugins\clock\clockSettingsGUI.py:44
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:30
 msgid "Input in &24-hour format"
 msgstr "Unos u &24-satnom formatu"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:48
-msgid "Auto announce &interval:"
-msgstr "&Interval za automatsku najavu:"
-
-#: addon\globalPlugins\clock\clockSettingsGUI.py:50
+#: addon\globalPlugins\clock\clockSettingsGUI.py:31
 msgid "off"
 msgstr "isključeno"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:50
+#: addon\globalPlugins\clock\clockSettingsGUI.py:31
 msgid "every 10 minutes"
 msgstr "svakih 10 minuta"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:50
+#: addon\globalPlugins\clock\clockSettingsGUI.py:31
 msgid "every 15 minutes"
 msgstr "svakih 15 minuta"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:50
+#: addon\globalPlugins\clock\clockSettingsGUI.py:31
 msgid "every 30 minutes"
 msgstr "svakih pola sata"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:50
+#: addon\globalPlugins\clock\clockSettingsGUI.py:31
 msgid "every hour"
 msgstr "svaki puni sat"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:58
-msgid "Time &announcement:"
-msgstr "Vrsta &najave vremena:"
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:33
+msgid "Auto announce &interval:"
+msgstr "&Interval za automatsku najavu:"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:60
+#: addon\globalPlugins\clock\clockSettingsGUI.py:35
 msgid "speech and sound"
 msgstr "govor i zvuk"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:60
+#: addon\globalPlugins\clock\clockSettingsGUI.py:35
 msgid "speech only"
 msgstr "samo govor"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:60
+#: addon\globalPlugins\clock\clockSettingsGUI.py:35
 msgid "sound only"
 msgstr "samo zvuk"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:67
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:37
+msgid "Time &announcement:"
+msgstr "Vrsta &najave vremena:"
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:39
 msgid "Clock chime &sound:"
 msgstr "&Zvuk zvonjenja sata:"
 
-#. check box for quiet hours
-#: addon\globalPlugins\clock\clockSettingsGUI.py:79
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:43
 msgid "&Quiet hours"
 msgstr "&Tihi sati"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:85
+#. Translators: This is the label for an edit field in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:46
 msgid "Quiet hours start time:"
 msgstr "Početno vrijeme za tihe sate:"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:93
+#. Translators: This is the label for an edit field in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:48
 msgid "Quiet hours end time:"
 msgstr "Završno vrijeme za tihe sate:"
 
-#: addon\globalPlugins\clock\formats.py:13
-msgid "It's %H hours and %M minutes"
+#: addon\globalPlugins\clock\formats.py:11
+#, fuzzy
+#| msgid "It's %H hours and %M minutes"
+msgid "'It''s' H 'o''clock' and mm 'minutes'"
 msgstr "Sada je %H sati i %M minuta"
 
-#: addon\globalPlugins\clock\formats.py:14
-msgid "It's %H hours, %M minutes and %S seconds"
+#: addon\globalPlugins\clock\formats.py:12
+#, fuzzy
+#| msgid "It's %H hours, %M minutes and %S seconds"
+msgid "'It''s' H 'o''clock', mm 'minutes' and ss 'seconds'"
 msgstr "Sada je %H sati, %M minuta i %S sekundi"
 
-#: addon\globalPlugins\clock\formats.py:15
-msgid "%H hours, %M minutes"
+#: addon\globalPlugins\clock\formats.py:13
+#, fuzzy
+#| msgid "%H hours, %M minutes"
+msgid "h 'o''clock', mm 'minutes'"
 msgstr "%H sati, %M minuta"
 
-#: addon\globalPlugins\clock\formats.py:16
-msgid "%H hours, %M minutes, %S seconds"
+#: addon\globalPlugins\clock\formats.py:14
+#, fuzzy
+#| msgid "%H hours, %M minutes, %S seconds"
+msgid "hh 'o''clock', mm 'minutes', ss 'seconds'"
 msgstr "%H sati, %M minuta, %S sekundi"
 
+#: addon\globalPlugins\clock\formats.py:15
+msgid "'It''s' mm 'past' H"
+msgstr ""
+
+#: addon\globalPlugins\clock\formats.py:16
+msgid "hh 'h', mm 'min'"
+msgstr ""
+
 #: addon\globalPlugins\clock\formats.py:17
-msgid "%H h, %M min"
-msgstr "%H h, %M min"
-
-#: addon\globalPlugins\clock\formats.py:18
-msgid "%H h, %M min, %S sec"
-msgstr "%H h, %M min, %S sek"
-
-#: addon\globalPlugins\clock\formats.py:19
-msgid "%H:%M:%S"
-msgstr "%H:%M:%S"
+msgid "hh 'h', mm 'min', ss 'sec'"
+msgstr ""
 
 #: addon\globalPlugins\clock\formats.py:20
-msgid "%H:%M"
-msgstr "%H:%M"
+msgid "'It''s' H:mm"
+msgstr ""
 
 #: addon\globalPlugins\clock\formats.py:21
-msgid "It's %I:%M %p"
-msgstr "Sati je %I:%M %p"
-
-#: addon\globalPlugins\clock\formats.py:22
-msgid "It's %I:%M:%S %p"
-msgstr "Sati je %I:%M:%S %p"
-
-#: addon\globalPlugins\clock\formats.py:23
-msgid "%I:%M %p"
-msgstr "%I:%M %p"
-
-#: addon\globalPlugins\clock\formats.py:24
-msgid "%I:%M:%S %p"
-msgstr "%I:%M:%S %p"
-
-#: addon\globalPlugins\clock\formats.py:28
-msgid "%A, %B %d, %Y"
-msgstr "%A, %B %d, %Y"
-
-#: addon\globalPlugins\clock\formats.py:29
-msgid "%Y-%d-%m"
-msgstr "%Y-%d-%m"
-
-#: addon\globalPlugins\clock\formats.py:30
-msgid "%d-%m-%Y"
-msgstr "%d-%m-%Y"
-
-#: addon\globalPlugins\clock\formats.py:31
-msgid "%m-%d-%Y"
-msgstr "%m-%d-%Y"
-
-#: addon\globalPlugins\clock\formats.py:32
-msgid "%m/%d/%Y"
-msgstr "%m/%d/%Y"
-
-#: addon\globalPlugins\clock\formats.py:33
-msgid "%d/%m/%Y"
-msgstr "%d/%m/%Y"
-
-#. Translators: Summary for this add-on to be shown on installation and add-on information.
-#: buildVars.py:14
-msgid "Clock"
-msgstr "Sat"
+msgid "'It''s' HH:mm:ss"
+msgstr ""
 
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-#: buildVars.py:16
+#: buildVars.py:13
 msgid ""
 "An advanced clock and calendar for NVDA.\n"
 "Press NVDA + F12 for current time, press it twice for current date, or press "
@@ -294,3 +264,57 @@ msgstr ""
 "Pritisnite NVDA + F12 za trenutni sat, pritisnite dvaput za trenutni datum, "
 "ili triput da biste dobili trenutni broj dana i tjedana u tekućoj godini.\n"
 "Za ostale upute, odaberite gumb Pomoć za dodatak u upravitelju dodacima."
+
+#~ msgid "&Clock Settings..."
+#~ msgstr "Postavke &sata..."
+
+#~ msgid "Clock and calendar setup"
+#~ msgstr "Postavke sata i kalendara"
+
+#~ msgid "Day %j, week %W of %Y."
+#~ msgstr "%j. dan, %W. tjedan u godini %Y."
+
+#~ msgid "Clock Settings"
+#~ msgstr "Postavke sata"
+
+#~ msgid "%H h, %M min"
+#~ msgstr "%H h, %M min"
+
+#~ msgid "%H h, %M min, %S sec"
+#~ msgstr "%H h, %M min, %S sek"
+
+#~ msgid "%H:%M:%S"
+#~ msgstr "%H:%M:%S"
+
+#~ msgid "%H:%M"
+#~ msgstr "%H:%M"
+
+#~ msgid "It's %I:%M %p"
+#~ msgstr "Sati je %I:%M %p"
+
+#~ msgid "It's %I:%M:%S %p"
+#~ msgstr "Sati je %I:%M:%S %p"
+
+#~ msgid "%I:%M %p"
+#~ msgstr "%I:%M %p"
+
+#~ msgid "%I:%M:%S %p"
+#~ msgstr "%I:%M:%S %p"
+
+#~ msgid "%A, %B %d, %Y"
+#~ msgstr "%A, %B %d, %Y"
+
+#~ msgid "%Y-%d-%m"
+#~ msgstr "%Y-%d-%m"
+
+#~ msgid "%d-%m-%Y"
+#~ msgstr "%d-%m-%Y"
+
+#~ msgid "%m-%d-%Y"
+#~ msgstr "%m-%d-%Y"
+
+#~ msgid "%m/%d/%Y"
+#~ msgstr "%m/%d/%Y"
+
+#~ msgid "%d/%m/%Y"
+#~ msgstr "%d/%m/%Y"

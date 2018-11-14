@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Clock 1.0dev\n"
+"Project-Id-Version: Clock 18.11dev\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@freelists.org'\n"
-"POT-Creation-Date: 2018-03-20 14:13+0100\n"
-"PO-Revision-Date: 2018-03-20 14:13+0100\n"
+"POT-Creation-Date: 2018-11-14 08:24+0100\n"
+"PO-Revision-Date: 2018-11-14 16:16+0100\n"
 "Last-Translator: Rémy Ruiz <remyruiz@gmail.com>\n"
 "Language-Team: Rémy Ruiz <remyruiz@gmail.com>\n"
 "Language: fr\n"
@@ -50,19 +50,19 @@ msgstr "%s seconde"
 msgid "%s seconds"
 msgstr "%s secondes"
 
-#: addon\globalPlugins\clock\__init__.py:67
-msgid "&Clock Settings..."
-msgstr "Paramètres de l'&Horloge..."
-
-#: addon\globalPlugins\clock\__init__.py:67
-msgid "Clock and calendar setup"
-msgstr "Réglage de l'horloge et du calendrier"
-
-#: addon\globalPlugins\clock\__init__.py:86
-msgid "Day %j, week %W of %Y."
-msgstr "Jour %j, semaine %W de %Y."
+#. Translators: Script category for Clock addon commands in input gestures dialog.
+#. Translators: This is the label for the clock settings panel.
+#. Translators: Summary for this add-on to be shown on installation and add-on information.
+#: addon\globalPlugins\clock\__init__.py:64
+#: addon\globalPlugins\clock\clockSettingsGUI.py:21 buildVars.py:11
+msgid "Clock"
+msgstr "Clock"
 
 #: addon\globalPlugins\clock\__init__.py:87
+msgid "Day {day}, week {week} of {year}"
+msgstr "Jour {day}, semaine {week} de l'année {year}"
+
+#: addon\globalPlugins\clock\__init__.py:89
 msgid ""
 "Speaks current time. If pressed twice quickly, speaks current date. If "
 "pressed thrice quickly, reports the current day and week number of the year."
@@ -71,7 +71,7 @@ msgstr ""
 "date actuelle. Si vous appuyez trois fois rapidement, annonce le nombre "
 "actuel de jour et semaine de l'année."
 
-#: addon\globalPlugins\clock\__init__.py:112
+#: addon\globalPlugins\clock\__init__.py:114
 msgid ""
 "Clock and calendar layer commands. After pressing this keystroke, press H "
 "for additional help."
@@ -79,28 +79,28 @@ msgstr ""
 "Commandes en couche de l'horloge et du calendrier. Après avoir appuyé sur "
 "cette touche, appuyez sur H pour obtenir de l'aide supplémentaire."
 
-#: addon\globalPlugins\clock\__init__.py:118
+#: addon\globalPlugins\clock\__init__.py:120
 msgid "Reset. Running."
 msgstr "Réinitialiser. En cours d'exécution."
 
-#: addon\globalPlugins\clock\__init__.py:121
+#: addon\globalPlugins\clock\__init__.py:123
 msgid "Running."
 msgstr "En cours d'exécution."
 
-#: addon\globalPlugins\clock\__init__.py:124
+#: addon\globalPlugins\clock\__init__.py:126
 #, python-format
 msgid "%s stopped."
 msgstr "%s arrêté."
 
-#: addon\globalPlugins\clock\__init__.py:125
+#: addon\globalPlugins\clock\__init__.py:127
 msgid "Starts, stops or resets stopwatch."
 msgstr "Démarre, arrête ou réinitialise le chronomètre."
 
-#: addon\globalPlugins\clock\__init__.py:129
+#: addon\globalPlugins\clock\__init__.py:131
 msgid "Speaks current stopwatch or timer countdown."
 msgstr "Annonce le chronomètre actuel ou le compte à rebours de la minuterie."
 
-#: addon\globalPlugins\clock\__init__.py:133
+#: addon\globalPlugins\clock\__init__.py:135
 msgid ""
 "The stopwatch is already reset to 0. Use the clock layer command followed by "
 "s to start it."
@@ -108,15 +108,15 @@ msgstr ""
 "Le chronomètre est déjà réinitialisé à 0. Utilisez la commande en couche de "
 "l'horloge suivie de s pour le démarrer."
 
-#: addon\globalPlugins\clock\__init__.py:136
+#: addon\globalPlugins\clock\__init__.py:138
 msgid "Stopwatch reset."
 msgstr "Chronomètre réinitialisé."
 
-#: addon\globalPlugins\clock\__init__.py:137
+#: addon\globalPlugins\clock\__init__.py:139
 msgid "Resets the stopwatch to 0 seconds, with out starting it."
 msgstr "Réinitialise le chronomètre à 0 seconde, sans le démarrer."
 
-#: addon\globalPlugins\clock\__init__.py:140
+#: addon\globalPlugins\clock\__init__.py:142
 msgid ""
 "\n"
 "S: Start, stop or reset and restart the stopwatch.\n"
@@ -129,164 +129,126 @@ msgstr ""
 "Barre d'espace : Annoncez le chronomètre actuel ou le compte à rebours de la "
 "minuterie."
 
-#: addon\globalPlugins\clock\__init__.py:144
+#: addon\globalPlugins\clock\__init__.py:146
 msgid "Lists available commands in clock command layer."
 msgstr ""
 "Répertorie les commandes disponibles dans la commande en couche de l'horloge."
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:20
-msgid "Clock Settings"
-msgstr "Paramètres de l'Horloge"
-
-#: addon\globalPlugins\clock\clockSettingsGUI.py:29
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:26
 msgid "&Time display format:"
 msgstr "Format d'affichage de l'&heure :"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:37
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:28
 msgid "&Date display format:"
 msgstr "Format d'affichage de la &date :"
 
-#. check box for 24-hour input
-#: addon\globalPlugins\clock\clockSettingsGUI.py:44
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:30
 msgid "Input in &24-hour format"
 msgstr "Entrée au format &24 heures"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:48
-msgid "Auto announce &interval:"
-msgstr "&Intervalle de l'annonce automatique :"
-
-#: addon\globalPlugins\clock\clockSettingsGUI.py:50
+#: addon\globalPlugins\clock\clockSettingsGUI.py:31
 msgid "off"
 msgstr "désactivé"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:50
+#: addon\globalPlugins\clock\clockSettingsGUI.py:31
 msgid "every 10 minutes"
 msgstr "toutes les 10 minutes"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:50
+#: addon\globalPlugins\clock\clockSettingsGUI.py:31
 msgid "every 15 minutes"
 msgstr "toutes les 15 minutes"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:50
+#: addon\globalPlugins\clock\clockSettingsGUI.py:31
 msgid "every 30 minutes"
 msgstr "toutes les 30 minutes"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:50
+#: addon\globalPlugins\clock\clockSettingsGUI.py:31
 msgid "every hour"
 msgstr "toutes les heures"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:58
-msgid "Time &announcement:"
-msgstr "&Annonce de l'heure :"
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:33
+msgid "Auto announce &interval:"
+msgstr "&Intervalle de l'annonce automatique :"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:60
+#: addon\globalPlugins\clock\clockSettingsGUI.py:35
 msgid "speech and sound"
 msgstr "parole et son"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:60
+#: addon\globalPlugins\clock\clockSettingsGUI.py:35
 msgid "speech only"
 msgstr "parole seulement"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:60
+#: addon\globalPlugins\clock\clockSettingsGUI.py:35
 msgid "sound only"
 msgstr "son seulement"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:67
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:37
+msgid "Time &announcement:"
+msgstr "&Annonce de l'heure :"
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:39
 msgid "Clock chime &sound:"
 msgstr "&Son de carillon d'horloge :"
 
-#. check box for quiet hours
-#: addon\globalPlugins\clock\clockSettingsGUI.py:79
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:43
 msgid "&Quiet hours"
 msgstr "&Heures silencieuses"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:85
+#. Translators: This is the label for an edit field in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:46
 msgid "Quiet hours start time:"
 msgstr "Début de la durée des heures silencieuses :"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:93
+#. Translators: This is the label for an edit field in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:48
 msgid "Quiet hours end time:"
 msgstr "Fin de la durée des heures silencieuses :"
 
+#: addon\globalPlugins\clock\formats.py:11
+msgid "'It''s' H 'o''clock' and mm 'minutes'"
+msgstr "'Il' 'est' H 'heures' 'et' mm 'minutes'"
+
+#: addon\globalPlugins\clock\formats.py:12
+msgid "'It''s' H 'o''clock', mm 'minutes' and ss 'seconds'"
+msgstr "'Il' 'est' H 'heures', mm 'minutes' 'et' ss 'secondes'"
+
 #: addon\globalPlugins\clock\formats.py:13
-msgid "It's %H hours and %M minutes"
-msgstr "Il est %H heures et %M minutes"
+msgid "h 'o''clock', mm 'minutes'"
+msgstr "h 'heures', mm 'minutes'"
 
 #: addon\globalPlugins\clock\formats.py:14
-msgid "It's %H hours, %M minutes and %S seconds"
-msgstr "Il est %H heures, %M minutes et %S secondes"
+msgid "hh 'o''clock', mm 'minutes', ss 'seconds'"
+msgstr "hh 'heures', mm 'minutes', ss 'secondes'"
 
 #: addon\globalPlugins\clock\formats.py:15
-msgid "%H hours, %M minutes"
-msgstr "%H heures, %M minutes"
+msgid "'It''s' mm 'past' H"
+msgstr "'Il' 'est' H 'heures' 'passée' 'de' mm 'minutes'"
 
 #: addon\globalPlugins\clock\formats.py:16
-msgid "%H hours, %M minutes, %S seconds"
-msgstr "%H heures, %M minutes, %S secondes"
+msgid "hh 'h', mm 'min'"
+msgstr "hh 'h', mm 'min'"
 
 #: addon\globalPlugins\clock\formats.py:17
-msgid "%H h, %M min"
-msgstr "%H h, %M min"
-
-#: addon\globalPlugins\clock\formats.py:18
-msgid "%H h, %M min, %S sec"
-msgstr "%H h, %M min, %S sec"
-
-#: addon\globalPlugins\clock\formats.py:19
-msgid "%H:%M:%S"
-msgstr "%H:%M:%S"
+msgid "hh 'h', mm 'min', ss 'sec'"
+msgstr "hh 'h', mm 'min', ss 'sec'"
 
 #: addon\globalPlugins\clock\formats.py:20
-msgid "%H:%M"
-msgstr "%H:%M"
+msgid "'It''s' H:mm"
+msgstr "'Il' 'est' H:mm"
 
 #: addon\globalPlugins\clock\formats.py:21
-msgid "It's %I:%M %p"
-msgstr "Il est %I:%M %p"
-
-#: addon\globalPlugins\clock\formats.py:22
-msgid "It's %I:%M:%S %p"
-msgstr "Il est %I:%M:%S %p"
-
-#: addon\globalPlugins\clock\formats.py:23
-msgid "%I:%M %p"
-msgstr "%I:%M %p"
-
-#: addon\globalPlugins\clock\formats.py:24
-msgid "%I:%M:%S %p"
-msgstr "%I:%M:%S %p"
-
-#: addon\globalPlugins\clock\formats.py:28
-msgid "%A, %B %d, %Y"
-msgstr "%A, %B %d, %Y"
-
-#: addon\globalPlugins\clock\formats.py:29
-msgid "%Y-%d-%m"
-msgstr "%Y-%d-%m"
-
-#: addon\globalPlugins\clock\formats.py:30
-msgid "%d-%m-%Y"
-msgstr "%d-%m-%Y"
-
-#: addon\globalPlugins\clock\formats.py:31
-msgid "%m-%d-%Y"
-msgstr "%m-%d-%Y"
-
-#: addon\globalPlugins\clock\formats.py:32
-msgid "%m/%d/%Y"
-msgstr "%m/%d/%Y"
-
-#: addon\globalPlugins\clock\formats.py:33
-msgid "%d/%m/%Y"
-msgstr "%d/%m/%Y"
-
-#. Translators: Summary for this add-on to be shown on installation and add-on information.
-#: buildVars.py:14
-msgid "Clock"
-msgstr "Clock"
+msgid "'It''s' HH:mm:ss"
+msgstr "'Il' 'est' HH:mm:ss"
 
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-#: buildVars.py:16
+#: buildVars.py:13
 msgid ""
 "An advanced clock and calendar for NVDA.\n"
 "Press NVDA + F12 for current time, press it twice for current date, or press "
@@ -299,3 +261,57 @@ msgstr ""
 "l'année.\n"
 "Pour d'autres instructions, appuyez sur le bouton Aide de ce module "
 "complémentaire, dans le Gestionnaire de modules complémentaires."
+
+#~ msgid "&Clock Settings..."
+#~ msgstr "Paramètres de l'&Horloge..."
+
+#~ msgid "Clock and calendar setup"
+#~ msgstr "Réglage de l'horloge et du calendrier"
+
+#~ msgid "Day %j, week %W of %Y."
+#~ msgstr "Jour %j, semaine %W de %Y."
+
+#~ msgid "Clock Settings"
+#~ msgstr "Paramètres de l'Horloge"
+
+#~ msgid "%H h, %M min"
+#~ msgstr "%H h, %M min"
+
+#~ msgid "%H h, %M min, %S sec"
+#~ msgstr "%H h, %M min, %S sec"
+
+#~ msgid "%H:%M:%S"
+#~ msgstr "%H:%M:%S"
+
+#~ msgid "%H:%M"
+#~ msgstr "%H:%M"
+
+#~ msgid "It's %I:%M %p"
+#~ msgstr "Il est %I:%M %p"
+
+#~ msgid "It's %I:%M:%S %p"
+#~ msgstr "Il est %I:%M:%S %p"
+
+#~ msgid "%I:%M %p"
+#~ msgstr "%I:%M %p"
+
+#~ msgid "%I:%M:%S %p"
+#~ msgstr "%I:%M:%S %p"
+
+#~ msgid "%A, %B %d, %Y"
+#~ msgstr "%A, %B %d, %Y"
+
+#~ msgid "%Y-%d-%m"
+#~ msgstr "%Y-%d-%m"
+
+#~ msgid "%d-%m-%Y"
+#~ msgstr "%d-%m-%Y"
+
+#~ msgid "%m-%d-%Y"
+#~ msgstr "%m-%d-%Y"
+
+#~ msgid "%m/%d/%Y"
+#~ msgstr "%m/%d/%Y"
+
+#~ msgid "%d/%m/%Y"
+#~ msgstr "%d/%m/%Y"
