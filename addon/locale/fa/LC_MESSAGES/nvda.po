@@ -1,0 +1,306 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Clock 18.11dev\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@freelists.org'\n"
+"POT-Creation-Date: 2018-11-20 07:43+0100\n"
+"PO-Revision-Date: 2018-11-21 00:34+0330\n"
+"Last-Translator: Mohammadreza Rashad <mohammadreza5712@gmail.com>\n"
+"Language-Team: NVDA Translation Team <nvda-translations@groups.io>\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.10\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: addon\globalPlugins\clock\__init__.py:57
+#, python-format
+msgid "%d hour, "
+msgstr "%d ساعت, "
+
+#: addon\globalPlugins\clock\__init__.py:59
+#, python-format
+msgid "%d hours, "
+msgstr "%d ساعت, "
+
+#: addon\globalPlugins\clock\__init__.py:61
+#, python-format
+msgid "%d minute, "
+msgstr "%d دقیقه, "
+
+#: addon\globalPlugins\clock\__init__.py:63
+#, python-format
+msgid "%d minutes, "
+msgstr "%d دقیقه, "
+
+#: addon\globalPlugins\clock\__init__.py:65
+#, python-format
+msgid "%s second"
+msgstr "%s ثانیه"
+
+#: addon\globalPlugins\clock\__init__.py:67
+#, python-format
+msgid "%s seconds"
+msgstr "%s ثانیه"
+
+#. Translators: Script category for Clock addon commands in input gestures dialog.
+#. Translators: This is the label for the clock settings panel.
+#. Translators: Summary for this add-on to be shown on installation and add-on information.
+#: addon\globalPlugins\clock\__init__.py:101
+#: addon\globalPlugins\clock\clockSettingsGUI.py:20 buildVars.py:11
+msgid "Clock"
+msgstr "ساعت"
+
+#: addon\globalPlugins\clock\__init__.py:124
+msgid "Day {day}, week {week} of {year}"
+msgstr "{day}ُمین روزِ هفته‌ی {week}ُم از سالِ {year}"
+
+#: addon\globalPlugins\clock\__init__.py:126
+msgid ""
+"Speaks current time. If pressed twice quickly, speaks current date. If "
+"pressed thrice quickly, reports the current day and week number of the year."
+msgstr ""
+"زمانِ جاری را اعلام میکند. اگر دو بار فشرده شود، تاریخِ جاری را اعلام میکند. "
+"اگر سه بار فشرده شود، شماره‌ی روز و هفته‌ی سالِ جاری را اعلام میکند."
+
+#: addon\globalPlugins\clock\__init__.py:151
+msgid ""
+"Clock and calendar layer commands. After pressing this keystroke, press H "
+"for additional help."
+msgstr ""
+"فرمان‌های لایه‌ایِ ساعت و تقویم. پس از فِشُردنِ این کلید، H را برای راهنماییِ بیشتر "
+"فشار دهید."
+
+#: addon\globalPlugins\clock\__init__.py:157
+msgid "Reset. Running."
+msgstr "از نو تنظیم شد. در حالِ اجرا."
+
+#: addon\globalPlugins\clock\__init__.py:160
+msgid "Running."
+msgstr "در حالِ اجرا."
+
+#: addon\globalPlugins\clock\__init__.py:163
+#, python-format
+msgid "%s stopped."
+msgstr "%s ایستاد."
+
+#: addon\globalPlugins\clock\__init__.py:164
+msgid "Starts, stops or resets stopwatch."
+msgstr "زمان‌سنج را آغاز، متوقف یا از نو تنظیم میکند."
+
+#: addon\globalPlugins\clock\__init__.py:168
+msgid "Speaks current stopwatch or timer countdown."
+msgstr "زمان‌سنج یا تایمرِ معکوسِ جاری را میخوانَد."
+
+#: addon\globalPlugins\clock\__init__.py:172
+msgid ""
+"The stopwatch is already reset to 0. Use the clock layer command followed by "
+"s to start it."
+msgstr ""
+"زمان‌سنج قبلا ۰ شده است. از فرمانِ لایه‌ایِ ساعت و S برای راه انداختنش استفاده "
+"کنید."
+
+#: addon\globalPlugins\clock\__init__.py:175
+msgid "Stopwatch reset."
+msgstr "زمان‌سنج از نو تنظیم شد."
+
+#: addon\globalPlugins\clock\__init__.py:176
+msgid "Resets the stopwatch to 0 seconds, with out starting it."
+msgstr "زمان‌سنج را بدونِ اینکه راه بیندازد ۰ میکند."
+
+#: addon\globalPlugins\clock\__init__.py:179
+msgid ""
+"\n"
+"S: Start, stop or reset and restart the stopwatch.\n"
+"R: Reset the stopwatch with out starting it again.\n"
+"Spacebar: Speak current stopwatch or count-down timer."
+msgstr ""
+"\n"
+"S: زمان‌سنج را آغاز، متوقف یا از نو تنظیم میکند و دوباره راه می‌اندازد.\n"
+"R: زمان‌سنج را بدونِ راه‌اندازیِ دوباره، از نو تنظیم میکند.\n"
+"فاصله: زمان‌سنج یا تایمرِ معکوسِ جاری را میخوانَد."
+
+#: addon\globalPlugins\clock\__init__.py:183
+msgid "Lists available commands in clock command layer."
+msgstr "فرمان‌های موجود در فرمانِ لایه‌ایِ ساعت را فهرست میکند."
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:25
+msgid "&Time display format:"
+msgstr "قالبِ نمایشِ &زمان:"
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:27
+msgid "&Date display format:"
+msgstr "قالبِ نمایشِ &تاریخ:"
+
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:29
+msgid "Input in &24-hour format"
+msgstr "ورودِ زمان در قالبِ &۲۴ ساعتی"
+
+#: addon\globalPlugins\clock\clockSettingsGUI.py:30
+msgid "off"
+msgstr "خاموش"
+
+#: addon\globalPlugins\clock\clockSettingsGUI.py:30
+msgid "every 10 minutes"
+msgstr "هر ۱۰ دقیقه"
+
+#: addon\globalPlugins\clock\clockSettingsGUI.py:30
+msgid "every 15 minutes"
+msgstr "هر ۱۵ دقیقه"
+
+#: addon\globalPlugins\clock\clockSettingsGUI.py:30
+msgid "every 30 minutes"
+msgstr "هر ۳۰ دقیقه"
+
+#: addon\globalPlugins\clock\clockSettingsGUI.py:30
+msgid "every hour"
+msgstr "هر ساعت"
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:32
+msgid "Auto announce &interval:"
+msgstr "&دوره‌ی اعلامِ خودکار:"
+
+#: addon\globalPlugins\clock\clockSettingsGUI.py:34
+msgid "speech and sound"
+msgstr "گفتار و صدا"
+
+#: addon\globalPlugins\clock\clockSettingsGUI.py:34
+msgid "speech only"
+msgstr "تنها گفتار"
+
+#: addon\globalPlugins\clock\clockSettingsGUI.py:34
+msgid "sound only"
+msgstr "تنها صدا"
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:36
+msgid "Time &announcement:"
+msgstr "&اعلامِ زمان:"
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:38
+msgid "Clock chime &sound:"
+msgstr "&صدای زنگِ ساعت:"
+
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:42
+msgid "&Quiet hours"
+msgstr "ساعت‌های &بی‌صدا:"
+
+#. Translators: This is the label for an edit field in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:45
+msgid "Quiet hours start time:"
+msgstr "زمانِ آغازِ ساعت‌های بی‌صدا:"
+
+#. Translators: This is the label for an edit field in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:47
+msgid "Quiet hours end time:"
+msgstr "زمانِ پایانِ ساعت‌های بی‌صدا:"
+
+#: addon\globalPlugins\clock\formats.py:23
+msgid "It's H o'clock and mm minutes"
+msgstr "ساعت Hُ mm دقیقه است"
+
+#: addon\globalPlugins\clock\formats.py:24
+msgid "It's H o'clock, mm minutes and ss seconds"
+msgstr "ساعت Hُ mm دقیقه ُ ss ثانیه است"
+
+#: addon\globalPlugins\clock\formats.py:25
+msgid "h o'clock, mm minutes"
+msgstr "hُ mm دقیقه"
+
+#: addon\globalPlugins\clock\formats.py:26
+msgid "hh o'clock, mm minutes, ss seconds"
+msgstr "hhُ mm دقیقه ُ ss ثانیه"
+
+#: addon\globalPlugins\clock\formats.py:27
+msgid "It's mm past H"
+msgstr "mm دقیقه از H گذشت"
+
+#: addon\globalPlugins\clock\formats.py:28
+msgid "hh mm min"
+msgstr "hhُ mm دقیقه"
+
+#: addon\globalPlugins\clock\formats.py:29
+msgid "hh mm min ss sec"
+msgstr "hhُ mm دقیقه ُ ss ثانیه"
+
+#: addon\globalPlugins\clock\formats.py:32
+msgid "It's H:mm"
+msgstr "اکنون H:mm است"
+
+#: addon\globalPlugins\clock\formats.py:33
+msgid "It's HH:mm:ss"
+msgstr "اکنون HH:mm:ss است"
+
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:13
+msgid ""
+"An advanced clock and calendar for NVDA.\n"
+"Press NVDA + F12 for current time, press it twice for current date, or press "
+"it thrice to get current day and week of the year.\n"
+"For other instructions, press Add-on help button in add-ons manager."
+msgstr ""
+"یک ساعت و تقویمِ پیشرفته برای NVDA.\n"
+"NVDA+F12 را برای شِنیدنِ زمانِ جاری یک بار، برای شِنیدنِ تاریخِ جاری دو بار، و "
+"برای شِنیدنِ شماره‌ی روز و هفته از سالِ جاری، سه بار بفشارید.\n"
+"برای دستیابی به کارکردهای دیگر، دکمه‌ی راهنمای افزونه را در مدیرِ افزونه‌ها "
+"فشار دهید."
+
+#~ msgid "&Clock Settings..."
+#~ msgstr "Paramètres de l'&Horloge..."
+
+#~ msgid "Clock and calendar setup"
+#~ msgstr "Réglage de l'horloge et du calendrier"
+
+#~ msgid "Day %j, week %W of %Y."
+#~ msgstr "Jour %j, semaine %W de %Y."
+
+#~ msgid "Clock Settings"
+#~ msgstr "Paramètres de l'Horloge"
+
+#~ msgid "%H h, %M min"
+#~ msgstr "%H h, %M min"
+
+#~ msgid "%H h, %M min, %S sec"
+#~ msgstr "%H h, %M min, %S sec"
+
+#~ msgid "%H:%M:%S"
+#~ msgstr "%H:%M:%S"
+
+#~ msgid "%H:%M"
+#~ msgstr "%H:%M"
+
+#~ msgid "It's %I:%M %p"
+#~ msgstr "Il est %I:%M %p"
+
+#~ msgid "It's %I:%M:%S %p"
+#~ msgstr "Il est %I:%M:%S %p"
+
+#~ msgid "%I:%M %p"
+#~ msgstr "%I:%M %p"
+
+#~ msgid "%I:%M:%S %p"
+#~ msgstr "%I:%M:%S %p"
+
+#~ msgid "%A, %B %d, %Y"
+#~ msgstr "%A, %B %d, %Y"
+
+#~ msgid "%Y-%d-%m"
+#~ msgstr "%Y-%d-%m"
+
+#~ msgid "%d-%m-%Y"
+#~ msgstr "%d-%m-%Y"
+
+#~ msgid "%m-%d-%Y"
+#~ msgstr "%m-%d-%Y"
+
+#~ msgid "%m/%d/%Y"
+#~ msgstr "%m/%d/%Y"
+
+#~ msgid "%d/%m/%Y"
+#~ msgstr "%d/%m/%Y"
