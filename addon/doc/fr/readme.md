@@ -1,6 +1,6 @@
 # Module complémentaire horloge et calendrier  pour NVDA #
 
-* Auteurs : Hrvoje Katić et contributeurs de NVDA.
+* Auteurs : Hrvoje Katić, Abdel et contributeurs de NVDA.
 * Télécharger [version de développement](https://ci.appveyor.com/project/HrvojeKati/clock/build/artifacts)
 
 Ce module complémentaire active les fonctions avancées de l'horloge et du calendrier pour NVDA. Au lieu de toujours obtenir la date et l'heure depuis Windows, vous pouvez personnaliser comment les dates et les heures doivent être annoncées et affichées en braille par NVDA. En outre, vous pouvez obtenir le nombre actuel des jours et semaines de l'année en cours et vous pouvez également définir l'annonce automatique de l'heure sur un intervalle spécifié. Il y a aussi une fonctionnalité de chronomètre intégré au module complémentaire, qui vous permet de chronométrer vos tâches, telles que la copie de fichiers, l'installation de programmes ou la préparation de repas.

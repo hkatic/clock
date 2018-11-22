@@ -1,6 +1,6 @@
 # NVDA Dodatak za sat i kalendar #
 
-* Autori: Hrvoje Katić i NVDA doprinositelji.
+* Autori: Hrvoje Katić, Abdel i NVDA doprinositelji.
 * Preuzimanje [verzije u razvojnoj fazi](https://ci.appveyor.com/project/HrvojeKati/clock/build/artifacts)
 
 Ovaj dodatak omogućuje napredne značajke sata i kalendara za NVDA. Umjesto da dobijate samo informacije o datumu i vremenu od strane Windows sustava, pomoću ovog dodatka možete prilagoditi kako će vam NVDA izgovarati ili prikazati na brajičnom retku datum i vrijeme. Također, možete saznati trenutni broj dana i tjedana u godini, a isto tako možete postaviti automatsku najavu vremena u navedenom intervalu. Uz to, u ovom dodatku dobit ćete ugrađenu mogućnost štoperice koja će vam omogućiti mjerenje zadataka poput kopiranja datoteka, instalacije programa, ili kuhanje.

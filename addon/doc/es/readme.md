@@ -1,6 +1,6 @@
 # Complemento reloj y calendario para NVDA #
 
-* Autores: Hrvoje Katić y contribuidores de NVDA.
+* Autores: Hrvoje Katić, Abdel y contribuidores de NVDA.
 * Descargar [versión de desarrollo](https://ci.appveyor.com/project/HrvojeKati/clock/build/artifacts)
 
 Este complemento habilita la funcionalidad avanzada de reloj y calendario para NVDA. En lugar de obtener siempre la hora y la fecha desde la barra de tareas de Windows, puedes personalizar cómo deberían verbalizarse y braillificarse las horas y las fechas por NVDA. Adicionalmente, puedes obtener el número de día y de semana actual del año actual, y también puedes ajustar el anunciado automático de la hora en un intervalo especificado. También hay una función de cronómetro integrada en el complemento que te permite programar tus tareas, como copiar archivos, instalar programas o la preparación de comida.
