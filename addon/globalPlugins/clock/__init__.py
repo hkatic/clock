@@ -195,5 +195,5 @@ Spacebar: Speak current stopwatch or count-down timer."""))
 	__gestures={
 		"kb:NVDA+f12": "reportTimeAndDate",
 		"kb:NVDA+shift+f12": "clockLayerCommands",
-		"kb:control+f12": "test",
+		#"kb:control+f12": "test",
 	}
