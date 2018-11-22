@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Clock 18.11dev\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@freelists.org'\n"
-"POT-Creation-Date: 2018-11-20 07:45+0100\n"
-"PO-Revision-Date: 2018-11-20 07:45+0100\n"
+"POT-Creation-Date: 2018-11-22 09:01+0000\n"
+"PO-Revision-Date: 2018-11-22 10:13+0100\n"
 "Last-Translator: Hrvoje Katić <hrvojekatic@gmail.com>\n"
 "Language-Team: HR <hrvojekatic@gmail.com>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Poedit 1.6.11\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -60,7 +60,7 @@ msgstr "Sat"
 
 #: addon\globalPlugins\clock\__init__.py:124
 msgid "Day {day}, week {week} of {year}"
-msgstr ""
+msgstr "{day}. dan, {week}. tjedan u {year}. godini"
 
 #: addon\globalPlugins\clock\__init__.py:126
 msgid ""
@@ -208,51 +208,41 @@ msgstr "Početno vrijeme za tihe sate:"
 msgid "Quiet hours end time:"
 msgstr "Završno vrijeme za tihe sate:"
 
-#: addon\globalPlugins\clock\formats.py:23
-#, fuzzy
-#| msgid "It's %H hours and %M minutes"
+#: addon\globalPlugins\clock\formats.py:22
 msgid "It's H o'clock and mm minutes"
-msgstr "Sada je %H sati i %M minuta"
+msgstr "Sada je H sati i mm minuta"
+
+#: addon\globalPlugins\clock\formats.py:23
+msgid "It's H o'clock, mm minutes and ss seconds"
+msgstr "Sada je H sati, mm minuta i ss sekundi"
 
 #: addon\globalPlugins\clock\formats.py:24
-#, fuzzy
-#| msgid "It's %H hours, %M minutes and %S seconds"
-msgid "It's H o'clock, mm minutes and ss seconds"
-msgstr "Sada je %H sati, %M minuta i %S sekundi"
+msgid "h o'clock, mm minutes"
+msgstr "h sati, mm minuta"
 
 #: addon\globalPlugins\clock\formats.py:25
-#, fuzzy
-#| msgid "%H hours, %M minutes"
-msgid "h o'clock, mm minutes"
-msgstr "%H sati, %M minuta"
+msgid "hh o'clock, mm minutes, ss seconds"
+msgstr "hh sati, mm minuta, ss sekundi"
 
 #: addon\globalPlugins\clock\formats.py:26
-#, fuzzy
-#| msgid "%H hours, %M minutes, %S seconds"
-msgid "hh o'clock, mm minutes, ss seconds"
-msgstr "%H sati, %M minuta, %S sekundi"
+msgid "It's mm past H"
+msgstr "It's mm past H"
 
 #: addon\globalPlugins\clock\formats.py:27
-msgid "It's mm past H"
-msgstr ""
+msgid "hh mm min"
+msgstr "hh mm min"
 
 #: addon\globalPlugins\clock\formats.py:28
-msgid "hh mm min"
-msgstr ""
-
-#: addon\globalPlugins\clock\formats.py:29
-#, fuzzy
-#| msgid "%H h, %M min, %S sec"
 msgid "hh mm min ss sec"
-msgstr "%H h, %M min, %S sek"
+msgstr "hh mm min ss sek"
 
-#: addon\globalPlugins\clock\formats.py:32
+#: addon\globalPlugins\clock\formats.py:34
 msgid "It's H:mm"
-msgstr ""
+msgstr "Sada je H:mm"
 
-#: addon\globalPlugins\clock\formats.py:33
+#: addon\globalPlugins\clock\formats.py:35
 msgid "It's HH:mm:ss"
-msgstr ""
+msgstr "Sada je HH:mm:ss"
 
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 #: buildVars.py:13
