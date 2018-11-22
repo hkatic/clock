@@ -17,6 +17,12 @@ For other instructions, press Add-on help button in add-ons manager."""),
 	"addon_author" : "Hrvoje Katic <hrvojekatic@gmail.com>, Abdel <abdelkrim.bensaid@gmail.com>",
 	"addon_url" : "https://github.com/hkatic/clock",
 	"addon_docFileName" : "readme.html",
+	# Minimum NVDA version supported (e.g. "2018.3")
+	"addon_minimumNVDAVersion" : "2018.2",
+	# Last NVDA version supported/tested (e.g. "2018.4", ideally more recent than minimum version)
+	"addon_lastTestedNVDAVersion" : "2018.4",
+	# Add-on update channel (default is stable or None)
+	"addon_updateChannel" : None,
 }
 
 import os.path
