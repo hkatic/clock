@@ -12,6 +12,7 @@ import ui
 import os
 import wx
 import winKernel
+import formats
 
 def getAutoAnnounceInterval():
 	autoAnnounceMinutes = tuple()
@@ -49,7 +50,7 @@ class clock(object):
 		if config.conf["clockAndCalendar"]["timeReporting"]!=1:
 			nvwave.playWaveFile(os.path.join(paths.SOUNDS_DIR, config.conf["clockAndCalendar"]["timeReportSound"]))
 		if config.conf["clockAndCalendar"]["timeReporting"]!=2:
-			ui.message(winKernel.GetTimeFormatEx(winKernel.LOCALE_NAME_USER_DEFAULT, None, None, config.conf["clockAndCalendar"]["timeDisplayFormat"]))
+			ui.message(winKernel.GetTimeFormatEx(winKernel.LOCALE_NAME_USER_DEFAULT, None, None, formats.rgx.sub(formats.repl, config.conf["clockAndCalendar"]["timeDisplayFormat"])))
 
 	def quietHoursAreActive(self):
 		if not config.conf["clockAndCalendar"]["quietHours"]:

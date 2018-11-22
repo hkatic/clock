@@ -4,11 +4,13 @@
 # Copyright 2013-2018, released under GPL.
 
 from functools import wraps
+import sys
 import globalPluginHandler
 import gui
 import scriptHandler
 import ui
 import winKernel
+import formats
 from gui import NVDASettingsDialog
 import clockHandler
 import stopwatchHandler
@@ -19,7 +21,13 @@ import tones
 from datetime import datetime
 import wx
 import gettext
+import os
 import languageHandler
+sys.path.append(os.path.join (os.path.abspath(os.path.dirname(__file__)), "lib"))
+import ephem
+import pytz
+import convertdate
+sys.path.remove(sys.path[-1])
 import addonHandler
 addonHandler.initTranslation()
 import locale
@@ -59,6 +67,35 @@ def secondsToString(seconds, precision=0):
 		string+=_("%s seconds")%secString
 	return string
 
+# A function to calculate the current day of the year, as well as the actual number of weeks, for a non-Gregorian year.
+def getDayAndWeekOfYear (date):
+	now = datetime.now()
+	curYear = int(date.split("/")[0])
+	gregYear = int(now.strftime("%Y"))
+	curMonth = int(date.split("/")[1])
+	gregMonth = int(now.strftime("%m"))
+	curDay = int(date.split("/")[2])
+	gregDay = int(now.strftime("%d"))
+	if curYear == gregYear:
+		#It's a Gregorian year.
+		return (now.timetuple()[7], now.isocalendar()[1], gregYear)
+	else:
+		# It's not a Gregorian year.
+		dt1 = convertdate.islamic
+		dt2 = convertdate.persian
+		if curYear == dt1.from_gregorian(gregYear, gregMonth, gregDay)[0] or curYear == dt2.from_gregorian(gregYear, gregMonth, gregDay)[0]:
+			# It's a Hijri year.
+			dt = dt1 if curYear == dt1.from_gregorian(gregYear, gregMonth, gregDay)[0] else dt2
+			nDayOfYear = 0
+			nWeekOfYear = 0
+			for month in xrange (1, curMonth):
+				nDayOfYear += dt.month_length (curYear, month)
+			nDayOfYear += curDay
+			nWeekOfYear = nDayOfYear / 7
+			if nDayOfYear % 7 > 0:
+				nWeekOfYear += 1
+			return (str(nDayOfYear), str(nWeekOfYear), str(curYear))
+
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	# Translators: Script category for Clock addon commands in input gestures dialog.
 	scriptCategory=_("Clock")
@@ -78,13 +115,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.clock.terminate()
 
 	def script_reportTimeAndDate(self, gesture):
-		now=datetime.now()
 		if scriptHandler.getLastScriptRepeatCount() == 0:
-			msg=winKernel.GetTimeFormatEx(winKernel.LOCALE_NAME_USER_DEFAULT, None, None, config.conf["clockAndCalendar"]["timeDisplayFormat"])
+			msg=winKernel.GetTimeFormatEx(winKernel.LOCALE_NAME_USER_DEFAULT, None, None, formats.rgx.sub(formats.repl, config.conf["clockAndCalendar"]["timeDisplayFormat"]))
 		elif scriptHandler.getLastScriptRepeatCount() == 1:
 			msg=winKernel.GetDateFormatEx(winKernel.LOCALE_NAME_USER_DEFAULT, None, None, config.conf["clockAndCalendar"]["dateDisplayFormat"])
 		else:
-			msg=_("Day {day}, week {week} of {year}").format(day=now.timetuple()[7], week=now.isocalendar()[1], year=winKernel.GetDateFormatEx(winKernel.LOCALE_NAME_USER_DEFAULT, None, None, u"yyyy"))
+			informations = getDayAndWeekOfYear (winKernel.GetDateFormatEx(winKernel.LOCALE_NAME_USER_DEFAULT, None, None, u"yyyy/M/d"))
+			msg=_("Day {day}, week {week} of {year}").format(day=informations[0], week=informations[1], year=informations[2])
 		ui.message(msg)
 	script_reportTimeAndDate.__doc__=_("Speaks current time. If pressed twice quickly, speaks current date. If pressed thrice quickly, reports the current day and week number of the year.")
 
@@ -151,8 +188,12 @@ Spacebar: Speak current stopwatch or count-down timer."""))
 		"kb:r":"stopwatchReset",
 		"kb:h":"getHelp",
 	}
+	def script_test(self, gestures):
+		dt=convertdate.persian.from_gregorian(2018,11,19)
+		ui.message(str(dt[0]))
 
 	__gestures={
 		"kb:NVDA+f12": "reportTimeAndDate",
 		"kb:NVDA+shift+f12": "clockLayerCommands",
+		"kb:control+f12": "test",
 	}
