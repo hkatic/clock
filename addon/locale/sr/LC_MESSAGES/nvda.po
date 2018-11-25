@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Clock 18.11dev\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@freelists.org'\n"
 "POT-Creation-Date: 2018-11-22 09:01+0000\n"
-"PO-Revision-Date: 2018-11-25 10:01+0100\n"
+"PO-Revision-Date: 2018-11-25 15:54+0100\n"
 "Last-Translator: Hrvoje Katić <hrvojekatic@gmail.com>\n"
 "Language-Team: HR <hrvojekatic@gmail.com>\n"
 "Language: hr\n"
@@ -60,7 +60,7 @@ msgstr "Sat"
 
 #: addon\globalPlugins\clock\__init__.py:124
 msgid "Day {day}, week {week} of {year}"
-msgstr "{day}. dan, {week}. sedmica u {year}. godini"
+msgstr "{day}. dan, {week}. nedelja u {year}. godini"
 
 #: addon\globalPlugins\clock\__init__.py:126
 msgid ""
@@ -68,7 +68,7 @@ msgid ""
 "pressed thrice quickly, reports the current day and week number of the year."
 msgstr ""
 "Govori trenutno vreme. Ako pritisnete dva puta brzo, govori trenutni datum. "
-"Ako pritisnete tri puta brzo, izveštava o trenutnom broju dana i sedmice u "
+"Ako pritisnete tri puta brzo, izveštava o trenutnom broju dana i nedelje u "
 "trenutnoj godini."
 
 #: addon\globalPlugins\clock\__init__.py:151
@@ -255,7 +255,7 @@ msgid ""
 msgstr ""
 "Napredni sat i kalendar za NVDA čitač ekrana.\n"
 "Pritisnite NVDA + F12 za trenutni sat, pritisnite dva puta za trenutni "
-"datum, ili tri puta da dobijete trenutni broj dana i sedmica u trenutnoj "
+"datum, ili tri puta da dobijete trenutni broj dana i nedelja u trenutnoj "
 "godini.\n"
 "Za ostala uputstva, izaberite dugme Pomoć za dodatak u upravitelju dodataka."
 
