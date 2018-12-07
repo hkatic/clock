@@ -5,62 +5,79 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 'clock' '18.11dev'\n"
+"Project-Id-Version: Clock 18.12dev\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@freelists.org'\n"
-"POT-Creation-Date: 2018-11-20 07:37+0100\n"
-"PO-Revision-Date: 2018-11-20 22:32+0100\n"
+"POT-Creation-Date: 2018-12-06 22:09+0100\n"
+"PO-Revision-Date: 2018-12-06 22:09+0100\n"
+"Last-Translator: Ján Kulik <johny.kulik452@gmail.com>\n"
 "Language-Team: \n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
-"Last-Translator: Ján Kulik <johny.kulik452@gmail.com>\n"
+"X-Generator: Poedit 2.0.2\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
-"Language: sk\n"
 
-#: addon\globalPlugins\clock\__init__.py:57
-#, python-format
-msgid "%d hour, "
-msgstr "%d hodina, "
+#: addon\globalPlugins\clock\__init__.py:64
+msgid "{hours} hours, "
+msgstr "{hours} hodín"
 
-#: addon\globalPlugins\clock\__init__.py:59
-#, python-format
-msgid "%d hours, "
-msgstr "%d hodín, "
+#: addon\globalPlugins\clock\__init__.py:66
+msgid "{minutes} minutes, "
+msgstr "{minutes} minút"
 
-#: addon\globalPlugins\clock\__init__.py:61
-#, python-format
-msgid "%d minute, "
-msgstr "%d minúta, "
+#: addon\globalPlugins\clock\__init__.py:68
+msgid "{seconds} seconds"
+msgstr "{seconds} sekúnd"
 
-#: addon\globalPlugins\clock\__init__.py:63
-#, python-format
-msgid "%d minutes, "
-msgstr "%d minút, "
-
-#: addon\globalPlugins\clock\__init__.py:65
-#, python-format
-msgid "%s second"
-msgstr "%s sekunda"
-
-#: addon\globalPlugins\clock\__init__.py:67
-#, python-format
-msgid "%s seconds"
-msgstr "%s sekúnd"
+#: addon\globalPlugins\clock\__init__.py:69
+msgid "0 seconds"
+msgstr "0 sekúnd"
 
 #. Translators: Script category for Clock addon commands in input gestures dialog.
-#. Translators: This is the label for the clock settings panel.
 #. Translators: Summary for this add-on to be shown on installation and add-on information.
-#: addon\globalPlugins\clock\__init__.py:101
-#: addon\globalPlugins\clock\clockSettingsGUI.py:20 buildVars.py:11
+#: addon\globalPlugins\clock\__init__.py:123 buildVars.py:11
 msgid "Clock"
 msgstr "Hodiny"
 
-#: addon\globalPlugins\clock\__init__.py:124
-msgid "Day {day}, week {week} of {year}"
-msgstr "Deň {day},, týždeň {week}, v roku {year}"
+#. Translators: Item in the tools menu for the Clock Addon settings.
+#: addon\globalPlugins\clock\__init__.py:144
+msgid "Clock se&ttings..."
+msgstr "Na&stavenia hodín"
 
-#: addon\globalPlugins\clock\__init__.py:126
+#. Translators: The tooltyp text for the clock settings submenu.
+#: addon\globalPlugins\clock\__init__.py:146
+msgid "Clock and calendar setup"
+msgstr "Hodiny a kalendár"
+
+#. Translators: The name of the first item in the Clock settings submenu.
+#. Translators: This is the label for the clock settings panel.
+#: addon\globalPlugins\clock\__init__.py:150
+#: addon\globalPlugins\clock\clockSettingsGUI.py:32
+msgid "Clock setup"
+msgstr "Nastavenia hodín"
+
+#. Translators: The tooltyp text for the first item in the dayOfTheWeek add-on submenu.
+#: addon\globalPlugins\clock\__init__.py:152
+msgid "Clock setup for times and dates"
+msgstr "Nastavenia času a dátumu"
+
+#. Translators: The name of the second item in the Clock settings submenu.
+#: addon\globalPlugins\clock\__init__.py:157
+msgid "Alarm settin&gs"
+msgstr "Na&stavenia budíka"
+
+#. Translators: The tooltyp text for the second item in the dayOfTheWeek add-on submenu.
+#: addon\globalPlugins\clock\__init__.py:159
+msgid "Allows you to schedule an alarm"
+msgstr "Umožňuje naplánovať budík"
+
+#: addon\globalPlugins\clock\__init__.py:183
+msgid "Day {day}, week {week} of {year}"
+msgstr "Deň {day}, týždeň {week} rok {year}"
+
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:187
 msgid ""
 "Speaks current time. If pressed twice quickly, speaks current date. If "
 "pressed thrice quickly, reports the current day and week number of the year."
@@ -68,7 +85,8 @@ msgstr ""
 "Oznamuje čas. Stlačené 2 krát oznamuje dátum. Stlačené 3 krát získate "
 "informácie o dni, týždni v roku."
 
-#: addon\globalPlugins\clock\__init__.py:151
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:214
 msgid ""
 "Clock and calendar layer commands. After pressing this keystroke, press H "
 "for additional help."
@@ -76,171 +94,283 @@ msgstr ""
 "Príkazy pre rozšírené hodiny a kalendár. Po stlačený tlačidla stlačte H pre "
 "ďalšiu pomoc."
 
-#: addon\globalPlugins\clock\__init__.py:157
+#: addon\globalPlugins\clock\__init__.py:220
 msgid "Reset. Running."
-msgstr "Resetujem. Štart."
+msgstr "Reset. Štart."
 
-#: addon\globalPlugins\clock\__init__.py:160
+#: addon\globalPlugins\clock\__init__.py:223
 msgid "Running."
 msgstr "Štart."
 
-#: addon\globalPlugins\clock\__init__.py:163
-#, python-format
-msgid "%s stopped."
-msgstr "%s Stop"
+#: addon\globalPlugins\clock\__init__.py:226
+msgid "{0} stopped."
+msgstr "{0} stop."
 
-#: addon\globalPlugins\clock\__init__.py:164
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:229
 msgid "Starts, stops or resets stopwatch."
-msgstr "štart, stop alebo resetovať stopky."
+msgstr "Štar, stop alebo obnoviť stopky."
 
-#: addon\globalPlugins\clock\__init__.py:168
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:235
 msgid "Speaks current stopwatch or timer countdown."
-msgstr "Oznamuje stopky alebo časovač odpočítavania."
+msgstr "Oznamuje stopky alebo čas odpočítavania."
 
-#: addon\globalPlugins\clock\__init__.py:172
+#: addon\globalPlugins\clock\__init__.py:241
+#: addon\globalPlugins\clock\__init__.py:298
+msgid "Elapsed time {elapsed}, remaining time {remaining}."
+msgstr "Aktuálny čas {elapsed}, zostávajúci čas {remaining}."
+
+#: addon\globalPlugins\clock\__init__.py:243
+#: addon\globalPlugins\clock\__init__.py:254
+#: addon\globalPlugins\clock\__init__.py:300
+msgid "No alarm"
+msgstr "Žiadny budík"
+
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:247
+msgid "Gives the elapsed time and the remaining time before the next alarm."
+msgstr "Poskytuje aktuálny čas a zostávajúci čas pred ďalším budíkom."
+
+#: addon\globalPlugins\clock\__init__.py:252
+#: addon\globalPlugins\clock\__init__.py:296
+msgid "Alarm cancelled"
+msgstr "Budík zrušený"
+
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:258
+msgid "Allows to cancel the next alarm."
+msgstr "Umožňuje zrušiť ďalší budík."
+
+#: addon\globalPlugins\clock\__init__.py:262
 msgid ""
 "The stopwatch is already reset to 0. Use the clock layer command followed by "
 "s to start it."
 msgstr ""
-"Sopky sú už vynulované. Použite príkaz rozšírené hodiny a kalendár a stlačte "
-"S pre spustenie stopiek."
+"Stopky sú vynulované na 0 sekúnd. Použite príkaz rozšírené hodiny a kalendár "
+"a stlačte s pre spustenie stopiek."
 
-#: addon\globalPlugins\clock\__init__.py:175
+#: addon\globalPlugins\clock\__init__.py:265
 msgid "Stopwatch reset."
-msgstr "Stopky zresetované."
+msgstr "Stopky vynulované."
 
-#: addon\globalPlugins\clock\__init__.py:176
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:268
 msgid "Resets the stopwatch to 0 seconds, with out starting it."
-msgstr "Stopky vynulované na 0 sekúnd, bez spustenia."
+msgstr "Stopky vynulované na 0 sekúnd bez spustenia."
 
-#: addon\globalPlugins\clock\__init__.py:179
+#: addon\globalPlugins\clock\__init__.py:271
 msgid ""
 "\n"
-"S: Start, stop or reset and restart the stopwatch.\n"
-"R: Reset the stopwatch with out starting it again.\n"
-"Spacebar: Speak current stopwatch or count-down timer."
+"\t\tS: Start, stop or reset and restart the stopwatch.\n"
+"\t\tR: Reset the stopwatch with out starting it again.\n"
+"\t\tA: Gives some informations about the next alarm.\n"
+"\t\tC: Cancel the next alarm.\n"
+"\t\tSpacebar: Speak current stopwatch or count-down timer."
 msgstr ""
 "\n"
-"S: Spustí, zastaví a obnoví stopky.\n"
-"R: Vynuluje stopky tak, aby sa použili pri ďalšom spustení.\n"
-"Medzera: hovorí aktuálny nameraný čas."
+"\t\tS: Spustí, zastaví, obnoví alebo reštartuje stopky.\n"
+"\t\tR: Resetuje stopky pre ďalšie spustenie.\n"
+"\t\tA: Poskytuje informácie o ďalšom budíku.\n"
+"\t\tC: Zruší ďalší budík.\n"
+"\t\tSpacebar: Oznamuje aktuálne meraný čas."
 
-#: addon\globalPlugins\clock\__init__.py:183
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:279
 msgid "Lists available commands in clock command layer."
 msgstr "Zobrazí zoznam príkazov pre rozšírené hodiny a kalendár."
 
-#. Translators: This is the label for a combo box in the Clock settings dialog.
-#: addon\globalPlugins\clock\clockSettingsGUI.py:25
-msgid "&Time display format:"
-msgstr "&Časový formát: "
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:304
+#, fuzzy
+#| msgid "Allows to check or cancel the next alarm."
+msgid "Allows to check the next alarm. If pressed twice, cancels it."
+msgstr "Umoťňuje zmeniť alebo zrušiť ďalší budík."
+
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:329
+msgid "Display the clock settings dialog box."
+msgstr ""
+
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:341
+msgid "Display the alarm settings dialog box."
+msgstr ""
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
-#: addon\globalPlugins\clock\clockSettingsGUI.py:27
+#: addon\globalPlugins\clock\clockSettingsGUI.py:36
+msgid "&Time display format:"
+msgstr "&Časový formát:"
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:39
 msgid "&Date display format:"
-msgstr "&Formát dátumu: "
+msgstr "&Formát dátumu:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
-#: addon\globalPlugins\clock\clockSettingsGUI.py:29
+#: addon\globalPlugins\clock\clockSettingsGUI.py:42
 msgid "Input in &24-hour format"
-msgstr "Vstup v &24-hodinový formát"
+msgstr "Vstup v &24 hodinový formát"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:30
+#. Translators: This is a choice of the auto announce choices combo box.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:46
 msgid "off"
 msgstr "vypnuté"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:30
+#. Translators: This is a choice of the auto announce choices combo box.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:48
 msgid "every 10 minutes"
 msgstr "kazdých 10 minút"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:30
+#. Translators: This is a choice of the auto announce choices combo box.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:50
 msgid "every 15 minutes"
 msgstr "každých 15 minút"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:30
+#. Translators: This is a choice of the auto announce choices combo box.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:52
 msgid "every 30 minutes"
-msgstr "každých 30 minút"
+msgstr "kazdých 30 minút"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:30
+#. Translators: This is a choice of the auto announce choices combo box.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:54
 msgid "every hour"
-msgstr "každú hodinu"
+msgstr "kazdú hodinu"
 
-#. Translators: This is the label for a combo box in the Clock settings dialog.
-#: addon\globalPlugins\clock\clockSettingsGUI.py:32
-msgid "Auto announce &interval:"
-msgstr "Automatické oznámenie &intervalu: "
+#. Transla	tors: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:58
+msgid "&interval:"
+msgstr "&interval:"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:34
+#. Translators: This is a choice of the time report choices combo box.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:62
 msgid "speech and sound"
 msgstr "reč a zvuk"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:34
+#. Translators: This is a choice of the time report choices combo box.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:64
 msgid "speech only"
 msgstr "iba reč"
 
-#: addon\globalPlugins\clock\clockSettingsGUI.py:34
+#. Translators: This is a choice of the time report choices combo box.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:66
 msgid "sound only"
 msgstr "iba zvuk"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
-#: addon\globalPlugins\clock\clockSettingsGUI.py:36
+#: addon\globalPlugins\clock\clockSettingsGUI.py:70
 msgid "Time &announcement:"
-msgstr "časové &oznámenie"
+msgstr "Časové &oznámenie:"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
-#: addon\globalPlugins\clock\clockSettingsGUI.py:38
+#: addon\globalPlugins\clock\clockSettingsGUI.py:73
 msgid "Clock chime &sound:"
-msgstr "Zvukové hodiny &zvuk: "
+msgstr "Hodinový zvonček &zvuk:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
-#: addon\globalPlugins\clock\clockSettingsGUI.py:42
+#: addon\globalPlugins\clock\clockSettingsGUI.py:76
 msgid "&Quiet hours"
-msgstr "&Tichý režim"
+msgstr "&Tiché hodiny"
 
 #. Translators: This is the label for an edit field in the Clock settings dialog.
-#: addon\globalPlugins\clock\clockSettingsGUI.py:45
+#: addon\globalPlugins\clock\clockSettingsGUI.py:79
 msgid "Quiet hours start time:"
-msgstr "Od:"
+msgstr "Tiché hodiny začiatok:"
 
 #. Translators: This is the label for an edit field in the Clock settings dialog.
-#: addon\globalPlugins\clock\clockSettingsGUI.py:47
+#: addon\globalPlugins\clock\clockSettingsGUI.py:82
 msgid "Quiet hours end time:"
-msgstr "Do: "
+msgstr "Tiché hodiny koniec:"
 
-#: addon\globalPlugins\clock\formats.py:23
-msgid "It's H o'clock and mm minutes"
-msgstr "je H hodín a mm minút"
+#. Translators: This is the label for the alarm settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:220
+msgid "Alarm setup"
+msgstr "Budík"
 
-#: addon\globalPlugins\clock\formats.py:24
-msgid "It's H o'clock, mm minutes and ss seconds"
-msgstr "je H hodín mm minút ss sekúnd"
+#. Translators: This is an item of the alarm timer choices.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:225
+msgid "Hours"
+msgstr "Hodín"
 
-#: addon\globalPlugins\clock\formats.py:25
-msgid "h o'clock, mm minutes"
-msgstr "h h, mm min"
+#. Translators: This is an item of the alarm timer choices.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:227
+msgid "Minutes"
+msgstr "Minút"
 
-#: addon\globalPlugins\clock\formats.py:26
-msgid "hh o'clock, mm minutes, ss seconds"
-msgstr "hh mm ss"
+#. Translators: This is an item of the alarm timer choices.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:229
+msgid "Seconds"
+msgstr "Aekúnd"
 
-#: addon\globalPlugins\clock\formats.py:27
-msgid "It's mm past H"
-msgstr ""
+#. Translators: This is the label for a combo box in the Alarm settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:233
+msgid "Choose the type of timer inputs before the alarm rings:"
+msgstr "Zvoľte typ časového vstupu pre budík zvonenia:"
 
-#: addon\globalPlugins\clock\formats.py:28
-msgid "hh mm min"
-msgstr "hh mm "
+#. Translators: This is the label for a combo box in the Alarm settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:236
+msgid "A&larm sound:"
+msgstr "Z&vuk budíka:"
 
-#: addon\globalPlugins\clock\formats.py:29
-msgid "hh mm min ss sec"
-msgstr "hh mm ss"
+#. Translators: This is the label for an edit field in the Alarm settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:239
+msgid "Alarm time wwaiting:"
+msgstr "čas čakania budíka:"
 
-#: addon\globalPlugins\clock\formats.py:32
-msgid "It's H:mm"
-msgstr "H:mm"
+#. Translators: The message displayed after a countdown for an alarm has been chosen.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:314
+msgid "You've chosen an alarm to be triggered in {tm} {unit}"
+msgstr "Zvolili ste si budík, ktorý sa má spúšťať o {tm} {unit}"
 
-#: addon\globalPlugins\clock\formats.py:33
-msgid "It's HH:mm:ss"
-msgstr "HH:mm:ss"
+#. Translators: The title of the dialog which appears when the user has chosen to trigger an alarm.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:316
+msgid "Confirmation"
+msgstr "Potvrdenie"
+
+#. Translators: A time formating.
+#: addon\globalPlugins\clock\formats.py:58
+msgid "It's {hours} o'clock and {minutes} minutes"
+msgstr "Je {hours} hodín a {minutes} minút"
+
+#. Translators: A time formating.
+#: addon\globalPlugins\clock\formats.py:61
+msgid "It's {hours} o'clock, {minutes} minutes and {seconds} seconds"
+msgstr "Je {hours} hodín {minutes} minút {seconds} sekúnd"
+
+#. Translators: A time formating.
+#: addon\globalPlugins\clock\formats.py:64
+msgid "{hours} o'clock, {minutes} minutes"
+msgstr "{hours} hodín {minutes} minút"
+
+#. Translators: A time formating.
+#: addon\globalPlugins\clock\formats.py:67
+msgid "{hours} o'clock, {minutes} minutes, {seconds} seconds"
+msgstr "{hours} hodín {minutes} minút {seconds} sekúnd"
+
+#. Translators: A time formating.
+#: addon\globalPlugins\clock\formats.py:70
+msgid "It's {minutes} past {hours} {tm}"
+msgstr "Je {minutes} po {hours} {tm}"
+
+#. Translators: A time formating.
+#: addon\globalPlugins\clock\formats.py:73
+msgid "{hours} h {minutes} min"
+msgstr "{hours} h {minutes} min"
+
+#. Translators: A time formating.
+#: addon\globalPlugins\clock\formats.py:76
+msgid "{hours} h, {minutes} min, {seconds} sec"
+msgstr "{hours} h {minutes} min {seconds} s"
+
+#. Translators: A time formating.
+#: addon\globalPlugins\clock\formats.py:79
+msgid "It's {hours}:{minutes}"
+msgstr "Je {hours}:{minutes}"
+
+#. Translators: A time formating.
+#: addon\globalPlugins\clock\formats.py:82
+msgid "It's {hours}:{minutes}:{seconds}"
+msgstr "Je {hours}:{minutes}:{seconds}"
 
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 #: buildVars.py:13
@@ -250,7 +380,7 @@ msgid ""
 "it thrice to get current day and week of the year.\n"
 "For other instructions, press Add-on help button in add-ons manager."
 msgstr ""
-"Rozšírené hodiny a kalendár pre NVDA.\n"
-"Stlačte NVDA+f12 pre aktuálne oznamovanie času. Stlačené 2 krát oznamuje "
-"dátum. Stlačené 3 krát oznamuje deň, týždeň v roku.\n"
-"Pre viac informácií si pozrite návod v doplnku na tlačidle návod."
+"Rozšírené hodiny a kalendár\n"
+"Stlačte NVDA+F12 pre aktuálny čas. 2-krát za sebou pre aktuálny dátum. 3-"
+"krát za sebou pre aktuálny deň v týždni v roku.\n"
+"Pre viac informácií si pozrite návod v doplnku (Návod)."

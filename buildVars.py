@@ -13,12 +13,12 @@ addon_info = {
 	"addon_description" : _("""An advanced clock and calendar for NVDA.
 Press NVDA + F12 for current time, press it twice for current date, or press it thrice to get current day and week of the year.
 For other instructions, press Add-on help button in add-ons manager."""),
-	"addon_version" : "18.11dev",
+	"addon_version" : "18.12dev",
 	"addon_author" : "Hrvoje Katic <hrvojekatic@gmail.com>, Abdel <abdelkrim.bensaid@gmail.com>",
 	"addon_url" : "https://github.com/hkatic/clock",
 	"addon_docFileName" : "readme.html",
 	# Minimum NVDA version supported (e.g. "2018.3")
-	"addon_minimumNVDAVersion" : "2018.2",
+	"addon_minimumNVDAVersion" : "2014.3",
 	# Last NVDA version supported/tested (e.g. "2018.4", ideally more recent than minimum version)
 	"addon_lastTestedNVDAVersion" : "2018.4",
 	# Add-on update channel (default is stable or None)
