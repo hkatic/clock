@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Clock 18.12dev\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@freelists.org'\n"
-"POT-Creation-Date: 2018-12-06 21:53+0100\n"
-"PO-Revision-Date: 2018-12-06 21:53+0100\n"
+"POT-Creation-Date: 2018-12-07 14:50+0100\n"
+"PO-Revision-Date: 2018-12-07 15:05+0100\n"
 "Last-Translator: Rémy Ruiz <remyruiz@gmail.com>\n"
 "Language-Team: Rémy Ruiz <remyruiz@gmail.com>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Poedit 1.8.12\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -44,10 +44,8 @@ msgstr "Clock"
 
 #. Translators: Item in the tools menu for the Clock Addon settings.
 #: addon\globalPlugins\clock\__init__.py:144
-#, fuzzy
-#| msgid "&Clock Settings..."
 msgid "Clock se&ttings..."
-msgstr "Opciones del &Reloj..."
+msgstr "Ajus&tes del reloj..."
 
 #. Translators: The tooltyp text for the clock settings submenu.
 #: addon\globalPlugins\clock\__init__.py:146
@@ -58,29 +56,23 @@ msgstr "Configuración del reloj y del calendario"
 #. Translators: This is the label for the clock settings panel.
 #: addon\globalPlugins\clock\__init__.py:150
 #: addon\globalPlugins\clock\clockSettingsGUI.py:32
-#, fuzzy
-#| msgid "Clock Settings"
 msgid "Clock setup"
-msgstr "Opciones del Reloj"
+msgstr "Configuración del reloj"
 
 #. Translators: The tooltyp text for the first item in the dayOfTheWeek add-on submenu.
 #: addon\globalPlugins\clock\__init__.py:152
 msgid "Clock setup for times and dates"
-msgstr ""
+msgstr "Configuración del reloj para las horas y las fechas"
 
 #. Translators: The name of the second item in the Clock settings submenu.
 #: addon\globalPlugins\clock\__init__.py:157
-#, fuzzy
-#| msgid "Clock Settings"
 msgid "Alarm settin&gs"
-msgstr "Opciones del Reloj"
+msgstr "A&justes de la alarma"
 
 #. Translators: The tooltyp text for the second item in the dayOfTheWeek add-on submenu.
 #: addon\globalPlugins\clock\__init__.py:159
-#, fuzzy
-#| msgid "Allows to cancel the next alarm."
 msgid "Allows you to schedule an alarm"
-msgstr "Permite cancelar la siguiente alarma."
+msgstr "Te permite programar una alarma"
 
 #: addon\globalPlugins\clock\__init__.py:183
 msgid "Day {day}, week {week} of {year}"
@@ -195,20 +187,20 @@ msgstr "Enumera las órdenes disponibles en la órden en capa del reloj."
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:304
-#, fuzzy
-#| msgid "Allows to check or cancel the next alarm."
 msgid "Allows to check the next alarm. If pressed twice, cancels it."
-msgstr "Permite comprobar o cancelar la siguiente alarma."
+msgstr ""
+"Permite comprobar o cancelar la siguiente alarma. Si se pulsa dos veces lo "
+"cancela."
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:329
 msgid "Display the clock settings dialog box."
-msgstr ""
+msgstr "Mostrar el cuadro de diálogo de los ajustes del reloj."
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:341
 msgid "Display the alarm settings dialog box."
-msgstr ""
+msgstr "Mostrar el cuadro de diálogo de los ajustes de la alarma"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:36
@@ -253,7 +245,7 @@ msgstr "cada hora"
 #. Transla	tors: This is the label for a combo box in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:58
 msgid "&interval:"
-msgstr ""
+msgstr "&intervalo:"
 
 #. Translators: This is a choice of the time report choices combo box.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:62
@@ -297,10 +289,8 @@ msgstr "Fin de horas silenciosas:"
 
 #. Translators: This is the label for the alarm settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:220
-#, fuzzy
-#| msgid "Clock Settings"
 msgid "Alarm setup"
-msgstr "Opciones del Reloj"
+msgstr "Configuración de la alarma"
 
 #. Translators: This is an item of the alarm timer choices.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:225
@@ -330,10 +320,8 @@ msgstr "Sonido de la a&larma:"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:239
-#, fuzzy
-#| msgid "Alarm time:"
-msgid "Alarm time wwaiting:"
-msgstr "Hora de la alarma:"
+msgid "Alarm time waiting:"
+msgstr "Tiempo de espera de la alarma:"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:314
@@ -404,11 +392,17 @@ msgstr ""
 "Para otras instrucciones, pulsar el botón Ayuda del Complemento en el "
 "Administrador de Complementos."
 
+#~ msgid "Allows to check or cancel the next alarm."
+#~ msgstr "Permite comprobar o cancelar la siguiente alarma."
+
 #~ msgid "Auto announce &interval:"
 #~ msgstr "&Intervalo del anunciado automático:"
 
 #~ msgid "&Alarm"
 #~ msgstr "&Alarma"
+
+#~ msgid "Alarm time:"
+#~ msgstr "Hora de la alarma:"
 
 #~ msgid "%d hour, "
 #~ msgstr "%d hora, "
@@ -515,5 +509,11 @@ msgstr ""
 #~ msgid "%d/%m/%Y"
 #~ msgstr "%d/%m/%Y"
 
+#~ msgid "&Clock Settings..."
+#~ msgstr "Opciones del &Reloj..."
+
 #~ msgid "Day %j, week %W of %Y."
 #~ msgstr "Día %j, semana %W de %Y."
+
+#~ msgid "Clock Settings"
+#~ msgstr "Opciones del Reloj"
