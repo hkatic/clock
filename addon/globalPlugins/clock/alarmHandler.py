@@ -30,5 +30,3 @@ class AlarmTimer (threading._Timer):
 	def cancel (self):
 		threading._Timer.cancel (self)
 		config.conf["clockAndCalendar"]["alarm"] = False
-
-
