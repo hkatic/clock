@@ -236,7 +236,7 @@ class AlarmSettings (SettingsPanel):
 		self._alarmSoundTitle = _("A&larm sound:")
 
 		# Translators: This is the label for an edit field in the Alarm settings dialog.
-		self._alarmTimeWaitingTitle = _("Alarm time wwaiting:")
+		self._alarmTimeWaitingTitle = _("Alarm time waiting:")
 
 		# This block has been added to ensure the compatibility of the add-on with the NVDA versions that preceded 2016.4, which included the gui.guiHelper module.
 		if hasattr (gui, "guiHelper"):

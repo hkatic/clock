@@ -341,7 +341,7 @@ msgstr ""
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:239
-msgid "Alarm time wwaiting:"
+msgid "Alarm time waiting:"
 msgstr ""
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
