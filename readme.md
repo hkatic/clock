@@ -20,7 +20,7 @@ This addon enables the advanced clock, alarm timer and calendar functionality fo
 	*	When done, tab to the OK button and activate it by pressing Enter to save your settings;
 	*	In the Alarm setup dialog, the first Combo Box control allow you to choose your prefered countdown timer before the alarm ring;
 	*	The Edit box control lets you type your time waiting before the alarm ring. This duration must be specified in 1 or more digits, not a decimal number;
-	*	The Combo box control labeled "Alarm chime sound" lets you choose between various alarm sounds that will be played when the alarm time arrives;
+	*	The Combo box control labeled "Alarm sound" lets you choose between various alarm sounds that will be played when the alarm time arrives;
 	*	When done, tab to the OK button and activate it by pressing Enter. A message should be displayed to remind you of the waiting time before the alarm;
 *	Press NVDA+F12 once to get current time, twice to get current date, or thrice to get the current day and week number of the current year.
 
