@@ -1,8 +1,8 @@
 # Clock and calendar Add-on for NVDA #
 
 * Authors: Hrvoje Katić, Abdel and NVDA contributors;
-* Download [stable version](http://cyber25.free.fr/nvda-addons/clock-18.12.nvda-addon);
-* Download [development version](http://cyber25.free.fr/nvda-addons/clock-18.12dev.nvda-addon).
+* Download [stable version][1];
+* Download [development version][2].
 
 
 This addon enables the advanced clock, alarm timer and calendar functionality for NVDA. Instead of always getting time and date from Windows, you can customize how times and dates should be spoken and brailled by NVDA. Additionally, you can obtain the current day and week number of the current year, and you can also set automatic time announcement on specified interval. There's also a stopwatch and Alarm timer features built-in to the addon, that lets you time your tasks, such as copying files, installing programs, or cooking meals.
@@ -30,7 +30,7 @@ This addon enables the advanced clock, alarm timer and calendar functionality fo
 - NVDA+F12 pressed twice quickly, get current date;
 - NVDA+F12 pressed thrice quickly, get the current day and week number of the current year.
 
-- Control+F12, gives the remaining and elapsed time before the next alarm;
+- Control+F12, gives some informations about the next alarm;
 - Control+F12 pressed twice quickly, cancel the next alarm.
 
 ## Layered commands
@@ -44,3 +44,6 @@ To use layered commands, press NVDA+Shift+F12 followed by one of the following k
 - Spacebar: Speaks current stopwatch or count-down timer;
 - H: List all layered commands (Help).
 
+[1]: https://addons.nvda-project.org/files/get.php?file=cac
+
+[2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
