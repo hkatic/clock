@@ -62,7 +62,7 @@ timeFormats = (
 	# Translators: A time formating.
 	_(u"{hours} o'clock, {minutes} minutes, {seconds} seconds").format (hours = "$$h", minutes = "$$mm", seconds = "$$ss"),
 	# Translators: A time formating.
-	_(u"It's {minutes} past {hours} {tm}").format (minutes = "$$m", hours = "$$h", tm = "$$tt"),
+	_(u"It's {minutes} past {hours}").format (minutes = "$$m", hours = "$$h"),
 	# Translators: A time formating.
 	_(u"{hours} h {minutes} min").format (hours = "$$h", minutes = "$$m"),
 	# Translators: A time formating.
