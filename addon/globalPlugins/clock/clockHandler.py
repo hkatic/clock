@@ -11,6 +11,8 @@ import nvwave
 import ui
 import os
 import wx
+import formats
+from formats import GetTimeFormatEx
 
 def getAutoAnnounceInterval():
 	autoAnnounceMinutes = tuple()
@@ -48,7 +50,7 @@ class clock(object):
 		if config.conf["clockAndCalendar"]["timeReporting"]!=1:
 			nvwave.playWaveFile(os.path.join(paths.SOUNDS_DIR, config.conf["clockAndCalendar"]["timeReportSound"]))
 		if config.conf["clockAndCalendar"]["timeReporting"]!=2:
-			ui.message(datetime.now().strftime(config.conf["clockAndCalendar"]["timeDisplayFormat"]))
+			ui.message(GetTimeFormatEx (None, None, None, formats.rgx.sub(formats.repl, next (x[1] for x in formats.timeFormatsConfig if x[0] == config.conf["clockAndCalendar"]["timeDisplayFormat"]))))
 
 	def quietHoursAreActive(self):
 		if not config.conf["clockAndCalendar"]["quietHours"]:
