@@ -28,9 +28,9 @@ This addon enables the advanced clock, alarm timer and calendar functionality fo
 
 - NVDA+F12, get current time;
 - NVDA+F12 pressed twice quickly, get current date;
-- NVDA+F12 pressed thrice quickly, get the current day and week number of the current year.
+- NVDA+F12 pressed thrice quickly, reports the current day, the week number, the current year and the days remaining before the end of the year.
 
-- Control+F12, gives some informations about the next alarm;
+- Control+F12, gives the remaining and elapsed time before the next alarm;
 - Control+F12 pressed twice quickly, cancel the next alarm.
 
 ## Layered commands
