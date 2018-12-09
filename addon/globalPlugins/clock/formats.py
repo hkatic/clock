@@ -34,7 +34,7 @@ def repl (match):
 	if "'" in content:
 		return "'%s'" % content.replace ("'", "''")
 	return "'%s'" % content
-
+# The following function is not used yet.
 def timeMarker ():
 	"""
 	A function that allows to find the time marker "AM" or "PM" for the formats of hours used in some English-speaking countries.
@@ -53,54 +53,37 @@ def timeMarker ():
 	return tm
 
 timeFormatsConfig = (
-	("It's H o'clock and m minutes",
 	# Translators: A time formating.
-	_(u"It's {hours} o'clock and {minutes} minutes").format (hours = "$$H", minutes = "$$m")),
-	("It's H o'clock, m minutes and s seconds",
+	_(u"It's {hours} o'clock and {minutes} minutes").format (hours = "$$H", minutes = "$$m"),
 	# Translators: A time formating.
-	_(u"It's {hours} o'clock, {minutes} minutes and {seconds} seconds").format (hours = "$$H", minutes = "$$m", seconds = "$$s")),
-	("h o'clock, mm minutes",
+	_(u"It's {hours} o'clock, {minutes} minutes and {seconds} seconds").format (hours = "$$H", minutes = "$$m", seconds = "$$s"),
 	# Translators: A time formating.
-	_(u"{hours} o'clock, {minutes} minutes").format (hours = "$$h", minutes = "$$mm")),
-	("h o'clock, mm minutes, ss seconds",
+	_(u"{hours} o'clock, {minutes} minutes").format (hours = "$$h", minutes = "$$mm"),
 	# Translators: A time formating.
-	_(u"{hours} o'clock, {minutes} minutes, {seconds} seconds").format (hours = "$$h", minutes = "$$mm", seconds = "$$ss")),
-	("It's m past h tt",
+	_(u"{hours} o'clock, {minutes} minutes, {seconds} seconds").format (hours = "$$h", minutes = "$$mm", seconds = "$$ss"),
 	# Translators: A time formating.
-	_(u"It's {minutes} past {hours} {tm}").format (minutes = "$$m", hours = "$$h", tm = timeMarker ())),
-	("h h m min",
+	_(u"It's {minutes} past {hours} {tm}").format (minutes = "$$m", hours = "$$h", tm = "$$tt"),
 	# Translators: A time formating.
-	_(u"{hours} h {minutes} min").format (hours = "$$h", minutes = "$$m")),
-	("H h, m min, s sec",
+	_(u"{hours} h {minutes} min").format (hours = "$$h", minutes = "$$m"),
 	# Translators: A time formating.
-	_(u"{hours} h, {minutes} min, {seconds} sec").format (hours = "$$H", minutes = "$$m", seconds = "$$s")),
-	("It's H:m",
+	_(u"{hours} h, {minutes} min, {seconds} sec").format (hours = "$$H", minutes = "$$m", seconds = "$$s"),
 	# Translators: A time formating.
-	_(u"It's {hours}:{minutes}").format (hours = "$$H", minutes = "$$m")),
-	("It's HH:mm:ss",
+	_(u"It's {hours}:{minutes}").format (hours = "$$H", minutes = "$$m"),
 	# Translators: A time formating.
-	_(u"It's {hours}:{minutes}:{seconds}").format (hours = "$$HH", minutes = "$$mm", seconds = "$$ss")),
-	("hh:mm:ss tt",
-	u"$$hh:$$mm:$$ss {tm}".format (tm = timeMarker ())),
-	("hh:m tt",
-	u"$$hh:$$m {tm}".format (tm = timeMarker ())),
-	("hh:mm tt",
-	u"$$hh:$$mm {tm}".format (tm = timeMarker ())),
-	("h:mm tt",
-	u"$$h:$$mm {tm}".format (tm = timeMarker ())),
-	("h:m:s",
-	u"$$h:$$m:$$s"),
-	("h:m tt",
-	u"$$h:$$m {tm}".format (tm = timeMarker ())),
-	("HH:mm",
-	u"$$HH:$$mm"),
-	("H:m:s",
-	u"$$H:$$m:$$s"),
-	("H:m",
-	u"$$H:$$m"),
+	_(u"It's {hours}:{minutes}:{seconds}").format (hours = "$$HH", minutes = "$$mm", seconds = "$$ss"),
+	u"$$hh:$$mm:$$ss $$tt",
+	u"$$hh:$$m $$tt",
+	u"$$hh:$$mm $$tt",
+	u"$$h:$$mm $$tt",
+	u"$$h:$$m:$$s",
+	u"$$h:$$m $$tt",
+	u"$$HH:$$mm",
+	u"$$H:$$m:$$s",
+	u"$$H:$$mm:$$ss",
+	u"$$H:$$m",
 )
 
-timeFormats = tuple (x[1] for x in timeFormatsConfig)
+timeFormatsConfig = tuple ((x.replace("$", ""), x) for x in timeFormats)
 
 timeFormatsDic = collections.OrderedDict()
 for fmt in timeFormats:

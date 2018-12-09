@@ -73,7 +73,7 @@ def getDayAndWeekOfYear (date):
 	A function to calculate the current day of the year, as well as the actual number of weeks, for a Gregorian year and also some non-Gregorian years.
 	@param date: The current date that will allow to make the calculation.
 	@type date: unicode or str.
-	@returns: The day of year, the week number and the current year.
+	@returns: The day of year, the week number, the current year and the days remaining before the end of the current year.
 	@rtype: tuple.
 	"""
 	now = datetime.now()
@@ -85,7 +85,7 @@ def getDayAndWeekOfYear (date):
 	gregDay = int(now.strftime("%d"))
 	if curYear == gregYear:
 		#It's a Gregorian year.
-		return (now.timetuple()[7], now.isocalendar()[1], gregYear)
+		msg = [now.timetuple()[7], now.isocalendar()[1], gregYear]
 	else:
 		# It's not a Gregorian year.
 		dt1 = convertdate.islamic
@@ -115,7 +115,19 @@ def getDayAndWeekOfYear (date):
 				else:
 					# The first day of the year doesn't corresponds to the first day of the week for the current Hidjri calendar.
 					nWeekOfYear = nDayOfYear / 7 
-			return (str(nDayOfYear), str(nWeekOfYear), str(curYear))
+			msg = [str(nDayOfYear), str(nWeekOfYear), str(curYear))]
+
+	# Calculate the remaining days before the end of the current year.
+	if curYear == gregYear:
+		# It's a Gregorian year.
+		total = convertdate.gregorian.YEAR_DAYS
+		nDayOfYear = int (now.timetuple()[7])
+	else:
+		It's a Hijri year.
+		total = dt.YEAR_DAYS
+	daysRemaining =total - nDayOfYear
+	msg.append(daysRemaining
+	return tuple(msg)
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
@@ -180,11 +192,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			msg=GetDateFormatEx (None, None, None, config.conf["clockAndCalendar"]["dateDisplayFormat"])
 		else:
 			informations = getDayAndWeekOfYear (GetDateFormatEx (None, None, None, u"yyyy/M/d"))
-			msg=_("Day {day}, week {week} of {year}").format(day=informations[0], week=informations[1], year=informations[2])
+			msg=_("Day {day}, week {week} of {year}, remaing days {remain}.").format(day=informations[0], week=informations[1], year=informations[2], remain = informations[3])
 		ui.message(msg)
 
 	# Translators: Message presented in input help mode.
-	script_reportTimeAndDate.__doc__=_("Speaks current time. If pressed twice quickly, speaks current date. If pressed thrice quickly, reports the current day and week number of the year.")
+	script_reportTimeAndDate.__doc__=_("Speaks current time. If pressed twice quickly, speaks current date. If pressed thrice quickly, reports the current day, the week number, the current year and the days remaining before the end of the year.")
 
 	def getScript(self, gesture):
 		if not self.clockLayerModeActive:
@@ -226,13 +238,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			ui.message(_(u"{0} stopped.").format (secondsToString(self.stopwatch.elapsedTime())))
 
 	# Translators: Message presented in input help mode.
-	script_stopwatchRun.__doc__=_("Starts, stops or resets stopwatch.")
+	script_stopwatchRun.__doc__=_("Starts, resets or stops the stopwatch.")
 
 	def script_timeDisplay(self, gesture):
 		ui.message(secondsToString(self.stopwatch.elapsedTime()))
 
 	# Translators: Message presented in input help mode.
-	script_timeDisplay.__doc__=_("Speaks current stopwatch or timer countdown.")
+	script_timeDisplay.__doc__=_("Speaks current stopwatch or count-down timer.")
 
 	def script_alarmInfo (self, gesture):
 		if alarmHandler.run and alarmHandler.run.is_alive ():
@@ -244,7 +256,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		ui.message (msg)
 
 	# Translators: Message presented in input help mode.
-	script_alarmInfo.__doc__=_("Gives the elapsed time and the remaining time before the next alarm.")
+	script_alarmInfo.__doc__=_("Gives the remaining and elapsed time before the next alarm.")
 
 	def script_cancelAlarm (self, gesture):
 		if alarmHandler.run and alarmHandler.run.is_alive ():
@@ -255,7 +267,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		ui.message (msg)
 
 	# Translators: Message presented in input help mode.
-	script_cancelAlarm.__doc__ = _("Allows to cancel the next alarm.")
+	script_cancelAlarm.__doc__ = _("Cancel the next alarm.")
 
 	def script_stopwatchReset(self, gesture):
 		if self.stopwatch.startTime == None and self.stopwatch.stopTime == None and self.stopwatch.running == False:
@@ -265,15 +277,17 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		ui.message(_("Stopwatch reset."))
 
 	# Translators: Message presented in input help mode.
-	script_stopwatchReset.__doc__=_("Resets the stopwatch to 0 seconds, with out starting it.")
+	script_stopwatchReset.__doc__=_("Resets stopwatch to 0 without restarting it.")
 
 	def script_getHelp(self, gesture):
 		ui.message(_("""
-		S: Start, stop or reset and restart the stopwatch.
-		R: Reset the stopwatch with out starting it again.
-		A: Gives some informations about the next alarm.
+		S: Starts, resets or stops the stopwatch.
+		R: Resets stopwatch to 0 without restarting it.
+		A: Gives the remaining and elapsed time before the next alarm.
 		C: Cancel the next alarm.
-		Spacebar: Speak current stopwatch or count-down timer."""))
+		Spacebar: Speaks current stopwatch or count-down timer.
+		H: List all layered commands (Help).
+		"""))
 
 	# Translators: Message presented in input help mode.
 	script_getHelp.__doc__=_("Lists available commands in clock command layer.")
