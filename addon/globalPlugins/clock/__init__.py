@@ -115,7 +115,7 @@ def getDayAndWeekOfYear (date):
 				else:
 					# The first day of the year doesn't corresponds to the first day of the week for the current Hidjri calendar.
 					nWeekOfYear = nDayOfYear / 7 
-			msg = [str(nDayOfYear), str(nWeekOfYear), str(curYear))]
+			msg = [str(nDayOfYear), str(nWeekOfYear), str(curYear)]
 
 	# Calculate the remaining days before the end of the current year.
 	if curYear == gregYear:
@@ -123,10 +123,10 @@ def getDayAndWeekOfYear (date):
 		total = convertdate.gregorian.YEAR_DAYS
 		nDayOfYear = int (now.timetuple()[7])
 	else:
-		It's a Hijri year.
+		# It's a Hijri year.
 		total = dt.YEAR_DAYS
 	daysRemaining =total - nDayOfYear
-	msg.append(daysRemaining
+	msg.append(daysRemaining)
 	return tuple(msg)
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
@@ -160,14 +160,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		clockSetupChoice = clockMenu.Append (wx.ID_ANY,
 		# Translators: The name of the first item in the Clock settings submenu.
 		_("Clock setup"),
-		# Translators: The tooltyp text for the first item in the dayOfTheWeek add-on submenu.
+		# Translators: The tooltyp text for the first item in the Clock add-on submenu.
 		_("Clock setup for times and dates"))
 		gui.mainFrame.sysTrayIcon.Bind (wx.EVT_MENU, self.onClockSettingsDialog, clockSetupChoice)
 
 		alarmSettings = clockMenu.Append (wx.ID_ANY,
 		# Translators: The name of the second item in the Clock settings submenu.
 		_("Alarm settin&gs"),
-		# Translators: The tooltyp text for the second item in the dayOfTheWeek add-on submenu.
+		# Translators: The tooltyp text for the second item in the Clock add-on submenu.
 		_("Allows you to schedule an alarm"))
 		gui.mainFrame.sysTrayIcon.Bind (wx.EVT_MENU, self.onAlarmSettingsDialog, alarmSettings)
 
@@ -192,7 +192,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			msg=GetDateFormatEx (None, None, None, config.conf["clockAndCalendar"]["dateDisplayFormat"])
 		else:
 			informations = getDayAndWeekOfYear (GetDateFormatEx (None, None, None, u"yyyy/M/d"))
-			msg=_("Day {day}, week {week} of {year}, remaing days {remain}.").format(day=informations[0], week=informations[1], year=informations[2], remain = informations[3])
+			msg=_("Day {day}, week {week} of {year}, remaining days {remain}.").format(day=informations[0], week=informations[1], year=informations[2], remain = informations[3])
 		ui.message(msg)
 
 	# Translators: Message presented in input help mode.
