@@ -124,7 +124,9 @@ def getDayAndWeekOfYear (date):
 		nDayOfYear = int (now.timetuple()[7])
 	else:
 		# It's a Hijri year.
-		total = dt.YEAR_DAYS
+		total = 0
+		for month in rng (1, 13):
+			total += dt.month_length (curYear, month)
 	daysRemaining =total - nDayOfYear
 	msg.append(daysRemaining)
 	return tuple(msg)
