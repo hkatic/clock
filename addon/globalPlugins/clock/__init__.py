@@ -10,12 +10,10 @@ import globalPluginHandler
 import gui
 import scriptHandler
 import ui
-import winKernel
 import formats
 import clockHandler
 import stopwatchHandler
 from clockSettingsGUI import ClockSettingsPanel, AlarmSettings
-import configuration
 import config
 import tones
 from datetime import datetime
@@ -30,9 +28,9 @@ import convertdate
 sys.path.remove(sys.path[-1])
 import time
 from formats import GetTimeFormatEx, GetDateFormatEx
+import configuration
 import addonHandler
 addonHandler.initTranslation()
-import locale
 
 #Command layer environment.
 def finally_(func, final):
@@ -189,9 +187,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def script_reportTimeAndDate(self, gesture):
 		if scriptHandler.getLastScriptRepeatCount() == 0:
-			msg=GetTimeFormatEx (None, None, None, formats.rgx.sub(formats.repl, next (x[1] for x in formats.timeFormatsConfig if x[0] == config.conf["clockAndCalendar"]["timeDisplayFormat"])))
+			msg=GetTimeFormatEx (None, None, None, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']]))
 		elif scriptHandler.getLastScriptRepeatCount() == 1:
-			msg=GetDateFormatEx (None, None, None, config.conf["clockAndCalendar"]["dateDisplayFormat"])
+			msg=GetDateFormatEx (None, None, None, formats.dateFormats[config.conf['clockAndCalendar']['dateDisplayFormat']])
 		else:
 			informations = getDayAndWeekOfYear (GetDateFormatEx (None, None, None, u"yyyy/M/d"))
 			msg=_("Day {day}, week {week} of {year}, remaining days {remain}.").format(day=informations[0], week=informations[1], year=informations[2], remain = informations[3])

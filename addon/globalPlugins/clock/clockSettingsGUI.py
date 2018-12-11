@@ -170,14 +170,14 @@ class ClockSettingsPanel(SettingsPanel):
 		self._quietEndTimeText.Enabled = self._quietHoursCheckBox.GetValue ()
 
 	def setValues(self):
-		for index, (fmt, name) in enumerate (formats.timeFormatsConfig):
-			if fmt == config.conf["clockAndCalendar"]["timeDisplayFormat"]:
+		for index, (fmt) in enumerate (formats.timeFormats):
+			if index == config.conf["clockAndCalendar"]["timeDisplayFormat"]:
 				self._timeDisplayFormatChoice.SetSelection(index)
 				break
-		try:
-			self._dateDisplayFormatChoice.SetSelection(formats.dateFormats.index(config.conf["clockAndCalendar"]["dateDisplayFormat"]))
-		except ValueError:
-			pass
+		for index, (fmt) in enumerate (formats.dateFormats):
+			if index == config.conf["clockAndCalendar"]["dateDisplayFormat"]:
+				self._dateDisplayFormatChoice.SetSelection(index)
+				break
 		self._input24HourFormatCheckBox.SetValue(config.conf["clockAndCalendar"]["input24HourFormat"])
 		self._autoAnnounceChoice.SetSelection(config.conf["clockAndCalendar"]["autoAnnounce"])
 		self._timeReportChoice.SetSelection(config.conf["clockAndCalendar"]["timeReporting"])
@@ -192,8 +192,9 @@ class ClockSettingsPanel(SettingsPanel):
 		self._quietEndTimeText.Enabled = self._quietHoursCheckBox.IsChecked ()
 
 	def onSave(self):
-		config.conf["clockAndCalendar"]["timeDisplayFormat"]=formats.timeFormatsConfig[self._timeDisplayFormatChoice.GetSelection()][0]
-		config.conf["clockAndCalendar"]["dateDisplayFormat"]=formats.dateFormats[self._dateDisplayFormatChoice.GetSelection()]
+		config.conf["clockAndCalendar"]["timeDisplayFormat"]=self._timeDisplayFormatChoice.GetSelection()
+		config.conf["clockAndCalendar"]["dateDisplayFormat"]=self._dateDisplayFormatChoice.GetSelection()
+		config.conf["clockAndCalendar"]["dateDisplayFormat"]=self._dateDisplayFormatChoice.GetSelection()
 		config.conf["clockAndCalendar"]["input24HourFormat"]=self._input24HourFormatCheckBox.GetValue()
 		config.conf["clockAndCalendar"]["autoAnnounce"]=self._autoAnnounceChoice.GetSelection()
 		config.conf["clockAndCalendar"]["timeReporting"]=self._timeReportChoice.GetSelection()
@@ -203,8 +204,8 @@ class ClockSettingsPanel(SettingsPanel):
 		config.conf["clockAndCalendar"]["quietHoursEndTime"]=self._quietEndTimeText.GetValue()
 
 	def onOk (self, evt):
-		config.conf["clockAndCalendar"]["timeDisplayFormat"]=formats.timeFormatsConfig[self._timeDisplayFormatChoice.GetSelection()][0]
-		config.conf["clockAndCalendar"]["dateDisplayFormat"]=formats.dateFormats[self._dateDisplayFormatChoice.GetSelection()]
+		config.conf["clockAndCalendar"]["timeDisplayFormat"]=self._timeDisplayFormatChoice.GetSelection()
+		config.conf["clockAndCalendar"]["dateDisplayFormat"]=self._dateDisplayFormatChoice.GetSelection()
 		config.conf["clockAndCalendar"]["input24HourFormat"]=self._input24HourFormatCheckBox.GetValue()
 		config.conf["clockAndCalendar"]["autoAnnounce"]=self._autoAnnounceChoice.GetSelection()
 		config.conf["clockAndCalendar"]["timeReporting"]=self._timeReportChoice.GetSelection()

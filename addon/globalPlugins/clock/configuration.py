@@ -6,8 +6,8 @@
 import config
 
 confspec={
-	'timeDisplayFormat': 'string(default="%H:%M")',
-	'dateDisplayFormat': 'string(default="%m/%d/%Y")',
+	'timeDisplayFormat': 'integer(default=0)',
+	'dateDisplayFormat': 'integer(default=1)',
 	'input24HourFormat': 'boolean(default=False)',
 	'autoAnnounce': 'integer(default=0)',
 	'timeReporting': 'integer(default=0)',
@@ -20,3 +20,4 @@ confspec={
 	'quietHoursEndTime': 'string(default="")',
 }
 config.conf.spec["clockAndCalendar"]=confspec
+

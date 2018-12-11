@@ -3,9 +3,6 @@
 # Copyright 2013-2018, released under GPL.
 
 import time
-import os
-import nvwave
-import paths
 import threading
 import config
 

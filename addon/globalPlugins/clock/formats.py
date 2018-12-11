@@ -34,6 +34,7 @@ def repl (match):
 	if "'" in content:
 		return "'%s'" % content.replace ("'", "''")
 	return "'%s'" % content
+
 # The following function is not used yet.
 def timeMarker ():
 	"""
@@ -82,8 +83,6 @@ timeFormats = (
 	u"$$H:$$mm:$$ss",
 	u"$$H:$$m",
 )
-
-timeFormatsConfig = tuple ((x.replace("$", ""), x) for x in timeFormats)
 
 timeFormatsDic = collections.OrderedDict()
 for fmt in timeFormats:
