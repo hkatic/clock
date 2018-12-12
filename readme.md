@@ -38,7 +38,7 @@ If you install the add-on as an update, during the installation process, the wiz
 
 - NVDA+F12, get current time;
 - NVDA+F12 pressed twice quickly, get current date;
-- NVDA+F12 pressed thrice quickly, reports the current day, the week number, the current year and the days remaining before the end of the year.
+- NVDA+F12 pressed thrice quickly, reports the current day, the week number, the current year and the remaining days before the end of the year.
 
 - Control+F12, gives the remaining and elapsed time before the next alarm;
 - Control+F12 pressed twice quickly, cancel the next alarm.
@@ -56,7 +56,7 @@ To use layered commands, press NVDA+Shift+F12 followed by one of the following k
 
 ## Compatibility
 
-- This add-on is compatible with the versions of NVDA ranging from 2014.3 until 2019.1.
+- This add-on is compatible with the versions of NVDA ranging from 2014.3 until 2018.4.
 
 [1]: https://addons.nvda-project.org/files/get.php?file=cac
 
