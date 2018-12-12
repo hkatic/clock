@@ -11,18 +11,17 @@ addonHandler.initTranslation()
 def onInstall ():
 	import gui
 	import wx
-	if isinstance (config.conf['clockAndCalendar']['timeDisplayFormat'], str) or isinstance (config.conf['clockAndCalendar']['dateDisplayFormat'], str):
-		if not next ((x.isdigit () for x in (config.conf['clockAndCalendar']['timeDisplayFormat'], config.conf['clockAndCalendar']['dateDisplayFormat'])), False):
-			if gui.messageBox(
-				# Translators: the label of a message box dialog.
-				_("The date and time format you were using are not compatible with this version of the Clock add-on, this will be fixed during installation. Click OK to confirm these corrections"),
-				# Translators: the title of a message box dialog.
-				_("Time and date format corrections"), wx.OK | wx.ICON_INFORMATION
-				) == wx.OK:
-					try:
-						config.conf['clockAndCalendar']['timeDisplayFormat'] = 0
-						config.conf['clockAndCalendar']['dateDisplayFormat'] = 1
-					except VdtTypeError:
-						config.conf['clockAndCalendar']['timeDisplayFormat'] = "0"
-						config.conf['clockAndCalendar']['dateDisplayFormat'] = "1"
+	if not isinstance (config.conf['clockAndCalendar']['timeDisplayFormat'], int):
+		if gui.messageBox(
+			# Translators: the label of a message box dialog.
+			_("The date and time format you were using are not compatible with this version of the Clock add-on, this will be fixed during installation. Click OK to confirm these corrections"),
+			# Translators: the title of a message box dialog.
+			_("Time and date format corrections"), wx.OK | wx.ICON_INFORMATION
+			) == wx.OK:
+				try:
+					config.conf['clockAndCalendar']['timeDisplayFormat'] = 0
+					config.conf['clockAndCalendar']['dateDisplayFormat'] = 1
+				except VdtTypeError:
+					config.conf['clockAndCalendar']['timeDisplayFormat'] = "0"
+				config.conf['clockAndCalendar']['dateDisplayFormat'] = "1"
 
