@@ -27,6 +27,6 @@ For other instructions, press Add-on help button in add-ons manager."""),
 
 import os.path
 
-pythonSources = [os.path.join("addon", "globalPlugins", "clock", "*.py"), ]
+pythonSources = [os.path.join("addon", "*.py"), os.path.join("addon", "globalPlugins", "clock", "*.py")]
 i18nSources = pythonSources + ["buildVars.py"]
 excludedFiles = []
