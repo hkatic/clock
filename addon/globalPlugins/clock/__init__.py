@@ -13,7 +13,7 @@ import ui
 import formats
 import clockHandler
 import stopwatchHandler
-from clockSettingsGUI import ClockSettingsPanel, AlarmSettings
+from clockSettingsGUI import ClockSettingsPanel, AlarmSettingsPanel, ClockSettingsDialog, AlarmSettingsDialog
 import config
 import tones
 from datetime import datetime
@@ -140,7 +140,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if hasattr (gui, "NVDASettingsDialog"):
 			from gui import NVDASettingsDialog
 			NVDASettingsDialog.categoryClasses.append(ClockSettingsPanel)
-			NVDASettingsDialog.categoryClasses.append(AlarmSettings)
+			NVDASettingsDialog.categoryClasses.append(AlarmSettingsPanel)
 		else:
 			self.createSubMenu ()
 
@@ -174,7 +174,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def terminate (self):
 		if hasattr (gui, "NVDASettingsDialog"):
 			gui.NVDASettingsDialog.categoryClasses.remove(ClockSettingsPanel)
-			gui.NVDASettingsDialog.categoryClasses.remove(AlarmSettings)
+			gui.NVDASettingsDialog.categoryClasses.remove(AlarmSettingsPanel)
 		try:
 			if wx.version().startswith("4"):
 				self.toolsMenu.Remove(self.mainItem)
@@ -325,31 +325,24 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def onAlarmSettingsDialog (self, evt):
 		gui.mainFrame.prePopup ()
-		d =AlarmSettings (gui.mainFrame)
+		d =AlarmSettingsPanel (gui.mainFrame)
 		d.Show ()
 		gui.mainFrame.postPopup () 
 
 	def script_activateClockSettingsDialog (self, gesture):
-		# This block ensures compatibility with NVDA versions prior to 2018.2 which includes the settings panel.
-		if hasattr (gui, "NVDASettingsDialog"):
-			wx.CallAfter(gui.mainFrame._popupSettingsDialog (gui.NVDASettingsDialog, ClockSettingsPanel), None)
-		else:
-			gui.mainFrame.prePopup ()
-			d = ClockSettingsPanel (gui.mainFrame)
-			d.Show ()
-			gui.mainFrame.postPopup () 
+		gui.mainFrame.prePopup ()
+		d = ClockSettingsDialog (gui.mainFrame)
+		d.Show ()
+		gui.mainFrame.postPopup () 
 
 	# Translators: Message presented in input help mode.
 	script_activateClockSettingsDialog.__doc__ = _("Display the clock settings dialog box.")
 
 	def script_activateAlarmSettingsDialog (self, gesture):
-		if hasattr (gui, "NVDASettingsDialog"):
-			wx.CallAfter(gui.mainFrame._popupSettingsDialog (gui.NVDASettingsDialog, AlarmSettings), None)
-		else:
-			gui.mainFrame.prePopup ()
-			d =AlarmSettings (gui.mainFrame)
-			d.Show ()
-			gui.mainFrame.postPopup () 
+		gui.mainFrame.prePopup ()
+		d =AlarmSettingsDialog (gui.mainFrame)
+		d.Show ()
+		gui.mainFrame.postPopup () 
 
 	# Translators: Message presented in input help mode.
 	script_activateAlarmSettingsDialog.__doc__ = _("Display the alarm settings dialog box.")
