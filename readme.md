@@ -5,7 +5,17 @@
 * Download [development version][2].
 
 
-This addon enables the advanced clock, alarm timer and calendar functionality for NVDA. Instead of always getting time and date from Windows, you can customize how times and dates should be spoken and brailled by NVDA. Additionally, you can obtain the current day, week number, as well as the remaining days before the end of the current year, and you can also set automatic time announcement on specified interval. There's also a stopwatch and Alarm timer features built-in to the addon, that lets you time your tasks, such as copying files, installing programs, or cooking meals.
+This addon enables the advanced clock, alarm timer and calendar functionality for NVDA.
+
+Instead of always getting time and date from Windows, you can customize how times and dates should be spoken and brailled by NVDA.
+
+Additionally, you can obtain the current day, week number, as well as the remaining days before the end of the current year, and you can also set automatic time announcement on specified interval.
+
+There's also a stopwatch and Alarm timer features built-in to the addon, that lets you time your tasks, such as copying files, installing programs, or cooking meals.
+
+## Note:
+
+If you install the add-on as an update, during the installation process, the wizard detects if the old configuration is compatible with the new one and offers to correct it before installing, then you'll just have to validate the OK button to confirm that.
 
 ## Usage
 
@@ -22,7 +32,7 @@ This addon enables the advanced clock, alarm timer and calendar functionality fo
 	*	The Edit box control lets you type your time waiting before the alarm ring. This duration must be specified in 1 or more digits, not a decimal number;
 	*	The Combo box control labeled "Alarm sound" lets you choose between various alarm sounds that will be played when the alarm time arrives;
 	*	When done, tab to the OK button and activate it by pressing Enter. A message should be displayed to remind you of the waiting time before the alarm;
-*	Press NVDA+F12 once to get current time, twice to get current date, or thrice to get the current day and week number of the current year.
+*	Press NVDA+F12 once to get current time, twice to get current date, or thrice to get the current day, week number, as well as the remaining days before the end of the current year.
 
 ## Key commands
 
