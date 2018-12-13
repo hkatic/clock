@@ -1,8 +1,6 @@
 version: '{branch}-{build}'
-
 environment:
   PY_PYTHON: 2.7-32
-
 install:
 - cmd: >-
     python -m pip install wheel
@@ -10,29 +8,19 @@ install:
     py -m pip install scons
 
     py -m pip install markdown
-
 build_script:
-- cmd: >-
-    scons
-
-    scons pot
-
+- cmd: scons
 artifacts:
 - path: '*.nvda-addon'
   name: addon
   type: WebDeployPackage
-- path: '*.pot'
-  type: WebDeployPackage
-
 before_deploy:
 - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
-
 deploy:
 - provider: GitHub
   tag: $(APPVEYOR_REPO_TAG_NAME)
   release: Release $(APPVEYOR_REPO_TAG_NAME)
-  description: This is the release $(APPVEYOR_REPO_TAG_NAME) of the $(REPO_NAME) addon for the NVDA screen reader built and uploaded to GitHub using AppVeyor.
-
+  description: This is the release $(APPVEYOR_REPO_TAG_NAME) of the $(REPO_NAME) addon for the NVDA screen reader built and uploaded to GitHub using Appveyor.
   auth_token:
     secure: D6nDTGin+O15mi48HCwAAu4gXJyUMxQd31t84RdWEFlfzYfgbu4FTH2VLC6l46Fy
   artifact: addon
