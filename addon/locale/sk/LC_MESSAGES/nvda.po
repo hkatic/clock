@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: clock 18.12\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
-"POT-Creation-Date: 2018-12-10 03:30+1000\n"
-"PO-Revision-Date: 2018-12-13 07:37+0100\n"
-"Last-Translator: Karl Eick <hozosch@web.de>\n"
-"Language-Team: \n"
-"Language: de\n"
+"POT-Creation-Date: 2018-12-13 15:50+1000\n"
+"PO-Revision-Date: 2018-12-13 14:35+0100\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: Ján Kulik <johny.kulik452@gmail.com>\n"
+"Language-Team: \n"
 "X-Generator: Poedit 2.2\n"
 
 #. Translators: the label of a message box dialog.
@@ -23,62 +23,63 @@ msgid ""
 "of the Clock add-on, this will be fixed during installation. Click OK to "
 "confirm these corrections"
 msgstr ""
-"Das Datums- und Zeitformat, das Sie verwendet haben, ist nicht mit dieser "
-"Version der Uhr-Erweiterung kompatibel. Dies wird während der Installation "
-"behoben. Klicken Sie auf OK, um diese Korrekturen zu bestätigen"
+"Formát dátumu a času, ktorý ste používali, nie je kompatibilný s touto "
+"verziou doplnku hodiny, táto verzia sa určí počas inštalácie. Kliknutím na "
+"tlačidlo OK potvrďte tieto opravy"
 
 #. Translators: the title of a message box dialog.
 msgid "Time and date format corrections"
-msgstr "Korrektionen des Datums- und Zeitformat"
+msgstr "Opravy formátu času a dátumu"
 
 #, python-brace-format
 msgid "{hours} hours, "
-msgstr "{hours} Stunden, "
+msgstr "{hours} hodín,"
 
 #, python-brace-format
 msgid "{minutes} minutes, "
-msgstr "{minutes} Minutenm "
+msgstr "{minutes} minút,"
 
 #, python-brace-format
 msgid "{seconds} seconds"
-msgstr "{seconds} Sekunden"
+msgstr "{seconds} sekúnd"
 
 msgid "0 seconds"
-msgstr "0 Sekunden"
+msgstr "0 sekúnd"
 
 #. Translators: Script category for Clock addon commands in input gestures dialog.
 #. Translators: Summary for this add-on to be shown on installation and add-on information.
 msgid "Clock"
-msgstr "Uhr"
+msgstr "Hodiny"
 
 #. Translators: Item in the tools menu for the Clock Addon settings.
 msgid "Clock se&ttings..."
-msgstr "Einstellungen für die &Uhr..."
+msgstr "Na&stavenia hodín..."
 
 #. Translators: The tooltyp text for the clock settings submenu.
 msgid "Clock and calendar setup"
-msgstr "Uhr und Kalender einrichten"
+msgstr "Hodiny a kalendár"
 
 #. Translators: The name of the first item in the Clock settings submenu.
 #. Translators: This is the label for the clock settings panel.
 msgid "Clock setup"
-msgstr "Uhr einrichten"
+msgstr "Nastavenia hodín"
 
 #. Translators: The tooltyp text for the first item in the Clock add-on submenu.
 msgid "Clock setup for times and dates"
-msgstr "Uhrzeit und Datum einrichten"
+msgstr "Nastavenia času a dátumu"
 
 #. Translators: The name of the second item in the Clock settings submenu.
 msgid "Alarm settin&gs"
-msgstr "Alarmei&nstellungen"
+msgstr "Na&stavenia budíka"
 
 #. Translators: The tooltyp text for the second item in the Clock add-on submenu.
 msgid "Allows you to schedule an alarm"
-msgstr "Ermöglicht die Einrichtung eines Alarms"
+msgstr "Umožňuje naplánovať budík"
 
 #, python-brace-format
 msgid "Day {day}, week {week} of {year}, remaining days {remain}."
-msgstr "Tag {day}, Woche {week} des Jahres {year}, {remain} Tage verbleibend."
+msgstr ""
+"Deň {day}, týždeň {week} rok {year}, počet dní do konca roka: {remain}."
 
 #. Translators: Message presented in input help mode.
 msgid ""
@@ -86,70 +87,66 @@ msgid ""
 "pressed thrice quickly, reports the current day, the week number, the "
 "current year and the days remaining before the end of the year."
 msgstr ""
-"Sagt die aktuelle Zeit an. Zweimal schnell gedrückt wird das aktuelle Datum "
-"angesagt. Wenn die Tastenkombination dreimal schnell gedrückt wird, wird der "
-"aktuelle Tag und die Wochennummer des Jahres sowie die verbleibenden Tage "
-"bis zum Jahresende gemeldet."
+"Oznamuje čas. Stlačené 2 krát oznamuje dátum. Stlačené 3 krát oznamuje "
+"aktuálny deň, číslo týždňa, aktuálny rok a zostávajúce dni do konca roka."
 
 #. Translators: Message presented in input help mode.
 msgid ""
 "Clock and calendar layer commands. After pressing this keystroke, press H "
 "for additional help."
 msgstr ""
-"Zwischenbefehle für Uhr und Kalender. Nach dem Drücken dieser "
-"Tastenkombination drücken Sie H für zusätzliche Hilfe."
+"Príkazy pre rozšírené hodiny a kalendár. Po stlačený tlačidla stlačte H pre "
+"ďalšiu pomoc."
 
 msgid "Reset. Running."
-msgstr "Zurücksetzen. wird ausgeführt."
+msgstr "Reset. Štart."
 
 msgid "Running."
-msgstr "Läuft."
+msgstr "Štart."
 
 #, python-brace-format
 msgid "{0} stopped."
-msgstr "{0} angehalten."
+msgstr "{0} stop."
 
 #. Translators: Message presented in input help mode.
 msgid "Starts, resets or stops the stopwatch."
-msgstr "Startet, stoppt oder setzt die Stoppuhr zurück."
+msgstr "Spustí, zastaví alebo obnoví stopky."
 
 #. Translators: Message presented in input help mode.
 msgid "Speaks current stopwatch or count-down timer."
-msgstr "Spricht die aktuelle Zeit der Stoppuhr oder des Timers."
+msgstr "Oznamuje stopky alebo časovač odpočítavania"
 
 #, python-brace-format
 msgid "Elapsed time {elapsed}, remaining time {remaining}."
-msgstr "Verstrichene Zeit {elapsed}, verbleibende Zeit {remaining}."
+msgstr "Aktuálny čas {elapsed}, zostávajúci čas {remaining}."
 
 msgid "No alarm"
-msgstr "Kein Alarm"
+msgstr "Žiadny budík"
 
 #. Translators: Message presented in input help mode.
 msgid "Gives the remaining and elapsed time before the next alarm."
-msgstr ""
-"Sagt die verstrichene Zeit und die verbleibende Zeit bis zum nächsten Alarm "
-"an."
+msgstr "Poskytuje aktuálny čas a zostávajúci čas pre ďalší budík."
 
 msgid "Alarm cancelled"
-msgstr "Alarm abgebrochen"
+msgstr "Budík zrušený"
 
 #. Translators: Message presented in input help mode.
 msgid "Cancel the next alarm."
-msgstr "Ermöglicht das Ausschalten des nächsten Alarms."
+msgstr "Zrušiť ďalší budík."
 
 msgid ""
 "The stopwatch is already reset to 0. Use the clock layer command followed by "
 "s to start it."
 msgstr ""
-"Die Stoppuhr ist bereits auf 0 zurückgesetzt. Verwenden Sie den "
-"Zwischenbefehl der Uhr gefolgt von s, um die Stopuhr zu starten."
+"Stopky sú vynulované na 0. Použite príkaz rozšírené hodiny a kalendár a "
+"stlačte s pre spustenie stopiek."
 
 msgid "Stopwatch reset."
-msgstr "Stoppuhr zurücksetzen."
+msgstr "Stopky vynulované."
 
 #. Translators: Message presented in input help mode.
 msgid "Resets stopwatch to 0 without restarting it."
-msgstr "Setzt die Stoppuhr auf 0 Sekunden zurück, ohne sie zu starten."
+msgstr "Stopky vynulované na 0 sekúnd bez toho, aby sa znovu spustili."
 
 msgid ""
 "\n"
@@ -162,171 +159,166 @@ msgid ""
 "\t\t"
 msgstr ""
 "\n"
-"\t\tS: Stoppuhr Starten, anhalten oder zurücksetzen .\n"
-"\t\tR: Stoppuhr zurücksetzen ohne sie zu starten.\n"
-"\n"
-"\n"
-"\t\tA: Sagt Informationen über den nächsten Alarm an.\n"
-"\t\tC: Schaltet den nächsten Alarm aus.\n"
-"\t\tLeertaste: Ansage der aktuellen Zeit der Stoppuhr oder des Timers.\n"
-"\t\tH: Listet alle überlagerten Befehle auf (hilfe).\n"
+"\t\tS: Spustí, zastaví, obnoví alebo reštartuje stopky.\n"
+"\t\tR: Resetuje stopky pre ďalšie spustenie.\n"
+"\t\tA: Poskytuje informácie o ďalšom budíku.\n"
+"\t\tC: Zruší ďalší budík.\n"
+"\t\tSpacebar: Oznamuje aktuálne meraný čas.\n"
+"\t\tH: Zoznam všetkých príkazov (Pomoc).\n"
 "\t\t"
 
 #. Translators: Message presented in input help mode.
 msgid "Lists available commands in clock command layer."
-msgstr ""
-"Listet die verfügbaren Befehle in der Zwischenbefehlsansicht der Uhr auf."
+msgstr "Zoznam dostupných príkazov pre vrstvu hodín."
 
 #. Translators: Message presented in input help mode.
 msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr ""
-"Ermöglicht die Aktivierung des nächsten Alarms. Zum Abbrechen müssen Sie die "
-"Tastenkombination zweimal hintereinander drücken."
+"Umožňuje nastaviť ďalší budík. Stlačené 2 krát rýchlo za sebou zrušíte budík."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
-msgstr "Zeigt das Dialogfenster für die Uhrzeiteinstellungen an."
+msgstr "Zobrazí dialóg nastavenia hodín."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the alarm settings dialog box."
-msgstr "Zeigt das Dialogfenster für die Alarmeinstellungen an."
+msgstr "Zobrazí dialóg nastavenia budíka."
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Time display format:"
-msgstr "Format der &Zeitanzeige:"
+msgstr "&Časový formát:"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Date display format:"
-msgstr "Format der &DatumsAnzeige:"
+msgstr "&Formát dátumu:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "Input in &24-hour format"
-msgstr "Angabe im &24-Stunden-Format"
+msgstr "Vstup v &24 hodinový formát"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "off"
-msgstr "ausgeschaltet"
+msgstr "vypnuté"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "every 10 minutes"
-msgstr "alle 10 Minuten"
+msgstr "kazdých 10 minút"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "every 15 minutes"
-msgstr "alle 15 Minuten"
+msgstr "každých 15 minút"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "every 30 minutes"
-msgstr "alle 30 Minuten"
+msgstr "kazdých 30 minút"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "every hour"
-msgstr "stündlich"
+msgstr "kazdú hodinu"
 
 #. Transla	tors: This is the label for a combo box in the Clock settings dialog.
 msgid "&interval:"
-msgstr "&intervall:"
+msgstr "&interval:"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "speech and sound"
-msgstr "Sprache und Ton"
+msgstr "reč a zvuk"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "speech only"
-msgstr "nur Sprache"
+msgstr "iba reč"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "sound only"
-msgstr "nur Töne"
+msgstr "iba zvuk"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Time &announcement:"
-msgstr "Zeit&ansage:"
+msgstr "Časové &oznámenie:"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Clock chime &sound:"
-msgstr "Ton für die &Glocke der Uhr:"
+msgstr "Hodinový zvonček &zvuk:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "&Quiet hours"
-msgstr "&Ruhezeit"
+msgstr "&Tiché hodiny"
 
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours start time:"
-msgstr "Beginn der Ruhezeit:"
+msgstr "Tiché hodiny začiatok:"
 
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours end time:"
-msgstr "Ende der Ruhezeit:"
+msgstr "Tiché hodiny koniec:"
 
 #. Translators: This is the label for the alarm settings panel.
 #. Translators: This is the label for the alarm settings dialog.
 msgid "Alarm setup"
-msgstr "Alarm einrichten"
+msgstr "Nastavenia budíka"
 
 #. Translators: This is an item of the alarm timer choices.
 msgid "Hours"
-msgstr "Stunden"
+msgstr "Hodín"
 
 #. Translators: This is an item of the alarm timer choices.
 msgid "Minutes"
-msgstr "Minuten"
+msgstr "Minút"
 
 #. Translators: This is an item of the alarm timer choices.
 msgid "Seconds"
-msgstr "Sekunden"
+msgstr "Sekúnd"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "Choose the type of timer inputs before the alarm rings:"
-msgstr "Wählen Sie die Angaben des Timers, bevor der Alarm klingelt:"
+msgstr "Zvoľte typ časového vstupu pre budík zvonenia:"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
-msgstr "A&larmsignal:"
+msgstr "Z&vuk budíka:"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 msgid "Alarm time waiting:"
-msgstr "Weckzeit wartet:"
+msgstr "Čas čakania budíka:"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
 #, python-brace-format
 msgid "You've chosen an alarm to be triggered in {tm} {unit}"
-msgstr ""
-"Sie haben einen Alarm gewählt, der in {tm} {unit} ausgelöst werden soll"
+msgstr "Zvolili ste si budík, ktorý sa má spúšťať o {tm} {unit}"
 
 #. Translators: The title of the dialog which appears when the user has chosen to trigger an alarm.
 msgid "Confirmation"
-msgstr "Bestätigung"
+msgstr "Potvrdenie"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {hours} o'clock and {minutes} minutes"
-msgstr "Es ist {hours} Uhr und {minutes} Minuten"
+msgstr "Je {hours} hodín a {minutes} minút"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {hours} o'clock, {minutes} minutes and {seconds} seconds"
-msgstr "Es ist {hours} Uhr, {minutes} Minuten und {seconds} Sekunden"
+msgstr "Je {hours} hodín, {minutes} minút a {seconds} sekúnd"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "{hours} o'clock, {minutes} minutes"
-msgstr "{hours} Uhr, {minutes} Minuten"
+msgstr "{hours} hodín {minutes} minút"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "{hours} o'clock, {minutes} minutes, {seconds} seconds"
-msgstr "{hours} Uhr, {minutes} Minuten, {seconds} Sekunden"
+msgstr "{hours} hodín, {minutes} minút, {seconds} sekúnd"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {minutes} past {hours}"
-msgstr "Es ist {minutes} nach {hours}"
+msgstr "Je {minutes} po {hours}"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "{hours} h {minutes} min"
-msgstr "{hours} H {minutes} Min"
+msgstr "{hours} h {minutes} min"
 
 #. Translators: A time formating.
 #, python-brace-format
@@ -336,12 +328,12 @@ msgstr "{hours} h, {minutes} min, {seconds} sec"
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {hours}:{minutes}"
-msgstr "Es ist {hours}:{minutes}"
+msgstr "Je {hours}:{minutes}"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {hours}:{minutes}:{seconds}"
-msgstr "Es ist {hours}:{minutes}:{seconds}"
+msgstr "Je {hours}:{minutes}:{seconds}"
 
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 msgid ""
@@ -352,9 +344,9 @@ msgid ""
 "the current year and the remaining days before the end of the year.\n"
 "For other instructions, press Add-on help button in add-ons manager."
 msgstr ""
-"Eine erweiterte Uhr und einen erweiterten Kalender für NVDA.\n"
-"Drücken Sie NVDA+F12 für die aktuelle Uhrzeit, drücken Sie dies zweimal, um "
-"das aktuelle Datum abzufragen, oder drücken Sie dies dreimal, um den "
-"aktuellen Tag und die Woche des Jahres abzufragen.\n"
-"Für weitere Anleitungen drücken Sie auf die Hilfe-Taste im Dialog "
-"Erweiterungen verwalten."
+"Rozšírené hodiny a kalendár pre NVDA.\n"
+"NVDA+f12 oznamuje čas.\n"
+"2 krát rýchlo za sebou oznamuje dátum.\n"
+"3 krát rýchlo za sebou oznamuje aktuálny deň, číslo týždňa, aktuálny rok a "
+"počet dní do konca roka.\n"
+"Pre viac informácií si detailnejšie pozri návod v doplnku."
