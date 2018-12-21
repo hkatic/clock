@@ -5,15 +5,27 @@
 * Descargar [versión de desenvolvemento][2]
 
 
-Este complemento habilita a funcionalidade avanzada de reloxo e calendario
-para o NVDA. En lugar de obter sempre a hora e a data dende a barra de
-tarefas de Windows, Podes persoalizar cómo deberían falarse e braillificarse
-as horas e as datas polo NVDA. Adicionalmente, podes obter o número de día e
-de semana actual do ano actual, e tamén podes axustar o anunciado automático
-da hora nun intervalo especificado. Tamén hai a función de cronómetro e
-Alarma integrada no complemento, que che permite temporizar as túas tarefas,
-como o copiado de ficheiros, a instalación de programas, ou o cociñado de
-carne.
+Este complemento habilita a funcionalidade avanzada de reloxo, contador con
+alarma e calendario para NVDA.
+
+No canto de obter hora e data dende Windows, podes personalizar cómo
+deberían falarse e braillificarse as datas en NVDA:
+
+Ademais, podes obter o número do día actual, da semana, así como os días que
+restan antes do final do ano, e tamén podes establecer anunciado automático
+da hora nun intervalo específico.
+
+Tamén están dispoñibles integradas no complemento as características de
+cronómetro e temporizador con alarma, que che permitirán temporizar as túas
+tarefas, como o copiado de arquivos, a instalación de programas ou o
+cociñado de carne.
+
+## Nota:
+
+Se instalas o complemento como unha actualización, durante o proceso de
+instalación, o asistente detecta se a configuración vella é compatible coa
+nova e ofrece correxila antes da instalación, de forma que só tes que
+validar o botón Aceptar para confirmalo.
 
 ## Uso
 
@@ -36,10 +48,11 @@ carne.
 
 - NVDA+F12, obtén a hora actual.  - NVDA+F12 premeda dúas veces
 sucesivamente,  obtén a data actual.  - NVDA+F12 premeda tres veces
-sucesivamente, obtén o número de día e de semana actual do ano actual.
+sucesivamente, obtén o número de día, o número de semana, o ano actual e o
+número de días restante ata o final do ano.
 
 - Control+F12, proporciona algunhas informacións sobre a vindeira alarma; -
-Control+F12 premido dúas veces rapidamente, cancelar a vindeira alarma..
+Control+F12 premido dúas veces rapidamente, cancelar a vindeira alarma.
 
 ## Ordes en capa
 
@@ -51,6 +64,11 @@ cero sen reinicialo; - A: proporciona o tempo restante e transcorrido antes
 da vindeira alarma; - C: Cancelar a vindeira alarma; - Spacebar: Anuncia o
 contador actual do cronómetro ou da conta atrás; - H: Listar todas as ordes
 en capa (axuda)..
+
+## compatibilidade
+
+- Este complemento é compatible coas versións do NVDA no rango da 2014.3 ata
+a 2019.1.
 
 [[!tag dev stable]]
 

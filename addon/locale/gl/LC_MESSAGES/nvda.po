@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: clock 18.12\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2018-12-14 14:35+0100\n"
-"Language: es\n"
+"PO-Revision-Date: 2018-12-18 19:50+0100\n"
+"Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Rémy Ruiz <remyruiz@gmail.com>\n"
+"Last-Translator: Iván Novegil <ivan.novegil.cancelas@gmail.com>\n"
 "Language-Team: \n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.2\n"
 
 #. Translators: the label of a message box dialog.
 msgid ""
@@ -23,13 +23,13 @@ msgid ""
 "of the Clock add-on, this will be fixed during installation. Click OK to "
 "confirm these corrections"
 msgstr ""
-"El formato de fecha y hora que estabas usando no es compatible con esta "
-"versión del complemento Reloj y se corregirá durante la instalación. Pulsa "
-"Aceptar para confirmar estas correcciones"
+"O formato de hora e data que viñas utilizando non é compatible coa versión "
+"actual do complemento Clock, arranxarase durante a instalación. Preme "
+"Aceptar para confirmar estas correccións"
 
 #. Translators: the title of a message box dialog.
 msgid "Time and date format corrections"
-msgstr "Correcciones de formato de fecha y hora"
+msgstr "Correccións no formato de hora e data"
 
 #, python-brace-format
 msgid "{hours} hours, "
@@ -49,32 +49,32 @@ msgstr "0 segundos"
 #. Translators: Script category for Clock addon commands in input gestures dialog.
 #. Translators: Summary for this add-on to be shown on installation and add-on information.
 msgid "Clock"
-msgstr "Reloj"
+msgstr "Clock"
 
 #. Translators: Item in the tools menu for the Clock Addon settings.
 msgid "Clock se&ttings..."
-msgstr "Ajustes del &reloj..."
+msgstr "Opcións de &Clock..."
 
 #. Translators: The tooltyp text for the clock settings submenu.
 msgid "Clock and calendar setup"
-msgstr "Configuración de reloj y calendario"
+msgstr "Configuración de reloxo e calendario"
 
 #. Translators: The name of the first item in the Clock settings submenu.
 #. Translators: This is the label for the clock settings panel.
 msgid "Clock setup"
-msgstr "Configuración de Reloj"
+msgstr "Configuración do reloxo"
 
 #. Translators: The tooltyp text for the first item in the Clock add-on submenu.
 msgid "Clock setup for times and dates"
-msgstr "Configuración de Reloj para fechas y horas"
+msgstr "Configuración do reloxo para horas e datas"
 
 #. Translators: The name of the second item in the Clock settings submenu.
 msgid "Alarm settin&gs"
-msgstr "Ajustes de la &alarma"
+msgstr "Opcións da &alarma"
 
 #. Translators: The tooltyp text for the second item in the Clock add-on submenu.
 msgid "Allows you to schedule an alarm"
-msgstr "Te permite programar una alarma"
+msgstr "Permíteche programar unha alarma"
 
 #, python-brace-format
 msgid "Day {day}, week {week} of {year}, remaining days {remain}."
@@ -86,67 +86,67 @@ msgid ""
 "pressed thrice quickly, reports the current day, the week number, the "
 "current year and the days remaining before the end of the year."
 msgstr ""
-"Verbaliza la hora actual. Si se pulsa dos veces rápidamente, verbaliza la "
-"fecha actual. Si se pulsa tres veces rápidamente, anuncia el día actual, el "
-"número de semana, el año actual y los días restantes para que acabe el año."
+"Anuncia a hora actual, Se se preme dúas veces rapidamente, anuncia a data "
+"actual. Se se preme tres veces rapidamente, anuncia o número de día actual, "
+"de semana, o ano actual e os días restantes antes do final de ano."
 
 #. Translators: Message presented in input help mode.
 msgid ""
 "Clock and calendar layer commands. After pressing this keystroke, press H "
 "for additional help."
 msgstr ""
-"Órdenes de capa de Reloj y calendario. Después de pulsar este atajo, pulsa "
-"la h para obtener más ayuda."
+"Orde de capa de reloxo e calendario. Despois de utilizar este atallo, prema "
+"H para axuda adicional."
 
 msgid "Reset. Running."
-msgstr "Restablecido. Funcionando."
+msgstr "Reiniciado. Correndo."
 
 msgid "Running."
-msgstr "Funcionando."
+msgstr "Correndo."
 
 #, python-brace-format
 msgid "{0} stopped."
-msgstr "{0} detenido."
+msgstr "{0} detido."
 
 #. Translators: Message presented in input help mode.
 msgid "Starts, resets or stops the stopwatch."
-msgstr "Inicia, restablece o detiene el cronómetro."
+msgstr "Inicia, rinicia ou detén o cronómetro."
 
 #. Translators: Message presented in input help mode.
 msgid "Speaks current stopwatch or count-down timer."
-msgstr "Verbaliza el cronómetro o contador de cuenta atrás actual."
+msgstr "Fala o temporizador actual do cronómetro ou da conta atrás."
 
 #, python-brace-format
 msgid "Elapsed time {elapsed}, remaining time {remaining}."
-msgstr "Tiempo transcurrido {elapsed}, tiempo restante {remaining}."
+msgstr "Tempo transcorrido {elapsed}, tempo restante {remaining}."
 
 msgid "No alarm"
-msgstr "Sin alarma"
+msgstr "Sen alarma"
 
 #. Translators: Message presented in input help mode.
 msgid "Gives the remaining and elapsed time before the next alarm."
-msgstr "Da el tiempo transcurrido y restante antes de la próxima alarma."
+msgstr "Fornece o tempo restante e transcorrido antes da vindeira alarma."
 
 msgid "Alarm cancelled"
 msgstr "Alarma cancelada"
 
 #. Translators: Message presented in input help mode.
 msgid "Cancel the next alarm."
-msgstr "Cancelar la próxima alarma."
+msgstr "Cancelar a vindeira alarma."
 
 msgid ""
 "The stopwatch is already reset to 0. Use the clock layer command followed by "
 "s to start it."
 msgstr ""
-"El cronómetro ya se ha puesto a 0. Usa la orden de capa del reloj seguida de "
-"la s para iniciarlo."
+"O cronómetro xa está restablecido a 0. Utiliza o comando de capa seguido de "
+"s para inicialo."
 
 msgid "Stopwatch reset."
-msgstr "Restablecimiento de cronómetro."
+msgstr "Cronómetro reiniciado."
 
 #. Translators: Message presented in input help mode.
 msgid "Resets stopwatch to 0 without restarting it."
-msgstr "Pone el cronómetro a 0 sin reiniciarlo."
+msgstr "Restablece o cronómetro a 0 sen reinicialo."
 
 msgid ""
 "\n"
@@ -159,39 +159,38 @@ msgid ""
 "\t\t"
 msgstr ""
 "\n"
-"\t\tS: inicia, restablece y detiene el cronómetro.\n"
-"\t\tR: restablece el cronómetro a 0 sin reiniciarlo.\n"
-"\t\tA: da el tiempo restante y transcurrido antes de la próxima alarma.\n"
-"\t\tC: cancela la próxima alarma.\n"
-"\t\tBarra espaciadora: verbaliza el cronómetro o contador de cuenta atrás "
-"actual.\n"
-"\t\tH: lista todas las órdenes de capa (Ayuda).\n"
+"\t\tS: inicia, reinicia ou detén o cronómetro.\n"
+"\t\tR: Restablece o cronómetro a 0 sen volver a inicialo.\n"
+"\t\tA: Fornece o tempo restante e transcorrido antes da vindeira alarma.\n"
+"\t\tC: Cancelar a vindeira alarma..\n"
+"\t\tSpacebar: Fala o temporizador actual do cronómetro ou da conta atrás.\n"
+"\t\tH: Listar todos as ordes en capa (axuda).\n"
 "\t\t"
 
 #. Translators: Message presented in input help mode.
 msgid "Lists available commands in clock command layer."
-msgstr "Lista las órdenes disponibles en la capa de órdenes del reloj."
+msgstr "Lista todos as ordes dispoñibles na capa de comandos do reloxo."
 
 #. Translators: Message presented in input help mode.
 msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr ""
-"Permite comprobar la próxima alarma. Si se pulsa dos veces, la cancela."
+"Permíteche comprobar a vindeira alarma. Se se preme dúas veces, cancélaa."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
-msgstr "Mostrar el cuadro de diálogo de configuración del reloj."
+msgstr "Amosar a caixa de diálogo de opcións do reloxo."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the alarm settings dialog box."
-msgstr "Mostrar el cuadro de diálogo de configuración de la alarma."
+msgstr "Amosar a caixa de diálogo de opcións da alarma."
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Time display format:"
-msgstr "&Formato de hora:"
+msgstr "Formato de amosado da &hora:"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Date display format:"
-msgstr "&Formato de fecha:"
+msgstr "Formato de amosado da &data:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "Input in &24-hour format"
@@ -199,23 +198,23 @@ msgstr "Entrada en formato de &24 horas"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "off"
-msgstr "desactivado"
+msgstr "Desactivado"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "every 10 minutes"
-msgstr "cada 10 minutos"
+msgstr "Cada 10 minutos"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "every 15 minutes"
-msgstr "cada 15 minutos"
+msgstr "Cada 15 minutos"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "every 30 minutes"
-msgstr "cada 30 minutos"
+msgstr "Cada 30 minutos"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "every hour"
-msgstr "cada hora"
+msgstr "Cada hora"
 
 #. Transla	tors: This is the label for a combo box in the Clock settings dialog.
 msgid "&interval:"
@@ -223,40 +222,40 @@ msgstr "&intervalo:"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "speech and sound"
-msgstr "voz y sonido"
+msgstr "fala e son"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "speech only"
-msgstr "sólo voz"
+msgstr "só fala"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "sound only"
-msgstr "sólo sonido"
+msgstr "só son"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Time &announcement:"
-msgstr "Anuncio de las &horas:"
+msgstr "&Anunciado da hora:"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Clock chime &sound:"
-msgstr "Sonido de la &campana del reloj:"
+msgstr "&Son da campá do reloxo:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "&Quiet hours"
-msgstr "Horas &silenciosas"
+msgstr "Horas &caladas"
 
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours start time:"
-msgstr "Hora de inicio de las horas silenciosas:"
+msgstr "Hora de inicio das horas caladas:"
 
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours end time:"
-msgstr "Hora de finalización de las horas silenciosas:"
+msgstr "Hora de finalización das horas caladas:"
 
 #. Translators: This is the label for the alarm settings panel.
 #. Translators: This is the label for the alarm settings dialog.
 msgid "Alarm setup"
-msgstr "Configuración de la alarma"
+msgstr "configuración da alarma"
 
 #. Translators: This is an item of the alarm timer choices.
 msgid "Hours"
@@ -272,35 +271,34 @@ msgstr "Segundos"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "Choose the type of timer inputs before the alarm rings:"
-msgstr ""
-"Elige los tipos de entradas del temporizador antes de que suene la alarma:"
+msgstr "Escolle o tipo de entradas de temporizador antes de que a alarma soe:"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
-msgstr "Sonido de &alarma:"
+msgstr "&Son da alarma:"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 msgid "Alarm time waiting:"
-msgstr "Tiempo de espera de la alarma:"
+msgstr "Tempo de espera para a alarma:"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
 #, python-brace-format
 msgid "You've chosen an alarm to be triggered in {tm} {unit}"
-msgstr "Has elegido activar una alarma en {tm} {unit}"
+msgstr "Escolliches que a alarma salte en {tm} {unit}"
 
 #. Translators: The title of the dialog which appears when the user has chosen to trigger an alarm.
 msgid "Confirmation"
-msgstr "Confirmación"
+msgstr "confirmación"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {hours} o'clock and {minutes} minutes"
-msgstr "Son las {hours} horas y {minutes} minutos"
+msgstr "son ás {hours} e {minutes} minutos"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {hours} o'clock, {minutes} minutes and {seconds} seconds"
-msgstr "Son las {hours} horas, {minutes} minutos y {seconds} segundos"
+msgstr "Son as {hours} e {minutes} minutos con {seconds} segundos"
 
 #. Translators: A time formating.
 #, python-brace-format
@@ -315,7 +313,7 @@ msgstr "{hours} horas, {minutes} minutos, {seconds} segundos"
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {minutes} past {hours}"
-msgstr "Son las {hours} y {minutes}"
+msgstr "Pasan {minutes} das {hours}"
 
 #. Translators: A time formating.
 #, python-brace-format
@@ -330,12 +328,12 @@ msgstr "{hours} h, {minutes} min, {seconds} seg"
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {hours}:{minutes}"
-msgstr "Son las {hours}:{minutes}"
+msgstr "Son as {hours}:{minutes}"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {hours}:{minutes}:{seconds}"
-msgstr "Son las {hours}:{minutes}:{seconds}"
+msgstr "Son as {hours}:{minutes}:{seconds}"
 
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 msgid ""
@@ -346,10 +344,10 @@ msgid ""
 "the current year and the remaining days before the end of the year.\n"
 "For other instructions, press Add-on help button in add-ons manager."
 msgstr ""
-"Un reloj y calendario avanzado para NVDA.\n"
-"NVDA+f12, saber la hora actual.\n"
-"NVDA+f12 pulsado dos veces rápidamente, saber la fecha actual.\n"
-"NVDA+f12 pulsado tres veces rápidamente, anuncia el número de día, número de "
-"semana, el año actual y los días restantes para que se acabe.\n"
-"Para más instrucciones, pulsa el botón de ayuda del complemento en el "
-"administrador de complementos."
+"Un reloxo e calendario avanzado para NVDA.\n"
+"NVDA+F12, obter hora actual.\n"
+"NVDA+F12 premido dúas veces rapidamente, obter data actual.\n"
+"NVDA+F12 premido tres veces rapidamente, anuncia o número de cía actual, de "
+"semana, o ano actual e os días restantes antes do final de ano.\n"
+"Para outras instrucións, preme o botón Axuda do complemento no Administrador "
+"de complementos."

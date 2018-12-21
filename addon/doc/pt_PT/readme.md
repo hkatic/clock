@@ -5,18 +5,30 @@
 * Baixar [versão de desenvolvimento][2]
 
 
-Este extra permite a funcionalidade avançada de relógio e calendário para o
-NVDA. Em vez de obter o tempo e a data do Windows, pode personalizar a hora
-e as datas para serem mostradas em braille e faladas pelo NVDA. Para além
-disso, pode obter o número actual do dia e da semana do ano actual e também
-pode definir o anúncio de horário automático no intervalo por si
-especificado. possui também um cronômetro e recursos de temporizador de
-alarme incorporados ao addon, que permitem que você dedique tempo às suas
-tarefas, como copiar arquivos, instalar programas ou cozinhar refeições.
+Este extra permite funcionalidades avançadas de relógio, despertador e
+calendário para o NVDA.
+
+Em vez de obter sempre a hora e a data do Windows, pode personalizar a forma
+como as horas e as datas devem ser faladas e mostradas em Braille pelo NVDA.
+
+Além disso, pode obter o dia actual, o número da semana, bem como os dias
+que faltam para o final do ano actual, e também pode definir o anúncio
+automático das horas, no intervalo especificado.
+
+Existem também um cronômetro e recursos de temporizador de alarme
+incorporados ao extra, os quais permitem que indique um tempo para a
+realização das suas tarefas, como copiar arquivos, instalar programas ou
+cozinhar refeições.
+
+## Nota:
+
+Se instalar uma atualização do extra, durante o processo de instalação, o
+assistente detecta se a configuração antiga é compatível com a nova e
+pergunta se quer fazer as alterações, que deverá confirmar no botão "ok".
 
 ## Utilização:
 
-* Abra a janela de configuração deste addon a partir do menu de ferramentas do NVDA ou do painel de configurações, De acordo com a sua versão do NVDA;
+* Abra a janela de configuração deste addon, a partir do menu de ferramentas do NVDA ou do painel de configurações, De acordo com a sua versão do NVDA;
 * Na caixa de diálogo Configuração do Relógio, as duas Caixas de Combinação permitem que escolha os seus formatos de exibição de hora e data preferidos;
 * A caixa de verificação com a etiqueta "entrada no formato de 24 horas" permite-lhe configurar se pretende introduzir tempo para as horas de silêncio em 12 horas (A.M. ou P.M.) ou no formato europeu de 24 horas;
 * A caixa combinada intitulada "Intervalo de anúncio automático" permite que defina o intervalo para o anúncio de tempo automático (a cada 15 minutos, a cada 30 minutos, a cada hora ou desligado);
@@ -35,10 +47,11 @@ tarefas, como copiar arquivos, instalar programas ou cozinhar refeições.
 
 - NVDA+F12, diz a hora actual. - NVDA+F12, pressionado duas vezes
 rapidamente, diz a data actual. - NVDA+F12, pressionado três vezes
-rapidamente, informa o número actual do dia e da semana do ano actual.
+rapidamente, informa o número actual do dia e da semana do ano em curso.
 
-- Control+F12, dá algumas informações sobre o próximo alarme; - Control+F12
-pressionado duas vezes rapidamente, cancela o próximo alarme.
+- Control+F12, indica o tempo que falta e o decorrido  até ao próximo
+alarme; - Control+F12 pressionado duas vezes rapidamente, cancela o próximo
+alarme.
 
 ## Comandos em camada:
 
@@ -50,6 +63,10 @@ seguintes teclas:
 próximo alarme; - C: Cancela o próximo alarme; - Barra de espaço: fala o
 cronómetro actual ou o cronómetro de contagem regressiva; - H: lista todos
 os comandos em camadas (Ajuda).
+
+## Compatibilidade:
+
+Este extra é compatível com as versões do NVDA, desde a 2013.3 até à 2019.1.
 
 [[!tag dev stable]]
 
