@@ -61,9 +61,9 @@ seguintes teclas:
 
 - S: Inicia, reinicia ou detén o cronómetro; - R: Restablece o cronómetro a
 cero sen reinicialo; - A: proporciona o tempo restante e transcorrido antes
-da vindeira alarma; - C: Cancelar a vindeira alarma; - Spacebar: Anuncia o
-contador actual do cronómetro ou da conta atrás; - H: Listar todas as ordes
-en capa (axuda)..
+da vindeira alarma; - C: Cancelar a vindeira alarma; - Barra espaciadora:
+Anuncia o contador actual do cronómetro ou da conta atrás; - H: Listar todas
+as ordes en capa (axuda).
 
 ## compatibilidade
 
