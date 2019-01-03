@@ -181,6 +181,10 @@ msgstr ""
 "отменяет его."
 
 #. Translators: Message presented in input help mode.
+msgid "If an alarm is too long, allows to stop it."
+msgstr ""
+
+#. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
 msgstr "Отображает диалоговое окно настроек часов."
 
@@ -257,7 +261,6 @@ msgid "Quiet hours end time:"
 msgstr "Время окончания тихого часа:"
 
 #. Translators: This is the label for the alarm settings panel.
-#. Translators: This is the label for the alarm settings dialog.
 msgid "Alarm setup"
 msgstr "Настройки таймера"
 
@@ -280,6 +283,14 @@ msgstr "Выберете единицу времени, через котору�
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
 msgstr "Сигнал &таймера:"
+
+#. Translators: This is the label for a button in the Alarm settings dialog.
+msgid "&Stop"
+msgstr ""
+
+#. Translators: This is the label for a button in the Alarm settings dialog.
+msgid "&Pause"
+msgstr ""
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 msgid "Alarm time waiting:"

@@ -181,6 +181,10 @@ msgstr ""
 "Omogućuje vam da vidite sljedeći alarm, ako se pritisne dvaput, otkaže ga."
 
 #. Translators: Message presented in input help mode.
+msgid "If an alarm is too long, allows to stop it."
+msgstr ""
+
+#. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
 msgstr "Prikazuje dijaloški okvir Postavke sata."
 
@@ -256,7 +260,7 @@ msgstr "Početno vrijeme za tihe sate:"
 msgid "Quiet hours end time:"
 msgstr "Završno vrijeme za tihe sate:"
 
-#. Translators: This is the label for the alarm settings dialog.
+#. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"
 msgstr "Postavke alarma"
 
@@ -279,6 +283,14 @@ msgstr "Odaberite vrstu vremena prije nego što zazvoni alarm :"
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
 msgstr "Zvuk alarma :"
+
+#. Translators: This is the label for a button in the Alarm settings dialog.
+msgid "&Stop"
+msgstr ""
+
+#. Translators: This is the label for a button in the Alarm settings dialog.
+msgid "&Pause"
+msgstr ""
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 msgid "Alarm time waiting:"

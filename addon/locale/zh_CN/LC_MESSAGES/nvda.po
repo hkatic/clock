@@ -9,12 +9,12 @@ msgstr ""
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
 "PO-Revision-Date: 2018-12-16 16:20+0800\n"
+"Last-Translator: dingpengyu <dingpengyu06@gmail.com>\n"
+"Language-Team: \n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: dingpengyu <dingpengyu06@gmail.com>\n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.2\n"
 
 #. Translators: the label of a message box dialog.
@@ -170,6 +170,10 @@ msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr "允许检查下一个闹钟。如果按两次，则取消。"
 
 #. Translators: Message presented in input help mode.
+msgid "If an alarm is too long, allows to stop it."
+msgstr ""
+
+#. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
 msgstr "显示时钟设置对话框。"
 
@@ -246,7 +250,6 @@ msgid "Quiet hours end time:"
 msgstr "夜间模式结束时间："
 
 #. Translators: This is the label for the alarm settings panel.
-#. Translators: This is the label for the alarm settings dialog.
 msgid "Alarm setup"
 msgstr "闹钟设置"
 
@@ -269,6 +272,14 @@ msgstr "在闹铃响起之前选择定时器的类型:"
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
 msgstr "闹铃声(&L):"
+
+#. Translators: This is the label for a button in the Alarm settings dialog.
+msgid "&Stop"
+msgstr ""
+
+#. Translators: This is the label for a button in the Alarm settings dialog.
+msgid "&Pause"
+msgstr ""
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 msgid "Alarm time waiting:"

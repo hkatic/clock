@@ -28,12 +28,15 @@ msgstr ""
 msgid "Time and date format corrections"
 msgstr "correzione formato data e ora."
 
+#, python-brace-format
 msgid "{hours} hours, "
 msgstr "{hours} ore, "
 
+#, python-brace-format
 msgid "{minutes} minutes, "
 msgstr "{minutes} minuti, "
 
+#, python-brace-format
 msgid "{seconds} seconds"
 msgstr "{seconds} secondi"
 
@@ -70,6 +73,7 @@ msgstr "Impostazioni &Timer"
 msgid "Allows you to schedule an alarm"
 msgstr "Consente di impostare il Timer"
 
+#, python-brace-format
 msgid "Day {day}, week {week} of {year}, remaining days {remain}."
 msgstr "Giorno {day}: Settimana {week}: anno {year}: mancano {remain} giorni."
 
@@ -97,6 +101,7 @@ msgstr "Cronometro riavviato da 0."
 msgid "Running."
 msgstr "Cronometro Avviato."
 
+#, python-brace-format
 msgid "{0} stopped."
 msgstr "Stop, {0}."
 
@@ -108,6 +113,7 @@ msgstr "Avvia, ferma o azzera il cronometro."
 msgid "Speaks current stopwatch or count-down timer."
 msgstr "Legge il tempo trascorso nel cronometro."
 
+#, python-brace-format
 msgid "Elapsed time {elapsed}, remaining time {remaining}."
 msgstr "Mancano {remaining}: tempo trascorso {elapsed}."
 
@@ -165,6 +171,10 @@ msgstr "Elenca i comandi disponibili per il componente aggiuntivo Clock."
 #. Translators: Message presented in input help mode.
 msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr "Permette di controllare il Timer, premuto due volte lo annulla."
+
+#. Translators: Message presented in input help mode.
+msgid "If an alarm is too long, allows to stop it."
+msgstr ""
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
@@ -243,7 +253,6 @@ msgid "Quiet hours end time:"
 msgstr "fine fascia oraria:"
 
 #. Translators: This is the label for the alarm settings panel.
-#. Translators: This is the label for the alarm settings dialog.
 msgid "Alarm setup"
 msgstr "Timer"
 
@@ -267,11 +276,20 @@ msgstr "Imposta unità di misura:"
 msgid "A&larm sound:"
 msgstr "Suono per il Time&r:"
 
+#. Translators: This is the label for a button in the Alarm settings dialog.
+msgid "&Stop"
+msgstr ""
+
+#. Translators: This is the label for a button in the Alarm settings dialog.
+msgid "&Pause"
+msgstr ""
+
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 msgid "Alarm time waiting:"
 msgstr "Tempo di attesa per il Timer:"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
+#, python-brace-format
 msgid "You've chosen an alarm to be triggered in {tm} {unit}"
 msgstr "Timer impostato a  {tm} {unit}"
 
@@ -280,38 +298,47 @@ msgid "Confirmation"
 msgstr "Conferma Timer:"
 
 #. Translators: A time formating.
+#, python-brace-format
 msgid "It's {hours} o'clock and {minutes} minutes"
 msgstr "Sono le {hours} e {minutes} minuti"
 
 #. Translators: A time formating.
+#, python-brace-format
 msgid "It's {hours} o'clock, {minutes} minutes and {seconds} seconds"
 msgstr "Sono le... {hours}, {minutes} minuti, e {seconds} secondi"
 
 #. Translators: A time formating.
+#, python-brace-format
 msgid "{hours} o'clock, {minutes} minutes"
 msgstr "{hours}, {minutes} minuti"
 
 #. Translators: A time formating.
+#, python-brace-format
 msgid "{hours} o'clock, {minutes} minutes, {seconds} seconds"
 msgstr "{hours}, {minutes} minuti, {seconds} secondi"
 
 #. Translators: A time formating.
+#, python-brace-format
 msgid "It's {minutes} past {hours}"
 msgstr "{minutes} minuti dopo le {hours} "
 
 #. Translators: A time formating.
+#, python-brace-format
 msgid "{hours} h {minutes} min"
 msgstr "{hours} h {minutes} min"
 
 #. Translators: A time formating.
+#, python-brace-format
 msgid "{hours} h, {minutes} min, {seconds} sec"
 msgstr "{hours} h, {minutes} min, {seconds} sec"
 
 #. Translators: A time formating.
+#, python-brace-format
 msgid "It's {hours}:{minutes}"
 msgstr "Sono le ore, {hours} e {minutes}"
 
 #. Translators: A time formating.
+#, python-brace-format
 msgid "It's {hours}:{minutes}:{seconds}"
 msgstr "Sono le ore...  {hours}:{minutes}:{seconds}"
 

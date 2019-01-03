@@ -9,12 +9,12 @@ msgstr ""
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
 "PO-Revision-Date: 2018-12-13 17:55+0100\n"
+"Last-Translator: Rémy Ruiz <remyruiz@gmail.com>\n"
+"Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Rémy Ruiz <remyruiz@gmail.com>\n"
-"Language-Team: \n"
 "X-Generator: Poedit 1.8.12\n"
 
 #. Translators: the label of a message box dialog.
@@ -180,6 +180,10 @@ msgstr ""
 "Permet de vérifier la prochaine alarme. Si vous appuyez deux fois, l'annule."
 
 #. Translators: Message presented in input help mode.
+msgid "If an alarm is too long, allows to stop it."
+msgstr ""
+
+#. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
 msgstr "Afficher la boîte de dialogue des paramètres de l'horloge."
 
@@ -256,7 +260,6 @@ msgid "Quiet hours end time:"
 msgstr "Fin de la durée des heures silencieuses:"
 
 #. Translators: This is the label for the alarm settings panel.
-#. Translators: This is the label for the alarm settings dialog.
 msgid "Alarm setup"
 msgstr "Réglage de l'alarme"
 
@@ -279,6 +282,14 @@ msgstr "Choisissez le type d'entrées de la minuterie avant que l'alarme sonne:"
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
 msgstr "Son de l'a&larme:"
+
+#. Translators: This is the label for a button in the Alarm settings dialog.
+msgid "&Stop"
+msgstr ""
+
+#. Translators: This is the label for a button in the Alarm settings dialog.
+msgid "&Pause"
+msgstr ""
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 msgid "Alarm time waiting:"
