@@ -11,6 +11,7 @@ import gui
 import scriptHandler
 import ui
 import formats
+import nvwave
 import clockHandler
 import stopwatchHandler
 from clockSettingsGUI import ClockSettingsPanel, AlarmSettingsPanel, ClockSettingsDialog, AlarmSettingsDialog
@@ -83,7 +84,12 @@ def getDayAndWeekOfYear (date):
 	gregDay = int(now.strftime("%d"))
 	if curYear == gregYear:
 		#It's a Gregorian year.
-		msg = [now.timetuple()[7], now.isocalendar()[1], gregYear]
+		nDayOfYear = now.timetuple()[7]
+		nWeekOfYear = now.isocalendar()[1]
+		if nWeekOfYear == 1 and nDayOfYear > 300:
+			msg = [nDayOfYear, nWeekOfYear, gregYear+1]
+		else:
+			msg = [nDayOfYear, nWeekOfYear, gregYear]
 	else:
 		# It's not a Gregorian year.
 		dt1 = convertdate.islamic
@@ -113,7 +119,10 @@ def getDayAndWeekOfYear (date):
 				else:
 					# The first day of the year doesn't corresponds to the first day of the week for the current Hidjri calendar.
 					nWeekOfYear = nDayOfYear / 7 
-			msg = [str(nDayOfYear), str(nWeekOfYear), str(curYear)]
+			if nWeekOfYear == 1 and nDayOfYear > 300:
+				msg = [nDayOfYear, nWeekOfYear, curYear+1]
+			else:
+				msg = [nDayOfYear, nWeekOfYear, curYear]
 
 	# Calculate the remaining days before the end of the current year.
 	if curYear == gregYear:
@@ -301,7 +310,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		"kb:c":"cancelAlarm",
 	}
 
-	def script_checkOrStopAlarm (self, gestures):
+	def script_checkOrCancelAlarm (self, gestures):
 		if alarmHandler.run and alarmHandler.run.is_alive ():
 			elapsedTime = alarmHandler.run.elapsed ()
 			remainingTime = alarmHandler.run.remaining()
@@ -315,7 +324,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		ui.message (msg)
 
 	# Translators: Message presented in input help mode.
-	script_checkOrStopAlarm.__doc__ = _("Allows to check the next alarm. If pressed twice, cancels it.")
+	script_checkOrCancelAlarm.__doc__ = _("Allows to check the next alarm. If pressed twice, cancels it.")
+
+	def script_stopLongAlarm (self, gesture):
+		if nvwave.fileWavePlayer is not None:
+			nvwave.fileWavePlayer.stop ()
+
+	# Translators: Message presented in input help mode.
+	script_stopLongAlarm.__doc__ = _("If an alarm is too long, allows to stop it.")
 
 	def onClockSettingsDialog (self, evt):
 		gui.mainFrame.prePopup ()
@@ -350,5 +366,4 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	__gestures={
 		"kb:NVDA+f12": "reportTimeAndDate",
 		"kb:NVDA+shift+f12": "clockLayerCommands",
-		"kb:control+f12": "checkOrStopAlarm",
 	}

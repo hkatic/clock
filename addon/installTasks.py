@@ -24,5 +24,10 @@ def onInstall ():
 					config.conf['clockAndCalendar']['dateDisplayFormat'] = 1
 				except VdtTypeError:
 					config.conf['clockAndCalendar']['timeDisplayFormat'] = "0"
-				config.conf['clockAndCalendar']['dateDisplayFormat'] = "1"
+					config.conf['clockAndCalendar']['dateDisplayFormat'] = "1"
+				finally:
+					# For those who have not checked the "Save configuration on exit" checkbox.
+					if not config.conf["general"]["saveConfigurationOnExit"]:
+						config.conf.save ()
+
 
