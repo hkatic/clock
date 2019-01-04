@@ -335,13 +335,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def onClockSettingsDialog (self, evt):
 		gui.mainFrame.prePopup ()
-		d = ClockSettingsPanel (gui.mainFrame)
+		d = ClockSettingsDialog (gui.mainFrame)
 		d.Show ()
 		gui.mainFrame.postPopup () 
 
 	def onAlarmSettingsDialog (self, evt):
 		gui.mainFrame.prePopup ()
-		d =AlarmSettingsPanel (gui.mainFrame)
+		d =AlarmSettingsDialog (gui.mainFrame)
 		d.Show ()
 		gui.mainFrame.postPopup () 
 

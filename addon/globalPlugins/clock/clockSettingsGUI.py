@@ -372,7 +372,10 @@ class AlarmSettingsPanel (SettingsPanel):
 		self.stopButton.Bind (wx.EVT_BUTTON, self.onStop )
 		self.pauseButton.Bind (wx.EVT_BUTTON, self.onPause )
 
-		self._alarmSoundChoice.SetStringSelection(config.conf["clockAndCalendar"]["alarmSound"])
+		if config.conf['clockAndCalendar']['alarmSound'] in paths.LIST_ALARMS:
+			self._alarmSoundChoice.SetStringSelection(config.conf["clockAndCalendar"]["alarmSound"])
+		else:
+			self._alarmSoundChoice.SetStringSelection(paths.LIST_ALARMS[0])
 		#self._alarmTimeWaitingText.SetValue(config.conf["clockAndCalendar"]["alarmTime"])
 		curChoice = config.conf["clockAndCalendar"]["alarmTimerChoice"]
 		for index, name in enumerate (self._alarmTimerChoices):
@@ -463,7 +466,10 @@ class AlarmSettingsDialog (SettingsDialog):
 		self.stopButton.Bind (wx.EVT_BUTTON, self.onStop )
 		self.pauseButton.Bind (wx.EVT_BUTTON, self.onPause )
 
-		self._alarmSoundChoice.SetStringSelection(config.conf["clockAndCalendar"]["alarmSound"])
+		if config.conf['clockAndCalendar']['alarmSound'] in paths.LIST_ALARMS:
+			self._alarmSoundChoice.SetStringSelection(config.conf["clockAndCalendar"]["alarmSound"])
+		else:
+			self._alarmSoundChoice.SetStringSelection(paths.LIST_ALARMS[0])
 		#self._alarmTimeWaitingText.SetValue(config.conf["clockAndCalendar"]["alarmTime"])
 		curChoice = config.conf["clockAndCalendar"]["alarmTimerChoice"]
 		for index, name in enumerate (self._alarmTimerChoices):
@@ -486,14 +492,19 @@ class AlarmSettingsDialog (SettingsDialog):
 		self._alarmSoundChoice = wx.Choice (self, choices=paths.LIST_ALARMS)
 		dialogSizer.Add (self._alarmSoundChoice)
 		self.stopButton = wx.Button (self, label = self.stopLabel)
+		dialogSizer.Add (self.stopButton)
 		self.pauseButton = wx.Button (self, label = self.pauseLabel)
+		dialogSizer.Add (self.pauseButton)
 
 		# Events.
 		self._alarmSoundChoice.Bind(wx.EVT_CHOICE, self.onAlarmSelected)
 		self.stopButton.Bind (wx.EVT_BUTTON, self.onStop)
 		self.pauseButton.Bind (wx.EVT_BUTTON, self.onPause)
 
-		self._alarmSoundChoice.SetStringSelection(config.conf["clockAndCalendar"]["alarmSound"])
+		if config.conf['clockAndCalendar']['alarmSound'] in paths.LIST_ALARMS:
+			self._alarmSoundChoice.SetStringSelection(config.conf["clockAndCalendar"]["alarmSound"])
+		else:
+			self._alarmSoundChoice.SetStringSelection(paths.LIST_ALARMS[0])
 		#self._alarmTimeWaitingText.SetValue(config.conf["clockAndCalendar"]["alarmTime"])
 		curChoice = config.conf["clockAndCalendar"]["alarmTimerChoice"]
 		for index, name in enumerate (self._alarmTimerChoices):
