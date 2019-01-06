@@ -24,7 +24,7 @@ import wx
 import gettext
 import os
 import languageHandler
-if sys.version[0:1] == "2":
+sys.version_info.major == 2:
 	sys.path.append(os.path.join (os.path.abspath(os.path.dirname(__file__)), "libPy2"))
 	import ephem
 	import pytz
@@ -108,7 +108,7 @@ def getDayAndWeekOfYear (date):
 			# The number of weeks must take into account the day of the week corresponding to the first day of the year.
 			ndw = 6 if curYear == dt1.from_gregorian(gregYear, gregMonth, gregDay)[0] else 5
 			nDayOfYear = 0
-			rng = xrange if sys.version[0:1] == "2" else range
+			rng = xrange if sys.version_info.major == 2 else range
 			for month in rng (1, curMonth):
 				nDayOfYear += dt.month_length (curYear, month)
 			nDayOfYear += curDay

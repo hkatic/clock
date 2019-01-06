@@ -6,6 +6,9 @@ import time
 import threading
 import config
 import nvwave
+import sys
+
+TimerBaseClass = threading._Timer if sys.version_info.major == 2 else threading.Timer
 
 run = False
 
@@ -15,7 +18,7 @@ def runAlarm (sound):
 	config.conf['clockAndCalendar']['alarmSavedTime'] = 0.0
 	config.conf.save ()
 
-class AlarmTimer (threading._Timer):
+class AlarmTimer (TimerBaseClass):
 	"""
 	A subclass of the threading._ Timer class that adds the ability to find the elapsed time as well as the remaining time
 	"""
