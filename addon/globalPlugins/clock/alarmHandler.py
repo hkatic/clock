@@ -42,4 +42,4 @@ class AlarmTimer (threading._Timer):
 		threading._Timer.cancel (self)
 		config.conf['clockAndCalendar']['alarmTime'] = 0.0
 		config.conf['clockAndCalendar']['alarmSavedTime'] = 0.0
-		config.save ()
+		config.conf.save ()
