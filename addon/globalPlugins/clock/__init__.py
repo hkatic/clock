@@ -169,7 +169,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			config.conf['clockAndCalendar']['alarmTime']
 		except VdtTypeError:
 			config.conf['clockAndCalendar']['alarmTime'] = 0.0
-			config.save ()
+			config.conf.save ()
 		if not config.conf['clockAndCalendar']['alarmSound'] in paths.LIST_ALARMS:
 			alarmSound = paths.LIST_ALARMS[0]
 		else:
