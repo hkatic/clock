@@ -24,7 +24,7 @@ import wx
 import gettext
 import os
 import languageHandler
-sys.version_info.major == 2:
+if sys.version_info.major == 2:
 	sys.path.append(os.path.join (os.path.abspath(os.path.dirname(__file__)), "libPy2"))
 	import ephem
 	import pytz
