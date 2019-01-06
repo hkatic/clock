@@ -15,7 +15,8 @@ confspec={
 	'alarmSound': 'string(default="alarm1.wav")',
 	'alarmTimerChoice': 'integer(default=1)',
 	'quietHours': 'boolean(default=False)',
-	'alarmTime': 'string(default="")',
+	'alarmTime': 'float(default=0.0)',
+	'alarmSavedTime': 'float(default=0.0)',
 	'quietHoursStartTime': 'string(default="")',
 	'quietHoursEndTime': 'string(default="")',
 }

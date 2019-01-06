@@ -5,16 +5,18 @@
 
 from functools import wraps
 import sys
-import alarmHandler
+from validate import VdtTypeError
+from . import alarmHandler
 import globalPluginHandler
 import gui
+from . import paths
 import scriptHandler
 import ui
-import formats
+from . import formats
 import nvwave
-import clockHandler
-import stopwatchHandler
-from clockSettingsGUI import ClockSettingsPanel, AlarmSettingsPanel, ClockSettingsDialog, AlarmSettingsDialog
+from . import clockHandler
+from . import stopwatchHandler
+from .clockSettingsGUI import ClockSettingsPanel, AlarmSettingsPanel, ClockSettingsDialog, AlarmSettingsDialog
 import config
 import tones
 from datetime import datetime
@@ -22,14 +24,20 @@ import wx
 import gettext
 import os
 import languageHandler
-sys.path.append(os.path.join (os.path.abspath(os.path.dirname(__file__)), "lib"))
-import ephem
-import pytz
-import convertdate
+if sys.version[0:1] == "2":
+	sys.path.append(os.path.join (os.path.abspath(os.path.dirname(__file__)), "libPy2"))
+	import ephem
+	import pytz
+	import convertdate
+else:
+	sys.path.append(os.path.join (os.path.abspath(os.path.dirname(__file__)), "libPy3"))
+	import ephem
+	import pytz
+	import convertdate
 sys.path.remove(sys.path[-1])
 import time
-from formats import GetTimeFormatEx, GetDateFormatEx
-import configuration
+from .formats import GetTimeFormatEx, GetDateFormatEx
+from . import configuration
 import addonHandler
 addonHandler.initTranslation()
 
@@ -156,6 +164,20 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.clock=clockHandler.clock()
 		self.stopwatch=stopwatchHandler.stopwatch()
 		self.clockLayerModeActive=False
+
+		try:
+			config.conf['clockAndCalendar']['alarmTime']
+		except VdtTypeError:
+			config.conf['clockAndCalendar']['alarmTime'] = 0.0
+			config.save ()
+		if not config.conf['clockAndCalendar']['alarmSound'] in paths.LIST_ALARMS:
+			alarmSound = paths.LIST_ALARMS[0]
+		else:
+			alarmSound = config.conf['clockAndCalendar']['alarmSound']
+		if config.conf['clockAndCalendar']['alarmTime'] != 0.0:
+			wakeUp = config.conf['clockAndCalendar']['alarmTime'] - (time.time () - config.conf['clockAndCalendar']['alarmSavedTime'])
+			alarmHandler.run = alarmHandler.AlarmTimer (wakeUp, alarmHandler.runAlarm, [os.path.join (paths.ALARMS_DIR, alarmSound)])
+			alarmHandler.run.start ()
 
 	def createSubMenu (self):
 		self.toolsMenu = gui.mainFrame.sysTrayIcon.toolsMenu

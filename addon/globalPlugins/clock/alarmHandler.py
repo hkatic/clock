@@ -5,8 +5,15 @@
 import time
 import threading
 import config
+import nvwave
 
 run = False
+
+def runAlarm (sound):
+	nvwave.playWaveFile (sound)
+	config.conf['clockAndCalendar']['alarmTime'] = 0.0
+	config.conf['clockAndCalendar']['alarmSavedTime'] = 0.0
+	config.conf.save ()
 
 class AlarmTimer (threading._Timer):
 	"""
@@ -16,14 +23,23 @@ class AlarmTimer (threading._Timer):
 
 	def start (self):
 		self.startTiming = time.time ()
+		# We check whether NVDA has been restarted or not.
+		if config.conf['clockAndCalendar']['alarmSavedTime'] == 0.0:
+			# NVDA has not been restarted
+			config.conf['clockAndCalendar']['alarmSavedTime'] = self.startTiming
+		else:
+			# NVDA has been restarted.
+			self.startTiming = config.conf['clockAndCalendar']['alarmSavedTime']
 		threading._Timer.start (self)
 
 	def elapsed (self):
 		return time.time () - self.startTiming if self.is_alive () else 0
 
 	def remaining (self):
-		return self.interval - self.elapsed () if self.is_alive () else 0
+		return config.conf['clockAndCalendar']['alarmTime'] - self.elapsed () if self.is_alive () else 0
 
 	def cancel (self):
 		threading._Timer.cancel (self)
-		config.conf["clockAndCalendar"]["alarm"] = False
+		config.conf['clockAndCalendar']['alarmTime'] = 0.0
+		config.conf['clockAndCalendar']['alarmSavedTime'] = 0.0
+		config.save ()

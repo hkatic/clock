@@ -88,7 +88,7 @@ timeFormatsDic = collections.OrderedDict()
 for fmt in timeFormats:
 	timeFormatsDic[fmt] = GetTimeFormatEx (None, None, None, rgx.sub(repl, fmt))
 
-timeDisplayFormats = timeFormatsDic.values()
+timeDisplayFormats = list(timeFormatsDic.values())
 
 dateFormats = (
 	u"dddd, MMMM dd, yyyy",
@@ -107,4 +107,4 @@ dateFormatsDic = collections.OrderedDict()
 for fmt in dateFormats:
 	dateFormatsDic[fmt] = GetDateFormatEx (None, None, None, fmt)
 
-dateDisplayFormats = dateFormatsDic.values()
+dateDisplayFormats = list (dateFormatsDic.values())

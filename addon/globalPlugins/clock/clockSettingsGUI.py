@@ -6,9 +6,9 @@
 from datetime import datetime
 import re
 import queueHandler
-import paths
+from . import paths
 import api
-import formats
+from . import formats
 import config
 import nvwave
 import gui
@@ -302,18 +302,6 @@ class ClockSettingsDialog(SettingsDialog):
 		self._quietStartTimeText.Enabled = self._quietHoursCheckBox.IsChecked ()
 		self._quietEndTimeText.Enabled = self._quietHoursCheckBox.IsChecked ()
 
-	def onSave(self):
-		config.conf["clockAndCalendar"]["timeDisplayFormat"]=self._timeDisplayFormatChoice.GetSelection()
-		config.conf["clockAndCalendar"]["dateDisplayFormat"]=self._dateDisplayFormatChoice.GetSelection()
-		config.conf["clockAndCalendar"]["dateDisplayFormat"]=self._dateDisplayFormatChoice.GetSelection()
-		config.conf["clockAndCalendar"]["input24HourFormat"]=self._input24HourFormatCheckBox.GetValue()
-		config.conf["clockAndCalendar"]["autoAnnounce"]=self._autoAnnounceChoice.GetSelection()
-		config.conf["clockAndCalendar"]["timeReporting"]=self._timeReportChoice.GetSelection()
-		config.conf["clockAndCalendar"]["timeReportSound"]=self._timeReportSoundChoice.GetStringSelection()
-		config.conf["clockAndCalendar"]["quietHours"]=self._quietHoursCheckBox.GetValue()
-		config.conf["clockAndCalendar"]["quietHoursStartTime"]=self._quietStartTimeText.GetValue()
-		config.conf["clockAndCalendar"]["quietHoursEndTime"]=self._quietEndTimeText.GetValue()
-
 	def onOk (self, evt):
 		config.conf["clockAndCalendar"]["timeDisplayFormat"]=self._timeDisplayFormatChoice.GetSelection()
 		config.conf["clockAndCalendar"]["dateDisplayFormat"]=self._dateDisplayFormatChoice.GetSelection()
@@ -376,7 +364,6 @@ class AlarmSettingsPanel (SettingsPanel):
 			self._alarmSoundChoice.SetStringSelection(config.conf["clockAndCalendar"]["alarmSound"])
 		else:
 			self._alarmSoundChoice.SetStringSelection(paths.LIST_ALARMS[0])
-		#self._alarmTimeWaitingText.SetValue(config.conf["clockAndCalendar"]["alarmTime"])
 		curChoice = config.conf["clockAndCalendar"]["alarmTimerChoice"]
 		for index, name in enumerate (self._alarmTimerChoices):
 			if index == curChoice:
@@ -403,7 +390,6 @@ class AlarmSettingsPanel (SettingsPanel):
 	def onSave (self):
 		config.conf["clockAndCalendar"]["alarmSound"] = self._alarmSoundChoice.GetStringSelection()
 		config.conf["clockAndCalendar"]["alarmTimerChoice"] = self._alarmTimerChoice.GetSelection ()
-		config.conf["clockAndCalendar"]["alarmTime"] = self._alarmTimeWaitingText.GetValue()
 
 	def postSave (self):
 		if re.match (r"\d+", self._alarmTimeWaitingText.GetValue()):
@@ -418,9 +404,10 @@ class AlarmSettingsPanel (SettingsPanel):
 					wakeUp *= 3600
 				if self._alarmTimerChoice.GetSelection() == 1:
 					wakeUp *= 60
-				alarmHandler.run = alarmHandler.AlarmTimer (wakeUp, nvwave.playWaveFile, [os.path.join (paths.ALARMS_DIR, self._alarmSoundChoice.GetStringSelection())])
+				config.conf['clockAndCalendar']['alarmTime'] = wakeUp
+				config.conf.save ()
+				alarmHandler.run = alarmHandler.AlarmTimer (wakeUp, alarmHandler.runAlarm, [os.path.join (paths.ALARMS_DIR, self._alarmSoundChoice.GetStringSelection())])
 				alarmHandler.run.start ()
-
 
 class AlarmSettingsDialog (SettingsDialog):
 
@@ -470,7 +457,6 @@ class AlarmSettingsDialog (SettingsDialog):
 			self._alarmSoundChoice.SetStringSelection(config.conf["clockAndCalendar"]["alarmSound"])
 		else:
 			self._alarmSoundChoice.SetStringSelection(paths.LIST_ALARMS[0])
-		#self._alarmTimeWaitingText.SetValue(config.conf["clockAndCalendar"]["alarmTime"])
 		curChoice = config.conf["clockAndCalendar"]["alarmTimerChoice"]
 		for index, name in enumerate (self._alarmTimerChoices):
 			if index == curChoice:
@@ -505,7 +491,6 @@ class AlarmSettingsDialog (SettingsDialog):
 			self._alarmSoundChoice.SetStringSelection(config.conf["clockAndCalendar"]["alarmSound"])
 		else:
 			self._alarmSoundChoice.SetStringSelection(paths.LIST_ALARMS[0])
-		#self._alarmTimeWaitingText.SetValue(config.conf["clockAndCalendar"]["alarmTime"])
 		curChoice = config.conf["clockAndCalendar"]["alarmTimerChoice"]
 		for index, name in enumerate (self._alarmTimerChoices):
 			if index == curChoice:
@@ -534,14 +519,8 @@ class AlarmSettingsDialog (SettingsDialog):
 	def onOk (self, evt):
 		config.conf["clockAndCalendar"]["alarmSound"] = self._alarmSoundChoice.GetStringSelection()
 		config.conf["clockAndCalendar"]["alarmTimerChoice"] = self._alarmTimerChoice.GetSelection ()
-		config.conf["clockAndCalendar"]["alarmTime"] = self._alarmTimeWaitingText.GetValue()
 		self.postSave ()
 		super (AlarmSettingsDialog, self).onOk (evt)
-
-	def onSave (self):
-		config.conf["clockAndCalendar"]["alarmSound"] = self._alarmSoundChoice.GetStringSelection()
-		config.conf["clockAndCalendar"]["alarmTimerChoice"] = self._alarmTimerChoice.GetSelection ()
-		config.conf["clockAndCalendar"]["alarmTime"] = self._alarmTimeWaitingText.GetValue()
 
 	def postSave (self):
 		if re.match (r"\d+", self._alarmTimeWaitingText.GetValue()):
@@ -556,5 +535,7 @@ class AlarmSettingsDialog (SettingsDialog):
 					wakeUp *= 3600
 				if self._alarmTimerChoice.GetSelection() == 1:
 					wakeUp *= 60
-				alarmHandler.run = alarmHandler.AlarmTimer (wakeUp, nvwave.playWaveFile, [os.path.join (paths.ALARMS_DIR, self._alarmSoundChoice.GetStringSelection())])
+				config.conf['clockAndCalendar']['alarmTime'] = wakeUp
+				config.conf.save ()
+				alarmHandler.run = alarmHandler.AlarmTimer (wakeUp, alarmHandler.runAlarm, [os.path.join (paths.ALARMS_DIR, self._alarmSoundChoice.GetStringSelection())])
 				alarmHandler.run.start ()

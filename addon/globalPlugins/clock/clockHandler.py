@@ -4,15 +4,15 @@
 # Copyright 2013-2018, released under GPL.
 
 from datetime import datetime
-import dtfunctions
-import paths
+from . import dtfunctions
+from . import paths
 import config
 import nvwave
 import ui
 import os
 import wx
-import formats
-from formats import GetTimeFormatEx
+from . import formats
+from .formats import GetTimeFormatEx
 
 def getAutoAnnounceInterval():
 	autoAnnounceMinutes = tuple()
