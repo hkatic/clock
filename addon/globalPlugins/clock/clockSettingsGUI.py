@@ -15,7 +15,7 @@ import gui
 import os
 import wx
 import locale
-import alarmHandler
+from . import alarmHandler
 
 # This block ensures compatibility with NVDA versions prior to 2018.2 which includes the settings panel.
 if hasattr (gui, "SettingsPanel"):

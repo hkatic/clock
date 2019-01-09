@@ -17,7 +17,7 @@ else:
 	GetDateFormatEx = winKernel.GetDateFormat
 
 # A regular expression to match and facilitate translation for words that are not part of the formatting symbols.
-ptrn=ur"(\w+'?\w*|\$+[hmst]{1,2})"
+ptrn=u"(\w+'?\w*|\$+[hmst]{1,2})"
 rgx = re.compile (ptrn, re.U | re.I)
 
 def repl (match):
