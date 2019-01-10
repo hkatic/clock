@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Clock 18.12\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@freelists.org'\n"
 "POT-Creation-Date: 2018-12-12 07:57+0100\n"
-"PO-Revision-Date: 2018-12-20 21:00+0100\n"
+"PO-Revision-Date: 2019-01-03 18:34+0100\n"
 "Last-Translator: zvonimir stanecic <zvonimirek222@yandex.com>\n"
 "Language-Team: HR <hrvojekatic@gmail.com>\n"
 "Language: hr\n"
@@ -26,13 +26,13 @@ msgid ""
 "of the Clock add-on, this will be fixed during installation. Click OK to "
 "confirm these corrections"
 msgstr ""
-"Oblik datuma i vremena koji ste koristili nisu kompatibilni s ovom verzijom "
+"Oblici datuma i vremena koje ste koristili nisu kompatibilni s ovom inačicom "
 "dodatka Clock, to će biti ispravljeno tijekom instalacije. Kliknite u redu "
 "da biste potvrdili ove ispravke."
 
 #. Translators: the title of a message box dialog.
 msgid "Time and date format corrections"
-msgstr "Ispravke oblika vremena i datuma"
+msgstr "Ispravci oblika vremena i datuma"
 
 #, python-brace-format
 msgid "{hours} hours, "
@@ -182,7 +182,7 @@ msgstr ""
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
-msgstr ""
+msgstr "Omogučava stopiranje alarma ako je predug."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
@@ -286,11 +286,11 @@ msgstr "Zvuk alarma :"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Stop"
-msgstr ""
+msgstr "&Zaustavi"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Pause"
-msgstr ""
+msgstr "&Pauza"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 msgid "Alarm time waiting:"

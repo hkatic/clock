@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: clock 18.12\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2018-12-10 03:30+1000\n"
-"PO-Revision-Date: 2018-12-13 07:37+0100\n"
-"Last-Translator: Karl Eick <hozosch@web.de>\n"
+"PO-Revision-Date: 2019-01-05 19:14+0100\n"
+"Last-Translator: Adriani <adriani.botez@gmail.com>\n"
 "Language-Team: \n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -25,11 +25,11 @@ msgid ""
 msgstr ""
 "Das Datums- und Zeitformat, das Sie verwendet haben, ist nicht mit dieser "
 "Version der Uhr-Erweiterung kompatibel. Dies wird während der Installation "
-"behoben. Klicken Sie auf OK, um diese Korrekturen zu bestätigen"
+"behoben. Klicken Sie auf OK, um die Korrekturen zu bestätigen"
 
 #. Translators: the title of a message box dialog.
 msgid "Time and date format corrections"
-msgstr "Korrektionen des Datums- und Zeitformat"
+msgstr "Berichtigungen des Datums- und Zeitformats"
 
 #, python-brace-format
 msgid "{hours} hours, "
@@ -37,7 +37,7 @@ msgstr "{hours} Stunden, "
 
 #, python-brace-format
 msgid "{minutes} minutes, "
-msgstr "{minutes} Minutenm "
+msgstr "{minutes} Minuten"
 
 #, python-brace-format
 msgid "{seconds} seconds"
@@ -185,7 +185,7 @@ msgstr ""
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
-msgstr ""
+msgstr "Wenn ein Alarm zu lang läuft, können Sie ihn damit stoppen."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
@@ -289,11 +289,11 @@ msgstr "A&larmsignal:"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Stop"
-msgstr ""
+msgstr "&Anhalten"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Pause"
-msgstr ""
+msgstr "&Pausieren"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 msgid "Alarm time waiting:"

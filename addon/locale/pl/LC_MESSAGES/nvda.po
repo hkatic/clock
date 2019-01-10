@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Clock 18.12dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2018-12-15 18:53+0100\n"
-"PO-Revision-Date: 2018-12-16 16:10+0100\n"
+"PO-Revision-Date: 2019-01-03 18:32+0100\n"
 "Last-Translator: zvonimir stanecic <zvonimirek222@yandex.com>\n"
 "Language-Team: \n"
 "Language: pl_PL\n"
@@ -22,8 +22,8 @@ msgid ""
 "confirm these corrections"
 msgstr ""
 "Dotychczasowy format daty i czasu nie jest zgodny z tą wersją dodatku Clock. "
-"ten problem zostanie naprawiony podczas instalacji. Kliknij OK aby "
-"zatwierdzić instalację poprawek"
+"Ten problem zostanie naprawiony podczas instalacji. Kliknij OK aby "
+"zatwierdzić zastosowane poprawki."
 
 #. Translators: the title of a message box dialog.
 msgid "Time and date format corrections"
@@ -179,7 +179,7 @@ msgstr ""
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
-msgstr ""
+msgstr "Jeżeli alarm jest za długi, ta opcja umożliwia zatrzymanie tego że."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
@@ -283,11 +283,11 @@ msgstr "Dźwięk a&larmu"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Stop"
-msgstr ""
+msgstr "&zatrzymaj"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Pause"
-msgstr ""
+msgstr "&Wstrzymaj"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 msgid "Alarm time waiting:"

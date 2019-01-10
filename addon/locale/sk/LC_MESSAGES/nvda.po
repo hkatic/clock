@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: clock 18.12\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2018-12-14 13:08+0100\n"
+"PO-Revision-Date: 2019-01-03 21:36+0100\n"
 "Last-Translator: Ján Kulik <johny.kulik452@gmail.com>\n"
 "Language-Team: \n"
 "Language: sk\n"
@@ -178,7 +178,7 @@ msgstr ""
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
-msgstr ""
+msgstr "Ak je alarm príliš dlhý, umožňuje ho zastaviť."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
@@ -282,11 +282,11 @@ msgstr "Z&vuk budíka:"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Stop"
-msgstr ""
+msgstr "&Stop"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Pause"
-msgstr ""
+msgstr "&Pauza"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 msgid "Alarm time waiting:"

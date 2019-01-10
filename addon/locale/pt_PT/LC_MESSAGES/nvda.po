@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Clock 18.12\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@freelists.org'\n"
 "POT-Creation-Date: 2018-12-12 08:31+0100\n"
-"PO-Revision-Date: 2018-12-13 22:10+0000\n"
+"PO-Revision-Date: 2019-01-03 19:07+0000\n"
 "Last-Translator: Ângelo Miguel Abrantes <ampa4374@gmail.com>\n"
 "Language-Team: Equipa Portuguesa do NVDA <ampa4374@gmail.com; rui."
 "fontes@tiflotecnia.pt>\n"
@@ -183,7 +183,7 @@ msgstr "Verifica o próximo alarme, duas vezes cancela-o"
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
-msgstr ""
+msgstr "Se um alarme é demasiado longo, permite pará-lo."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
@@ -287,11 +287,11 @@ msgstr "&Som do alarme"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Stop"
-msgstr ""
+msgstr "&Parar"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Pause"
-msgstr ""
+msgstr "P&ausa"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 msgid "Alarm time waiting:"
@@ -352,7 +352,6 @@ msgid "It's {hours}:{minutes}:{seconds}"
 msgstr "São {hours}:{minutes}:{seconds}"
 
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-#, fuzzy
 msgid ""
 "An advanced clock and calendar for NVDA.\n"
 "NVDA+F12, get current time.\n"
@@ -362,8 +361,8 @@ msgid ""
 "For other instructions, press Add-on help button in add-ons manager."
 msgstr ""
 "Um relógio e um calendário avançados para o NVDA.\n"
-"Pressione NVDA + F12 para a hora actual, pressione-o duas vezes para a data "
-"actual ou pressione-o três vezes para obter o dia e a semana do ano actual.\n"
+"Pressione NVDA + F12 para a hora actual, pressione duas vezes para a data "
+"actual ou pressione três vezes para obter o dia e a semana do ano actual.\n"
 "Para outras instruções, pressione o botão de ajuda do extra no gestor de "
 "extras\"."
 

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: 'nvda-translations@freelists.org'\n"
 "POT-Creation-Date: 2018-12-14 14:31+0100\n"
-"PO-Revision-Date: 2018-12-15 11:10+0100\n"
+"PO-Revision-Date: 2019-01-03 22:32+0100\n"
 "Last-Translator: Chris Leo Mameli <llajta2012@gmail.com>\n"
 "Language-Team: \n"
 "Language: it\n"
@@ -174,7 +174,7 @@ msgstr "Permette di controllare il Timer, premuto due volte lo annulla."
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
-msgstr ""
+msgstr "Consente di stoppare il suono d'allarme se troppo lungo."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
@@ -278,11 +278,11 @@ msgstr "Suono per il Time&r:"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Stop"
-msgstr ""
+msgstr "&Stop"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Pause"
-msgstr ""
+msgstr "&Pausa"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 msgid "Alarm time waiting:"

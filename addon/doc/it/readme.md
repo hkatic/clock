@@ -1,8 +1,8 @@
 # Clock: impostazioni avanzate per l'ora ed il calendario con NVDA #
 
-* Authori: Hrvoje Katić, Abdel and NVDA contributors;
-* Scarica [versione stabile][1];
-* Scarica [versione in sviluppo][2].
+* Authori: Hrvoje Katić, Abdel e altri collaboratori di NVDA.
+* Scarica la [versione stabile][1];
+* Scarica la [versione in sviluppo][2].
 
 
 Questo componente aggiuntivo presenta impostazioni avanzate per l'orologio,

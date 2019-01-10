@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Clock 18.12\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2018-12-14 11:15+0330\n"
+"PO-Revision-Date: 2019-01-08 06:02+0330\n"
 "Last-Translator: Mohammadreza Rashad <mohammadreza5712@gmail.com>\n"
 "Language-Team: Mohammadreza Rashad <mohammadreza5712@gmail.com>\n"
 "Language: fa\n"
@@ -180,7 +180,7 @@ msgstr ""
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
-msgstr ""
+msgstr "اگر صدای هشدار طولانی باشد، اجازه میدهد تا متوقفش کنید."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
@@ -284,11 +284,11 @@ msgstr "صدای ه&شدار:"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Stop"
-msgstr ""
+msgstr "&توقف"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Pause"
-msgstr ""
+msgstr "&مکث"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 msgid "Alarm time waiting:"
