@@ -33,7 +33,7 @@ class AlarmTimer (TimerBaseClass):
 		else:
 			# NVDA has been restarted.
 			self.startTiming = config.conf['clockAndCalendar']['alarmSavedTime']
-		threading._Timer.start (self)
+		TimerBaseClass.start (self)
 
 	def elapsed (self):
 		return time.time () - self.startTiming if self.is_alive () else 0
@@ -42,7 +42,7 @@ class AlarmTimer (TimerBaseClass):
 		return config.conf['clockAndCalendar']['alarmTime'] - self.elapsed () if self.is_alive () else 0
 
 	def cancel (self):
-		threading._Timer.cancel (self)
+		TimerBaseClass.cancel (self)
 		config.conf['clockAndCalendar']['alarmTime'] = 0.0
 		config.conf['clockAndCalendar']['alarmSavedTime'] = 0.0
 		config.conf.save ()
