@@ -14,6 +14,15 @@ import wx
 from . import formats
 from .formats import GetTimeFormatEx
 
+def getWavFileDuration (filePath):
+	import wave
+	f = wave.open (filePath, 'r')
+	frames = f.getnframes ()
+	rate = f.getframerate ()
+	duration = frames / float (rate)
+	f.close ()
+	return int (duration)
+
 def getAutoAnnounceInterval():
 	autoAnnounceMinutes = tuple()
 	autoAnnounce=config.conf["clockAndCalendar"]["autoAnnounce"]
@@ -47,10 +56,15 @@ class clock(object):
 	def reportClock(self):
 		if self.quietHoursAreActive():
 			return
+		wavFile = os.path.join(paths.SOUNDS_DIR, config.conf["clockAndCalendar"]["timeReportSound"])
 		if config.conf["clockAndCalendar"]["timeReporting"]!=1:
-			nvwave.playWaveFile(os.path.join(paths.SOUNDS_DIR, config.conf["clockAndCalendar"]["timeReportSound"]))
+			nvwave.playWaveFile (wavFile)
 		if config.conf["clockAndCalendar"]["timeReporting"]!=2:
-			ui.message(GetTimeFormatEx (None, None, None, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']])))
+			if config.conf["clockAndCalendar"]["timeReporting"]==0:
+				wavFileDuration = getWavFileDuration (wavFile)
+				wx.CallLater (10 + (1000 * wavFileDuration), ui.message, GetTimeFormatEx (None, None, None, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']])))
+			else:
+				ui.message(GetTimeFormatEx (None, None, None, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']])))
 
 	def quietHoursAreActive(self):
 		if not config.conf["clockAndCalendar"]["quietHours"]:
