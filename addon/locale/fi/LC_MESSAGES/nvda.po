@@ -1,21 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the clock package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Clock 18.12\n"
+"Project-Id-Version: clock\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2019-01-08 06:02+0330\n"
-"Last-Translator: Mohammadreza Rashad <mohammadreza5712@gmail.com>\n"
-"Language-Team: Mohammadreza Rashad <mohammadreza5712@gmail.com>\n"
-"Language: fa\n"
+"PO-Revision-Date: 2019-01-04 19:29+0200\n"
+"Last-Translator: Jani Kinnunen <janikinnunen340@gmail.com>\n"
+"Language-Team: Jani Kinnunen <janikinnunen340@gmail.com>\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.6.11\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: the label of a message box dialog.
 msgid ""
@@ -23,63 +24,62 @@ msgid ""
 "of the Clock add-on, this will be fixed during installation. Click OK to "
 "confirm these corrections"
 msgstr ""
-"قالبی که برای نمایشِ زمان و تاریخ استفاده میکردید، با این نسخه از افزونه‌ی "
-"ساعت سازگار نیست. این مشکل در هنگامِ نصب برطرف خواهد شد. لطفا OK را برای "
-"انجامِ اصلاحات کلیک کنید."
+"Käyttämäsi päivämäärän ja ajan näyttömuodot eivät ole yhteensopivia tämän "
+"Kello-lisäosaversion kanssa. Tämä korjataan asennuksen aikana. Vahvista "
+"korjaukset painamalla OK."
 
 #. Translators: the title of a message box dialog.
 msgid "Time and date format corrections"
-msgstr "تصحیحِ قالبِ نمایشِ زمان و تاریخ"
+msgstr "Ajan ja päivämäärän näyttömuodon korjaukset"
 
 #, python-brace-format
 msgid "{hours} hours, "
-msgstr "{hours} ساعتُ "
+msgstr "{hours} tuntia, "
 
 #, python-brace-format
 msgid "{minutes} minutes, "
-msgstr "{minutes} دقیقه ُ "
+msgstr "{minutes} minuuttia, "
 
 #, python-brace-format
 msgid "{seconds} seconds"
-msgstr "{seconds} ثانیه"
+msgstr "{seconds} sekuntia"
 
 msgid "0 seconds"
-msgstr "۰ ثانیه"
+msgstr "0 sekuntia"
 
 #. Translators: Script category for Clock addon commands in input gestures dialog.
 #. Translators: Summary for this add-on to be shown on installation and add-on information.
 msgid "Clock"
-msgstr "ساعت"
+msgstr "Kello"
 
 #. Translators: Item in the tools menu for the Clock Addon settings.
 msgid "Clock se&ttings..."
-msgstr "تنظیما&تِ ساعت"
+msgstr "&Kello..."
 
 #. Translators: The tooltyp text for the clock settings submenu.
 msgid "Clock and calendar setup"
-msgstr "تنظیمِ ساعت و تقویم"
+msgstr "Kellon ja kalenterin asetukset"
 
 #. Translators: The name of the first item in the Clock settings submenu.
 #. Translators: This is the label for the clock settings panel.
 msgid "Clock setup"
-msgstr "تنظیمِ ساعت"
+msgstr "Kellon asetukset"
 
 #. Translators: The tooltyp text for the first item in the Clock add-on submenu.
 msgid "Clock setup for times and dates"
-msgstr "تنظیماتِ ساعت برای زمان و تاریخ"
+msgstr "Kellon Aika- ja päivämääräasetukset"
 
 #. Translators: The name of the second item in the Clock settings submenu.
 msgid "Alarm settin&gs"
-msgstr "تنظیم&اتِِ هشدار:"
+msgstr "&Hälytyksen asetukset"
 
 #. Translators: The tooltyp text for the second item in the Clock add-on submenu.
 msgid "Allows you to schedule an alarm"
-msgstr "اجازه میدهد تا یک هشدار تنظیم کنید."
+msgstr "Tästä voit ajastaa hälytyksen"
 
 #, python-brace-format
 msgid "Day {day}, week {week} of {year}, remaining days {remain}."
-msgstr ""
-"روزِ {day}ُم، هفته‌ی {week}ُم از سالِ {year}. {remain} روز از سال باقی مانده."
+msgstr "Päivä {day}, viikko {week} vuonna {year}, päiviä jäljellä {remain}."
 
 #. Translators: Message presented in input help mode.
 msgid ""
@@ -87,67 +87,67 @@ msgid ""
 "pressed thrice quickly, reports the current day, the week number, the "
 "current year and the days remaining before the end of the year."
 msgstr ""
-"زمان را اعلام میکند. اگر دو بار فشرده شود، تاریخ را اعلام میکند. اگر سه بار "
-"فشرده شود، شماره‌ی روز و هفته‌ی سالِ جاری و تعدادِ روزهای باقی‌مانده از سال را "
-"اعلام میکند."
+"Puhuu kerran painettaessa nykyisen ajan, kahdesti painettaessa päivämäärän "
+"tai ilmoittaa kolmesti painettaessa päivän, viikon numeron sekä vuoden ja "
+"jäljellä olevien päivien määrän."
 
 #. Translators: Message presented in input help mode.
 msgid ""
 "Clock and calendar layer commands. After pressing this keystroke, press H "
 "for additional help."
 msgstr ""
-"فرمان‌های لایه‌دارِ ساعت و تقویم. بعد از فِشُردَنِ این کلید، H را برای راهنمایی "
-"بیشتر فشار دهید."
+"Kellon ja kalenterin komentokerroksen komennot. Saat lisäohjeita painamalla "
+"tämän komennon jälkeen H."
 
 msgid "Reset. Running."
-msgstr "بازتنظیم شد. درحالِ اجرا."
+msgstr "Nollattu. Käynnissä."
 
 msgid "Running."
-msgstr "درحالِ اجرا."
+msgstr "Käynnissä."
 
 #, python-brace-format
 msgid "{0} stopped."
-msgstr "{0} متوقف شد."
+msgstr "{0} pysäytetty."
 
 #. Translators: Message presented in input help mode.
 msgid "Starts, resets or stops the stopwatch."
-msgstr "زمانسنج را آغاز، متوقف یا بازتنظیم میکند."
+msgstr "Käynnistää, nollaa tai pysäyttää sekuntikellon."
 
 #. Translators: Message presented in input help mode.
 msgid "Speaks current stopwatch or count-down timer."
-msgstr "زمانسنج یا تایمرِ معکوسِ جاری را میخوانَد."
+msgstr "Puhuu sekuntikellon tai jäljellä olevan ajan ennen hälytystä."
 
 #, python-brace-format
 msgid "Elapsed time {elapsed}, remaining time {remaining}."
-msgstr "{elapsed} گذشته، {remaining} مانده."
+msgstr "Kulunut aika {elapsed}, jäljellä oleva aika {remaining}."
 
 msgid "No alarm"
-msgstr "هشداری موجود نیست"
+msgstr "Ei hälytystä"
 
 #. Translators: Message presented in input help mode.
 msgid "Gives the remaining and elapsed time before the next alarm."
-msgstr "زمانِ گذشته و باقیمانده پیش از هشدارِ بعدی را بیان میکند."
+msgstr "Ilmoittaa kuluneen ja jäljellä olevan ajan ennen seuraavaa hälytystä."
 
 msgid "Alarm cancelled"
-msgstr "هشدار لغو شد"
+msgstr "Hälytys peruttu"
 
 #. Translators: Message presented in input help mode.
 msgid "Cancel the next alarm."
-msgstr "هشدارِ بعدی را لغو میکند."
+msgstr "Peruu seuraavan hälytyksen."
 
 msgid ""
 "The stopwatch is already reset to 0. Use the clock layer command followed by "
 "s to start it."
 msgstr ""
-"زمانسنج قبلا ۰ شده است. از فرمانِ لایه‌دارِ ساعت بعلاوه‌ی S برای شروعِ آن استفاده "
-"کنید."
+"Sekuntikello on jo nollattu. Käynnistä se painamalla Kellon "
+"komentokerroskomentoa ja S."
 
 msgid "Stopwatch reset."
-msgstr "زمانسنج بازتنظیم شد."
+msgstr "Sekuntikello nollattu."
 
 #. Translators: Message presented in input help mode.
 msgid "Resets stopwatch to 0 without restarting it."
-msgstr "زمانسنج را بدونِ راه‌اندازی ۰ میکند."
+msgstr "Nollaa sekuntikellon käynnistämättä sitä uudelleen."
 
 msgid ""
 "\n"
@@ -160,185 +160,187 @@ msgid ""
 "\t\t"
 msgstr ""
 "\n"
-"\t\tS: زمانسنج را آغاز، متوقف یا بازتنظیم کرده و از نو راه می‌اندازد.\n"
-"\t\tR: زمانسنج را بدونِ دوباره راه‌انداختن بازتنظیم میکند.\n"
-"\t\tA: زمانِ گذشته و باقی‌مانده تا هشدارِ بعدی را اعلام میکند.\n"
-"\t\tC: هشدارِ بعدی را لغو میکند.\n"
-"\t\tکلیدِ فاصله: زمانسنج یا تایمرِ معکوسِ جاری را میخوانَد.\n"
-"\t\tH: همه‌ی فرمان‌های لایه‌دارِ افزونه را فهرست میکند.\n"
+"\t\tS: Käynnistää, nollaa tai pysäyttää sekuntikellon.\n"
+"\t\tR: Nollaa sekuntikellon käynnistämättä sitä uudelleen.\n"
+"\t\tA: Ilmoittaa jäljellä olevan ja kuluneen ajan ennen seuraavaa "
+"hölytystä.\n"
+"\t\tC: Peruu seuraavan hälytyksen.\n"
+"\t\tVäli-näppäin: Puhuu sekuntikellon tai hälytykseen jäljellä olevan ajan.\n"
+"\t\tH:  Näyttää luettelon kaikista komentokerroksen komennoista.\n"
 "\t\t"
 
 #. Translators: Message presented in input help mode.
 msgid "Lists available commands in clock command layer."
-msgstr "فرمان‌های موجود در فرمانِ لایه‌دارِ ساعت را فهرست میکند."
+msgstr ""
+"Näyttää luettelon käytettävissä olevista Kellon komentokerroksen komennoista."
 
 #. Translators: Message presented in input help mode.
 msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr ""
-"اجازه میدهد تا هشدارِ بعدی را بررسی کنید. اگر دو بار فشرده شود، آن هشدار را "
-"لغو میکند."
+"Ilmoittaa kerran painettaessa seuraavan hälytyksen ajankohdan tai kahdesti "
+"painettaessa peruu sen."
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
-msgstr "اگر صدای هشدار طولانی باشد، اجازه میدهد تا متوقفش کنید."
+msgstr "Pysäyttää hälytyksen, mikäli se kestää liian kauan."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
-msgstr "پنجره‌ی تنظیماتِ ساعت را نمایش میدهد."
+msgstr "Näyttää Kellon asetukset -valintaikkunan."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the alarm settings dialog box."
-msgstr "تنظیماتِ هشدار را نمایش میدهد."
+msgstr "Näyttää Hälytyksen asetukset -valintaikkunan."
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Time display format:"
-msgstr "قالبِ نمایشِ &زمان:"
+msgstr "&Ajan näyttömuoto:"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Date display format:"
-msgstr "قالبِ نمایشِ &تاریخ:"
+msgstr "&Päivämäärän näyttömuoto:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "Input in &24-hour format"
-msgstr "ورودِ زمان در قالبِ &۲۴ ساعتی"
+msgstr "Syöte &24 tunnin muodossa"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "off"
-msgstr "خاموش"
+msgstr "ei käytössä"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "every 10 minutes"
-msgstr "هر ۱۰ دقیقه"
+msgstr "10 minuutin välein"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "every 15 minutes"
-msgstr "هر ۱۵ دقیقه"
+msgstr "15 minuutin välein"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "every 30 minutes"
-msgstr "هر ۳۰ دقیقه"
+msgstr "30 minuutin välein"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "every hour"
-msgstr "هر ساعت"
+msgstr "tunnin välein"
 
 #. Transla	tors: This is the label for a combo box in the Clock settings dialog.
 msgid "&interval:"
-msgstr "&دوره‌ی زمانی:"
+msgstr "A&ikaväli:"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "speech and sound"
-msgstr "گفتار و صدا"
+msgstr "puhe ja ääni"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "speech only"
-msgstr "فقط گفتار"
+msgstr "vain puhe"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "sound only"
-msgstr "فقط صدا"
+msgstr "vain ääni"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Time &announcement:"
-msgstr "&اعلامِ زمان:"
+msgstr "Ajan &ilmoitus:"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Clock chime &sound:"
-msgstr "&صدای زنگِ ساعت:"
+msgstr "Kellon &ääni:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "&Quiet hours"
-msgstr "ساعات &بی‌صدا"
+msgstr "&Hiljaiset tunnit"
 
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours start time:"
-msgstr "زمانِ آغازِ ساعاتِ بی‌صدا:"
+msgstr "Hiljaisten tuntien aloitusaika:"
 
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours end time:"
-msgstr "زمانِ پایانِ ساعاتِ بی‌صدا:"
+msgstr "Hiljaisten tuntien päättymisaika:"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"
-msgstr "تنظیمِ هشدار:"
+msgstr "Hälytyksen asetukset"
 
 #. Translators: This is an item of the alarm timer choices.
 msgid "Hours"
-msgstr "ساعت"
+msgstr "Tunnit"
 
 #. Translators: This is an item of the alarm timer choices.
 msgid "Minutes"
-msgstr "دقیقه"
+msgstr "Minuutit"
 
 #. Translators: This is an item of the alarm timer choices.
 msgid "Seconds"
-msgstr "ثانیه"
+msgstr "Sekunnit"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 #, fuzzy
 msgid "Choose the type of timer &inputs before the alarm rings:"
-msgstr "نوعِ ورودیِ تایمر را پیش از اینکه ساعت زنگ بزند انتخاب کنید:"
+msgstr "Valitse ajastinsyötteen tyyppi ennen hälytyksen alkamista:"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
-msgstr "صدای ه&شدار:"
+msgstr "Hä&lytysääni:"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Stop"
-msgstr "&توقف"
+msgstr "&Pysäytä"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Pause"
-msgstr "&مکث"
+msgstr "&Keskeytä"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 #, fuzzy
 msgid "Alarm &time waiting:"
-msgstr "زمانِ انتظار برای هشدار:"
+msgstr "Hälytyksen odotusaika:"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
 #, python-brace-format
 msgid "You've chosen an alarm to be triggered in {tm} {unit}"
-msgstr "شما انتخاب کردید که ساعت {tm} {unit} بعد زنگ بزند."
+msgstr "Hälytyksen alkamiseen {tm} {unit}"
 
 #. Translators: The title of the dialog which appears when the user has chosen to trigger an alarm.
 msgid "Confirmation"
-msgstr "تأیید"
+msgstr "Vahvistus"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {hours} o'clock and {minutes} minutes"
-msgstr "ساعت {hours}ُ {minutes} دقیقه است"
+msgstr "Kello on {hours} tuntia ja {minutes} minuuttia"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {hours} o'clock, {minutes} minutes and {seconds} seconds"
-msgstr "ساعت {hours}ُ {minutes} دقیقه ُ {seconds} ثانیه است"
+msgstr "Kello on {hours} tuntia, {minutes} minuuttia ja {seconds} sekuntia"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "{hours} o'clock, {minutes} minutes"
-msgstr "{hours}ُ {minutes} دقیقه"
+msgstr "{hours} tuntia, {minutes} minuuttia"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "{hours} o'clock, {minutes} minutes, {seconds} seconds"
-msgstr "{hours}ُ {minutes} دقیقه ُ {seconds} ثانیه"
+msgstr "{hours} tuntia, {minutes} minuuttia, {seconds} sekuntia"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {minutes} past {hours}"
-msgstr "{minutes} دقیقه از {hours} گذشته"
+msgstr "Kello on {minutes} yli {hours}"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "{hours} h {minutes} min"
-msgstr "{hours} ساعتُ {minutes} دقیقه"
+msgstr "{hours} h {minutes} min"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "{hours} h, {minutes} min, {seconds} sec"
-msgstr "{hours} ساعتُ {minutes} دقیقه ُ {seconds} ثانیه"
+msgstr "{hours} h, {minutes} min, {seconds} sek"
 
 #. Translators: A time formating.
 #, python-brace-format
@@ -359,15 +361,9 @@ msgid ""
 "the current year and the remaining days before the end of the year.\n"
 "For other instructions, press Add-on help button in add-ons manager."
 msgstr ""
-"یک ساعت و تقویمِ پیشرفته برای NVDA.\n"
-"NVDA+F12 را برای شِنیدنِ زمانِ جاری یک بار،\n"
-"برای شِنیدنِ تاریخِ جاری دو بار،\n"
-"و برای شِنیدنِ شماره‌ی روز و هفته از سالِ جاری، سه بار بفشارید.\n"
-"برای دستیابی به کارکردهای دیگر، دکمه‌ی راهنمای افزونه را در مدیرِ افزونه‌ها "
-"فشار دهید."
-
-#~ msgid "Auto announce &interval:"
-#~ msgstr "&دوره‌ی اعلامِ خودکار:"
-
-#~ msgid "&Alarm"
-#~ msgstr "&هشدار"
+"Edistynyt kello ja kalenteri NVDA:lle.\n"
+"NVDA+F12: puhuu ajan.\n"
+"NVDA+F12 kahdesti painettaessa: puhuu päivämäärän.\n"
+"NVDA+F12 kolmesti painettaessa: ilmoittaa päivän, viikon numeron, kuluvan "
+"vuoden sekä sen jäljellä olevien päivien määrän.\n"
+"Muita ohjeita saat painamalla Ohje-painiketta Lisäosien hallinnassa."

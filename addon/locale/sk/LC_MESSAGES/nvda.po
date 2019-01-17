@@ -273,7 +273,8 @@ msgid "Seconds"
 msgstr "Sekúnd"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
-msgid "Choose the type of timer inputs before the alarm rings:"
+#, fuzzy
+msgid "Choose the type of timer &inputs before the alarm rings:"
 msgstr "Zvoľte typ časového vstupu pre budík zvonenia:"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
@@ -289,7 +290,8 @@ msgid "&Pause"
 msgstr "&Pauza"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
-msgid "Alarm time waiting:"
+#, fuzzy
+msgid "Alarm &time waiting:"
 msgstr "Čas čakania budíka:"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.

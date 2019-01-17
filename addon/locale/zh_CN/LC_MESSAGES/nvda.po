@@ -267,7 +267,8 @@ msgid "Seconds"
 msgstr "秒"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
-msgid "Choose the type of timer inputs before the alarm rings:"
+#, fuzzy
+msgid "Choose the type of timer &inputs before the alarm rings:"
 msgstr "在闹铃响起之前选择定时器的类型:"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
@@ -283,7 +284,8 @@ msgid "&Pause"
 msgstr ""
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
-msgid "Alarm time waiting:"
+#, fuzzy
+msgid "Alarm &time waiting:"
 msgstr "闹钟间隔时间:"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
