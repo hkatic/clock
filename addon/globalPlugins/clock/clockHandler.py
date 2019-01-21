@@ -14,7 +14,16 @@ import wx
 from . import formats
 from .formats import GetTimeFormatEx
 
-def getWavFileDuration (filePath):
+def getWavFileDuration (sound):
+	"""
+	A function for calculating the duration of the wave file to be launched at regular intervals.
+	It allows to delay the announcement of the time immediately after the sound is launched.
+	@param sound: The path to the WAV file.
+	@type sound: basestring.
+	@returns: The duration of the wav file in seconds.
+	@rtype: int.
+	
+	"""
 	import wave
 	f = wave.open (filePath, 'r')
 	frames = f.getnframes ()
@@ -56,13 +65,13 @@ class clock(object):
 	def reportClock(self):
 		if self.quietHoursAreActive():
 			return
-		wavFile = os.path.join(paths.SOUNDS_DIR, config.conf["clockAndCalendar"]["timeReportSound"])
+		waveFile = os.path.join(paths.SOUNDS_DIR, config.conf["clockAndCalendar"]["timeReportSound"])
 		if config.conf["clockAndCalendar"]["timeReporting"]!=1:
-			nvwave.playWaveFile (wavFile)
+			nvwave.playWaveFile (waveFile)
 		if config.conf["clockAndCalendar"]["timeReporting"]!=2:
 			if config.conf["clockAndCalendar"]["timeReporting"]==0:
-				wavFileDuration = getWavFileDuration (wavFile)
-				wx.CallLater (10 + (1000 * wavFileDuration), ui.message, GetTimeFormatEx (None, None, None, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']])))
+				waveFileDuration = getWaveFileDuration (waveFile)
+				wx.CallLater (10 + (1000 * waveFileDuration), ui.message, GetTimeFormatEx (None, None, None, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']])))
 			else:
 				ui.message(GetTimeFormatEx (None, None, None, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']])))
 

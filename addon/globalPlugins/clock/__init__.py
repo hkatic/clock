@@ -60,7 +60,7 @@ def secondsToString(seconds):
 	@param second: The number of seconds to convert.
 	@type seconds: float.
 	@returns: User-friendly string containing hours, minutes and seconds.
-	@rtype: unicode or str.
+	@rtype: basestring.
 	"""
 	text=""
 	tm=time.gmtime(seconds)
@@ -175,7 +175,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			alarmSound = paths.LIST_ALARMS[0]
 		else:
 			alarmSound = config.conf['clockAndCalendar']['alarmSound']
-		if config.conf['clockAndCalendar']['alarmTime'] != 0.0:
+		if config.conf['clockAndCalendar']['alarmSavedTime'] != 0.0:
 			wakeUp = config.conf['clockAndCalendar']['alarmTime'] - (time.time () - config.conf['clockAndCalendar']['alarmSavedTime'])
 			alarmHandler.run = alarmHandler.AlarmTimer (wakeUp, alarmHandler.runAlarm, [os.path.join (paths.ALARMS_DIR, alarmSound)])
 			alarmHandler.run.start ()
@@ -204,6 +204,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gui.mainFrame.sysTrayIcon.Bind (wx.EVT_MENU, self.onAlarmSettingsDialog, alarmSettings)
 
 	def terminate (self):
+		super(GlobalPlugin, self).terminate()
 		if hasattr (gui, "NVDASettingsDialog"):
 			gui.NVDASettingsDialog.categoryClasses.remove(ClockSettingsPanel)
 			gui.NVDASettingsDialog.categoryClasses.remove(AlarmSettingsPanel)

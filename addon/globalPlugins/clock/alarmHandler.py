@@ -13,6 +13,12 @@ TimerBaseClass = threading._Timer if sys.version_info.major == 2 else threading.
 run = False
 
 def runAlarm (sound):
+	"""
+	A function that allows to launch the scheduled alarm.
+	It resets the settings of the alarm launch time after execution.
+	@param sound: The path to the WAV file to launch.
+	@type sound: basestring.
+	"""
 	nvwave.playWaveFile (sound)
 	config.conf['clockAndCalendar']['alarmTime'] = 0.0
 	config.conf['clockAndCalendar']['alarmSavedTime'] = 0.0
