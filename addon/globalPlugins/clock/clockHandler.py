@@ -14,7 +14,7 @@ import wx
 from . import formats
 from .formats import GetTimeFormatEx
 
-def getWavFileDuration (sound):
+def getWaveFileDuration (sound):
 	"""
 	A function for calculating the duration of the wave file to be launched at regular intervals.
 	It allows to delay the announcement of the time immediately after the sound is launched.
@@ -22,10 +22,9 @@ def getWavFileDuration (sound):
 	@type sound: basestring.
 	@returns: The duration of the wav file in seconds.
 	@rtype: int.
-	
 	"""
 	import wave
-	f = wave.open (filePath, 'r')
+	f = wave.open (sound, 'r')
 	frames = f.getnframes ()
 	rate = f.getframerate ()
 	duration = frames / float (rate)
