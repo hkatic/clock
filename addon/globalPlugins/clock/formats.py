@@ -41,7 +41,7 @@ def timeMarker ():
 	A function that allows to find the time marker "AM" or "PM" for the formats of hours used in some English-speaking countries.
 	As Windows defines this marker only if the regional language is English, this function allows to extend this to all other regions.
 	@returns: The time marker am or pm corresponding to the current time.
-	@rtype: unicode or str.
+	@rtype: basestring.
 	"""
 	from datetime import datetime
 	tm = ""
