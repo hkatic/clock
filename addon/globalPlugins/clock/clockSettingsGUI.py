@@ -325,8 +325,8 @@ class ClockSettingsDialog(SettingsDialog):
 		config.conf["clockAndCalendar"]["timeReportSound"]=self._timeReportSoundChoice.GetStringSelection()
 		if self._quietHoursCheckBox.IsChecked ():
 			if self._input24HourFormatCheckBox.IsChecked ():
-				match = re.match("^(0[1-9]|[1-2][0-3]):[0-5][0-9]", self._quietStartTimeText.GetValue())
-				match1 = re.match("^(0[1-9]|[1-2][0-3]):[0-5][0-9]", self._quietEndTimeText.GetValue())
+				match = re.match("^(0?[1-9]|[1-2][0-3]):[0-5][0-9]", self._quietStartTimeText.GetValue())
+				match1 = re.match("^(0?[1-9]|[1-2][0-3]):[0-5][0-9]", self._quietEndTimeText.GetValue())
 			else:
 				match = re.match("^(0?[1-9]|1[0-2]):[0-5][0-9]", self._quietStartTimeText.GetValue ())
 				match1 = re.match("^(0?[1-9]|1[0-2]):[0-5][0-9]", self._quietEndTimeText.GetValue ())
