@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: 'nvda-translations@freelists.org'\n"
 "POT-Creation-Date: 2018-12-14 14:31+0100\n"
-"PO-Revision-Date: 2019-01-03 22:32+0100\n"
+"PO-Revision-Date: 2019-01-19 15:28+0100\n"
 "Last-Translator: Chris Leo Mameli <llajta2012@gmail.com>\n"
 "Language-Team: \n"
 "Language: it\n"
@@ -269,9 +269,8 @@ msgid "Seconds"
 msgstr "Secondi"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
-#, fuzzy
 msgid "Choose the type of timer &inputs before the alarm rings:"
-msgstr "Imposta unità di misura:"
+msgstr "&Imposta unità di misura:"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
@@ -286,9 +285,8 @@ msgid "&Pause"
 msgstr "&Pausa"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
-#, fuzzy
 msgid "Alarm &time waiting:"
-msgstr "Tempo di attesa per il Timer:"
+msgstr "&Tempo di attesa per il Timer:"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
 #, python-brace-format
@@ -307,7 +305,7 @@ msgstr "Sono le {hours} e {minutes} minuti"
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {hours} o'clock, {minutes} minutes and {seconds} seconds"
-msgstr "Sono le... {hours}, {minutes} minuti, e {seconds} secondi"
+msgstr "Sono le, {hours}, {minutes} minuti, e {seconds} secondi"
 
 #. Translators: A time formating.
 #, python-brace-format
@@ -342,7 +340,7 @@ msgstr "Sono le ore, {hours} e {minutes}"
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {hours}:{minutes}:{seconds}"
-msgstr "Sono le ore...  {hours}:{minutes}:{seconds}"
+msgstr "Sono le ore,  {hours}:{minutes}:{seconds}"
 
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 msgid ""

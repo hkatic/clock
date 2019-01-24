@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: Clock 18.12dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2019-01-04 10:16+0300\n"
+"PO-Revision-Date: 2019-01-18 08:09+0300\n"
 "Last-Translator: José Manuel Delicado <jmdaweb@hotmail.com>\n"
 "Language-Team: cagrid@hotmail.com\n"
 "Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-Basepath: ../../../globalPlugins/clock\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -271,9 +271,8 @@ msgid "Seconds"
 msgstr "Saniye"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
-#, fuzzy
 msgid "Choose the type of timer &inputs before the alarm rings:"
-msgstr "Alarm zamanlayıcı birimi"
+msgstr "Lütfen alarm zamanlayıcı birimini ve süreyi belirleyin:"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
@@ -288,9 +287,8 @@ msgid "&Pause"
 msgstr "&Duraklat"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
-#, fuzzy
 msgid "Alarm &time waiting:"
-msgstr "Alarm için kalan süre:"
+msgstr "Alarm için &kalan süre:"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
 #, python-brace-format

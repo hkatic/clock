@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Clock 18.12dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2018-12-15 18:53+0100\n"
-"PO-Revision-Date: 2019-01-03 18:32+0100\n"
+"PO-Revision-Date: 2019-01-20 14:17+0100\n"
 "Last-Translator: zvonimir stanecic <zvonimirek222@yandex.com>\n"
 "Language-Team: \n"
 "Language: pl_PL\n"
@@ -274,9 +274,8 @@ msgid "Seconds"
 msgstr "sekund"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
-#, fuzzy
 msgid "Choose the type of timer &inputs before the alarm rings:"
-msgstr "Proszę wybrać typ wejścia tajmeru przed dzwonkiem alarmu:"
+msgstr "Proszę wybrać typ wejścia &tajmera przed dzwonkiem alarma:"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
@@ -291,9 +290,8 @@ msgid "&Pause"
 msgstr "&Wstrzymaj"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
-#, fuzzy
 msgid "Alarm &time waiting:"
-msgstr "Czas oczekiwania na alarm:"
+msgstr "Czas &oczekiwania na alarm:"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
 #, python-brace-format

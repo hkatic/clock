@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: Clock 18.12dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2018-12-15 18:53+0100\n"
-"PO-Revision-Date: 2019-01-05 02:36+0200\n"
-"Last-Translator: Ecaterina Jivaga <notka@gozaltech.org>\n"
+"PO-Revision-Date: 2019-01-20 14:16+0100\n"
+"Last-Translator: zvonimir stanecic <zvonimirek222@yandex.com>\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.8\n"
+"X-Generator: Poedit 1.6.10\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
@@ -277,9 +277,8 @@ msgid "Seconds"
 msgstr "Секунды"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
-#, fuzzy
 msgid "Choose the type of timer &inputs before the alarm rings:"
-msgstr "Выберете единицу времени, через которую сработает таймер:"
+msgstr "Выберите единицу времени, через которую сработает &таймер:"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
@@ -294,9 +293,8 @@ msgid "&Pause"
 msgstr "&Пауза"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
-#, fuzzy
 msgid "Alarm &time waiting:"
-msgstr "Через какое время сработает таймер:"
+msgstr "Через какое время &сработает таймер:"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
 #, python-brace-format

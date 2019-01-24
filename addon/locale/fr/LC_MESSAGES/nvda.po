@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: clock 19.01\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2019-01-03 18:31+0100\n"
-"Last-Translator: Rémy Ruiz <remyruiz@gmail.com>\n"
+"PO-Revision-Date: 2019-01-17 18:35+0100\n"
+"Last-Translator: Michel Such <michel.such@free.fr>\n"
 "Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.2.1\n"
 
 #. Translators: the label of a message box dialog.
 msgid ""
@@ -49,7 +49,7 @@ msgstr "0 secondes"
 #. Translators: Script category for Clock addon commands in input gestures dialog.
 #. Translators: Summary for this add-on to be shown on installation and add-on information.
 msgid "Clock"
-msgstr "Clock"
+msgstr "Horloge"
 
 #. Translators: Item in the tools menu for the Clock Addon settings.
 msgid "Clock se&ttings..."
@@ -160,13 +160,13 @@ msgid ""
 "\t\t"
 msgstr ""
 "\n"
-"\t\tS: Démarre, réinitialise ou arrête le chronomètre.\n"
-"\t\tR: Réinitialise le chronomètre à 0 sans le démarrer.\n"
-"\t\tA: Donne le temps restant et écoulé avant la prochaine alarme.\n"
-"\t\tC: Annule la prochaine alarme.\n"
+"\t\tS : Démarre, réinitialise ou arrête le chronomètre.\n"
+"\t\tR : Réinitialise le chronomètre à 0 sans le démarrer.\n"
+"\t\tA : Donne le temps restant et écoulé avant la prochaine alarme.\n"
+"\t\tC : Annule la prochaine alarme.\n"
 "\t\tBarre d'espace : Annonce le chronomètre actuel ou le compte à rebours de "
 "la minuterie.\n"
-"\t\tH: Liste toutes les commandes en couches (Aide).\n"
+"\t\tH : Liste toutes les commandes en couches (Aide).\n"
 "\t\t"
 
 #. Translators: Message presented in input help mode.
@@ -193,11 +193,11 @@ msgstr "Afficher la boîte de dialogue des paramètres de l'alarme."
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Time display format:"
-msgstr "Format d'affichage de l'&heure:"
+msgstr "Format d'affichage de l'&heure :"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Date display format:"
-msgstr "Format d'affichage de la &date:"
+msgstr "Format d'affichage de la &date :"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "Input in &24-hour format"
@@ -225,7 +225,7 @@ msgstr "toutes les heures"
 
 #. Transla	tors: This is the label for a combo box in the Clock settings dialog.
 msgid "&interval:"
-msgstr "&intervalle:"
+msgstr "&intervalle :"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "speech and sound"
@@ -241,11 +241,11 @@ msgstr "son seulement"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Time &announcement:"
-msgstr "&Annonce de l'heure:"
+msgstr "&Annonce de l'heure :"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Clock chime &sound:"
-msgstr "&Son de carillon d'horloge:"
+msgstr "&Son de carillon d'horloge :"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "&Quiet hours"
@@ -253,11 +253,11 @@ msgstr "&Heures silencieuses"
 
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours start time:"
-msgstr "Début de la durée des heures silencieuses:"
+msgstr "Début de la durée des heures silencieuses :"
 
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours end time:"
-msgstr "Fin de la durée des heures silencieuses:"
+msgstr "Heure de fin des heures silencieuses :"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"
@@ -276,13 +276,13 @@ msgid "Seconds"
 msgstr "Secondes"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
-#, fuzzy
 msgid "Choose the type of timer &inputs before the alarm rings:"
-msgstr "Choisissez le type d'entrées de la minuterie avant que l'alarme sonne:"
+msgstr ""
+"Choisissez le type d'&entrées de la minuterie avant que l'alarme ne sonne :"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
-msgstr "Son de l'a&larme:"
+msgstr "Son de l'a&larme :"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Stop"
@@ -293,9 +293,8 @@ msgid "&Pause"
 msgstr "&Pause"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
-#, fuzzy
 msgid "Alarm &time waiting:"
-msgstr "Temps d'attente de l'alarme:"
+msgstr "&Temps d'attente de l'alarme :"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
 #, python-brace-format
@@ -329,7 +328,7 @@ msgstr "{hours} heures, {minutes} minutes, {seconds} secondes"
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {minutes} past {hours}"
-msgstr "Il est {hours} heures passées de {minutes} minutes"
+msgstr "Il est {hours} heures et {minutes} minutes"
 
 #. Translators: A time formating.
 #, python-brace-format

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: clock 19.01.2\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2019-01-11 03:15+1000\n"
-"PO-Revision-Date: 2019-01-10 18:40+0100\n"
+"PO-Revision-Date: 2019-01-18 11:34+0100\n"
 "Last-Translator: Nikola Jović <wwenikola123@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: sr\n"
@@ -273,9 +273,8 @@ msgid "Seconds"
 msgstr "Sekunde"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
-#, fuzzy
 msgid "Choose the type of timer &inputs before the alarm rings:"
-msgstr "Izaberi vrstu vremena pre nego što alarm zvoni:"
+msgstr "Izaberi vrstu &unosa vremena pre nego što alarm zvoni:"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
@@ -290,9 +289,8 @@ msgid "&Pause"
 msgstr "&Pauziraj"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
-#, fuzzy
 msgid "Alarm &time waiting:"
-msgstr "Vreme čekanja na alarm:"
+msgstr "Vreme čekanja do &alarma:"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
 #, python-brace-format
