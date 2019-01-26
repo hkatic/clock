@@ -5,6 +5,7 @@
 
 from functools import wraps
 import sys
+import skipTranslation
 from validate import VdtTypeError
 from . import alarmHandler
 import globalPluginHandler
@@ -41,7 +42,7 @@ from . import configuration
 import addonHandler
 addonHandler.initTranslation()
 
-#Command layer environment.
+# The finally function for command layer environment used in this module (source: Tyler Spivey's code).
 def finally_(func, final):
 	"""Calls final after func, even if it fails."""
 	def wrap(f):
@@ -79,7 +80,7 @@ def getDayAndWeekOfYear (date):
 	"""
 	A function to calculate the current day of the year, as well as the actual number of weeks, for a Gregorian year and also some non-Gregorian years.
 	@param date: The current date that will allow to make the calculation.
-	@type date: unicode or str.
+	@type date: basestring.
 	@returns: The day of year, the week number, the current year and the days remaining before the end of the current year.
 	@rtype: tuple.
 	"""
@@ -180,6 +181,17 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			alarmHandler.run = alarmHandler.AlarmTimer (wakeUp, alarmHandler.runAlarm, [os.path.join (paths.ALARMS_DIR, alarmSound)])
 			alarmHandler.run.start ()
 
+		# Clock layer gestures.
+		self._clockLayerGestures = (
+			("s", self.script_stopwatchRun),
+			("r", self.script_stopwatchReset),
+			("a", self.script_alarmInfo ),
+			("c", self.script_cancelAlarm),
+			(skipTranslation.translate("space"), self.script_timeDisplay),
+			("p", self.script_stopLongAlarm),
+			("h", self.script_getHelp)
+		)
+
 	def createSubMenu (self):
 		self.toolsMenu = gui.mainFrame.sysTrayIcon.toolsMenu
 		clockMenu = wx.Menu ()
@@ -251,7 +263,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if self.clockLayerModeActive:
 			self.script_error(gesture)
 			return
-		self.bindGestures(self.__clockLayerGestures)
+		for gesture in self._clockLayerGestures:
+			self.bindGesture ("kb:%s" % gesture[0], gesture[1].__name__[7:])
 		self.clockLayerModeActive=True
 		tones.beep(100, 10)
 
@@ -313,26 +326,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	script_stopwatchReset.__doc__=_("Resets stopwatch to 0 without restarting it.")
 
 	def script_getHelp(self, gesture):
-		ui.message(_("""
-		S: Starts, resets or stops the stopwatch.
-		R: Resets stopwatch to 0 without restarting it.
-		A: Gives the remaining and elapsed time before the next alarm.
-		C: Cancel the next alarm.
-		Spacebar: Speaks current stopwatch or count-down timer.
-		H: List all layered commands (Help).
-		"""))
+		ui.message(		"\n".join (x[0] + " : " + x[1].__doc__ for x in self._clockLayerGestures))
 
 	# Translators: Message presented in input help mode.
 	script_getHelp.__doc__=_("Lists available commands in clock command layer.")
-
-	__clockLayerGestures={
-		"kb:s":"stopwatchRun",
-		"kb:space":"timeDisplay",
-		"kb:r":"stopwatchReset",
-		"kb:h":"getHelp",
-		"kb:a":"alarmInfo",
-		"kb:c":"cancelAlarm",
-	}
 
 	def script_checkOrCancelAlarm (self, gestures):
 		if alarmHandler.run and alarmHandler.run.is_alive ():
@@ -351,8 +348,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	script_checkOrCancelAlarm.__doc__ = _("Allows to check the next alarm. If pressed twice, cancels it.")
 
 	def script_stopLongAlarm (self, gesture):
+		msg = _("No sound is launched.")
 		if nvwave.fileWavePlayer is not None:
 			nvwave.fileWavePlayer.stop ()
+			msg = _("Sound stopped")
+		ui.message (msg)
 
 	# Translators: Message presented in input help mode.
 	script_stopLongAlarm.__doc__ = _("If an alarm is too long, allows to stop it.")

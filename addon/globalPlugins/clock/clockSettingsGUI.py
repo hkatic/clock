@@ -155,11 +155,11 @@ class ClockSettingsPanel(SettingsPanel):
 		config.conf["clockAndCalendar"]["timeReportSound"]=self._timeReportSoundChoice.GetStringSelection()
 		if self._quietHoursCheckBox.IsChecked ():
 			if self._input24HourFormatCheckBox.IsChecked ():
-				match = re.match("^(0?[1-9]|[1-2][0-3]):[0-5][0-9]", self._quietStartTimeText.GetValue())
-				match1 = re.match("^(0?[1-9]|[1-2][0-3]):[0-5][0-9]", self._quietEndTimeText.GetValue())
+				match = re.match("^(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]", self._quietStartTimeText.GetValue())
+				match1 = re.match("^(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]", self._quietEndTimeText.GetValue())
 			else:
-				match = re.match("^(0?[1-9]|1[0-2]):[0-5][0-9] [aPAp][mM]", self._quietStartTimeText.GetValue ())
-				match1 = re.match("^(0?[1-9]|1[0-2]):[0-5][0-9] [aPAp][mM]", self._quietEndTimeText.GetValue ())
+				match = re.match("^(0?[0-9]|1[0-2]):[0-5][0-9] [aPAp][mM]", self._quietStartTimeText.GetValue ())
+				match1 = re.match("^(0?[0-9]|1[0-2]):[0-5][0-9] [aPAp][mM]", self._quietEndTimeText.GetValue ())
 		if match and match1:
 			config.conf["clockAndCalendar"]["quietHours"]=self._quietHoursCheckBox.GetValue()
 			config.conf["clockAndCalendar"]["quietHoursStartTime"]=self._quietStartTimeText.GetValue()
@@ -325,11 +325,11 @@ class ClockSettingsDialog(SettingsDialog):
 		config.conf["clockAndCalendar"]["timeReportSound"]=self._timeReportSoundChoice.GetStringSelection()
 		if self._quietHoursCheckBox.IsChecked ():
 			if self._input24HourFormatCheckBox.IsChecked ():
-				match = re.match("^(0?[1-9]|[1-2][0-3]):[0-5][0-9]", self._quietStartTimeText.GetValue())
-				match1 = re.match("^(0?[1-9]|[1-2][0-3]):[0-5][0-9]", self._quietEndTimeText.GetValue())
+				match = re.match("^(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]", self._quietStartTimeText.GetValue())
+				match1 = re.match("^(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]", self._quietEndTimeText.GetValue())
 			else:
-				match = re.match("^(0?[1-9]|1[0-2]):[0-5][0-9]", self._quietStartTimeText.GetValue ())
-				match1 = re.match("^(0?[1-9]|1[0-2]):[0-5][0-9]", self._quietEndTimeText.GetValue ())
+				match = re.match("^(0?[0-9]|1[0-2]):[0-5][0-9] [aPAp][mM]", self._quietStartTimeText.GetValue ())
+				match1 = re.match("^(0?[0-9]|1[0-2]):[0-5][0-9] [aPAp][mM]", self._quietEndTimeText.GetValue ())
 		if match and match1:
 			config.conf["clockAndCalendar"]["quietHours"]=self._quietHoursCheckBox.GetValue()
 			config.conf["clockAndCalendar"]["quietHoursStartTime"]=self._quietStartTimeText.GetValue()

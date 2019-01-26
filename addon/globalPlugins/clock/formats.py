@@ -23,10 +23,10 @@ rgx = re.compile (ptrn, re.U | re.I)
 def repl (match):
 	"""
 	A function that captures and replaces words to make them compatible with the time format used in the GetTimeFormatEx function.
-	@param match: The match obtained by the regular expression
-	@type match: unicode or str
-	@returns: The captured group replaced
-	@rtype: unicode or str
+	@param match: The match obtained by the regular expression.
+	@type match: basestring.
+	@returns: The replaced captured group.
+	@rtype: basestring.
 	"""
 	content = match.group(1)
 	if content.startswith ("$"):

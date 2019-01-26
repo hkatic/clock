@@ -12,7 +12,7 @@ def convertTo24Hour (hr):
 	@param hr: The 12-hour time format that includes the AM or PM suffix to be converted to 24-hour format.
 	@type hr: basestring.
 	@returns: The time format converted to 24-hour format.
-	@rtype: basestring
+	@rtype: basestring.
 	"""
 	now = datetime.now ()
 	is12h = False
