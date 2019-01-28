@@ -162,18 +162,18 @@ class ClockSettingsPanel(SettingsPanel):
 			else:
 				match = re.match("^(0?[0-9]|1[0-2]):[0-5][0-9] [aPAp][mM]$", self._quietStartTimeText.GetValue ())
 				match1 = re.match("^(0?[0-9]|1[0-2]):[0-5][0-9] [aPAp][mM]$", self._quietEndTimeText.GetValue ())
-		if match and match1:
-			config.conf["clockAndCalendar"]["quietHours"]=self._quietHoursCheckBox.GetValue()
-			config.conf["clockAndCalendar"]["quietHoursStartTime"]=self._quietStartTimeText.GetValue()
-			config.conf["clockAndCalendar"]["quietHoursEndTime"]=self._quietEndTimeText.GetValue()
-		else:
-			if gui.messageBox(
-				# A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
-				_(u"The value you entered for your quiet hours is erroneous, for a 24-hour format, the value must be HH:MM, for a 12-hour format, the value must be HH:MM followed by the AM or PM suffix, please reread the documentation. So your quiet hours have been deactivated for prevent any error in the configuration file."),
-				# Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
-				_("Error"),wx.OK|wx.CANCEL|wx.ICON_WARNING,self
-			)==wx.OK:
-				config.conf['clockAndCalendar']['quietHours'] = False
+			if match and match1:
+				config.conf["clockAndCalendar"]["quietHours"]=self._quietHoursCheckBox.GetValue()
+				config.conf["clockAndCalendar"]["quietHoursStartTime"]=self._quietStartTimeText.GetValue()
+				config.conf["clockAndCalendar"]["quietHoursEndTime"]=self._quietEndTimeText.GetValue()
+			else:
+				if gui.messageBox(
+					# A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
+					_(u"The value you entered for your quiet hours is erroneous, for a 24-hour format, the value must be HH:MM, for a 12-hour format, the value must be HH:MM followed by the AM or PM suffix, please reread the documentation. So your quiet hours have been deactivated for prevent any error in the configuration file."),
+					# Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
+					_("Error"),wx.OK|wx.ICON_ERROR,self
+				)==wx.OK:
+					config.conf['clockAndCalendar']['quietHours'] = False
 
 class ClockSettingsDialog(SettingsDialog):
 
@@ -342,18 +342,18 @@ class ClockSettingsDialog(SettingsDialog):
 			else:
 				match = re.match("^(0?[0-9]|1[0-2]):[0-5][0-9] [aPAp][mM]$", self._quietStartTimeText.GetValue ())
 				match1 = re.match("^(0?[0-9]|1[0-2]):[0-5][0-9] [aPAp][mM]$", self._quietEndTimeText.GetValue ())
-		if match and match1:
-			config.conf["clockAndCalendar"]["quietHours"]=self._quietHoursCheckBox.GetValue()
-			config.conf["clockAndCalendar"]["quietHoursStartTime"]=self._quietStartTimeText.GetValue()
-			config.conf["clockAndCalendar"]["quietHoursEndTime"]=self._quietEndTimeText.GetValue()
-		else:
-			if gui.messageBox(
-				# A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
-				_(u"The value you entered for your quiet hours is erroneous, for a 24-hour format, the value must be HH:MM, for a 12-hour format, the value must be HH:MM followed by the AM or PM suffix, please reread the documentation. So your quiet hours have been deactivated for prevent any error in the configuration file."),
-				# Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
-				_("Error"),wx.OK|wx.CANCEL|wx.ICON_WARNING,self
-			)==wx.OK:
-				config.conf['clockAndCalendar']['quietHours'] = False
+			if match and match1:
+				config.conf["clockAndCalendar"]["quietHours"]=self._quietHoursCheckBox.GetValue()
+				config.conf["clockAndCalendar"]["quietHoursStartTime"]=self._quietStartTimeText.GetValue()
+				config.conf["clockAndCalendar"]["quietHoursEndTime"]=self._quietEndTimeText.GetValue()
+			else:
+				if gui.messageBox(
+					# A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
+					_(u"The value you entered for your quiet hours is erroneous, for a 24-hour format, the value must be HH:MM, for a 12-hour format, the value must be HH:MM followed by the AM or PM suffix, please reread the documentation. So your quiet hours have been deactivated for prevent any error in the configuration file."),
+					# Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
+					_("Error"),wx.OK|wx.ICON_ERROR,self
+				)==wx.OK:
+					config.conf['clockAndCalendar']['quietHours'] = False
 
 class AlarmSettingsPanel (SettingsPanel):
 
