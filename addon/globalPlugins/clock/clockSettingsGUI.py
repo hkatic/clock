@@ -144,8 +144,6 @@ class ClockSettingsPanel(SettingsPanel):
 		self._quietEndTimeText.Enabled = self._quietHoursCheckBox.IsChecked ()
 
 	def onSave(self):
-		match = None
-		match1 = None
 		config.conf["clockAndCalendar"]["timeDisplayFormat"]=self._timeDisplayFormatChoice.GetSelection()
 		config.conf["clockAndCalendar"]["dateDisplayFormat"]=self._dateDisplayFormatChoice.GetSelection()
 		config.conf["clockAndCalendar"]["dateDisplayFormat"]=self._dateDisplayFormatChoice.GetSelection()
@@ -153,19 +151,29 @@ class ClockSettingsPanel(SettingsPanel):
 		config.conf["clockAndCalendar"]["autoAnnounce"]=self._autoAnnounceChoice.GetSelection()
 		config.conf["clockAndCalendar"]["timeReporting"]=self._timeReportChoice.GetSelection()
 		config.conf["clockAndCalendar"]["timeReportSound"]=self._timeReportSoundChoice.GetStringSelection()
-		if self._quietHoursCheckBox.IsChecked ():
+
+	def postSave (self):
+		match = None
+		match1 = None
+		if self._quietHoursCheckBox.IsEnabled () and self._quietHoursCheckBox.IsChecked ():
 			if self._input24HourFormatCheckBox.IsChecked ():
-				match = re.match("^(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]", self._quietStartTimeText.GetValue())
-				match1 = re.match("^(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]", self._quietEndTimeText.GetValue())
+				match = re.match("^(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$", self._quietStartTimeText.GetValue())
+				match1 = re.match("^(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$", self._quietEndTimeText.GetValue())
 			else:
-				match = re.match("^(0?[0-9]|1[0-2]):[0-5][0-9] [aPAp][mM]", self._quietStartTimeText.GetValue ())
-				match1 = re.match("^(0?[0-9]|1[0-2]):[0-5][0-9] [aPAp][mM]", self._quietEndTimeText.GetValue ())
+				match = re.match("^(0?[0-9]|1[0-2]):[0-5][0-9] [aPAp][mM]$", self._quietStartTimeText.GetValue ())
+				match1 = re.match("^(0?[0-9]|1[0-2]):[0-5][0-9] [aPAp][mM]$", self._quietEndTimeText.GetValue ())
 		if match and match1:
 			config.conf["clockAndCalendar"]["quietHours"]=self._quietHoursCheckBox.GetValue()
 			config.conf["clockAndCalendar"]["quietHoursStartTime"]=self._quietStartTimeText.GetValue()
 			config.conf["clockAndCalendar"]["quietHoursEndTime"]=self._quietEndTimeText.GetValue()
 		else:
-			config.conf["clockAndCalendar"]["quietHours"]=False
+			if gui.messageBox(
+				# A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
+				_(u"The value you entered for your quiet hours is erroneous, for a 24-hour format, the value must be HH:MM, for a 12-hour format, the value must be HH:MM followed by the AM or PM suffix, please reread the documentation. So your quiet hours have been deactivated for prevent any error in the configuration file."),
+				# Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
+				_("Error"),wx.OK|wx.CANCEL|wx.ICON_WARNING,self
+			)==wx.OK:
+				config.conf['clockAndCalendar']['quietHours'] = False
 
 class ClockSettingsDialog(SettingsDialog):
 
@@ -315,28 +323,37 @@ class ClockSettingsDialog(SettingsDialog):
 		self._quietEndTimeText.Enabled = self._quietHoursCheckBox.IsChecked ()
 
 	def onOk (self, evt):
-		match = None
-		match1 = None
 		config.conf["clockAndCalendar"]["timeDisplayFormat"]=self._timeDisplayFormatChoice.GetSelection()
 		config.conf["clockAndCalendar"]["dateDisplayFormat"]=self._dateDisplayFormatChoice.GetSelection()
 		config.conf["clockAndCalendar"]["input24HourFormat"]=self._input24HourFormatCheckBox.GetValue()
 		config.conf["clockAndCalendar"]["autoAnnounce"]=self._autoAnnounceChoice.GetSelection()
 		config.conf["clockAndCalendar"]["timeReporting"]=self._timeReportChoice.GetSelection()
 		config.conf["clockAndCalendar"]["timeReportSound"]=self._timeReportSoundChoice.GetStringSelection()
-		if self._quietHoursCheckBox.IsChecked ():
+		self.postSave ()
+		super(ClockSettingsDialog , self).onOk (evt)
+
+	def postSave (self):
+		match = None
+		match1 = None
+		if self._quietHoursCheckBox.IsEnabled () and self._quietHoursCheckBox.IsChecked ():
 			if self._input24HourFormatCheckBox.IsChecked ():
-				match = re.match("^(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]", self._quietStartTimeText.GetValue())
-				match1 = re.match("^(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]", self._quietEndTimeText.GetValue())
+				match = re.match("^(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$", self._quietStartTimeText.GetValue())
+				match1 = re.match("^(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$", self._quietEndTimeText.GetValue())
 			else:
-				match = re.match("^(0?[0-9]|1[0-2]):[0-5][0-9] [aPAp][mM]", self._quietStartTimeText.GetValue ())
-				match1 = re.match("^(0?[0-9]|1[0-2]):[0-5][0-9] [aPAp][mM]", self._quietEndTimeText.GetValue ())
+				match = re.match("^(0?[0-9]|1[0-2]):[0-5][0-9] [aPAp][mM]$", self._quietStartTimeText.GetValue ())
+				match1 = re.match("^(0?[0-9]|1[0-2]):[0-5][0-9] [aPAp][mM]$", self._quietEndTimeText.GetValue ())
 		if match and match1:
 			config.conf["clockAndCalendar"]["quietHours"]=self._quietHoursCheckBox.GetValue()
 			config.conf["clockAndCalendar"]["quietHoursStartTime"]=self._quietStartTimeText.GetValue()
 			config.conf["clockAndCalendar"]["quietHoursEndTime"]=self._quietEndTimeText.GetValue()
 		else:
-			config.conf["clockAndCalendar"]["quietHours"]=False
-		super(ClockSettingsDialog , self).onOk (evt)
+			if gui.messageBox(
+				# A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
+				_(u"The value you entered for your quiet hours is erroneous, for a 24-hour format, the value must be HH:MM, for a 12-hour format, the value must be HH:MM followed by the AM or PM suffix, please reread the documentation. So your quiet hours have been deactivated for prevent any error in the configuration file."),
+				# Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
+				_("Error"),wx.OK|wx.CANCEL|wx.ICON_WARNING,self
+			)==wx.OK:
+				config.conf['clockAndCalendar']['quietHours'] = False
 
 class AlarmSettingsPanel (SettingsPanel):
 

@@ -23,7 +23,7 @@ import config
 import tones
 from datetime import datetime
 import wx
-import gettext
+import globalCommands
 import os
 import languageHandler
 if sys.version_info.major == 2:
@@ -172,7 +172,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		try:
 			config.conf['clockAndCalendar']['alarmTime']
 		except VdtTypeError:
-			config.conf['clockAndCalendar']['alarmTime'] = 0.0
+			conf = config.conf['clockAndCalendar']
+			conf.profiles[0]['alarmTime'] = 0.0
 			config.conf.save ()
 		if not config.conf['clockAndCalendar']['alarmSound'] in paths.LIST_ALARMS:
 			alarmSound = paths.LIST_ALARMS[0]
@@ -244,9 +245,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	# Translators: Message presented in input help mode.
 	script_reportTimeAndDate.__doc__=_("Speaks current time. If pressed twice quickly, speaks current date. If pressed thrice quickly, reports the current day, the week number, the current year and the days remaining before the end of the year.")
+	script_reportTimeAndDate.category = globalCommands.SCRCAT_SYSTEM
+	# We remove the docstring from the original dateTime script to have only one entry in the "System status" category, it will be automatically restored if the Clock add-on is disabled or uninstalled.
+	globalCommands.commands.script_dateTime.im_func.__doc__ = ""
 
 	def getScript(self, gesture):
-		if not self.clockLayerModeActive:
+		if not hasattr (self, "clockLayerModeActive") or (hasattr (self, "clockLayerModeActive") and not self.clockLayerModeActive):
 			return globalPluginHandler.GlobalPlugin.getScript(self, gesture)
 		script=globalPluginHandler.GlobalPlugin.getScript(self, gesture)
 		if not script:
@@ -328,7 +332,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	script_stopwatchReset.__doc__=_("Resets stopwatch to 0 without restarting it.")
 
 	def script_getHelp(self, gesture):
-		ui.message(		"\n".join (x[0] + " : " + x[1].__doc__ for x in self._clockLayerGestures))
+		ui.message("\n".join (x[0] + " : " + x[1].__doc__ for x in self._clockLayerGestures))
 
 	# Translators: Message presented in input help mode.
 	script_getHelp.__doc__=_("Lists available commands in clock command layer.")
