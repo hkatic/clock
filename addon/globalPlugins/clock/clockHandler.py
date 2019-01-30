@@ -51,7 +51,7 @@ def getAutoAnnounceInterval():
 		autoAnnounceMinutes = (0, 0)
 	return autoAnnounceMinutes
 
-class clock(object):
+class Clock (object):
 
 	def __init__(self):
 		self._autoAnnounceClockTimer = wx.PyTimer(self._handleClockAnnouncement)

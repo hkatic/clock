@@ -22,7 +22,9 @@ def runAlarm (sound):
 	nvwave.playWaveFile (sound)
 	config.conf['clockAndCalendar']['alarmTime'] = 0.0
 	config.conf['clockAndCalendar']['alarmSavedTime'] = 0.0
-	config.conf.save ()
+	# We save the configuration, in case the user would not have checked the "Save configuration on exit" checkbox in General settings.
+	if not config.conf['general']['saveConfigurationOnExit']:
+		config.conf.save ()
 
 class AlarmTimer (TimerBaseClass):
 	"""
@@ -51,4 +53,6 @@ class AlarmTimer (TimerBaseClass):
 		TimerBaseClass.cancel (self)
 		config.conf['clockAndCalendar']['alarmTime'] = 0.0
 		config.conf['clockAndCalendar']['alarmSavedTime'] = 0.0
-		config.conf.save ()
+		# We save the configuration, in case the user would not have checked the "Save configuration on exit" checkbox in General settings.
+		if not config.conf['general']['saveConfigurationOnExit']:
+			config.conf.save ()

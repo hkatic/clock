@@ -165,8 +165,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		else:
 			self.createSubMenu ()
 
-		self.clock=clockHandler.clock()
-		self.stopwatch=stopwatchHandler.stopwatch()
+		self.clock = clockHandler.Clock ()
+		self.stopwatch = stopwatchHandler.Stopwatch ()
 		self.clockLayerModeActive=False
 
 		try:
@@ -174,7 +174,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		except VdtTypeError:
 			conf = config.conf['clockAndCalendar']
 			conf.profiles[0]['alarmTime'] = 0.0
-			config.conf.save ()
+			# We save the configuration, in case the user would not have checked the "Save configuration on exit" checkbox in General settings.
+			if not config.conf['general']['saveConfigurationOnExit']:
+				config.conf.save ()
 		if not config.conf['clockAndCalendar']['alarmSound'] in paths.LIST_ALARMS:
 			alarmSound = paths.LIST_ALARMS[0]
 		else:
@@ -190,7 +192,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			("r", self.script_stopwatchReset),
 			("a", self.script_alarmInfo ),
 			("c", self.script_cancelAlarm),
-			(skipTranslation.translate("space"), self.script_timeDisplay),
+			("space", self.script_timeDisplay),
 			("p", self.script_stopLongAlarm),
 			("h", self.script_getHelp)
 		)
@@ -332,7 +334,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	script_stopwatchReset.__doc__=_("Resets stopwatch to 0 without restarting it.")
 
 	def script_getHelp(self, gesture):
-		ui.message("\n".join (x[0] + " : " + x[1].__doc__ for x in self._clockLayerGestures))
+		ui.message("\n".join (x[0] + " : " + x[1].__doc__ if x[0] != "space" else skipTranslation.translate(x[0]) + " : " + x[1].__doc__ for x in self._clockLayerGestures))
 
 	# Translators: Message presented in input help mode.
 	script_getHelp.__doc__=_("Lists available commands in clock command layer.")
