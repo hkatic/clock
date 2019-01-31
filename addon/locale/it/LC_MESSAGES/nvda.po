@@ -145,25 +145,6 @@ msgstr "Cronometro azzerato."
 msgid "Resets stopwatch to 0 without restarting it."
 msgstr "Azzera il cronometro, senza ripartire."
 
-msgid ""
-"\n"
-"\t\tS: Starts, resets or stops the stopwatch.\n"
-"\t\tR: Resets stopwatch to 0 without restarting it.\n"
-"\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
-"\t\tC: Cancel the next alarm.\n"
-"\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
-"\t\tH: List all layered commands (Help).\n"
-"\t\t"
-msgstr ""
-"\n"
-"\t\tS: Avvia, interrompe o azzera per riavviare il cronometro.\n"
-"\t\tR: Azzera il cronometro senza ripartire..\n"
-"\t\tA: Fornisce alcune informazioni sul Timer.\n"
-"\t\tC: Annulla il Timer impostato.\n"
-"\t\tBarraSpaziatrice: Legge il tempo trascorso nel cronometro.\n"
-"\t\tH: Elenca i comandi a livello disponibili.\n"
-"\t\t"
-
 #. Translators: Message presented in input help mode.
 msgid "Lists available commands in clock command layer."
 msgstr "Elenca i comandi disponibili per il componente aggiuntivo Clock."
@@ -171,6 +152,13 @@ msgstr "Elenca i comandi disponibili per il componente aggiuntivo Clock."
 #. Translators: Message presented in input help mode.
 msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr "Permette di controllare il Timer, premuto due volte lo annulla."
+
+msgid "No sound is launched."
+msgstr ""
+
+#, fuzzy
+msgid "Sound stopped"
+msgstr "Stop, {0}."
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -191,10 +179,6 @@ msgstr "Forma&to ora:"
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Date display format:"
 msgstr "Formato &Data:"
-
-#. Translators: This is the label for a checkbox in the Clock settings dialog.
-msgid "Input in &24-hour format"
-msgstr "Formato &24-ore"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "off"
@@ -244,6 +228,10 @@ msgstr "Suono &segnale orario:"
 msgid "&Quiet hours"
 msgstr "&Fascia oraria inattiva"
 
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+msgid "Input in &24-hour format"
+msgstr "Formato &24-ore"
+
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours start time:"
 msgstr "Inizio fascia oraria:"
@@ -251,6 +239,19 @@ msgstr "Inizio fascia oraria:"
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours end time:"
 msgstr "fine fascia oraria:"
+
+#. A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
+msgid ""
+"The value you entered for your quiet hours is erroneous, for a 24-hour "
+"format, the value must be HH:MM, for a 12-hour format, the value must be HH:"
+"MM followed by the AM or PM suffix, please reread the documentation. So your "
+"quiet hours have been deactivated for prevent any error in the configuration "
+"file."
+msgstr ""
+
+#. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
+msgid "Error"
+msgstr ""
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"
@@ -357,6 +358,25 @@ msgstr ""
 "premendo 3 volte conteggia i giorni e le settimane ed i giorni restanti "
 "dell'anno in corso.\n"
 "Aprire la guida dal gestore componenti aggiuntivi  per maggiori informazioni."
+
+#~ msgid ""
+#~ "\n"
+#~ "\t\tS: Starts, resets or stops the stopwatch.\n"
+#~ "\t\tR: Resets stopwatch to 0 without restarting it.\n"
+#~ "\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
+#~ "\t\tC: Cancel the next alarm.\n"
+#~ "\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
+#~ "\t\tH: List all layered commands (Help).\n"
+#~ "\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "\t\tS: Avvia, interrompe o azzera per riavviare il cronometro.\n"
+#~ "\t\tR: Azzera il cronometro senza ripartire..\n"
+#~ "\t\tA: Fornisce alcune informazioni sul Timer.\n"
+#~ "\t\tC: Annulla il Timer impostato.\n"
+#~ "\t\tBarraSpaziatrice: Legge il tempo trascorso nel cronometro.\n"
+#~ "\t\tH: Elenca i comandi a livello disponibili.\n"
+#~ "\t\t"
 
 #~ msgid "Auto announce &interval:"
 #~ msgstr "Segnale orar&io"

@@ -151,27 +151,6 @@ msgstr "Stoppuhr zurücksetzen."
 msgid "Resets stopwatch to 0 without restarting it."
 msgstr "Setzt die Stoppuhr auf 0 Sekunden zurück, ohne sie zu starten."
 
-msgid ""
-"\n"
-"\t\tS: Starts, resets or stops the stopwatch.\n"
-"\t\tR: Resets stopwatch to 0 without restarting it.\n"
-"\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
-"\t\tC: Cancel the next alarm.\n"
-"\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
-"\t\tH: List all layered commands (Help).\n"
-"\t\t"
-msgstr ""
-"\n"
-"\t\tS: Stoppuhr Starten, anhalten oder zurücksetzen .\n"
-"\t\tR: Stoppuhr zurücksetzen ohne sie zu starten.\n"
-"\n"
-"\n"
-"\t\tA: Sagt Informationen über den nächsten Alarm an.\n"
-"\t\tC: Schaltet den nächsten Alarm aus.\n"
-"\t\tLeertaste: Ansage der aktuellen Zeit der Stoppuhr oder des Timers.\n"
-"\t\tH: Listet alle überlagerten Befehle auf (hilfe).\n"
-"\t\t"
-
 #. Translators: Message presented in input help mode.
 msgid "Lists available commands in clock command layer."
 msgstr ""
@@ -182,6 +161,13 @@ msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr ""
 "Ermöglicht die Aktivierung des nächsten Alarms. Zum Abbrechen müssen Sie die "
 "Tastenkombination zweimal hintereinander drücken."
+
+msgid "No sound is launched."
+msgstr ""
+
+#, fuzzy
+msgid "Sound stopped"
+msgstr "{0} angehalten."
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -202,10 +188,6 @@ msgstr "Format der &Zeitanzeige:"
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Date display format:"
 msgstr "Format der &DatumsAnzeige:"
-
-#. Translators: This is the label for a checkbox in the Clock settings dialog.
-msgid "Input in &24-hour format"
-msgstr "Angabe im &24-Stunden-Format"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "off"
@@ -255,6 +237,10 @@ msgstr "Ton für die &Glocke der Uhr:"
 msgid "&Quiet hours"
 msgstr "&Ruhezeit"
 
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+msgid "Input in &24-hour format"
+msgstr "Angabe im &24-Stunden-Format"
+
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours start time:"
 msgstr "Beginn der Ruhezeit:"
@@ -262,6 +248,19 @@ msgstr "Beginn der Ruhezeit:"
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours end time:"
 msgstr "Ende der Ruhezeit:"
+
+#. A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
+msgid ""
+"The value you entered for your quiet hours is erroneous, for a 24-hour "
+"format, the value must be HH:MM, for a 12-hour format, the value must be HH:"
+"MM followed by the AM or PM suffix, please reread the documentation. So your "
+"quiet hours have been deactivated for prevent any error in the configuration "
+"file."
+msgstr ""
+
+#. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
+msgid "Error"
+msgstr ""
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"
@@ -371,3 +370,24 @@ msgstr ""
 "aktuellen Tag und die Woche des Jahres abzufragen.\n"
 "Für weitere Anleitungen drücken Sie auf die Hilfe-Taste im Dialog "
 "Erweiterungen verwalten."
+
+#~ msgid ""
+#~ "\n"
+#~ "\t\tS: Starts, resets or stops the stopwatch.\n"
+#~ "\t\tR: Resets stopwatch to 0 without restarting it.\n"
+#~ "\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
+#~ "\t\tC: Cancel the next alarm.\n"
+#~ "\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
+#~ "\t\tH: List all layered commands (Help).\n"
+#~ "\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "\t\tS: Stoppuhr Starten, anhalten oder zurücksetzen .\n"
+#~ "\t\tR: Stoppuhr zurücksetzen ohne sie zu starten.\n"
+#~ "\n"
+#~ "\n"
+#~ "\t\tA: Sagt Informationen über den nächsten Alarm an.\n"
+#~ "\t\tC: Schaltet den nächsten Alarm aus.\n"
+#~ "\t\tLeertaste: Ansage der aktuellen Zeit der Stoppuhr oder des Timers.\n"
+#~ "\t\tH: Listet alle überlagerten Befehle auf (hilfe).\n"
+#~ "\t\t"

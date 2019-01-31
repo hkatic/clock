@@ -148,25 +148,6 @@ msgstr "Cronómetro reiniciado."
 msgid "Resets stopwatch to 0 without restarting it."
 msgstr "Restablece o cronómetro a 0 sen reinicialo."
 
-msgid ""
-"\n"
-"\t\tS: Starts, resets or stops the stopwatch.\n"
-"\t\tR: Resets stopwatch to 0 without restarting it.\n"
-"\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
-"\t\tC: Cancel the next alarm.\n"
-"\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
-"\t\tH: List all layered commands (Help).\n"
-"\t\t"
-msgstr ""
-"\n"
-"\t\tS: inicia, reinicia ou detén o cronómetro.\n"
-"\t\tR: Restablece o cronómetro a 0 sen volver a inicialo.\n"
-"\t\tA: Fornece o tempo restante e transcorrido antes da vindeira alarma.\n"
-"\t\tC: Cancelar a vindeira alarma..\n"
-"\t\tSpacebar: Fala o temporizador actual do cronómetro ou da conta atrás.\n"
-"\t\tH: Listar todos as ordes en capa (axuda).\n"
-"\t\t"
-
 #. Translators: Message presented in input help mode.
 msgid "Lists available commands in clock command layer."
 msgstr "Lista todos as ordes dispoñibles na capa de comandos do reloxo."
@@ -175,6 +156,13 @@ msgstr "Lista todos as ordes dispoñibles na capa de comandos do reloxo."
 msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr ""
 "Permíteche comprobar a vindeira alarma. Se se preme dúas veces, cancélaa."
+
+msgid "No sound is launched."
+msgstr ""
+
+#, fuzzy
+msgid "Sound stopped"
+msgstr "{0} detido."
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -195,10 +183,6 @@ msgstr "Formato de amosado da &hora:"
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Date display format:"
 msgstr "Formato de amosado da &data:"
-
-#. Translators: This is the label for a checkbox in the Clock settings dialog.
-msgid "Input in &24-hour format"
-msgstr "Entrada en formato de &24 horas"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "off"
@@ -248,6 +232,10 @@ msgstr "&Son da campá do reloxo:"
 msgid "&Quiet hours"
 msgstr "Horas &caladas"
 
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+msgid "Input in &24-hour format"
+msgstr "Entrada en formato de &24 horas"
+
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours start time:"
 msgstr "Hora de inicio das horas caladas:"
@@ -255,6 +243,19 @@ msgstr "Hora de inicio das horas caladas:"
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours end time:"
 msgstr "Hora de finalización das horas caladas:"
+
+#. A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
+msgid ""
+"The value you entered for your quiet hours is erroneous, for a 24-hour "
+"format, the value must be HH:MM, for a 12-hour format, the value must be HH:"
+"MM followed by the AM or PM suffix, please reread the documentation. So your "
+"quiet hours have been deactivated for prevent any error in the configuration "
+"file."
+msgstr ""
+
+#. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
+msgid "Error"
+msgstr ""
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"
@@ -363,3 +364,23 @@ msgstr ""
 "semana, o ano actual e os días restantes antes do final de ano.\n"
 "Para outras instrucións, preme o botón Axuda do complemento no Administrador "
 "de complementos."
+
+#~ msgid ""
+#~ "\n"
+#~ "\t\tS: Starts, resets or stops the stopwatch.\n"
+#~ "\t\tR: Resets stopwatch to 0 without restarting it.\n"
+#~ "\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
+#~ "\t\tC: Cancel the next alarm.\n"
+#~ "\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
+#~ "\t\tH: List all layered commands (Help).\n"
+#~ "\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "\t\tS: inicia, reinicia ou detén o cronómetro.\n"
+#~ "\t\tR: Restablece o cronómetro a 0 sen volver a inicialo.\n"
+#~ "\t\tA: Fornece o tempo restante e transcorrido antes da vindeira alarma.\n"
+#~ "\t\tC: Cancelar a vindeira alarma..\n"
+#~ "\t\tSpacebar: Fala o temporizador actual do cronómetro ou da conta "
+#~ "atrás.\n"
+#~ "\t\tH: Listar todos as ordes en capa (axuda).\n"
+#~ "\t\t"

@@ -149,26 +149,6 @@ msgstr "Sekuntikello nollattu."
 msgid "Resets stopwatch to 0 without restarting it."
 msgstr "Nollaa sekuntikellon käynnistämättä sitä uudelleen."
 
-msgid ""
-"\n"
-"\t\tS: Starts, resets or stops the stopwatch.\n"
-"\t\tR: Resets stopwatch to 0 without restarting it.\n"
-"\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
-"\t\tC: Cancel the next alarm.\n"
-"\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
-"\t\tH: List all layered commands (Help).\n"
-"\t\t"
-msgstr ""
-"\n"
-"\t\tS: Käynnistää, nollaa tai pysäyttää sekuntikellon.\n"
-"\t\tR: Nollaa sekuntikellon käynnistämättä sitä uudelleen.\n"
-"\t\tA: Ilmoittaa jäljellä olevan ja kuluneen ajan ennen seuraavaa "
-"hölytystä.\n"
-"\t\tC: Peruu seuraavan hälytyksen.\n"
-"\t\tVäli-näppäin: Puhuu sekuntikellon tai hälytykseen jäljellä olevan ajan.\n"
-"\t\tH:  Näyttää luettelon kaikista komentokerroksen komennoista.\n"
-"\t\t"
-
 #. Translators: Message presented in input help mode.
 msgid "Lists available commands in clock command layer."
 msgstr ""
@@ -179,6 +159,13 @@ msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr ""
 "Ilmoittaa kerran painettaessa seuraavan hälytyksen ajankohdan tai kahdesti "
 "painettaessa peruu sen."
+
+msgid "No sound is launched."
+msgstr ""
+
+#, fuzzy
+msgid "Sound stopped"
+msgstr "{0} pysäytetty."
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -199,10 +186,6 @@ msgstr "&Ajan näyttömuoto:"
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Date display format:"
 msgstr "&Päivämäärän näyttömuoto:"
-
-#. Translators: This is the label for a checkbox in the Clock settings dialog.
-msgid "Input in &24-hour format"
-msgstr "Syöte &24 tunnin muodossa"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "off"
@@ -252,6 +235,10 @@ msgstr "Kellon &ääni:"
 msgid "&Quiet hours"
 msgstr "&Hiljaiset tunnit"
 
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+msgid "Input in &24-hour format"
+msgstr "Syöte &24 tunnin muodossa"
+
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours start time:"
 msgstr "Hiljaisten tuntien aloitusaika:"
@@ -259,6 +246,19 @@ msgstr "Hiljaisten tuntien aloitusaika:"
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours end time:"
 msgstr "Hiljaisten tuntien päättymisaika:"
+
+#. A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
+msgid ""
+"The value you entered for your quiet hours is erroneous, for a 24-hour "
+"format, the value must be HH:MM, for a 12-hour format, the value must be HH:"
+"MM followed by the AM or PM suffix, please reread the documentation. So your "
+"quiet hours have been deactivated for prevent any error in the configuration "
+"file."
+msgstr ""
+
+#. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
+msgid "Error"
+msgstr ""
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"
@@ -365,3 +365,24 @@ msgstr ""
 "NVDA+F12 kolmesti painettaessa: ilmoittaa päivän, viikon numeron, kuluvan "
 "vuoden sekä sen jäljellä olevien päivien määrän.\n"
 "Muita ohjeita saat painamalla Ohje-painiketta Lisäosien hallinnassa."
+
+#~ msgid ""
+#~ "\n"
+#~ "\t\tS: Starts, resets or stops the stopwatch.\n"
+#~ "\t\tR: Resets stopwatch to 0 without restarting it.\n"
+#~ "\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
+#~ "\t\tC: Cancel the next alarm.\n"
+#~ "\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
+#~ "\t\tH: List all layered commands (Help).\n"
+#~ "\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "\t\tS: Käynnistää, nollaa tai pysäyttää sekuntikellon.\n"
+#~ "\t\tR: Nollaa sekuntikellon käynnistämättä sitä uudelleen.\n"
+#~ "\t\tA: Ilmoittaa jäljellä olevan ja kuluneen ajan ennen seuraavaa "
+#~ "hölytystä.\n"
+#~ "\t\tC: Peruu seuraavan hälytyksen.\n"
+#~ "\t\tVäli-näppäin: Puhuu sekuntikellon tai hälytykseen jäljellä olevan "
+#~ "ajan.\n"
+#~ "\t\tH:  Näyttää luettelon kaikista komentokerroksen komennoista.\n"
+#~ "\t\t"

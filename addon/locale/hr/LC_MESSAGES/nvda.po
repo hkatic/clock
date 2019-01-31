@@ -151,26 +151,6 @@ msgstr "Resetiranje štoperice."
 msgid "Resets stopwatch to 0 without restarting it."
 msgstr "Resetira štopericu na nulu bez ponovnog pokretanja."
 
-msgid ""
-"\n"
-"\t\tS: Starts, resets or stops the stopwatch.\n"
-"\t\tR: Resets stopwatch to 0 without restarting it.\n"
-"\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
-"\t\tC: Cancel the next alarm.\n"
-"\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
-"\t\tH: List all layered commands (Help).\n"
-"\t\t"
-msgstr ""
-"\n"
-"\t\tS: Pokreni, zaustavi ili resetiraj štopericu te kreni ponovo od nule.\n"
-"\t\tR: Resetiraj štopericu bez ponovnog pokretanja.\n"
-"\n"
-"\t\tA: Daje informaciju o preostalom i prošlom vremenu alarma.\n"
-"\t\tC: Stopira sljedeći alarm.\n"
-"\t\tRazmaknica: izgovara vrijeme štoperice ili odbrojavanja tajmera.\n"
-"\t\tH: popisuje sve slojne tipkovničke prećace (pomoć).\n"
-"\t\t"
-
 #. Translators: Message presented in input help mode.
 msgid "Lists available commands in clock command layer."
 msgstr "Ispisuje dostupne naredbe u povezanim naredbama za sat."
@@ -179,6 +159,13 @@ msgstr "Ispisuje dostupne naredbe u povezanim naredbama za sat."
 msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr ""
 "Omogućuje vam da vidite sljedeći alarm, ako se pritisne dvaput, otkaže ga."
+
+msgid "No sound is launched."
+msgstr ""
+
+#, fuzzy
+msgid "Sound stopped"
+msgstr "{0} zaustavljen."
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -199,10 +186,6 @@ msgstr "Oblik prikazivanja &vremena:"
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Date display format:"
 msgstr "Oblik prikazivanja &datuma:"
-
-#. Translators: This is the label for a checkbox in the Clock settings dialog.
-msgid "Input in &24-hour format"
-msgstr "Unos u &24-satnom formatu"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "off"
@@ -252,6 +235,10 @@ msgstr "&Zvuk zvonjenja sata:"
 msgid "&Quiet hours"
 msgstr "&Tihi sati"
 
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+msgid "Input in &24-hour format"
+msgstr "Unos u &24-satnom formatu"
+
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours start time:"
 msgstr "Početno vrijeme za tihe sate:"
@@ -259,6 +246,19 @@ msgstr "Početno vrijeme za tihe sate:"
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours end time:"
 msgstr "Završno vrijeme za tihe sate:"
+
+#. A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
+msgid ""
+"The value you entered for your quiet hours is erroneous, for a 24-hour "
+"format, the value must be HH:MM, for a 12-hour format, the value must be HH:"
+"MM followed by the AM or PM suffix, please reread the documentation. So your "
+"quiet hours have been deactivated for prevent any error in the configuration "
+"file."
+msgstr ""
+
+#. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
+msgid "Error"
+msgstr ""
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"
@@ -367,6 +367,27 @@ msgstr ""
 "Pritisnite NVDA + F12 za trenutni sat, pritisnite dvaput za trenutni datum, "
 "ili triput da biste dobili trenutni broj dana i tjedana u tekućoj godini.\n"
 "Za ostale upute, odaberite gumb Pomoć za dodatak u upravitelju dodacima."
+
+#~ msgid ""
+#~ "\n"
+#~ "\t\tS: Starts, resets or stops the stopwatch.\n"
+#~ "\t\tR: Resets stopwatch to 0 without restarting it.\n"
+#~ "\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
+#~ "\t\tC: Cancel the next alarm.\n"
+#~ "\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
+#~ "\t\tH: List all layered commands (Help).\n"
+#~ "\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "\t\tS: Pokreni, zaustavi ili resetiraj štopericu te kreni ponovo od "
+#~ "nule.\n"
+#~ "\t\tR: Resetiraj štopericu bez ponovnog pokretanja.\n"
+#~ "\n"
+#~ "\t\tA: Daje informaciju o preostalom i prošlom vremenu alarma.\n"
+#~ "\t\tC: Stopira sljedeći alarm.\n"
+#~ "\t\tRazmaknica: izgovara vrijeme štoperice ili odbrojavanja tajmera.\n"
+#~ "\t\tH: popisuje sve slojne tipkovničke prećace (pomoć).\n"
+#~ "\t\t"
 
 #~ msgid "Auto announce &interval:"
 #~ msgstr "&Interval za automatsku najavu:"

@@ -148,25 +148,6 @@ msgstr "Stopky vynulované."
 msgid "Resets stopwatch to 0 without restarting it."
 msgstr "Stopky vynulované na 0 sekúnd bez toho, aby sa znovu spustili."
 
-msgid ""
-"\n"
-"\t\tS: Starts, resets or stops the stopwatch.\n"
-"\t\tR: Resets stopwatch to 0 without restarting it.\n"
-"\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
-"\t\tC: Cancel the next alarm.\n"
-"\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
-"\t\tH: List all layered commands (Help).\n"
-"\t\t"
-msgstr ""
-"\n"
-"\t\tS: Spustí, zastaví, obnoví alebo reštartuje stopky.\n"
-"\t\tR: Resetuje stopky pre ďalšie spustenie.\n"
-"\t\tA: Poskytuje informácie o ďalšom budíku.\n"
-"\t\tC: Zruší ďalší budík.\n"
-"\t\tSpacebar: Oznamuje aktuálne meraný čas.\n"
-"\t\tH: Zoznam všetkých príkazov (Pomoc).\n"
-"\t\t"
-
 #. Translators: Message presented in input help mode.
 msgid "Lists available commands in clock command layer."
 msgstr "Zoznam dostupných príkazov pre vrstvu hodín."
@@ -175,6 +156,13 @@ msgstr "Zoznam dostupných príkazov pre vrstvu hodín."
 msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr ""
 "Umožňuje nastaviť ďalší budík. Stlačené 2 krát rýchlo za sebou zrušíte budík."
+
+msgid "No sound is launched."
+msgstr ""
+
+#, fuzzy
+msgid "Sound stopped"
+msgstr "{0} stop."
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -195,10 +183,6 @@ msgstr "&Časový formát:"
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Date display format:"
 msgstr "&Formát dátumu:"
-
-#. Translators: This is the label for a checkbox in the Clock settings dialog.
-msgid "Input in &24-hour format"
-msgstr "Vstup v &24 hodinový formát"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "off"
@@ -248,6 +232,10 @@ msgstr "Hodinový zvonček &zvuk:"
 msgid "&Quiet hours"
 msgstr "&Tiché hodiny"
 
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+msgid "Input in &24-hour format"
+msgstr "Vstup v &24 hodinový formát"
+
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours start time:"
 msgstr "Tiché hodiny začiatok:"
@@ -255,6 +243,19 @@ msgstr "Tiché hodiny začiatok:"
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours end time:"
 msgstr "Tiché hodiny koniec:"
+
+#. A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
+msgid ""
+"The value you entered for your quiet hours is erroneous, for a 24-hour "
+"format, the value must be HH:MM, for a 12-hour format, the value must be HH:"
+"MM followed by the AM or PM suffix, please reread the documentation. So your "
+"quiet hours have been deactivated for prevent any error in the configuration "
+"file."
+msgstr ""
+
+#. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
+msgid "Error"
+msgstr ""
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"
@@ -361,3 +362,22 @@ msgstr ""
 "3 krát rýchlo za sebou oznamuje aktuálny deň, číslo týždňa, aktuálny rok a "
 "počet dní do konca roka.\n"
 "Pre viac informácií si detailnejšie pozrite návod v doplnku."
+
+#~ msgid ""
+#~ "\n"
+#~ "\t\tS: Starts, resets or stops the stopwatch.\n"
+#~ "\t\tR: Resets stopwatch to 0 without restarting it.\n"
+#~ "\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
+#~ "\t\tC: Cancel the next alarm.\n"
+#~ "\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
+#~ "\t\tH: List all layered commands (Help).\n"
+#~ "\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "\t\tS: Spustí, zastaví, obnoví alebo reštartuje stopky.\n"
+#~ "\t\tR: Resetuje stopky pre ďalšie spustenie.\n"
+#~ "\t\tA: Poskytuje informácie o ďalšom budíku.\n"
+#~ "\t\tC: Zruší ďalší budík.\n"
+#~ "\t\tSpacebar: Oznamuje aktuálne meraný čas.\n"
+#~ "\t\tH: Zoznam všetkých príkazov (Pomoc).\n"
+#~ "\t\t"

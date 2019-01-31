@@ -149,26 +149,6 @@ msgstr "Chronomètre réinitialisé."
 msgid "Resets stopwatch to 0 without restarting it."
 msgstr "Réinitialise le chronomètre à 0 sans le démarrer."
 
-msgid ""
-"\n"
-"\t\tS: Starts, resets or stops the stopwatch.\n"
-"\t\tR: Resets stopwatch to 0 without restarting it.\n"
-"\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
-"\t\tC: Cancel the next alarm.\n"
-"\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
-"\t\tH: List all layered commands (Help).\n"
-"\t\t"
-msgstr ""
-"\n"
-"\t\tS : Démarre, réinitialise ou arrête le chronomètre.\n"
-"\t\tR : Réinitialise le chronomètre à 0 sans le démarrer.\n"
-"\t\tA : Donne le temps restant et écoulé avant la prochaine alarme.\n"
-"\t\tC : Annule la prochaine alarme.\n"
-"\t\tBarre d'espace : Annonce le chronomètre actuel ou le compte à rebours de "
-"la minuterie.\n"
-"\t\tH : Liste toutes les commandes en couches (Aide).\n"
-"\t\t"
-
 #. Translators: Message presented in input help mode.
 msgid "Lists available commands in clock command layer."
 msgstr ""
@@ -178,6 +158,13 @@ msgstr ""
 msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr ""
 "Permet de vérifier la prochaine alarme. Si vous appuyez deux fois, l'annule."
+
+msgid "No sound is launched."
+msgstr ""
+
+#, fuzzy
+msgid "Sound stopped"
+msgstr "{0} arrêté."
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -198,10 +185,6 @@ msgstr "Format d'affichage de l'&heure :"
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Date display format:"
 msgstr "Format d'affichage de la &date :"
-
-#. Translators: This is the label for a checkbox in the Clock settings dialog.
-msgid "Input in &24-hour format"
-msgstr "Entrée au format &24 heures"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "off"
@@ -251,6 +234,10 @@ msgstr "&Son de carillon d'horloge :"
 msgid "&Quiet hours"
 msgstr "&Heures silencieuses"
 
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+msgid "Input in &24-hour format"
+msgstr "Entrée au format &24 heures"
+
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours start time:"
 msgstr "Début de la durée des heures silencieuses :"
@@ -258,6 +245,19 @@ msgstr "Début de la durée des heures silencieuses :"
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours end time:"
 msgstr "Heure de fin des heures silencieuses :"
+
+#. A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
+msgid ""
+"The value you entered for your quiet hours is erroneous, for a 24-hour "
+"format, the value must be HH:MM, for a 12-hour format, the value must be HH:"
+"MM followed by the AM or PM suffix, please reread the documentation. So your "
+"quiet hours have been deactivated for prevent any error in the configuration "
+"file."
+msgstr ""
+
+#. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
+msgid "Error"
+msgstr ""
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"
@@ -367,3 +367,23 @@ msgstr ""
 "de l'année.\n"
 "Pour d'autres instructions, appuyez sur le bouton Aide de ce module "
 "complémentaire, dans le Gestionnaire de modules complémentaires."
+
+#~ msgid ""
+#~ "\n"
+#~ "\t\tS: Starts, resets or stops the stopwatch.\n"
+#~ "\t\tR: Resets stopwatch to 0 without restarting it.\n"
+#~ "\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
+#~ "\t\tC: Cancel the next alarm.\n"
+#~ "\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
+#~ "\t\tH: List all layered commands (Help).\n"
+#~ "\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "\t\tS : Démarre, réinitialise ou arrête le chronomètre.\n"
+#~ "\t\tR : Réinitialise le chronomètre à 0 sans le démarrer.\n"
+#~ "\t\tA : Donne le temps restant et écoulé avant la prochaine alarme.\n"
+#~ "\t\tC : Annule la prochaine alarme.\n"
+#~ "\t\tBarre d'espace : Annonce le chronomètre actuel ou le compte à rebours "
+#~ "de la minuterie.\n"
+#~ "\t\tH : Liste toutes les commandes en couches (Aide).\n"
+#~ "\t\t"

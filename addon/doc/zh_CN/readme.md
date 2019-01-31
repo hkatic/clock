@@ -19,38 +19,62 @@
 
 ## 使用
 
-*	根据您的NVDA版本，从NVDA工具菜单或设置面板打开此插件的配置对话框;
-	*	在时钟设置对话框中，前两个组合框控件允许您选择您喜欢的时间和日期显示格式;
-	*	标有“24小时格式输入”的复选框控件允许您配置您想要在12小时（上午或下午）或欧洲24小时格式中输入夜间模式的时间;
-	*	标有“间隔”的组合框控件允许您设置自动报时的间隔（每15分钟，每30分钟，每小时或关闭）;
-	*	标有“时间通知”的组合框控件可让您配置在自动报时工作时应如何自动报时（语音和声音，仅语音或仅声音）;
-	*	标有“时钟铃声”的组合框控件可让您在自动报时工作和声音朗读时播放各种时钟声音;
-	*	标记为“夜间模式设置”的复选框控件可让您配置自动报时不应发生的时间范围，无论是否启用自动报时
-	*	编辑框控制开始和结束时间（仅在启用夜间模式时可见）允许您配置夜间模式的时间范围。时间应以HH：MM格式输入;
-	*	完成后，选择确定按钮并按回车键激活它以保存设置;
-	*	在闹钟设置对话框中，第一个组合框控件允许您在闹钟响之前选择您喜欢的倒数计时器;
-	*	编辑框控件可让您输入在闹钟响铃前等待的时间。此持续时间必须以1位或更多位数指定，而不是十进制数;
-	*	标有“闹铃声”的组合框控件可让您在闹钟时间到来时选择各种闹铃声;
-*完成后，选择确定按钮并按回车键激活它。应显示一条消息，提醒您闹钟响之前所要等待的时间;
-*	按一次NVDA + F12获取当前时间，按两次获取当前日期，或按三次获取当前日期，周数以及当前年底前的剩余天数。
+*	Open the configuration dialog for this addon from the NVDA tools menu or from the settings panel According to your version of NVDA;
+	*	In the Clock setup dialog, the first two Combo Box controls allow you to choose your prefered time and date display formats;
+	*	The Combo Box control labeled "Interval" allows you to set the interval for automatic time announcement (Every 10 minutes, Every 15 minutes, Every 30 minutes, Every hour, or Off);
+	*	The Combo Box control labeled "Time announcement" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure how the automatic time announcement should be reported (Speech and sound, Speech only, or Sound only) when automatic time announcement is working;
+	*	The Combo box control labeled "Clock chime sound" (only visible if the choice "off" is not selected in the interval Combo Box) lets you choose between various clock sounds that will be played when automatic time announcement is working and reported with sound;
+	*	The Checkbox control labeled "Quiet hours" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure time range when automatic time announcement shouldn't occure;
+	*	The Checkbox control labeled "input in 24-hour format" (only visible if quiet hours are enabled) allows you to configure wether you want to input time for quiet hours in 12-hour (A.M. or P.M.), or european 24-hour format;
+	*	The Edit box controls for start and end time (only visible if quiet hours are enabled) let you configure time range for quiet hours. The time should be entered in HH:MM format if the "input in 24-hour format" checkbox is checked, otherwise you must use a 12 hour format as described below;
+	*	When done, tab to the OK button and activate it by pressing Enter to save your settings;
+	*	In the Alarm setup dialog, the first Combo Box control allow you to choose your prefered countdown timer before the alarm ring;
+	*	The Edit box control lets you type your time waiting before the alarm ring. This duration must be specified in 1 or more digits, not a decimal number;
+	*	The Combo box control labeled "Alarm sound" lets you choose between various alarm sounds that will be played when the alarm time arrives;
+	*	The pause button allows you to pause/resume too long alarms;
+	*	The stop button allows you to stop too long alarms;
+	*	When done, tab to the OK button and activate it by pressing Enter. A message should be displayed to remind you of the waiting time before the alarm;
+*	Press NVDA+F12 once to get current time, twice to get current date, or thrice to get the current day, week number, as well as the remaining days before the end of the current year.
 
 ## 键盘命令
 
 NVDA + F12，读出当前时间。 NVDA + F12快速按两次，读出当前日期。 NVDA +
 F12快速按三次，读出当天，周数，当前年份和今年年底前的剩余天数。
 
-- Control + F12，读出下一次闹钟前的剩余时间和经过时间; - Control + F12快速按两次，取消下一次闹钟。
+- There is a script that gives the remaining and elapsed time before the
+next alarm; - There is no keyboard gesture assigned to this script, you will
+have to do it yourself in the "Input gestures" dialog box, in the "Clock"
+category; - This gesture pressed twice quickly, cancel the next alarm; -
+There is another script to stop the sound that is currently playing, its
+gesture is also not defined; - That script can also be called using the
+clock layer commands described below.
 
 ## 分层命令
 
 要使用分层命令，请按NVDA + Shift + F12，然后按以下快捷键:
 
-- S: 启动，重置或停止秒表; - R: 将秒表重置为0而不重新启动; - A: 读出下一次闹钟前的剩余时间和经过时间; - C: 取消下一个闹钟;
-- Spacebar: 读出当前的秒表或倒计时器; - H: 列出所有分层命令 (Help)。
+- S: Starts, resets or stops the stopwatch; - R: Resets stopwatch to 0
+without restarting it; - A: gives the remaining and elapsed time before the
+next alarm; - C: Cancel the next alarm; - Space: Speaks current stopwatch or
+count-down timer; - p: If an alarm is too long, allows to stop it; - H: List
+all layered commands (Help).
+
+## Syntax to use for quiet hours
+
+- To avoid bugs, the quiet hours must follow a rigorous and precise syntax;
+- If you check the "Input in 24-hour format" checkbox, the format must be
+"HH:MM"; - If you uncheck the "Input in 24-hour format" checkbox, the format
+must be "HH:MM AM" or "HH:MM PM", the HH must contain a 12-hour format, from
+0 to 12 and the "AM"|"PM" suffix can be in lowercase or uppercase - If you
+check the Quiet hours" checkbox and keep the "Quiet hours start time" or
+"Quiet hours end time" field empty, or type a mistaken value, the "Quiet
+hours" checkbox will be unchecked automatically, to avoid errors; - A
+message should be displayed to report your error.
 
 ## 兼容性
 
 - 此插件支持2014.3至2019.1的NVDA版本。
+
 
 [[!tag dev stable]]
 

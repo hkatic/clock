@@ -149,25 +149,6 @@ msgstr "Stopur nulstillet."
 msgid "Resets stopwatch to 0 without restarting it."
 msgstr "Nulstiller stopuret til 0 uden at genstarte det."
 
-msgid ""
-"\n"
-"\t\tS: Starts, resets or stops the stopwatch.\n"
-"\t\tR: Resets stopwatch to 0 without restarting it.\n"
-"\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
-"\t\tC: Cancel the next alarm.\n"
-"\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
-"\t\tH: List all layered commands (Help).\n"
-"\t\t"
-msgstr ""
-"\n"
-"\t\tS: Starter, nulstiller eller stopper stopuret.\n"
-"\t\tR: Nulstiller stopur til 0 uden at genstarte det.\n"
-"\t\tA: Angiver resterende og forløbet tid før den næste alarm.\n"
-"\t\tC: Annuller næste alarm.\n"
-"\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
-"\t\tH: Vis en liste over alle lagdelte kommandoer(Hjælp).\n"
-"\t\t"
-
 #. Translators: Message presented in input help mode.
 msgid "Lists available commands in clock command layer."
 msgstr "Giver en liste over lagdelte kommandoer til uret"
@@ -177,6 +158,13 @@ msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr ""
 "Tillader at tjekke den næste alarm. Hvis der trykkes to gange, annulleres "
 "den."
+
+msgid "No sound is launched."
+msgstr ""
+
+#, fuzzy
+msgid "Sound stopped"
+msgstr "{0} stoppet."
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -197,10 +185,6 @@ msgstr "&Tidsvisningsformat:"
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Date display format:"
 msgstr "&Datovisningsformat:"
-
-#. Translators: This is the label for a checkbox in the Clock settings dialog.
-msgid "Input in &24-hour format"
-msgstr "Indtast med 24-timers-format"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "off"
@@ -250,6 +234,10 @@ msgstr "&Urets lyd"
 msgid "&Quiet hours"
 msgstr "&Stilletimer"
 
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+msgid "Input in &24-hour format"
+msgstr "Indtast med 24-timers-format"
+
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours start time:"
 msgstr "Starttidspunkt for stilletimer:"
@@ -257,6 +245,19 @@ msgstr "Starttidspunkt for stilletimer:"
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours end time:"
 msgstr "Sluttidspunkt for stilletimer:"
+
+#. A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
+msgid ""
+"The value you entered for your quiet hours is erroneous, for a 24-hour "
+"format, the value must be HH:MM, for a 12-hour format, the value must be HH:"
+"MM followed by the AM or PM suffix, please reread the documentation. So your "
+"quiet hours have been deactivated for prevent any error in the configuration "
+"file."
+msgstr ""
+
+#. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
+msgid "Error"
+msgstr ""
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"
@@ -366,3 +367,22 @@ msgstr ""
 "det aktuelle år og de resterende dage før årets udgang.\n"
 "For yderligere vejledning, tryk på knappen \"Hjælp\" i Styring af "
 "tilføjelsesprogrammer."
+
+#~ msgid ""
+#~ "\n"
+#~ "\t\tS: Starts, resets or stops the stopwatch.\n"
+#~ "\t\tR: Resets stopwatch to 0 without restarting it.\n"
+#~ "\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
+#~ "\t\tC: Cancel the next alarm.\n"
+#~ "\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
+#~ "\t\tH: List all layered commands (Help).\n"
+#~ "\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "\t\tS: Starter, nulstiller eller stopper stopuret.\n"
+#~ "\t\tR: Nulstiller stopur til 0 uden at genstarte det.\n"
+#~ "\t\tA: Angiver resterende og forløbet tid før den næste alarm.\n"
+#~ "\t\tC: Annuller næste alarm.\n"
+#~ "\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
+#~ "\t\tH: Vis en liste over alle lagdelte kommandoer(Hjælp).\n"
+#~ "\t\t"

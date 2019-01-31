@@ -148,25 +148,6 @@ msgstr "Resetare cronometru."
 msgid "Resets stopwatch to 0 without restarting it."
 msgstr "Resetează cronometrul la 0 fără a-l reporni."
 
-msgid ""
-"\n"
-"\t\tS: Starts, resets or stops the stopwatch.\n"
-"\t\tR: Resets stopwatch to 0 without restarting it.\n"
-"\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
-"\t\tC: Cancel the next alarm.\n"
-"\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
-"\t\tH: List all layered commands (Help).\n"
-"\t\t"
-msgstr ""
-"\n"
-"\t\tS: Pornește, resetează sau oprește cronometrul.\n"
-"\t\tR: Resetează cronometrul la 0 fără să-l repornească..\n"
-"\t\tA: dă timpul scurs și timpul rămas înainte de alarma următoare.\n"
-"\t\tC: Anulează alarma următoare.\n"
-"\t\tSpacebar: Oprește cronometrul curent sau pe cel al numărătorii inverse.\n"
-"\t\tH: Listează toate comenzile stratificate (Ajutor).\n"
-"\t\t"
-
 #. Translators: Message presented in input help mode.
 msgid "Lists available commands in clock command layer."
 msgstr "Listează comenzile disponibile din în stratul de comenzi ale ceasului."
@@ -176,6 +157,13 @@ msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr ""
 "Vă permite să verificați alarma următoare. Dacă e apăsat de două ori, o "
 "anulează."
+
+msgid "No sound is launched."
+msgstr ""
+
+#, fuzzy
+msgid "Sound stopped"
+msgstr "{0} oprit"
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -196,10 +184,6 @@ msgstr "&Formatul în care doriți să se afișeze ora:"
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Date display format:"
 msgstr "&Formatul în care doriți să se afișeze data:"
-
-#. Translators: This is the label for a checkbox in the Clock settings dialog.
-msgid "Input in &24-hour format"
-msgstr "Formatul standard, &24 de ore"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "off"
@@ -249,6 +233,10 @@ msgstr "&Cum să sune ceasul"
 msgid "&Quiet hours"
 msgstr "&Ore de liniște"
 
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+msgid "Input in &24-hour format"
+msgstr "Formatul standard, &24 de ore"
+
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours start time:"
 msgstr "Timp de început al orelor de liniște:"
@@ -256,6 +244,19 @@ msgstr "Timp de început al orelor de liniște:"
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours end time:"
 msgstr "Timp de sfârșit al orelor de liniște:"
+
+#. A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
+msgid ""
+"The value you entered for your quiet hours is erroneous, for a 24-hour "
+"format, the value must be HH:MM, for a 12-hour format, the value must be HH:"
+"MM followed by the AM or PM suffix, please reread the documentation. So your "
+"quiet hours have been deactivated for prevent any error in the configuration "
+"file."
+msgstr ""
+
+#. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
+msgid "Error"
+msgstr ""
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"
@@ -363,3 +364,23 @@ msgstr ""
 "săptămânii, anul curent și câte zile mai sunt până la Revelion.\n"
 "Pentru alte instrucțiuni, apăsați butonul de ajutor, care se află în "
 "administratorul de suplimente."
+
+#~ msgid ""
+#~ "\n"
+#~ "\t\tS: Starts, resets or stops the stopwatch.\n"
+#~ "\t\tR: Resets stopwatch to 0 without restarting it.\n"
+#~ "\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
+#~ "\t\tC: Cancel the next alarm.\n"
+#~ "\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
+#~ "\t\tH: List all layered commands (Help).\n"
+#~ "\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "\t\tS: Pornește, resetează sau oprește cronometrul.\n"
+#~ "\t\tR: Resetează cronometrul la 0 fără să-l repornească..\n"
+#~ "\t\tA: dă timpul scurs și timpul rămas înainte de alarma următoare.\n"
+#~ "\t\tC: Anulează alarma următoare.\n"
+#~ "\t\tSpacebar: Oprește cronometrul curent sau pe cel al numărătorii "
+#~ "inverse.\n"
+#~ "\t\tH: Listează toate comenzile stratificate (Ajutor).\n"
+#~ "\t\t"

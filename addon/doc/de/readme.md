@@ -30,20 +30,22 @@ Korrektur auszulösen.
 
 ## Verwendung
 
-* Öffnen Sie den Konfigurationsdialog für diese Erweiterung aus dem NVDA-Extras-Menü oder mittels des Einstellungsdialoges je nach  Ihrer verwendeten NVDA-Version.
-	* Im Uhren-Einstellungs-Dialog können Sie mittels den ersten beiden Kombinationsfeldern Ihre bevorzugten Zeit-und Datumsformate auswählen;
-	* Das Kontrollkästchen mit der Aufschrift "Eingabe im 24-Stunden-Format" ermöglicht  die Einstellung der Zeiteingabe für ruhige Stunden im 12-Stunden-Format (A.M. bzw. P.M.) oder im europäischen 24-Stunden-Format.
-	* Das Kombinationsfeld mit der Aufschrift "Intervall" ermöglicht es Ihnen, das Intervall für die automatische Zeitankündigung einzustellen (alle 15 Minuten, alle 30 Minuten, jede Stunde oder aus).
-	* Mit dem Kombinationsfeld "Zeitankündigung" können Sie festlegen, wie die automatische Zeitankündigung erfolgen soll (Sprache und Ton, nur Sprache oder nur Ton), sofern die automatische Zeitankündigung aktiv ist.
-	* Das Kombinationsfeld mit der Aufschrift "Uhrglockenton" ermöglicht die Wahl zwischen verschiedenen Klängen, die bei aktivierter automatischer Zeitankündigung  abgespielt werden.
-	* Mit dem Kontrollkästchen "Ruhige Stunden" können Sie den Zeitbereich einstellen, in dem die automatische Zeitankündigung nicht erfolgen soll, egal ob die automatische Zeitankündigung aktiviert ist oder nicht;
-	* Mit dem Eingabefeld  können Sie die Zeitspanne für ruhige Stunden festlegen. Die Uhrzeit muss im Format HH:MM eingegeben werden.
-	* Wenn Sie fertig sind, speichern Sie die Änderungen mit OK ab.
-	* Im Alarm-Einrichtungs-Dialog können Sie mit dem ersten Kombinationsfeld Ihre bevorzugte Zeiteinheit festlegen, bevor der Alarm ertönen soll.
-	* Mit dem nächsten Eingabefeld können Sie die Wartezeit vor dem Alarmton eingeben. Diese Dauer muss in ganzen Zahlen (ohne Dezimalzahlen) angegeben werden.
-	* Das Kombinationsfeld mit der Aufschrift "Alarmsignal" ermöglicht die Wahl zwischen verschiedenen Alarmgeräuschen, die bei der Alarmzeit abgespielt werden.
-	* Wenn Sie fertig sind, bestätigen Sie mit OK.  Eine Nachricht sollte angezeigt werden, um Sie an die Wartezeit bis zum Alarm zu erinnern;
-* Drücken Sie NVDA+F12 einmal, um die aktuelle Zeit zu erhalten, zweimal, um das aktuelle Datum zu bekommen, oder dreimal, um den aktuellen Tag, die Wochennummer, sowie die restlichen Tage bis zum Jahresende zu erhalten.
+*	Open the configuration dialog for this addon from the NVDA tools menu or from the settings panel According to your version of NVDA;
+	*	In the Clock setup dialog, the first two Combo Box controls allow you to choose your prefered time and date display formats;
+	*	The Combo Box control labeled "Interval" allows you to set the interval for automatic time announcement (Every 10 minutes, Every 15 minutes, Every 30 minutes, Every hour, or Off);
+	*	The Combo Box control labeled "Time announcement" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure how the automatic time announcement should be reported (Speech and sound, Speech only, or Sound only) when automatic time announcement is working;
+	*	The Combo box control labeled "Clock chime sound" (only visible if the choice "off" is not selected in the interval Combo Box) lets you choose between various clock sounds that will be played when automatic time announcement is working and reported with sound;
+	*	The Checkbox control labeled "Quiet hours" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure time range when automatic time announcement shouldn't occure;
+	*	The Checkbox control labeled "input in 24-hour format" (only visible if quiet hours are enabled) allows you to configure wether you want to input time for quiet hours in 12-hour (A.M. or P.M.), or european 24-hour format;
+	*	The Edit box controls for start and end time (only visible if quiet hours are enabled) let you configure time range for quiet hours. The time should be entered in HH:MM format if the "input in 24-hour format" checkbox is checked, otherwise you must use a 12 hour format as described below;
+	*	When done, tab to the OK button and activate it by pressing Enter to save your settings;
+	*	In the Alarm setup dialog, the first Combo Box control allow you to choose your prefered countdown timer before the alarm ring;
+	*	The Edit box control lets you type your time waiting before the alarm ring. This duration must be specified in 1 or more digits, not a decimal number;
+	*	The Combo box control labeled "Alarm sound" lets you choose between various alarm sounds that will be played when the alarm time arrives;
+	*	The pause button allows you to pause/resume too long alarms;
+	*	The stop button allows you to stop too long alarms;
+	*	When done, tab to the OK button and activate it by pressing Enter. A message should be displayed to remind you of the waiting time before the alarm;
+*	Press NVDA+F12 once to get current time, twice to get current date, or thrice to get the current day, week number, as well as the remaining days before the end of the current year.
 
 ## Tastenbefehle
 
@@ -52,24 +54,41 @@ gedrückt) liest das aktuelle Datum vor. - NVDA+F12 (dreimal schnell
 gedrückt) liest den aktuellen Tag, die Kalenderwoche, das Jahr sowie die
 Anzahl der verbleibenden Tage des Jahres vor.
 
-- Steuerung+F12: gibt die verbleibende sowie die  abgelaufene Zeit bis zum
-nächsten Alarm aus. - Steuerung+F12 zweimal schnell gedrückt: bricht den
-nächsten Alarm ab.
+- There is a script that gives the remaining and elapsed time before the
+next alarm; - There is no keyboard gesture assigned to this script, you will
+have to do it yourself in the "Input gestures" dialog box, in the "Clock"
+category; - This gesture pressed twice quickly, cancel the next alarm; -
+There is another script to stop the sound that is currently playing, its
+gesture is also not defined; - That script can also be called using the
+clock layer commands described below.
 
 ## Zwischenbefehle
 
 Um Zwischenbefehle zu verwenden, drücken Sie NVDA+Shift+F12 gefolgt von
 einem der folgenden Tasten:
 
-- S: Stoppuhr Starten, anhalten oder zurücksetzen . - R: Stoppuhr
-zurücksetzen ohne sie zu starten. - A: Sagt Informationen über den nächsten
-Alarm an. - C: Schaltet den nächsten Alarm aus. - Leertaste: Ansage der
-aktuellen Zeit der Stoppuhr oder des Alarms. -
-H: Listet alle Zwischenbefehle Befehle auf (hilfe).
+- S: Starts, resets or stops the stopwatch; - R: Resets stopwatch to 0
+without restarting it; - A: gives the remaining and elapsed time before the
+next alarm; - C: Cancel the next alarm; - Space: Speaks current stopwatch or
+count-down timer; - p: If an alarm is too long, allows to stop it; - H: List
+all layered commands (Help).
+
+## Syntax to use for quiet hours
+
+- To avoid bugs, the quiet hours must follow a rigorous and precise syntax;
+- If you check the "Input in 24-hour format" checkbox, the format must be
+"HH:MM"; - If you uncheck the "Input in 24-hour format" checkbox, the format
+must be "HH:MM AM" or "HH:MM PM", the HH must contain a 12-hour format, from
+0 to 12 and the "AM"|"PM" suffix can be in lowercase or uppercase - If you
+check the Quiet hours" checkbox and keep the "Quiet hours start time" or
+"Quiet hours end time" field empty, or type a mistaken value, the "Quiet
+hours" checkbox will be unchecked automatically, to avoid errors; - A
+message should be displayed to report your error.
 
 ## Kompatibilität
 
 - Diese Erweiterung ist mit den NVDA-Versionen 2018.3 bis 2019.1 kompatibel.
+
 
 [[!tag dev stable]]
 

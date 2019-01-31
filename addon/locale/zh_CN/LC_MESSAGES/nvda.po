@@ -143,25 +143,6 @@ msgstr "秒表重置。"
 msgid "Resets stopwatch to 0 without restarting it."
 msgstr "将秒表重置为0而不重新启动。"
 
-msgid ""
-"\n"
-"\t\tS: Starts, resets or stops the stopwatch.\n"
-"\t\tR: Resets stopwatch to 0 without restarting it.\n"
-"\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
-"\t\tC: Cancel the next alarm.\n"
-"\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
-"\t\tH: List all layered commands (Help).\n"
-"\t\t"
-msgstr ""
-"\n"
-"\t\tS: 启动，重置或停止秒表。\n"
-"\t\tR: 将秒表重置为0而不重新启动。\n"
-"\t\tA: 给出下一次的闹钟剩余时间和经过时间。\n"
-"\t\tC: 取消下一个闹钟。\n"
-"\t\tSpacebar: 读出当前的秒表或计时器。\n"
-"\t\tH: 列出所有分层命令 (Help).\n"
-"\t\t"
-
 #. Translators: Message presented in input help mode.
 msgid "Lists available commands in clock command layer."
 msgstr "列出时钟命令层中的可用命令。"
@@ -169,6 +150,13 @@ msgstr "列出时钟命令层中的可用命令。"
 #. Translators: Message presented in input help mode.
 msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr "允许检查下一个闹钟。如果按两次，则取消。"
+
+msgid "No sound is launched."
+msgstr ""
+
+#, fuzzy
+msgid "Sound stopped"
+msgstr "{0} 停止。"
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -189,10 +177,6 @@ msgstr "时间显示格式(&T):"
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Date display format:"
 msgstr "日期显示格式(&D)::"
-
-#. Translators: This is the label for a checkbox in the Clock settings dialog.
-msgid "Input in &24-hour format"
-msgstr "以24小时格式显示(&2)"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "off"
@@ -242,6 +226,10 @@ msgstr "时钟铃声(&S):"
 msgid "&Quiet hours"
 msgstr "夜间模式设置(&Q)"
 
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+msgid "Input in &24-hour format"
+msgstr "以24小时格式显示(&2)"
+
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours start time:"
 msgstr "夜间模式开始时间："
@@ -249,6 +237,19 @@ msgstr "夜间模式开始时间："
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours end time:"
 msgstr "夜间模式结束时间："
+
+#. A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
+msgid ""
+"The value you entered for your quiet hours is erroneous, for a 24-hour "
+"format, the value must be HH:MM, for a 12-hour format, the value must be HH:"
+"MM followed by the AM or PM suffix, please reread the documentation. So your "
+"quiet hours have been deactivated for prevent any error in the configuration "
+"file."
+msgstr ""
+
+#. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
+msgid "Error"
+msgstr ""
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"
@@ -352,3 +353,22 @@ msgstr ""
 "NVDA的高级时钟和日历插件。 NVDA + F12，读出当前时间。 NVDA + F12快速按两次，"
 "读出当前日期。 NVDA + F12快速按三次，读出当天，周数，当前年份和今年年底前的剩"
 "余天数。有关其他说明，请使用插件管理器中的插件帮助进行查看。"
+
+#~ msgid ""
+#~ "\n"
+#~ "\t\tS: Starts, resets or stops the stopwatch.\n"
+#~ "\t\tR: Resets stopwatch to 0 without restarting it.\n"
+#~ "\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
+#~ "\t\tC: Cancel the next alarm.\n"
+#~ "\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
+#~ "\t\tH: List all layered commands (Help).\n"
+#~ "\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "\t\tS: 启动，重置或停止秒表。\n"
+#~ "\t\tR: 将秒表重置为0而不重新启动。\n"
+#~ "\t\tA: 给出下一次的闹钟剩余时间和经过时间。\n"
+#~ "\t\tC: 取消下一个闹钟。\n"
+#~ "\t\tSpacebar: 读出当前的秒表或计时器。\n"
+#~ "\t\tH: 列出所有分层命令 (Help).\n"
+#~ "\t\t"

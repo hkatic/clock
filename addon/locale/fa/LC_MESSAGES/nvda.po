@@ -149,25 +149,6 @@ msgstr "زمانسنج بازتنظیم شد."
 msgid "Resets stopwatch to 0 without restarting it."
 msgstr "زمانسنج را بدونِ راه‌اندازی ۰ میکند."
 
-msgid ""
-"\n"
-"\t\tS: Starts, resets or stops the stopwatch.\n"
-"\t\tR: Resets stopwatch to 0 without restarting it.\n"
-"\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
-"\t\tC: Cancel the next alarm.\n"
-"\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
-"\t\tH: List all layered commands (Help).\n"
-"\t\t"
-msgstr ""
-"\n"
-"\t\tS: زمانسنج را آغاز، متوقف یا بازتنظیم کرده و از نو راه می‌اندازد.\n"
-"\t\tR: زمانسنج را بدونِ دوباره راه‌انداختن بازتنظیم میکند.\n"
-"\t\tA: زمانِ گذشته و باقی‌مانده تا هشدارِ بعدی را اعلام میکند.\n"
-"\t\tC: هشدارِ بعدی را لغو میکند.\n"
-"\t\tکلیدِ فاصله: زمانسنج یا تایمرِ معکوسِ جاری را میخوانَد.\n"
-"\t\tH: همه‌ی فرمان‌های لایه‌دارِ افزونه را فهرست میکند.\n"
-"\t\t"
-
 #. Translators: Message presented in input help mode.
 msgid "Lists available commands in clock command layer."
 msgstr "فرمان‌های موجود در فرمانِ لایه‌دارِ ساعت را فهرست میکند."
@@ -177,6 +158,13 @@ msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr ""
 "اجازه میدهد تا هشدارِ بعدی را بررسی کنید. اگر دو بار فشرده شود، آن هشدار را "
 "لغو میکند."
+
+msgid "No sound is launched."
+msgstr ""
+
+#, fuzzy
+msgid "Sound stopped"
+msgstr "{0} متوقف شد."
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -197,10 +185,6 @@ msgstr "قالبِ نمایشِ &زمان:"
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Date display format:"
 msgstr "قالبِ نمایشِ &تاریخ:"
-
-#. Translators: This is the label for a checkbox in the Clock settings dialog.
-msgid "Input in &24-hour format"
-msgstr "ورودِ زمان در قالبِ &۲۴ ساعتی"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "off"
@@ -250,6 +234,10 @@ msgstr "&صدای زنگِ ساعت:"
 msgid "&Quiet hours"
 msgstr "ساعات &بی‌صدا"
 
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+msgid "Input in &24-hour format"
+msgstr "ورودِ زمان در قالبِ &۲۴ ساعتی"
+
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours start time:"
 msgstr "زمانِ آغازِ ساعاتِ بی‌صدا:"
@@ -257,6 +245,19 @@ msgstr "زمانِ آغازِ ساعاتِ بی‌صدا:"
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours end time:"
 msgstr "زمانِ پایانِ ساعاتِ بی‌صدا:"
+
+#. A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
+msgid ""
+"The value you entered for your quiet hours is erroneous, for a 24-hour "
+"format, the value must be HH:MM, for a 12-hour format, the value must be HH:"
+"MM followed by the AM or PM suffix, please reread the documentation. So your "
+"quiet hours have been deactivated for prevent any error in the configuration "
+"file."
+msgstr ""
+
+#. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
+msgid "Error"
+msgstr ""
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"
@@ -363,6 +364,25 @@ msgstr ""
 "و برای شِنیدنِ شماره‌ی روز و هفته از سالِ جاری، سه بار بفشارید.\n"
 "برای دستیابی به کارکردهای دیگر، دکمه‌ی راهنمای افزونه را در مدیرِ افزونه‌ها "
 "فشار دهید."
+
+#~ msgid ""
+#~ "\n"
+#~ "\t\tS: Starts, resets or stops the stopwatch.\n"
+#~ "\t\tR: Resets stopwatch to 0 without restarting it.\n"
+#~ "\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
+#~ "\t\tC: Cancel the next alarm.\n"
+#~ "\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
+#~ "\t\tH: List all layered commands (Help).\n"
+#~ "\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "\t\tS: زمانسنج را آغاز، متوقف یا بازتنظیم کرده و از نو راه می‌اندازد.\n"
+#~ "\t\tR: زمانسنج را بدونِ دوباره راه‌انداختن بازتنظیم میکند.\n"
+#~ "\t\tA: زمانِ گذشته و باقی‌مانده تا هشدارِ بعدی را اعلام میکند.\n"
+#~ "\t\tC: هشدارِ بعدی را لغو میکند.\n"
+#~ "\t\tکلیدِ فاصله: زمانسنج یا تایمرِ معکوسِ جاری را میخوانَد.\n"
+#~ "\t\tH: همه‌ی فرمان‌های لایه‌دارِ افزونه را فهرست میکند.\n"
+#~ "\t\t"
 
 #~ msgid "Auto announce &interval:"
 #~ msgstr "&دوره‌ی اعلامِ خودکار:"

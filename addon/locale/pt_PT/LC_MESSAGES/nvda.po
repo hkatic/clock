@@ -155,24 +155,6 @@ msgstr "Cronómetro reiniciado."
 msgid "Resets stopwatch to 0 without restarting it."
 msgstr "Redefine o cronómetro para 0, sem o iniciar."
 
-msgid ""
-"\n"
-"\t\tS: Starts, resets or stops the stopwatch.\n"
-"\t\tR: Resets stopwatch to 0 without restarting it.\n"
-"\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
-"\t\tC: Cancel the next alarm.\n"
-"\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
-"\t\tH: List all layered commands (Help).\n"
-"\t\t"
-msgstr ""
-"\n"
-"S: Inicia, pára ou reinicia o cronómetro.\n"
-"R: Redefine o cronómetro sem começar de novo.\n"
-"Barra de espaço: fala o cronómetro actual ou o cronómetro de contagem "
-"regressiva.\n"
-"\t\tH: Lista todos os comandos em camada (Help).\n"
-"\t\t"
-
 #. Translators: Message presented in input help mode.
 msgid "Lists available commands in clock command layer."
 msgstr "Lista os comandos disponíveis na camada de comando do relógio."
@@ -180,6 +162,13 @@ msgstr "Lista os comandos disponíveis na camada de comando do relógio."
 #. Translators: Message presented in input help mode.
 msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr "Verifica o próximo alarme, duas vezes cancela-o"
+
+msgid "No sound is launched."
+msgstr ""
+
+#, fuzzy
+msgid "Sound stopped"
+msgstr "{0} parado."
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -200,10 +189,6 @@ msgstr "Formato de visualização da &hora:"
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Date display format:"
 msgstr "Formato de visualização da &data:"
-
-#. Translators: This is the label for a checkbox in the Clock settings dialog.
-msgid "Input in &24-hour format"
-msgstr "Entrada no formato de 24 horas"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "off"
@@ -253,6 +238,10 @@ msgstr "&Som da campainha do relógio"
 msgid "&Quiet hours"
 msgstr "&Horas silenciosas"
 
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+msgid "Input in &24-hour format"
+msgstr "Entrada no formato de 24 horas"
+
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours start time:"
 msgstr "Início das horas silenciosas:"
@@ -260,6 +249,19 @@ msgstr "Início das horas silenciosas:"
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours end time:"
 msgstr "Fim das horas silenciosas:"
+
+#. A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
+msgid ""
+"The value you entered for your quiet hours is erroneous, for a 24-hour "
+"format, the value must be HH:MM, for a 12-hour format, the value must be HH:"
+"MM followed by the AM or PM suffix, please reread the documentation. So your "
+"quiet hours have been deactivated for prevent any error in the configuration "
+"file."
+msgstr ""
+
+#. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
+msgid "Error"
+msgstr ""
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"
@@ -367,6 +369,24 @@ msgstr ""
 "actual ou pressione três vezes para obter o dia e a semana do ano actual.\n"
 "Para outras instruções, pressione o botão de ajuda do extra no gestor de "
 "extras\"."
+
+#~ msgid ""
+#~ "\n"
+#~ "\t\tS: Starts, resets or stops the stopwatch.\n"
+#~ "\t\tR: Resets stopwatch to 0 without restarting it.\n"
+#~ "\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
+#~ "\t\tC: Cancel the next alarm.\n"
+#~ "\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
+#~ "\t\tH: List all layered commands (Help).\n"
+#~ "\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "S: Inicia, pára ou reinicia o cronómetro.\n"
+#~ "R: Redefine o cronómetro sem começar de novo.\n"
+#~ "Barra de espaço: fala o cronómetro actual ou o cronómetro de contagem "
+#~ "regressiva.\n"
+#~ "\t\tH: Lista todos os comandos em camada (Help).\n"
+#~ "\t\t"
 
 #~ msgid "Auto announce &interval:"
 #~ msgstr "Intervalo do anúncio automático:"
