@@ -488,19 +488,27 @@ class AlarmSettingsDialog (SettingsDialog):
 
 	def makeSettings(self, settingsSizer):
 		self._alarmTimerChoices=(
+		# Translators: This is an item of the alarm timer choices.
 		_("Hours"),
+		# Translators: This is an item of the alarm timer choices.
 		_("Minutes"),
+		# Translators: This is an item of the alarm timer choices.
 		_("Seconds")
 		)
 
+		# Translators: This is the label for a combo box in the Alarm settings dialog.
 		self._alarmTimerTitle = _("Choose the type of timer &inputs before the alarm rings:")
 
-		self.stopLabel = _("&Stop")
-
-		self.pauseLabel = _("&Pause")
-
+		# Translators: This is the label for a combo box in the Alarm settings dialog.
 		self._alarmSoundTitle = _("A&larm sound:")
 
+		# Translators: This is the label for a button in the Alarm settings dialog.
+		self.stopLabel = _("&Stop")
+
+		# Translators: This is the label for a button in the Alarm settings dialog.
+		self.pauseLabel = _("&Pause")
+
+		# Translators: This is the label for an edit field in the Alarm settings dialog.
 		self._alarmTimeWaitingTitle = _("Alarm &time waiting:")
 
 		# This block has been added to ensure the compatibility of the add-on with the NVDA versions that preceded 2016.4, which included the gui.guiHelper module.
