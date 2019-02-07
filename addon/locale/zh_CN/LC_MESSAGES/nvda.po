@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: clock 18.12\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2019-01-18 13:21+0800\n"
+"PO-Revision-Date: 2019-02-01 05:26+0800\n"
 "Last-Translator: dingpengyu <dingpengyu06@gmail.com>\n"
 "Language-Team: NVDASimplified Chinese team All volunteers <Copyright (C) "
 "2010-2019>\n"
@@ -152,11 +152,10 @@ msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr "允许检查下一个闹钟。如果按两次，则取消。"
 
 msgid "No sound is launched."
-msgstr ""
+msgstr "没有声音发出。"
 
-#, fuzzy
 msgid "Sound stopped"
-msgstr "{0} 停止。"
+msgstr "声音停止"
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -246,10 +245,13 @@ msgid ""
 "quiet hours have been deactivated for prevent any error in the configuration "
 "file."
 msgstr ""
+"您为夜间模式输入的值是错误的，对于24小时格式，值必须为HH：MM，对于12小时格"
+"式，值必须为HH：MM后跟AM或PM后缀，请重是。因此，您的夜间模式已停用，以防止配"
+"置文件中出现错误。"
 
 #. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
 msgid "Error"
-msgstr ""
+msgstr "错误"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"

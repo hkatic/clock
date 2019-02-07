@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: Clock 18.12\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@freelists.org'\n"
 "POT-Creation-Date: 2018-12-12 08:31+0100\n"
-"PO-Revision-Date: 2019-01-03 19:07+0000\n"
+"PO-Revision-Date: 2019-02-01 16:01+0000\n"
 "Last-Translator: Ângelo Miguel Abrantes <ampa4374@gmail.com>\n"
 "Language-Team: Equipa Portuguesa do NVDA <ampa4374@gmail.com; rui."
-"fontes@tiflotecnia.pt>\n"
+"fontes@tiflotecnia.com>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -164,11 +164,10 @@ msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr "Verifica o próximo alarme, duas vezes cancela-o"
 
 msgid "No sound is launched."
-msgstr ""
+msgstr "Não se ouve qualquer som."
 
-#, fuzzy
 msgid "Sound stopped"
-msgstr "{0} parado."
+msgstr "Som parado"
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -258,10 +257,15 @@ msgid ""
 "quiet hours have been deactivated for prevent any error in the configuration "
 "file."
 msgstr ""
+"O valor digitado para as suas horas de silêncio é incorrecto; para um "
+"formato de 24 horas, o valor deve ser HH:MM, para um formato de 12 horas, o "
+"valor deve ser HH:MM seguido do sufixo AM ou PM, por favor, volte a ler a "
+"documentação. Por esse motivo, as suas horas de silêncio foram desactivadas "
+"para evitar qualquer erro no ficheiro de configuração."
 
 #. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
 msgid "Error"
-msgstr ""
+msgstr "erro"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"
@@ -280,9 +284,8 @@ msgid "Seconds"
 msgstr "Segundos"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
-#, fuzzy
 msgid "Choose the type of timer &inputs before the alarm rings:"
-msgstr "Escolha o tipo de entrada antes alarm do alarme tocar"
+msgstr "Escolha o tipo de entrada antes do alarme tocar"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
@@ -297,7 +300,6 @@ msgid "&Pause"
 msgstr "P&ausa"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
-#, fuzzy
 msgid "Alarm &time waiting:"
 msgstr "Tempo de espera do alarme"
 

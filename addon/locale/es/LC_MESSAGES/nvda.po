@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: clock 19.01\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2019-01-17 21:26+0100\n"
+"PO-Revision-Date: 2019-01-31 19:10+0100\n"
 "Last-Translator: José Manuel Delicado <jmdaweb@hotmail.com>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -158,11 +158,10 @@ msgstr ""
 "Permite comprobar la próxima alarma. Si se pulsa dos veces, la cancela."
 
 msgid "No sound is launched."
-msgstr ""
+msgstr "No se ha lanzado ningún sonido."
 
-#, fuzzy
 msgid "Sound stopped"
-msgstr "{0} detenido."
+msgstr "Sonido detenido"
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -252,10 +251,15 @@ msgid ""
 "quiet hours have been deactivated for prevent any error in the configuration "
 "file."
 msgstr ""
+"El valor que has introducido para las horas silenciosas es erróneo. El "
+"formato de 24 horas debe ser HH:MM, y para 12 horas HH:MM seguido de los "
+"sufijos AM o PM. Por favor, vuelve a leer la documentación. Se han "
+"desactivado las horas silenciosas para evitar errores en el archivo de "
+"configuración."
 
 #. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"

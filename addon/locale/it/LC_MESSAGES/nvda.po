@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: 'nvda-translations@freelists.org'\n"
 "POT-Creation-Date: 2018-12-14 14:31+0100\n"
-"PO-Revision-Date: 2019-01-19 15:28+0100\n"
+"PO-Revision-Date: 2019-02-01 11:00+0100\n"
 "Last-Translator: Chris Leo Mameli <llajta2012@gmail.com>\n"
 "Language-Team: \n"
 "Language: it\n"
@@ -154,11 +154,10 @@ msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr "Permette di controllare il Timer, premuto due volte lo annulla."
 
 msgid "No sound is launched."
-msgstr ""
+msgstr "Nessun audio in riproduzione."
 
-#, fuzzy
 msgid "Sound stopped"
-msgstr "Stop, {0}."
+msgstr "Stop..."
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -248,10 +247,14 @@ msgid ""
 "quiet hours have been deactivated for prevent any error in the configuration "
 "file."
 msgstr ""
+"Errore nell'immettere valori per la fascia oraria inattiva. Per il formato "
+"24-ore, deve essere HH:MM, per il formato 12-ore, deve essere HH:MM seguito "
+"dalla dicitura AM o PM, come indicato nella guida. per evitare errori nel "
+"file di configurazione, la fascia oraria inattiva verrà disattivata."
 
 #. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
 msgid "Error"
-msgstr ""
+msgstr "Errore"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"

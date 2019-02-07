@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: clock 18.12\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2019-01-18 11:57+0100\n"
+"PO-Revision-Date: 2019-01-31 20:53+0100\n"
 "Last-Translator: Ján Kulik <johny.kulik452@gmail.com>\n"
 "Language-Team: \n"
 "Language: sk\n"
@@ -158,11 +158,10 @@ msgstr ""
 "Umožňuje nastaviť ďalší budík. Stlačené 2 krát rýchlo za sebou zrušíte budík."
 
 msgid "No sound is launched."
-msgstr ""
+msgstr "Žiadny zvuk nie je spustený."
 
-#, fuzzy
 msgid "Sound stopped"
-msgstr "{0} stop."
+msgstr "Zvuk zastavený"
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -252,10 +251,14 @@ msgid ""
 "quiet hours have been deactivated for prevent any error in the configuration "
 "file."
 msgstr ""
+"Hodnoty, ktoré ste zadali pre tiché hodiny, sú nesprávne. Pri 24-hodinovom "
+"formáte musí byť hodnota HH:MM. Pre 12-hodinový formát musí byť hodnota HH:"
+"MM pre AM alebo PM. Znova si prečítajte dokumentáciu. Tiché hodiny bol ihneď "
+"deaktivované, aby zabránilo pri ďalšej chybe v konfiguračnom súbore."
 
 #. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
 msgid "Error"
-msgstr ""
+msgstr "Chyba"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"

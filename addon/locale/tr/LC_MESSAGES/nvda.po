@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Clock 18.12dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2019-01-18 08:09+0300\n"
+"PO-Revision-Date: 2019-02-01 08:52+0300\n"
 "Last-Translator: José Manuel Delicado <jmdaweb@hotmail.com>\n"
 "Language-Team: cagrid@hotmail.com\n"
 "Language: tr_TR\n"
@@ -23,12 +23,12 @@ msgid ""
 "confirm these corrections"
 msgstr ""
 "Kullandığınız tarih ve saat biçimi saat eklentisinin bu sürümüyle uyumlu "
-"değil, bu eklenti yüklenirken düzeltilecek. Düzeltmeyi onaylamak için "
+"değil, bu, eklenti yüklenirken düzeltilecek. Düzeltmeyi onaylamak için "
 "'tamam'a basın"
 
 #. Translators: the title of a message box dialog.
 msgid "Time and date format corrections"
-msgstr "Saat ve Tarih düzeltmeleri"
+msgstr "Saat ve Tarih düzeltmelerİ"
 
 #, python-brace-format
 msgid "{hours} hours, "
@@ -156,11 +156,10 @@ msgstr ""
 "Alarmı control etmenize olanak tanır. Alarmı iptal etmek için iki kez basın"
 
 msgid "No sound is launched."
-msgstr ""
+msgstr "Hiçbir ses başlatılmadı."
 
-#, fuzzy
 msgid "Sound stopped"
-msgstr "{0} durduruldu"
+msgstr "Ses susturuldu"
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -250,10 +249,15 @@ msgid ""
 "quiet hours have been deactivated for prevent any error in the configuration "
 "file."
 msgstr ""
+"Sessiz saat için girdiğiniz değer hatalı, 24-saat formatı için, değer SS:DD "
+"şeklinde olmalı, 12-saat formatı için, değer SS:DD olmalı ve sonrasında AM "
+"ya da  PM eki ile, lütfen dokümantasyonu okuyun. Dolayısıyla, yapılandırma "
+"dosyasında oluşabilecek sorunları engellemek için sessiz saat ayarınız "
+"etkisizleştirildi."
 
 #. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
 msgid "Error"
-msgstr ""
+msgstr "Hata"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"

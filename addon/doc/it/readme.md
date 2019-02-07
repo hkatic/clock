@@ -6,10 +6,10 @@
 
 
 Questo componente aggiuntivo presenta impostazioni avanzate per l'orologio,
-il calendario e un timer per NVDA.
+il calendario e funzioni di timer e cronometro per NVDA.
 
-E' possibile personalizzare il modo in cui viene letta o mostrata nella
-barra braille l'ora e la data con NVDA.
+E' possibile personalizzare il modo in cui viene letta l'ora e la data, sia
+tramite sintesi che in braille.
 
 In oltre, è possibile conoscere il numero del giorno, della settimana ed i
 giorni rimanenti rispetto all'anno in corso, e impostare un intervallo per
@@ -28,65 +28,104 @@ il pulsante Ok per confermare.
 
 ## Utilizzo
 
-*	Open the configuration dialog for this addon from the NVDA tools menu or from the settings panel According to your version of NVDA;
-	*	In the Clock setup dialog, the first two Combo Box controls allow you to choose your prefered time and date display formats;
-	*	The Combo Box control labeled "Interval" allows you to set the interval for automatic time announcement (Every 10 minutes, Every 15 minutes, Every 30 minutes, Every hour, or Off);
-	*	The Combo Box control labeled "Time announcement" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure how the automatic time announcement should be reported (Speech and sound, Speech only, or Sound only) when automatic time announcement is working;
-	*	The Combo box control labeled "Clock chime sound" (only visible if the choice "off" is not selected in the interval Combo Box) lets you choose between various clock sounds that will be played when automatic time announcement is working and reported with sound;
-	*	The Checkbox control labeled "Quiet hours" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure time range when automatic time announcement shouldn't occure;
-	*	The Checkbox control labeled "input in 24-hour format" (only visible if quiet hours are enabled) allows you to configure wether you want to input time for quiet hours in 12-hour (A.M. or P.M.), or european 24-hour format;
-	*	The Edit box controls for start and end time (only visible if quiet hours are enabled) let you configure time range for quiet hours. The time should be entered in HH:MM format if the "input in 24-hour format" checkbox is checked, otherwise you must use a 12 hour format as described below;
-	*	When done, tab to the OK button and activate it by pressing Enter to save your settings;
-	*	In the Alarm setup dialog, the first Combo Box control allow you to choose your prefered countdown timer before the alarm ring;
-	*	The Edit box control lets you type your time waiting before the alarm ring. This duration must be specified in 1 or more digits, not a decimal number;
-	*	The Combo box control labeled "Alarm sound" lets you choose between various alarm sounds that will be played when the alarm time arrives;
-	*	The pause button allows you to pause/resume too long alarms;
-	*	The stop button allows you to stop too long alarms;
-	*	When done, tab to the OK button and activate it by pressing Enter. A message should be displayed to remind you of the waiting time before the alarm;
-*	Press NVDA+F12 once to get current time, twice to get current date, or thrice to get the current day, week number, as well as the remaining days before the end of the current year.
+* Aprire la finestra di configurazione per il componente aggiuntivo dal menu
+  strumenti o dal pannello delle impostazioni, a Seconda della versione di
+  NVDA;
+
+    * Nella finestra impostazioni orologio le prime due caselle di controllo
+      consentono di impostare il formato di visualizzazione dell'ora e della
+      data;
+    * La casella combinata "Segnale Orario" consente di controllare
+      l'annuncio automatico dell'ora che può essere spento oppure a
+      intervalli differenti (ogni 10 minuti,ogni 15 minuti, ogni 30 minuti o
+      ogni ora);
+    * La casella combinata "Avviso segnale orario" (visibile quando il
+      "Segnale orario" è attivo) consente di specificare in modo in cui
+      viene segnalata l'ora, voce e suono, solo suono, solo voce;
+    * La casella combinata "Suono segnale orario" (visibile se la casella
+      "Segnale orario" è attivo) permette di scegliere il suono per il
+      segnale orario;
+    * La casella di controllo "Fascia oraria inattiva" (visibile se il
+      "Segnale Orario" è attivo) consente di disattivare l'annuncio
+      automatico per un certo intervallo di tempo impostabile;
+    * La casella di controllo "Formato 24-ore" si riferisce alle
+      impostazioni della "Fascia Oraria Inattiva". Permette di scegliere se
+      inserire l'ora nel formato 12-ore (A.M. o  P.M.), oppure il formato
+      europeo 24-ore ;
+    * Nei campi editazione Inizio fascia oraria e fine fascia oraria è
+      possibile indicare l'inizio e la fine dell'intervallo di inattività
+      dell'annuncio dell'orario automatico. Questi campi editazione verranno
+      visualizzati solo se è attiva la casella di controllo per la fascia
+      oraria inattiva. L'ora deve essere inserita nel formato HH:MM se si
+      usa il formato "24-ore", in caso contrario, è necessario utilizzare il
+      formato 12-ore, come descritto di seguito;
+    * Premere il pulsante Ok o Applica per salvare le impostazioni;
+    * nelle impostazioni Timer, la prima casella di controllo permette di
+      scegliere l'unità di misura per il Timer;
+    * Nel campo editazione è possibile inserire il tempo di attesa prima del
+      suono d'allarme. Si possono inserire più cifre, i numeri decimali non
+      son validi;
+    * nella casella di controllo "suono per il Timer" si può scegliere tra
+      vari suoni che servirà come suono di allarme allo scadere del tempo;
+    * Il pulsante Pausa consente di sospendere o riprendere la riproduzione
+      dei suoni, utile quando si sceglie tra i suoni troppo lunghi;
+    * Il pulsante Stop permette di interrompere suoni troppo lunghi;
+    * Una volta impostato, premere il pulsante Ok per salvare la
+      configurazione. Verrà visualizzato un messaggio di conferma che
+      riporta il tempo di attesa impostato per il timer;
+
+* NVDA+F12, annuncia l'ora corrente. - NVDA+F12 premuto  due volte
+  rapidamente, annuncia la data. - NVDA+F12 premuto tre volte rapidamente,
+  informa sul numero del giorno, della  settimana e i giorni restanti
+  rispetto all'anno in corso. 
 
 ## Comandi rapidi
 
-- NVDA+F12, annuncia l'ora corrente. - NVDA+F12 premuto  due volte
-rapidamente, annuncia la data. - NVDA+F12 premuto tre volte rapidamente,
-informa sul numero del giorno, della  settimana e i giorni restanti rispetto
-all'anno in corso. 
-
-- There is a script that gives the remaining and elapsed time before the
-next alarm; - There is no keyboard gesture assigned to this script, you will
-have to do it yourself in the "Input gestures" dialog box, in the "Clock"
-category; - This gesture pressed twice quickly, cancel the next alarm; -
-There is another script to stop the sound that is currently playing, its
-gesture is also not defined; - That script can also be called using the
-clock layer commands described below.
+* NVDA+F12, legge l'ora;
+* NVDA+F12 premuto due volte, legge la data;
+* NVDA+F12 premuto tre volte rapidamente, informa sul numero del giorno,
+  della  settimana e i giorni restanti rispetto all'anno in corso. 
+* Il componente aggiuntivo include uno script per controllare il tempo
+  trascorso e rimanente del timer;
+* Di default non è stato assegnato nessun comando per questo script, è
+  possibile assegnare i comandi  dalla finestra "Gesti e Tasti di
+  Immissione" nella categoria "Clock";
+* Il comando premuto due volte permette di annullare il timer;
+* Un altro script permette di interrompere il suono in riproduzione, anche
+  questo script non ha un comando assegnato di default;
+* Lo script può essere richiamato anche con i comandi a livello descritti di
+  seguito:
 
 ## comandi a livello:
 
 Per usare i comandi a livello, premere NVDA+Shift+F12 e poi uno dei seguenti
 tasti:
 
-- S: Starts, resets or stops the stopwatch; - R: Resets stopwatch to 0
-without restarting it; - A: gives the remaining and elapsed time before the
-next alarm; - C: Cancel the next alarm; - Space: Speaks current stopwatch or
-count-down timer; - p: If an alarm is too long, allows to stop it; - H: List
-all layered commands (Help).
+* S: Avvia, interrompe o azzera per riavviare il cronometro.
+* R: Azzera il cronometro senza ripartire.
+* A: annuncia il tempo restante e trascorso per il timer;
+* C: Annulla il Timer impostato.
+* BarraSpaziatrice: Legge il tempo trascorso nel cronometro.
+* P: interrompe il suono del timer;
+* H: elenca i comandi a livello disponibili.
 
-## Syntax to use for quiet hours
+## Formato per i valori della fascia oraria inattiva:
 
-- To avoid bugs, the quiet hours must follow a rigorous and precise syntax;
-- If you check the "Input in 24-hour format" checkbox, the format must be
-"HH:MM"; - If you uncheck the "Input in 24-hour format" checkbox, the format
-must be "HH:MM AM" or "HH:MM PM", the HH must contain a 12-hour format, from
-0 to 12 and the "AM"|"PM" suffix can be in lowercase or uppercase - If you
-check the Quiet hours" checkbox and keep the "Quiet hours start time" or
-"Quiet hours end time" field empty, or type a mistaken value, the "Quiet
-hours" checkbox will be unchecked automatically, to avoid errors; - A
-message should be displayed to report your error.
+* Per evitare errori, i valori vanno inseriti con un corretto formato.
+* Se attivate la casella "24-ore", il formato dovrà essere "HH:MM".
+* Se la casella "24-ore" è disattivata, il formato corretto sarà "HH:MM AM"
+  o "HH:MM PM", il valore HH ammette numeri da 0 a 12, la dicitura "AM" o
+  "PM" ammette sia minuscole che maiuscole.
+* Quando si attiva la casella "Fascia oraria inattiva", e si lasciano  i
+  campi editazione "Inizio Fascia Oraria" o "Fine Fascia Oraria" vuoti o con
+  valori errati, la casella "Fascia Oraria Inattiva" verrà disattivata
+  automaticamente per evitare errori.
+* Un messaggio vi informerà dell'errore.
 
 ## Compatibilità:
 
-- Questo componente aggiuntivo è compatibile con NVDA dalla versione 2014.3
-fino alla versione 2019.1.
+* Questo componente aggiuntivo è compatibile con NVDA dalla versione 2014.3
+  alla versione 2019.1.
 
 
 [[!tag dev stable]]

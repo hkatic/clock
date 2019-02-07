@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Clock 18.12dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2018-12-15 18:53+0100\n"
-"PO-Revision-Date: 2019-01-20 14:16+0100\n"
+"PO-Revision-Date: 2019-02-01 10:07+0100\n"
 "Last-Translator: zvonimir stanecic <zvonimirek222@yandex.com>\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -162,11 +162,10 @@ msgstr ""
 "отменяет его."
 
 msgid "No sound is launched."
-msgstr ""
+msgstr "Звук не воспроизводится."
 
-#, fuzzy
 msgid "Sound stopped"
-msgstr "{0} остановлен."
+msgstr "Звук остановлен"
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -256,10 +255,15 @@ msgid ""
 "quiet hours have been deactivated for prevent any error in the configuration "
 "file."
 msgstr ""
+"Значение ваши тихих часов - ошибочное, для 24-часового формата, значение "
+"должно выглядет как HH:MM, но для 12-часового формата, значение должно "
+"выглядет как HH:MM с суффиксом AM/PM после чисел, Пожалуйста, прочитайте "
+"документацию. Ваши тихие часы выключены, чтобы избежать ошибки в "
+"конфигурации."
 
 #. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
 msgid "Error"
-msgstr ""
+msgstr "Ошибка"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"

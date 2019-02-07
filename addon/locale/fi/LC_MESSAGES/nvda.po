@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: clock\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2019-01-17 21:31+0200\n"
+"PO-Revision-Date: 2019-01-31 19:55+0200\n"
 "Last-Translator: Jani Kinnunen <janikinnunen340@gmail.com>\n"
 "Language-Team: Jani Kinnunen <janikinnunen340@gmail.com>\n"
 "Language: fi\n"
@@ -161,11 +161,10 @@ msgstr ""
 "painettaessa peruu sen."
 
 msgid "No sound is launched."
-msgstr ""
+msgstr "Ääntä ei toisteta."
 
-#, fuzzy
 msgid "Sound stopped"
-msgstr "{0} pysäytetty."
+msgstr "Ääni pysäytetty"
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -255,10 +254,14 @@ msgid ""
 "quiet hours have been deactivated for prevent any error in the configuration "
 "file."
 msgstr ""
+"Syöttämäsi hiljaisten tuntien arvo on virheellinen. Arvon tulee olla 24 "
+"tunnin muodolle HH:MM ja 12 tunnin muodolle HH:MM, jonka jälkeen tulee AM- "
+"tai PM-jälkiliite. Hiljaiset tunnit -toiminto on poistettu käytöstä "
+"asetustiedoston virheiden välttämiseksi."
 
 #. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
 msgid "Error"
-msgstr ""
+msgstr "Virhe"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"

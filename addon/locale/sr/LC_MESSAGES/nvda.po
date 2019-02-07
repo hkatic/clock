@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: clock 19.01.2\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2019-01-11 03:15+1000\n"
-"PO-Revision-Date: 2019-01-18 11:34+0100\n"
+"PO-Revision-Date: 2019-01-31 21:21+0100\n"
 "Last-Translator: Nikola Jović <wwenikola123@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: sr\n"
@@ -158,11 +158,10 @@ msgstr ""
 "Dozvoljlava proveru sledećeg alarma. Ako se pritisne 2 puta, otkazuje ga."
 
 msgid "No sound is launched."
-msgstr ""
+msgstr "Nijedan zvuk nije pokrenut."
 
-#, fuzzy
 msgid "Sound stopped"
-msgstr "{0} zaustavljen."
+msgstr "Zvuk zaustavljen"
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -252,10 +251,14 @@ msgid ""
 "quiet hours have been deactivated for prevent any error in the configuration "
 "file."
 msgstr ""
+"Vrednost koju ste uneli za tihe časove je neispravna, za 24-časovni format,"
+"vrednost mora biti HH:MM, za 12-časovni format, vrednost mora biti HH:MM uz "
+"AM ili PM sufiks, molimo pročitajte dokumentaciju ponovo. Vaši tihi časovi "
+"su deaktivirani kako bi se sprečile greške u datoteci sa podešavanjima."
 
 #. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
 msgid "Error"
-msgstr ""
+msgstr "Greška"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"

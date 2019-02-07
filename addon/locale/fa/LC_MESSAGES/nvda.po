@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Clock 18.12\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2019-01-19 06:23+0330\n"
+"PO-Revision-Date: 2019-02-01 14:34+0330\n"
 "Last-Translator: Mohammadreza Rashad <mohammadreza5712@gmail.com>\n"
 "Language-Team: Mohammadreza Rashad <mohammadreza5712@gmail.com>\n"
 "Language: fa\n"
@@ -160,11 +160,10 @@ msgstr ""
 "لغو میکند."
 
 msgid "No sound is launched."
-msgstr ""
+msgstr "صدایی بارگذاری نمیشود."
 
-#, fuzzy
 msgid "Sound stopped"
-msgstr "{0} متوقف شد."
+msgstr "صدا متوقف شد."
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -254,10 +253,16 @@ msgid ""
 "quiet hours have been deactivated for prevent any error in the configuration "
 "file."
 msgstr ""
+"مقداری که برای ساعاتِ بی‌صدا وارد کردید، اشتباه است. برای قالبِ ۲۴-ساعتی، ساعت "
+"را به شکلِ یک عددِ دورقمی، سپس نمادِ دونقطه، سپس دقیقه را نیز به شکلِ یک عددِ "
+"دورقمی وارد کنید. برای قالبِ ۱۲-ساعتی، ساعت و دقیقه را مثلِ توضیحِ داده شده "
+"وارد کنید، بعد از یک فاصله، AM را برای قبل از ظهر و PM را برای بعد از ظهر "
+"تایپ کنید. لطفا راهنمای افزونه را دوباره بخوانید. برای جلوگیری از ایجاد خطا "
+"در فایل پیکره‌بندی، ساعاتِ بی‌صدا غیرفعال شد."
 
 #. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
 msgid "Error"
-msgstr ""
+msgstr "خطا"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"
