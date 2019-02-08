@@ -5,7 +5,7 @@
 
 from functools import wraps
 import sys
-import skipTranslation
+from . import skipTranslation
 import globalVars
 from validate import VdtTypeError
 from . import alarmHandler
@@ -177,6 +177,25 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			# We save the configuration, in case the user would not have checked the "Save configuration on exit" checkbox in General settings.
 			if not config.conf['general']['saveConfigurationOnExit']:
 				config.conf.save ()
+
+		try:
+			config.conf['clockAndCalendar']['timeDisplayFormat']
+		except VdtTypeError:
+			conf = config.conf['clockAndCalendar']
+			conf.profiles[0]['timeDisplayFormat'] = 0
+			# We save the configuration, in case the user would not have checked the "Save configuration on exit" checkbox in General settings.
+			if not config.conf['general']['saveConfigurationOnExit']:
+				config.conf.save ()
+
+		try:
+			config.conf['clockAndCalendar']['dateDisplayFormat']
+		except VdtTypeError:
+			conf = config.conf['clockAndCalendar']
+			conf.profiles[0]['dateDisplayFormat'] = 1
+			# We save the configuration, in case the user would not have checked the "Save configuration on exit" checkbox in General settings.
+			if not config.conf['general']['saveConfigurationOnExit']:
+				config.conf.save ()
+
 		if not config.conf['clockAndCalendar']['alarmSound'] in paths.LIST_ALARMS:
 			alarmSound = paths.LIST_ALARMS[0]
 		else:
@@ -236,8 +255,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.clock.terminate()
 
 	def script_reportTimeAndDate(self, gesture):
+		now = datetime.now ()
 		if scriptHandler.getLastScriptRepeatCount() == 0:
-			msg=GetTimeFormatEx (None, None, None, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']]))
+			msg=GetTimeFormatEx (None, None, now, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']]))
 		elif scriptHandler.getLastScriptRepeatCount() == 1:
 			msg=GetDateFormatEx (None, None, None, formats.dateFormats[config.conf['clockAndCalendar']['dateDisplayFormat']])
 		else:

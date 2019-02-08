@@ -69,6 +69,7 @@ class Clock (object):
 			self.reportClock()
 
 	def reportClock(self):
+		now = datetime.now ()
 		if self.quietHoursAreActive():
 			return
 		waveFile = os.path.join(paths.SOUNDS_DIR, config.conf["clockAndCalendar"]["timeReportSound"])
@@ -77,9 +78,9 @@ class Clock (object):
 		if config.conf["clockAndCalendar"]["timeReporting"]!=2:
 			if config.conf["clockAndCalendar"]["timeReporting"]==0:
 				waveFileDuration = getWaveFileDuration (waveFile)
-				wx.CallLater (10 + (1000 * waveFileDuration), ui.message, GetTimeFormatEx (None, None, None, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']])))
+				wx.CallLater (10 + (1000 * waveFileDuration), ui.message, GetTimeFormatEx (None, None, now, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']])))
 			else:
-				ui.message(GetTimeFormatEx (None, None, None, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']])))
+				ui.message(GetTimeFormatEx (None, None, now, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']])))
 
 	def quietHoursAreActive(self):
 		if not config.conf["clockAndCalendar"]["quietHours"]:
