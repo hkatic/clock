@@ -9,11 +9,28 @@ import re
 import addonHandler
 addonHandler.initTranslation()
 
+# This function has been taken up and modified from the latest versions of the WinKernel module to ensure compatibility of the GetTimeFormat function with the NVDA versions that preceded 2014.3.
+def GetTimeFormat (Locale,dwFlags,date,lpFormat):
+	"""@Deprecated: use GetTimeFormatEx instead."""
+	from hwPortUtils import SYSTEMTIME
+	import ctypes
+	from ctypes import byref
+	kernel32 = ctypes.windll.kernel32
+	if date is not None:
+		date=SYSTEMTIME(date.year,date.month,0,date.day,date.hour,date.minute,date.second,0)
+		lpTime=byref(date)
+	else:
+		lpTime=None
+	bufferLength=kernel32.GetTimeFormatW(Locale,dwFlags,lpTime,lpFormat, None, 0)
+	buf=ctypes.create_unicode_buffer("", bufferLength)
+	kernel32.GetTimeFormatW(Locale,dwFlags,lpTime,lpFormat, buf, bufferLength)
+	return buf.value
+
 if hasattr (winKernel, "GetTimeFormatEx") and hasattr(winKernel, "GetDateFormatEx"):
 	GetTimeFormatEx = winKernel.GetTimeFormatEx
 	GetDateFormatEx = winKernel.GetDateFormatEx
 else:
-	GetTimeFormatEx = winKernel.GetTimeFormat
+	GetTimeFormatEx = winKernel.GetTimeFormat if hasattr (winKernel, "SYSTEMTIME") else GetTimeFormat
 	GetDateFormatEx = winKernel.GetDateFormat
 
 # A regular expression to match and facilitate translation for words that are not part of the formatting symbols.
