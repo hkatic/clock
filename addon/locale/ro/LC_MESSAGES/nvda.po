@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: clock 18.12\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2019-01-17 19:56+0200\n"
+"PO-Revision-Date: 2019-02-10 12:44+0200\n"
 "Last-Translator: Florian Ionașcu <florianionascu@hotmail.com>\n"
 "Language-Team: \n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 2.2.1\n"
 
 #. Translators: the label of a message box dialog.
 msgid ""
@@ -41,7 +41,7 @@ msgstr "{minutes} minute, "
 
 #, python-brace-format
 msgid "{seconds} seconds"
-msgstr "{seconds} secunde, "
+msgstr "{seconds} secunde"
 
 msgid "0 seconds"
 msgstr "0 secunde"
@@ -53,7 +53,7 @@ msgstr "Ceas"
 
 #. Translators: Item in the tools menu for the Clock Addon settings.
 msgid "Clock se&ttings..."
-msgstr "Setări ceas"
+msgstr "Setări ceas..."
 
 #. Translators: The tooltyp text for the clock settings submenu.
 msgid "Clock and calendar setup"
@@ -106,7 +106,7 @@ msgstr "Rulează."
 
 #, python-brace-format
 msgid "{0} stopped."
-msgstr "{0} oprit"
+msgstr "{0} oprit."
 
 #. Translators: Message presented in input help mode.
 msgid "Starts, resets or stops the stopwatch."
@@ -159,11 +159,10 @@ msgstr ""
 "anulează."
 
 msgid "No sound is launched."
-msgstr ""
+msgstr "Nu este lansat niciun sunet."
 
-#, fuzzy
 msgid "Sound stopped"
-msgstr "{0} oprit"
+msgstr "Sunet oprit"
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -207,11 +206,11 @@ msgstr "din oră în oră"
 
 #. Transla	tors: This is the label for a combo box in the Clock settings dialog.
 msgid "&interval:"
-msgstr "&interval"
+msgstr "&interval:"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "speech and sound"
-msgstr "vorbire și sunet."
+msgstr "vorbire și sunet"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "speech only"
@@ -227,7 +226,7 @@ msgstr "&Anunțarea orei:"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Clock chime &sound:"
-msgstr "&Cum să sune ceasul"
+msgstr "&Cum să sune ceasul:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "&Quiet hours"
@@ -253,10 +252,15 @@ msgid ""
 "quiet hours have been deactivated for prevent any error in the configuration "
 "file."
 msgstr ""
+"Valoarea pe care ați introdus-o pentru orele de liniște este eronată. Pentru "
+"formatul de 24 de ore, valoarea trebuie să fie HH:MM. Pentru formatul de 12 "
+"ore, valoarea trebuie să fie introdusă în același format, urmată de sufixul "
+"AM sau PM. Vă rugăm să recitiți documentația. Așadar, orele de liniște au "
+"fost dezactivate pentru prevenirea vreunei erori din fișierul de configurare."
 
 #. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
 msgid "Error"
-msgstr ""
+msgstr "Eroare"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"

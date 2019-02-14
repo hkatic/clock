@@ -19,53 +19,26 @@
 
 ## 使用
 
-* Open the configuration dialog for this addon from the NVDA tools menu or
-  from the settings panel According to your version of NVDA;
+* 根据您的NVDA版本，从NVDA工具菜单或设置面板打开此插件的配置对话框;
 
-    * In the Clock setup dialog, the first two Combo Box controls allow you
-      to choose your prefered time and date display formats;
-    * The Combo Box control labeled "Interval" allows you to set the
-      interval for automatic time announcement (Every 10 minutes, Every 15
-      minutes, Every 30 minutes, Every hour, or Off);
-    * The Combo Box control labeled "Time announcement" (only visible if the
-      choice "off" is not selected in the interval Combo Box) lets you
-      configure how the automatic time announcement should be reported
-      (Speech and sound, Speech only, or Sound only) when automatic time
-      announcement is working;
-    * The Combo box control labeled "Clock chime sound" (only visible if the
-      choice "off" is not selected in the interval Combo Box) lets you
-      choose between various clock sounds that will be played when automatic
-      time announcement is working and reported with sound;
-    * The Checkbox control labeled "Quiet hours" (only visible if the choice
-      "off" is not selected in the interval Combo Box) lets you configure
-      time range when automatic time announcement shouldn't occure;
-    * The Checkbox control labeled "input in 24-hour format" (only visible
-      if quiet hours are enabled) allows you to configure wether you want to
-      input time for quiet hours in 12-hour (A.M. or P.M.), or european
-      24-hour format;
-    * The Edit box controls for start and end time (only visible if quiet
-      hours are enabled) let you configure time range for quiet hours. The
-      time should be entered in HH:MM format if the "input in 24-hour
-      format" checkbox is checked, otherwise you must use a 12 hour format
-      as described below;
-    * When done, tab to the OK button and activate it by pressing Enter to
-      save your settings;
-    * In the Alarm setup dialog, the first Combo Box control allow you to
-      choose your prefered countdown timer before the alarm ring;
-    * The Edit box control lets you type your time waiting before the alarm
-      ring. This duration must be specified in 1 or more digits, not a
-      decimal number;
-    * The Combo box control labeled "Alarm sound" lets you choose between
-      various alarm sounds that will be played when the alarm time arrives;
-    * The pause button allows you to pause/resume too long alarms;
-    * The stop button allows you to stop too long alarms;
-    * When done, tab to the OK button and activate it by pressing Enter. A
-      message should be displayed to remind you of the waiting time before
-      the alarm;
+    * 在时钟设置对话框中，前两个组合框控件允许您选择喜欢的时间与日期格式;
+    * 标有“间隔”的组合框控件允许您设置自动报时的间隔（每15分钟，每30分钟，每小时或关闭）;
+    * 标有“时间通知”的组合框控件（仅在区间组合框中未选择“关闭”时才可见）
+      当自动报时工作时。允许您配置应如何报告自动报时（语音和声音，仅语音或仅声音）;
+    * 标有“时钟铃声”的组合框控件（仅在间隔组合框中未选择“关闭”时才可见）允许您在自动报时工作和声音报时时播放的各种铃声之间进行选择;
+    * 标记为“夜间模式”的复选框控件（仅在间隔组合框中未选择“关闭”选项时才可见）允许您配置不应发生自动报时的时间范围;
+    * 标有“24小时格式输入”的复选框控件允许您配置您想要在12小时（上午或下午）或欧洲24小时格式中输入夜间模式;
+    * 通过 "编辑" 框控件的开始和结束时间 (仅在启用了夜间模式时才可见), 您可以配置夜间模式的时间范围。如果选中了 "24小时格式的输入"
+      复选框, 则应以 hh:mm 格式输入时间, 否则必须使用如下所述的12小时格式;
+    * 完成后, 将选项卡到 "确定" 按钮, 然后按回车 , 将其激活，并保存您的设置;
+    * 在闹钟设置对话框中，第一个组合框控件允许您在闹钟响之前选择您喜欢的倒数计时器;
+    * “编辑框”控件可让您输入在闹钟响铃前等待的时间。此持续时间必须以1位或更多位数指定，而不是十进制数;
+    * 标有“时钟铃声”的组合框控件可让您在自动报时工作和声音朗读时播放各种时钟声音;
+    * 暂停按钮允许您暂停/恢复太长时间的报时;
+    * 停止按钮允许您停止太长的报时;
+    * 完成后，选择确定按钮并按回车键激活它。应显示一条消息，提醒您闹钟响之前所要等待的时间;
 
-* Press NVDA+F12 once to get current time, twice to get current date, or
-  thrice to get the current day, week number, as well as the remaining days
-  before the end of the current year.
+* NVDA+F12 快速按三次，朗读当天，周数，当前年份和年底前的剩余天数。
 
 ## 键盘命令
 
