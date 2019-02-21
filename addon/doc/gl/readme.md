@@ -29,65 +29,110 @@ validar o botón Aceptar para confirmalo.
 
 ## Uso
 
-*	Open the configuration dialog for this addon from the NVDA tools menu or from the settings panel According to your version of NVDA;
-	*	In the Clock setup dialog, the first two Combo Box controls allow you to choose your prefered time and date display formats;
-	*	The Combo Box control labeled "Interval" allows you to set the interval for automatic time announcement (Every 10 minutes, Every 15 minutes, Every 30 minutes, Every hour, or Off);
-	*	The Combo Box control labeled "Time announcement" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure how the automatic time announcement should be reported (Speech and sound, Speech only, or Sound only) when automatic time announcement is working;
-	*	The Combo box control labeled "Clock chime sound" (only visible if the choice "off" is not selected in the interval Combo Box) lets you choose between various clock sounds that will be played when automatic time announcement is working and reported with sound;
-	*	The Checkbox control labeled "Quiet hours" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure time range when automatic time announcement shouldn't occure;
-	*	The Checkbox control labeled "input in 24-hour format" (only visible if quiet hours are enabled) allows you to configure wether you want to input time for quiet hours in 12-hour (A.M. or P.M.), or european 24-hour format;
-	*	The Edit box controls for start and end time (only visible if quiet hours are enabled) let you configure time range for quiet hours. The time should be entered in HH:MM format if the "input in 24-hour format" checkbox is checked, otherwise you must use a 12 hour format as described below;
-	*	When done, tab to the OK button and activate it by pressing Enter to save your settings;
-	*	In the Alarm setup dialog, the first Combo Box control allow you to choose your prefered countdown timer before the alarm ring;
-	*	The Edit box control lets you type your time waiting before the alarm ring. This duration must be specified in 1 or more digits, not a decimal number;
-	*	The Combo box control labeled "Alarm sound" lets you choose between various alarm sounds that will be played when the alarm time arrives;
-	*	The pause button allows you to pause/resume too long alarms;
-	*	The stop button allows you to stop too long alarms;
-	*	When done, tab to the OK button and activate it by pressing Enter. A message should be displayed to remind you of the waiting time before the alarm;
-*	Press NVDA+F12 once to get current time, twice to get current date, or thrice to get the current day, week number, as well as the remaining days before the end of the current year.
+* Abre o ciálogo de configuración deste complemento dende o menú de
+  ferramentas do NVDA ou dende o panel de opcións en función da túa versión
+  de NVDA;
+
+    * No diálogo de configuración do reloxo, os dous primeiros controis de
+      caixa combinada permítenche escoller os formatos de amosado de hora e
+      data que prefiras;
+    * O control de caixa combinada etiquetado "Intervalo" permíteche
+      establecer o intervalo do anuncio automático da hora (cada 10 minutos,
+      cada 15 minutos, cada 30 minutos, cada hora ou desactivado);
+    * O control de caixa combinada etiquetado "Anunciado da hora" (só
+      visible se a opción "Desactivado" non está seleccionada na caixa
+      combinada intervalo) permíteche configurar cómo se informará do
+      anuncio automático da hora (fala e son, só fala ou só son) cando este
+      anunciado estea habilitado;
+    * O control de caixa combinada etiquetada "Son de campá do reloxo" (só
+      visible se a opción "Desactivado" non está seleccionada na caixa
+      combinada intervalo) permíteche elixir entre distintos sons de reloxo
+      que se reproducirán cando o anunciado automático da hora estea
+      habilitado e se informe mediante son;
+    * O control de caixa de verificación etiquetado "Horas caladas" (só
+      visible se a opción "Desactivado" non está seleccionada na caixa
+      combinada intervalo) permíteche configurar un rango de horas onde non
+      debería anunciarse a hora automaticamente;
+    * O control de caixa de verificación etiquetado "entrada en formato de
+      24 horas" (só visible se as horas caladas están activadas) permíteche
+      configurar se queres introducir as horas das horas caladas en formato
+      de 12 horas (A.M. ou P.M.) ou en formato europeo de 24 horas;
+    * Os controis de caixa de edición da hora de comezo e finalización (só
+      visible se as horas caladas están activadas) permítenche configurar o
+      rango de tempo das horas caladas. A hora debe introducirse no formato
+      HH:MM se a caixa de verificación "Entrada no formato de 24 horas" está
+      marcada, noutro caso deberás utilizar un formato de 12 horas como se
+      describe máis abaixo;
+    * Cando estea listo, tabula ata o botón Aceptar e actívao premendo intro
+      para gardar a túa configuración;
+    * No diálogo Configuración da alarma, o primeiro control de caixa
+      combinada permíteche escoller o teu temporizador de conta atrás
+      preferido antes do son da alarma;
+    * O control de caixa de edición permíteche escribir o teu tempo de
+      espera antes do son da alarma. Esta duración débese especificar cun ou
+      máis díxitos, non cun número decimal;
+    * O control de caixa combinada etiquetado "Son da alarma" permíteche
+      escoller entre varios sons de alarma que se reproducirán cando se
+      chegue o tempo de alarma;
+    * O botón pausa permíteche pausar/reanudar alarmas demasiado longas;
+    * O botón deter permíteche parar alarmas demasiado longas;
+    * Cando estea listo, tabula ó botón Aceptar e actívao premendo
+      intro. Debería amosarse unha mensaxe para lembrarche o tempo de agarda
+      antes da alarma;
+
+* Preme NVDA+F12 unha vez para obter a hora actual, dúas veces para obter a
+  data actual ou tres veces para obter o número de día, o número de semana,
+  o ano actual e o número de días restante ata o final do ano.
 
 ## Teclas de ordes
 
-- NVDA+F12, obtén a hora actual.  - NVDA+F12 premeda dúas veces
-sucesivamente,  obtén a data actual.  - NVDA+F12 premeda tres veces
-sucesivamente, obtén o número de día, o número de semana, o ano actual e o
-número de días restante ata o final do ano.
-
-- There is a script that gives the remaining and elapsed time before the
-next alarm; - There is no keyboard gesture assigned to this script, you will
-have to do it yourself in the "Input gestures" dialog box, in the "Clock"
-category; - This gesture pressed twice quickly, cancel the next alarm; -
-There is another script to stop the sound that is currently playing, its
-gesture is also not defined; - That script can also be called using the
-clock layer commands described below.
+* NVDA+F12, obter hora actual;
+* NVDA+F12 pulsado dúas veces rapidamente, obter data actual;
+* NVDA+F12 premida tres veces rapidamente, obtén o número de día, o número
+  de semana, o ano actual e o número de días restante ata o final do ano.
+* Existe un script que proporciona o tempo restante e transcorrido antes da
+  vindeira alarma;
+* Non hai xesto de teclado asignado a este script, deberás facelo no cadro
+  de diálogo "Xestos de entrada", na categoría "Clock";
+* Este xesto pulsado dúas veces rapidamente: cancelar a vindeira alarma;
+* Existe outro script para deter o son que se está a reproducir, cuxo xesto
+  tampouco está definido;
+* Tamén se pode chamar a ese script mediante os comandos en capa do clock
+  descritos a continuación.
 
 ## Ordes en capa
 
 Para utilizar as ordes en capa, preme NVDA+Shift+F12 seguido dunha das
 seguintes teclas:
 
-- S: Starts, resets or stops the stopwatch; - R: Resets stopwatch to 0
-without restarting it; - A: gives the remaining and elapsed time before the
-next alarm; - C: Cancel the next alarm; - Space: Speaks current stopwatch or
-count-down timer; - p: If an alarm is too long, allows to stop it; - H: List
-all layered commands (Help).
+* S: inicia, detén ou reinicia o cronómetro;
+* R: Restablece o cronómetro a 0 sen reinicialo;
+* A: fornece o tempo restante e transcorrido ata a vindeira alarma;
+* C: Cancelar a vindeira alarma;
+* Espazo: Anuncia o temporizador actual do cronómetro ou da conta atrás;
+* p: Se unha alarma é demasiado longa, permite detela;
+* H: Listar tódolos comandos en capa (Help=Axuda).
 
-## Syntax to use for quiet hours
+## Sintaxe para utilizar nas horas caladas
 
-- To avoid bugs, the quiet hours must follow a rigorous and precise syntax;
-- If you check the "Input in 24-hour format" checkbox, the format must be
-"HH:MM"; - If you uncheck the "Input in 24-hour format" checkbox, the format
-must be "HH:MM AM" or "HH:MM PM", the HH must contain a 12-hour format, from
-0 to 12 and the "AM"|"PM" suffix can be in lowercase or uppercase - If you
-check the Quiet hours" checkbox and keep the "Quiet hours start time" or
-"Quiet hours end time" field empty, or type a mistaken value, the "Quiet
-hours" checkbox will be unchecked automatically, to avoid errors; - A
-message should be displayed to report your error.
+* Para evitar fallos, as horas caladas deben seguir unha sintaxe rigorosa e
+  precisa;
+* Se marcas a caixa de verificación "Entrada en formato de 24 horas", o
+  formato debe ser "HH:MM";
+* Se desmarcas a caixa de verificación "Entrada en formato de 24 horas", o
+  formato debe ser "HH:MM AM" ou "HH:MM PM", HH debe conter un formato de 12
+  horas, de 0 a 12 e o sufixo "AM"|"PM" pode estar en minúsculas ou
+  maiúsculas
+* Se marcas a caixa de verificación "Horas caladas" e mantés os campos de
+  "Hora de comezo das horas caladas" ou "Hora de finalización das horas
+  caladas", a caixa de verificación "Horas caladas" desmarcarase
+  automaticamente, para evitar erros.
+* Amosarase unha mensaxe informando do teu erro.
 
 ## compatibilidade
 
-- Este complemento é compatible coas versións do NVDA no rango da 2014.3 ata
-a 2019.1.
+* - Este complemento é compatible coas versións do NVDA no rango da 2014.3
+  ata a 2019.1.
 
 
 [[!tag dev stable]]
