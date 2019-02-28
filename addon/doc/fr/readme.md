@@ -1,12 +1,12 @@
-# Module complémentaire horloge et calendrier  pour NVDA #
+# Extension horloge et calendrier  pour NVDA #
 
 * Auteurs : Hrvoje Katić, Abdel et contributeurs de NVDA;
 * Télécharger [version stable][1];
 * Télécharger [version de développement][2].
 
 
-Ce module complémentaire active les fonctions avancées de l'horloge, de
-minuterie d'alarme et du calendrier pour NVDA.
+Cette extension active les fonctions avancées de l'horloge, de minuterie
+d'alarme et du calendrier pour NVDA.
 
 Au lieu de toujours obtenir la date et l'heure depuis Windows, vous pouvez
 personnaliser comment les dates et les heures doivent être annoncées et
@@ -18,23 +18,23 @@ que les jours restants avant la fin de l'année en cours, et vous pouvez
 spécifié.
 
 Il existe également des fonctionnalités pour le chronomètre et minuterie
-d'alarme intégrés au module complémentaire qui vous permettent de
-chronométrer vos tâches, telles que la copie de fichiers, l'installation de
-programmes ou la préparation de repas.
+d'alarme intégrés à l'extension qui vous permettent de chronométrer vos
+tâches, telles que la copie de fichiers, l'installation de programmes ou la
+préparation de repas.
 
 ## Note:
 
-Si vous installez le module complémentaire en tant que mise à jour, lors du
-processus d'installation, l'assistant détecte si l'ancienne configuration
-est compatible avec la nouvelle et vous propose de la corriger avant
+Si vous installez l'extension en tant que mise à jour, lors du processus
+d'installation, l'assistant détecte si l'ancienne configuration est
+compatible avec la nouvelle et vous propose de la corriger avant
 l'installation. Il vous suffira alors de valider le bouton OK pour confirmer
 cela.
 
 ## Utilisation
 
-* Ouvrez le dialogue de configuration du module complémentaire à partir du
-  menu Outils de NVDA ou à partir du panneau de configuration selon votre
-  version de NVDA;
+* Ouvrez le dialogue de configuration de cette extension à partir du menu
+  Outils de NVDA ou à partir du panneau de configuration selon votre version
+  de NVDA;
 
     * Dans le dialogue Réglage de l'horloge les deux premiers contrôles de
       Zone de liste déroulante vous permettent de choisir votre format
@@ -140,8 +140,8 @@ l'une des touches suivantes :
 
 ## Compatibilité
 
-* Ce module complémentaire est compatible avec les versions de NVDA allant
-  de 2014.3 à 2019.1.
+* Cette extension est compatible avec les versions de NVDA allant de 2014.3
+  à 2019.1.
 
 
 [[!tag dev stable]]
