@@ -1,4 +1,4 @@
-# -*- coding: UTF-8 -*-
+	# -*- coding: UTF-8 -*-
 # Clock Add-on for NVDA
 # Author: Hrvoje Katich
 # Copyright 2013-2018, released under GPL.
@@ -15,7 +15,7 @@ NVDA+F12, get current time.
 NVDA+F12 pressed twice quickly, get current date.
 NVDA+F12 pressed thrice quickly, reports the current day, the week number, the current year and the remaining days before the end of the year.
 For other instructions, press Add-on help button in add-ons manager."""),
-	"addon_version" : "19.02",
+	"addon_version" : "19.03",
 	"addon_author" : "Hrvoje Katic <hrvojekatic@gmail.com>, Abdel <abdelkrim.bensaid@gmail.com>",
 	"addon_url" : "https://github.com/hkatic/clock",
 	"addon_docFileName" : "readme.html",
