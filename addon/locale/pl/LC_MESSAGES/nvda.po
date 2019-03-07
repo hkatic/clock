@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Clock 18.12dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2018-12-15 18:53+0100\n"
-"PO-Revision-Date: 2019-02-01 10:12+0100\n"
+"PO-Revision-Date: 2019-03-01 11:05+0100\n"
 "Last-Translator: zvonimir stanecic <zvonimirek222@yandex.com>\n"
 "Language-Team: \n"
 "Language: pl_PL\n"
@@ -330,7 +330,7 @@ msgstr "{hours} godzin, {minutes} minut, {seconds} sekund"
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {minutes} past {hours}"
-msgstr "Jest {minutes} po {hours}"
+msgstr "Jest za {minutes} {hours}"
 
 #. Translators: A time formating.
 #, python-brace-format
