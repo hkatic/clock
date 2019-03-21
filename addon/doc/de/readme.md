@@ -84,9 +84,10 @@ Korrektur auszulösen.
       Eingabetaste. Es sollte eine Meldung angezeigt werden, die Sie an die
       Wartezeit vor dem Weckton erinnert;
 
-* Press NVDA+F12 once to get current time, twice to get current date, or
-  thrice to get the current day, week number, as well as the remaining days
-  before the end of the current year.
+* Drücken Sie NVDA+F12 einmal, um die aktuelle Uhrzeit , zweimal schnell, um
+  das aktuelle Datum, dreimal schnell um den aktuellen Tag, die
+  Kalenderwoche, das Jahr sowie die Anzahl der verbleibenden Tage des Jahres
+  zu erhalten
 
 ## Tastenbefehle
 
@@ -135,8 +136,7 @@ einem der folgenden Tasten:
 
 ## Kompatibilität
 
-* This add-on is compatible with the versions of NVDA ranging from 2014.3
-  until 2019.1.
+* Diese Erweiterung ist mit den NVDA-Versionen 2018.3 bis 2019.1 kompatibel.
 
 
 [[!tag dev stable]]
