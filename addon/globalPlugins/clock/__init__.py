@@ -3,7 +3,7 @@
 # Author: Hrvoje Katich
 # Copyright 2013-2018, released under GPL.
 
-from functools import wraps
+from functools import wraps, update_wrapper
 import sys
 from . import skipTranslation
 import globalVars
@@ -42,19 +42,6 @@ from .formats import GetTimeFormatEx, GetDateFormatEx
 from . import configuration
 import addonHandler
 addonHandler.initTranslation()
-
-# The finally function for command layer environment used in this module (source: Tyler Spivey's code).
-def finally_(func, final):
-	"""Calls final after func, even if it fails."""
-	def wrap(f):
-		@wraps(f)
-		def new(*args, **kwargs):
-			try:
-				func(*args, **kwargs)
-			finally:
-				final()
-		return new
-	return wrap(final)
 
 def secondsToString(seconds):
 	"""
@@ -153,6 +140,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	# Translators: Script category for Clock addon commands in input gestures dialog.
 	scriptCategory=_("Clock")
+	clockLayerModeActive=False
+	layeredScriptToRun = None
 
 	def __init__(self):
 		super(globalPluginHandler.GlobalPlugin, self).__init__()
@@ -167,7 +156,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 		self.clock = clockHandler.Clock ()
 		self.stopwatch = stopwatchHandler.Stopwatch ()
-		self.clockLayerModeActive=False
 
 		try:
 			config.conf['clockAndCalendar']['alarmTime']
@@ -276,8 +264,17 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			return globalPluginHandler.GlobalPlugin.getScript(self, gesture)
 		script=globalPluginHandler.GlobalPlugin.getScript(self, gesture)
 		if not script:
-			script=finally_(self.script_error, self.finish)
-		return finally_(script, self.finish)
+			return self.script_error
+		self.layeredScriptToRun = next((x[1] for x in self._clockLayerGestures if x[0] ==gesture.mainKeyName), None)
+		return self.runAndFinish
+
+	def runAndFinish (self, gesture):
+		if self.layeredScriptToRun is not None:
+			self.layeredScriptToRun (gesture)
+		else:
+			ui.message ("Can't find this layered script")
+		# We call the finish method in all cases.
+		self.finish ()
 
 	def finish(self):
 		self.clockLayerModeActive=False
@@ -286,6 +283,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def script_error(self, gesture):
 		tones.beep(120, 100)
+		self.finish()
 
 	def script_clockLayerCommands(self, gesture):
 		if self.clockLayerModeActive:
