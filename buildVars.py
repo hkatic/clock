@@ -22,7 +22,7 @@ For other instructions, press Add-on help button in add-ons manager."""),
 	# Minimum NVDA version supported (e.g. "2018.3")
 	"addon_minimumNVDAVersion" : "2014.3.0",
 	# Last NVDA version supported/tested (e.g. "2018.4", ideally more recent than minimum version)
-	"addon_lastTestedNVDAVersion" : "2019.1.0",
+	"addon_lastTestedNVDAVersion" : "2019.3.0",
 	# Add-on update channel (default is stable or None)
 	"addon_updateChannel" : None,
 }
