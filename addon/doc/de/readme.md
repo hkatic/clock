@@ -136,7 +136,7 @@ einem der folgenden Tasten:
 
 ## Kompatibilität
 
-* Diese Erweiterung ist mit den NVDA-Versionen 2018.3 bis 2019.1 kompatibel.
+* Diese Erweiterung ist mit den NVDA-Versionen 2014.3 bis 2019.1 kompatibel.
 
 
 [[!tag dev stable]]

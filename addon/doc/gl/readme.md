@@ -131,8 +131,8 @@ seguintes teclas:
 
 ## compatibilidade
 
-* - Este complemento é compatible coas versións do NVDA no rango da 2014.3
-  ata a 2019.1.
+* - Este complemento é compatible coas versións do NVDA que van da 2014.3
+  ata a 2019.3.
 
 
 [[!tag dev stable]]

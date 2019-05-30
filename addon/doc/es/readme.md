@@ -132,7 +132,7 @@ siguientes teclas:
 ## Compatibilidad
 
 * Este complemento es compatible con las versiones de NVDA desde 2014.3
-  hasta 2019.1.
+  hasta 2019.3.
 
 
 [[!tag dev stable]]

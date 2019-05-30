@@ -129,7 +129,7 @@ seguintes teclas:
 ## Compatibilidade:
 
 * This add-on is compatible with the versions of NVDA ranging from 2014.3
-  until 2019.1.
+  until 2019.3.
 
 
 [[!tag dev stable]]
