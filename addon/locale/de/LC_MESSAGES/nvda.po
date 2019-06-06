@@ -9,13 +9,13 @@ msgstr ""
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2018-12-10 03:30+1000\n"
 "PO-Revision-Date: \n"
-"Last-Translator: René Linke <rene.linke@hamburg.de>\n"
+"Last-Translator: Karl Eick <hozosch@web.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: de\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.3\n"
 
 #. Translators: the label of a message box dialog.
 msgid ""
@@ -25,7 +25,7 @@ msgid ""
 msgstr ""
 "Das Datums- und Zeitformat, das Sie verwendet haben, ist nicht mit dieser "
 "Version der Erweiterung kompatibel. Dies wird während der Installation "
-"korrigiert. Klicken Sie auf \"OK\", um die Korrektur zu bestätigen."
+"korrigiert. Klicken Sie auf \"OK\", um die Korrektur zu bestätigen"
 
 #. Translators: the title of a message box dialog.
 msgid "Time and date format corrections"
@@ -163,7 +163,7 @@ msgstr ""
 "Tastenkombination zweimal hintereinander drücken."
 
 msgid "No sound is launched."
-msgstr "Kein Ton gestartet"
+msgstr "Kein Ton gestartet."
 
 msgid "Sound stopped"
 msgstr "Ton angehalten"
