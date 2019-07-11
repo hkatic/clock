@@ -31,7 +31,7 @@ nhận.
   bản tùy chỉnh tùy theo phiên bản NVDA của bạn;
 
     * Trong hộp thoại cài đặt đồng hồ, hai hộp xổ đầu tiên cho phép bạn chọn
-      kiểu hiện thị ngày giờ ưa thích của mình;
+      kiểu hiển thị ngày giờ ưa thích của mình;
     * Hộp xổ tên "Khoảng thời gian" cho phép bạn đặt thời gian báo giờ tự
       động (mỗi 10 phút, mỗi 15 phút, mỗi 30 phút, mỗi giờ, hoặc là tắt);
     * Hộp xổ tên "Báo giờ" (chỉ hiển thị khi lựa chọn "tắt" không được chọn
@@ -80,7 +80,7 @@ nhận.
 * Có một kịch bản cung cấp cho bạn thời gian đã qua và thời gian còn lại
   trước khi có báo hiệu tiếp theo;
 * Không có thao tác cho kịch bản này. bạn phải tự gán lệnh trong hộp thoại
-  "Quản lý các thao tác", trong phân lại loại Đồng hồ";
+  "Quản lý các thao tác", trong phân loại Đồng hồ";
 * Thực hiện thao tác này nhanh hai lần để hủy bỏ báo hiệu kế tiếp;
 * Còn có một kịch bản khác để dừng âm thanh đang được phát. Thao tác này
   cũng không được quy định;
