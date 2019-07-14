@@ -7,7 +7,7 @@ from functools import wraps, update_wrapper
 import sys
 from . import skipTranslation
 import globalVars
-from validate import VdtTypeError
+import configobj
 from . import alarmHandler
 import globalPluginHandler
 import gui
@@ -40,6 +40,11 @@ sys.path.remove(sys.path[-1])
 import time
 from .formats import GetTimeFormatEx, GetDateFormatEx
 from . import configuration
+if hasattr (configobj, "validate"):
+	from configobj.validate import VdtTypeError
+else:
+	from validate import VdtTipeError
+
 import addonHandler
 addonHandler.initTranslation()
 
@@ -257,7 +262,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	script_reportTimeAndDate.__doc__=_("Speaks current time. If pressed twice quickly, speaks current date. If pressed thrice quickly, reports the current day, the week number, the current year and the days remaining before the end of the year.")
 	script_reportTimeAndDate.category = globalCommands.SCRCAT_SYSTEM
 	# We remove the docstring from the original dateTime script to have only one entry in the "System status" category, it will be automatically restored if the Clock add-on is disabled or uninstalled.
-	globalCommands.commands.script_dateTime.im_func.__doc__ = ""
+	if hasattr (globalCommands.commands.script_dateTime, "im_func"):
+		globalCommands.commands.script_dateTime.im_func.__doc__ = ""
+	else:
+		globalCommands.commands.script_dateTime.__func__.__doc__ = ""
 
 	def getScript(self, gesture):
 		if not hasattr (self, "clockLayerModeActive") or (hasattr (self, "clockLayerModeActive") and not self.clockLayerModeActive):

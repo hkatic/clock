@@ -15,14 +15,14 @@ NVDA+F12, get current time.
 NVDA+F12 pressed twice quickly, get current date.
 NVDA+F12 pressed thrice quickly, reports the current day, the week number, the current year and the remaining days before the end of the year.
 For other instructions, press Add-on help button in add-ons manager."""),
-	"addon_version" : "19.06",
+	"addon_version" : "19.07",
 	"addon_author" : "Hrvoje Katic <hrvojekatic@gmail.com>, Abdel <abdelkrim.bensaid@gmail.com>",
 	"addon_url" : "https://github.com/hkatic/clock",
 	"addon_docFileName" : "readme.html",
 	# Minimum NVDA version supported (e.g. "2018.3")
 	"addon_minimumNVDAVersion" : "2014.3.0",
 	# Last NVDA version supported/tested (e.g. "2018.4", ideally more recent than minimum version)
-	"addon_lastTestedNVDAVersion" : "2019.3.0",
+	"addon_lastTestedNVDAVersion" : "2019.4.0",
 	# Add-on update channel (default is stable or None)
 	"addon_updateChannel" : None,
 }
