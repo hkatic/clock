@@ -1,0 +1,363 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the clock package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clock 18.12.1\n"
+"Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
+"POT-Creation-Date: 2018-12-28 03:15+1000\n"
+"PO-Revision-Date: 2019-07-14 12:25+0530\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.2.3\n"
+
+#. Translators: the label of a message box dialog.
+msgid ""
+"The date and time format you were using are not compatible with this version "
+"of the Clock add-on, this will be fixed during installation. Click OK to "
+"confirm these corrections"
+msgstr ""
+"आपके द्वारा उपयोग किया जा रहा दिनांक और समय प्रारूप क्लॉक ऐड-ऑन के इस संस्करण के साथ "
+"संगत नहीं है, यह स्थापना के दौरान ठीक  किया जाएगा। इन सुधारों की पुष्टि करने के लिए ओके  "
+"क्लिक करें"
+
+#. Translators: the title of a message box dialog.
+msgid "Time and date format corrections"
+msgstr "समय और दिनांक प्रारूप सुधार"
+
+#, python-brace-format
+msgid "{hours} hours, "
+msgstr "{hours} बजे, "
+
+#, python-brace-format
+msgid "{minutes} minutes, "
+msgstr "{minutes} मिनट, "
+
+#, python-brace-format
+msgid "{seconds} seconds"
+msgstr "{seconds} सेकंड"
+
+msgid "0 seconds"
+msgstr "0 सेकंड"
+
+#. Translators: Script category for Clock addon commands in input gestures dialog.
+#. Translators: Summary for this add-on to be shown on installation and add-on information.
+msgid "Clock"
+msgstr "घड़ी"
+
+#. Translators: Item in the tools menu for the Clock Addon settings.
+msgid "Clock se&ttings..."
+msgstr "घड़ी की सेटिंग्स se&ttings..."
+
+#. Translators: The tooltyp text for the clock settings submenu.
+msgid "Clock and calendar setup"
+msgstr "घड़ी और कैलेंडर सेटअप"
+
+#. Translators: The name of the first item in the Clock settings submenu.
+#. Translators: This is the label for the clock settings panel.
+msgid "Clock setup"
+msgstr "घड़ी सेटअप"
+
+#. Translators: The tooltyp text for the first item in the Clock add-on submenu.
+msgid "Clock setup for times and dates"
+msgstr "समय और दिनांक के लिए घड़ी सेटअप"
+
+#. Translators: The name of the second item in the Clock settings submenu.
+msgid "Alarm settin&gs"
+msgstr "अलार्म settin&gs"
+
+#. Translators: The tooltyp text for the second item in the Clock add-on submenu.
+msgid "Allows you to schedule an alarm"
+msgstr "आपको अलार्म सेट  करने देता है"
+
+#, python-brace-format
+msgid "Day {day}, week {week} of {year}, remaining days {remain}."
+msgstr "दिन {day}, {year} का सप्ताह {week} , शेष दिन {remain}."
+
+#. Translators: Message presented in input help mode.
+msgid ""
+"Speaks current time. If pressed twice quickly, speaks current date. If "
+"pressed thrice quickly, reports the current day, the week number, the "
+"current year and the days remaining before the end of the year."
+msgstr ""
+"वर्तमान समय बताता है। यदि दो बार जल्दी से दबाया जाता है, तो वर्तमान तिथि बताता है। "
+"यदि तीन बार जल्दी से दबाया जाता है, तो वर्तमान दिन, सप्ताह का नंबर , वर्तमान वर्ष और "
+"वर्ष के अंत से पहले शेष दिनों की रिपोर्ट करता है."
+
+#. Translators: Message presented in input help mode.
+msgid ""
+"Clock and calendar layer commands. After pressing this keystroke, press H "
+"for additional help."
+msgstr ""
+"क्लॉक और कैलेंडर लेयर कमांड। इस की स्ट्रोक को दबाने के बाद, अतिरिक्त सहायता के लिए एच "
+"की  दबाएँ."
+
+msgid "Reset. Running."
+msgstr "रीसेट। चल रहा है."
+
+msgid "Running."
+msgstr "चल रहा है."
+
+#, python-brace-format
+msgid "{0} stopped."
+msgstr "{0} रुका हुआ."
+
+#. Translators: Message presented in input help mode.
+msgid "Starts, resets or stops the stopwatch."
+msgstr "स्टॉपवॉच शुरू करता है, रीसेट करता है या बंद करता है."
+
+#. Translators: Message presented in input help mode.
+msgid "Speaks current stopwatch or count-down timer."
+msgstr "वर्तमान स्टॉपवॉच या काउंट-डाउन टाइमर बोलता है."
+
+#, python-brace-format
+msgid "Elapsed time {elapsed}, remaining time {remaining}."
+msgstr "बीता हुआ समय {elapsed},  शेष समय {remaining}."
+
+msgid "No alarm"
+msgstr "कोई अलार्म नहीं"
+
+#. Translators: Message presented in input help mode.
+msgid "Gives the remaining and elapsed time before the next alarm."
+msgstr "अगले अलार्म से पहले शेष और बीता हुआ समय देता है."
+
+msgid "Alarm cancelled"
+msgstr "अलार्म रद्द कर दिया गया"
+
+#. Translators: Message presented in input help mode.
+msgid "Cancel the next alarm."
+msgstr "अगला अलार्म रद्द करें."
+
+msgid ""
+"The stopwatch is already reset to 0. Use the clock layer command followed by "
+"s to start it."
+msgstr ""
+"स्टॉपवॉच पहले से ही 0 पर रीसेट है। इसे शुरू करने के लिए क्लॉक लेयर कमांड का उपयोग करें."
+
+msgid "Stopwatch reset."
+msgstr "स्टॉपवॉच रीसेट."
+
+#. Translators: Message presented in input help mode.
+msgid "Resets stopwatch to 0 without restarting it."
+msgstr "इसे पुनः आरंभ किए बिना स्टॉपवॉच को 0 पर रीसेट करता है."
+
+#. Translators: Message presented in input help mode.
+msgid "Lists available commands in clock command layer."
+msgstr "उपलब्ध कमांड को क्लॉक कमांड लेयर में दिखाता  है."
+
+#. Translators: Message presented in input help mode.
+msgid "Allows to check the next alarm. If pressed twice, cancels it."
+msgstr ""
+"अगले अलार्म की जांच करने देता है। यदि दो बार दबाया जाता है, तो इसे रद्द कर देता है."
+
+msgid "No sound is launched."
+msgstr "कोई ध्वनि चालू नहीं की गई है."
+
+msgid "Sound stopped"
+msgstr "ध्वनि रुक गई"
+
+#. Translators: Message presented in input help mode.
+msgid "If an alarm is too long, allows to stop it."
+msgstr "यदि कोई अलार्म बहुत लंबा हो , तो उसे रोकने की अनुमति देता है."
+
+#. Translators: Message presented in input help mode.
+msgid "Display the clock settings dialog box."
+msgstr "घड़ी सेटिंग्स संवाद बॉक्स दिखाता."
+
+#. Translators: Message presented in input help mode.
+msgid "Display the alarm settings dialog box."
+msgstr "अलार्म सेटिंग्स संवाद बॉक्स दिखाता."
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+msgid "&Time display format:"
+msgstr "&Time समय प्रदर्शन प्रारूप:"
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+msgid "&Date display format:"
+msgstr "&Date दिनांक प्रदर्शन प्रारूप:"
+
+#. Translators: This is a choice of the auto announce choices combo box.
+msgid "off"
+msgstr "बंद"
+
+#. Translators: This is a choice of the auto announce choices combo box.
+msgid "every 10 minutes"
+msgstr "हर 10 मिनट में"
+
+#. Translators: This is a choice of the auto announce choices combo box.
+msgid "every 15 minutes"
+msgstr "हर 15 मिनट में"
+
+#. Translators: This is a choice of the auto announce choices combo box.
+msgid "every 30 minutes"
+msgstr "हर 30 मिनट में"
+
+#. Translators: This is a choice of the auto announce choices combo box.
+msgid "every hour"
+msgstr "प्रत्येक घंटे"
+
+#. Transla	tors: This is the label for a combo box in the Clock settings dialog.
+msgid "&interval:"
+msgstr "&interval:"
+
+#. Translators: This is a choice of the time report choices combo box.
+msgid "speech and sound"
+msgstr "बोल और ध्वनि"
+
+#. Translators: This is a choice of the time report choices combo box.
+msgid "speech only"
+msgstr "सिर्फ बोल"
+
+#. Translators: This is a choice of the time report choices combo box.
+msgid "sound only"
+msgstr "सिर्फ ध्वनि"
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+msgid "Time &announcement:"
+msgstr "समय &announcement:"
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+msgid "Clock chime &sound:"
+msgstr "घड़ी chime &sound:"
+
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+msgid "&Quiet hours"
+msgstr "&Quiet घंटे"
+
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+msgid "Input in &24-hour format"
+msgstr "24 घंटे के प्रारूप में इनपुट &24-hour"
+
+#. Translators: This is the label for an edit field in the Clock settings dialog.
+msgid "Quiet hours start time:"
+msgstr "शांत समय प्रारंभ समय:"
+
+#. Translators: This is the label for an edit field in the Clock settings dialog.
+msgid "Quiet hours end time:"
+msgstr "शांत समय समाप्त होने का समय:"
+
+#. A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
+msgid ""
+"The value you entered for your quiet hours is erroneous, for a 24-hour "
+"format, the value must be HH:MM, for a 12-hour format, the value must be HH:"
+"MM followed by the AM or PM suffix, please reread the documentation. So your "
+"quiet hours have been deactivated for prevent any error in the configuration "
+"file."
+msgstr ""
+"आपके शांत घंटों के लिए दर्ज किया गया मान गलत है, 24 घंटे के प्रारूप के लिए, मान घंटे:मिनट  "
+"होना चाहिए:  12 घंटे के प्रारूप के लिए, मान घंटे:मिनट, साथ में ऐम या पीम  होना चाहिए."
+
+#. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
+msgid "Error"
+msgstr "त्रुटि"
+
+#. Translators: This is the label for the alarm settings panel.
+msgid "Alarm setup"
+msgstr "अलार्म सेटअप"
+
+#. Translators: This is an item of the alarm timer choices.
+msgid "Hours"
+msgstr "घंटे"
+
+#. Translators: This is an item of the alarm timer choices.
+msgid "Minutes"
+msgstr "मिनट"
+
+#. Translators: This is an item of the alarm timer choices.
+msgid "Seconds"
+msgstr "सेकंड"
+
+#. Translators: This is the label for a combo box in the Alarm settings dialog.
+msgid "Choose the type of timer &inputs before the alarm rings:"
+msgstr "अलार्म बजने से पहले टाइमर  का प्रकार  &inputs चुनें:"
+
+#. Translators: This is the label for a combo box in the Alarm settings dialog.
+msgid "A&larm sound:"
+msgstr "A&larm ध्वनि:"
+
+#. Translators: This is the label for a button in the Alarm settings dialog.
+msgid "&Stop"
+msgstr "&Stop"
+
+#. Translators: This is the label for a button in the Alarm settings dialog.
+msgid "&Pause"
+msgstr "&Pause"
+
+#. Translators: This is the label for an edit field in the Alarm settings dialog.
+msgid "Alarm &time waiting:"
+msgstr "अलार्म समय &time प्रतीक्षा में:"
+
+#. Translators: The message displayed after a countdown for an alarm has been chosen.
+#, python-brace-format
+msgid "You've chosen an alarm to be triggered in {tm} {unit}"
+msgstr "आपने  {tm} {unit} अलार्म चालू होना चुना है"
+
+#. Translators: The title of the dialog which appears when the user has chosen to trigger an alarm.
+msgid "Confirmation"
+msgstr "पुष्टीकरण"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "It's {hours} o'clock and {minutes} minutes"
+msgstr "यह {hours} बजे और {minutes} मिनट है"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "It's {hours} o'clock, {minutes} minutes and {seconds} seconds"
+msgstr "यह {hours} बजे  {minutes} मिनट और  {seconds} सेकंड्‌स है"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "{hours} o'clock, {minutes} minutes"
+msgstr "{hours} बजे  {minutes} मिनट"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "{hours} o'clock, {minutes} minutes, {seconds} seconds"
+msgstr "{hours} बजे  {minutes} मिनट और  {seconds} सेकंड्‌स"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "It's {minutes} past {hours}"
+msgstr "{hours}  बज कर  {minutes} मिनट"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "{hours} h {minutes} min"
+msgstr "{hours} बजे {minutes} मिनट"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "{hours} h, {minutes} min, {seconds} sec"
+msgstr "{hours} बजे  {minutes} मिनट और  {seconds} सेकंड्‌स"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "It's {hours}:{minutes}"
+msgstr "यह {hours} बजे:  {minutes} मिनट है"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "It's {hours}:{minutes}:{seconds}"
+msgstr "यह {hours} बजे  {minutes} मिनट और  {seconds} सेकंड्‌स है"
+
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+msgid ""
+"An advanced clock and calendar for NVDA.\n"
+"NVDA+F12, get current time.\n"
+"NVDA+F12 pressed twice quickly, get current date.\n"
+"NVDA+F12 pressed thrice quickly, reports the current day, the week number, "
+"the current year and the remaining days before the end of the year.\n"
+"For other instructions, press Add-on help button in add-ons manager."
+msgstr ""
+"एनवीडीए के लिए एक उन्नत घड़ी और कैलेंडर\n"
+"एनवीडीए + ऍफ़ 12, वर्तमान समय प्राप्त करें \n"
+"एनवीडीए  + एफ़ 12, दो बार जल्दी से दबाने पर, वर्तमान तिथि प्राप्त करें \n"
+"एनवीडीए  + एफ़ 12, तीन बार जल्दी से दबाने पर, वर्तमान दिन, सप्ताह का नंबर , वर्तमान "
+"वर्ष और वर्ष के अंत से पहले शेष दिनों को  रिपोर्ट करता है."
