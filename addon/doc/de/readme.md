@@ -1,7 +1,7 @@
 # Uhr- und Kalender-Erweiterung für NVDA #
 
 * Autoren: Hrvoje Katić, Abdel und NVDA-Mitwirkende;
-* [Stabile Version][1] herunterladen;
+* [Stabile Version herunterladen][1];
 * Download [development version][2].
 
 
@@ -87,7 +87,7 @@ Korrektur auszulösen.
 * Drücken Sie NVDA+F12 einmal, um die aktuelle Uhrzeit , zweimal schnell, um
   das aktuelle Datum, dreimal schnell um den aktuellen Tag, die
   Kalenderwoche, das Jahr sowie die Anzahl der verbleibenden Tage des Jahres
-  zu erhalten
+  zu erhalten.
 
 ## Tastenbefehle
 
