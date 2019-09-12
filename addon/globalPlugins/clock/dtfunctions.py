@@ -78,7 +78,9 @@ def timeInRange(startTime, endTime, checkTime, use24hour=False):
 	"""
 	start=parseTime(startTime, use24hour)
 	end=parseTime(endTime, use24hour)
+	check=parseTime(checkTime, use24hour)
 	if end<start:
 		end+=timedelta(days=1)
-	check=parseTime(checkTime, use24hour)
+		if check < start:
+			check+=timedelta(days=1)
 	return start<=check<end
