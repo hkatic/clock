@@ -1,21 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Hrvatska lokalizacija za NVDA.
+# Copyright (C) 2006-2019 NVDA contributors <https://www.nvda-project.org>
+# This file is distributed under the same license as the virtualRevision package.
+# Zvonimir Stanečić <zvonimirek222@yandex.com>, 2019.
+# Milo Ivir <mail@milotype.de>, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Clock 18.12\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@freelists.org'\n"
 "POT-Creation-Date: 2018-12-12 07:57+0100\n"
-"PO-Revision-Date: 2019-01-31 20:42+0100\n"
-"Last-Translator: zvonimir stanecic <zvonimirek222@yandex.com>\n"
+"PO-Revision-Date: 2019-11-15 23:33+0100\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: HR <hrvojekatic@gmail.com>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 2.2.4\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -26,13 +27,13 @@ msgid ""
 "of the Clock add-on, this will be fixed during installation. Click OK to "
 "confirm these corrections"
 msgstr ""
-"Oblici datuma i vremena koje ste koristili nisu kompatibilni s ovom inačicom "
-"dodatka Clock, to će biti ispravljeno tijekom instalacije. Kliknite u redu "
-"da biste potvrdili ove ispravke."
+"Korišteni formati datuma i vremena nisu kompatibilni s ovom verzijom dodatka "
+"„Sat”. To će se ispraviti tijekom instalacije. Klikni „U redu” za "
+"potvrđivanje ovih ispravaka"
 
 #. Translators: the title of a message box dialog.
 msgid "Time and date format corrections"
-msgstr "Ispravci oblika vremena i datuma"
+msgstr "Ispravci za formate vremena i datuma"
 
 #, python-brace-format
 msgid "{hours} hours, "
@@ -56,32 +57,32 @@ msgstr "Sat"
 
 #. Translators: Item in the tools menu for the Clock Addon settings.
 msgid "Clock se&ttings..."
-msgstr "Postavke &sata..."
+msgstr "Pos&tavke sata …"
 
 #. Translators: The tooltyp text for the clock settings submenu.
 msgid "Clock and calendar setup"
-msgstr "Postavke sata i kalendara"
+msgstr "Postavljanje sata i kalendara"
 
 #. Translators: The name of the first item in the Clock settings submenu.
 #. Translators: This is the label for the clock settings panel.
 msgid "Clock setup"
-msgstr "Postavke sata"
+msgstr "Postavljanje sata"
 
 #. Translators: The tooltyp text for the first item in the Clock add-on submenu.
 msgid "Clock setup for times and dates"
-msgstr "Podešavanje sata za vrijeme i datume"
+msgstr "Postavljanje sata za vrijeme i datum"
 
 #. Translators: The name of the second item in the Clock settings submenu.
 msgid "Alarm settin&gs"
-msgstr "postavke alarma"
+msgstr "Po&stavke alarma"
 
 #. Translators: The tooltyp text for the second item in the Clock add-on submenu.
 msgid "Allows you to schedule an alarm"
-msgstr "Omogućuje zakazivanje alarma"
+msgstr "Omogućuje postavljanje alarma"
 
 #, python-brace-format
 msgid "Day {day}, week {week} of {year}, remaining days {remain}."
-msgstr "{day}. dan, {week}. tjedan u {year}. godini, Preostali dani {remain}."
+msgstr "{day}. dan, {week}. tjedan {year}., preostalih dana: {remain}."
 
 #. Translators: Message presented in input help mode.
 msgid ""
@@ -89,23 +90,24 @@ msgid ""
 "pressed thrice quickly, reports the current day, the week number, the "
 "current year and the days remaining before the end of the year."
 msgstr ""
-"Daje trenutno vrijeme. Ako se pritisne dvaput brzo, govori trenutni datum. "
-"Ako se brzo pritisne triput, izvještava o trenutnom danu, broju tjedna, "
-"trenutnoj godini i danima koji su preostali prije kraja godine."
+"Izgovara trenutačno vrijeme. Ako se pritisne dvaput brzo, izgovara "
+"trenutačni datum. Ako se pritisne triput brzo, izvještava o trenutačnom "
+"danu, broju tjedna, tekućoj godini i o danima koji su preostali do kraja "
+"godine."
 
 #. Translators: Message presented in input help mode.
 msgid ""
 "Clock and calendar layer commands. After pressing this keystroke, press H "
 "for additional help."
 msgstr ""
-"Povezane naredbe za sat i kalendar. Nakon što pritisnete ovu kombinaciju "
-"tipki, pritisnite H za dodatnu pomoć."
+"Višeslojne naredbe za sat i kalendar. Nakon pritiskanja ove tipkovničke "
+"kombinacije, pritisni „H” za dodatnu pomoć."
 
 msgid "Reset. Running."
-msgstr "Resetiranje. Kreni."
+msgstr "Resetiraj. Pokretanje."
 
 msgid "Running."
-msgstr "Kreni."
+msgstr "Pokretanje."
 
 #, python-brace-format
 msgid "{0} stopped."
@@ -117,32 +119,32 @@ msgstr "Pokreće, zaustavlja ili resetira štopericu."
 
 #. Translators: Message presented in input help mode.
 msgid "Speaks current stopwatch or count-down timer."
-msgstr "Izgovara trenutno stanje štoperice ili odbrojavanja vremena."
+msgstr "Izgovara trenutačno stanje štoperice ili odbrojavanja vremena."
 
 #, python-brace-format
 msgid "Elapsed time {elapsed}, remaining time {remaining}."
-msgstr "VRIJEME je proteklo {elapsed}, preostalo vrijeme {remaining}."
+msgstr "Proteklo vrijeme {elapsed}, preostalo vrijeme {remaining}."
 
 msgid "No alarm"
 msgstr "Nema alarma"
 
 #. Translators: Message presented in input help mode.
 msgid "Gives the remaining and elapsed time before the next alarm."
-msgstr "Daje proteklo vrijeme kao i preostalo vrijeme prije sljedećeg alarma."
+msgstr "Izdaje proteklo vrijeme i preostalo vrijeme prije sljedećeg alarma."
 
 msgid "Alarm cancelled"
 msgstr "Alarm je otkazan"
 
 #. Translators: Message presented in input help mode.
 msgid "Cancel the next alarm."
-msgstr "Otkazuje sljedeći alarm."
+msgstr "Otkaži sljedeći alarm."
 
 msgid ""
 "The stopwatch is already reset to 0. Use the clock layer command followed by "
 "s to start it."
 msgstr ""
-"Štoperica je već resetirana na nulu. Koristite kombinaciju tipki za povezane "
-"naredbe sata a zatim tipku S da biste pokrenuli štopericu."
+"Štoperica je već resetirana na nulu. Za pokretanje štoperice koristi "
+"povezane naredbe sata, a zatim tipku „s”."
 
 msgid "Stopwatch reset."
 msgstr "Resetiranje štoperice."
@@ -153,38 +155,39 @@ msgstr "Resetira štopericu na nulu bez ponovnog pokretanja."
 
 #. Translators: Message presented in input help mode.
 msgid "Lists available commands in clock command layer."
-msgstr "Ispisuje dostupne naredbe u povezanim naredbama za sat."
+msgstr "Ispisuje dostupne naredbe za sat."
 
 #. Translators: Message presented in input help mode.
 msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr ""
-"Omogućuje vam da vidite sljedeći alarm, ako se pritisne dvaput, otkaže ga."
+"Omogućuje provjeravanje sljedećeg alarm. Ako se pritisne dvaput, otkazuje "
+"alarm."
 
 msgid "No sound is launched."
-msgstr "No sound is launched."
+msgstr "Nijedan zvuk nije pokrenut."
 
 msgid "Sound stopped"
-msgstr "Zaustavili ste zvuk"
+msgstr "Zvuk zaustavljen"
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
-msgstr "Omogučava stopiranje alarma ako je predug."
+msgstr "Omogućuje zaustavljanje alarma, ako je predug."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
-msgstr "Prikazuje dijaloški okvir Postavke sata."
+msgstr "Prikazuje dijaloški okvir za postavke sata."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the alarm settings dialog box."
-msgstr "Prikazuje dijaloški okvir Postavke alarma."
+msgstr "Prikazuje dijaloški okvir za postavke alarma."
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Time display format:"
-msgstr "Oblik prikazivanja &vremena:"
+msgstr "Format za prikaz &vremena:"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Date display format:"
-msgstr "Oblik prikazivanja &datuma:"
+msgstr "Format za prikaz &datuma:"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "off"
@@ -204,11 +207,11 @@ msgstr "svakih pola sata"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "every hour"
-msgstr "svaki puni sat"
+msgstr "svakih sat vremena"
 
 #. Transla	tors: This is the label for a combo box in the Clock settings dialog.
 msgid "&interval:"
-msgstr "&Intervalima"
+msgstr "&interval:"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "speech and sound"
@@ -224,15 +227,15 @@ msgstr "samo zvuk"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Time &announcement:"
-msgstr "Vrsta &najave vremena:"
+msgstr "N&ajava vremena:"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Clock chime &sound:"
-msgstr "&Zvuk zvonjenja sata:"
+msgstr "Zvuk zvona &sata:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "&Quiet hours"
-msgstr "&Tihi sati"
+msgstr "Sati &mirovanja"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "Input in &24-hour format"
@@ -240,11 +243,11 @@ msgstr "Unos u &24-satnom formatu"
 
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours start time:"
-msgstr "Početno vrijeme za tihe sate:"
+msgstr "Početno vrijeme za sate mirovanja:"
 
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours end time:"
-msgstr "Završno vrijeme za tihe sate:"
+msgstr "Završno vrijeme za sate mirovanja:"
 
 #. A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
 msgid ""
@@ -254,10 +257,11 @@ msgid ""
 "quiet hours have been deactivated for prevent any error in the configuration "
 "file."
 msgstr ""
-"Vrijednost koju ste unijeli za tihe sate je pogrešna, za 24-satni format, "
-"vrijednost treba izgledati kao HH:MM, dok za 12-satni format, mora izgledati "
-"HH:MM s pratećim AM ili PM sufiksom, Molimo pročitajte dokumentaciju. Dakle, "
-"vaši tihi sati su vraćeni na izvornu vrijednost."
+"Upisana vrijednost za sate mirovanja je pogrešna. Za 24-satni format, "
+"vrijednost treba biti u formatu HH:MM, dok za 12-satni format, mora biti u "
+"formatu HH:MM sa sufiksom AM ili PM. Pročitaj dokumentaciju. Stoga su tvoji "
+"sati mirovanja deaktivirani, kako bi se izbjegle greške u konfiguracijskoj "
+"datoteci."
 
 #. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
 msgid "Error"
@@ -265,7 +269,7 @@ msgstr "Greška"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"
-msgstr "Postavke alarma"
+msgstr "Postavljanje alarma"
 
 #. Translators: This is an item of the alarm timer choices.
 msgid "Hours"
@@ -273,19 +277,19 @@ msgstr "Sati"
 
 #. Translators: This is an item of the alarm timer choices.
 msgid "Minutes"
-msgstr "Minuta"
+msgstr "Minute"
 
 #. Translators: This is an item of the alarm timer choices.
 msgid "Seconds"
-msgstr "sekunde"
+msgstr "Sekunde"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "Choose the type of timer &inputs before the alarm rings:"
-msgstr "Odaberite vrstu unosa &vremena prije nego što zazvoni alarm :"
+msgstr "Odaberi vrstu unosa &vremenskog mjerača prije nego što zazvoni alarm:"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
-msgstr "Zvuk alarma :"
+msgstr "Zvuk a&larma:"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Stop"
@@ -297,55 +301,51 @@ msgstr "&Pauza"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 msgid "Alarm &time waiting:"
-msgstr "Vrijeme &čekanja alarma :"
+msgstr "&Vrijeme čekanja alarma:"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
 #, python-brace-format
 msgid "You've chosen an alarm to be triggered in {tm} {unit}"
-msgstr "Izabrali ste alarm koji će se aktivirati za {tm} {unit}"
+msgstr "Izabran je alarm koji će se aktivirati za {tm} {unit}"
 
 #. Translators: The title of the dialog which appears when the user has chosen to trigger an alarm.
 msgid "Confirmation"
-msgstr ""
-"Potvrdu\n"
-"\n"
-"Nouns:\n"
-"    potvrdu"
+msgstr "Potvrda"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {hours} o'clock and {minutes} minutes"
-msgstr "Sada je {hours} sati i {minutes} minuta"
+msgstr "Sada je {hours} i {minutes}"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {hours} o'clock, {minutes} minutes and {seconds} seconds"
-msgstr "Sada je {hours} sati, {minutes} minuta i {seconds} sekundi"
+msgstr "Sada je {hours} i {minutes} i {seconds} s"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "{hours} o'clock, {minutes} minutes"
-msgstr "{hours} sati, {minutes} minuta"
+msgstr "{hours} i {minutes}"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "{hours} o'clock, {minutes} minutes, {seconds} seconds"
-msgstr "{hours} sati, {minutes} minuta, {seconds} sekundi"
+msgstr "{hours} i {minutes} i {seconds} s"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {minutes} past {hours}"
-msgstr "{hours} sati je prošlo {minutes} minuta"
+msgstr "Sada je {hours} i {minutes}"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "{hours} h {minutes} min"
-msgstr "{hours} sati {minutes} min"
+msgstr "{hours} h {minutes} min"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "{hours} h, {minutes} min, {seconds} sec"
-msgstr "{hours} sati, {minutes} min, {seconds} sek"
+msgstr "{hours} h, {minutes} min, {seconds} s"
 
 #. Translators: A time formating.
 #, python-brace-format
@@ -367,96 +367,8 @@ msgid ""
 "For other instructions, press Add-on help button in add-ons manager."
 msgstr ""
 "Napredni sat i kalendar za NVDA čitač ekrana.\n"
-"Pritisnite NVDA + F12 za trenutni sat, pritisnite dvaput za trenutni datum, "
-"ili triput da biste dobili trenutni broj dana i tjedana u tekućoj godini.\n"
-"Za ostale upute, odaberite gumb Pomoć za dodatak u upravitelju dodacima."
-
-#~ msgid ""
-#~ "\n"
-#~ "\t\tS: Starts, resets or stops the stopwatch.\n"
-#~ "\t\tR: Resets stopwatch to 0 without restarting it.\n"
-#~ "\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
-#~ "\t\tC: Cancel the next alarm.\n"
-#~ "\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
-#~ "\t\tH: List all layered commands (Help).\n"
-#~ "\t\t"
-#~ msgstr ""
-#~ "\n"
-#~ "\t\tS: Pokreni, zaustavi ili resetiraj štopericu te kreni ponovo od "
-#~ "nule.\n"
-#~ "\t\tR: Resetiraj štopericu bez ponovnog pokretanja.\n"
-#~ "\n"
-#~ "\t\tA: Daje informaciju o preostalom i prošlom vremenu alarma.\n"
-#~ "\t\tC: Stopira sljedeći alarm.\n"
-#~ "\t\tRazmaknica: izgovara vrijeme štoperice ili odbrojavanja tajmera.\n"
-#~ "\t\tH: popisuje sve slojne tipkovničke prećace (pomoć).\n"
-#~ "\t\t"
-
-#~ msgid "Auto announce &interval:"
-#~ msgstr "&Interval za automatsku najavu:"
-
-#~ msgid "%d hour, "
-#~ msgstr "%d sat, "
-
-#~ msgid "%d minute, "
-#~ msgstr "%d minuta, "
-
-#~ msgid "%s second"
-#~ msgstr "%s sekunda"
-
-#~ msgid "It's mm past H"
-#~ msgstr "It's mm past H"
-
-#~ msgid "hh mm min"
-#~ msgstr "hh mm min"
-
-#~ msgid "hh mm min ss sec"
-#~ msgstr "hh mm min ss sek"
-
-#~ msgid "It's H:mm"
-#~ msgstr "Sada je H:mm"
-
-#~ msgid "It's HH:mm:ss"
-#~ msgstr "Sada je HH:mm:ss"
-
-#~ msgid "Day %j, week %W of %Y."
-#~ msgstr "%j. dan, %W. tjedan u godini %Y."
-
-#~ msgid "%H h, %M min"
-#~ msgstr "%H h, %M min"
-
-#~ msgid "%H:%M:%S"
-#~ msgstr "%H:%M:%S"
-
-#~ msgid "%H:%M"
-#~ msgstr "%H:%M"
-
-#~ msgid "It's %I:%M %p"
-#~ msgstr "Sati je %I:%M %p"
-
-#~ msgid "It's %I:%M:%S %p"
-#~ msgstr "Sati je %I:%M:%S %p"
-
-#~ msgid "%I:%M %p"
-#~ msgstr "%I:%M %p"
-
-#~ msgid "%I:%M:%S %p"
-#~ msgstr "%I:%M:%S %p"
-
-#~ msgid "%A, %B %d, %Y"
-#~ msgstr "%A, %B %d, %Y"
-
-#~ msgid "%Y-%d-%m"
-#~ msgstr "%Y-%d-%m"
-
-#~ msgid "%d-%m-%Y"
-#~ msgstr "%d-%m-%Y"
-
-#~ msgid "%m-%d-%Y"
-#~ msgstr "%m-%d-%Y"
-
-#~ msgid "%m/%d/%Y"
-#~ msgstr "%m/%d/%Y"
-
-#~ msgid "%d/%m/%Y"
-#~ msgstr "%d/%m/%Y"
+"Pritisni NVDA+F12 za trenutačno vrijeme.\n"
+"Pritisni NVDA+F12 dvaput za trenutačni datum.\n"
+"Pritisni NVDA+F12 triput za trenutačni dan, tjedan, tekuću godinu i "
+"preostale dane do kraja godine.\n"
+"Za ostale upute, odaberi gumb „Pomoć” u upravljaču dodataka."

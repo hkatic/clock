@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: clock\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2019-01-31 19:55+0200\n"
+"PO-Revision-Date: 2019-11-15 14:59+0200\n"
 "Last-Translator: Jani Kinnunen <janikinnunen340@gmail.com>\n"
 "Language-Team: Jani Kinnunen <janikinnunen340@gmail.com>\n"
 "Language: fi\n"
@@ -115,7 +115,7 @@ msgstr "Käynnistää, nollaa tai pysäyttää sekuntikellon."
 
 #. Translators: Message presented in input help mode.
 msgid "Speaks current stopwatch or count-down timer."
-msgstr "Puhuu sekuntikellon tai jäljellä olevan ajan ennen hälytystä."
+msgstr "Puhuu sekuntikellon tai ajastimen jäljellä olevan ajan."
 
 #, python-brace-format
 msgid "Elapsed time {elapsed}, remaining time {remaining}."
@@ -228,7 +228,7 @@ msgstr "Ajan &ilmoitus:"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Clock chime &sound:"
-msgstr "Kellon &ääni:"
+msgstr "Hä&lytysääni:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "&Quiet hours"
