@@ -131,6 +131,8 @@ def getDayAndWeekOfYear (date):
 	if curYear == gregYear:
 		# It's a Gregorian year.
 		total = convertdate.gregorian.YEAR_DAYS
+		if convertdate.gregorian.isleap(gregYear):
+			total+=1
 		nDayOfYear = int (now.timetuple()[7])
 	else:
 		# It's a Hijri year.
