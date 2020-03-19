@@ -94,7 +94,7 @@ redu”.
 
 ## Višeslojne naredbe
 
-Za korištenje višeslojnih naredbi, pritisni NVDA+Shift+F12 i zatim jednu od
+Za korištenje višeslojnih naredbi, pritisni NVDA+šift+F12 i zatim jednu od
 sljedećih tipki:
 
 * S: Pokreće, zaustavlja ili resetira štopericu;
