@@ -66,9 +66,9 @@ botão OK para confirmar isso.
     * No diálogo Configuração de alarme, o primeiro controle Caixa de
       Combinação permite que escolha o seu temporizador preferido antes do
       toque do alarme;
-    * O controle Caixa de edição permite-lhe escrever seu tempo de espera
-      antes do toque do alarme. Essa duração deve ser expressa em 1 ou mais
-      dígitos, não num número decimal;
+    * O controle Caixa de edição permite-lhe digitar seu tempo de espera
+      antes do toque do alarme. Essa duração deve ser especificada em 1 ou
+      mais dígitos, não em um número decimal;
     * O controle Caixa de combinação rotulado "Som de alarme" permite
       escolher entre os vários sons de alarme que serão reproduzidos quando
       chegar a hora do alarme;
