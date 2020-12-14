@@ -121,8 +121,8 @@ af en af følgende taster:
 
 ## Kompatibilitet
 
-* This add-on is compatible with the versions of NVDA ranging from 2014.3
-  until 2019.3.
+* Denne tilføjelse er kompatibel med versionerne af NVDA fra 2014.3 til
+  2019.3.
 
 
 [[!tag dev stable]]

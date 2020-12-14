@@ -128,8 +128,8 @@ seguintes teclas:
 
 ## Compatibilidade:
 
-* This add-on is compatible with the versions of NVDA ranging from 2014.3
-  until 2019.3.
+* Este extra é compatível com as versões do NVDA que se encontram entre a
+  2014.3 e a 2019.3, inclusive.
 
 
 [[!tag dev stable]]
