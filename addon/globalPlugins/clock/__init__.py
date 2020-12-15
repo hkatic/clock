@@ -58,7 +58,7 @@ def secondsToString(seconds):
 	"""
 	text=""
 	tm=time.gmtime(seconds)
-	hr = int(seconds) / 3600
+	hr = tm.tm_hour
 	if hr > 0:
 		if hr > 23:
 			hr = 24* (hr / 24) + (hr % 24)
