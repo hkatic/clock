@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Clock 18.12\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2019-02-01 14:34+0330\n"
+"PO-Revision-Date: 2021-06-02 00:54+0330\n"
 "Last-Translator: Mohammadreza Rashad <mohammadreza5712@gmail.com>\n"
 "Language-Team: Mohammadreza Rashad <mohammadreza5712@gmail.com>\n"
 "Language: fa\n"
@@ -70,7 +70,7 @@ msgstr "تنظیماتِ ساعت برای زمان و تاریخ"
 
 #. Translators: The name of the second item in the Clock settings submenu.
 msgid "Alarm settin&gs"
-msgstr "تنظیم&اتِِ هشدار:"
+msgstr "تنظیم&اتِ هشدار"
 
 #. Translators: The tooltyp text for the second item in the Clock add-on submenu.
 msgid "Allows you to schedule an alarm"
@@ -266,7 +266,7 @@ msgstr "خطا"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"
-msgstr "تنظیمِ هشدار:"
+msgstr "تنظیمِ هشدار"
 
 #. Translators: This is an item of the alarm timer choices.
 msgid "Hours"
