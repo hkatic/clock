@@ -70,7 +70,7 @@ To use layered commands, press NVDA+Shift+F12 followed by one of the following k
 
 ## Compatibility
 
-- This add-on is compatible with the versions of NVDA ranging from 2014.3 until 2019.4.
+- This add-on is compatible with the versions of NVDA ranging from 2014.3 until 2021.1.
 
 [1]: https://addons.nvda-project.org/files/get.php?file=cac
 
