@@ -9,15 +9,15 @@ msgstr ""
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2018-12-16 09:44+0100\n"
 "PO-Revision-Date: 2019-01-03 10:49+0200\n"
+"Last-Translator: wafiqtaher <wafiqtaher@gmail.com>\n"
 "Language-Team: \n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.7.7\n"
-"Last-Translator: wafiqtaher <wafiqtaher@gmail.com>\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
-"Language: ar\n"
 
 #. Translators: the label of a message box dialog.
 msgid ""
@@ -149,25 +149,6 @@ msgstr "تمت إعادة ضبط ساعة الإيقاف."
 msgid "Resets stopwatch to 0 without restarting it."
 msgstr "إعادة ضبط ساعة الإيقاف إلى 0 دون إعادة تشغيلها."
 
-msgid ""
-"\n"
-"\t\tS: Starts, resets or stops the stopwatch.\n"
-"\t\tR: Resets stopwatch to 0 without restarting it.\n"
-"\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
-"\t\tC: Cancel the next alarm.\n"
-"\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
-"\t\tH: List all layered commands (Help).\n"
-"\t\t"
-msgstr ""
-"\n"
-"\t\tس: إعادة ضبط أو إنهاء أو إعادة تعيين ساعة الإيقاف.\n"
-"\t\tقاف: إعادة تعيين ساعة الإيقاف إلى 0 دون إعادة تشغيلها.\n"
-"\t\tشِين: الإعلان عن الوقت المتبقي والوقت المنقضي على المنبه التالي.\n"
-"\t\tهمزة على واو: إلغاء المنبه التالي.\n"
-"\t\tمسطرة المسافة: الإعلان عن قيمة ساعة الإيقاف أو العداد التنازلي.\n"
-"\t\tألِف:عرض قائمة بالأوامر التتابعية للمساعدة.\n"
-"\t\t"
-
 #. Translators: Message presented in input help mode.
 msgid "Lists available commands in clock command layer."
 msgstr "لعرض كافة الأوامر المتاحة عند استخدام الأمر التتابعي للإضافة."
@@ -177,6 +158,17 @@ msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr ""
 "يسمح بالتحقق من وقت المنبه التالي. عند ضغطه مرتين بسرعة، سيقوم بإلغاء هذا "
 "المنبه."
+
+msgid "No sound is launched."
+msgstr ""
+
+#, fuzzy
+msgid "Sound stopped"
+msgstr "{0} متوقف."
+
+#. Translators: Message presented in input help mode.
+msgid "If an alarm is too long, allows to stop it."
+msgstr ""
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
@@ -193,10 +185,6 @@ msgstr "&تنسيق عرض الوقت:"
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Date display format:"
 msgstr "تنسيق عرض التاري&خ:"
-
-#. Translators: This is the label for a checkbox in the Clock settings dialog.
-msgid "Input in &24-hour format"
-msgstr "استخدام نسق ال&24 ساعة"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "off"
@@ -246,6 +234,10 @@ msgstr "صوت &جرس الساعة:"
 msgid "&Quiet hours"
 msgstr "ساعات ال&هدوء"
 
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+msgid "Input in &24-hour format"
+msgstr "استخدام نسق ال&24 ساعة"
+
 #. Translators: This is the label for an edit field in the Clock settings dialog.
 msgid "Quiet hours start time:"
 msgstr "وقت بداية ساعات الهدوء:"
@@ -254,8 +246,20 @@ msgstr "وقت بداية ساعات الهدوء:"
 msgid "Quiet hours end time:"
 msgstr "وقت نهاية ساعات الهدوء:"
 
+#. A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
+msgid ""
+"The value you entered for your quiet hours is erroneous, for a 24-hour "
+"format, the value must be HH:MM, for a 12-hour format, the value must be HH:"
+"MM followed by the AM or PM suffix, please reread the documentation. So your "
+"quiet hours have been deactivated for prevent any error in the configuration "
+"file."
+msgstr ""
+
+#. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
+msgid "Error"
+msgstr ""
+
 #. Translators: This is the label for the alarm settings panel.
-#. Translators: This is the label for the alarm settings dialog.
 msgid "Alarm setup"
 msgstr "إعدادات المنبه"
 
@@ -272,15 +276,25 @@ msgid "Seconds"
 msgstr "ثواني"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
-msgid "Choose the type of timer inputs before the alarm rings:"
+#, fuzzy
+msgid "Choose the type of timer &inputs before the alarm rings:"
 msgstr "اختر الوحدة الزمنية المستخدمة لتحديد التوقيت الذي يرن بعده المنبه:"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
 msgstr "صوت الم&نبه:"
 
+#. Translators: This is the label for a button in the Alarm settings dialog.
+msgid "&Stop"
+msgstr ""
+
+#. Translators: This is the label for a button in the Alarm settings dialog.
+msgid "&Pause"
+msgstr ""
+
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
-msgid "Alarm time waiting:"
+#, fuzzy
+msgid "Alarm &time waiting:"
 msgstr "وقت انتظار المنبه:"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
@@ -353,3 +367,22 @@ msgstr ""
 "الأسبوع، ثم السنة الحالية، ثم عدد الأيام المتبقية حتى نهاية هذه السنة.\n"
 "لمزيد من المعلومات، اضغط على زر المساعدة الخاص بالإضافة داخل مدير الإضافات "
 "البرمجية."
+
+#~ msgid ""
+#~ "\n"
+#~ "\t\tS: Starts, resets or stops the stopwatch.\n"
+#~ "\t\tR: Resets stopwatch to 0 without restarting it.\n"
+#~ "\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
+#~ "\t\tC: Cancel the next alarm.\n"
+#~ "\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
+#~ "\t\tH: List all layered commands (Help).\n"
+#~ "\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "\t\tس: إعادة ضبط أو إنهاء أو إعادة تعيين ساعة الإيقاف.\n"
+#~ "\t\tقاف: إعادة تعيين ساعة الإيقاف إلى 0 دون إعادة تشغيلها.\n"
+#~ "\t\tشِين: الإعلان عن الوقت المتبقي والوقت المنقضي على المنبه التالي.\n"
+#~ "\t\tهمزة على واو: إلغاء المنبه التالي.\n"
+#~ "\t\tمسطرة المسافة: الإعلان عن قيمة ساعة الإيقاف أو العداد التنازلي.\n"
+#~ "\t\tألِف:عرض قائمة بالأوامر التتابعية للمساعدة.\n"
+#~ "\t\t"

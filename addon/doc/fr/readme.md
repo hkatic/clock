@@ -106,12 +106,12 @@ cela.
 * Ce geste pressé deux fois rapidement, annule la prochaine alarme;
 * Il existe un autre script pour arrêter le son en cours de lecture, son
   geste n’est pas non plus défini;
-* Ce script peut également  être invoqué à l'aide des commandes en couche de
-  l'horloge décrites ci-dessous.
+* Ce script peut également  être invoqué à l'aide des commandes
+  séquentielles de l'horloge décrites ci-dessous.
 
-## Commandes en couches
+## Commandes séquentielles
 
-Pour utiliser des commandes en couches, appuyez sur NVDA+Maj+F12 suivi de
+Pour utiliser des commandes séquentielles, appuyez sur NVDA+Maj+F12 suivi de
 l'une des touches suivantes :
 
 * S: Démarre, réinitialise ou arrête le chronomètre;
@@ -121,7 +121,7 @@ l'une des touches suivantes :
 * Espace: Annonce le chronomètre actuel ou le compte à rebours de la
   minuterie;
 * p: Si une alarme est trop longue, permet de l'arrêter;
-* H: Répertorie toutes les commandes en couches (Aide).
+* H: Répertorie toutes les commandes séquentielles (Aide).
 
 ## Syntaxe à utiliser pour les heures silencieuses
 
