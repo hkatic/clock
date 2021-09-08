@@ -26,11 +26,9 @@ import wx
 import globalCommands
 import os
 import languageHandler
-sys.path.append(os.path.join (os.path.abspath(os.path.dirname(__file__)), "libPy3"))
-import ephem
-import pytz
-import convertdate
-sys.path.remove(sys.path[-1])
+from . import ephem
+from . import pytz
+from . import convertdate
 import time
 from .formats import GetTimeFormatEx, GetDateFormatEx
 from . import configuration
