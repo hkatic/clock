@@ -1,6 +1,6 @@
 # Clock Add-on for NVDA
-# Author: Hrvoje Katich
-# Copyright 2013-2018, released under GPL.
+# Author: Hrvoje Katich and contributors
+# Copyright 2013-2021, released under GPL.
 
 import time
 import threading
