@@ -4,7 +4,7 @@
 
 import time
 
-class Stopwatch (object):
+class Stopwatch(object):
 	startTime=None
 	stopTime=None
 	running=False

@@ -15,7 +15,7 @@ from . import formats
 from .formats import GetTimeFormatEx
 
 # A function for getting wav file duration (inspired from this topic: https://emiliomm.com/index.php/2016/09/24/getting-duration-of-audio-file-in-python/).
-def getWaveFileDuration (sound):
+def getWaveFileDuration(sound):
 	"""
 	A function for calculating the duration of the wave file to be launched at regular intervals.
 	It allows to delay the announcement of the time immediately after the sound is launched.
@@ -25,12 +25,12 @@ def getWaveFileDuration (sound):
 	@rtype: int.
 	"""
 	import wave
-	f = wave.open (sound, 'r')
-	frames = f.getnframes ()
-	rate = f.getframerate ()
-	duration = frames / float (rate)
-	f.close ()
-	return int (duration)
+	f = wave.open(sound, 'r')
+	frames = f.getnframes()
+	rate = f.getframerate()
+	duration = frames / float(rate)
+	f.close()
+	return int(duration)
 
 def getAutoAnnounceInterval():
 	"""
@@ -51,7 +51,7 @@ def getAutoAnnounceInterval():
 		autoAnnounceMinutes = (0, 0)
 	return autoAnnounceMinutes
 
-class Clock (object):
+class Clock(object):
 
 	def __init__(self):
 		self._autoAnnounceClockTimer = wx.PyTimer(self._handleClockAnnouncement)
@@ -69,18 +69,18 @@ class Clock (object):
 			self.reportClock()
 
 	def reportClock(self):
-		now = datetime.now ()
+		now = datetime.now()
 		if self.quietHoursAreActive():
 			return
 		waveFile = os.path.join(paths.SOUNDS_DIR, config.conf["clockAndCalendar"]["timeReportSound"])
 		if config.conf["clockAndCalendar"]["timeReporting"]!=1:
-			nvwave.playWaveFile (waveFile)
+			nvwave.playWaveFile(waveFile)
 		if config.conf["clockAndCalendar"]["timeReporting"]!=2:
 			if config.conf["clockAndCalendar"]["timeReporting"]==0:
-				waveFileDuration = getWaveFileDuration (waveFile)
-				wx.CallLater (10 + (1000 * waveFileDuration), ui.message, GetTimeFormatEx (None, None, now, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']])))
+				waveFileDuration = getWaveFileDuration(waveFile)
+				wx.CallLater(10 + (1000 * waveFileDuration), ui.message, GetTimeFormatEx(None, None, now, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']])))
 			else:
-				ui.message(GetTimeFormatEx (None, None, now, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']])))
+				ui.message(GetTimeFormatEx(None, None, now, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']])))
 
 	def quietHoursAreActive(self):
 		if not config.conf["clockAndCalendar"]["quietHours"]:
