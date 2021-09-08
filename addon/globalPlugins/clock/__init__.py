@@ -365,8 +365,3 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	# Translators: Message presented in input help mode.
 	script_activateAlarmSettingsDialog.__doc__ = _("Display the alarm settings dialog box.")
-
-	__gestures={
-		"kb:NVDA+f12": "reportTimeAndDate",
-		"kb:NVDA+shift+f12": "clockLayerCommands",
-	}
