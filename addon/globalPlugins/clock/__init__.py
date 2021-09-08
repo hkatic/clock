@@ -113,7 +113,7 @@ def getDayAndWeekOfYear (date):
 					nWeekOfYear = (nDayOfYear / 7 ) + 1
 				else:
 					# The first day of the year doesn't corresponds to the first day of the week for the current Hidjri calendar.
-					nWeekOfYear = nDayOfYear / 7 
+					nWeekOfYear = nDayOfYear / 7
 			nWeekOfYear = int (nWeekOfYear)
 			if nWeekOfYear == 1 and nDayOfYear > 300:
 				msg = [nDayOfYear, nWeekOfYear, curYear+1]
@@ -297,7 +297,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			remainingTime = alarmHandler.run.remaining()
 			msg = _(u"Elapsed time {elapsed}, remaining time {remaining}.").format (elapsed = secondsToString(elapsedTime), remaining = secondsToString(remainingTime))
 		else:
-			msg = _("No alarm")			
+			msg = _("No alarm")
 		ui.message (msg)
 
 	@scriptHandler.script(
