@@ -18,7 +18,7 @@ from . import formats
 import nvwave
 from . import clockHandler
 from . import stopwatchHandler
-from .clockSettingsGUI import ClockSettingsPanel, AlarmSettingsPanel, ClockSettingsDialog, AlarmSettingsDialog
+from .clockSettingsGUI import ClockSettingsPanel, AlarmSettingsPanel
 import config
 import tones
 from datetime import datetime
@@ -146,9 +146,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def __init__(self):
 		super(globalPluginHandler.GlobalPlugin, self).__init__()
 		if globalVars.appArgs.secure or (hasattr (config, "isAppX") and config.isAppX): return
-		from gui import NVDASettingsDialog
-		NVDASettingsDialog.categoryClasses.append(ClockSettingsPanel)
-		NVDASettingsDialog.categoryClasses.append(AlarmSettingsPanel)
+		gui.NVDASettingsDialog.categoryClasses.append(ClockSettingsPanel)
+		gui.NVDASettingsDialog.categoryClasses.append(AlarmSettingsPanel)
 
 		self.clock = clockHandler.Clock ()
 		self.stopwatch = stopwatchHandler.Stopwatch ()
