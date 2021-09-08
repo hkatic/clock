@@ -7,7 +7,7 @@ import os
 import glob
 import addonHandler
 
-PLUGIN_DIR = os.path.join (addonHandler.getCodeAddon ().path, "globalPlugins", "clock")
+PLUGIN_DIR = os.path.join(addonHandler.getCodeAddon().path, "globalPlugins", "clock")
 SOUNDS_DIR = os.path.join(PLUGIN_DIR, "waves")
 LIST_SOUNDS = [os.path.split(path)[-1] for path in glob.glob(os.path.join(SOUNDS_DIR, '*.wav'))]
 ALARMS_DIR = os.path.join(PLUGIN_DIR, "alarms")

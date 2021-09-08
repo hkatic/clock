@@ -4,7 +4,7 @@
 
 from datetime import datetime, timedelta
 
-def convertTo24Hour (hr):
+def convertTo24Hour(hr):
 	"""
 	A function for converting a 12-hour time format to 24-hour time format.
 	This will facilitate the use of AM/PM suffixed hour formats in all locale time formats, including those that do not use this type of format.
@@ -14,9 +14,9 @@ def convertTo24Hour (hr):
 	@returns: The time format converted to 24-hour format.
 	@rtype: basestring.
 	"""
-	now = datetime.now ()
+	now = datetime.now()
 	is12h = False
-	h = hr.split (":")[0]
+	h = hr.split(":")[0]
 	if hr[-2:] in ("AM", "am", "PM", "pm"):
 		is12h = True
 		end = hr[len(h):-3]
@@ -24,9 +24,9 @@ def convertTo24Hour (hr):
 		end = hr[len(h):len(h) + 3]
 	if is12h:
 		p = hr[-2:]
-		res = str(int (h) + 12) if p in ("pm", "PM") else h
+		res = str(int(h) + 12) if p in ("pm", "PM") else h
 	else:
-		res = str(int (h) + 12) if int (now.strftime ("%H")) > 12 else h
+		res = str(int(h) + 12) if int(now.strftime("%H")) > 12 else h
 	res = res + end if res != "24" else "0" + end
 	return res
 
@@ -44,7 +44,7 @@ def parseTime(t, parse24hour=False):
 	if parse24hour:
 		res = datetime.strptime(t, f)
 	else:
-		res = datetime.strptime(convertTo24Hour (t), f)
+		res = datetime.strptime(convertTo24Hour(t), f)
 	return res
 
 def strfNowTime(parse24hour=False):
