@@ -225,9 +225,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def terminate (self):
 		super(GlobalPlugin, self).terminate()
-		if hasattr (gui, "NVDASettingsDialog"):
-			gui.NVDASettingsDialog.categoryClasses.remove(ClockSettingsPanel)
-			gui.NVDASettingsDialog.categoryClasses.remove(AlarmSettingsPanel)
+		gui.NVDASettingsDialog.categoryClasses.remove(ClockSettingsPanel)
+		gui.NVDASettingsDialog.categoryClasses.remove(AlarmSettingsPanel)
 		try:
 			if wx.version().startswith("4"):
 				self.toolsMenu.Remove(self.mainItem)
