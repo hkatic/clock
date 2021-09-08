@@ -227,15 +227,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		super(GlobalPlugin, self).terminate()
 		gui.NVDASettingsDialog.categoryClasses.remove(ClockSettingsPanel)
 		gui.NVDASettingsDialog.categoryClasses.remove(AlarmSettingsPanel)
-		try:
-			if wx.version().startswith("4"):
-				self.toolsMenu.Remove(self.mainItem)
-			else:
-				self.toolsMenu.RemoveItem(self.mainItem)
-		except:
-			pass
-		finally:
-			self.clock.terminate()
+		self.clock.terminate()
 
 	def script_reportTimeAndDate(self, gesture):
 		now = datetime.now ()
