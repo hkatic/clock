@@ -221,12 +221,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			informations = getDayAndWeekOfYear (GetDateFormatEx (None, None, None, u"yyyy/M/d"))
 			msg=_("Day {day}, week {week} of {year}, remaining days {remain}.").format(day=informations[0], week=informations[1], year=informations[2], remain = informations[3])
 		ui.message(msg)
-
 	# We remove the docstring from the original dateTime script to have only one entry in the "System status" category, it will be automatically restored if the Clock add-on is disabled or uninstalled.
-	if hasattr (globalCommands.commands.script_dateTime, "im_func"):
-		globalCommands.commands.script_dateTime.im_func.__doc__ = ""
-	else:
-		globalCommands.commands.script_dateTime.__func__.__doc__ = ""
+	globalCommands.commands.script_dateTime.__func__.__doc__ = ""
 
 	def getScript(self, gesture):
 		if not hasattr (self, "clockLayerModeActive") or (hasattr (self, "clockLayerModeActive") and not self.clockLayerModeActive):
