@@ -21,4 +21,3 @@ confspec={
 	'quietHoursEndTime': 'string(default="")',
 }
 config.conf.spec["clockAndCalendar"]=confspec
-

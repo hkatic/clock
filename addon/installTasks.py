@@ -29,5 +29,3 @@ def onInstall ():
 					# For those who have not checked the "Save configuration on exit" checkbox.
 					if not config.conf["general"]["saveConfigurationOnExit"]:
 						config.conf.save ()
-
-
