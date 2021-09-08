@@ -351,13 +351,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	script_stopLongAlarm.__doc__ = _("If an alarm is too long, allows to stop it.")
 
 	def script_activateClockSettingsDialog (self, gesture):
-		wx.CallAfter(gui.mainFrame._popupSettingsDialog, NVDASettingsDialog, ClockSettingsPanel)
+		wx.CallAfter(gui.mainFrame._popupSettingsDialog, gui.NVDASettingsDialog, ClockSettingsPanel)
 
 	# Translators: Message presented in input help mode.
 	script_activateClockSettingsDialog.__doc__ = _("Display the clock settings dialog box.")
 
 	def script_activateAlarmSettingsDialog (self, gesture):
-		wx.CallAfter(gui.mainFrame._popupSettingsDialog, NVDASettingsDialog, AlarmSettingsPanel)
+		wx.CallAfter(gui.mainFrame._popupSettingsDialog, gui.NVDASettingsDialog, AlarmSettingsPanel)
 
 	# Translators: Message presented in input help mode.
 	script_activateAlarmSettingsDialog.__doc__ = _("Display the alarm settings dialog box.")
