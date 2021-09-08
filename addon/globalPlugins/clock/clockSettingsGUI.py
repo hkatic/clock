@@ -35,28 +35,28 @@ class ClockSettingsPanel(SettingsPanel):
 		self._dateDisplayFormat = _("&Date display format:")
 
 		self._announceChoices = (
-		# Translators: This is a choice of the auto announce choices combo box.
-		_("off"),
-		# Translators: This is a choice of the auto announce choices combo box.
-		_("every 10 minutes"),
-		# Translators: This is a choice of the auto announce choices combo box.
-		_("every 15 minutes"),
-		# Translators: This is a choice of the auto announce choices combo box.
-		_("every 30 minutes"),
-		# Translators: This is a choice of the auto announce choices combo box.
-		_("every hour")
+			# Translators: This is a choice of the auto announce choices combo box.
+			_("off"),
+			# Translators: This is a choice of the auto announce choices combo box.
+			_("every 10 minutes"),
+			# Translators: This is a choice of the auto announce choices combo box.
+			_("every 15 minutes"),
+			# Translators: This is a choice of the auto announce choices combo box.
+			_("every 30 minutes"),
+			# Translators: This is a choice of the auto announce choices combo box.
+			_("every hour")
 		)
 
 		# Transla	tors: This is the label for a combo box in the Clock settings dialog.
 		self._autoAnnounce = _("&interval:")
 
 		self._timeAnnounceChoices=(
-		# Translators: This is a choice of the time report choices combo box.
-		_("speech and sound"),
-		# Translators: This is a choice of the time report choices combo box.
-		_("speech only"),
-		# Translators: This is a choice of the time report choices combo box.
-		_("sound only")
+			# Translators: This is a choice of the time report choices combo box.
+			_("speech and sound"),
+			# Translators: This is a choice of the time report choices combo box.
+			_("speech only"),
+			# Translators: This is a choice of the time report choices combo box.
+			_("sound only")
 		)
 
 		# Translators: This is the label for a combo box in the Clock settings dialog.
@@ -183,12 +183,12 @@ class AlarmSettingsPanel (SettingsPanel):
 
 	def makeSettings(self, settingsSizer):
 		self._alarmTimerChoices=(
-		# Translators: This is an item of the alarm timer choices.
-		_("Hours"),
-		# Translators: This is an item of the alarm timer choices.
-		_("Minutes"),
-		# Translators: This is an item of the alarm timer choices.
-		_("Seconds")
+			# Translators: This is an item of the alarm timer choices.
+			_("Hours"),
+			# Translators: This is an item of the alarm timer choices.
+			_("Minutes"),
+			# Translators: This is an item of the alarm timer choices.
+			_("Seconds")
 		)
 
 		# Translators: This is the label for a combo box in the Alarm settings dialog.
