@@ -363,19 +363,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gui.mainFrame.postPopup () 
 
 	def script_activateClockSettingsDialog (self, gesture):
-		gui.mainFrame.prePopup ()
-		d = ClockSettingsDialog (gui.mainFrame)
-		d.Show ()
-		gui.mainFrame.postPopup () 
+		wx.CallAfter(gui.mainFrame._popupSettingsDialog, NVDASettingsDialog, ClockSettingsPanel)
 
 	# Translators: Message presented in input help mode.
 	script_activateClockSettingsDialog.__doc__ = _("Display the clock settings dialog box.")
 
 	def script_activateAlarmSettingsDialog (self, gesture):
-		gui.mainFrame.prePopup ()
-		d =AlarmSettingsDialog (gui.mainFrame)
-		d.Show ()
-		gui.mainFrame.postPopup () 
+		wx.CallAfter(gui.mainFrame._popupSettingsDialog, NVDASettingsDialog, AlarmSettingsPanel)
 
 	# Translators: Message presented in input help mode.
 	script_activateAlarmSettingsDialog.__doc__ = _("Display the alarm settings dialog box.")
