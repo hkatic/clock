@@ -146,13 +146,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def __init__(self):
 		super(globalPluginHandler.GlobalPlugin, self).__init__()
 		if globalVars.appArgs.secure or (hasattr (config, "isAppX") and config.isAppX): return
-		# This block ensures compatibility with NVDA versions prior to 2018.2 which includes the settings panel.
-		if hasattr (gui, "NVDASettingsDialog"):
-			from gui import NVDASettingsDialog
-			NVDASettingsDialog.categoryClasses.append(ClockSettingsPanel)
-			NVDASettingsDialog.categoryClasses.append(AlarmSettingsPanel)
-		else:
-			self.createSubMenu ()
+		from gui import NVDASettingsDialog
+		NVDASettingsDialog.categoryClasses.append(ClockSettingsPanel)
+		NVDASettingsDialog.categoryClasses.append(AlarmSettingsPanel)
 
 		self.clock = clockHandler.Clock ()
 		self.stopwatch = stopwatchHandler.Stopwatch ()
