@@ -17,16 +17,10 @@ import wx
 import locale
 from . import alarmHandler
 
-# This block ensures compatibility with NVDA versions prior to 2018.2 which includes the settings panel.
-if hasattr (gui, "SettingsPanel"):
-	from gui import SettingsPanel
-else:
-	from gui.settingsDialogs import SettingsDialog as SettingsPanel
+from gui import SettingsPanel
 
 import addonHandler
 addonHandler.initTranslation()
-
-SettingsDialog = gui.SettingsDialog if hasattr (gui, "SettingsDialog") else SettingsPanel
 
 class ClockSettingsPanel(SettingsPanel):
 
