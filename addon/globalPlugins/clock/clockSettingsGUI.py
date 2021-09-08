@@ -518,7 +518,7 @@ class AlarmSettingsDialog (SettingsDialog):
 			self.showAlarmDialog (settingsSizer = settingsSizer)
 
 	def postInit (self):
-				self._alarmTimerChoice.SetFocus ()
+		self._alarmTimerChoice.SetFocus ()
 
 	def showAlarmDialogForGuiHelper (self, settingsSizer):
 		alarmSettingsGuiHelper = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)

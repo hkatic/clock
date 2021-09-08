@@ -364,7 +364,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if alarmHandler.run and alarmHandler.run.is_alive ():
 			elapsedTime = alarmHandler.run.elapsed ()
 			remainingTime = alarmHandler.run.remaining()
-			if 		scriptHandler.getLastScriptRepeatCount() > 0:
+			if scriptHandler.getLastScriptRepeatCount() > 0:
 				alarmHandler.run.cancel()
 				msg = _("Alarm cancelled")
 			else:
