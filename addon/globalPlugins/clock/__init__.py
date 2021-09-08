@@ -345,7 +345,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	script_cancelAlarm.__doc__ = _("Cancel the next alarm.")
 
 	def script_stopwatchReset(self, gesture):
-		if self.stopwatch.startTime == None and self.stopwatch.stopTime == None and self.stopwatch.running == False:
+		if self.stopwatch.startTime is None and self.stopwatch.stopTime is None and not self.stopwatch.running:
 			ui.message(_("The stopwatch is already reset to 0. Use the clock layer command followed by s to start it."))
 			return
 		self.stopwatch.reset()
