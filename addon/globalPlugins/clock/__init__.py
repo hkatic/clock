@@ -205,6 +205,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gui.NVDASettingsDialog.categoryClasses.remove(AlarmSettingsPanel)
 		self.clock.terminate()
 
+	@scriptHandler.script(
+		# Translators: Message presented in input help mode.
+		description=_("Speaks current time. If pressed twice quickly, speaks current date. If pressed thrice quickly, reports the current day, the week number, the current year and the days remaining before the end of the year."),
+		category=globalCommands.SCRCAT_SYSTEM,
+		gesture="kb:NVDA+f12"
+	)
 	def script_reportTimeAndDate(self, gesture):
 		now = datetime.now ()
 		if scriptHandler.getLastScriptRepeatCount() == 0:
@@ -216,9 +222,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			msg=_("Day {day}, week {week} of {year}, remaining days {remain}.").format(day=informations[0], week=informations[1], year=informations[2], remain = informations[3])
 		ui.message(msg)
 
-	# Translators: Message presented in input help mode.
-	script_reportTimeAndDate.__doc__=_("Speaks current time. If pressed twice quickly, speaks current date. If pressed thrice quickly, reports the current day, the week number, the current year and the days remaining before the end of the year.")
-	script_reportTimeAndDate.category = globalCommands.SCRCAT_SYSTEM
 	# We remove the docstring from the original dateTime script to have only one entry in the "System status" category, it will be automatically restored if the Clock add-on is disabled or uninstalled.
 	if hasattr (globalCommands.commands.script_dateTime, "im_func"):
 		globalCommands.commands.script_dateTime.im_func.__doc__ = ""
@@ -251,6 +254,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		tones.beep(120, 100)
 		self.finish()
 
+	@scriptHandler.script(
+		# Translators: Message presented in input help mode.
+		description=_("Clock and calendar layer commands. After pressing this keystroke, press H for additional help."),
+		gesture="kb:NVDA+shift+f12"
+	)
 	def script_clockLayerCommands(self, gesture):
 		if self.clockLayerModeActive:
 			self.script_error(gesture)
@@ -259,9 +267,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.bindGesture ("kb:%s" % gesture[0], gesture[1].__name__[7:])
 		self.clockLayerModeActive=True
 		tones.beep(100, 10)
-
-	# Translators: Message presented in input help mode.
-	script_clockLayerCommands.__doc__=_("Clock and calendar layer commands. After pressing this keystroke, press H for additional help.")
 
 	def script_stopwatchRun(self, gesture):
 		if not self.stopwatch.running and self.stopwatch.startTime:
