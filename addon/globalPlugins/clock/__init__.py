@@ -200,29 +200,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			("h", self.script_getHelp)
 		)
 
-	def createSubMenu (self):
-		self.toolsMenu = gui.mainFrame.sysTrayIcon.toolsMenu
-		clockMenu = wx.Menu ()
-		self.mainItem = self.toolsMenu.AppendSubMenu (clockMenu,
-		# Translators: Item in the tools menu for the Clock Addon settings.
-		_("Clock se&ttings..."),
-		# Translators: The tooltyp text for the clock settings submenu.
-		_("Clock and calendar setup"))
-
-		clockSetupChoice = clockMenu.Append (wx.ID_ANY,
-		# Translators: The name of the first item in the Clock settings submenu.
-		_("Clock setup"),
-		# Translators: The tooltyp text for the first item in the Clock add-on submenu.
-		_("Clock setup for times and dates"))
-		gui.mainFrame.sysTrayIcon.Bind (wx.EVT_MENU, self.onClockSettingsDialog, clockSetupChoice)
-
-		alarmSettings = clockMenu.Append (wx.ID_ANY,
-		# Translators: The name of the second item in the Clock settings submenu.
-		_("Alarm settin&gs"),
-		# Translators: The tooltyp text for the second item in the Clock add-on submenu.
-		_("Allows you to schedule an alarm"))
-		gui.mainFrame.sysTrayIcon.Bind (wx.EVT_MENU, self.onAlarmSettingsDialog, alarmSettings)
-
 	def terminate (self):
 		super(GlobalPlugin, self).terminate()
 		gui.NVDASettingsDialog.categoryClasses.remove(ClockSettingsPanel)
