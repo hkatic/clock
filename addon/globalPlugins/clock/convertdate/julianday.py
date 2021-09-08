@@ -1,20 +1,22 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 # This file is part of convertdate.
 # http://github.com/fitnr/convertdate
-
 # Licensed under the MIT license:
 # http://opensource.org/licenses/MIT
 # Copyright (c) 2016, fitnr <fitnr@fakeisthenewreal>
+"""
+The `Julian day <https://en.wikipedia.org/wiki/Julian_day>`__
+is a continuous count of days since the beginning of the Julian era on January 1, 4713 BC.
+"""
 from datetime import datetime
-from . import gregorian
-from . import julian
+
 from pytz import utc
+
+from . import gregorian, julian
 
 
 def to_datetime(jdc):
-    '''Return a datetime for the input floating point Julian Day Count'''
+    '''Return a datetime for the input floating point julian day count'''
     year, month, day = gregorian.from_jd(jdc)
 
     # in jdc: 0.0 = noon, 0.5 = midnight
@@ -38,6 +40,7 @@ def to_datetime(jdc):
 
 
 def from_datetime(dt):
+    '''Convert from ``datetime`` to julian day count.'''
     # take account of offset (if there isn't one, act like it's utc)
     try:
         dt = dt + dt.utcoffset()
@@ -47,25 +50,29 @@ def from_datetime(dt):
 
     jdc = gregorian.to_jd(dt.year, dt.month, dt.day)
 
-    hfrac = dt.hour / 24.
-    mfrac = round(dt.minute / (24. * 60), 5)
-    sfrac = round(dt.second / (24. * 60 * 60), 5)
-    msfrac = dt.microsecond / (24. * 60 * 60 * 1000)
+    hfrac = dt.hour / 24.0
+    mfrac = round(dt.minute / (24.0 * 60), 5)
+    sfrac = round(dt.second / (24.0 * 60 * 60), 5)
+    msfrac = dt.microsecond / (24.0 * 60 * 60 * 1000)
 
     return jdc + hfrac + mfrac + sfrac + msfrac
 
 
 def to_gregorian(jdc):
+    '''Convert from julian day count to Gregorian date.'''
     return gregorian.from_jd(jdc)
 
 
 def from_gregorian(year, month, day):
+    '''Convert from Gregorian ``year``, ``month`` and ``day`` to julian day count.'''
     return gregorian.to_jd(year, month, day)
 
 
 def to_julian(jdc):
+    '''Convert from julian day count to Julian date.'''
     return julian.from_jd(jdc)
 
 
 def from_julian(year, month, day):
+    '''Convert from Julian ``year``, ``month`` and ``day`` to julian day count.'''
     return julian.to_jd(year, month, day)

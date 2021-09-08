@@ -1,19 +1,38 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 # This file is part of convertdate.
 # http:#github.com/fitnr/convertdate
-
 # Licensed under the MIT license:
 # http:#opensource.org/licenses/MIT
 # Copyright (c) 2017, fitnr <fitnr@fakeisthenewreal>
-from .utils import floor, jwday, monthcalendarhelper
+"""
+The `Coptic calendar <https://en.wikipedia.org/wiki/Coptic_calendar>`__,
+also called the Alexandrian calendar, is a liturgical calendar used by the
+Coptic Orthodox Church and some communities in Egypt. It is a reformed version
+of the ancient Egyptian calendar.
+
+It consists of twelve months of 30 days, followed by a "little month" of five days
+(six in leap years).
+"""
 from . import gregorian
+from .utils import floor, jwday, monthcalendarhelper
 
 EPOCH = 1825029.5
-MONTH_NAMES = ["Thout", "Paopi", "Hathor", "Koiak", "Tobi", "Meshir",
-               "Paremhat", "Paremoude", "Pashons", "Paoni", "Epip", "Mesori", "Pi Kogi Enavot"]
-DAY_NAMES = ["Tkyriaka", "Pesnau", "Pshoment", "Peftoou", "Ptiou", "Psoou", "Psabbaton"]
+MONTHS = [
+    "Thout",
+    "Paopi",
+    "Hathor",
+    "Koiak",
+    "Tobi",
+    "Meshir",
+    "Paremhat",
+    "Paremoude",
+    "Pashons",
+    "Paoni",
+    "Epip",
+    "Mesori",
+    "Pi Kogi Enavot",
+]
+WEEKDAYS = ["Tkyriaka", "Pesnau", "Pshoment", "Peftoou", "Ptiou", "Psoou", "Psabbaton"]
 
 
 def is_leap(year):
@@ -35,7 +54,7 @@ def from_jd(jdc):
 
     month = floor(yday / 30) + 1
     day = yday - (month - 1) * 30 + 1
-    return year, month, day
+    return int(year), int(month), int(day)
 
 
 def to_gregorian(year, month, day):
@@ -50,16 +69,22 @@ def month_length(year, month):
     if month <= 12:
         return 30
 
-    elif month == 13:
+    if month == 13:
         if is_leap(year):
             return 6
-        else:
-            return 5
-    else:
-        raise ValueError("Invalid month")
+
+        return 5
+
+    raise ValueError("Invalid month")
 
 
 def monthcalendar(year, month):
     start_weekday = jwday(to_jd(year, month, 1))
     monthlen = month_length(year, month)
     return monthcalendarhelper(start_weekday, monthlen)
+
+
+def format(year, month, day):
+    """Convert a Coptic date into a string with the format DD MONTH YYYY."""
+    # pylint: disable=redefined-builtin
+    return "{0:d} {1:} {2:d}".format(day, MONTHS[month - 1], year)

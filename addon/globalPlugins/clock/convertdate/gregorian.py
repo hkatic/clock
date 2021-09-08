@@ -1,14 +1,23 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 # This file is part of convertdate.
 # http://github.com/fitnr/convertdate
-
 # Licensed under the MIT license:
 # http://opensource.org/licenses/MIT
 # Copyright (c) 2016, fitnr <fitnr@fakeisthenewreal>
+"""
+The Gregorian calendar was introduced by Pope Gregory XII in October 1582. It reforms
+the Julian calendar by adjusting leap year rules to reduce the drift versus solar
+year.
+
+The Gregorian calendar, like the Julian, does not include a year 0. However, for dates before 1,
+this module uses the astronomical convention of including a year 0 to simplify
+mathematical comparisons across epochs. To present a date in the standard convention,
+use the :meth:`gregorian.format` function.
+"""
 from calendar import isleap, monthrange
-from .utils import floor, monthcalendarhelper, jwday
+from datetime import date
+
+from .utils import floor, jwday, monthcalendarhelper
 
 EPOCH = 1721425.5
 
@@ -34,7 +43,7 @@ def legal_date(year, month, day):
     else:
         daysinmonth = 30 if month in HAVE_30_DAYS else 31
 
-    if not (0 < day <= daysinmonth):
+    if not 0 < day <= daysinmonth:
         raise ValueError("Month {} doesn't have a day {}".format(month, day))
 
     return True
@@ -43,7 +52,6 @@ def legal_date(year, month, day):
 def to_jd2(year, month, day):
     '''Gregorian to Julian Day Count for years between 1801-2099'''
     # http://quasar.as.utexas.edu/BillInfo/JulianDatesG.html
-
     legal_date(year, month, day)
 
     if month <= 2:
@@ -59,6 +67,7 @@ def to_jd2(year, month, day):
 
 
 def to_jd(year, month, day):
+    '''Convert gregorian date to julian day count.'''
     legal_date(year, month, day)
 
     if month <= 2:
@@ -69,11 +78,13 @@ def to_jd(year, month, day):
         leap_adj = -2
 
     return (
-        EPOCH - 1 + (YEAR_DAYS * (year - 1)) +
-        floor((year - 1) / LEAP_CYCLE_YEARS) +
-        (-floor((year - 1) / LEAP_SUPPRESSION_YEARS)) +
-        floor((year - 1) / INTERCALATION_CYCLE_YEARS) +
-        floor((((367 * month) - 362) / 12) + leap_adj + day)
+        EPOCH
+        - 1
+        + (YEAR_DAYS * (year - 1))
+        + floor((year - 1) / LEAP_CYCLE_YEARS)
+        + (-floor((year - 1) / LEAP_SUPPRESSION_YEARS))
+        + floor((year - 1) / INTERCALATION_CYCLE_YEARS)
+        + floor((((367 * month) - 362) / 12) + leap_adj + day)
     )
 
 
@@ -92,11 +103,7 @@ def from_jd(jd):
     dquad = dcent % LEAP_CYCLE_DAYS
 
     yindex = floor(dquad / YEAR_DAYS)
-    year = (
-        quadricent * INTERCALATION_CYCLE_YEARS +
-        cent * LEAP_SUPPRESSION_YEARS +
-        quad * LEAP_CYCLE_YEARS + yindex
-    )
+    year = quadricent * INTERCALATION_CYCLE_YEARS + cent * LEAP_SUPPRESSION_YEARS + quad * LEAP_CYCLE_YEARS + yindex
 
     if not (cent == 4 or yindex == 4):
         year += 1
@@ -119,11 +126,29 @@ def from_jd(jd):
 
 
 def month_length(year, month):
+    '''Calculate the length of a month in the Gregorian calendar'''
     return monthrange(year, month)[1]
 
 
 def monthcalendar(year, month):
+    '''
+    Return a list of lists that describe the calender for one month. Each inner
+    list have 7 items, one for each weekday, starting with Sunday. These items
+    are either ``None`` or an integer, counting from 1 to the number of days in
+    the month.
+    For Gregorian, this is very similiar to the built-in :meth:``calendar.monthcalendar``.
+    '''
     start_weekday = jwday(to_jd(year, month, 1))
     monthlen = month_length(year, month)
 
     return monthcalendarhelper(start_weekday, monthlen)
+
+
+def format(year, month, day, format_string="%-d %B %y"):
+    # pylint: disable=redefined-builtin
+    epoch = ''
+    if year <= 0:
+        year = (year - 1) * -1
+        epoch = ' BCE'
+    d = date(year, month, day)
+    return d.strftime(format_string) + epoch

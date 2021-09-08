@@ -1,16 +1,15 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 # This file is part of convertdate.
 # http://github.com/fitnr/convertdate
-
 # Licensed under the MIT license:
 # http://opensource.org/licenses/MIT
 # Copyright (c) 2016, fitnr <fitnr@fakeisthenewreal>
-from math import trunc
 from calendar import isleap
-from .utils import jwday, n_weeks
+from datetime import date
+from math import trunc
+
 from . import gregorian, ordinal
+from .utils import jwday, n_weeks
 
 MON = 0
 TUE = 1
@@ -28,23 +27,7 @@ def to_jd(year, week, day):
 
 def from_jd(jd):
     '''Return tuple of ISO (year, week, day) for Julian day'''
-    year = gregorian.from_jd(jd)[0]
-    day = jwday(jd) + 1
-
-    dayofyear = ordinal.from_jd(jd)[1]
-    week = trunc((dayofyear - day + 10) / 7)
-
-    # Reset year
-    if week < 1:
-        week = weeks_per_year(year - 1)
-        year = year - 1
-
-    # Check that year actually has 53 weeks
-    elif week == 53 and weeks_per_year(year) != 53:
-        week = 1
-        year = year + 1
-
-    return year, week, day
+    return from_gregorian(*gregorian.from_jd(jd))
 
 
 def weeks_per_year(year):
@@ -54,12 +37,12 @@ def weeks_per_year(year):
 
     if jan1 == THU or (jan1 == WED and isleap(year)):
         return 53
-    else:
-        return 52
+
+    return 52
 
 
 def from_gregorian(year, month, day):
-    return from_jd(gregorian.to_jd(year, month, day))
+    return date(year, month, day).isocalendar()
 
 
 def to_gregorian(year, week, day):
@@ -67,4 +50,5 @@ def to_gregorian(year, week, day):
 
 
 def format(year, week, day):
+    # pylint: disable=redefined-builtin
     return "{}-W{:02}-{}".format(year, week, day)

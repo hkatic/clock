@@ -1,18 +1,13 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 # This file is part of convertdate.
 # http://github.com/fitnr/convertdate
-
 # Licensed under the MIT license:
 # http://opensource.org/licenses/MIT
 # Copyright (c) 2016, fitnr <fitnr@fakeisthenewreal>
-from . import gregorian
-from . import julianday
-from . import julian
+from . import gregorian, julian, julianday
 
 
-class DayCount(object):
+class DayCount:
 
     '''A day count converter for the given epoch (in terms of Julian Day Count)'''
 
@@ -20,6 +15,7 @@ class DayCount(object):
         self.epoch = epoch
 
     def to_gregorian(self, dc):
+        '''From day count to Gregorian (year, month, day) tuple'''
         return gregorian.from_jd(self.to_jd(dc))
 
     def from_gregorian(self, year, month, day):
@@ -35,10 +31,11 @@ class DayCount(object):
         return self.from_jd(julian.to_jd(year, month, day))
 
     def to_julian(self, dc):
+        '''From day count to Julian (year, month, day) tuple'''
         return julian.from_jd(self.to_jd(dc))
 
     def to_datetime(self, dc):
         return julianday.to_datetime(self.to_jd(dc))
 
-    def from_datetime(self, dt):
-        return self.from_jd(julianday.from_datetime(dt))
+    def from_datetime(self, date):
+        return self.from_jd(julianday.from_datetime(date))
