@@ -117,11 +117,11 @@ class ClockSettingsPanel(SettingsPanel):
 		self._quietEndTimeText.Enabled = self._quietHoursCheckBox.GetValue()
 
 	def setValues(self):
-		for index, (fmt) in enumerate (formats.timeFormats):
+		for index, fmt in enumerate(formats.timeFormats):
 			if index == config.conf["clockAndCalendar"]["timeDisplayFormat"]:
 				self._timeDisplayFormatChoice.SetSelection(index)
 				break
-		for index, (fmt) in enumerate (formats.dateFormats):
+		for index, fmt in enumerate(formats.dateFormats):
 			if index == config.conf["clockAndCalendar"]["dateDisplayFormat"]:
 				self._dateDisplayFormatChoice.SetSelection(index)
 				break
