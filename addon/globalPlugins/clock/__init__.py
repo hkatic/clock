@@ -26,7 +26,7 @@ import wx
 import globalCommands
 import os
 import languageHandler
-sys.path.append(os.path.join (os.path.abspath(os.path.dirname(__file__))))
+sys.path.append(os.path.join(os.path.abspath(os.path.dirname(__file__))))
 from . import ephem
 from . import pytz
 from . import convertdate
@@ -34,7 +34,7 @@ sys.path.remove(sys.path[-1])
 import time
 from .formats import GetTimeFormatEx, GetDateFormatEx
 from . import configuration
-if hasattr (configobj, "validate"):
+if hasattr(configobj, "validate"):
 	from configobj.validate import VdtTypeError
 else:
 	from validate import VdtTipeError
@@ -56,14 +56,14 @@ def secondsToString(seconds):
 	if hr > 0:
 		if hr > 23:
 			hr = 24* (hr / 24) + (hr % 24)
-		text += _(u"{hours} hours, ").format (hours = str(hr))
+		text += _(u"{hours} hours, ").format(hours = str(hr))
 	if tm.tm_min:
-		text += _(u"{minutes} minutes, ").format (minutes = tm.tm_min)
+		text += _(u"{minutes} minutes, ").format(minutes = tm.tm_min)
 	if tm.tm_sec:
-		text += _(u"{seconds} seconds").format (seconds = tm.tm_sec)
+		text += _(u"{seconds} seconds").format(seconds = tm.tm_sec)
 	return _(u"0 seconds") if not text else text
 
-def getDayAndWeekOfYear (date):
+def getDayAndWeekOfYear(date):
 	"""
 	A function to calculate the current day of the year, as well as the actual number of weeks, for a Gregorian year and also some non-Gregorian years.
 	@param date: The current date that will allow to make the calculation.
@@ -96,8 +96,8 @@ def getDayAndWeekOfYear (date):
 			# The number of weeks must take into account the day of the week corresponding to the first day of the year.
 			ndw = 6 if curYear == dt1.from_gregorian(gregYear, gregMonth, gregDay)[0] else 5
 			nDayOfYear = 0
-			for month in range (1, curMonth):
-				nDayOfYear += dt.month_length (curYear, month)
+			for month in range(1, curMonth):
+				nDayOfYear += dt.month_length(curYear, month)
 			nDayOfYear += curDay
 			# Calculation of the weeks number.
 			if nDayOfYear % 7 == 0:
@@ -106,15 +106,15 @@ def getDayAndWeekOfYear (date):
 					nWeekOfYear = nDayOfYear / 7
 				else:
 					# The first day of the year doesn't corresponds to the first day of the week for the current Hidjri calendar.
-					nWeekOfYear = (nDayOfYear / 7 ) - 1
+					nWeekOfYear = (nDayOfYear / 7) - 1
 			else:
 				if dt.to_jd(curYear, 1, 1) == ndw:
 					# The first day of the year corresponds to the first day of the week for the current Hidjri calendar.
-					nWeekOfYear = (nDayOfYear / 7 ) + 1
+					nWeekOfYear = (nDayOfYear / 7) + 1
 				else:
 					# The first day of the year doesn't corresponds to the first day of the week for the current Hidjri calendar.
 					nWeekOfYear = nDayOfYear / 7
-			nWeekOfYear = int (nWeekOfYear)
+			nWeekOfYear = int(nWeekOfYear)
 			if nWeekOfYear == 1 and nDayOfYear > 300:
 				msg = [nDayOfYear, nWeekOfYear, curYear+1]
 			else:
@@ -126,12 +126,12 @@ def getDayAndWeekOfYear (date):
 		total = convertdate.gregorian.YEAR_DAYS
 		if convertdate.gregorian.isleap(gregYear):
 			total+=1
-		nDayOfYear = int (now.timetuple()[7])
+		nDayOfYear = int(now.timetuple()[7])
 	else:
 		# It's a Hijri year.
 		total = 0
-		for month in range (1, 13):
-			total += dt.month_length (curYear, month)
+		for month in range(1, 13):
+			total += dt.month_length(curYear, month)
 	daysRemaining =total - nDayOfYear
 	msg.append(daysRemaining)
 	return tuple(msg)
@@ -149,10 +149,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			return
 		gui.NVDASettingsDialog.categoryClasses.append(ClockSettingsPanel)
 		gui.NVDASettingsDialog.categoryClasses.append(AlarmSettingsPanel)
-
-		self.clock = clockHandler.Clock ()
-		self.stopwatch = stopwatchHandler.Stopwatch ()
-
+		self.clock = clockHandler.Clock()
+		self.stopwatch = stopwatchHandler.Stopwatch()
 		try:
 			config.conf['clockAndCalendar']['alarmTime']
 		except VdtTypeError:
@@ -160,8 +158,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			conf.profiles[0]['alarmTime'] = 0.0
 			# We save the configuration, in case the user would not have checked the "Save configuration on exit" checkbox in General settings.
 			if not config.conf['general']['saveConfigurationOnExit']:
-				config.conf.save ()
-
+				config.conf.save()
 		try:
 			config.conf['clockAndCalendar']['timeDisplayFormat']
 		except VdtTypeError:
@@ -169,8 +166,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			conf.profiles[0]['timeDisplayFormat'] = 0
 			# We save the configuration, in case the user would not have checked the "Save configuration on exit" checkbox in General settings.
 			if not config.conf['general']['saveConfigurationOnExit']:
-				config.conf.save ()
-
+				config.conf.save()
 		try:
 			config.conf['clockAndCalendar']['dateDisplayFormat']
 		except VdtTypeError:
@@ -178,29 +174,27 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			conf.profiles[0]['dateDisplayFormat'] = 1
 			# We save the configuration, in case the user would not have checked the "Save configuration on exit" checkbox in General settings.
 			if not config.conf['general']['saveConfigurationOnExit']:
-				config.conf.save ()
-
+				config.conf.save()
 		if not config.conf['clockAndCalendar']['alarmSound'] in paths.LIST_ALARMS:
 			alarmSound = paths.LIST_ALARMS[0]
 		else:
 			alarmSound = config.conf['clockAndCalendar']['alarmSound']
 		if config.conf['clockAndCalendar']['alarmSavedTime'] != 0.0:
-			wakeUp = config.conf['clockAndCalendar']['alarmTime'] - (time.time () - config.conf['clockAndCalendar']['alarmSavedTime'])
-			alarmHandler.run = alarmHandler.AlarmTimer (wakeUp, alarmHandler.runAlarm, [os.path.join (paths.ALARMS_DIR, alarmSound)])
-			alarmHandler.run.start ()
-
+			wakeUp = config.conf['clockAndCalendar']['alarmTime'] - (time.time() - config.conf['clockAndCalendar']['alarmSavedTime'])
+			alarmHandler.run = alarmHandler.AlarmTimer(wakeUp, alarmHandler.runAlarm, [os.path.join(paths.ALARMS_DIR, alarmSound)])
+			alarmHandler.run.start()
 		# Clock layer gestures.
 		self._clockLayerGestures = (
 			("s", self.script_stopwatchRun),
 			("r", self.script_stopwatchReset),
-			("a", self.script_alarmInfo ),
+			("a", self.script_alarmInfo),
 			("c", self.script_cancelAlarm),
 			("space", self.script_timeDisplay),
 			("p", self.script_stopLongAlarm),
 			("h", self.script_getHelp)
 		)
 
-	def terminate (self):
+	def terminate(self):
 		super(GlobalPlugin, self).terminate()
 		gui.NVDASettingsDialog.categoryClasses.remove(ClockSettingsPanel)
 		gui.NVDASettingsDialog.categoryClasses.remove(AlarmSettingsPanel)
@@ -213,20 +207,20 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gesture="kb:NVDA+f12"
 	)
 	def script_reportTimeAndDate(self, gesture):
-		now = datetime.now ()
+		now = datetime.now()
 		if scriptHandler.getLastScriptRepeatCount() == 0:
-			msg=GetTimeFormatEx (None, None, now, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']]))
+			msg=GetTimeFormatEx(None, None, now, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']]))
 		elif scriptHandler.getLastScriptRepeatCount() == 1:
-			msg=GetDateFormatEx (None, None, None, formats.dateFormats[config.conf['clockAndCalendar']['dateDisplayFormat']])
+			msg=GetDateFormatEx(None, None, None, formats.dateFormats[config.conf['clockAndCalendar']['dateDisplayFormat']])
 		else:
-			informations = getDayAndWeekOfYear (GetDateFormatEx (None, None, None, u"yyyy/M/d"))
+			informations = getDayAndWeekOfYear(GetDateFormatEx(None, None, None, u"yyyy/M/d"))
 			msg=_("Day {day}, week {week} of {year}, remaining days {remain}.").format(day=informations[0], week=informations[1], year=informations[2], remain = informations[3])
 		ui.message(msg)
 	# We remove the docstring from the original dateTime script to have only one entry in the "System status" category, it will be automatically restored if the Clock add-on is disabled or uninstalled.
 	globalCommands.commands.script_dateTime.__func__.__doc__ = ""
 
 	def getScript(self, gesture):
-		if not hasattr (self, "clockLayerModeActive") or (hasattr (self, "clockLayerModeActive") and not self.clockLayerModeActive):
+		if not hasattr(self, "clockLayerModeActive") or (hasattr(self, "clockLayerModeActive") and not self.clockLayerModeActive):
 			return globalPluginHandler.GlobalPlugin.getScript(self, gesture)
 		script=globalPluginHandler.GlobalPlugin.getScript(self, gesture)
 		if not script:
@@ -234,13 +228,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.layeredScriptToRun = next((x[1] for x in self._clockLayerGestures if x[0] ==gesture.mainKeyName), None)
 		return self.runAndFinish
 
-	def runAndFinish (self, gesture):
+	def runAndFinish(self, gesture):
 		if self.layeredScriptToRun is not None:
-			self.layeredScriptToRun (gesture)
+			self.layeredScriptToRun(gesture)
 		else:
-			ui.message ("Can't find this layered script")
+			ui.message("Can't find this layered script")
 		# We call the finish method in all cases.
-		self.finish ()
+		self.finish()
 
 	def finish(self):
 		self.clockLayerModeActive=False
@@ -261,7 +255,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.script_error(gesture)
 			return
 		for gesture in self._clockLayerGestures:
-			self.bindGesture ("kb:%s" % gesture[0], gesture[1].__name__[7:])
+			self.bindGesture("kb:%s" % gesture[0], gesture[1].__name__[7:])
 		self.clockLayerModeActive=True
 		tones.beep(100, 10)
 
@@ -279,7 +273,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			ui.message(_("Running."))
 		else:
 			self.stopwatch.stop()
-			ui.message(_(u"{0} stopped.").format (secondsToString(self.stopwatch.elapsedTime())))
+			ui.message(_(u"{0} stopped.").format(secondsToString(self.stopwatch.elapsedTime())))
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
@@ -292,26 +286,26 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# Translators: Message presented in input help mode.
 		description=_("Gives the remaining and elapsed time before the next alarm.")
 	)
-	def script_alarmInfo (self, gesture):
-		if alarmHandler.run and alarmHandler.run.is_alive ():
+	def script_alarmInfo(self, gesture):
+		if alarmHandler.run and alarmHandler.run.is_alive():
 			elapsedTime = alarmHandler.run.elapsed()
 			remainingTime = alarmHandler.run.remaining()
-			msg = _(u"Elapsed time {elapsed}, remaining time {remaining}.").format (elapsed = secondsToString(elapsedTime), remaining = secondsToString(remainingTime))
+			msg = _(u"Elapsed time {elapsed}, remaining time {remaining}.").format(elapsed = secondsToString(elapsedTime), remaining = secondsToString(remainingTime))
 		else:
 			msg = _("No alarm")
-		ui.message (msg)
+		ui.message(msg)
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
 		description=_("Cancel the next alarm.")
 	)
-	def script_cancelAlarm (self, gesture):
-		if alarmHandler.run and alarmHandler.run.is_alive ():
+	def script_cancelAlarm(self, gesture):
+		if alarmHandler.run and alarmHandler.run.is_alive():
 			alarmHandler.run.cancel()
 			msg = _("Alarm cancelled")
 		else:
 			msg = _("No alarm")
-		ui.message (msg)
+		ui.message(msg)
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
@@ -329,46 +323,46 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		description=_("Lists available commands in clock command layer.")
 	)
 	def script_getHelp(self, gesture):
-		ui.message("\n".join (x[0] + " : " + x[1].__doc__ if x[0] != "space" else skipTranslation.translate(x[0]) + " : " + x[1].__doc__ for x in self._clockLayerGestures))
+		ui.message("\n".join(x[0] + " : " + x[1].__doc__ if x[0] != "space" else skipTranslation.translate(x[0]) + " : " + x[1].__doc__ for x in self._clockLayerGestures))
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
 		description=_("Allows to check the next alarm. If pressed twice, cancels it.")
 	)
-	def script_checkOrCancelAlarm (self, gestures):
-		if alarmHandler.run and alarmHandler.run.is_alive ():
-			elapsedTime = alarmHandler.run.elapsed ()
+	def script_checkOrCancelAlarm(self, gestures):
+		if alarmHandler.run and alarmHandler.run.is_alive():
+			elapsedTime = alarmHandler.run.elapsed()
 			remainingTime = alarmHandler.run.remaining()
 			if scriptHandler.getLastScriptRepeatCount() > 0:
 				alarmHandler.run.cancel()
 				msg = _("Alarm cancelled")
 			else:
-				msg = _(u"Elapsed time {elapsed}, remaining time {remaining}.").format (elapsed = secondsToString(elapsedTime), remaining = secondsToString(remainingTime))
+				msg = _(u"Elapsed time {elapsed}, remaining time {remaining}.").format(elapsed = secondsToString(elapsedTime), remaining = secondsToString(remainingTime))
 		else:
 			msg = _("No alarm")
-		ui.message (msg)
+		ui.message(msg)
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
 		description=_("If an alarm is too long, allows to stop it.")
 	)
-	def script_stopLongAlarm (self, gesture):
+	def script_stopLongAlarm(self, gesture):
 		msg = _("No sound is launched.")
 		if nvwave.fileWavePlayer is not None:
-			nvwave.fileWavePlayer.stop ()
+			nvwave.fileWavePlayer.stop()
 			msg = _("Sound stopped")
-		ui.message (msg)
+		ui.message(msg)
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
 		description=_("Display the clock settings dialog box.")
 	)
-	def script_activateClockSettingsDialog (self, gesture):
+	def script_activateClockSettingsDialog(self, gesture):
 		wx.CallAfter(gui.mainFrame._popupSettingsDialog, gui.NVDASettingsDialog, ClockSettingsPanel)
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
 		description=_("Display the alarm settings dialog box.")
 	)
-	def script_activateAlarmSettingsDialog (self, gesture):
+	def script_activateAlarmSettingsDialog(self, gesture):
 		wx.CallAfter(gui.mainFrame._popupSettingsDialog, gui.NVDASettingsDialog, AlarmSettingsPanel)
