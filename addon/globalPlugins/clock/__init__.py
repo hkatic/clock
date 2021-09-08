@@ -264,6 +264,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.clockLayerModeActive=True
 		tones.beep(100, 10)
 
+	@scriptHandler.script(
+		# Translators: Message presented in input help mode.
+		description=_("Starts, resets or stops the stopwatch.")
+	)
 	def script_stopwatchRun(self, gesture):
 		if not self.stopwatch.running and self.stopwatch.startTime:
 			self.stopwatch.reset()
@@ -276,15 +280,17 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.stopwatch.stop()
 			ui.message(_(u"{0} stopped.").format (secondsToString(self.stopwatch.elapsedTime())))
 
-	# Translators: Message presented in input help mode.
-	script_stopwatchRun.__doc__=_("Starts, resets or stops the stopwatch.")
-
+	@scriptHandler.script(
+		# Translators: Message presented in input help mode.
+		description=_("Speaks current stopwatch or count-down timer.")
+	)
 	def script_timeDisplay(self, gesture):
 		ui.message(secondsToString(self.stopwatch.elapsedTime()))
 
-	# Translators: Message presented in input help mode.
-	script_timeDisplay.__doc__=_("Speaks current stopwatch or count-down timer.")
-
+	@scriptHandler.script(
+		# Translators: Message presented in input help mode.
+		description=_("Gives the remaining and elapsed time before the next alarm.")
+	)
 	def script_alarmInfo (self, gesture):
 		if alarmHandler.run and alarmHandler.run.is_alive ():
 			elapsedTime = alarmHandler.run.elapsed()
@@ -294,9 +300,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			msg = _("No alarm")			
 		ui.message (msg)
 
-	# Translators: Message presented in input help mode.
-	script_alarmInfo.__doc__=_("Gives the remaining and elapsed time before the next alarm.")
-
+	@scriptHandler.script(
+		# Translators: Message presented in input help mode.
+		description=_("Cancel the next alarm.")
+	)
 	def script_cancelAlarm (self, gesture):
 		if alarmHandler.run and alarmHandler.run.is_alive ():
 			alarmHandler.run.cancel()
@@ -305,9 +312,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			msg = _("No alarm")
 		ui.message (msg)
 
-	# Translators: Message presented in input help mode.
-	script_cancelAlarm.__doc__ = _("Cancel the next alarm.")
-
+	@scriptHandler.script(
+		# Translators: Message presented in input help mode.
+		description=_("Resets stopwatch to 0 without restarting it.")
+	)
 	def script_stopwatchReset(self, gesture):
 		if self.stopwatch.startTime is None and self.stopwatch.stopTime is None and not self.stopwatch.running:
 			ui.message(_("The stopwatch is already reset to 0. Use the clock layer command followed by s to start it."))
@@ -315,15 +323,17 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.stopwatch.reset()
 		ui.message(_("Stopwatch reset."))
 
-	# Translators: Message presented in input help mode.
-	script_stopwatchReset.__doc__=_("Resets stopwatch to 0 without restarting it.")
-
+	@scriptHandler.script(
+		# Translators: Message presented in input help mode.
+		description=_("Lists available commands in clock command layer.")
+	)
 	def script_getHelp(self, gesture):
 		ui.message("\n".join (x[0] + " : " + x[1].__doc__ if x[0] != "space" else skipTranslation.translate(x[0]) + " : " + x[1].__doc__ for x in self._clockLayerGestures))
 
-	# Translators: Message presented in input help mode.
-	script_getHelp.__doc__=_("Lists available commands in clock command layer.")
-
+	@scriptHandler.script(
+		# Translators: Message presented in input help mode.
+		description=_("Allows to check the next alarm. If pressed twice, cancels it.")
+	)
 	def script_checkOrCancelAlarm (self, gestures):
 		if alarmHandler.run and alarmHandler.run.is_alive ():
 			elapsedTime = alarmHandler.run.elapsed ()
@@ -337,9 +347,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			msg = _("No alarm")
 		ui.message (msg)
 
-	# Translators: Message presented in input help mode.
-	script_checkOrCancelAlarm.__doc__ = _("Allows to check the next alarm. If pressed twice, cancels it.")
-
+	@scriptHandler.script(
+		# Translators: Message presented in input help mode.
+		description=_("If an alarm is too long, allows to stop it.")
+	)
 	def script_stopLongAlarm (self, gesture):
 		msg = _("No sound is launched.")
 		if nvwave.fileWavePlayer is not None:
@@ -347,17 +358,16 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			msg = _("Sound stopped")
 		ui.message (msg)
 
-	# Translators: Message presented in input help mode.
-	script_stopLongAlarm.__doc__ = _("If an alarm is too long, allows to stop it.")
-
+	@scriptHandler.script(
+		# Translators: Message presented in input help mode.
+		description=_("Display the clock settings dialog box.")
+	)
 	def script_activateClockSettingsDialog (self, gesture):
 		wx.CallAfter(gui.mainFrame._popupSettingsDialog, gui.NVDASettingsDialog, ClockSettingsPanel)
 
-	# Translators: Message presented in input help mode.
-	script_activateClockSettingsDialog.__doc__ = _("Display the clock settings dialog box.")
-
+	@scriptHandler.script(
+		# Translators: Message presented in input help mode.
+		description=_("Display the alarm settings dialog box.")
+	)
 	def script_activateAlarmSettingsDialog (self, gesture):
 		wx.CallAfter(gui.mainFrame._popupSettingsDialog, gui.NVDASettingsDialog, AlarmSettingsPanel)
-
-	# Translators: Message presented in input help mode.
-	script_activateAlarmSettingsDialog.__doc__ = _("Display the alarm settings dialog box.")
