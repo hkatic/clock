@@ -350,18 +350,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	# Translators: Message presented in input help mode.
 	script_stopLongAlarm.__doc__ = _("If an alarm is too long, allows to stop it.")
 
-	def onClockSettingsDialog (self, evt):
-		gui.mainFrame.prePopup ()
-		d = ClockSettingsDialog (gui.mainFrame)
-		d.Show ()
-		gui.mainFrame.postPopup () 
-
-	def onAlarmSettingsDialog (self, evt):
-		gui.mainFrame.prePopup ()
-		d =AlarmSettingsDialog (gui.mainFrame)
-		d.Show ()
-		gui.mainFrame.postPopup () 
-
 	def script_activateClockSettingsDialog (self, gesture):
 		wx.CallAfter(gui.mainFrame._popupSettingsDialog, NVDASettingsDialog, ClockSettingsPanel)
 
