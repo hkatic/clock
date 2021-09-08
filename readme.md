@@ -68,10 +68,6 @@ To use layered commands, press NVDA+Shift+F12 followed by one of the following k
 - If you check the Quiet hours" checkbox and keep the "Quiet hours start time" or "Quiet hours end time" field empty, or type a mistaken value, the "Quiet hours" checkbox will be unchecked automatically, to avoid errors;
 - A message should be displayed to report your error.
 
-## Compatibility
-
-- This add-on is compatible with the versions of NVDA ranging from 2014.3 until 2021.1.
-
 [1]: https://addons.nvda-project.org/files/get.php?file=cac
 
 [2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
