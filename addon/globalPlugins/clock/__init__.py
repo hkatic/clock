@@ -79,7 +79,7 @@ def getDayAndWeekOfYear (date):
 	curDay = int(date.split("/")[2])
 	gregDay = int(now.strftime("%d"))
 	if curYear == gregYear:
-		#It's a Gregorian year.
+		# It's a Gregorian year.
 		nDayOfYear = now.timetuple()[7]
 		nWeekOfYear = now.isocalendar()[1]
 		if nWeekOfYear == 1 and nDayOfYear > 300:
