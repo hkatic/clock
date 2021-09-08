@@ -145,7 +145,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def __init__(self):
 		super(globalPluginHandler.GlobalPlugin, self).__init__()
-		if globalVars.appArgs.secure or config.isAppX: return
+		if globalVars.appArgs.secure or config.isAppX:
+			return
 		gui.NVDASettingsDialog.categoryClasses.append(ClockSettingsPanel)
 		gui.NVDASettingsDialog.categoryClasses.append(AlarmSettingsPanel)
 
