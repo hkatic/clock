@@ -1,17 +1,17 @@
 # Clock and calendar Add-on for NVDA #
 
-* Authors: Hrvoje Katić, Abdel and NVDA contributors;
-* Download [stable version][1];
-* Download [development version][2].
+* Authors: Hrvoje Katić, Abdel and NVDA contributors
+* Download [stable version][1]
+* Download [development version][2]
+* NVDA compatibility: 2014.3 and beyond
 
-
-This addon enables the advanced clock, alarm timer and calendar functionality for NVDA.
+This add-on enables the advanced clock, alarm timer and calendar functionality for NVDA.
 
 Instead of always getting time and date from Windows, you can customize how times and dates should be spoken and brailled by NVDA.
 
 Additionally, you can obtain the current day, week number, as well as the remaining days before the end of the current year, and you can also set automatic time announcement on specified interval.
 
-There's also a stopwatch and Alarm timer features built-in to the addon, that lets you time your tasks, such as copying files, installing programs, or cooking meals.
+There's also a stopwatch and Alarm timer features built-in to the add-on that lets you time your tasks, such as copying files, installing programs, or cooking meals.
 
 ## Note:
 
@@ -19,7 +19,7 @@ If you install the add-on as an update, during the installation process, the wiz
 
 ## Usage
 
-*	Open the configuration dialog for this addon from the NVDA tools menu or from the settings panel According to your version of NVDA;
+*	Open the configuration dialog for this add-on from the NVDA tools menu or from the settings panel According to your version of NVDA;
 	*	In the Clock setup dialog, the first two Combo Box controls allow you to choose your prefered time and date display formats;
 	*	The Combo Box control labeled "Interval" allows you to set the interval for automatic time announcement (Every 10 minutes, Every 15 minutes, Every 30 minutes, Every hour, or Off);
 	*	The Combo Box control labeled "Time announcement" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure how the automatic time announcement should be reported (Speech and sound, Speech only, or Sound only) when automatic time announcement is working;
