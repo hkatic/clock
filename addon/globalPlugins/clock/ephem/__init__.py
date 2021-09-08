@@ -3,9 +3,25 @@
 # convenient Python types.
 
 import ephem._libastro as _libastro
+import re
+from datetime import datetime as _datetime
+from datetime import timedelta as _timedelta
+from datetime import tzinfo as _tzinfo
 from math import pi
+from time import localtime as _localtime
 
-__version__ = '3.7.6.0'
+__version__ = '4.0.0.2'
+
+# As a favor, compile a regular expression that our C library would
+# really rather not compile for itself.
+
+_libastro._scansexa_split = re.compile(r'''
+    \s*:\s*         # A colon optionally surrounded by whitespace,
+    |               # or,
+    (?<!^)\s+(?!$)  # whitespace not at the start or end of the string.
+''', re.X).split
+
+# Various constants.
 
 twopi = pi * 2.
 halfpi = pi / 2.
@@ -257,8 +273,8 @@ class Observer(_libastro.Observer):
     set its attributes once you have created it.  Defaults:
 
     `date` - the moment the `Observer` is created
-    `lat` - zero degrees latitude
-    `lon` - zero degrees longitude
+    `lat` - zero latitude
+    `lon` - zero longitude
     `elevation` - 0 meters above sea level
     `horizon` - 0 degrees
     `epoch` - J2000
@@ -402,17 +418,22 @@ class Observer(_libastro.Observer):
                 ' please use the higher-resolution next_pass() method'
                 )
 
+        if previous:
+            find_transit = self._previous_transit
+            find_antitransit = self._previous_antitransit
+        else:
+            find_transit = self._next_transit
+            find_antitransit = self._next_antitransit
+
         def visit_transit():
-            d = (previous and self._previous_transit(body)
-                 or self._next_transit(body)) # if-then
+            d = find_transit(body)
             if body.alt + body.radius * use_radius - self.horizon <= 0:
                 raise NeverUpError('%r transits below the horizon at %s'
                                    % (body.name, d))
             return d
 
         def visit_antitransit():
-            d = (previous and self._previous_antitransit(body)
-                 or self._next_antitransit(body)) # if-then
+            d = find_antitransit(body)
             if body.alt + body.radius * use_radius - self.horizon >= 0:
                 raise AlwaysUpError('%r is still above the horizon at %s'
                                     % (body.name, d))
@@ -497,8 +518,14 @@ class Observer(_libastro.Observer):
         """Search for the given body's next setting"""
         return self._riset_helper(body, start, use_center, False, False)
 
-    def next_pass(self, body):
-        """Return the next rising, culmination, and setting of a satellite."""
+    def next_pass(self, body, singlepass=True):
+        """Return the next rising, culmination, and setting of a satellite.
+        
+        If singlepass is True, return next consecutive set of
+            (rising, culmination, setting).
+        If singlepass is False, return 
+            (next_rising, next_culmination, next_setting)
+        """
 
         if not isinstance(body, EarthSatellite):
             raise TypeError(
@@ -506,17 +533,62 @@ class Observer(_libastro.Observer):
                 ' EarthSatellite objects because of their high speed'
                 )
 
-        return _libastro._next_pass(self, body)
+        result = _libastro._next_pass(self, body)
+        # _libastro behavior is singlepass=False
+        if ((not singlepass)
+                or (None in result) 
+                or (result[4] >= result[0])):
+            return result
+        # retry starting just before next_rising
+        obscopy = self.copy()
+        # Almost always 1 minute before next_rising except
+        # in pathological case where set came immediately before rise
+        obscopy.date = result[0] - min(1.0/1440,
+                            (result[0] - result[4])/2)
+        result = _libastro._next_pass(obscopy, body)
+        if result[0] <= result[2] <= result[4]:
+            return result
+        raise ValueError("this software is having trouble with those satellite parameters")
+        
 
 del describe_riset_search
 
 # Time conversion.
 
+def _convert_to_seconds_and_microseconds(date):
+    """Converts a PyEphem date into seconds"""
+    microseconds = int(round(24 * 60 * 60 * 1000000 * date))
+    seconds, microseconds = divmod(microseconds, 1000000)
+    seconds -= 2209032000  # difference between epoch 1900 and epoch 1970
+    return seconds, microseconds
+
+
 def localtime(date):
-    """Convert a PyEphem date into local time, returning a Python datetime."""
-    import calendar, time, datetime
-    timetuple = time.localtime(calendar.timegm(date.tuple()))
-    return datetime.datetime(*timetuple[:7])
+    """Convert a PyEphem date into naive local time, returning a Python datetime."""
+    seconds, microseconds = _convert_to_seconds_and_microseconds(date)
+    y, m, d, H, M, S, wday, yday, isdst = _localtime(seconds)
+    return _datetime(y, m, d, H, M, S, microseconds)
+
+
+class _UTC(_tzinfo):
+    ZERO = _timedelta(0)
+    def utcoffset(self, dt):
+        return self.ZERO
+    def dst(self, dt):
+        return self.ZERO
+    def __repr__(self):
+        return "<ephem.UTC>"
+
+
+UTC = _UTC()
+
+
+def to_timezone(date, tzinfo):
+    """"Convert a PyEphem date into a timezone aware Python datetime representation."""
+    seconds, microseconds = _convert_to_seconds_and_microseconds(date)
+    date = _datetime.fromtimestamp(seconds, tzinfo)
+    date = date.replace(microsecond=microseconds)
+    return date
 
 # Coordinate transformations.
 

@@ -1,8 +1,66 @@
 PyEphem CHANGELOG
 =================
 
-Next version
-------------
+Version 4.0.0.2 (2020 June 14)
+------------------------------
+
+- Restore PyEphem’s undocumented ability to parse angle strings like
+  ``'12 34 56'`` that are only separated with spaces, instead of
+  insisting on ``'12:34:56'`` for 12 degrees, 34 arcminutes, and 56
+  arcseconds.
+
+- Fix a compile error `‘for’ loop initial declarations are only allowed
+  in C99 mode` reported from a user on Oracle Linux.
+
+Version 4.0.0.1 (2020 June 12)
+------------------------------
+
+- Fix ``MANIFEST.in`` so the ``.tar.gz`` source distribution includes
+  all the header files necessary for compilation.
+
+Version 4.0.0 (2020 June 12)
+----------------------------
+
+- Upgraded to the MIT license following Elwood Downey’s generous
+  decision to open-source XEphem’s code.
+
+- Fix a bug where supplying a string with a decimal degree measurement
+  could send the parser into an infinite loop.
+
+- The ``FixedBody`` constructor, which accepts no arguments, now
+  correctly raises a ``TypeError`` if any are supplied.
+
+Version 3.7.7.1 (2020 February 22)
+----------------------------------
+
+- Fixed the body ``copy()`` method to correctly copy the extra
+  attributes that some bodies have beyond those of a normal body, like
+  the catalog number of an Earth satellite.  This bug had in some cases
+  caused segmentation faults.
+
+- GitHub issue #166: Fixed a memory leak in ``readdb()``.
+
+- GitHub issue #119: Fixed the ``Body.copy()`` method to correctly copy
+  object-specific fields across to the new object, like Saturn ring tilt
+  and Earth satellite catalog number.
+
+Version 3.7.7.0 (2019 August 18)
+--------------------------------
+
+- Upgraded libastro to 3.7.7.
+
+- The internal star catalog now includes all 57 navigational stars.
+
+- GitHub issue #63: The rise, culminate, and set returned by
+  ``next_pass()`` are now consecutive values for a single pass.  Pass
+  ``singlepass=False`` to return the original next_rise, next_culminate,
+  next_set even if next_set < next_rise (the satellite is already up).
+
+- GitHub issue #141: ``ephem.delta_t('0')`` now returns the correct
+  value, instead of misbehaving for that particular input.
+
+Version 3.7.6.0 (2015 August 19)
+--------------------------------
 
 - The new ``ephem.cities.lookup()`` function runs a Google geocoding
   search and returns an ``Observer`` object for the top result.
@@ -203,12 +261,7 @@ Version 3.7.2.3 (2008 January 8)
 - Added named functions for every solstice and equinox (before, only
   the vernal equinox could be asked for specifically).
 
-- Product tests have been moved inside of the ``ephem`` module itself,
-  and can now be invoked simply by running:
-
-  .. code-block:: bash
-
-     $ python setup.py test
+- Product tests have been moved inside of the ``ephem`` module itself.
 
 - **Bugfix**: ``Angle()`` can no longer be directly instantiated.
 

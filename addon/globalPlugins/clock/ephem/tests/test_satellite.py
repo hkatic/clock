@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 
-import unittest, ephem
+import ephem, warnings, unittest
+
+# Prevent the use of "assertRaisesRegexp" below from causing noise; we
+# cannot upgrade to "assertRaisesRegex" without breaking older Pythons.
+warnings.filterwarnings("ignore",category=DeprecationWarning)
 
 tle_lines = (
     'ISS (ZARYA)             ',
@@ -12,6 +16,12 @@ class SatelliteTests(unittest.TestCase):
     def setUp(self):
         self.iss = ephem.readtle(*tle_lines)
         self.atlanta = ephem.city('Atlanta')
+
+    def test_TLE_checksum(self):
+        lines = list(tle_lines)
+        lines[1] = lines[1][:-1] + '1'
+        expected = 'incorrect TLE checksum at end of line'
+        self.assertRaisesRegexp(ValueError, expected, ephem.readtle, *lines)
 
     def test_normal_methods(self):
         for which in ['previous', 'next']:
@@ -37,6 +47,36 @@ class SatelliteTests(unittest.TestCase):
         self.assertAlmostEqual(ephem.degrees('192.0'), raz, 1)
         self.assertAlmostEqual(ephem.degrees('16.0'), talt, 1)
         self.assertAlmostEqual(ephem.degrees('64.9'), saz, 1)
+
+    def test_next_pass_consecutive(self):
+        # Issue #63
+        iss = self.iss
+        # At this time, the ISS is already above the horizon
+        self.atlanta.date = '2009/4/29 15:51:00'
+        rt, raz, tt, talt, st, saz = self.atlanta.next_pass(iss)
+
+        self.assertAlmostEqual(ephem.Date('2009/4/30 5:02:17'), rt, 3)
+        self.assertAlmostEqual(ephem.Date('2009/4/30 5:06:39'), tt, 3)
+        self.assertAlmostEqual(ephem.Date('2009/4/30 5:11:04'), st, 3)
+
+        self.assertAlmostEqual(ephem.degrees('192.0'), raz, 1)
+        self.assertAlmostEqual(ephem.degrees('16.0'), talt, 1)
+        self.assertAlmostEqual(ephem.degrees('64.9'), saz, 1)
+
+    def test_next_pass_notsinglepass(self):
+        # Issue #63
+        iss = self.iss
+        # At this time, the ISS is already above the horizon
+        self.atlanta.date = '2009/4/29 15:51:00'
+        rt, raz, tt, talt, st, saz = self.atlanta.next_pass(iss, singlepass=False)
+
+        self.assertAlmostEqual(ephem.Date('2009/4/30 5:02:17'), rt, 3)
+        self.assertAlmostEqual(ephem.Date('2009/4/29 15:51:35'), tt, 3)
+        self.assertAlmostEqual(ephem.Date('2009/4/29 15:54:01'), st, 3)
+
+        self.assertAlmostEqual(ephem.degrees('192.0'), raz, 1)
+        self.assertAlmostEqual(ephem.degrees('2.1'), talt, 1)
+        self.assertAlmostEqual(ephem.degrees('209.0'), saz, 1)
 
     def test_more_than_one_year_before_TLE(self):
         self.assertRaises(ValueError, self.iss.compute, '2008/4/28')

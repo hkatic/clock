@@ -61,9 +61,9 @@ and returns a Python ``datetime`` giving your local time.
 
     >>> lt = ephem.localtime(d)
     >>> print(lt)
-    1984-05-30 12:23:45.000002
+    1984-05-30 12:23:45.120000
     >>> print(repr(lt))
-    datetime.datetime(1984, 5, 30, 12, 23, 45, 2)
+    datetime.datetime(1984, 5, 30, 12, 23, 45, 120000)
 
 The output of this code will differ
 depending on the time zone in which you live.
@@ -129,6 +129,19 @@ Datetime objects
   is why PyEphem exposes its own date type
   instead of returning Python ``datetime`` objects automatically.
 
+  Note that Python ``datetime`` objects use your local time by default,
+  whereas PyEphem expects time to be expressed in UTC.
+  This means that passing ``datetime.now()`` to PyEphem
+  will give unexpected results.
+  Instead, use the ``datetime.utcnow()`` constructor:
+
+    >>> d = datetime.utcnow()
+    >>> print(ephem.Date(d))
+    2015/12/14 15:42:14
+    >>> d = datetime.utcfromtimestamp(1450107734)
+    >>> print(ephem.Date(d))
+    2015/12/14 15:42:14
+
 Tuples
   PyEphem can return a date as a six-element tuple
   giving the year, month, day, hour, minute, and seconds,
@@ -186,7 +199,7 @@ Calculating with dates
 PyEphem dates are encoded as the “Dublin Julian Day”,
 which is the number of days (including any fraction)
 that have passed since the last day of 1899, at noon.
-From there, increasing the value by one moves to the next day: 
+From there, increasing the value by one moves to the next day:
 
     >>> print(ephem.Date(0))
     1899/12/31 12:00:00

@@ -1,15 +1,23 @@
 #!/usr/bin/env python
 
 import unittest, time
-from datetime import datetime
+from datetime import datetime, tzinfo, timedelta
 
-from ephem import Date, localtime
+from ephem import Date, localtime, to_timezone, UTC
 
 millisecond = 1.0 / 24.0 / 60.0 / 60.0 / 1e3
+
+class CET(tzinfo):
+    """central european time without daylight saving time"""
+    def utcoffset(self, dt):
+        return timedelta(hours=1) + self.dst(dt)
+    def dst(self, dt):
+        return timedelta(0)
 
 # Determine whether dates behave reasonably.
 
 class DateTests(unittest.TestCase):
+
     def setUp(self):
         self.date = Date('2004/09/04 00:17:15.8')
 
@@ -49,6 +57,21 @@ class DateTests(unittest.TestCase):
             if type(arg2) is str:
                 construct_and_compare(arg1, '  %s  ' % arg2)
 
+    def test_date_parser_error_message(self):
+        with self.assertRaises(ValueError) as e:
+            Date('bad string')
+        self.assertEqual(
+            str(e.exception),
+            "your date string 'bad string' does"
+            " not look like a year/month/day optionally"
+            " followed by hours:minutes:seconds",
+        )
+
+    def test_year_zero(self):
+        # I would have thought the year would be 0, but it looks like
+        # libastro considers 1 BC to be the year -1?
+        self.assertEqual(str(Date('0')), '-1/1/1 00:00:00')
+
     def test_date_string_value(self):
         self.assertEqual(str(self.date), '2004/9/4 00:17:16')
 
@@ -62,7 +85,28 @@ class DateTests(unittest.TestCase):
     def test_localtime_modern(self):
         if time.timezone == 18000: # test only works in Eastern time zone
             self.assertEqual(localtime(Date('2009/6/23 8:47')),
-                             datetime(2009, 6, 23, 4, 47, 0, 1))
+                             datetime(2009, 6, 23, 4, 47, 0))
+
+    def test_timezone_aware_utc(self):
+        timezoned_date = to_timezone(self.date, UTC)
+        self.assertEqual(timezoned_date.tzinfo, UTC)
+        self.assertEqual(timezoned_date.hour, 0)
+        self.assertEqual(timezoned_date.minute, 17)
+        self.assertEqual(timezoned_date.second, 15)
+        self.assertEqual(timezoned_date.day, 4)
+        self.assertEqual(timezoned_date.month, 9)
+        self.assertEqual(timezoned_date.year, 2004)
+
+    def test_timezone_aware_cet(self):
+        cet = CET()
+        timezoned_date = to_timezone(self.date, cet)
+        self.assertEqual(timezoned_date.tzinfo, cet)
+        self.assertEqual(timezoned_date.hour, 1)
+        self.assertEqual(timezoned_date.minute, 17)
+        self.assertEqual(timezoned_date.second, 15)
+        self.assertEqual(timezoned_date.day, 4)
+        self.assertEqual(timezoned_date.month, 9)
+        self.assertEqual(timezoned_date.year, 2004)
 
     # I am commenting this out for now because I am not sure that I can
     # fix it without either writing an entirely new time module for

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import glob, os.path, re, traceback, unittest
+import glob, os.path, re, sys, traceback, unittest
 from datetime import datetime
 from time import strptime
 import ephem
@@ -454,11 +454,15 @@ class Moon_Phases(Trial):
 class Mixin(object):
     def test_usno(self):
 
-        f = open(self.path)
+        f = open(self.path, 'rb')
         try:
             content = f.read()
         finally:
             f.close()
+
+        content = content.decode('utf-8')
+        if sys.version_info < (3, 0):
+            content = content.encode('ascii', 'replace')
 
         g = globals()
         for obj in g.values():

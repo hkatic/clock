@@ -90,18 +90,20 @@ body.compute(date)
    |  ``g_ra`` and ``ra`` — `Apparent geocentric`_ right ascension for the epoch-of-date
    |  ``g_dec`` and ``dec`` — `Apparent geocentric`_ declination for the epoch-of-date
 
-   | ``elong`` — Elongation (angle to sun)
+   | ``elong`` — Elongation: the angle between the Sun and the body,
+     but with the sign flipped to negative
+     when the body is on the morning side of the sky.
    | ``mag`` — Magnitude
    | ``size`` — Size (diameter in arcseconds)
    | ``radius`` — Size (radius as an angle)
 
    | ``circumpolar`` — whether it stays above the horizon
-   | ``neverup`` — whether is stays below the horizon
+   | ``neverup`` — whether it stays below the horizon
 
  * On Solar System bodies, also sets:
 
-   | ``hlon`` — Heliocentric longitude (see next paragraph)
-   | ``hlat`` — Heliocentric latitude (see next paragraph)
+   | ``hlon`` — Astrometric heliocentric longitude (see next paragraph)
+   | ``hlat`` — Astrometric heliocentric latitude (see next paragraph)
    | ``sun_distance`` — Distance to Sun (AU)
    | ``earth_distance`` — Distance to Earth (AU)
    | ``phase`` — Percent of surface illuminated
@@ -128,10 +130,11 @@ body.compute(date)
  * On artificial satellites, also sets:
 
    | Geographic point beneath satellite:
-   |  ``sublat`` — Latitude (+N)
-   |  ``sublong`` — Longitude (+E)
+   |  ``sublat`` — Geocentric latitude (+N)
+   |  ``sublong`` — Geocentric longitude (+E)
+   | ``elevation`` — Geocentric height above sea level,
+     measured from the surface of the WGS66 ellipsoid (m)
    |
-   | ``elevation`` — Height above sea level (m)
    | ``range`` — Distance from observer to satellite (m)
    | ``range_velocity`` — Range rate of change (m/s)
    | ``eclipsed`` — Whether satellite is in Earth's shadow
@@ -193,7 +196,7 @@ body.compute(observer)
 
  * These apparent positions
    include an adjustment to simulate atmospheric refraction
-   for the observer's ``temp`` and ``presure``;
+   for the observer's ``temp`` and ``pressure``;
    set the observer's ``pressure`` to zero to ignore refraction.
 
  * For earth satellite objects,
@@ -309,7 +312,7 @@ bodies with orbital elements
    | ``_g``, ``_k`` — Magnitude model coefficients
    | ``_size`` — Angular size in arcseconds at 1 AU
 
- * ``EarthSatellite`` elements:
+ * ``EarthSatellite`` elements of man-made satellites:
 
    | ``_epoch`` — Reference epoch
    | ``_n`` — Mean motion, in revolutions per day
@@ -461,11 +464,13 @@ Observers
 
    | ``date`` — Date and time
    | ``epoch`` — Epoch for astrometric RA/dec
-
-   | ``lat`` — Latitude (+N)
-   | ``lon`` — Longitude (+E)
+   |
+   | Geographic coordinates, assuming the IERS 1989 ellipsoid
+     (flattening=1/298.257):
+   | ``lat`` — Geodetic latitude (+N)
+   | ``lon`` — Geodetic longitude (+E)
    | ``elevation`` — Elevation (m)
-
+   |
    | ``temp`` — Temperature (°C)
    | ``pressure`` — Atmospheric pressure (mBar)
 
@@ -498,15 +503,18 @@ Observers
    avoid performing any ``lookup()`` more than once —
    instead, print the result to your screen
    and then cut-and-paste the latitude and longitude into your code.
- * A ``ValueError`` signals a non-existent place.
 
  >>> cities.lookup('nonsense string')
  Traceback (most recent call last):
-   ...
+ ...
  ValueError: Google cannot find a place named 'nonsense string'
 
-transit, rising, setting
-------------------------
+ * A ``ValueError`` signals a non-existent place.
+
+.. _transit-rising-setting:
+
+transit, rising, and setting
+----------------------------
 
  >>> sitka = ephem.Observer()
  >>> sitka.date = '1999/6/27'
@@ -523,7 +531,9 @@ transit, rising, setting
  -0:00:05.8 111:10:41.6
 
  * Eight ``Observer`` methods are available
-   for finding rising, transit, and setting times::
+   for finding the time that an object rises,
+   transits across the meridian,
+   and sets::
 
     previous_transit()
     next_transit()
@@ -651,7 +661,10 @@ other Observer methods
  >>> print('%s %s' % (ra, dec))
  12:05:35.12 40:17:49.8
 
- * Called like ``radec_of(az, alt)``.
+ * Both arguments to ``radec_of(az, alt)`` are interpreted as angles,
+   using PyEphem’s usual convention:
+   a float point number is interpreted as plain radians,
+   while a string is expected to give a number in degrees.
  * Returns the apparent topocentric coordinates
    behind the given point in the sky.
 
@@ -716,17 +729,20 @@ Phases of the Moon
 Angles
 ======
 
- >>> a = ephem.degrees('180:00:00')
+ >>> a = ephem.degrees(3.141593)  # float: radians
+ >>> print(a)
+ 180:00:00.1
+ >>> a = ephem.degrees('180:00:00')  # str: degrees
  >>> print(a)
  180:00:00.0
  >>> a
  3.141592653589793
- >>> print("180° is %f radians" % a)
- 180° is 3.141593 radians
+ >>> print("180 degrees is %f radians" % a)
+ 180 degrees is 3.141593 radians
  >>> h = ephem.hours('1:00:00')
  >>> deg = ephem.degrees(h)
- >>> print("1h right ascension = %s°" % deg)
- 1h right ascension = 15:00:00.0°
+ >>> print("1h right ascension = %s degrees" % deg)
+ 1h right ascension = 15:00:00.0 degrees
 
  * Many ``Body`` and ``Observer`` attributes
    return their value as ``Angle`` objects.
@@ -832,12 +848,26 @@ local time
 
  >>> d = ephem.Date('1997/3/9 5:13')
  >>> ephem.localtime(d)
- datetime.datetime(1997, 3, 9, 0, 13, 0, 6)
+ datetime.datetime(1997, 3, 9, 0, 13)
  >>> print(ephem.localtime(d))
- 1997-03-09 00:13:00.000006
+ 1997-03-09 00:13:00
 
  * The ``localtime()`` function converts a PyEphem date
    into a Python ``datetime`` object expressed in your local time zone.
+
+to timezone
+-----------
+
+ >>> d = ephem.Date('1997/3/9 5:13')
+ >>> ephem.to_timezone(d, ephem.UTC)
+ datetime.datetime(1997, 3, 9, 5, 13, tzinfo=<ephem.UTC>)
+ >>> print(ephem.to_timezone(d, ephem.UTC))
+ 1997-03-09 05:13:00+00:00
+
+ * The ``to_timezone()`` function converts a PyEphem date
+   into a Python ``datetime`` object expressed in the provided time zone.
+   The timezone needs to be ``datetime.tzinfo``-compliant.
+   For simplicity an own implementation for UTC is provided.
 
 ----
 
@@ -888,3 +918,22 @@ Other Constants
  * PyEphem provides the speed of light in meters per second::
 
     ephem.c
+
+----
+
+Attributes to avoid
+===================
+
+ * To avoid breaking old scripts,
+   PyEphem still supports several deprecated body attributes.
+   They invoke old C routines
+   that have not proven very reliable.
+   Instead, try using the routines described above
+   in the “transit, rising, and setting” section.
+
+   - ``rise_time``
+   - ``rise_az``
+   - ``transit_time``
+   - ``transit_alt``
+   - ``set_time``
+   - ``set_az``
