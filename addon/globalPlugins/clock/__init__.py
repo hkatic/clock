@@ -26,16 +26,10 @@ import wx
 import globalCommands
 import os
 import languageHandler
-if sys.version_info.major == 2:
-	sys.path.append(os.path.join (os.path.abspath(os.path.dirname(__file__)), "libPy2"))
-	import ephem
-	import pytz
-	import convertdate
-else:
-	sys.path.append(os.path.join (os.path.abspath(os.path.dirname(__file__)), "libPy3"))
-	import ephem
-	import pytz
-	import convertdate
+sys.path.append(os.path.join (os.path.abspath(os.path.dirname(__file__)), "libPy3"))
+import ephem
+import pytz
+import convertdate
 sys.path.remove(sys.path[-1])
 import time
 from .formats import GetTimeFormatEx, GetDateFormatEx
