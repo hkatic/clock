@@ -54,11 +54,11 @@ def secondsToString(seconds):
 	if hr > 0:
 		if hr > 23:
 			hr = 24 * (hr / 24) + (hr % 24)
-		text += _(u"{hours} hours, ").format(hours = str(hr))
+		text += _(u"{hours} hours, ").format(hours=str(hr))
 	if tm.tm_min:
-		text += _(u"{minutes} minutes, ").format(minutes = tm.tm_min)
+		text += _(u"{minutes} minutes, ").format(minutes=tm.tm_min)
 	if tm.tm_sec:
-		text += _(u"{seconds} seconds").format(seconds = tm.tm_sec)
+		text += _(u"{seconds} seconds").format(seconds=tm.tm_sec)
 	return _(u"0 seconds") if not text else text
 
 
@@ -214,7 +214,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			msg = GetDateFormatEx(None, None, None, formats.dateFormats[config.conf['clockAndCalendar']['dateDisplayFormat']])
 		else:
 			informations = getDayAndWeekOfYear(GetDateFormatEx(None, None, None, u"yyyy/M/d"))
-			msg = _("Day {day}, week {week} of {year}, remaining days {remain}.").format(day=informations[0], week=informations[1], year=informations[2], remain = informations[3])
+			msg = _("Day {day}, week {week} of {year}, remaining days {remain}.").format(day=informations[0], week=informations[1], year=informations[2], remain=informations[3])
 		ui.message(msg)
 	# We remove the docstring from the original dateTime script to have only one entry in the "System status" category, it will be automatically restored if the Clock add-on is disabled or uninstalled.
 	globalCommands.commands.script_dateTime.__func__.__doc__ = ""
@@ -290,7 +290,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if alarmHandler.run and alarmHandler.run.is_alive():
 			elapsedTime = alarmHandler.run.elapsed()
 			remainingTime = alarmHandler.run.remaining()
-			msg = _(u"Elapsed time {elapsed}, remaining time {remaining}.").format(elapsed = secondsToString(elapsedTime), remaining = secondsToString(remainingTime))
+			msg = _(u"Elapsed time {elapsed}, remaining time {remaining}.").format(elapsed=secondsToString(elapsedTime), remaining=secondsToString(remainingTime))
 		else:
 			msg = _("No alarm")
 		ui.message(msg)
@@ -337,7 +337,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				alarmHandler.run.cancel()
 				msg = _("Alarm cancelled")
 			else:
-				msg = _(u"Elapsed time {elapsed}, remaining time {remaining}.").format(elapsed = secondsToString(elapsedTime), remaining = secondsToString(remainingTime))
+				msg = _(u"Elapsed time {elapsed}, remaining time {remaining}.").format(elapsed=secondsToString(elapsedTime), remaining=secondsToString(remainingTime))
 		else:
 			msg = _("No alarm")
 		ui.message(msg)

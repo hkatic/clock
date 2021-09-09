@@ -78,7 +78,7 @@ class ClockSettingsPanel(SettingsPanel):
 		# Translators: This is the label for an edit field in the Clock settings dialog.
 		self._quietEndTime = _("Quiet hours end time:")
 
-		self.showSettingsDialog(settingsSizer = settingsSizer)
+		self.showSettingsDialog(settingsSizer=settingsSizer)
 
 	def showSettingsDialog(self, settingsSizer):
 		clockSettingsGuiHelper = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
@@ -87,8 +87,8 @@ class ClockSettingsPanel(SettingsPanel):
 		self._autoAnnounceChoice = clockSettingsGuiHelper.addLabeledControl(self._autoAnnounce, wx.Choice, choices=self._announceChoices)
 		self._timeReportChoice = clockSettingsGuiHelper.addLabeledControl(self._timeReport, wx.Choice, choices=self._timeAnnounceChoices)
 		self._timeReportSoundChoice = clockSettingsGuiHelper.addLabeledControl(self._timeReportSound, wx.Choice, choices=paths.LIST_SOUNDS)
-		self._quietHoursCheckBox = clockSettingsGuiHelper.addItem(wx.CheckBox(self, label = self._quietHours))
-		self._input24HourFormatCheckBox = clockSettingsGuiHelper.addItem(wx.CheckBox(self, label = self._input24HourFormat))
+		self._quietHoursCheckBox = clockSettingsGuiHelper.addItem(wx.CheckBox(self, label=self._quietHours))
+		self._input24HourFormatCheckBox = clockSettingsGuiHelper.addItem(wx.CheckBox(self, label=self._input24HourFormat))
 		self._quietStartTimeText = clockSettingsGuiHelper.addLabeledControl(self._quietStartTime, wx.TextCtrl)
 		self._quietEndTimeText = clockSettingsGuiHelper.addLabeledControl(self._quietEndTime, wx.TextCtrl)
 
@@ -208,15 +208,15 @@ class AlarmSettingsPanel(SettingsPanel):
 		# Translators: This is the label for an edit field in the Alarm settings dialog.
 		self._alarmTimeWaitingTitle = _("Alarm &time waiting:")
 
-		self.showAlarmDialog(settingsSizer = settingsSizer)
+		self.showAlarmDialog(settingsSizer=settingsSizer)
 
 	def showAlarmDialog(self, settingsSizer):
 		alarmSettingsGuiHelper = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
 		self._alarmTimerChoice = alarmSettingsGuiHelper.addLabeledControl(self._alarmTimerTitle, wx.Choice, choices=self._alarmTimerChoices)
 		self._alarmTimeWaitingText = alarmSettingsGuiHelper.addLabeledControl(self._alarmTimeWaitingTitle, wx.TextCtrl)
 		self._alarmSoundChoice = alarmSettingsGuiHelper.addLabeledControl(self._alarmSoundTitle, wx.Choice, choices=paths.LIST_ALARMS)
-		self.stopButton = alarmSettingsGuiHelper.addItem(wx.Button(self, label = self.stopLabel))
-		self.pauseButton = alarmSettingsGuiHelper.addItem(wx.Button(self, label = self.pauseLabel))
+		self.stopButton = alarmSettingsGuiHelper.addItem(wx.Button(self, label=self.stopLabel))
+		self.pauseButton = alarmSettingsGuiHelper.addItem(wx.Button(self, label=self.pauseLabel))
 
 		# Events.
 		self._alarmSoundChoice.Bind(wx.EVT_CHOICE, self.onAlarmSelected)
@@ -258,7 +258,7 @@ class AlarmSettingsPanel(SettingsPanel):
 		if re.match(r"\d+", self._alarmTimeWaitingText.GetValue()):
 			if gui.messageBox(
 				# Translators: The message displayed after a countdown for an alarm has been chosen.
-				_(u"You've chosen an alarm to be triggered in {tm} {unit}").format(tm = self._alarmTimeWaitingText.GetValue(), unit = self._alarmTimerChoice.GetStringSelection()),
+				_(u"You've chosen an alarm to be triggered in {tm} {unit}").format(tm=self._alarmTimeWaitingText.GetValue(), unit=self._alarmTimerChoice.GetStringSelection()),
 				# Translators: The title of the dialog which appears when the user has chosen to trigger an alarm.
 				_("Confirmation"), wx.OK | wx.CANCEL | wx.ICON_INFORMATION, self
 			) == wx.OK:
