@@ -3,18 +3,14 @@
 # Author: Hrvoje Katich and contributors
 # Copyright 2013-2021, released under GPL.
 
-from datetime import datetime
 import re
-import queueHandler
 from . import paths
-import api
 from . import formats
 import config
 import nvwave
 import gui
 import os
 import wx
-import locale
 from . import alarmHandler
 
 from gui import SettingsPanel
