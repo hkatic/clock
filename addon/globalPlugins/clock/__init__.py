@@ -3,11 +3,9 @@
 # Author: Hrvoje Katich and contributors
 # Copyright 2013-2021, released under GPL.
 
-from functools import wraps, update_wrapper
 import sys
 from . import skipTranslation
 import globalVars
-import configobj
 from . import alarmHandler
 import globalPluginHandler
 import gui
@@ -25,7 +23,6 @@ from datetime import datetime
 import wx
 import globalCommands
 import os
-import languageHandler
 sys.path.append(os.path.join(os.path.abspath(os.path.dirname(__file__))))
 from . import ephem
 from . import pytz
