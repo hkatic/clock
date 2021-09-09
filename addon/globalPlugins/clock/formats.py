@@ -103,7 +103,7 @@ timeFormats = (
 
 timeFormatsDic = collections.OrderedDict()
 for fmt in timeFormats:
-	timeFormatsDic[fmt] = GetTimeFormatEx(None, None, None, rgx.sub(repl, fmt))
+	timeFormatsDic[fmt] = winKernel.GetTimeFormatEx(None, None, None, rgx.sub(repl, fmt))
 
 timeDisplayFormats = list(timeFormatsDic.values())
 
@@ -122,6 +122,6 @@ dateFormats = (
 
 dateFormatsDic = collections.OrderedDict()
 for fmt in dateFormats:
-	dateFormatsDic[fmt] = GetDateFormatEx(None, None, None, fmt)
+	dateFormatsDic[fmt] = winKernel.GetDateFormatEx(None, None, None, fmt)
 
 dateDisplayFormats = list(dateFormatsDic.values())
