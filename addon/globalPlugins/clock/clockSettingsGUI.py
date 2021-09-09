@@ -166,7 +166,7 @@ class ClockSettingsPanel(SettingsPanel):
 					# A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
 					_(u"The value you entered for your quiet hours is erroneous, for a 24-hour format, the value must be HH:MM, for a 12-hour format, the value must be HH:MM followed by the AM or PM suffix, please reread the documentation. So your quiet hours have been deactivated for prevent any error in the configuration file."),
 					# Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
-					_("Error"),wx.OK | wx.ICON_ERROR,self
+					_("Error"), wx.OK | wx.ICON_ERROR, self
 				) == wx.OK:
 					config.conf['clockAndCalendar']['quietHours'] = False
 		else:
@@ -258,7 +258,7 @@ class AlarmSettingsPanel(SettingsPanel):
 				# Translators: The message displayed after a countdown for an alarm has been chosen.
 				_(u"You've chosen an alarm to be triggered in {tm} {unit}").format(tm = self._alarmTimeWaitingText.GetValue(), unit = self._alarmTimerChoice.GetStringSelection()),
 				# Translators: The title of the dialog which appears when the user has chosen to trigger an alarm.
-				_("Confirmation"),wx.OK | wx.CANCEL | wx.ICON_INFORMATION,self
+				_("Confirmation"), wx.OK | wx.CANCEL | wx.ICON_INFORMATION, self
 			) == wx.OK:
 				wakeUp = int(self._alarmTimeWaitingText.GetValue())
 				if self._alarmTimerChoice.GetSelection() == 0:
