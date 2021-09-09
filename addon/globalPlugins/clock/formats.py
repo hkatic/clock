@@ -10,7 +10,8 @@ import addonHandler
 addonHandler.initTranslation()
 
 # A regular expression to match and facilitate translation for words that are not part of the formatting symbols.
-ptrn = u"(\w+'?\w*|\$+[hmst]{1,2})"
+# Ignore Flake8 W605: invalid escape sequence (\w)
+ptrn = u"(\w+'?\w*|\$+[hmst]{1,2})"  # NOQA: W605
 rgx = re.compile(ptrn, re.U | re.I)
 
 
