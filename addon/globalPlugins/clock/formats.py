@@ -51,23 +51,23 @@ def timeMarker():
 
 timeFormats = (
 	# Translators: A time formating.
-	_(u"It's {hours} o'clock and {minutes} minutes").format(hours = "$$H", minutes = "$$m"),
+	_(u"It's {hours} o'clock and {minutes} minutes").format(hours="$$H", minutes="$$m"),
 	# Translators: A time formating.
-	_(u"It's {hours} o'clock, {minutes} minutes and {seconds} seconds").format(hours = "$$H", minutes = "$$m", seconds = "$$s"),
+	_(u"It's {hours} o'clock, {minutes} minutes and {seconds} seconds").format(hours="$$H", minutes="$$m", seconds="$$s"),
 	# Translators: A time formating.
-	_(u"{hours} o'clock, {minutes} minutes").format(hours = "$$h", minutes = "$$mm"),
+	_(u"{hours} o'clock, {minutes} minutes").format(hours="$$h", minutes="$$mm"),
 	# Translators: A time formating.
-	_(u"{hours} o'clock, {minutes} minutes, {seconds} seconds").format(hours = "$$h", minutes = "$$mm", seconds = "$$ss"),
+	_(u"{hours} o'clock, {minutes} minutes, {seconds} seconds").format(hours="$$h", minutes="$$mm", seconds="$$ss"),
 	# Translators: A time formating.
-	_(u"It's {minutes} past {hours}").format(minutes = "$$m", hours = "$$h"),
+	_(u"It's {minutes} past {hours}").format(minutes="$$m", hours="$$h"),
 	# Translators: A time formating.
-	_(u"{hours} h {minutes} min").format(hours = "$$h", minutes = "$$m"),
+	_(u"{hours} h {minutes} min").format(hours="$$h", minutes="$$m"),
 	# Translators: A time formating.
-	_(u"{hours} h, {minutes} min, {seconds} sec").format(hours = "$$H", minutes = "$$m", seconds = "$$s"),
+	_(u"{hours} h, {minutes} min, {seconds} sec").format(hours="$$H", minutes="$$m", seconds="$$s"),
 	# Translators: A time formating.
-	_(u"It's {hours}:{minutes}").format(hours = "$$H", minutes = "$$m"),
+	_(u"It's {hours}:{minutes}").format(hours="$$H", minutes="$$m"),
 	# Translators: A time formating.
-	_(u"It's {hours}:{minutes}:{seconds}").format(hours = "$$HH", minutes = "$$mm", seconds = "$$ss"),
+	_(u"It's {hours}:{minutes}:{seconds}").format(hours="$$HH", minutes="$$mm", seconds="$$ss"),
 	u"$$hh:$$mm:$$ss $$tt",
 	u"$$hh:$$m $$tt",
 	u"$$hh:$$mm $$tt",
