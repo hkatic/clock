@@ -40,7 +40,7 @@ def getAutoAnnounceInterval():
 	@rtype: tuple.
 	"""
 	autoAnnounceMinutes = tuple()
-	autoAnnounce=config.conf["clockAndCalendar"]["autoAnnounce"]
+	autoAnnounce = config.conf["clockAndCalendar"]["autoAnnounce"]
 	if autoAnnounce == 1:
 		autoAnnounceMinutes = (0, 10, 20, 30, 40, 50)
 	elif autoAnnounce == 2:
@@ -73,10 +73,10 @@ class Clock(object):
 		if self.quietHoursAreActive():
 			return
 		waveFile = os.path.join(paths.SOUNDS_DIR, config.conf["clockAndCalendar"]["timeReportSound"])
-		if config.conf["clockAndCalendar"]["timeReporting"]!=1:
+		if config.conf["clockAndCalendar"]["timeReporting"] != 1:
 			nvwave.playWaveFile(waveFile)
-		if config.conf["clockAndCalendar"]["timeReporting"]!=2:
-			if config.conf["clockAndCalendar"]["timeReporting"]==0:
+		if config.conf["clockAndCalendar"]["timeReporting"] != 2:
+			if config.conf["clockAndCalendar"]["timeReporting"] == 0:
 				waveFileDuration = getWaveFileDuration(waveFile)
 				wx.CallLater(10 + (1000 * waveFileDuration), ui.message, GetTimeFormatEx(None, None, now, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']])))
 			else:
@@ -85,11 +85,11 @@ class Clock(object):
 	def quietHoursAreActive(self):
 		if not config.conf["clockAndCalendar"]["quietHours"]:
 			return False
-		qhStartTime=config.conf["clockAndCalendar"]["quietHoursStartTime"]
-		qhEndTime=config.conf["clockAndCalendar"]["quietHoursEndTime"]
+		qhStartTime = config.conf["clockAndCalendar"]["quietHoursStartTime"]
+		qhEndTime = config.conf["clockAndCalendar"]["quietHoursEndTime"]
 		if not qhStartTime or not qhEndTime:
 			return False
-		nowTime=dtfunctions.strfNowTime(config.conf["clockAndCalendar"]["input24HourFormat"])
+		nowTime = dtfunctions.strfNowTime(config.conf["clockAndCalendar"]["input24HourFormat"])
 		if dtfunctions.timeInRange(qhStartTime, qhEndTime, nowTime, config.conf["clockAndCalendar"]["input24HourFormat"]):
 			return True
 		return False
