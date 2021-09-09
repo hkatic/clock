@@ -15,7 +15,8 @@ from . import formats
 from winKernel import GetTimeFormatEx
 
 
-# A function for getting wav file duration (inspired from this topic: https://emiliomm.com/index.php/2016/09/24/getting-duration-of-audio-file-in-python/).
+# A function for getting wav file duration (inspired from this topic:
+# https://emiliomm.com/index.php/2016/09/24/getting-duration-of-audio-file-in-python/).
 def getWaveFileDuration(sound):
 	"""
 	A function for calculating the duration of the wave file to be launched at regular intervals.
@@ -36,7 +37,8 @@ def getWaveFileDuration(sound):
 
 def getAutoAnnounceInterval():
 	"""
-	A function to draw up the list of intervals in minutes for automatic announcements, depending on the user's choice.
+	A function to draw up the list of intervals in minutes for automatic announcements,
+	depending on the user's choice.
 	This can be every 10 minutes, every 15 minutes, every 30 minutes or every hour.
 	@returns: The list of the chosen intervals in minutes.
 	@rtype: tuple.
@@ -78,9 +80,23 @@ class Clock(object):
 		if config.conf["clockAndCalendar"]["timeReporting"] != 2:
 			if config.conf["clockAndCalendar"]["timeReporting"] == 0:
 				waveFileDuration = getWaveFileDuration(waveFile)
-				wx.CallLater(10 + (1000 * waveFileDuration), ui.message, GetTimeFormatEx(None, None, now, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']])))
+				wx.CallLater(
+					10 + (1000 * waveFileDuration),
+					ui.message,
+					GetTimeFormatEx(
+						None, None, now, formats.rgx.sub(
+							formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']]
+						)
+					)
+				)
 			else:
-				ui.message(GetTimeFormatEx(None, None, now, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']])))
+				ui.message(
+					GetTimeFormatEx(
+						None, None, now, formats.rgx.sub(
+							formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']]
+						)
+					)
+				)
 
 	def quietHoursAreActive(self):
 		if not config.conf["clockAndCalendar"]["quietHours"]:
@@ -90,6 +106,8 @@ class Clock(object):
 		if not qhStartTime or not qhEndTime:
 			return False
 		nowTime = dtfunctions.strfNowTime(config.conf["clockAndCalendar"]["input24HourFormat"])
-		if dtfunctions.timeInRange(qhStartTime, qhEndTime, nowTime, config.conf["clockAndCalendar"]["input24HourFormat"]):
+		if dtfunctions.timeInRange(
+			qhStartTime, qhEndTime, nowTime, config.conf["clockAndCalendar"]["input24HourFormat"]
+		):
 			return True
 		return False

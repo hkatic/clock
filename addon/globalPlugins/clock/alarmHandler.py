@@ -23,14 +23,16 @@ def runAlarm(sound):
 	nvwave.playWaveFile(sound)
 	config.conf['clockAndCalendar']['alarmTime'] = 0.0
 	config.conf['clockAndCalendar']['alarmSavedTime'] = 0.0
-	# We save the configuration, in case the user would not have checked the "Save configuration on exit" checkbox in General settings.
+	# We save the configuration, in case the user would not have checked the
+	# "Save configuration on exit" checkbox in General settings.
 	if not config.conf['general']['saveConfigurationOnExit']:
 		config.conf.save()
 
 
 class AlarmTimer(TimerBaseClass):
 	"""
-	A subclass of the threading._ Timer class that adds the ability to find the elapsed time as well as the remaining time
+	A subclass of the threading._ Timer class that adds the ability to find the elapsed time
+	as well as the remaining time
 	"""
 	startTiming = None
 
@@ -55,6 +57,7 @@ class AlarmTimer(TimerBaseClass):
 		TimerBaseClass.cancel(self)
 		config.conf['clockAndCalendar']['alarmTime'] = 0.0
 		config.conf['clockAndCalendar']['alarmSavedTime'] = 0.0
-		# We save the configuration, in case the user would not have checked the "Save configuration on exit" checkbox in General settings.
+		# We save the configuration, in case the user would not have checked the
+		# "Save configuration on exit" checkbox in General settings.
 		if not config.conf['general']['saveConfigurationOnExit']:
 			config.conf.save()
