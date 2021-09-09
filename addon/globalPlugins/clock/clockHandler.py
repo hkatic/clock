@@ -12,7 +12,7 @@ import ui
 import os
 import wx
 from . import formats
-from .formats import GetTimeFormatEx
+from winKernel import GetTimeFormatEx
 
 # A function for getting wav file duration (inspired from this topic: https://emiliomm.com/index.php/2016/09/24/getting-duration-of-audio-file-in-python/).
 def getWaveFileDuration(sound):

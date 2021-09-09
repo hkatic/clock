@@ -32,7 +32,7 @@ from . import pytz
 from . import convertdate
 sys.path.remove(sys.path[-1])
 import time
-from .formats import GetTimeFormatEx, GetDateFormatEx
+from winKernel import GetTimeFormatEx, GetDateFormatEx
 from . import configuration
 from configobj.validate import VdtTypeError
 
