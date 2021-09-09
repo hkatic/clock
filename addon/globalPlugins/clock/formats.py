@@ -48,6 +48,7 @@ def timeMarker():
 			tm = u"am"
 	return tm
 
+
 timeFormats = (
 	# Translators: A time formating.
 	_(u"It's {hours} o'clock and {minutes} minutes").format(hours = "$$H", minutes = "$$m"),
