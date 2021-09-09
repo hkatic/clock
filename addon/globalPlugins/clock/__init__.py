@@ -24,8 +24,6 @@ import wx
 import globalCommands
 import os
 sys.path.append(os.path.join(os.path.abspath(os.path.dirname(__file__))))
-from . import ephem
-from . import pytz
 from . import convertdate
 sys.path.remove(sys.path[-1])
 import time
