@@ -34,10 +34,7 @@ sys.path.remove(sys.path[-1])
 import time
 from .formats import GetTimeFormatEx, GetDateFormatEx
 from . import configuration
-if hasattr(configobj, "validate"):
-	from configobj.validate import VdtTypeError
-else:
-	from validate import VdtTipeError
+from configobj.validate import VdtTypeError
 
 import addonHandler
 addonHandler.initTranslation()

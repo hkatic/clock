@@ -4,7 +4,7 @@
 # Copyright 2013-2021, released under GPL.
 
 import config
-from validate import VdtTypeError
+from configobj.validate import VdtTypeError
 import addonHandler
 addonHandler.initTranslation()
 
