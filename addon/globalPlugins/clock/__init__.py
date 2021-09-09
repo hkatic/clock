@@ -39,6 +39,7 @@ from configobj.validate import VdtTypeError
 import addonHandler
 addonHandler.initTranslation()
 
+
 def secondsToString(seconds):
 	"""
 	A function to convert seconds to user-friendly string, used for stopwatch and timer.
@@ -59,6 +60,7 @@ def secondsToString(seconds):
 	if tm.tm_sec:
 		text += _(u"{seconds} seconds").format(seconds = tm.tm_sec)
 	return _(u"0 seconds") if not text else text
+
 
 def getDayAndWeekOfYear(date):
 	"""
@@ -132,6 +134,7 @@ def getDayAndWeekOfYear(date):
 	daysRemaining = total - nDayOfYear
 	msg.append(daysRemaining)
 	return tuple(msg)
+
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 

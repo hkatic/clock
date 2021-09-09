@@ -22,6 +22,7 @@ from gui import SettingsPanel
 import addonHandler
 addonHandler.initTranslation()
 
+
 class ClockSettingsPanel(SettingsPanel):
 
 	# Translators: This is the label for the clock settings panel.
@@ -174,6 +175,7 @@ class ClockSettingsPanel(SettingsPanel):
 		# We save the configuration, in case the user would not have checked the "Save configuration on exit" checkbox in General settings.
 		if not config.conf['general']['saveConfigurationOnExit']:
 			config.conf.save()
+
 
 class AlarmSettingsPanel(SettingsPanel):
 
