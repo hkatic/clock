@@ -40,7 +40,7 @@ def parseTime(t, parse24hour=False):
 	@returns: The time format converted to datetime.datetime format.
 	@rtype : datetime.datetime.
 	"""
-	f='%H:%M'
+	f = '%H:%M'
 	if parse24hour:
 		res = datetime.strptime(t, f)
 	else:
@@ -55,11 +55,11 @@ def strfNowTime(parse24hour=False):
 	@returns : The current time format converted to a string.
 	@rtype: basestring.
 	"""
-	f=''
+	f = ''
 	if parse24hour:
-		f='%H:%M'
+		f = '%H:%M'
 	else:
-		f='%I:%M %p'
+		f = '%I:%M %p'
 	return datetime.now().strftime(f)
 
 def timeInRange(startTime, endTime, checkTime, use24hour=False):
@@ -76,11 +76,11 @@ def timeInRange(startTime, endTime, checkTime, use24hour=False):
 	@returns: A Boolean corresponding to the verification.
 	@rtype: boolean.
 	"""
-	start=parseTime(startTime, use24hour)
-	end=parseTime(endTime, use24hour)
-	check=parseTime(checkTime, use24hour)
-	if end<start:
-		end+=timedelta(days=1)
+	start = parseTime(startTime, use24hour)
+	end = parseTime(endTime, use24hour)
+	check = parseTime(checkTime, use24hour)
+	if end < start:
+		end += timedelta(days=1)
 		if check < start:
-			check+=timedelta(days=1)
-	return start<=check<end
+			check += timedelta(days=1)
+	return start <= check < end
