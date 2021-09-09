@@ -4,6 +4,7 @@
 
 from datetime import datetime, timedelta
 
+
 def convertTo24Hour(hr):
 	"""
 	A function for converting a 12-hour time format to 24-hour time format.
@@ -30,6 +31,7 @@ def convertTo24Hour(hr):
 	res = res + end if res != "24" else "0" + end
 	return res
 
+
 def parseTime(t, parse24hour=False):
 	"""
 	A function that can be used to convert a time format to a valid datetime.datetime object.
@@ -47,6 +49,7 @@ def parseTime(t, parse24hour=False):
 		res = datetime.strptime(convertTo24Hour(t), f)
 	return res
 
+
 def strfNowTime(parse24hour=False):
 	"""
 	A function that converts the current date format to a simple string.
@@ -61,6 +64,7 @@ def strfNowTime(parse24hour=False):
 	else:
 		f = '%I:%M %p'
 	return datetime.now().strftime(f)
+
 
 def timeInRange(startTime, endTime, checkTime, use24hour=False):
 	"""

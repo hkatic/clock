@@ -13,6 +13,7 @@ addonHandler.initTranslation()
 ptrn = u"(\w+'?\w*|\$+[hmst]{1,2})"
 rgx = re.compile(ptrn, re.U | re.I)
 
+
 def repl(match):
 	"""
 	A function that captures and replaces words to make them compatible with the time format used in the GetTimeFormatEx function.
@@ -27,6 +28,7 @@ def repl(match):
 	if "'" in content:
 		return "'%s'" % content.replace("'", "''")
 	return "'%s'" % content
+
 
 # The following function is not used yet.
 def timeMarker():
