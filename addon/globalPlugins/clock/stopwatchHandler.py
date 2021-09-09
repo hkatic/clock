@@ -22,8 +22,8 @@ class Stopwatch(object):
 		if not self.startTime:
 			return 0.0
 		if self.stopTime:
-			return self.stopTime-self.startTime
-		return time.time()-self.startTime
+			return self.stopTime - self.startTime
+		return time.time() - self.startTime
 
 	def stop(self):
 		self.stopTime = time.time()

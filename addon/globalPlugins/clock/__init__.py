@@ -80,7 +80,7 @@ def getDayAndWeekOfYear(date):
 		nDayOfYear = now.timetuple()[7]
 		nWeekOfYear = now.isocalendar()[1]
 		if nWeekOfYear == 1 and nDayOfYear > 300:
-			msg = [nDayOfYear, nWeekOfYear, gregYear+1]
+			msg = [nDayOfYear, nWeekOfYear, gregYear + 1]
 		else:
 			msg = [nDayOfYear, nWeekOfYear, gregYear]
 	else:
@@ -113,7 +113,7 @@ def getDayAndWeekOfYear(date):
 					nWeekOfYear = nDayOfYear / 7
 			nWeekOfYear = int(nWeekOfYear)
 			if nWeekOfYear == 1 and nDayOfYear > 300:
-				msg = [nDayOfYear, nWeekOfYear, curYear+1]
+				msg = [nDayOfYear, nWeekOfYear, curYear + 1]
 			else:
 				msg = [nDayOfYear, nWeekOfYear, curYear]
 
