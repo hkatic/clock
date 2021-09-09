@@ -13,10 +13,17 @@ def onInstall():
 	import gui
 	import wx
 	curProfile = config.conf.profiles[0]
-	if 'clockAndCalendar' in curProfile and ('timeDisplayFormat' in list(curProfile['clockAndCalendar'].keys()) and not isinstance(config.conf['clockAndCalendar']['timeDisplayFormat'], int)):
+	if (
+		'clockAndCalendar' in curProfile and (
+			'timeDisplayFormat' in list(curProfile['clockAndCalendar'].keys())
+			and not isinstance(config.conf['clockAndCalendar']['timeDisplayFormat'], int))
+	):
 		if gui.messageBox(
-			# Translators: the label of a message box dialog.
-			_("The date and time format you were using are not compatible with this version of the Clock add-on, this will be fixed during installation. Click OK to confirm these corrections"),
+			_(
+				# Translators: the label of a message box dialog.
+				"The date and time format you were using are not compatible with this version of the Clock add-on, "
+				"this will be fixed during installation. Click OK to confirm these corrections"
+			),
 			# Translators: the title of a message box dialog.
 			_("Time and date format corrections"), wx.OK | wx.ICON_INFORMATION
 		) == wx.OK:
