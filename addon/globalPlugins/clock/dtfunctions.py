@@ -8,7 +8,8 @@ from datetime import datetime, timedelta
 def convertTo24Hour(hr):
 	"""
 	A function for converting a 12-hour time format to 24-hour time format.
-	This will facilitate the use of AM/PM suffixed hour formats in all locale time formats, including those that do not use this type of format.
+	This will facilitate the use of AM/PM suffixed hour formats in all locale time formats,
+	including those that do not use this type of format.
 	This type of input will then be used when entering quiet hours in the 12-hour format.
 	@param hr: The 12-hour time format that includes the AM or PM suffix to be converted to 24-hour format.
 	@type hr: basestring.
@@ -37,7 +38,8 @@ def parseTime(t, parse24hour=False):
 	A function that can be used to convert a time format to a valid datetime.datetime object.
 	@param t: The time format to convert in the H:mm or H:mm form.
 	@type t: basestring.
-	@param parse24hour: optional: A boolean to determine whether the required time format is a 24-hour format or not.
+	@param parse24hour: optional: A boolean to determine whether the required time format is
+	a 24-hour format or not.
 	@type parse24hours: boolean.
 	@returns: The time format converted to datetime.datetime format.
 	@rtype : datetime.datetime.
@@ -53,7 +55,8 @@ def parseTime(t, parse24hour=False):
 def strfNowTime(parse24hour=False):
 	"""
 	A function that converts the current date format to a simple string.
-	@param parse24hour: optional: A boolean to determine whether the required time format is a 24-hour format or not
+	@param parse24hour: optional: A boolean to determine whether the required time format
+	is a 24-hour format or not
 	@type parse24hours: boolean.
 	@returns : The current time format converted to a string.
 	@rtype: basestring.
@@ -68,14 +71,16 @@ def strfNowTime(parse24hour=False):
 
 def timeInRange(startTime, endTime, checkTime, use24hour=False):
 	"""
-	A function that can be used to check whether the time range received as a parameter does not match a specific time.
+	A function that can be used to check whether the time range
+	received as a parameter does not match a specific time.
 	@param startTime: The start time in the range.
 	@type startTime: basestring.
 	@param endTime: The end time in the range.
 	@type endTime: basestring.
 	@param checkTime: The time that will allow for the verification.
 	@type checkTime: basestring.
-	@param use24hour: optional: A boolean to determine whether the specified times format are 24-hour format or not.
+	@param use24hour: optional: A boolean to determine whether the specified times format
+	are 24-hour format or not.
 	@type use24hours: boolean.
 	@returns: A Boolean corresponding to the verification.
 	@rtype: boolean.

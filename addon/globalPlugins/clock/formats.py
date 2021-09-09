@@ -9,7 +9,8 @@ import re
 import addonHandler
 addonHandler.initTranslation()
 
-# A regular expression to match and facilitate translation for words that are not part of the formatting symbols.
+# A regular expression to match and facilitate translation for words that are
+# not part of the formatting symbols.
 # Ignore Flake8 W605: invalid escape sequence (\w)
 ptrn = u"(\w+'?\w*|\$+[hmst]{1,2})"  # NOQA: W605
 rgx = re.compile(ptrn, re.U | re.I)
@@ -17,7 +18,8 @@ rgx = re.compile(ptrn, re.U | re.I)
 
 def repl(match):
 	"""
-	A function that captures and replaces words to make them compatible with the time format used in the GetTimeFormatEx function.
+	A function that captures and replaces words to make them
+	compatible with the time format used in the GetTimeFormatEx function.
 	@param match: The match obtained by the regular expression.
 	@type match: basestring.
 	@returns: The replaced captured group.
@@ -34,8 +36,10 @@ def repl(match):
 # The following function is not used yet.
 def timeMarker():
 	"""
-	A function that allows to find the time marker "AM" or "PM" for the formats of hours used in some English-speaking countries.
-	As Windows defines this marker only if the regional language is English, this function allows to extend this to all other regions.
+	A function that allows to find the time marker "AM" or "PM"
+	for the formats of hours used in some English-speaking countries.
+	As Windows defines this marker only if the regional language is English,
+	this function allows to extend this to all other regions.
 	@returns: The time marker am or pm corresponding to the current time.
 	@rtype: basestring.
 	"""
@@ -54,11 +58,15 @@ timeFormats = (
 	# Translators: A time formating.
 	_(u"It's {hours} o'clock and {minutes} minutes").format(hours="$$H", minutes="$$m"),
 	# Translators: A time formating.
-	_(u"It's {hours} o'clock, {minutes} minutes and {seconds} seconds").format(hours="$$H", minutes="$$m", seconds="$$s"),
+	_(u"It's {hours} o'clock, {minutes} minutes and {seconds} seconds").format(
+		hours="$$H", minutes="$$m", seconds="$$s"
+	),
 	# Translators: A time formating.
 	_(u"{hours} o'clock, {minutes} minutes").format(hours="$$h", minutes="$$mm"),
 	# Translators: A time formating.
-	_(u"{hours} o'clock, {minutes} minutes, {seconds} seconds").format(hours="$$h", minutes="$$mm", seconds="$$ss"),
+	_(u"{hours} o'clock, {minutes} minutes, {seconds} seconds").format(
+		hours="$$h", minutes="$$mm", seconds="$$ss"
+	),
 	# Translators: A time formating.
 	_(u"It's {minutes} past {hours}").format(minutes="$$m", hours="$$h"),
 	# Translators: A time formating.
