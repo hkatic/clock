@@ -12,6 +12,7 @@ TimerBaseClass = threading._Timer if sys.version_info.major == 2 else threading.
 
 run = False
 
+
 def runAlarm(sound):
 	"""
 	A function that allows to launch the scheduled alarm.
@@ -25,6 +26,7 @@ def runAlarm(sound):
 	# We save the configuration, in case the user would not have checked the "Save configuration on exit" checkbox in General settings.
 	if not config.conf['general']['saveConfigurationOnExit']:
 		config.conf.save()
+
 
 class AlarmTimer(TimerBaseClass):
 	"""

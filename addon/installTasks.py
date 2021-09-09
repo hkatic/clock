@@ -8,6 +8,7 @@ from configobj.validate import VdtTypeError
 import addonHandler
 addonHandler.initTranslation()
 
+
 def onInstall():
 	import gui
 	import wx
