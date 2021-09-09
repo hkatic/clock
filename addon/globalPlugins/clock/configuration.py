@@ -5,7 +5,7 @@
 
 import config
 
-confspec={
+confspec = {
 	'timeDisplayFormat': 'integer(default=0)',
 	'dateDisplayFormat': 'integer(default=1)',
 	'input24HourFormat': 'boolean(default=False)',
@@ -20,4 +20,4 @@ confspec={
 	'quietHoursStartTime': 'string(default="")',
 	'quietHoursEndTime': 'string(default="")',
 }
-config.conf.spec["clockAndCalendar"]=confspec
+config.conf.spec["clockAndCalendar"] = confspec

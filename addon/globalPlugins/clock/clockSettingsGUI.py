@@ -50,7 +50,7 @@ class ClockSettingsPanel(SettingsPanel):
 		# Transla	tors: This is the label for a combo box in the Clock settings dialog.
 		self._autoAnnounce = _("&interval:")
 
-		self._timeAnnounceChoices=(
+		self._timeAnnounceChoices = (
 			# Translators: This is a choice of the time report choices combo box.
 			_("speech and sound"),
 			# Translators: This is a choice of the time report choices combo box.
@@ -139,13 +139,13 @@ class ClockSettingsPanel(SettingsPanel):
 		self._quietEndTimeText.Enabled = (self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled())
 
 	def onSave(self):
-		config.conf["clockAndCalendar"]["timeDisplayFormat"]=self._timeDisplayFormatChoice.GetSelection()
-		config.conf["clockAndCalendar"]["dateDisplayFormat"]=self._dateDisplayFormatChoice.GetSelection()
-		config.conf["clockAndCalendar"]["dateDisplayFormat"]=self._dateDisplayFormatChoice.GetSelection()
-		config.conf["clockAndCalendar"]["input24HourFormat"]=self._input24HourFormatCheckBox.GetValue()
-		config.conf["clockAndCalendar"]["autoAnnounce"]=self._autoAnnounceChoice.GetSelection()
-		config.conf["clockAndCalendar"]["timeReporting"]=self._timeReportChoice.GetSelection()
-		config.conf["clockAndCalendar"]["timeReportSound"]=self._timeReportSoundChoice.GetStringSelection()
+		config.conf["clockAndCalendar"]["timeDisplayFormat"] = self._timeDisplayFormatChoice.GetSelection()
+		config.conf["clockAndCalendar"]["dateDisplayFormat"] = self._dateDisplayFormatChoice.GetSelection()
+		config.conf["clockAndCalendar"]["dateDisplayFormat"] = self._dateDisplayFormatChoice.GetSelection()
+		config.conf["clockAndCalendar"]["input24HourFormat"] = self._input24HourFormatCheckBox.GetValue()
+		config.conf["clockAndCalendar"]["autoAnnounce"] = self._autoAnnounceChoice.GetSelection()
+		config.conf["clockAndCalendar"]["timeReporting"] = self._timeReportChoice.GetSelection()
+		config.conf["clockAndCalendar"]["timeReportSound"] = self._timeReportSoundChoice.GetStringSelection()
 
 	def postSave(self):
 		match = None
@@ -158,16 +158,16 @@ class ClockSettingsPanel(SettingsPanel):
 				match = re.match("^(0?[0-9]|1[0-2]):[0-5][0-9] [aPAp][mM]$", self._quietStartTimeText.GetValue())
 				match1 = re.match("^(0?[0-9]|1[0-2]):[0-5][0-9] [aPAp][mM]$", self._quietEndTimeText.GetValue())
 			if match and match1:
-				config.conf["clockAndCalendar"]["quietHours"]=self._quietHoursCheckBox.GetValue()
-				config.conf["clockAndCalendar"]["quietHoursStartTime"]=self._quietStartTimeText.GetValue()
-				config.conf["clockAndCalendar"]["quietHoursEndTime"]=self._quietEndTimeText.GetValue()
+				config.conf["clockAndCalendar"]["quietHours"] = self._quietHoursCheckBox.GetValue()
+				config.conf["clockAndCalendar"]["quietHoursStartTime"] = self._quietStartTimeText.GetValue()
+				config.conf["clockAndCalendar"]["quietHoursEndTime"] = self._quietEndTimeText.GetValue()
 			else:
 				if gui.messageBox(
 					# A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
 					_(u"The value you entered for your quiet hours is erroneous, for a 24-hour format, the value must be HH:MM, for a 12-hour format, the value must be HH:MM followed by the AM or PM suffix, please reread the documentation. So your quiet hours have been deactivated for prevent any error in the configuration file."),
 					# Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
 					_("Error"),wx.OK|wx.ICON_ERROR,self
-				)==wx.OK:
+				) == wx.OK:
 					config.conf['clockAndCalendar']['quietHours'] = False
 		else:
 			config.conf['clockAndCalendar']['quietHours'] = False
@@ -182,7 +182,7 @@ class AlarmSettingsPanel(SettingsPanel):
 	pause = False
 
 	def makeSettings(self, settingsSizer):
-		self._alarmTimerChoices=(
+		self._alarmTimerChoices = (
 			# Translators: This is an item of the alarm timer choices.
 			_("Hours"),
 			# Translators: This is an item of the alarm timer choices.
@@ -259,7 +259,7 @@ class AlarmSettingsPanel(SettingsPanel):
 				_(u"You've chosen an alarm to be triggered in {tm} {unit}").format(tm = self._alarmTimeWaitingText.GetValue(), unit = self._alarmTimerChoice.GetStringSelection()),
 				# Translators: The title of the dialog which appears when the user has chosen to trigger an alarm.
 				_("Confirmation"),wx.OK|wx.CANCEL|wx.ICON_INFORMATION,self
-			)==wx.OK:
+			) == wx.OK:
 				wakeUp = int(self._alarmTimeWaitingText.GetValue())
 				if self._alarmTimerChoice.GetSelection() == 0:
 					wakeUp *= 3600
