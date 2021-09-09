@@ -78,13 +78,27 @@ class ClockSettingsPanel(SettingsPanel):
 
 	def showSettingsDialog(self, settingsSizer):
 		clockSettingsGuiHelper = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
-		self._timeDisplayFormatChoice = clockSettingsGuiHelper.addLabeledControl(self._timeDisplayFormat, wx.Choice, choices=formats.timeDisplayFormats)
-		self._dateDisplayFormatChoice = clockSettingsGuiHelper.addLabeledControl(self._dateDisplayFormat, wx.Choice, choices=formats.dateDisplayFormats)
-		self._autoAnnounceChoice = clockSettingsGuiHelper.addLabeledControl(self._autoAnnounce, wx.Choice, choices=self._announceChoices)
-		self._timeReportChoice = clockSettingsGuiHelper.addLabeledControl(self._timeReport, wx.Choice, choices=self._timeAnnounceChoices)
-		self._timeReportSoundChoice = clockSettingsGuiHelper.addLabeledControl(self._timeReportSound, wx.Choice, choices=paths.LIST_SOUNDS)
-		self._quietHoursCheckBox = clockSettingsGuiHelper.addItem(wx.CheckBox(self, label=self._quietHours))
-		self._input24HourFormatCheckBox = clockSettingsGuiHelper.addItem(wx.CheckBox(self, label=self._input24HourFormat))
+		self._timeDisplayFormatChoice = clockSettingsGuiHelper.addLabeledControl(
+			self._timeDisplayFormat, wx.Choice, choices=formats.timeDisplayFormats
+		)
+		self._dateDisplayFormatChoice = clockSettingsGuiHelper.addLabeledControl(
+			self._dateDisplayFormat, wx.Choice, choices=formats.dateDisplayFormats
+		)
+		self._autoAnnounceChoice = clockSettingsGuiHelper.addLabeledControl(
+			self._autoAnnounce, wx.Choice, choices=self._announceChoices
+		)
+		self._timeReportChoice = clockSettingsGuiHelper.addLabeledControl(
+			self._timeReport, wx.Choice, choices=self._timeAnnounceChoices
+		)
+		self._timeReportSoundChoice = clockSettingsGuiHelper.addLabeledControl(
+			self._timeReportSound, wx.Choice, choices=paths.LIST_SOUNDS
+		)
+		self._quietHoursCheckBox = clockSettingsGuiHelper.addItem(
+			wx.CheckBox(self, label=self._quietHours)
+		)
+		self._input24HourFormatCheckBox = clockSettingsGuiHelper.addItem(
+			wx.CheckBox(self, label=self._input24HourFormat)
+		)
 		self._quietStartTimeText = clockSettingsGuiHelper.addLabeledControl(self._quietStartTime, wx.TextCtrl)
 		self._quietEndTimeText = clockSettingsGuiHelper.addLabeledControl(self._quietEndTime, wx.TextCtrl)
 
@@ -100,9 +114,15 @@ class ClockSettingsPanel(SettingsPanel):
 		self._timeReportChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._quietHoursCheckBox.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._timeReportSoundChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection())
-		self._input24HourFormatCheckBox.Enabled = (self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled())
-		self._quietStartTimeText.Enabled = (self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled())
-		self._quietEndTimeText.Enabled = (self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled())
+		self._input24HourFormatCheckBox.Enabled = (
+			self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled()
+		)
+		self._quietStartTimeText.Enabled = (
+			self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled()
+		)
+		self._quietEndTimeText.Enabled = (
+			self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled()
+		)
 
 	def onSoundSelected(self, evt):
 		return nvwave.playWaveFile(os.path.join(paths.SOUNDS_DIR, evt.GetString()))
@@ -131,9 +151,15 @@ class ClockSettingsPanel(SettingsPanel):
 		self._timeReportChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._quietHoursCheckBox.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._timeReportSoundChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection())
-		self._input24HourFormatCheckBox.Enabled = (self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled())
-		self._quietStartTimeText.Enabled = (self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled())
-		self._quietEndTimeText.Enabled = (self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled())
+		self._input24HourFormatCheckBox.Enabled = (
+			self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled()
+		)
+		self._quietStartTimeText.Enabled = (
+			self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled()
+		)
+		self._quietEndTimeText.Enabled = (
+			self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled()
+		)
 
 	def onSave(self):
 		config.conf["clockAndCalendar"]["timeDisplayFormat"] = self._timeDisplayFormatChoice.GetSelection()
@@ -160,15 +186,24 @@ class ClockSettingsPanel(SettingsPanel):
 				config.conf["clockAndCalendar"]["quietHoursEndTime"] = self._quietEndTimeText.GetValue()
 			else:
 				if gui.messageBox(
-					# A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
-					_(u"The value you entered for your quiet hours is erroneous, for a 24-hour format, the value must be HH:MM, for a 12-hour format, the value must be HH:MM followed by the AM or PM suffix, please reread the documentation. So your quiet hours have been deactivated for prevent any error in the configuration file."),
-					# Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
+					_(
+						# Translators: A message that appears to inform the user
+						# that he has entered a mistaken value for the quiet hours.
+						u"The value you entered for your quiet hours is erroneous, "
+						"for a 24-hour format, the value must be HH:MM, "
+						"for a 12-hour format, the value must be HH:MM followed by the AM or PM suffix, "
+						"please reread the documentation. So your quiet hours have been deactivated "
+						"for prevent any error in the configuration file."
+					),
+					# Translators: The title of the dialog which appears
+					# when the user has chosen a mistaken value for his quiet hours.
 					_("Error"), wx.OK | wx.ICON_ERROR, self
 				) == wx.OK:
 					config.conf['clockAndCalendar']['quietHours'] = False
 		else:
 			config.conf['clockAndCalendar']['quietHours'] = False
-		# We save the configuration, in case the user would not have checked the "Save configuration on exit" checkbox in General settings.
+		# We save the configuration, in case the user would not have checked the
+		# "Save configuration on exit" checkbox in General settings.
 		if not config.conf['general']['saveConfigurationOnExit']:
 			config.conf.save()
 
@@ -208,9 +243,15 @@ class AlarmSettingsPanel(SettingsPanel):
 
 	def showAlarmDialog(self, settingsSizer):
 		alarmSettingsGuiHelper = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
-		self._alarmTimerChoice = alarmSettingsGuiHelper.addLabeledControl(self._alarmTimerTitle, wx.Choice, choices=self._alarmTimerChoices)
-		self._alarmTimeWaitingText = alarmSettingsGuiHelper.addLabeledControl(self._alarmTimeWaitingTitle, wx.TextCtrl)
-		self._alarmSoundChoice = alarmSettingsGuiHelper.addLabeledControl(self._alarmSoundTitle, wx.Choice, choices=paths.LIST_ALARMS)
+		self._alarmTimerChoice = alarmSettingsGuiHelper.addLabeledControl(
+			self._alarmTimerTitle, wx.Choice, choices=self._alarmTimerChoices
+		)
+		self._alarmTimeWaitingText = alarmSettingsGuiHelper.addLabeledControl(
+			self._alarmTimeWaitingTitle, wx.TextCtrl
+		)
+		self._alarmSoundChoice = alarmSettingsGuiHelper.addLabeledControl(
+			self._alarmSoundTitle, wx.Choice, choices=paths.LIST_ALARMS
+		)
 		self.stopButton = alarmSettingsGuiHelper.addItem(wx.Button(self, label=self.stopLabel))
 		self.pauseButton = alarmSettingsGuiHelper.addItem(wx.Button(self, label=self.pauseLabel))
 
@@ -253,8 +294,10 @@ class AlarmSettingsPanel(SettingsPanel):
 	def postSave(self):
 		if re.match(r"\d+", self._alarmTimeWaitingText.GetValue()):
 			if gui.messageBox(
-				# Translators: The message displayed after a countdown for an alarm has been chosen.
-				_(u"You've chosen an alarm to be triggered in {tm} {unit}").format(tm=self._alarmTimeWaitingText.GetValue(), unit=self._alarmTimerChoice.GetStringSelection()),
+				_(
+					# Translators: The message displayed after a countdown for an alarm has been chosen.
+					u"You've chosen an alarm to be triggered in {tm} {unit}"
+				).format(tm=self._alarmTimeWaitingText.GetValue(), unit=self._alarmTimerChoice.GetStringSelection()),
 				# Translators: The title of the dialog which appears when the user has chosen to trigger an alarm.
 				_("Confirmation"), wx.OK | wx.CANCEL | wx.ICON_INFORMATION, self
 			) == wx.OK:
@@ -264,8 +307,12 @@ class AlarmSettingsPanel(SettingsPanel):
 				if self._alarmTimerChoice.GetSelection() == 1:
 					wakeUp *= 60
 				config.conf['clockAndCalendar']['alarmTime'] = wakeUp
-				# We save the configuration, in case the user would not have checked the "Save configuration on exit" checkbox in General settings.
+				# We save the configuration, in case the user would not have checked the
+				# "Save configuration on exit" checkbox in General settings.
 				if not config.conf['general']['saveConfigurationOnExit']:
 					config.conf.save()
-				alarmHandler.run = alarmHandler.AlarmTimer(wakeUp, alarmHandler.runAlarm, [os.path.join(paths.ALARMS_DIR, self._alarmSoundChoice.GetStringSelection())])
+				alarmHandler.run = alarmHandler.AlarmTimer(
+					wakeUp, alarmHandler.runAlarm,
+					[os.path.join(paths.ALARMS_DIR, self._alarmSoundChoice.GetStringSelection())]
+				)
 				alarmHandler.run.start()
