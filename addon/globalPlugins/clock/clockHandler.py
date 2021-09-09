@@ -61,11 +61,8 @@ class Clock(object):
 		self._autoAnnounceClockTimer.Start(1000)
 
 	def terminate(self):
-		try:
-			self._autoAnnounceClockTimer.Stop()
-			del self._autoAnnounceClockTimer
-		except:
-			pass
+		self._autoAnnounceClockTimer.Stop()
+		del self._autoAnnounceClockTimer
 
 	def _handleClockAnnouncement(self):
 		if datetime.now().minute in getAutoAnnounceInterval() and datetime.now().second == 0:
