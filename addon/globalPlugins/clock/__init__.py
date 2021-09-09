@@ -47,12 +47,12 @@ def secondsToString(seconds):
 	@returns: User-friendly string containing hours, minutes and seconds.
 	@rtype: basestring.
 	"""
-	text=""
-	tm=time.gmtime(seconds)
+	text = ""
+	tm = time.gmtime(seconds)
 	hr = tm.tm_hour
 	if hr > 0:
 		if hr > 23:
-			hr = 24* (hr / 24) + (hr % 24)
+			hr = 24 * (hr / 24) + (hr % 24)
 		text += _(u"{hours} hours, ").format(hours = str(hr))
 	if tm.tm_min:
 		text += _(u"{minutes} minutes, ").format(minutes = tm.tm_min)
@@ -122,22 +122,22 @@ def getDayAndWeekOfYear(date):
 		# It's a Gregorian year.
 		total = convertdate.gregorian.YEAR_DAYS
 		if convertdate.gregorian.isleap(gregYear):
-			total+=1
+			total += 1
 		nDayOfYear = int(now.timetuple()[7])
 	else:
 		# It's a Hijri year.
 		total = 0
 		for month in range(1, 13):
 			total += dt.month_length(curYear, month)
-	daysRemaining =total - nDayOfYear
+	daysRemaining = total - nDayOfYear
 	msg.append(daysRemaining)
 	return tuple(msg)
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	# Translators: Script category for Clock addon commands in input gestures dialog.
-	scriptCategory=_("Clock")
-	clockLayerModeActive=False
+	scriptCategory = _("Clock")
+	clockLayerModeActive = False
 	layeredScriptToRun = None
 
 	def __init__(self):
@@ -206,12 +206,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_reportTimeAndDate(self, gesture):
 		now = datetime.now()
 		if scriptHandler.getLastScriptRepeatCount() == 0:
-			msg=GetTimeFormatEx(None, None, now, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']]))
+			msg = GetTimeFormatEx(None, None, now, formats.rgx.sub(formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']]))
 		elif scriptHandler.getLastScriptRepeatCount() == 1:
-			msg=GetDateFormatEx(None, None, None, formats.dateFormats[config.conf['clockAndCalendar']['dateDisplayFormat']])
+			msg = GetDateFormatEx(None, None, None, formats.dateFormats[config.conf['clockAndCalendar']['dateDisplayFormat']])
 		else:
 			informations = getDayAndWeekOfYear(GetDateFormatEx(None, None, None, u"yyyy/M/d"))
-			msg=_("Day {day}, week {week} of {year}, remaining days {remain}.").format(day=informations[0], week=informations[1], year=informations[2], remain = informations[3])
+			msg = _("Day {day}, week {week} of {year}, remaining days {remain}.").format(day=informations[0], week=informations[1], year=informations[2], remain = informations[3])
 		ui.message(msg)
 	# We remove the docstring from the original dateTime script to have only one entry in the "System status" category, it will be automatically restored if the Clock add-on is disabled or uninstalled.
 	globalCommands.commands.script_dateTime.__func__.__doc__ = ""
@@ -219,10 +219,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def getScript(self, gesture):
 		if not hasattr(self, "clockLayerModeActive") or (hasattr(self, "clockLayerModeActive") and not self.clockLayerModeActive):
 			return globalPluginHandler.GlobalPlugin.getScript(self, gesture)
-		script=globalPluginHandler.GlobalPlugin.getScript(self, gesture)
+		script = globalPluginHandler.GlobalPlugin.getScript(self, gesture)
 		if not script:
 			return self.script_error
-		self.layeredScriptToRun = next((x[1] for x in self._clockLayerGestures if x[0] ==gesture.mainKeyName), None)
+		self.layeredScriptToRun = next((x[1] for x in self._clockLayerGestures if x[0] == gesture.mainKeyName), None)
 		return self.runAndFinish
 
 	def runAndFinish(self, gesture):
@@ -234,7 +234,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.finish()
 
 	def finish(self):
-		self.clockLayerModeActive=False
+		self.clockLayerModeActive = False
 		self.clearGestureBindings()
 		self.bindGestures(self.__gestures)
 
@@ -253,7 +253,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			return
 		for gesture in self._clockLayerGestures:
 			self.bindGesture("kb:%s" % gesture[0], gesture[1].__name__[7:])
-		self.clockLayerModeActive=True
+		self.clockLayerModeActive = True
 		tones.beep(100, 10)
 
 	@scriptHandler.script(
