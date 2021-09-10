@@ -65,7 +65,7 @@ def secondsToString(seconds):
 	hr = tm.tm_hour
 	if hr > 0:
 		if hr > 23:
-			hr = 24 * (hr / 24) + (hr % 24)
+			hr = 24 * (hr // 24) + (hr % 24)
 		text += _(u"{hours} hours, ").format(hours=str(hr))
 	if tm.tm_min:
 		text += _(u"{minutes} minutes, ").format(minutes=tm.tm_min)
