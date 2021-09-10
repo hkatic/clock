@@ -29,7 +29,7 @@ NVDA+F12 pressed twice quickly, get current date.
 NVDA+F12 pressed thrice quickly, reports the current day, the week number, the current year and the remaining days before the end of the year.
 For other instructions, press Add-on help button in add-ons manager."""),
 	# version
-	"addon_version": "21.07",
+	"addon_version": "21.09",
 	# Author(s)
 	"addon_author" : "Hrvoje Katic <hrvojekatic@gmail.com>, Abdel <abdelkrim.bensaid@gmail.com>",
 	# URL for the add-on documentation support
