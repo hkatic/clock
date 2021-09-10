@@ -105,7 +105,6 @@ def getDayAndWeekOfYear(date: str) -> Tuple[int, ...]:
 		total = convertdate.gregorian.YEAR_DAYS
 		if convertdate.gregorian.isleap(gregYear):
 			total += 1
-		nDayOfYear = int(now.timetuple()[7])
 		daysRemaining = total - nDayOfYear
 		msg.append(daysRemaining)
 	else:
