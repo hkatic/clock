@@ -1,12 +1,12 @@
 # Добавка за NVDA за часовника и календара #
 
-* Автори: Hrvoje Katić, Abdel и други сътрудници на NVDA
-* Изтегляне на [стабилна версия][1]
-* Изтегляне на [тестова версия][2]
+* Authors: Hrvoje Katić, Abdel and NVDA contributors
+* Download [stable version][1]
+* Download [development version][2]
+* NVDA compatibility: 2019.3 and beyond
 
-
-Тази добавка за NVDA разширява възможностите за работа с часовника, алармата
-за обратно отброяване и календара.
+This add-on enables the advanced clock, alarm timer and calendar
+functionality for NVDA.
 
 Вместо винаги да се взима точно датата и часа от Windows, можете да
 персонализирате как NVDA ще извежда с глас и брайл часа и датата.
@@ -15,9 +15,9 @@
 оставащите дни преди края на текущата година. Също така можете да зададете
 автоматично оповестяване на часа на определен времеви интервал.
 
-В добавката са вградени и функции за хронометър и таймер с аларма, които ви
-позволяват да засичате времето за задачите си, като копиране на файлове,
-инсталиране на програми или готвене.
+There's also a stopwatch and Alarm timer features built-in to the add-on
+that lets you time your tasks, such as copying files, installing programs,
+or cooking meals.
 
 ## Забележка:
 
@@ -28,87 +28,37 @@
 
 ## Начин на използване
 
-* Отворете диалоговия прозорец за конфигуриране на тази добавка от менюто на
-  NVDA- > "Инструменти" или от панела с настройки, в зависимост от вашата
-  версия на NVDA.
-
-    * В диалоговия прозорец за настройване на часовника, първите два падащи
-      списъка ви позволяват да избирате предпочитаните формати за показване
-      на часа и датата.
-    * Чрез падащия списък с етикет "Интервал", можете да зададете интервала
-      за автоматично оповестяване на часа (на всеки 10 минути, на всеки 15
-      минути, на всеки 30 минути, на всеки час) или да го изключите.
-    * Чрез падащия списък с етикет "Оповестявай часа чрез" (видим само ако в
-      падащия списък "Интервал" не е избрано "Изключено") можете да
-      конфигурирате как да се осъществява автоматичното оповестяване на часа
-      (говор и звук, само говор или само звук), когато автоматичното
-      оповестяване на часа е включено.
-    * Падащият списък с етикет "Звуков сигнал за часовника" (видим само ако
-      в падащия списък "Интервал" не е избрано "Изключено") ви позволява да
-      избирате между различни звуци за часовника, които ще се
-      възпроизвеждат, когато автоматичното оповестяване на часа е включено и
-      е зададено да се оповестява със звук.
-    * Полето за отметка с етикет "Тихи часове" (видимо само ако в падащия
-      списък "Интервал" не е избрано "Изключено") ви позволява да
-      конфигурирате времевия диапазон, в който не трябва да се извършва
-      автоматично оповестяване, независимо дали автоматичното оповестяване
-      на часа е включено или не.
-    * Чрез полето за отметка с етикет "Въвеждане в 24-часов формат" (видимо
-      само ако в падащия списък "Интервал" не е избрано "Изключено") можете
-      да конфигурирате дали искате да въвеждате времето за тихи часове в
-      12-часов (AM/PM) или в европейски 24-часов формат.
-    * Текстовите полета за указване на начален и краен час (видими само ако
-      е включена опцията "Тихи часове") ви позволява да конфигурирате
-      времевия диапазон за тихи часове. Часът трябва да бъде въведен във
-      формат ЧЧ:ММ ако е включена опцията "Въвеждане в 24-часов формат". В
-      противен случай,, трябва да се използва 12-часов формат, както е
-      описано по-долу.
-    * Когато сте готови, отидете до бутона "OK" и го задействайте с ENTER,
-      за да запазите настройките си.
-    * В диалоговия прозорец за настройка на алармата, първият падащ списък
-      ви позволява да изберете предпочитания времеви интервал за обратно
-      отброяване преди прозвучаване на алармения сигнал.
-    * Текстовото поле ви позволява да въведете времевия интервал преди
-      алармения сигнал. Тази продължителност трябва да бъде посочена с 1 или
-      повече цифри, а не чрез десетично число.
-    * Чрез падащия списък с етикет "Звук за алармата" можете да избирате
-      между различни алармени звуци, които ще се възпроизвеждат, когато
-      настъпи часът на алармата.
-    * Бутонът "Пауза" ви позволява да поставите на пауза/възобновите
-      по-дългите аларми.
-    * Бутонът "Спри" ви позволява да спрете по-дългите аларми.
-    * Когато сте готови, отидете до бутона "OK" и го задействайте с клавиша
-      ENTER. Трябва да се изведе съобщение, което да ви уведоми за
-      оставащото време преди алармата.
-
-* Натиснете NVDA+F12 еднократно, за да научите текущия час, двукратно, за да
-  научите текущата дата или трикратно, за да научите текущия ден, номера на
-  текущата седмица от годината и броя на оставащите дни до края на годината.
+*	Open the configuration dialog for this add-on from NVDA Settings dialog.
+	*	In the Clock setup panel, the first two Combo Box controls allow you to choose your prefered time and date display formats.
+	*	The Combo Box control labeled "Interval" allows you to set the interval for automatic time announcement (Every 10 minutes, Every 15 minutes, Every 30 minutes, Every hour, or Off).
+	*	The Combo Box control labeled "Time announcement" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure how the automatic time announcement should be reported (Speech and sound, Speech only, or Sound only) when automatic time announcement is working.
+	*	The Combo box control labeled "Clock chime sound" (only visible if the choice "off" is not selected in the interval Combo Box) lets you choose between various clock sounds that will be played when automatic time announcement is working and reported with sound.
+	*	The Checkbox control labeled "Quiet hours" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure time range when automatic time announcement shouldn't occur.
+	*	The Checkbox control labeled "input in 24-hour format" (only visible if quiet hours are enabled) allows you to configure whether you want to input time for quiet hours in 12-hour (A.M. or P.M.), or european 24-hour format.
+	*	The Edit box controls for start and end time (only visible if quiet hours are enabled) let you configure time range for quiet hours. The time should be entered in HH:MM format if the "input in 24-hour format" checkbox is checked, otherwise you must use a 12 hour format as described below.
+	*	When done, tab to the OK button and activate it by pressing Enter to save your settings.
+	*	In the Alarm setup dialog, the first Combo Box control allow you to choose your prefered countdown timer before the alarm ring.
+	*	The Edit box control lets you type your time waiting before the alarm ring. This duration must be specified in 1 or more digits, not a decimal number.
+	*	The Combo box control labeled "Alarm sound" lets you choose between various alarm sounds that will be played when the alarm time arrives.
+	*	The pause button allows you to pause/resume too long alarms.
+	*	The stop button allows you to stop too long alarms.
+	*	When done, tab to the OK button and activate it by pressing Enter. A message should be displayed to remind you of the waiting time before the alarm.
+*	Press NVDA+F12 once to get current time, twice to get current date, or three times to get the current day, week number, as well as the remaining days before the end of the current year.
 
 ## Клавишни комбинации
 
-* NVDA+F12: Съобщаване на текущия час.
-* Двукратно бързо натискане на NVDA+F12: Съобщаване на текущата дата.
-* Трикратно бързо натискане на NVDA+F12: Съобщаване на текущия ден, номера
-  на седмицата, текущата година и оставащите дни преди края на годината.
-* Има скрипт, който докладва оставащото и изтеклото време преди следващата
-  аларма.
-* За този скрипт не е присвоен жест от клавиатурата, трябва да го направите
-  сами в диалоговия прозорец "Жестове на въвеждане" в категорията
-  "Часовник".
-* Двукратното бързо задействане на този жест анулира следващата аларма.
-* - Има скрипт, който докладва оставащото и изтеклото време преди следващата
-  аларма;
-  - За този скрипт не е присвоен жест от клавиатурата, трябва да го
-  направите сами в диалоговия прозорец "Жестове на въвеждане" в категорията
-  "Часовник";
-  - Двукратното бързо задействане на този жест анулира следващата аларма;
-  - Има и друг скрипт, който служи, за да спре звука, който се възпроизвежда
-  в момента, неговият жест също не е дефиниран;
-  - Този скрипт може да бъде извикан и с помощта на слоевите команди на
-  добавката, описани по-долу.
-* Този скрипт може да бъде извикан и с помощта на слоевите команди на
-  добавката, описани по-долу.
+* NVDA+F12: get current time
+* NVDA+F12 pressed twice quickly: get current date
+* NVDA+F12 pressed three times quickly: reports the current day, the week
+  number, the current year and the remaining days before the end of the
+  year.
+* There is a script that gives the remaining and elapsed time before the
+  next alarm. There is no keyboard gesture assigned to this script, you will
+  have to do it yourself in the "Input gestures" dialog box, in the "Clock"
+  category. pressing this gesture twice quickly will cancel the next alarm.
+* There is another script to stop the sound that is currently playing, its
+  gesture is also not defined. That script can also be called using the
+  clock layer commands described below.
 
 ## Слоеви команди
 
@@ -125,40 +75,19 @@
 
 ## Синтаксис за използване за тихите часове
 
-* - За да се избегнат грешки, тихите часове трябва да следват строг и точен
-  синтаксис;
-  - Ако поставите отметка в квадратчето "Въвеждане в 24-часов формат",
-  форматът трябва да бъде "ЧЧ:ММ";
-  - Ако махнете отметката от квадратчето "Въвеждане в 24-часов формат",
-  форматът трябва да бъде "ЧЧ:ММ AM" или "ЧЧ:ММ PM", ЧЧ трябва да съдържа
-  12-часов формат, от 0 до 12 и надставката "AM"|"PM" може да бъде с малки
-  или главни букви;
-  - Ако поставите отметка в квадратчето "Тихи часове" и оставите полетата
-  "Начален час за тихите часове" или "Краен час за тихите часове" празни,
-  или въведете грешна стойност, опцията "Тихи часове" ще бъде изключена
-  автоматично, с цел избягване на грешки;
-  - Би трябвало да се изведе съобщение за грешката ви.
-* Ако поставите отметка в квадратчето "Въвеждане в 24-часов формат",
-  форматът трябва да бъде "ЧЧ:ММ".
-* Ако махнете отметката от квадратчето "Въвеждане в 24-часов формат",
-  форматът трябва да бъде "ЧЧ:ММ AM" или "ЧЧ:ММ PM", ЧЧ трябва да съдържа
-  12-часов формат, от 0 до 12 и наставката "AM"|"PM" може да бъде с малки
-  или главни букви.
-* Ако поставите отметка в квадратчето "Тихи часове" и оставите полетата
-  "Начален час за тихите часове" или "Краен час за тихите часове" празни,
-  или въведете грешна стойност, опцията "Тихи часове" ще бъде изключена
-  автоматично, с цел избягване на грешки.
-* Би трябвало да се изведе съобщение за грешката ви.
-
-## Съвместимост
-
-* Тази добавка е съвместима с версиите на NVDA в обхвата от 2014.3 до
-  2019.3.
-
+* To avoid bugs, the quiet hours must follow a rigorous and precise syntax.
+* If you check the "Input in 24-hour format" checkbox, the format must be
+  "HH:MM".
+* If you uncheck the "Input in 24-hour format" checkbox, the format must be
+  "HH:MM AM" or "HH:MM PM", the HH must contain a 12-hour format, from 0 to
+  12 and the "AM"|"PM" suffix can be in lowercase or uppercase.
+* If you check the Quiet hours" checkbox and keep the "Quiet hours start
+  time" or "Quiet hours end time" field empty, or type a mistaken value, the
+  "Quiet hours" checkbox will be unchecked automatically to avoid errorss
+  and a message will be displayed.
 
 [[!tag dev stable]]
 
 [1]: https://addons.nvda-project.org/files/get.php?file=cac
 
 [2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
-

@@ -1,17 +1,20 @@
 # NVDA 时钟日历插件 #
 
-* 作者: Hrvoje Katić, Abdel and NVDA contributors;
-* 下载 [稳定版][1]
-* 下载 [开发板][2]
+* Authors: Hrvoje Katić, Abdel and NVDA contributors
+* Download [stable version][1]
+* Download [development version][2]
+* NVDA compatibility: 2019.3 and beyond
 
-
-此插件可为NVDA启用高级时钟，闹钟定时器和日历功能。
+This add-on enables the advanced clock, alarm timer and calendar
+functionality for NVDA.
 
 您可以自定义NVDA应如何读出时间和日期，而不是从Windows获取时间日期。
 
 此外，您还可以获取当前日期，周数以及当前年度结束前的剩余天数，还可以按指定的时间间隔设置自动时间通知。
 
-还有内置于插件的秒表和闹钟定时器功能，可让您为任务计时，例如复制文件，安装程序或烹饪。
+There's also a stopwatch and Alarm timer features built-in to the add-on
+that lets you time your tasks, such as copying files, installing programs,
+or cooking meals.
 
 ## 注意:
 
@@ -19,37 +22,37 @@
 
 ## 使用
 
-* 根据您的NVDA版本，从NVDA工具菜单或设置面板打开此插件的配置对话框;
-
-    * 在时钟设置对话框中，前两个组合框控件允许您选择喜欢的时间与日期格式;
-    * 标有“间隔”的组合框控件允许您设置自动报时的间隔（每15分钟，每30分钟，每小时或关闭）;
-    * 标有“时间通知”的组合框控件（仅在区间组合框中未选择“关闭”时才可见）
-      当自动报时工作时。允许您配置应如何报告自动报时（语音和声音，仅语音或仅声音）;
-    * 标有“时钟铃声”的组合框控件（仅在间隔组合框中未选择“关闭”时才可见）允许您在自动报时工作和声音报时时播放的各种铃声之间进行选择;
-    * 标记为“夜间模式”的复选框控件（仅在间隔组合框中未选择“关闭”选项时才可见）允许您配置不应发生自动报时的时间范围;
-    * 标有“24小时格式输入”的复选框控件允许您配置您想要在12小时（上午或下午）或欧洲24小时格式中输入夜间模式;
-    * 通过 "编辑" 框控件的开始和结束时间 (仅在启用了夜间模式时才可见), 您可以配置夜间模式的时间范围。如果选中了 "24小时格式的输入"
-      复选框, 则应以 hh:mm 格式输入时间, 否则必须使用如下所述的12小时格式;
-    * 完成后, 将选项卡到 "确定" 按钮, 然后按回车 , 将其激活，并保存您的设置;
-    * 在闹钟设置对话框中，第一个组合框控件允许您在闹钟响之前选择您喜欢的倒数计时器;
-    * “编辑框”控件可让您输入在闹钟响铃前等待的时间。此持续时间必须以1位或更多位数指定，而不是十进制数;
-    * 标有“时钟铃声”的组合框控件可让您在自动报时工作和声音朗读时播放各种时钟声音;
-    * 暂停按钮允许您暂停/恢复太长时间的报时;
-    * 停止按钮允许您停止太长的报时;
-    * 完成后，选择确定按钮并按回车键激活它。应显示一条消息，提醒您闹钟响之前所要等待的时间;
-
-* NVDA+F12 快速按三次，朗读当天，周数，当前年份和年底前的剩余天数。
+*	Open the configuration dialog for this add-on from NVDA Settings dialog.
+	*	In the Clock setup panel, the first two Combo Box controls allow you to choose your prefered time and date display formats.
+	*	The Combo Box control labeled "Interval" allows you to set the interval for automatic time announcement (Every 10 minutes, Every 15 minutes, Every 30 minutes, Every hour, or Off).
+	*	The Combo Box control labeled "Time announcement" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure how the automatic time announcement should be reported (Speech and sound, Speech only, or Sound only) when automatic time announcement is working.
+	*	The Combo box control labeled "Clock chime sound" (only visible if the choice "off" is not selected in the interval Combo Box) lets you choose between various clock sounds that will be played when automatic time announcement is working and reported with sound.
+	*	The Checkbox control labeled "Quiet hours" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure time range when automatic time announcement shouldn't occur.
+	*	The Checkbox control labeled "input in 24-hour format" (only visible if quiet hours are enabled) allows you to configure whether you want to input time for quiet hours in 12-hour (A.M. or P.M.), or european 24-hour format.
+	*	The Edit box controls for start and end time (only visible if quiet hours are enabled) let you configure time range for quiet hours. The time should be entered in HH:MM format if the "input in 24-hour format" checkbox is checked, otherwise you must use a 12 hour format as described below.
+	*	When done, tab to the OK button and activate it by pressing Enter to save your settings.
+	*	In the Alarm setup dialog, the first Combo Box control allow you to choose your prefered countdown timer before the alarm ring.
+	*	The Edit box control lets you type your time waiting before the alarm ring. This duration must be specified in 1 or more digits, not a decimal number.
+	*	The Combo box control labeled "Alarm sound" lets you choose between various alarm sounds that will be played when the alarm time arrives.
+	*	The pause button allows you to pause/resume too long alarms.
+	*	The stop button allows you to stop too long alarms.
+	*	When done, tab to the OK button and activate it by pressing Enter. A message should be displayed to remind you of the waiting time before the alarm.
+*	Press NVDA+F12 once to get current time, twice to get current date, or three times to get the current day, week number, as well as the remaining days before the end of the current year.
 
 ## 键盘命令
 
-* NVDA+F12,朗读当前时间;
-* NVDA+F12 快速按两次，朗读当前日期;
-* NVDA+F12 快速按三次，朗读当天，周数，当前年份和年底前的剩余天数。
-* 有一个脚本可以在下一个闹钟之前提供剩余和经过时间;
-* 没有为此脚本分配键盘手势，您必须在“输入手势”对话框的“时钟”类别中自行设置;
-* 此手势快速按下两次，取消下一次闹钟;
-* 另外还有另一个脚本可以停止当前播放的声音，其手势也没有定义;
-* 也可以使用下面描述的时钟层命令调用该脚本。
+* NVDA+F12: get current time
+* NVDA+F12 pressed twice quickly: get current date
+* NVDA+F12 pressed three times quickly: reports the current day, the week
+  number, the current year and the remaining days before the end of the
+  year.
+* There is a script that gives the remaining and elapsed time before the
+  next alarm. There is no keyboard gesture assigned to this script, you will
+  have to do it yourself in the "Input gestures" dialog box, in the "Clock"
+  category. pressing this gesture twice quickly will cancel the next alarm.
+* There is another script to stop the sound that is currently playing, its
+  gesture is also not defined. That script can also be called using the
+  clock layer commands described below.
 
 ## 分层命令
 
@@ -65,21 +68,19 @@
 
 ## 用于夜间模式的语法
 
-* 为了避免错误，夜间模式必须遵循严格而精确的语法;
-* 如果选中“24小时格式输入”复选框，则格式必须为“HH：MM”;
-* 如果取消选中“以24小时格式输入”复选框，格式必须为“HH：MM AM”或“HH：MM PM”，HH必须包含12小时格式，从0到12和“AM”
-  “|”PM“后缀可以是小写或大写
-* 如果选中“夜间模式”复选框并保持“夜间模式开始时间”或“夜间模式结束时间”字段为空，或键入错误值，则会自动取消选中“夜间模式”复选框以避免错误;
-* 应显示一条消息以朗读您的错误。
-
-## 兼容性
-
-* 此插件支持2014.3至2019.3的NVDA版本。
-
+* To avoid bugs, the quiet hours must follow a rigorous and precise syntax.
+* If you check the "Input in 24-hour format" checkbox, the format must be
+  "HH:MM".
+* If you uncheck the "Input in 24-hour format" checkbox, the format must be
+  "HH:MM AM" or "HH:MM PM", the HH must contain a 12-hour format, from 0 to
+  12 and the "AM"|"PM" suffix can be in lowercase or uppercase.
+* If you check the Quiet hours" checkbox and keep the "Quiet hours start
+  time" or "Quiet hours end time" field empty, or type a mistaken value, the
+  "Quiet hours" checkbox will be unchecked automatically to avoid errorss
+  and a message will be displayed.
 
 [[!tag dev stable]]
 
 [1]: https://addons.nvda-project.org/files/get.php?file=cac
 
 [2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
-

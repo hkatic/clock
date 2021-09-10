@@ -1,11 +1,12 @@
 # Đồng hồ và lịch Add-on cho NVDA #
 
-* Tác giả: Hrvoje Katić, Abdel và cộng tác viên NVDA;
-* Tải về [phiên bản chính thức][1];
-* Tải về [phiên bản thử nghiệm][2].
+* Authors: Hrvoje Katić, Abdel and NVDA contributors
+* Download [stable version][1]
+* Download [development version][2]
+* NVDA compatibility: 2019.3 and beyond
 
-
-Addon này cung cấp tính năng nâng cao cho đồng hồ, báo giờ và lịch cho NVDA.
+This add-on enables the advanced clock, alarm timer and calendar
+functionality for NVDA.
 
 Thay vì luôn lấy thông tin ngày giờ từ Windows, bạn có thể tùy biến cách mà
 NVDA đọc và hiển thị ngày giờ trong chữ nổi.
@@ -14,9 +15,9 @@ Thêm nữa, bạn có thể lấy thông tin về ngày hiện tại, số tu�
 còn lại trước khi kết thúc năm, và bạn cũng có thể đặt báo giờ tự động trong
 khoảng thời gian nhất định.
 
-Có cả đồng hồ bấm giờ và tính năng báo giờ được tích hợp trong addon để hẹn
-giờ cho công việc của bạn, chẳng hạn như chép các tập tin, cài đặt chương
-trình hay nấu ăn.
+There's also a stopwatch and Alarm timer features built-in to the add-on
+that lets you time your tasks, such as copying files, installing programs,
+or cooking meals.
 
 ## Lưu ý:
 
@@ -27,64 +28,37 @@ nhận.
 
 ## Sử dụng
 
-* Mở hộp thoại cấu hình cho addon này từ trình đơn công cụ của NVDA hoặc từ
-  bản tùy chỉnh tùy theo phiên bản NVDA của bạn;
-
-    * Trong hộp thoại cài đặt đồng hồ, hai hộp xổ đầu tiên cho phép bạn chọn
-      kiểu hiển thị ngày giờ ưa thích của mình;
-    * Hộp xổ tên "Khoảng thời gian" cho phép bạn đặt thời gian báo giờ tự
-      động (mỗi 10 phút, mỗi 15 phút, mỗi 30 phút, mỗi giờ, hoặc là tắt);
-    * Hộp xổ tên "Báo giờ" (chỉ hiển thị khi lựa chọn "tắt" không được chọn
-      từ hộp xổ khoảng thời gian) cho phép bạn cấu hình việc tự báo giờ (nói
-      và âm thanh, chỉ nói, hay chỉ âm thanh) khi tính năng tự báo giờ hoạt
-      động;
-    * Hộp xổ tên "Chuông đồng hồ" (chỉ hiển thị khi lựa chọn "tắt" không
-      được chọn trong hộp xổ khoảng thời gian) cho phép bạn chọn giữa nhiều
-      chuông đồng hồ sẽ được phát khi tính năng tự báo giờ hoạt động và
-      thông báo bằng âm thanh;
-    * Hộp kiểm tên "Giờ yên tĩnh" (chỉ hiển thị khi lựa chọn "tắt" không
-      được chọn trong hộp xổ khoảng thời gian) cho phép bạn cấu hình khoảng
-      thời gian mà tính năng tự báo giờ không nên hoạt động;
-    * Hộp kiểm tên "Nhập định dạng 24 giờ" (chỉ hiển thị khi giờ yên tĩnh
-      được bật) cho phép bạn cấu hình cách nhập thời gian cho giờ yên tĩnh
-      theo kiểu 12 giờ (A.M. hoặc P.M.) hay định dạng 24 giờ - giờ Châu Âu;
-    * Các ô nhập liệu cho thời gian bắt đầu và kết thúc (chỉ hiển thị khi
-      giờ yên tĩnh được bật) cho phép bạn cấu hình khoảng thời gian của giờ
-      yên tĩnh. Thời gian phải được nhập là HH:MM nếu đã chọn hộp kiểm "Nhập
-      định dạng 24 giờ", nếu không. bạn phải dùng kiểu định dạng 12 giờ được
-      mô tả bên dưới;
-    * Khi hoàn tất, tab đến nút Đồng Ý và kích hoạt nó bằng Enter để lưu
-      thiết lập;
-    * Trong hộp thoại cài đặt báo hiệu, hộp xổ đầu tiên cho phép bạn chọn
-      kiểu thời gian đếm ngược trước khi phát báo hiệu;
-    * Ô nhập liệu cho phép bạn nhập thời gian chờ trước khi phát báo
-      hiệu. Thời gian này phải được nhập là một hay nhiều số tự nhiên, không
-      phải số thập phân;
-    * Hộp xổ tên "Âm báo hiệu" cho phép bạn chọn giữa nhiều âm báo hiệu sẽ
-      được phát khi đến giờ báo hiệu;
-    * Nút tạm dừng cho phép bạn tạm dừng / tiếp tục báo hiệu dài;
-    * Nút dừng cho phép bạn dừng báo hiệu dài;
-    * Khi hoàn tất, tab đến nút Đồng Ý và kích hoạt nó bằng Enter. Một thông
-      điệp sẽ hiển thị, nhắc bạn thời gian chờ trước khi báo hiệu;
-
-* Bấm NVDA+F12 một lần để xem giờ hiện tại, hai lần để xem ngày hiện tại,
-  hay ba lần để xem ngày hiện tại, số tuần, kể cả số ngày còn lại trước khi
-  kết thúc năm hiện tại.
+*	Open the configuration dialog for this add-on from NVDA Settings dialog.
+	*	In the Clock setup panel, the first two Combo Box controls allow you to choose your prefered time and date display formats.
+	*	The Combo Box control labeled "Interval" allows you to set the interval for automatic time announcement (Every 10 minutes, Every 15 minutes, Every 30 minutes, Every hour, or Off).
+	*	The Combo Box control labeled "Time announcement" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure how the automatic time announcement should be reported (Speech and sound, Speech only, or Sound only) when automatic time announcement is working.
+	*	The Combo box control labeled "Clock chime sound" (only visible if the choice "off" is not selected in the interval Combo Box) lets you choose between various clock sounds that will be played when automatic time announcement is working and reported with sound.
+	*	The Checkbox control labeled "Quiet hours" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure time range when automatic time announcement shouldn't occur.
+	*	The Checkbox control labeled "input in 24-hour format" (only visible if quiet hours are enabled) allows you to configure whether you want to input time for quiet hours in 12-hour (A.M. or P.M.), or european 24-hour format.
+	*	The Edit box controls for start and end time (only visible if quiet hours are enabled) let you configure time range for quiet hours. The time should be entered in HH:MM format if the "input in 24-hour format" checkbox is checked, otherwise you must use a 12 hour format as described below.
+	*	When done, tab to the OK button and activate it by pressing Enter to save your settings.
+	*	In the Alarm setup dialog, the first Combo Box control allow you to choose your prefered countdown timer before the alarm ring.
+	*	The Edit box control lets you type your time waiting before the alarm ring. This duration must be specified in 1 or more digits, not a decimal number.
+	*	The Combo box control labeled "Alarm sound" lets you choose between various alarm sounds that will be played when the alarm time arrives.
+	*	The pause button allows you to pause/resume too long alarms.
+	*	The stop button allows you to stop too long alarms.
+	*	When done, tab to the OK button and activate it by pressing Enter. A message should be displayed to remind you of the waiting time before the alarm.
+*	Press NVDA+F12 once to get current time, twice to get current date, or three times to get the current day, week number, as well as the remaining days before the end of the current year.
 
 ## Các phím lệnh
 
-* NVDA+F12, xem giờ hiện tại;
-* NVDA+F12 bấm nhanh hai lần, xem ngày hiện tại;
-* NVDA+F12 bấm nhanh ba lần, thông báo ngày hiện tại, số tuần, năm hiện tại
-  và số ngày còn lại trước khi kết thúc năm.
-* Có một kịch bản cung cấp cho bạn thời gian đã qua và thời gian còn lại
-  trước khi có báo hiệu tiếp theo;
-* Không có thao tác cho kịch bản này. bạn phải tự gán lệnh trong hộp thoại
-  "Quản lý các thao tác", trong phân loại Đồng hồ";
-* Thực hiện thao tác này nhanh hai lần để hủy bỏ báo hiệu kế tiếp;
-* Còn có một kịch bản khác để dừng âm thanh đang được phát. Thao tác này
-  cũng không được quy định;
-* Cũng có thể gọi các kịch bản đó bằng các lệnh layer được mô tả dưới đây.
+* NVDA+F12: get current time
+* NVDA+F12 pressed twice quickly: get current date
+* NVDA+F12 pressed three times quickly: reports the current day, the week
+  number, the current year and the remaining days before the end of the
+  year.
+* There is a script that gives the remaining and elapsed time before the
+  next alarm. There is no keyboard gesture assigned to this script, you will
+  have to do it yourself in the "Input gestures" dialog box, in the "Clock"
+  category. pressing this gesture twice quickly will cancel the next alarm.
+* There is another script to stop the sound that is currently playing, its
+  gesture is also not defined. That script can also be called using the
+  clock layer commands described below.
 
 ## Các lệnh layer
 
@@ -100,26 +74,19 @@ nhận.
 
 ## Cú pháp dùng cho giờ yên tĩnh
 
-* Để tránh gây ra lỗi, giờ yên tĩnh phải tuân theo các cú pháp chặt chẽ và
-  chính xác;
-* Nếu bạn chọn hộp kiểm "Nhập định dạng 24 giờ", định dạng sẽ phải là
-  "HH:MM";
-* Nếu bạn không chọn hộp kiểm "Nhập định dạng 24 giờ", định dạng sẽ phải là
-  "HH:MM AM" hay "HH:MM PM", HH phải là kiểu định dạng 12 giờ, từ 0 đến 12
-  và hậu tố "AM"|"PM" có thể là chữ hoa hoặc thường
-* Nếu chọn vào hộp kiểm Giờ yên tĩnh" và để trống mục "Thời gian bắt đầu giờ
-  yên tĩnh" hoặc "Thời gian kết thúc giờ yên tĩnh", hoặc nhập một giá trị
-  sai, hộp kiểm "Giờ yên tĩnh" sẽ tự bị bỏ chọn để tránh xảy ra lỗi;
-* Một thông điệp sẽ hiển thị để báo lỗi.
-
-## Tính tương thích
-
-* Add-on này tương thích với các phiên bản NVDA từ 2014.3 đến 2019.3.
-
+* To avoid bugs, the quiet hours must follow a rigorous and precise syntax.
+* If you check the "Input in 24-hour format" checkbox, the format must be
+  "HH:MM".
+* If you uncheck the "Input in 24-hour format" checkbox, the format must be
+  "HH:MM AM" or "HH:MM PM", the HH must contain a 12-hour format, from 0 to
+  12 and the "AM"|"PM" suffix can be in lowercase or uppercase.
+* If you check the Quiet hours" checkbox and keep the "Quiet hours start
+  time" or "Quiet hours end time" field empty, or type a mistaken value, the
+  "Quiet hours" checkbox will be unchecked automatically to avoid errorss
+  and a message will be displayed.
 
 [[!tag dev stable]]
 
 [1]: https://addons.nvda-project.org/files/get.php?file=cac
 
 [2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
-

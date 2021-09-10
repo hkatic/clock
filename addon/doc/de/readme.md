@@ -1,12 +1,12 @@
 # Uhr- und Kalender-Erweiterung für NVDA #
 
-* Autoren: Hrvoje Katić, Abdel und NVDA-Mitwirkende;
-* [Stabile Version herunterladen][1];
-* Download [development version][2].
+* Authors: Hrvoje Katić, Abdel and NVDA contributors
+* Download [stable version][1]
+* Download [development version][2]
+* NVDA compatibility: 2019.3 and beyond
 
-
-Diese Erweiterung bietet die erweiterte Uhren-, Weck- und
-Kalenderfunktionalität für NVDA.
+This add-on enables the advanced clock, alarm timer and calendar
+functionality for NVDA.
 
 Anstatt immer Zeit und Datum von Windows zu bekommen, können Sie anpassen,
 wie Zeiten und Daten von NVDA gesprochen und in Braille ausgegeben werden
@@ -16,9 +16,9 @@ Zusätzlich können Sie den aktuellen Tag, die Wochennummer sowie die Anzahl
 der restlichen Tage des laufenden Jahres erhalten, Des weiteren können Sie
 eine automatische Zeitankündigung und dessen Intervall einstellen.
 
-In die Erweiterung wurde eine Stoppuhr und ein Wecker integriert, sodass Sie
-die Zeit für Ihre Aufgaben  wie das Kopieren von Dateien, die Installation
-von Programmen oder das Kochen von Mahlzeiten im Blick haben.
+There's also a stopwatch and Alarm timer features built-in to the add-on
+that lets you time your tasks, such as copying files, installing programs,
+or cooking meals.
 
 ## Anmerkung:
 
@@ -30,80 +30,37 @@ Korrektur auszulösen.
 
 ## Verwendung
 
-* Öffnen Sie den Konfigurationsdialog für diesee Erweiterung über das
-  Untermenü Extras oder über das Einstellungsfenster Je nach Ihrer Version
-  von NVDA;
-
-    * Im Dialogfeld Uhr einrichten können Sie mit den ersten beiden
-      Steuerelementen des Kombinationsfeldes Ihre bevorzugten Anzeigeformate
-      für Uhrzeit und Datum auswählen;
-    * Mit dem Auswahlfeld "Intervall" können Sie das Intervall für die
-      automatische Zeitansage einstellen (alle 10 Minuten, alle 15 Minuten,
-      alle 30 Minuten, jede Stunde oder Aus);
-    * Mit dem Auswahlfeld "Zeitansage", welches nur sichtbar ist, sofern im
-      Intervall-Kombinationsfeld die Option "Aus" nicht ausgewählt ist,
-      können Sie konfigurieren wie die automatische Zeitansage gemeldet
-      werden soll. Dabei haben Sie die Option zwischen Sprache und Ton, nur
-      Sprache oder nur Ton;
-    * Mit dem Auswahlfeld "Glockenton", welches nur dann sichtbar ist, wenn
-      im Intervall-Kombinationsfeld die Option "aus" nicht ausgewählt ist,
-      können Sie zwischen verschiedenen Glockengeräuschen wählen. Der
-      ausgewählte Sound wird abgespielt, wenn die Zeitansage mit Ton
-      gemeldet wird;
-    * Mit dem Kontrollkästchen "Ruhezeit", welches nur dann sichtbar ist,
-      wenn im Intervall-Kombinationsfeld die Option "Aus" nicht ausgewählt
-      ist, können Sie den Zeitbereich konfigurieren, in dem keine
-      automatische Zeitansage erfolgen soll;
-    * Mit dem Kontrollkästchen "Eingabe im 24-Stunden-Format", welches nur
-      dann sichtbarist,  wenn Ruhezeit aktiviert ist, können Sie einstellen,
-      ob Sie die Dauer der Ruhezeit im 12-Stunden-Format (morgens oder
-      abends) oder im europäischen 24-Stunden-Format eingeben möchten;
-    * Im Eingabefeld "steuerung der Start- und Endzeit", welches nur dann
-      sichtbar ist, wenn Ruhezeit aktiviert ist, können Sie den Zeitbereich
-      für Ruhezeiten konfigurieren. Die Uhrzeit sollte im Format HH:MM
-      eingegeben werden, wenn das Kontrollkästchen "Eingabe im
-      24-Stunden-Format" aktiviert ist. Andernfalls müssen Sie wie unten
-      beschrieben ein 12-Stunden-Format verwenden;
-    * Wenn Sie fertig sind, navigieren Sie zur OK-Taste und aktivieren Sie
-      sie, indem Sie die Eingabetaste drücken, um Ihre Einstellungen zu
-      speichern;
-    * Im Dialogfeld Wecker einrichten können Sie mit dem ersten Auswahlfeld
-      in der Liste den gewünschten Countdown-Timer auswählen, welcher
-      ausgelöst wird, bevor der Wecker klingelt;
-    * Mit dem Eingabefeld "Wartezeit" können Sie die Wartezeit eingeben, bis
-      der Wecker klingelt. Diese Dauer muss in 1 oder mehr Ziffern angegeben
-      werden, nicht in einer Dezimalzahl;
-    * Mit dem Auswahlfeld "Weckton" können Sie zwischen verschiedenen
-      Alarmtönen wählen, die bei der ausgewählten Weckzeit abgespielt
-      werden;
-    * Mit der Taste "Pause" können Sie Wecktöne anhalten/fortsetzen, die zu
-      lang sind;
-    * Mit der Stopptaste können Sie Wecktöne stoppen, wenn sie zu lang sind;
-    * Wenn Sie fertig sind, navigieren Sie mit der Tabulatortaste zur
-      Schaltfläche OK und aktivieren Sie diese durch Drücken der
-      Eingabetaste. Es sollte eine Meldung angezeigt werden, die Sie an die
-      Wartezeit vor dem Weckton erinnert;
-
-* Drücken Sie NVDA+F12 einmal, um die aktuelle Uhrzeit , zweimal schnell, um
-  das aktuelle Datum, dreimal schnell um den aktuellen Tag, die
-  Kalenderwoche, das Jahr sowie die Anzahl der verbleibenden Tage des Jahres
-  zu erhalten.
+*	Open the configuration dialog for this add-on from NVDA Settings dialog.
+	*	In the Clock setup panel, the first two Combo Box controls allow you to choose your prefered time and date display formats.
+	*	The Combo Box control labeled "Interval" allows you to set the interval for automatic time announcement (Every 10 minutes, Every 15 minutes, Every 30 minutes, Every hour, or Off).
+	*	The Combo Box control labeled "Time announcement" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure how the automatic time announcement should be reported (Speech and sound, Speech only, or Sound only) when automatic time announcement is working.
+	*	The Combo box control labeled "Clock chime sound" (only visible if the choice "off" is not selected in the interval Combo Box) lets you choose between various clock sounds that will be played when automatic time announcement is working and reported with sound.
+	*	The Checkbox control labeled "Quiet hours" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure time range when automatic time announcement shouldn't occur.
+	*	The Checkbox control labeled "input in 24-hour format" (only visible if quiet hours are enabled) allows you to configure whether you want to input time for quiet hours in 12-hour (A.M. or P.M.), or european 24-hour format.
+	*	The Edit box controls for start and end time (only visible if quiet hours are enabled) let you configure time range for quiet hours. The time should be entered in HH:MM format if the "input in 24-hour format" checkbox is checked, otherwise you must use a 12 hour format as described below.
+	*	When done, tab to the OK button and activate it by pressing Enter to save your settings.
+	*	In the Alarm setup dialog, the first Combo Box control allow you to choose your prefered countdown timer before the alarm ring.
+	*	The Edit box control lets you type your time waiting before the alarm ring. This duration must be specified in 1 or more digits, not a decimal number.
+	*	The Combo box control labeled "Alarm sound" lets you choose between various alarm sounds that will be played when the alarm time arrives.
+	*	The pause button allows you to pause/resume too long alarms.
+	*	The stop button allows you to stop too long alarms.
+	*	When done, tab to the OK button and activate it by pressing Enter. A message should be displayed to remind you of the waiting time before the alarm.
+*	Press NVDA+F12 once to get current time, twice to get current date, or three times to get the current day, week number, as well as the remaining days before the end of the current year.
 
 ## Tastenbefehle
 
-* NVDA+F12, aktuelle Uhrzeit abrufen;
-* NVDA+F12 zweimal kurz drücken, um das aktuelle Datum zu erhalten;
-* NVDA+F12 (dreimal schnell gedrückt) liest den aktuellen Tag, die
-  Kalenderwoche, das Jahr sowie die Anzahl der verbleibenden Tage des Jahres
-  vor.
-* Ein Befehl kann zugewiesen werden, dwelcher  die verbleibende und
-  verstrichene Zeit bis zum nächsten Weckton meldet;
-* Sie müssen selbst im Dialogfeld "Eingaben" in der Kategorie "Uhr" eine
-  Geste für dieses Skript zuweisen;
-* Zweimaliges Drücken dieser Geste löscht den nächsten Wecker;
-* Es gibt ein weiteres Skript, um den aktuellen Weckton zu stoppen. Diesem
-  Skript ist noch keine Geste zugewiesen;
-* Dieses Skript kann durch folgende Befehle aufgerufen werden.
+* NVDA+F12: get current time
+* NVDA+F12 pressed twice quickly: get current date
+* NVDA+F12 pressed three times quickly: reports the current day, the week
+  number, the current year and the remaining days before the end of the
+  year.
+* There is a script that gives the remaining and elapsed time before the
+  next alarm. There is no keyboard gesture assigned to this script, you will
+  have to do it yourself in the "Input gestures" dialog box, in the "Clock"
+  category. pressing this gesture twice quickly will cancel the next alarm.
+* There is another script to stop the sound that is currently playing, its
+  gesture is also not defined. That script can also be called using the
+  clock layer commands described below.
 
 ## Zwischenbefehle
 
@@ -120,28 +77,19 @@ einem der folgenden Tasten:
 
 ## Syntax für Ruhezeit
 
-* Um Fehler zu vermeiden, muss die Eingabe der Ruhezeit einer strengen und
-  präzisen Syntax folgen;
-* Wenn Sie das Kontrollkästchen "Eingabe im 24-Stunden-Format" aktivieren,
-  muss das Format "HH:MM" sein;
-* Wenn Sie das Kontrollkästchen "Eingabe im 24-Stunden-Format" deaktivieren,
-  muss das Format "HH:MM AM" oder "HH:MM PM" sein, das HH muss ein
-  12-Stunden-Format von 0 bis 12 enthalten und das Suffix "AM"|"PM" kann in
-  Klein- oder Großbuchstaben angegeben werden
-* Wenn Sie das Kontrollkästchen "Ruhezeit" aktivieren und das Feld "Ruhezeit
-  Anfang" oder "Ruhezeit Ende" leer lassen oder einen falschen Wert
-  eingeben, wird das Kontrollkästchen "Ruhezeit" automatisch deaktiviert, um
-  Fehler zu vermeiden;
-* Eine Fehlermeldung sollte  angezeigt werden.
-
-## Kompatibilität
-
-* Diese Erweiterung ist mit den NVDA-Versionen 2014.3 bis 2019.1 kompatibel.
-
+* To avoid bugs, the quiet hours must follow a rigorous and precise syntax.
+* If you check the "Input in 24-hour format" checkbox, the format must be
+  "HH:MM".
+* If you uncheck the "Input in 24-hour format" checkbox, the format must be
+  "HH:MM AM" or "HH:MM PM", the HH must contain a 12-hour format, from 0 to
+  12 and the "AM"|"PM" suffix can be in lowercase or uppercase.
+* If you check the Quiet hours" checkbox and keep the "Quiet hours start
+  time" or "Quiet hours end time" field empty, or type a mistaken value, the
+  "Quiet hours" checkbox will be unchecked automatically to avoid errorss
+  and a message will be displayed.
 
 [[!tag dev stable]]
 
 [1]: https://addons.nvda-project.org/files/get.php?file=cac
 
 [2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
-
