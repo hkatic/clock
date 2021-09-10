@@ -6,7 +6,6 @@ import time
 import threading
 import config
 import nvwave
-import sys
 
 run = False
 
