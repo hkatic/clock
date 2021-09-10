@@ -85,6 +85,7 @@ def getDayAndWeekOfYear(date: str) -> Tuple[int, ...]:
 	and the days remaining before the end of the current year.
 	@rtype: tuple.
 	"""
+	msg = []
 	now = datetime.now()
 	curYear = int(date.split("/")[0])
 	gregYear = int(now.strftime("%Y"))
@@ -100,6 +101,13 @@ def getDayAndWeekOfYear(date: str) -> Tuple[int, ...]:
 			msg = [nDayOfYear, nWeekOfYear, gregYear + 1]
 		else:
 			msg = [nDayOfYear, nWeekOfYear, gregYear]
+		# Calculate the remaining days before the end of the current year.
+		total = convertdate.gregorian.YEAR_DAYS
+		if convertdate.gregorian.isleap(gregYear):
+			total += 1
+		nDayOfYear = int(now.timetuple()[7])
+		daysRemaining = total - nDayOfYear
+		msg.append(daysRemaining)
 	else:
 		# It's not a Gregorian year.
 		dt1 = convertdate.islamic
@@ -139,21 +147,12 @@ def getDayAndWeekOfYear(date: str) -> Tuple[int, ...]:
 				msg = [nDayOfYear, nWeekOfYear, curYear + 1]
 			else:
 				msg = [nDayOfYear, nWeekOfYear, curYear]
-
-	# Calculate the remaining days before the end of the current year.
-	if curYear == gregYear:
-		# It's a Gregorian year.
-		total = convertdate.gregorian.YEAR_DAYS
-		if convertdate.gregorian.isleap(gregYear):
-			total += 1
-		nDayOfYear = int(now.timetuple()[7])
-	else:
-		# It's a Hijri year.
-		total = 0
-		for month in range(1, 13):
-			total += dt.month_length(curYear, month)
-	daysRemaining = total - nDayOfYear
-	msg.append(daysRemaining)
+			# Calculate the remaining days before the end of the current year.
+			total = 0
+			for month in range(1, 13):
+				total += dt.month_length(curYear, month)
+			daysRemaining = total - nDayOfYear
+			msg.append(daysRemaining)
 	return tuple(msg)
 
 
