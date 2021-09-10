@@ -3,6 +3,7 @@
 # Author: Hrvoje Katich and contributors
 # Copyright 2013-2021, released under GPL.
 
+from typing import Tuple
 import sys
 from . import skipTranslation
 import globalVars
@@ -52,7 +53,7 @@ confspec = {
 config.conf.spec["clockAndCalendar"] = confspec
 
 
-def secondsToString(seconds):
+def secondsToString(seconds: float) -> str:
 	"""
 	A function to convert seconds to user-friendly string, used for stopwatch and timer.
 	@param second: The number of seconds to convert.
@@ -74,7 +75,7 @@ def secondsToString(seconds):
 	return _(u"0 seconds") if not text else text
 
 
-def getDayAndWeekOfYear(date):
+def getDayAndWeekOfYear(date: str) -> Tuple[int, ...]:
 	"""
 	A function to calculate the current day of the year, as well as the actual number of weeks,
 	for a Gregorian year and also some non-Gregorian years.

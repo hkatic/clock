@@ -3,9 +3,10 @@
 # Copyright 2013-2021, released under GPL.
 
 from datetime import datetime, timedelta
+from typing import Optional
 
 
-def convertTo24Hour(hr):
+def convertTo24Hour(hr: str) -> str:
 	"""
 	A function for converting a 12-hour time format to 24-hour time format.
 	This will facilitate the use of AM/PM suffixed hour formats in all locale time formats,
@@ -33,7 +34,7 @@ def convertTo24Hour(hr):
 	return res
 
 
-def parseTime(t, parse24hour=False):
+def parseTime(t: str, parse24hour: Optional[bool] = False) -> datetime:
 	"""
 	A function that can be used to convert a time format to a valid datetime.datetime object.
 	@param t: The time format to convert in the H:mm or H:mm form.
@@ -52,7 +53,7 @@ def parseTime(t, parse24hour=False):
 	return res
 
 
-def strfNowTime(parse24hour=False):
+def strfNowTime(parse24hour: Optional[bool] = False) -> str:
 	"""
 	A function that converts the current date format to a simple string.
 	@param parse24hour: optional: A boolean to determine whether the required time format
@@ -69,7 +70,7 @@ def strfNowTime(parse24hour=False):
 	return datetime.now().strftime(f)
 
 
-def timeInRange(startTime, endTime, checkTime, use24hour=False):
+def timeInRange(startTime: str, endTime: str, checkTime: str, use24hour: Optional[bool] = False) -> bool:
 	"""
 	A function that can be used to check whether the time range
 	received as a parameter does not match a specific time.

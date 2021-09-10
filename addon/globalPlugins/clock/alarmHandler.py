@@ -10,7 +10,7 @@ import nvwave
 run = False
 
 
-def runAlarm(sound):
+def runAlarm(sound: str) -> None:
 	"""
 	A function that allows to launch the scheduled alarm.
 	It resets the settings of the alarm launch time after execution.
