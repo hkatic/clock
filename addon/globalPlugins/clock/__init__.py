@@ -110,16 +110,15 @@ def getDayAndWeekOfYear(date: str) -> Tuple[int, ...]:
 	else:
 		# It's not a Gregorian year.
 		dt1 = convertdate.islamic
+		islamicYear = dt1.from_gregorian(gregYear, gregMonth, gregDay)[0]
 		dt2 = convertdate.persian
-		if (
-			curYear == dt1.from_gregorian(gregYear, gregMonth, gregDay)[0]
-			or curYear == dt2.from_gregorian(gregYear, gregMonth, gregDay)[0]
-		):
+		persianYear = dt2.from_gregorian(gregYear, gregMonth, gregDay)[0]
+		if curYear in (islamicYear, persianYear):
 			# It's a Hijri year.
-			dt = dt1 if curYear == dt1.from_gregorian(gregYear, gregMonth, gregDay)[0] else dt2
+			dt = dt1 if curYear == islamicYear else dt2
 			# The number of weeks must take into account the day of the week
 			# corresponding to the first day of the year.
-			ndw = 6 if curYear == dt1.from_gregorian(gregYear, gregMonth, gregDay)[0] else 5
+			ndw = 6 if curYear == islamicYear else 5
 			nDayOfYear = 0
 			for month in range(1, curMonth):
 				nDayOfYear += dt.month_length(curYear, month)
