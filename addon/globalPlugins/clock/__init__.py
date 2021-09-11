@@ -87,11 +87,13 @@ def getDayAndWeekOfYear(date: str) -> Tuple[int, ...]:
 	"""
 	msg = []
 	now = datetime.now()
-	curYear = int(date.split("/")[0])
+	# Convert date into a datetime object by parsing it.
+	date = datetime.strptime(date, "%Y/%m/%d")
+	curYear = date.year
 	gregYear = now.year
-	curMonth = int(date.split("/")[1])
+	curMonth = date.month
 	gregMonth = now.month
-	curDay = int(date.split("/")[2])
+	curDay = date.day
 	gregDay = now.day
 	if curYear == gregYear:
 		# It's a Gregorian year.
