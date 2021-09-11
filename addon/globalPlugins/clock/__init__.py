@@ -103,9 +103,8 @@ def getDayAndWeekOfYear(date: str) -> Tuple[int, ...]:
 			total += 1
 		daysRemaining = total - nDayOfYear
 		if nWeekOfYear == 1 and nDayOfYear > 300:
-			msg = [nDayOfYear, nWeekOfYear, gregYear + 1, daysRemaining]
-		else:
-			msg = [nDayOfYear, nWeekOfYear, gregYear, daysRemaining]
+			curYear+= 1
+		msg = [nDayOfYear, nWeekOfYear, curYear, daysRemaining]
 	else:
 		# It's not a Gregorian year.
 		dt1 = convertdate.islamic
@@ -146,9 +145,8 @@ def getDayAndWeekOfYear(date: str) -> Tuple[int, ...]:
 				total += dt.month_length(curYear, month)
 			daysRemaining = total - nDayOfYear
 			if nWeekOfYear == 1 and nDayOfYear > 300:
-				msg = [nDayOfYear, nWeekOfYear, curYear + 1, daysRemaining]
-			else:
-				msg = [nDayOfYear, nWeekOfYear, curYear, daysRemaining]
+				curYear += 1
+			msg = [nDayOfYear, nWeekOfYear, curYear, daysRemaining]
 	return tuple(msg)
 
 
