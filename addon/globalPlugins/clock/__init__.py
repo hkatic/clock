@@ -141,7 +141,6 @@ def getDayAndWeekOfYear(date: str) -> Tuple[int, ...]:
 					# The first day of the year doesn't correspond
 					# to the first day of the week for the current Hidjri calendar.
 					nWeekOfYear = nDayOfYear // 7
-			nWeekOfYear = int(nWeekOfYear)
 			if nWeekOfYear == 1 and nDayOfYear > 300:
 				msg = [nDayOfYear, nWeekOfYear, curYear + 1]
 			else:
