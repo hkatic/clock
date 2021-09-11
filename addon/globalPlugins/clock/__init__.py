@@ -85,7 +85,6 @@ def getDayAndWeekOfYear(date: str) -> Tuple[int, ...]:
 	and the days remaining before the end of the current year.
 	@rtype: tuple.
 	"""
-	msg = []
 	now = datetime.now()
 	# Convert date into a datetime object by parsing it.
 	date = datetime.strptime(date, "%Y/%m/%d")
@@ -106,7 +105,7 @@ def getDayAndWeekOfYear(date: str) -> Tuple[int, ...]:
 		daysRemaining = total - nDayOfYear
 		if nWeekOfYear == 1 and nDayOfYear > 300:
 			curYear+= 1
-		msg = [nDayOfYear, nWeekOfYear, curYear, daysRemaining]
+		return (nDayOfYear, nWeekOfYear, curYear, daysRemaining)
 	else:
 		# It's not a Gregorian year.
 		dt1 = convertdate.islamic
@@ -151,8 +150,7 @@ def getDayAndWeekOfYear(date: str) -> Tuple[int, ...]:
 			daysRemaining = total - nDayOfYear
 			if nWeekOfYear == 1 and nDayOfYear > 300:
 				curYear += 1
-			msg = [nDayOfYear, nWeekOfYear, curYear, daysRemaining]
-	return tuple(msg)
+			return (nDayOfYear, nWeekOfYear, curYear, daysRemaining)
 
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
