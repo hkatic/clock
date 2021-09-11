@@ -121,10 +121,14 @@ def getDayAndWeekOfYear(date: str) -> Tuple[int, ...]:
 			# The number of weeks must take into account the day of the week
 			# corresponding to the first day of the year.
 			ndw = 6 if islamicYear else 5
-			nDayOfYear = 0
-			for month in range(1, curMonth):
-				nDayOfYear += dt.month_length(curYear, month)
-			nDayOfYear += curDay
+			# Store month lengthhs which can be summed up to obtain number of days for a year.
+			monthLengths = [dt.month_length(curYear, month) for month in range(1, 13)]
+			# 0-based indexing means first month is index 0.
+			# But since previous months have already passed, obtain sum of total days prior to this month.
+			# For the first month, number of days is the same as current date.
+			nDayOfYear = curDay
+			if curMonth > 1:
+				nDayOfYear += sum(monthLengths[:curMonth-1])
 			# Calculation of the weeks number.
 			if nDayOfYear % 7 == 0:
 				if dt.to_jd(curYear, 1, 1) == ndw:
@@ -143,9 +147,7 @@ def getDayAndWeekOfYear(date: str) -> Tuple[int, ...]:
 					# to the first day of the week for the current Hidjri calendar.
 					nWeekOfYear = nDayOfYear // 7
 			# Calculate the remaining days before the end of the current year.
-			total = 0
-			for month in range(1, 13):
-				total += dt.month_length(curYear, month)
+			total = sum(monthLengths)
 			daysRemaining = total - nDayOfYear
 			if nWeekOfYear == 1 and nDayOfYear > 300:
 				curYear += 1
