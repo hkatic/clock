@@ -127,7 +127,7 @@ def getDayAndWeekOfYear(date: str) -> Tuple[int, ...]:
 			# For the first month, number of days is the same as current date.
 			nDayOfYear = curDay
 			if curMonth > 1:
-				nDayOfYear += sum(monthLengths[:curMonth-1])
+				nDayOfYear += sum(monthLengths[:curMonth - 1])
 			# Calculation of the weeks number.
 			if nDayOfYear % 7 == 0:
 				if dt.to_jd(curYear, 1, 1) == ndw:
