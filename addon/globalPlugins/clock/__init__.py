@@ -97,16 +97,15 @@ def getDayAndWeekOfYear(date: str) -> Tuple[int, ...]:
 		# It's a Gregorian year.
 		nDayOfYear = now.timetuple()[7]
 		nWeekOfYear = now.isocalendar()[1]
-		if nWeekOfYear == 1 and nDayOfYear > 300:
-			msg = [nDayOfYear, nWeekOfYear, gregYear + 1]
-		else:
-			msg = [nDayOfYear, nWeekOfYear, gregYear]
 		# Calculate the remaining days before the end of the current year.
 		total = convertdate.gregorian.YEAR_DAYS
 		if convertdate.gregorian.isleap(gregYear):
 			total += 1
 		daysRemaining = total - nDayOfYear
-		msg.append(daysRemaining)
+		if nWeekOfYear == 1 and nDayOfYear > 300:
+			msg = [nDayOfYear, nWeekOfYear, gregYear + 1, daysRemaining]
+		else:
+			msg = [nDayOfYear, nWeekOfYear, gregYear, daysRemaining]
 	else:
 		# It's not a Gregorian year.
 		dt1 = convertdate.islamic
@@ -141,16 +140,15 @@ def getDayAndWeekOfYear(date: str) -> Tuple[int, ...]:
 					# The first day of the year doesn't correspond
 					# to the first day of the week for the current Hidjri calendar.
 					nWeekOfYear = nDayOfYear // 7
-			if nWeekOfYear == 1 and nDayOfYear > 300:
-				msg = [nDayOfYear, nWeekOfYear, curYear + 1]
-			else:
-				msg = [nDayOfYear, nWeekOfYear, curYear]
 			# Calculate the remaining days before the end of the current year.
 			total = 0
 			for month in range(1, 13):
 				total += dt.month_length(curYear, month)
 			daysRemaining = total - nDayOfYear
-			msg.append(daysRemaining)
+			if nWeekOfYear == 1 and nDayOfYear > 300:
+				msg = [nDayOfYear, nWeekOfYear, curYear + 1, daysRemaining]
+			else:
+				msg = [nDayOfYear, nWeekOfYear, curYear, daysRemaining]
 	return tuple(msg)
 
 
