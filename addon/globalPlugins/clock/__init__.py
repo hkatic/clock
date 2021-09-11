@@ -87,12 +87,12 @@ def getDayAndWeekOfYear(date: str) -> Tuple[int, ...]:
 	"""
 	now = datetime.now()
 	# Convert date into a datetime object by parsing it.
-	date = datetime.strptime(date, "%Y/%m/%d")
-	curYear = date.year
+	curDate = datetime.strptime(date, "%Y/%m/%d")
+	curYear = curDate.year
 	gregYear = now.year
-	curMonth = date.month
+	curMonth = curDate.month
 	gregMonth = now.month
-	curDay = date.day
+	curDay = curDate.day
 	gregDay = now.day
 	# Tuple components, remainig days will be obtained later.
 	nDayOfYear = 0
