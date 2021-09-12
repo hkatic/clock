@@ -50,20 +50,6 @@ autoAnnounceIntervals: Dict[int, int] = {
 }
 
 
-def getAutoAnnounceInterval() -> int:
-	"""
-	A function to draw up the list of intervals in minutes for automatic announcements,
-	depending on the user's choice.
-	This can be every 10 minutes, every 15 minutes, every 30 minutes or every hour.
-	@returns: The list of the chosen intervals in minutes.
-	@rtype: tuple.
-	"""
-	autoAnnounce = config.conf["clockAndCalendar"]["autoAnnounce"]
-	if autoAnnounce in autoAnnounceIntervals:
-		return autoAnnounceIntervals[autoAnnounce]
-	return 0
-
-
 class Clock(object):
 
 	def __init__(self) -> None:
