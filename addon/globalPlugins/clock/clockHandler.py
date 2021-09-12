@@ -78,10 +78,10 @@ class Clock(object):
 		now = datetime.now()
 		if now.second != 0:
 			return
-		clockAutoAnnounceInterval = getAutoAnnounceInterval()
-		if clockAutoAnnounceInterval == 0:
+		autoAnnounce = config.conf["clockAndCalendar"]["autoAnnounce"]
+		if autoAnnounce not in autoAnnounceIntervals:
 			return
-		if divmod(now.minute, clockAutoAnnounceInterval)[1] == 0:
+		if divmod(now.minute, autoAnnounceIntervals[autoAnnounce])[1] == 0:
 			self.reportClock()
 
 	def reportClock(self) -> None:
