@@ -28,11 +28,10 @@ def getWaveFileDuration(sound: str) -> int:
 	@rtype: int.
 	"""
 	import wave
-	f = wave.open(sound, 'r')
-	frames = f.getnframes()
-	rate = f.getframerate()
-	duration = frames / float(rate)
-	f.close()
+	with wave.open(sound, 'r') as f:
+		frames = f.getnframes()
+		rate = f.getframerate()
+		duration = frames / rate
 	return int(duration)
 
 
