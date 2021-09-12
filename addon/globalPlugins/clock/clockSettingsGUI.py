@@ -164,7 +164,6 @@ class ClockSettingsPanel(SettingsPanel):
 	def onSave(self):
 		config.conf["clockAndCalendar"]["timeDisplayFormat"] = self._timeDisplayFormatChoice.GetSelection()
 		config.conf["clockAndCalendar"]["dateDisplayFormat"] = self._dateDisplayFormatChoice.GetSelection()
-		config.conf["clockAndCalendar"]["dateDisplayFormat"] = self._dateDisplayFormatChoice.GetSelection()
 		config.conf["clockAndCalendar"]["input24HourFormat"] = self._input24HourFormatCheckBox.GetValue()
 		config.conf["clockAndCalendar"]["autoAnnounce"] = self._autoAnnounceChoice.GetSelection()
 		config.conf["clockAndCalendar"]["timeReporting"] = self._timeReportChoice.GetSelection()
