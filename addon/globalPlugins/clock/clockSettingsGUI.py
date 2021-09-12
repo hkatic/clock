@@ -44,8 +44,8 @@ class ClockSettingsPanel(SettingsPanel):
 			_("every hour")
 		)
 
-		# Transla	tors: This is the label for a combo box in the Clock settings dialog.
-		self._autoAnnounce = _("&interval:")
+		# Translators: This is the label for a combo box in the Clock settings dialog.
+		self._autoAnnounce = _("&Interval:")
 
 		self._timeAnnounceChoices = (
 			# Translators: This is a choice of the time report choices combo box.
