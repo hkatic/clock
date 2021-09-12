@@ -224,7 +224,11 @@ class AlarmSettingsPanel(SettingsPanel):
 		)
 
 		# Translators: This is the label for a combo box in the Alarm settings dialog.
-		self._alarmTimerTitle = _("Choose the type of timer &inputs before the alarm rings:")
+		self._alarmTimerTitle = _("&Alarm duration in:")
+
+		# Translators: This is the label for an edit field in the Alarm settings dialog.
+		self._alarmTimeWaitingTitle = _("&Duration:")
+
 
 		# Translators: This is the label for a combo box in the Alarm settings dialog.
 		self._alarmSoundTitle = _("A&larm sound:")
@@ -234,9 +238,6 @@ class AlarmSettingsPanel(SettingsPanel):
 
 		# Translators: This is the label for a button in the Alarm settings dialog.
 		self.pauseLabel = _("&Pause")
-
-		# Translators: This is the label for an edit field in the Alarm settings dialog.
-		self._alarmTimeWaitingTitle = _("Alarm &time waiting:")
 
 		self.showAlarmDialog(settingsSizer=settingsSizer)
 
