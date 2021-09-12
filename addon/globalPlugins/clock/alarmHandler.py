@@ -31,7 +31,7 @@ class AlarmTimer(threading.Timer):
 	A subclass of the threading._ Timer class that adds the ability to find the elapsed time
 	as well as the remaining time
 	"""
-	startTiming = None
+	startTiming = 0.0
 
 	def start(self) -> None:
 		self.startTiming = time.time()
@@ -45,7 +45,7 @@ class AlarmTimer(threading.Timer):
 		threading.Timer.start(self)
 
 	def elapsed(self) -> float:
-		return time.time() - self.startTiming if self.is_alive() else 0
+		return time.time() - self.startTiming if self.is_alive() else 0.0
 
 	def remaining(self) -> float:
 		return config.conf['clockAndCalendar']['alarmTime'] - self.elapsed() if self.is_alive() else 0
