@@ -215,12 +215,12 @@ class AlarmSettingsPanel(SettingsPanel):
 
 	def makeSettings(self, settingsSizer):
 		self._alarmTimerChoices = (
-			# Translators: This is an item of the alarm timer choices.
-			_("Hours"),
-			# Translators: This is an item of the alarm timer choices.
-			_("Minutes"),
-			# Translators: This is an item of the alarm timer choices.
-			_("Seconds")
+			# Translators: This is an item of the alarm duration choices.
+			_("hours"),
+			# Translators: This is an item of the alarm duration choices.
+			_("minutes"),
+			# Translators: This is an item of the alarm duration choices.
+			_("seconds")
 		)
 
 		# Translators: This is the label for a combo box in the Alarm settings dialog.
