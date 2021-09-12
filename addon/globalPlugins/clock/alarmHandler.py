@@ -2,12 +2,13 @@
 # Author: Hrvoje Katich and contributors
 # Copyright 2013-2021, released under GPL.
 
+from typing import Optional
 import time
 import threading
 import config
 import nvwave
 
-run = False
+run: Optional[AlarmTimer] = None
 
 
 def runAlarm(sound: str) -> None:
