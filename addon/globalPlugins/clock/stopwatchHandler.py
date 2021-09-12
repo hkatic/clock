@@ -10,22 +10,22 @@ class Stopwatch(object):
 	stopTime = None
 	running = False
 
-	def start(self):
+	def start(self) -> None:
 		self.startTime = time.time()
 		self.running = True
 
-	def reset(self):
+	def reset(self) -> None:
 		self.startTime = None
 		self.stopTime = None
 		self.running = False
 
-	def elapsedTime(self):
+	def elapsedTime(self) -> float:
 		if not self.startTime:
 			return 0.0
 		if self.stopTime:
 			return self.stopTime - self.startTime
 		return time.time() - self.startTime
 
-	def stop(self):
+	def stop(self) -> None:
 		self.stopTime = time.time()
 		self.running = False

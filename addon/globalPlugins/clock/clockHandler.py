@@ -3,6 +3,7 @@
 # Author: Hrvoje Katich and contributors
 # Copyright 2013-2021, released under GPL.
 
+from typing import Tuple
 from datetime import datetime
 from . import dtfunctions
 from . import paths
@@ -17,7 +18,7 @@ from winKernel import GetTimeFormatEx
 
 # A function for getting wav file duration (inspired from this topic:
 # https://emiliomm.com/index.php/2016/09/24/getting-duration-of-audio-file-in-python/).
-def getWaveFileDuration(sound):
+def getWaveFileDuration(sound: str) -> int:
 	"""
 	A function for calculating the duration of the wave file to be launched at regular intervals.
 	It allows to delay the announcement of the time immediately after the sound is launched.
@@ -35,7 +36,7 @@ def getWaveFileDuration(sound):
 	return int(duration)
 
 
-def getAutoAnnounceInterval():
+def getAutoAnnounceInterval() -> Tuple[int, ...]:
 	"""
 	A function to draw up the list of intervals in minutes for automatic announcements,
 	depending on the user's choice.
@@ -58,19 +59,19 @@ def getAutoAnnounceInterval():
 
 class Clock(object):
 
-	def __init__(self):
+	def __init__(self) -> None:
 		self._autoAnnounceClockTimer = wx.PyTimer(self._handleClockAnnouncement)
 		self._autoAnnounceClockTimer.Start(1000)
 
-	def terminate(self):
+	def terminate(self) -> None:
 		self._autoAnnounceClockTimer.Stop()
 		del self._autoAnnounceClockTimer
 
-	def _handleClockAnnouncement(self):
+	def _handleClockAnnouncement(self) -> None:
 		if datetime.now().minute in getAutoAnnounceInterval() and datetime.now().second == 0:
 			self.reportClock()
 
-	def reportClock(self):
+	def reportClock(self) -> None:
 		now = datetime.now()
 		if self.quietHoursAreActive():
 			return
@@ -98,7 +99,7 @@ class Clock(object):
 					)
 				)
 
-	def quietHoursAreActive(self):
+	def quietHoursAreActive(self) -> bool:
 		if not config.conf["clockAndCalendar"]["quietHours"]:
 			return False
 		qhStartTime = config.conf["clockAndCalendar"]["quietHoursStartTime"]
