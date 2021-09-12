@@ -42,7 +42,7 @@ AutoAnnounceIntervalEvery30Mins = 3
 AutoAnnounceIntervalEveryHour = 4
 
 
-autoAnnounceInterval: Dict[int, int] = {
+autoAnnounceIntervals: Dict[int, int] = {
 	AutoAnnounceIntervalEvery10Mins: 10,
 	AutoAnnounceIntervalEvery15Mins: 15,
 	AutoAnnounceIntervalEvery30Mins: 30,
@@ -59,8 +59,8 @@ def getAutoAnnounceInterval() -> int:
 	@rtype: tuple.
 	"""
 	autoAnnounce = config.conf["clockAndCalendar"]["autoAnnounce"]
-	if autoAnnounce in autoAnnounceInterval:
-		return autoAnnounceInterval[autoAnnounce]
+	if autoAnnounce in autoAnnounceIntervals:
+		return autoAnnounceIntervals[autoAnnounce]
 	return 0
 
 
