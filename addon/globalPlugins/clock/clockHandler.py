@@ -75,7 +75,10 @@ class Clock(object):
 		del self._autoAnnounceClockTimer
 
 	def _handleClockAnnouncement(self) -> None:
-		if datetime.now().minute in getAutoAnnounceInterval() and datetime.now().second == 0:
+		clockAutoAnnounceInterval = getAutoAnnounceInterval()
+		if clockAutoAnnounceInterval == 0:
+			return
+		if divmod(datetime.now().minute, clockAutoAnnounceInterval)[1] == 0 and datetime.now().second == 0:
 			self.reportClock()
 
 	def reportClock(self) -> None:
