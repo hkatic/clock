@@ -3,7 +3,7 @@
 # Author: Hrvoje Katich and contributors
 # Copyright 2013-2021, released under GPL.
 
-from typing import Tuple
+from typing import Dict
 from datetime import datetime
 from . import dtfunctions
 from . import paths
@@ -36,7 +36,21 @@ def getWaveFileDuration(sound: str) -> int:
 	return int(duration)
 
 
-def getAutoAnnounceInterval() -> Tuple[int, ...]:
+AutoAnnounceIntervalEvery10Mins = 1
+AutoAnnounceIntervalEvery15Mins = 2
+AutoAnnounceIntervalEvery30Mins = 3
+AutoAnnounceIntervalEveryHour = 4
+
+
+autoAnnounceInterval: Dict[int, int] = {
+	AutoAnnounceIntervalEvery10Mins: 10,
+	AutoAnnounceIntervalEvery15Mins: 15,
+	AutoAnnounceIntervalEvery30Mins: 30,
+	AutoAnnounceIntervalEveryHour: 60,
+}
+
+
+def getAutoAnnounceInterval() -> int:
 	"""
 	A function to draw up the list of intervals in minutes for automatic announcements,
 	depending on the user's choice.
@@ -44,17 +58,10 @@ def getAutoAnnounceInterval() -> Tuple[int, ...]:
 	@returns: The list of the chosen intervals in minutes.
 	@rtype: tuple.
 	"""
-	autoAnnounceMinutes = tuple()
 	autoAnnounce = config.conf["clockAndCalendar"]["autoAnnounce"]
-	if autoAnnounce == 1:
-		autoAnnounceMinutes = (0, 10, 20, 30, 40, 50)
-	elif autoAnnounce == 2:
-		autoAnnounceMinutes = (0, 15, 30, 45)
-	elif autoAnnounce == 3:
-		autoAnnounceMinutes = (0, 30)
-	elif autoAnnounce == 4:
-		autoAnnounceMinutes = (0, 0)
-	return autoAnnounceMinutes
+	if autoAnnounce in autoAnnounceInterval:
+		return autoAnnounceInterval[autoAnnounce]
+	return 0
 
 
 class Clock(object):
