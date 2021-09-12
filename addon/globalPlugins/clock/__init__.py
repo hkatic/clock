@@ -67,12 +67,12 @@ def secondsToString(seconds: float) -> str:
 	if hr > 0:
 		if hr > 23:
 			hr = 24 * (hr // 24) + (hr % 24)
-		text += _(u"{hours} hours, ").format(hours=str(hr))
+		text += _("{hours} hours, ").format(hours=str(hr))
 	if tm.tm_min:
-		text += _(u"{minutes} minutes, ").format(minutes=tm.tm_min)
+		text += _("{minutes} minutes, ").format(minutes=tm.tm_min)
 	if tm.tm_sec:
-		text += _(u"{seconds} seconds").format(seconds=tm.tm_sec)
-	return _(u"0 seconds") if not text else text
+		text += _("{seconds} seconds").format(seconds=tm.tm_sec)
+	return _("0 seconds") if not text else text
 
 
 def getDayAndWeekOfYear(date: str) -> Tuple[int, ...]:
@@ -247,7 +247,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				None, None, None, formats.dateFormats[config.conf['clockAndCalendar']['dateDisplayFormat']]
 			)
 		else:
-			informations = getDayAndWeekOfYear(GetDateFormatEx(None, None, None, u"yyyy/M/d"))
+			informations = getDayAndWeekOfYear(GetDateFormatEx(None, None, None, "yyyy/M/d"))
 			msg = _(
 				"Day {day}, week {week} of {year}, remaining days {remain}."
 			).format(day=informations[0], week=informations[1], year=informations[2], remain=informations[3])
@@ -318,7 +318,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			ui.message(_("Running."))
 		else:
 			self.stopwatch.stop()
-			ui.message(_(u"{0} stopped.").format(secondsToString(self.stopwatch.elapsedTime())))
+			ui.message(_("{0} stopped.").format(secondsToString(self.stopwatch.elapsedTime())))
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
@@ -336,7 +336,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			elapsedTime = alarmHandler.run.elapsed()
 			remainingTime = alarmHandler.run.remaining()
 			msg = _(
-				u"Elapsed time {elapsed}, remaining time {remaining}."
+				"Elapsed time {elapsed}, remaining time {remaining}."
 			).format(elapsed=secondsToString(elapsedTime), remaining=secondsToString(remainingTime))
 		else:
 			msg = _("No alarm")
@@ -387,7 +387,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				msg = _("Alarm cancelled")
 			else:
 				msg = _(
-					u"Elapsed time {elapsed}, remaining time {remaining}."
+					"Elapsed time {elapsed}, remaining time {remaining}."
 				).format(elapsed=secondsToString(elapsedTime), remaining=secondsToString(remainingTime))
 		else:
 			msg = _("No alarm")

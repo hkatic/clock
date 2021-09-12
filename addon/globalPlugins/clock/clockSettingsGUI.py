@@ -189,7 +189,7 @@ class ClockSettingsPanel(SettingsPanel):
 					_(
 						# Translators: A message that appears to inform the user
 						# that he has entered a mistaken value for the quiet hours.
-						u"The value you entered for your quiet hours is erroneous, "
+						"The value you entered for your quiet hours is erroneous, "
 						"for a 24-hour format, the value must be HH:MM, "
 						"for a 12-hour format, the value must be HH:MM followed by the AM or PM suffix, "
 						"please reread the documentation. So your quiet hours have been deactivated "
@@ -296,7 +296,7 @@ class AlarmSettingsPanel(SettingsPanel):
 			if gui.messageBox(
 				_(
 					# Translators: The message displayed after a countdown for an alarm has been chosen.
-					u"You've chosen an alarm to be triggered in {tm} {unit}"
+					"You've chosen an alarm to be triggered in {tm} {unit}"
 				).format(tm=self._alarmTimeWaitingText.GetValue(), unit=self._alarmTimerChoice.GetStringSelection()),
 				# Translators: The title of the dialog which appears when the user has chosen to trigger an alarm.
 				_("Confirmation"), wx.OK | wx.CANCEL | wx.ICON_INFORMATION, self
