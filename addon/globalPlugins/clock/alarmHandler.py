@@ -8,8 +8,6 @@ import threading
 import config
 import nvwave
 
-run: Optional[AlarmTimer] = None
-
 
 def runAlarm(sound: str) -> None:
 	"""
@@ -59,3 +57,6 @@ class AlarmTimer(threading.Timer):
 		# "Save configuration on exit" checkbox in General settings.
 		if not config.conf['general']['saveConfigurationOnExit']:
 			config.conf.save()
+
+
+run: Optional[AlarmTimer] = None
