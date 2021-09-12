@@ -12,7 +12,7 @@ addonHandler.initTranslation()
 # A regular expression to match and facilitate translation for words that are
 # not part of the formatting symbols.
 # Ignore Flake8 W605: invalid escape sequence (\w)
-ptrn = u"(\w+'?\w*|\$+[hmst]{1,2})"  # NOQA: W605
+ptrn = "(\w+'?\w*|\$+[hmst]{1,2})"  # NOQA: W605
 rgx = re.compile(ptrn, re.U | re.I)
 
 
@@ -47,46 +47,46 @@ def timeMarker():
 	tm = ""
 	dt = int(datetime.now().strftime("%H"))
 	if dt > 12:
-		tm = u"pm"
+		tm = "pm"
 	else:
 		if dt < 12 and dt > 0:
-			tm = u"am"
+			tm = "am"
 	return tm
 
 
 timeFormats = (
 	# Translators: A time formating.
-	_(u"It's {hours} o'clock and {minutes} minutes").format(hours="$$H", minutes="$$m"),
+	_("It's {hours} o'clock and {minutes} minutes").format(hours="$$H", minutes="$$m"),
 	# Translators: A time formating.
-	_(u"It's {hours} o'clock, {minutes} minutes and {seconds} seconds").format(
+	_("It's {hours} o'clock, {minutes} minutes and {seconds} seconds").format(
 		hours="$$H", minutes="$$m", seconds="$$s"
 	),
 	# Translators: A time formating.
-	_(u"{hours} o'clock, {minutes} minutes").format(hours="$$h", minutes="$$mm"),
+	_("{hours} o'clock, {minutes} minutes").format(hours="$$h", minutes="$$mm"),
 	# Translators: A time formating.
-	_(u"{hours} o'clock, {minutes} minutes, {seconds} seconds").format(
+	_("{hours} o'clock, {minutes} minutes, {seconds} seconds").format(
 		hours="$$h", minutes="$$mm", seconds="$$ss"
 	),
 	# Translators: A time formating.
-	_(u"It's {minutes} past {hours}").format(minutes="$$m", hours="$$h"),
+	_("It's {minutes} past {hours}").format(minutes="$$m", hours="$$h"),
 	# Translators: A time formating.
-	_(u"{hours} h {minutes} min").format(hours="$$h", minutes="$$m"),
+	_("{hours} h {minutes} min").format(hours="$$h", minutes="$$m"),
 	# Translators: A time formating.
-	_(u"{hours} h, {minutes} min, {seconds} sec").format(hours="$$H", minutes="$$m", seconds="$$s"),
+	_("{hours} h, {minutes} min, {seconds} sec").format(hours="$$H", minutes="$$m", seconds="$$s"),
 	# Translators: A time formating.
-	_(u"It's {hours}:{minutes}").format(hours="$$H", minutes="$$m"),
+	_("It's {hours}:{minutes}").format(hours="$$H", minutes="$$m"),
 	# Translators: A time formating.
-	_(u"It's {hours}:{minutes}:{seconds}").format(hours="$$HH", minutes="$$mm", seconds="$$ss"),
-	u"$$hh:$$mm:$$ss $$tt",
-	u"$$hh:$$m $$tt",
-	u"$$hh:$$mm $$tt",
-	u"$$h:$$mm $$tt",
-	u"$$h:$$m:$$s",
-	u"$$h:$$m $$tt",
-	u"$$HH:$$mm",
-	u"$$H:$$m:$$s",
-	u"$$H:$$mm:$$ss",
-	u"$$H:$$m",
+	_("It's {hours}:{minutes}:{seconds}").format(hours="$$HH", minutes="$$mm", seconds="$$ss"),
+	"$$hh:$$mm:$$ss $$tt",
+	"$$hh:$$m $$tt",
+	"$$hh:$$mm $$tt",
+	"$$h:$$mm $$tt",
+	"$$h:$$m:$$s",
+	"$$h:$$m $$tt",
+	"$$HH:$$mm",
+	"$$H:$$m:$$s",
+	"$$H:$$mm:$$ss",
+	"$$H:$$m",
 )
 
 timeFormatsDic = collections.OrderedDict()
@@ -96,16 +96,16 @@ for fmt in timeFormats:
 timeDisplayFormats = list(timeFormatsDic.values())
 
 dateFormats = (
-	u"dddd, MMMM dd, yyyy",
-	u"dddd dd MMMM yyyy",
-	u"yyyy-dd-MM",
-	u"d/M/yy",
-	u"d/M/yyyy",
-	u"yyyy-MM-dd",
-	u"dd-MM-yyyy",
-	u"MM-dd-yyyy",
-	u"MM/dd/yyyy",
-	u"dd/MM/yyyy"
+	"dddd, MMMM dd, yyyy",
+	"dddd dd MMMM yyyy",
+	"yyyy-dd-MM",
+	"d/M/yy",
+	"d/M/yyyy",
+	"yyyy-MM-dd",
+	"dd-MM-yyyy",
+	"MM-dd-yyyy",
+	"MM/dd/yyyy",
+	"dd/MM/yyyy"
 )
 
 dateFormatsDic = collections.OrderedDict()
