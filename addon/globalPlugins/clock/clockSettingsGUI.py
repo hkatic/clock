@@ -68,10 +68,10 @@ class ClockSettingsPanel(SettingsPanel):
 		# Translators: This is the label for a checkbox in the Clock settings dialog.
 		self._input24HourFormat = _("Input in &24-hour format")
 
-		# Translators: This is the label for an edit field in the Clock settings dialog.
+		# Translators: This is the label for an group in the Clock settings dialog.
 		self._quietStartTime = _("Quiet hours start time:")
 
-		# Translators: This is the label for an edit field in the Clock settings dialog.
+		# Translators: This is the label for an group in the Clock settings dialog.
 		self._quietEndTime = _("Quiet hours end time:")
 
 		self.showSettingsDialog(settingsSizer=settingsSizer)
