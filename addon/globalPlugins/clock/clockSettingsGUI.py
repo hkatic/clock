@@ -148,6 +148,7 @@ class ClockSettingsPanel(SettingsPanel):
 		self._timeReportSoundChoice.Bind(wx.EVT_CHOICE, self.onSoundSelected)
 		self._autoAnnounceChoice.Bind(wx.EVT_CHOICE, self.onAutoAnnounce)
 		self._quietHoursCheckBox.Bind(wx.EVT_CHECKBOX, self.onQuietHoursToggle)
+		self._input24HourFormatChoice.Bind(wx.EVT_CHOICE, self.onInput24HourFormat)
 		self.setValues()
 
 	def onAutoAnnounce(self, evt):
@@ -173,6 +174,19 @@ class ClockSettingsPanel(SettingsPanel):
 		self.startMinEntry.Enable(self._quietHoursCheckBox.GetValue())
 		self.endHourEntry.Enable(self._quietHoursCheckBox.GetValue())
 		self.endMinEntry.Enable(self._quietHoursCheckBox.GetValue())
+
+	def onInput24HourFormat(self, evt):
+		evt.Skip()
+		startHourSelection = self.startHourEntry.GetSelection()
+		endHourSelection = self.endHourEntry.GetSelection()
+		if self._input24HourFormatChoice.GetSelection() == 0:
+			self.startHourEntry.Set(self.hoursList12)
+			self.endHourEntry.Set(self.hoursList12)
+		else:
+			self.startHourEntry.Set(self.hoursList24)
+			self.endHourEntry.Set(self.hoursList24)
+		self.startHourEntry.SetSelection(startHourSelection)
+		self.endHourEntry.SetSelection(endHourSelection)
 
 	def setValues(self):
 		for index, fmt in enumerate(formats.timeFormats):
