@@ -257,43 +257,6 @@ class ClockSettingsPanel(SettingsPanel):
 		config.conf["clockAndCalendar"]["quietHoursStartTime"] = quietHoursStartTime
 		config.conf["clockAndCalendar"]["quietHoursEndTime"] = quietHoursEndTime
 
-	def postSave(self):
-		match = None
-		match1 = None
-		if self._quietHoursCheckBox.IsEnabled() and self._quietHoursCheckBox.IsChecked():
-			if self._input24HourFormatCheckBox.IsChecked():
-				match = re.match("^(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$", self._quietStartTimeText.GetValue())
-				match1 = re.match("^(0?[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$", self._quietEndTimeText.GetValue())
-			else:
-				match = re.match("^(0?[0-9]|1[0-2]):[0-5][0-9] [aPAp][mM]$", self._quietStartTimeText.GetValue())
-				match1 = re.match("^(0?[0-9]|1[0-2]):[0-5][0-9] [aPAp][mM]$", self._quietEndTimeText.GetValue())
-			if match and match1:
-				config.conf["clockAndCalendar"]["quietHours"] = self._quietHoursCheckBox.GetValue()
-				config.conf["clockAndCalendar"]["quietHoursStartTime"] = self._quietStartTimeText.GetValue()
-				config.conf["clockAndCalendar"]["quietHoursEndTime"] = self._quietEndTimeText.GetValue()
-			else:
-				if gui.messageBox(
-					_(
-						# Translators: A message that appears to inform the user
-						# that he has entered a mistaken value for the quiet hours.
-						"The value you entered for your quiet hours is erroneous, "
-						"for a 24-hour format, the value must be HH:MM, "
-						"for a 12-hour format, the value must be HH:MM followed by the AM or PM suffix, "
-						"please reread the documentation. So your quiet hours have been deactivated "
-						"for prevent any error in the configuration file."
-					),
-					# Translators: The title of the dialog which appears
-					# when the user has chosen a mistaken value for his quiet hours.
-					_("Error"), wx.OK | wx.ICON_ERROR, self
-				) == wx.OK:
-					config.conf['clockAndCalendar']['quietHours'] = False
-		else:
-			config.conf['clockAndCalendar']['quietHours'] = False
-		# We save the configuration, in case the user would not have checked the
-		# "Save configuration on exit" checkbox in General settings.
-		if not config.conf['general']['saveConfigurationOnExit']:
-			config.conf.save()
-
 
 class AlarmSettingsPanel(SettingsPanel):
 
