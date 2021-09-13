@@ -155,24 +155,24 @@ class ClockSettingsPanel(SettingsPanel):
 		self._timeReportChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._quietHoursCheckBox.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._timeReportSoundChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection())
-		self._input24HourFormatCheckBox.Enabled = (
+		self._input24HourFormatChoice.Enabled = (
 			self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled()
 		)
-		self._quietStartTimeText.Enabled = (
-			self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled()
-		)
-		self._quietEndTimeText.Enabled = (
-			self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled()
-		)
+		self.startHourEntry.Enable(self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled())
+		self.startMinEntry.Enable(self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled())
+		self.endHourEntry.Enable(self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled())
+		self.endMinEntry.Enable(self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled())
 
 	def onSoundSelected(self, evt):
 		return nvwave.playWaveFile(os.path.join(paths.SOUNDS_DIR, evt.GetString()))
 
 	def onQuietHoursToggle(self, evt):
 		evt.Skip()
-		self._input24HourFormatCheckBox.Enabled = self._quietHoursCheckBox.GetValue()
-		self._quietStartTimeText.Enabled = self._quietHoursCheckBox.GetValue()
-		self._quietEndTimeText.Enabled = self._quietHoursCheckBox.GetValue()
+		self._input24HourFormatChoice.Enabled = self._quietHoursCheckBox.GetValue()
+		self.startHourEntry.Enable(self._quietHoursCheckBox.GetValue())
+		self.startMinEntry.Enable(self._quietHoursCheckBox.GetValue())
+		self.endHourEntry.Enable(self._quietHoursCheckBox.GetValue())
+		self.endMinEntry.Enable(self._quietHoursCheckBox.GetValue())
 
 	def setValues(self):
 		for index, fmt in enumerate(formats.timeFormats):
@@ -202,15 +202,13 @@ class ClockSettingsPanel(SettingsPanel):
 		self._timeReportChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._quietHoursCheckBox.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._timeReportSoundChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection())
-		self._input24HourFormatCheckBox.Enabled = (
+		self._input24HourFormatChoice.Enabled = (
 			self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled()
 		)
-		self._quietStartTimeText.Enabled = (
-			self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled()
-		)
-		self._quietEndTimeText.Enabled = (
-			self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled()
-		)
+		self.startHourEntry.Enable(self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled())
+		self.startMinEntry.Enable(self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled())
+		self.endHourEntry.Enable(self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled())
+		self.endMinEntry.Enable(self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled())
 
 	def onSave(self):
 		config.conf["clockAndCalendar"]["timeDisplayFormat"] = self._timeDisplayFormatChoice.GetSelection()
