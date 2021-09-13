@@ -231,6 +231,31 @@ class ClockSettingsPanel(SettingsPanel):
 		config.conf["clockAndCalendar"]["autoAnnounce"] = self._autoAnnounceChoice.GetSelection()
 		config.conf["clockAndCalendar"]["timeReporting"] = self._timeReportChoice.GetSelection()
 		config.conf["clockAndCalendar"]["timeReportSound"] = self._timeReportSoundChoice.GetStringSelection()
+		quietHours = self._quietHoursCheckBox.GetValue()
+		config.conf["clockAndCalendar"]["quietHours"] = quietHours
+		quietHoursStartTime = ""
+		quietHoursEndTime = ""
+		if quietHours:
+			startHour = self.startHourEntry.GetSelection()
+			startMin = self.startMinEntry.GetSelection()
+			endHour = self.endHourEntry.GetSelection()
+			endMin = self.endMinEntry.GetSelection()
+			if config.conf["clockAndCalendar"]["input24HourFormat"]:
+				quietHoursStartTime = f"{startHour:02d}:{startMin:02d}"
+				quietHoursEndTime = f"{endHour:02d}:{endMin:02d}"
+			else:
+				startPeriod, startHour = divmod(startHour, 12)
+				startPeriod = "AM" if startPeriod == 0 else "PM"
+				if startHour == 0:
+					startHour = 12
+				quietHoursStartTime = f"{startHour:02d}:{startMin:02d} {startPeriod}"
+				endPeriod, endHour = divmod(endHour, 12)
+				endPeriod = "AM" if endPeriod == 0 else "PM"
+				if endHour == 0:
+					endHour = 12
+				quietHoursEndTime = f"{endHour:02d}:{endMin:02d} {endPeriod}"
+		config.conf["clockAndCalendar"]["quietHoursStartTime"] = quietHoursStartTime
+		config.conf["clockAndCalendar"]["quietHoursEndTime"] = quietHoursEndTime
 
 	def postSave(self):
 		match = None
