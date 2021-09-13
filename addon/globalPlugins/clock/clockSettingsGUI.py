@@ -75,6 +75,12 @@ class ClockSettingsPanel(SettingsPanel):
 		# Translators: This is the label for a combo box in the Clock settings dialog.
 		self._input24HourFormat = _("Quiet hours time &format:")
 
+		self.hoursList12 = [f"{hour} AM" for hour in range(12)]
+		self.hoursList12 += [f"{hour} PM" for hour in range(12)]
+		self.hoursList12[0], self.hoursList12[12] = "12 AM", "12 PM"
+		self.hoursList24 = [str(hour).zfill(2) for hour in range(24)]
+		self.minutesList = [str(min).zfill(2) for min in range(60)]
+
 		# Translators: This is the label for an group in the Clock settings dialog.
 		self._quietStartTime = _("Quiet hours start time:")
 
@@ -103,11 +109,38 @@ class ClockSettingsPanel(SettingsPanel):
 		self._quietHoursCheckBox = clockSettingsGuiHelper.addItem(
 			wx.CheckBox(self, label=self._quietHours)
 		)
-		self._input24HourFormatCheckBox = clockSettingsGuiHelper.addItem(
-			wx.CheckBox(self, label=self._input24HourFormat)
+		self._input24HourFormatChoice = clockSettingsGuiHelper.addLabeledControl(
+			self._input24HourFormat, wx.Choice, choices=self._quietHourTimeFormatChoices
 		)
-		self._quietStartTimeText = clockSettingsGuiHelper.addLabeledControl(self._quietStartTime, wx.TextCtrl)
-		self._quietEndTimeText = clockSettingsGuiHelper.addLabeledControl(self._quietEndTime, wx.TextCtrl)
+		# Build appropriate hours list with or without period suffix.
+		if not config.conf["clockAndCalendar"]["input24HourFormat"]:
+			hoursList = self.hoursList12
+		else:
+			hoursList = self.hoursList24
+		self._quietHoursStartGroup = gui.guiHelper.BoxSizerHelper(
+			self, sizer=wx.StaticBoxSizer(wx.StaticBox(self, label=self._quietStartTime), wx.HORIZONTAL)
+		)
+		clockSettingsGuiHelper.addItem(self._quietHoursStartGroup)
+		self.startHourEntry = self._quietHoursStartGroup.addLabeledControl(
+			# Translators: the hour label in quiet hours group.
+			_("Hour:"), wx.Choice, choices=hoursList
+		)
+		self.startMinEntry = self._quietHoursStartGroup.addLabeledControl(
+			# Translators: the minute label in quiet hours group.
+			_("Minute:"), wx.Choice, choices=self.minutesList
+		)
+		self._quietHoursEndGroup = gui.guiHelper.BoxSizerHelper(
+			self, sizer=wx.StaticBoxSizer(wx.StaticBox(self, label=self._quietEndTime), wx.HORIZONTAL)
+		)
+		clockSettingsGuiHelper.addItem(self._quietHoursEndGroup)
+		self.endHourEntry = self._quietHoursEndGroup.addLabeledControl(
+			# Translators: the hour label in quiet hours group.
+			_("Hour:"), wx.Choice, choices=hoursList
+		)
+		self.endMinEntry = self._quietHoursEndGroup.addLabeledControl(
+			# Translators: the minute label in quiet hours group.
+			_("Minute:"), wx.Choice, choices=self.minutesList
+		)
 
 		# Event.
 		self._timeReportSoundChoice.SetStringSelection(config.conf["clockAndCalendar"]["timeReportSound"])
