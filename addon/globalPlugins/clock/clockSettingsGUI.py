@@ -4,7 +4,6 @@
 # Copyright 2013-2021, released under GPL.
 
 import re
-import datetime
 from . import paths
 from . import formats
 import config
@@ -279,7 +278,6 @@ class AlarmSettingsPanel(SettingsPanel):
 
 		# Translators: This is the label for an edit field in the Alarm settings dialog.
 		self._alarmTimeWaitingTitle = _("&Duration:")
-
 
 		# Translators: This is the label for a combo box in the Alarm settings dialog.
 		self._alarmSoundTitle = _("A&larm sound:")
