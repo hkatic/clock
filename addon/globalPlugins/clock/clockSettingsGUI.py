@@ -65,8 +65,15 @@ class ClockSettingsPanel(SettingsPanel):
 		# Translators: This is the label for a checkbox in the Clock settings dialog.
 		self._quietHours = _("&Quiet hours")
 
-		# Translators: This is the label for a checkbox in the Clock settings dialog.
-		self._input24HourFormat = _("Input in &24-hour format")
+		self._quietHourTimeFormatChoices = (
+			# Translators: This is a choice of the quiet hours time format choices.
+			_("12-hour format"),
+			# Translators: This is a choice of the quiet hours time format choices.
+			_("24-hour format")
+		)
+
+		# Translators: This is the label for a combo box in the Clock settings dialog.
+		self._input24HourFormat = _("Quiet hours time &format:")
 
 		# Translators: This is the label for an group in the Clock settings dialog.
 		self._quietStartTime = _("Quiet hours start time:")
