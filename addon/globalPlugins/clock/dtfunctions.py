@@ -9,6 +9,7 @@ from typing import Optional
 def convertTo24Hour(hr: str) -> str:
 	"""
 	A function for converting a 12-hour time format to 24-hour time format.
+	String must be of the form hh:mm period.
 	This will facilitate the use of AM/PM suffixed hour formats in all locale time formats,
 	including those that do not use this type of format.
 	This type of input will then be used when entering quiet hours in the 12-hour format.
@@ -17,21 +18,20 @@ def convertTo24Hour(hr: str) -> str:
 	@returns: The time format converted to 24-hour format.
 	@rtype: basestring.
 	"""
-	now = datetime.now()
-	is12h = False
-	h = hr.split(":")[0]
-	if hr[-2:] in ("AM", "am", "PM", "pm"):
-		is12h = True
-		end = hr[len(h):-3]
-	else:
-		end = hr[len(h):len(h) + 3]
+	period = hr[-2:]
+	am = period in ("AM", "am")
+	pm = period in ("PM", "pm")
+	is12h = am or pm
 	if is12h:
-		p = hr[-2:]
-		res = str(int(h) + 12) if p in ("pm", "PM") else h
+		hm = hr.partition(" ")[0]
+		hour, minute = [int(part) for part in hm.split(":")]
 	else:
-		res = str(int(h) + 12) if int(now.strftime("%H")) > 12 else h
-	res = res + end if res != "24" else "0" + end
-	return res
+		hour, minute = [int(part) for part in hr.split(":")]
+	if (am and hour == 12) or (not is12h and hour == 24):
+		hour = 0
+	elif pm and hour < 12:
+		hour += 12
+	return f"{hour:02d}:{minute:02d}"
 
 
 def parseTime(t: str, parse24hour: Optional[bool] = False) -> datetime:
