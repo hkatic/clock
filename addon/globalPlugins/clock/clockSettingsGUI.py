@@ -4,6 +4,7 @@
 # Copyright 2013-2021, released under GPL.
 
 import re
+import datetime
 from . import paths
 from . import formats
 import config
@@ -12,7 +13,7 @@ import gui
 import os
 import wx
 from . import alarmHandler
-
+from . import dtfunctions
 from gui import SettingsPanel
 
 import addonHandler
@@ -182,12 +183,22 @@ class ClockSettingsPanel(SettingsPanel):
 			if index == config.conf["clockAndCalendar"]["dateDisplayFormat"]:
 				self._dateDisplayFormatChoice.SetSelection(index)
 				break
-		self._input24HourFormatCheckBox.SetValue(config.conf["clockAndCalendar"]["input24HourFormat"])
+		quietHoursStartTime = dtfunctions.parseTime(
+			config.conf["clockAndCalendar"]["quietHoursStartTime"],
+			parse24hour=config.conf["clockAndCalendar"]["input24HourFormat"]
+		)
+		quietHoursEndTime = dtfunctions.parseTime(
+			config.conf["clockAndCalendar"]["quietHoursEndTime"],
+			parse24hour=config.conf["clockAndCalendar"]["input24HourFormat"]
+		)
 		self._autoAnnounceChoice.SetSelection(config.conf["clockAndCalendar"]["autoAnnounce"])
 		self._timeReportChoice.SetSelection(config.conf["clockAndCalendar"]["timeReporting"])
 		self._quietHoursCheckBox.SetValue(config.conf["clockAndCalendar"]["quietHours"])
-		self._quietStartTimeText.SetValue(config.conf["clockAndCalendar"]["quietHoursStartTime"])
-		self._quietEndTimeText.SetValue(config.conf["clockAndCalendar"]["quietHoursEndTime"])
+		self._input24HourFormatChoice.SetSelection(config.conf["clockAndCalendar"]["input24HourFormat"])
+		self.startHourEntry.SetSelection(quietHoursStartTime.hour)
+		self.startMinEntry.SetSelection(quietHoursStartTime.minute)
+		self.endHourEntry.SetSelection(quietHoursEndTime.hour)
+		self.endMinEntry.SetSelection(quietHoursEndTime.minute)
 		self._timeReportChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._quietHoursCheckBox.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._timeReportSoundChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection())
