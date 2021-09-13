@@ -4,6 +4,7 @@
 # Copyright 2013-2021, released under GPL.
 
 import re
+import datetime
 from . import paths
 from . import formats
 import config
@@ -196,14 +197,20 @@ class ClockSettingsPanel(SettingsPanel):
 			if index == config.conf["clockAndCalendar"]["dateDisplayFormat"]:
 				self._dateDisplayFormatChoice.SetSelection(index)
 				break
-		quietHoursStartTime = dtfunctions.parseTime(
-			config.conf["clockAndCalendar"]["quietHoursStartTime"],
-			parse24hour=config.conf["clockAndCalendar"]["input24HourFormat"]
-		)
-		quietHoursEndTime = dtfunctions.parseTime(
-			config.conf["clockAndCalendar"]["quietHoursEndTime"],
-			parse24hour=config.conf["clockAndCalendar"]["input24HourFormat"]
-		)
+		if config.conf["clockAndCalendar"]["quietHoursStartTime"]:
+			quietHoursStartTime = dtfunctions.parseTime(
+				config.conf["clockAndCalendar"]["quietHoursStartTime"],
+				parse24hour=config.conf["clockAndCalendar"]["input24HourFormat"]
+			)
+		else:
+			quietHoursStartTime = datetime.time()
+		if config.conf["clockAndCalendar"]["quietHoursEndTime"]:
+			quietHoursEndTime = dtfunctions.parseTime(
+				config.conf["clockAndCalendar"]["quietHoursEndTime"],
+				parse24hour=config.conf["clockAndCalendar"]["input24HourFormat"]
+			)
+		else:
+			quietHoursEndTime = datetime.time()
 		self._autoAnnounceChoice.SetSelection(config.conf["clockAndCalendar"]["autoAnnounce"])
 		self._timeReportChoice.SetSelection(config.conf["clockAndCalendar"]["timeReporting"])
 		self._quietHoursCheckBox.SetValue(config.conf["clockAndCalendar"]["quietHours"])
