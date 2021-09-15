@@ -62,15 +62,15 @@ timeFormats = (
 		hours="$$H", minutes="$$m", seconds="$$s"
 	),
 	# Translators: A time formating.
-	_("{hours} o'clock, {minutes} minutes").format(hours="$$h", minutes="$$mm"),
+	_("{hours} o'clock, {minutes} minutes").format(hours="$$H", minutes="$$mm"),
 	# Translators: A time formating.
 	_("{hours} o'clock, {minutes} minutes, {seconds} seconds").format(
-		hours="$$h", minutes="$$mm", seconds="$$ss"
+		hours="$$H", minutes="$$mm", seconds="$$ss"
 	),
 	# Translators: A time formating.
-	_("It's {minutes} past {hours}").format(minutes="$$m", hours="$$h"),
+	_("It's {minutes} past {hours}").format(minutes="$$m", hours="$$H"),
 	# Translators: A time formating.
-	_("{hours} h {minutes} min").format(hours="$$h", minutes="$$m"),
+	_("{hours} h {minutes} min").format(hours="$$H", minutes="$$m"),
 	# Translators: A time formating.
 	_("{hours} h, {minutes} min, {seconds} sec").format(hours="$$H", minutes="$$m", seconds="$$s"),
 	# Translators: A time formating.
@@ -81,7 +81,7 @@ timeFormats = (
 	"$$hh:$$m $$tt",
 	"$$hh:$$mm $$tt",
 	"$$h:$$mm $$tt",
-	"$$h:$$m:$$s",
+	"$$H:$$m:$$s",
 	"$$h:$$m $$tt",
 	"$$HH:$$mm",
 	"$$H:$$m:$$s",
