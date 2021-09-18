@@ -343,9 +343,17 @@ class AlarmSettingsPanel(SettingsPanel):
 		self.pause = False
 		return nvwave.playWaveFile(os.path.join(paths.ALARMS_DIR, evt.GetString()))
 
+	def onPanelDeactivated(self):
+		self.onStop(None)
+		super(AlarmSettingsPanel,self).onPanelDeactivated()
+
 	def onSave(self):
 		config.conf["clockAndCalendar"]["alarmSound"] = self._alarmSoundChoice.GetStringSelection()
 		config.conf["clockAndCalendar"]["alarmTimerChoice"] = self._alarmTimerChoice.GetSelection()
+		self.onStop(None)
+
+	def onDiscard(self):
+		self.onStop(None)
 
 	def postSave(self):
 		if re.match(r"\d+", self._alarmTimeWaitingText.GetValue()):
