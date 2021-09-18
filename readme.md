@@ -63,13 +63,6 @@ To configure alarms, open NVDA menu, Preferences, then Settings, then configure 
 
 Click OK, and a message will inform you the curretnly selected alarm duration.
 
-## Syntax to use for quiet hours
-
-1. To avoid bugs, the quiet hours must follow a rigorous and precise syntax.
-2. If you check the "Input in 24-hour format" checkbox, the format must be "HH:MM".
-3. If you uncheck the "Input in 24-hour format" checkbox, the format must be "HH:MM AM" or "HH:MM PM", the HH must contain a 12-hour format, from 0 to 12 and the "AM"|"PM" suffix can be in lowercase or uppercase.
-4. If you check the Quiet hours" checkbox and keep the "Quiet hours start time" or "Quiet hours end time" field empty, or type a mistaken value, the "Quiet hours" checkbox will be unchecked automatically to avoid errorss and a message will be displayed.
-
 [1]: https://addons.nvda-project.org/files/get.php?file=cac
 
 [2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
