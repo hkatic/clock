@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: clock 18.12\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2018-12-21 03:15+1000\n"
-"PO-Revision-Date: 2019-06-30 12:38+0700\n"
+"PO-Revision-Date: 2021-09-10 16:32+0700\n"
 "Last-Translator: Dang Manh Cuong <dangmanhcuong@gmail.com>\n"
 "Language-Team: Vietnamese <dangmanhcuong@gmail.com>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.11\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #. Translators: the label of a message box dialog.
@@ -30,7 +30,7 @@ msgstr ""
 
 #. Translators: the title of a message box dialog.
 msgid "Time and date format corrections"
-msgstr "Điều chỉnh định dạng ngày giờ"
+msgstr "Điều chỉnh định dạng ngày và giờ "
 
 #, python-brace-format
 msgid "{hours} hours, "
@@ -71,11 +71,11 @@ msgstr "Cài đặt cho ngày và giờ"
 
 #. Translators: The name of the second item in the Clock settings submenu.
 msgid "Alarm settin&gs"
-msgstr "Cài đặt báo hiệ&u"
+msgstr "cài đặt đồng hồ bấm giờ "
 
 #. Translators: The tooltyp text for the second item in the Clock add-on submenu.
 msgid "Allows you to schedule an alarm"
-msgstr "Cho phép bạn lên lịch cho một báo hiệu"
+msgstr "cho phép bạn đặt đồng hồ bấm giờ "
 
 #, python-brace-format
 msgid "Day {day}, week {week} of {year}, remaining days {remain}."
@@ -122,18 +122,19 @@ msgid "Elapsed time {elapsed}, remaining time {remaining}."
 msgstr "Thời gian đã qua {elapsed}, thời gian còn lại {remaining}."
 
 msgid "No alarm"
-msgstr "Không có báo hiệu"
+msgstr "đồng hồ bấm giờ không chạy "
 
 #. Translators: Message presented in input help mode.
 msgid "Gives the remaining and elapsed time before the next alarm."
-msgstr "Thông báo thời gian đã qua và còn lại trước báo hiệu tiếp theo."
+msgstr ""
+"đọc thời gian còn lại,và thời gian đã qua trước khi kết thúc đồng hồ bấm giờ "
 
 msgid "Alarm cancelled"
-msgstr "Đã hủy báo hiệu"
+msgstr "đã hủy đồng hồ bấm giờ "
 
 #. Translators: Message presented in input help mode.
 msgid "Cancel the next alarm."
-msgstr "Hủy báo hiệu tiếp theo."
+msgstr "hủy đồng hồ bấm giờ "
 
 msgid ""
 "The stopwatch is already reset to 0. Use the clock layer command followed by "
@@ -155,7 +156,8 @@ msgstr "Liệt kê các lệnh trong command layer của đồng hồ."
 
 #. Translators: Message presented in input help mode.
 msgid "Allows to check the next alarm. If pressed twice, cancels it."
-msgstr "Cho phép kiểm tra báo hiệu tiếp theo. Nếu bấm hai lần thì hủy nó."
+msgstr ""
+"Cho phép kiểm tra đồng hồ bấm giờ  tiếp theo. Nếu bấm hai lần thì hủy nó."
 
 msgid "No sound is launched."
 msgstr "Không có âm thanh nào được gọi."
@@ -165,7 +167,7 @@ msgstr "Âm thanh đã dừng"
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
-msgstr "Nếu một báo hiệu quá dài thì cho phép nó dừng lại."
+msgstr "nếu âm thanh quá dài, thì cho phép nó dừng lại "
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
@@ -173,15 +175,15 @@ msgstr "Hiển thị hộp thoại cài đặt đồng hồ."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the alarm settings dialog box."
-msgstr "Hiển thị hộp thoại cài đặt báo hiệu."
+msgstr "Hiển thị hộp thoại cài đặt đồng hồ bấm giờ "
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Time display format:"
-msgstr "Định dạng hiển &thị giờ:"
+msgstr "định dạng giờ &phút "
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Date display format:"
-msgstr "Định &dạng hiển thị ngày:"
+msgstr "định &dạng ngày tháng "
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "off"
@@ -209,11 +211,11 @@ msgstr "Khoảng thời g&ian"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "speech and sound"
-msgstr "nói và âm thanh"
+msgstr "đọc và âm thanh "
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "speech only"
-msgstr "chỉ nói"
+msgstr "chỉ đọc "
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "sound only"
@@ -262,7 +264,7 @@ msgstr "Lỗi"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Alarm setup"
-msgstr "Cài đặt báo hiệu"
+msgstr "Cài đặt đồng hồ bấm giờ "
 
 #. Translators: This is an item of the alarm timer choices.
 msgid "Hours"
@@ -278,11 +280,11 @@ msgstr "Giây"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "Choose the type of timer &inputs before the alarm rings:"
-msgstr "Chọn kiểu thời gian trước khi báo hiệu:"
+msgstr "Chọn kiểu thời gian "
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
-msgstr "Â&m báo hiệu:"
+msgstr "Â&m đồng hồ bấm giờ :"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Stop"
@@ -294,12 +296,12 @@ msgstr "&Tạm dừng"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 msgid "Alarm &time waiting:"
-msgstr "&Thời gian chờ báo hiệu:"
+msgstr "&Thời gian chờ đồng hồ bấm giờ :"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
 #, python-brace-format
 msgid "You've chosen an alarm to be triggered in {tm} {unit}"
-msgstr "Bạn đã chọn báo hiệu trong {tm} {unit}"
+msgstr "Bạn đã chọn đồng hồ bấm giờ  trong {tm} {unit}"
 
 #. Translators: The title of the dialog which appears when the user has chosen to trigger an alarm.
 msgid "Confirmation"

@@ -1,12 +1,12 @@
 # Extension horloge et calendrier  pour NVDA #
 
-* Authors: Hrvoje Katić, Abdel and NVDA contributors
-* Download [stable version][1]
-* Download [development version][2]
-* NVDA compatibility: 2019.3 and beyond
+* Auteurs : Hrvoje Katić, Abdel et contributeurs de NVDA
+* Télécharger [version stable][1]
+* Télécharger [version de développement][2]
+* Compatibilité NVDA : 2019.3 et ultérieure
 
-This add-on enables the advanced clock, alarm timer and calendar
-functionality for NVDA.
+Cette extension active les fonctions avancées de l'horloge, de minuterie
+d'alarme et du calendrier pour NVDA.
 
 Au lieu de toujours obtenir la date et l'heure depuis Windows, vous pouvez
 personnaliser comment les dates et les heures doivent être annoncées et
@@ -17,9 +17,10 @@ que les jours restants avant la fin de l'année en cours, et vous pouvez
 également définir une annonce automatique de l'heure sur un intervalle
 spécifié.
 
-There's also a stopwatch and Alarm timer features built-in to the add-on
-that lets you time your tasks, such as copying files, installing programs,
-or cooking meals.
+Il existe également des fonctionnalités de chronomètre et minuterie d'alarme
+intégrés à l'extension qui vous permettent de chronométrer vos tâches,
+telles que la copie de fichiers, l'installation de programmes ou la
+préparation de repas.
 
 ## Note:
 
@@ -31,37 +32,79 @@ cela.
 
 ## Utilisation
 
-*	Open the configuration dialog for this add-on from NVDA Settings dialog.
-	*	In the Clock setup panel, the first two Combo Box controls allow you to choose your prefered time and date display formats.
-	*	The Combo Box control labeled "Interval" allows you to set the interval for automatic time announcement (Every 10 minutes, Every 15 minutes, Every 30 minutes, Every hour, or Off).
-	*	The Combo Box control labeled "Time announcement" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure how the automatic time announcement should be reported (Speech and sound, Speech only, or Sound only) when automatic time announcement is working.
-	*	The Combo box control labeled "Clock chime sound" (only visible if the choice "off" is not selected in the interval Combo Box) lets you choose between various clock sounds that will be played when automatic time announcement is working and reported with sound.
-	*	The Checkbox control labeled "Quiet hours" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure time range when automatic time announcement shouldn't occur.
-	*	The Checkbox control labeled "input in 24-hour format" (only visible if quiet hours are enabled) allows you to configure whether you want to input time for quiet hours in 12-hour (A.M. or P.M.), or european 24-hour format.
-	*	The Edit box controls for start and end time (only visible if quiet hours are enabled) let you configure time range for quiet hours. The time should be entered in HH:MM format if the "input in 24-hour format" checkbox is checked, otherwise you must use a 12 hour format as described below.
-	*	When done, tab to the OK button and activate it by pressing Enter to save your settings.
-	*	In the Alarm setup dialog, the first Combo Box control allow you to choose your prefered countdown timer before the alarm ring.
-	*	The Edit box control lets you type your time waiting before the alarm ring. This duration must be specified in 1 or more digits, not a decimal number.
-	*	The Combo box control labeled "Alarm sound" lets you choose between various alarm sounds that will be played when the alarm time arrives.
-	*	The pause button allows you to pause/resume too long alarms.
-	*	The stop button allows you to stop too long alarms.
-	*	When done, tab to the OK button and activate it by pressing Enter. A message should be displayed to remind you of the waiting time before the alarm.
-*	Press NVDA+F12 once to get current time, twice to get current date, or three times to get the current day, week number, as well as the remaining days before the end of the current year.
+* Ouvrez le dialogue de configuration de cette extension à partir de la
+  boîte de dialogue Paramètres NVDA.
+
+    * Dans le panneau Réglage de l'horloge les deux premiers contrôles de
+      Zone de liste déroulante vous permettent de choisir votre format
+      d'affichage préféré pour l'heur et la date.
+    * Le contrôle Zone de liste déroulante intitulé "Intervalle" vous permet
+      de définir l'intervalle de l'annonce automatique de l'heure (Toutes
+      les 15 minutes, Toutes les 30 minutes, Toutes les heures ou
+      Désactivé).
+    * Le contrôle Zone de liste déroulante intitulé "Annonce de l'heure"
+      (visible uniquement si le choix "Désactivé" n'est pas sélectionné dans
+      la Zone de liste déroulante intervalle) vous permet de configurer
+      comment l'annonce automatique de l’heure devrait être annoncée (Parole
+      et son, Parole seulement, ou Son seulement) lorsque l'annonce
+      automatique de l’heure fonctionne.
+    * Le contrôle Zone de liste déroulante intitulé "Son de carillon
+      d'horloge" (visible uniquement si le choix "Désactivé" n'est pas
+      sélectionné dans la Zone de liste déroulante intervalle) vous permet
+      de choisir entre différents sons d'horloge qui sera joué lorsque
+      l'annonce automatique de l’heure fonctionne et annoncée avec le son.
+    * Le contrôle Case à cocher intitulé ""Heures silencieuses" (visible
+      uniquement si le choix "Désactivé" n'est pas sélectionné dans la Zone
+      de liste déroulante intervalle) vous permet de configurer l'intervalle
+      de temps dans laquelle l'annonce automatique ne doit pas se produire.
+    * Le contrôle Case à cocher intitulé "Entrée au format 24 heures"
+      (visible uniquement si les heures silencieuses sont activées) vous
+      permet de configurer si vous voulez entrer l'heure pour les heures
+      silencieuses en format 12 heures (A.M. ou P.M.) ou européen 24 heures.
+    * Les contrôles de Zone d'édition pour le début et fin de la durée
+      ((visible uniquement si les heures silencieuses sont activées) vous
+      permettent de configurer l'intervalle de temps pour les heures
+      silencieuses. L'heure doit être entrée au format HH:MM si la case à
+      cocher "Entrée au format 24 heures" est cochée, sinon vous devez
+      utiliser un format 12 heures comme décrit ci-dessous.
+    * Une fois terminé, faire tab jusqu'au bouton OK et activer celui-ci en
+      appuyant sur Entrée pour enregistrer vos paramètres.
+    * Dans le dialogue Réglage de l'alarme, le premier contrôle de Zone de
+      liste déroulante vous permet de choisir votre compte à rebours préféré
+      de la minuterie avant que l'alarme sonne.
+    * Le contrôle de zone d'édition vous permet de saisir votre temps
+      d'attente avant que l'alarme sonne. Cette durée doit être spécifiée en
+      1 ou plusieurs chiffres, pas un nombre décimal.
+    * Le contrôle Zone de liste déroulante intitulé "Son de l'alarme" vous
+      permet de choisir entre différents sons d'alarme qui sera joué lorsque
+      l’heure de l’alarme sonnera.
+    * Le bouton  Pause vous permet de  mettre en pause / reprendre les
+      alarmes trop longues.
+    * Le bouton  Arrêter vous permet d'arrêter les alarmes trop longues.
+    * Une fois terminé, faire tab jusqu'au bouton OK et activer celui-ci en
+      appuyant sur Entrée. Un message devrait être affiché pour vous
+      rappeler le temps d'attente avant l'alarme.
+
+* Appuyer sur NVDA+F12 une fois pour obtenir l'heure actuelle, deux fois
+  pour obtenir la date actuelle, ou trois fois pour obtenir le jour actuel,
+  le numéro de la semaine, ainsi que les jours restants avant la fin de
+  l'année en cours.
 
 ## Raccourcis clavier
 
-* NVDA+F12: get current time
-* NVDA+F12 pressed twice quickly: get current date
-* NVDA+F12 pressed three times quickly: reports the current day, the week
-  number, the current year and the remaining days before the end of the
-  year.
-* There is a script that gives the remaining and elapsed time before the
-  next alarm. There is no keyboard gesture assigned to this script, you will
-  have to do it yourself in the "Input gestures" dialog box, in the "Clock"
-  category. pressing this gesture twice quickly will cancel the next alarm.
-* There is another script to stop the sound that is currently playing, its
-  gesture is also not defined. That script can also be called using the
-  clock layer commands described below.
+* NVDA+F12: obtenir l'heure actuelle
+* NVDA+F12 pressé deux fois rapidement: obtenir la date actuelle
+* NVDA+F12 pressé trois fois rapidement: annoncer le jour actuel, le numéro
+  de la semaine, l'année en cours et les jours qui restent avant la fin de
+  l'année.
+* Il existe un script qui donne le temps écoulé et le temps restant avant la
+  prochaine alarme. Il n'y a pas de raccourci clavier affecté à ce script,
+  vous devrez le faire vous-même dans la boîte de dialogue "Gestes de
+  commande", dans la catégorie "Horloge". exécuter deux fois rapidement ce
+  raccourci annulera l'alarme suivante.
+* Il exite un autre script pour arrêter le son en cours de lecture, son
+  raccourci clavier n'est pas non plus défini. Ce script peut également être
+  appelé à l'aide des commandes séquentielles d'horloge décrites ci-dessous.
 
 ## Commandes séquentielles
 
@@ -70,7 +113,7 @@ l'une des touches suivantes :
 
 * S: Démarre, réinitialise ou arrête le chronomètre;
 * R: Réinitialise le chronomètre à 0 sans le démarrer;
-* A: donne le temps restant et écoulé avant la prochaine alarme;
+* A: donne le temps écoulé et restant avant la prochaine alarme;
 * C: Annule la prochaine alarme;
 * Espace: Annonce le chronomètre actuel ou le compte à rebours de la
   minuterie;
@@ -79,16 +122,18 @@ l'une des touches suivantes :
 
 ## Syntaxe à utiliser pour les heures silencieuses
 
-* To avoid bugs, the quiet hours must follow a rigorous and precise syntax.
-* If you check the "Input in 24-hour format" checkbox, the format must be
+* Pour éviter les bugs, les heures silencieuses doivent suivre une syntaxe
+  rigoureuse et précise.
+* Si vous cochez la case "Entrée au format 24 heures", le format doit être
   "HH:MM".
-* If you uncheck the "Input in 24-hour format" checkbox, the format must be
-  "HH:MM AM" or "HH:MM PM", the HH must contain a 12-hour format, from 0 to
-  12 and the "AM"|"PM" suffix can be in lowercase or uppercase.
-* If you check the Quiet hours" checkbox and keep the "Quiet hours start
-  time" or "Quiet hours end time" field empty, or type a mistaken value, the
-  "Quiet hours" checkbox will be unchecked automatically to avoid errorss
-  and a message will be displayed.
+* Si vous décochez la case "Entrée au format 24 heures", le format doit être
+  "HH:MM AM" ou "HH:MM PM", le HH doit contenir un format 12 heures, de 0 à
+  12 et le suffixe "AM"|"PM" peut être en minuscule ou en majuscule.
+* Si vous cochez la case "Heures silencieuses" et que vous laissez le champ
+  "Début de la durée des heures silencieuses" ou "Heure de fin des heures
+  silencieuses", ou tapez une valeur erronée, la case "Heures silencieuses"
+  sera automatiquement décochée pour éviter les erreurs et un message sera
+  affiché.
 
 [[!tag dev stable]]
 
