@@ -7,15 +7,38 @@
 
 This add-on enables the advanced clock, alarm timer and calendar functionality for NVDA.
 
-Instead of always getting time and date from Windows, you can customize how times and dates should be spoken and brailled by NVDA.
+You can configure NvDA to announce time and date in formats other than what Windows provides by default. Additionally, you can obtain the current day, week number, as well as the remaining days before the end of the current year, and you can also set automatic time announcement on specified interval. There's also a stopwatch and Alarm timer features built-in to the add-on that lets you time your tasks, such as copying files, installing programs, or cooking meals.
 
-Additionally, you can obtain the current day, week number, as well as the remaining days before the end of the current year, and you can also set automatic time announcement on specified interval.
+Notes:
 
-There's also a stopwatch and Alarm timer features built-in to the add-on that lets you time your tasks, such as copying files, installing programs, or cooking meals.
+* if you install the add-on as an update, during the installation process, the wizard detects if the old configuration is compatible with the new one and offers to correct it before installing, then you'll just have to validate the OK button to confirm that.
+* On Windows 10 and later, you can use Alarms and Clock app to manage stopwatch and timers.
 
-## Note:
+## Key commands
 
-If you install the add-on as an update, during the installation process, the wizard detects if the old configuration is compatible with the new one and offers to correct it before installing, then you'll just have to validate the OK button to confirm that.
+* NVDA+F12: get current time
+* NVDA+F12 pressed twice quickly: get current date
+* NVDA+F12 pressed three times quickly: reports the current day, the week number, the current year and the remaining days before the end of the year
+* NVDA+Shift+F12: enter clock layer
+
+## Unassigned commands
+
+The following commands are not assigned by default; if you wish to assign them, use Input Gestures dialog to add custom commands. To do so, open NVDA menu, Preferences, then Input Gestures. Expand Clock category, then locate unassigned commands from the list below and select "Add", then type the gesture you wish to use.
+
+* Elapsed and remaining time before the next alarm. pressing this gesture twice quickly will cancel the next alarm.
+* Stop currently playing alarm sound.
+
+## Layered commands
+
+To use layered commands, press NVDA+Shift+F12 followed by one of the following keys:
+
+* S: Starts, resets or stops the stopwatch
+* R: Resets stopwatch to 0 without restarting it
+* A: gives the elapsed and remaining time before the next alarm
+* C: Cancel the next alarm
+* Space: Speaks current stopwatch or count-down timer
+* p: If an alarm is too long, allows to stop it
+* H: List all layered commands (Help)
 
 ## Usage
 
@@ -36,32 +59,12 @@ If you install the add-on as an update, during the installation process, the wiz
 	*	When done, tab to the OK button and activate it by pressing Enter. A message should be displayed to remind you of the waiting time before the alarm.
 *	Press NVDA+F12 once to get current time, twice to get current date, or three times to get the current day, week number, as well as the remaining days before the end of the current year.
 
-## Key commands
-
-* NVDA+F12: get current time
-* NVDA+F12 pressed twice quickly: get current date
-* NVDA+F12 pressed three times quickly: reports the current day, the week number, the current year and the remaining days before the end of the year.
-* There is a script that gives the remaining and elapsed time before the next alarm. There is no keyboard gesture assigned to this script, you will have to do it yourself in the "Input gestures" dialog box, in the "Clock" category. pressing this gesture twice quickly will cancel the next alarm.
-* There is another script to stop the sound that is currently playing, its gesture is also not defined. That script can also be called using the clock layer commands described below.
-
-## Layered commands
-
-To use layered commands, press NVDA+Shift+F12 followed by one of the following keys:
-
-* S: Starts, resets or stops the stopwatch;
-* R: Resets stopwatch to 0 without restarting it;
-* A: gives the remaining and elapsed time before the next alarm;
-* C: Cancel the next alarm;
-* Space: Speaks current stopwatch or count-down timer;
-* p: If an alarm is too long, allows to stop it;
-* H: List all layered commands (Help).
-
 ## Syntax to use for quiet hours
 
-* To avoid bugs, the quiet hours must follow a rigorous and precise syntax.
-* If you check the "Input in 24-hour format" checkbox, the format must be "HH:MM".
-* If you uncheck the "Input in 24-hour format" checkbox, the format must be "HH:MM AM" or "HH:MM PM", the HH must contain a 12-hour format, from 0 to 12 and the "AM"|"PM" suffix can be in lowercase or uppercase.
-* If you check the Quiet hours" checkbox and keep the "Quiet hours start time" or "Quiet hours end time" field empty, or type a mistaken value, the "Quiet hours" checkbox will be unchecked automatically to avoid errorss and a message will be displayed.
+1. To avoid bugs, the quiet hours must follow a rigorous and precise syntax.
+2. If you check the "Input in 24-hour format" checkbox, the format must be "HH:MM".
+3. If you uncheck the "Input in 24-hour format" checkbox, the format must be "HH:MM AM" or "HH:MM PM", the HH must contain a 12-hour format, from 0 to 12 and the "AM"|"PM" suffix can be in lowercase or uppercase.
+4. If you check the Quiet hours" checkbox and keep the "Quiet hours start time" or "Quiet hours end time" field empty, or type a mistaken value, the "Quiet hours" checkbox will be unchecked automatically to avoid errorss and a message will be displayed.
 
 [1]: https://addons.nvda-project.org/files/get.php?file=cac
 
