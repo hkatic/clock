@@ -17,7 +17,7 @@ from . import formats
 import nvwave
 from . import clockHandler
 from . import stopwatchHandler
-from .clockSettingsGUI import ClockSettingsPanel, AlarmSettingsPanel
+from .clockSettingsGUI import ClockSettingsPanel, AlarmSettingsDialog
 import config
 import tones
 from datetime import datetime
@@ -164,7 +164,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if globalVars.appArgs.secure or config.isAppX:
 			return
 		gui.NVDASettingsDialog.categoryClasses.append(ClockSettingsPanel)
-		gui.NVDASettingsDialog.categoryClasses.append(AlarmSettingsPanel)
+		self.toolsMenu = gui.mainFrame.sysTrayIcon.toolsMenu
+		self.alarmSettings = self.toolsMenu.Append(
+			# Translators: The name of the alarm item in NVDA Tools menu.
+			wx.ID_ANY, _("Schedule a&larms..."),
+			# Translators: The tooltyp text for the alarm item in NVDA Tools menu.
+			_("Allows you to schedule an alarm")
+		)
+		gui.mainFrame.sysTrayIcon.Bind (wx.EVT_MENU, self.onAlarmSettingsDialog, self.alarmSettings)
 		self.clock = clockHandler.Clock()
 		self.stopwatch = stopwatchHandler.Stopwatch()
 		try:
@@ -220,7 +227,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def terminate(self):
 		super(GlobalPlugin, self).terminate()
 		gui.NVDASettingsDialog.categoryClasses.remove(ClockSettingsPanel)
-		gui.NVDASettingsDialog.categoryClasses.remove(AlarmSettingsPanel)
+		try:
+			self.toolsMenu.Remove(self.alarmSettings)
+		except (RuntimeError, AttributeError):
+			pass
 		self.clock.terminate()
 
 	@scriptHandler.script(
@@ -403,6 +413,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			msg = _("Sound stopped")
 		ui.message(msg)
 
+	def onAlarmSettingsDialog(self, evt):
+		gui.mainFrame.prePopup()
+		d = AlarmSettingsDialog(gui.mainFrame)
+		d.Show()
+		gui.mainFrame.postPopup() 
+
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
 		description=_("Display the clock settings dialog box.")
@@ -415,4 +431,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		description=_("Display the alarm settings dialog box.")
 	)
 	def script_activateAlarmSettingsDialog(self, gesture):
-		wx.CallAfter(gui.mainFrame._popupSettingsDialog, gui.NVDASettingsDialog, AlarmSettingsPanel)
+		gui.mainFrame.prePopup()
+		d = AlarmSettingsDialog(gui.mainFrame)
+		d.Show()
+		gui.mainFrame.postPopup() 
+
