@@ -8,23 +8,57 @@
 Este complemento habilita funciones avanzadas de reloj, temporizador de
 alarma   y  calendario para NVDA.
 
-En lugar de obtener siempre la hora y la fecha desde la barra de tareas de
-Windows, puedes personalizar cómo deberían verbalizarse y braillificarse las
-horas y las fechas por NVDA.
+Puedes configurar NVDA para que anuncie la fecha y la hora en formatos
+distintos a los que tiene Windows por defecto. Además, puedes obtener el día
+actual, número de semana, así como los días restantes para que acabe el año
+en curso, y también puedes establecer el anuncio automático de la hora tras
+un intervalo dado. También hay funciones de temporizador de alarma y
+cronómetro incorporadas en el complemento que te permiten medir tus tareas,
+tales como copiar archivos, instalar programas o cocinar comida.
 
-Además, puedes obtener el día actual, el número de la semana, así como los
-días restantes para que acabe el año y también puedes ajustar el anuncio
-automático de la hora en un intervalo especificado.
+Notas:
 
-También existen las funciones de cronómetro y temporizador de alarma
-integrados en el complemento que te permiten programar tus tareas, como
-copiar archivos, instalar programas o preparar comida.
+* si instalas el complemento como una actualización, durante el proceso de
+  instalación, el asistente detecta si la configuración anterior es
+  compatible con la nueva y ofrece corregirla antes de instalar. Simplemente
+  debes validar con el botón Aceptar para confirmar.
+* En Windows 10 o posterior, puedes usar la aplicación Reloj y alarmas para
+  gestionar cronómetros y temporizadores.
 
-## Nota:
+## Teclas de órdenes
 
-Si instalas el complemento como una actualización, durante el proceso de
-instalación, el asistente detecta si la configuración anterior es compatible
-con la nueva y ofrece corregirla antes de instalarla.
+* NVDA+f12: obtiene la hora actual
+* NVDA+f12 pulsado dos veces rápidamente: obtiene la fecha actual
+* NVDA+F12 pulsado tres veces rápidamente: anuncia el número de día, número
+  de semana, el año actual y los días que faltan hasta fin de año
+* NVDA+shift+f12: entra en la capa del reloj
+
+## Órdenes sin asignar
+
+Las siguientes órdenes vienen sin asignar por defecto; si quieres
+asignarlas, utiliza el diálogo Gestos de entrada para añadir órdenes
+personalizadas. Para ello, abre el menú NVDA, Preferencias, y luego Gestos
+de entrada. Expande la categoría Reloj, encuentra las órdenes sin asignar de
+la lista de debajo y selecciona "Añadir". Finalmente, teclea el gesto que te
+gustaría utilizar.
+
+* Tiempo transcurrido y restante antes de la próxima alarma. Al pulsar dos
+  veces rápidamente este gesto, se cancelará la alarma.
+* Detener sonido de la alarma actual en reproducción.
+
+## Órdenes de capa
+
+Para usar las órdenes en capa, pulsa NVDA+Shift+F12 seguido de una de las
+siguientes teclas:
+
+* S: inicia, detiene o reinicia el cronómetro
+* R: pone el cronómetro a 0 sin reiniciarlo
+* A: da el tiempo transcurrido y el tiempo restante antes de la próxima
+  alarma
+* C: cancela la próxima alarma
+* Espacio: verbaliza el cronómetro o la cuenta atrás actual
+* p: si una alarma es demasiado larga, permite pararla
+* H: lista todas las órdenes de capa (Ayuda)
 
 ## Uso
 
@@ -83,49 +117,20 @@ con la nueva y ofrece corregirla antes de instalarla.
   fecha, o tres para saber el día actual, número de semana y días restantes
   para que se acabe el año en curso.
 
-## Teclas de órdenes
-
-* NVDA+f12: obtiene la hora actual
-* NVDA+f12 pulsado dos veces rápidamente: obtiene la fecha actual
-* NVDA+F12 pulsado tres veces rápidamente: anuncia el número de día, número
-  de semana, el año actual y los días que faltan hasta fin de año.
-* Hay un script que devuelve el tiempo transcurrido y restante antes de la
-  próxima alarma. No hay un gesto de teclado asociado a este script. Deberás
-  asignarlo por ti mismo en el diálogo "Gestos de entrada", en la categoría
-  "Reloj". Al pulsar dos veces rápidamente este gesto, se cancelará la
-  próxima alarma.
-* También hay un script para detener el sonido que se reproduce actualmente,
-  su gesto no está definido. Se puede llamar también a este script
-  utilizando las órdenes de capa del reloj descritas más abajo.
-
-## Órdenes de capa
-
-Para usar las órdenes en capa, pulsa NVDA+Shift+F12 seguido de una de las
-siguientes teclas:
-
-* S: inicia, detiene o reinicia el cronómetro;
-* R: pone el cronómetro a 0 sin reiniciarlo;
-* A: da el tiempo transcurrido y el tiempo restante antes de la próxima
-  alarma;
-* C: cancela la próxima alarma;
-* Espacio: verbaliza el cronómetro o la cuenta atrás actual;
-* p: si una alarma es demasiado larga, permite pararla;
-* H: lista todas las órdenes de capa (Ayuda).
-
 ## Sintaxis de las horas silenciosas
 
-* Para evitar fallos, las horas silenciosas deben seguir una sintaxis
-  rigurosa y precisa.
-* Si marcas la casilla "Entrada en formato 24 horas", el formato debe ser
-  "HH:MM".
-* Si desmarcas la casilla "Entrada en formato de 24 horas", el formato debe
-  ser "HH:MM AM" o "HH:MM PM", HH debe contener un número entre 0 y 12 y los
-  sufijos "AM|PM" pueden estar en minúscula o mayúscula.
-* Si marcas la casilla "horas silenciosas" y dejas los campos "Hora de
-  inicio de las horas silenciosas" o "Hora de finalización de las horas
-  silenciosas" vacíos o escribes un valor erróneo, se desmarcará la casilla
-  "Horas silenciosas" automáticamente para evitar errores y se mostrará un
-  mensaje.
+1. Para evitar fallos, las horas silenciosas deben seguir una sintaxis
+   rigurosa y precisa.
+2. Si marcas la casilla "Entrada en formato 24 horas", el formato debe ser
+   "HH:MM".
+3. Si desmarcas la casilla "Entrada en formato de 24 horas", el formato debe
+   ser "HH:MM AM" o "HH:MM PM", HH debe contener un número entre 0 y 12 y
+   los sufijos "AM|PM" pueden estar en minúscula o mayúscula.
+4. Si marcas la casilla "horas silenciosas" y dejas los campos "Hora de
+   inicio de las horas silenciosas" o "Hora de finalización de las horas
+   silenciosas" vacíos o escribes un valor erróneo, se desmarcará la casilla
+   "Horas silenciosas" automáticamente para evitar errores y se mostrará un
+   mensaje.
 
 [[!tag dev stable]]
 

@@ -8,24 +8,57 @@
 Bu eklenti, NVDA için gelişmiş saat, alarm zamanlayıcı ve takvim
 işlevselliğini etkinleştirir.
 
-Her zaman Windows'tan saat ve tarih almak yerine, NVDA tarafından saatlerin
-ve tarihlerin nasıl konuşulacağını ve braille yazılacağını
-özelleştirebilirsiniz.
+NVDA'yı, Windows'un varsayılan olarak sağladığından farklı biçimlerde saat
+ve tarihi duyuracak şekilde yapılandırabilirsiniz. Ayrıca içinde bulunulan
+gün, hafta numarası ve içinde bulunulan yılın bitmesine kalan gün sayısı
+bilgisini alabilir, ayrıca belirtilen aralıkta otomatik saat duyurusu
+ayarlayabilirsiniz. Eklentide yerleşik olarak bulunan ve dosya kopyalama,
+program yükleme veya yemek pişirme gibi görevlerinizi zamanlamanıza olanak
+tanıyan bir kronometre ve Alarm zamanlayıcı özellikleri de vardır.
 
-Ayrıca içinde bulunulan gün, hafta numarası ve içinde bulunulan yılın
-bitmesine kalan gün sayısı bilgisini alabilir, belirtilen aralıkta otomatik
-saat duyurusu ayarlayabilirsiniz.
+Notlar:
 
-Ayrıca eklentide yerleşik olarak bulunan ve dosya kopyalama, program yükleme
-veya yemek pişirme gibi işlerinizi zamanlamanıza olanak tanıyan bir
-kronometre ve Alarm zamanlayıcı özelliği vardır.
+* Eklentiyi güncelleme olarak yüklerseniz, yükleme işlemi sırasında sihirbaz
+  eski konfigürasyonun yenisiyle uyumlu olup olmadığını algılar ve
+  yüklemeden önce düzeltmeyi önerir, ardından onaylamak için tamam düğmesini
+  seçmeniz yeterlidir.
+* Windows 10 ve sonraki sürümlerde, kronometreyi ve zamanlayıcıları yönetmek
+  için Alarmlar ve Saat uygulamasını kullanabilirsiniz.
 
-## Not:
+## Tuş komutları
 
-Eklentiyi güncelleme olarak yüklerseniz, yükleme işlemi sırasında sihirbaz
-eski konfigürasyonun yenisiyle uyumlu olup olmadığını algılar ve yüklemeden
-önce düzeltmeyi önerir, ardından onaylamak için tamam düğmesini seçmeniz
-yeterlidir.
+* NVDA+F12, şimdiki zamanı al;
+* NVDA+F12'ye iki kez hızlıca basıldığında güncel tarihi alın;
+* NVDA+F12'ye hızlı bir şekilde üç kez basıldığında içinde bulunulan günü,
+  hafta numarasını, içinde bulunulan yılı ve yılın bitmesi için kalan
+  günleri bildirir.
+* NVDA+Shift+F12: saat komut katmanına girin
+
+## Atanmamış komutlar
+
+Aşağıdaki komutlar varsayılan olarak atanmamıştır; bunları atamak
+istiyorsanız, özel komutlar eklemek için Girdi Hareketleri iletişim kutusunu
+kullanın. Bunu yapmak için NVDA menüsünü, Tercihler'i ve ardından Girdi
+Hareketlerini açın. Saat kategorisini genişletin, ardından aşağıdaki
+listeden atanmamış komutları bulun ve "Ekle"yi seçin, ardından kullanmak
+istediğiniz hareketi yapın.
+
+* Bir sonraki alarmdan önce geçen ve kalan süre. bu harekete hızlıca iki kez
+  basmak bir sonraki alarmı iptal edecektir.
+* Çalmakta olan alarm sesini durdurun.
+
+## Katman komutları
+
+Katman komutlarını kullanmak için NVDA+Shift+F12 tuşlarına ve ardından
+aşağıdaki tuşlardan birine basın:
+
+* S: Kronometreyi başlatır, sıfırlar veya durdurur
+* R: Kronometreyi yeniden başlatmadan sıfırlar
+* A: bir sonraki alarmdan önce kalan ve geçen süreyi verir
+* C: Sonraki alarmı iptal eder
+* Boşluk: Geçerli kronometreyi veya geri sayım sayacını söyler
+* p: Bir alarm çok uzunsa, onu durdurmaya olanak tanır
+* H: Tüm katman komutlarını listeler. (Yardım)
 
 ## kullanım
 
@@ -81,45 +114,20 @@ yeterlidir.
   kez veya geçerli günü, hafta numarasını ve mevcut yılın bitiminden önceki
   kalan günleri almak için üç kez basın.
 
-## Tuş komutları
-
-* NVDA+F12, şimdiki zamanı al;
-* NVDA+F12'ye iki kez hızlıca basıldığında güncel tarihi alın;
-* NVDA+F12'ye hızlı bir şekilde üç kez basıldığında içinde bulunulan günü,
-  hafta numarasını, içinde bulunulan yılı ve yılın bitmesi için kalan
-  günleri bildirir.
-* Bir sonraki alarmdan önce kalan ve geçen süreyi veren bir komut var. Bu
-  komuta atanmış bir klavye hareketi yok, bunu "Girdi hareketleri" iletişim
-  kutusunda  "Saat" kategorisinde kendiniz yapmanız gerekir;
-* Şu anda çalmakta olan sesi durdurmak için bir komut var, ama hareketi
-  tanımlı değil;
-
-## Katman komutları
-
-Katman komutlarını kullanmak için NVDA+Shift+F12 tuşlarına ve ardından
-aşağıdaki tuşlardan birine basın:
-
-* S: Kronometreyi başlatır, sıfırlar veya durdurur;
-* R: Kronometreyi yeniden başlatmadan sıfırlar;
-* A: bir sonraki alarmdan önce kalan ve geçen süreyi verir;
-* C: Sonraki alarmı iptal eder;
-* Boşluk: Geçerli kronometreyi veya geri sayım sayacını söyler;
-* p: Bir alarm çok uzunsa, onu durdurmaya olanak tanır;
-* H: Tüm katman komutlarını listeler. (Yardım).
-
 ## Sessiz saatler için kullanılacak sözdizimi
 
-* Hatalardan kaçınmak için, sessiz saatler titiz ve kesin bir sözdizimi
-  izlemelidir;
-* "24 saatlik formatta gir" onay kutusunu işaretlerseniz, format "SS:DD"
-  olmalıdır;
-* "24 saatlik biçimde gir" onay kutusunun işaretini kaldırırsanız, biçim
-  "SS:DD ÖÖ" veya "SS:DD ÖÖ" olmalıdır, SS 0'dan 12 saatlik bir biçim
-  içermelidir 12'ye kadar ve "AM"|"PM" soneki küçük veya büyük harf olabilir
-* Sessiz saatler" onay kutusunu işaretlediğiniz halde "Sessiz saatler
-  başlangıç zamanı" veya "Sessiz saatler bitiş zamanı" alanını boş
-  tutarsanız veya yanlış bir değer girerseniz, "Sessiz saatler" onay
-  kutusunun işareti otomatik olarak kaldırılır , hataları önlemek için;
+1. Hatalardan kaçınmak için, sessiz saatler titiz ve kesin bir sözdizimi
+   izlemelidir;
+2. "24 saatlik formatta gir" onay kutusunu işaretlerseniz, format "SS:DD"
+   olmalıdır;
+3. "24 saatlik biçimde gir" onay kutusunun işaretini kaldırırsanız, biçim
+   "SS:DD ÖÖ" veya "SS:DD ÖÖ" olmalıdır, SS 0'dan 12 saatlik bir biçim
+   içermelidir 12'ye kadar ve "AM"|"PM" soneki küçük veya büyük harf
+   olabilir
+4. Sessiz saatler" onay kutusunu işaretlediğiniz halde "Sessiz saatler
+   başlangıç zamanı" veya "Sessiz saatler bitiş zamanı" alanını boş
+   tutarsanız veya yanlış bir değer girerseniz, "Sessiz saatler" onay
+   kutusunun işareti otomatik olarak kaldırılır , hataları önlemek için;
 
 [[!tag dev stable]]
 
