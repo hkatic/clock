@@ -14,7 +14,7 @@ import os
 import wx
 from . import alarmHandler
 from . import dtfunctions
-from gui import SettingsPanel
+from gui import SettingsPanel, SettingsDialog
 
 import addonHandler
 addonHandler.initTranslation()
@@ -264,7 +264,7 @@ class ClockSettingsPanel(SettingsPanel):
 		config.conf["clockAndCalendar"]["quietHoursEndTime"] = quietHoursEndTime
 
 
-class AlarmSettingsPanel(SettingsPanel):
+class AlarmSettingsDialog(SettingsDialog):
 
 	# Translators: This is the label for the alarm settings panel.
 	title = _("Alarm setup")
@@ -296,6 +296,9 @@ class AlarmSettingsPanel(SettingsPanel):
 		self.pauseLabel = _("&Pause")
 
 		self.showAlarmDialog(settingsSizer=settingsSizer)
+
+	def postInit(self):
+		self._alarmTimerChoice.SetFocus()
 
 	def showAlarmDialog(self, settingsSizer):
 		alarmSettingsGuiHelper = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
@@ -343,17 +346,16 @@ class AlarmSettingsPanel(SettingsPanel):
 		self.pause = False
 		return nvwave.playWaveFile(os.path.join(paths.ALARMS_DIR, evt.GetString()))
 
-	def onPanelDeactivated(self):
-		self.onStop(None)
-		super(AlarmSettingsPanel,self).onPanelDeactivated()
-
-	def onSave(self):
+	def onOk(self, evt):
 		config.conf["clockAndCalendar"]["alarmSound"] = self._alarmSoundChoice.GetStringSelection()
 		config.conf["clockAndCalendar"]["alarmTimerChoice"] = self._alarmTimerChoice.GetSelection()
 		self.onStop(None)
+		self.postSave()
+		super (AlarmSettingsDialog, self).onOk (evt)
 
-	def onDiscard(self):
+	def onCancel(self, evt):
 		self.onStop(None)
+		super (AlarmSettingsDialog, self).onCancel(evt)
 
 	def postSave(self):
 		if re.match(r"\d+", self._alarmTimeWaitingText.GetValue()):
