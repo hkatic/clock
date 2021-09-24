@@ -62,16 +62,15 @@ def secondsToString(seconds: float) -> str:
 	@rtype: basestring.
 	"""
 	text = ""
-	tm = time.gmtime(seconds)
-	hr = tm.tm_hour
+	seconds = int(seconds)
+	min, sec = divmod(seconds, 60)
+	hr, min = divmod(min, 60)
 	if hr > 0:
-		if hr > 23:
-			hr = 24 * (hr // 24) + (hr % 24)
-		text += _("{hours} hours, ").format(hours=str(hr))
-	if tm.tm_min:
-		text += _("{minutes} minutes, ").format(minutes=tm.tm_min)
-	if tm.tm_sec:
-		text += _("{seconds} seconds").format(seconds=tm.tm_sec)
+		text += _("{hours} hours, ").format(hours=hr)
+	if min > 0:
+		text += _("{minutes} minutes, ").format(minutes=min)
+	if sec > 0:
+		text += _("{seconds} seconds").format(seconds=sec)
 	return _("0 seconds") if not text else text
 
 
