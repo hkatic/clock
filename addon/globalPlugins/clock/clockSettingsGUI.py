@@ -267,7 +267,7 @@ class ClockSettingsPanel(SettingsPanel):
 class AlarmSettingsDialog(SettingsDialog):
 
 	# Translators: This is the label for the alarm settings panel.
-	title = _("Alarm setup")
+	title = _("Schedule alarms")
 	pause = False
 
 	def makeSettings(self, settingsSizer):
