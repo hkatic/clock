@@ -351,11 +351,11 @@ class AlarmSettingsDialog(SettingsDialog):
 		config.conf["clockAndCalendar"]["alarmTimerChoice"] = self._alarmTimerChoice.GetSelection()
 		self.onStop(None)
 		self.postSave()
-		super (AlarmSettingsDialog, self).onOk (evt)
+		super(AlarmSettingsDialog, self).onOk(evt)
 
 	def onCancel(self, evt):
 		self.onStop(None)
-		super (AlarmSettingsDialog, self).onCancel(evt)
+		super(AlarmSettingsDialog, self).onCancel(evt)
 
 	def postSave(self):
 		if re.match(r"\d+", self._alarmTimeWaitingText.GetValue()):

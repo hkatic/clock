@@ -171,7 +171,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			# Translators: The tooltyp text for the alarm item in NVDA Tools menu.
 			_("Allows you to schedule an alarm")
 		)
-		gui.mainFrame.sysTrayIcon.Bind (wx.EVT_MENU, self.onAlarmSettingsDialog, self.alarmSettings)
+		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.onAlarmSettingsDialog, self.alarmSettings)
 		self.clock = clockHandler.Clock()
 		self.stopwatch = stopwatchHandler.Stopwatch()
 		try:
@@ -417,7 +417,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gui.mainFrame.prePopup()
 		d = AlarmSettingsDialog(gui.mainFrame)
 		d.Show()
-		gui.mainFrame.postPopup() 
+		gui.mainFrame.postPopup()
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
@@ -434,5 +434,4 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gui.mainFrame.prePopup()
 		d = AlarmSettingsDialog(gui.mainFrame)
 		d.Show()
-		gui.mainFrame.postPopup() 
-
+		gui.mainFrame.postPopup()
