@@ -441,16 +441,4 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		description=_("Display the alarm settings dialog box.")
 	)
 	def script_activateAlarmSettingsDialog(self, gesture):
-		try:
-			gui.mainFrame.prePopup()
-			d = AlarmSettingsDialog(gui.mainFrame)
-			d.Show()
-			gui.mainFrame.postPopup()
-		except gui.settingsDialogs.SettingsDialog.MultiInstanceErrorWithDialog:
-			wx.CallAfter(
-				gui.messageBox,
-				# Translators: error message when attempting to open more than one alarm settings dialogs.
-				_("Schedule alarms dialog is already open."),
-				# Translators: title of the schedule alarms error dialog.
-				_("Error"), wx.OK | wx.ICON_ERROR
-			)
+		wx.CallAfter(self.onAlarmSettingsDialog, None)
