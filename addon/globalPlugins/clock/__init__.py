@@ -174,28 +174,26 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.onAlarmSettingsDialog, self.alarmSettings)
 		self.clock = clockHandler.Clock()
 		self.stopwatch = stopwatchHandler.Stopwatch()
+		conf = config.conf['clockAndCalendar']
 		try:
-			config.conf['clockAndCalendar']['alarmTime']
+			conf['alarmTime']
 		except VdtTypeError:
-			conf = config.conf['clockAndCalendar']
 			conf.profiles[0]['alarmTime'] = 0.0
 			# We save the configuration, in case the user would not have checked the
 			# "Save configuration on exit" checkbox in General settings.
 			if not config.conf['general']['saveConfigurationOnExit']:
 				config.conf.save()
 		try:
-			config.conf['clockAndCalendar']['timeDisplayFormat']
+			conf['timeDisplayFormat']
 		except VdtTypeError:
-			conf = config.conf['clockAndCalendar']
 			conf.profiles[0]['timeDisplayFormat'] = 0
 			# We save the configuration, in case the user would not have checked the
 			# "Save configuration on exit" checkbox in General settings.
 			if not config.conf['general']['saveConfigurationOnExit']:
 				config.conf.save()
 		try:
-			config.conf['clockAndCalendar']['dateDisplayFormat']
+			conf['dateDisplayFormat']
 		except VdtTypeError:
-			conf = config.conf['clockAndCalendar']
 			conf.profiles[0]['dateDisplayFormat'] = 1
 			# We save the configuration, in case the user would not have checked the
 			# "Save configuration on exit" checkbox in General settings.
