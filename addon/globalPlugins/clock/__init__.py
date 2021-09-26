@@ -175,30 +175,27 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.clock = clockHandler.Clock()
 		self.stopwatch = stopwatchHandler.Stopwatch()
 		conf = config.conf['clockAndCalendar']
+		validationFailed = False
 		try:
 			conf['alarmTime']
 		except VdtTypeError:
+			validationFailed = True
 			conf.profiles[0]['alarmTime'] = 0.0
-			# We save the configuration, in case the user would not have checked the
-			# "Save configuration on exit" checkbox in General settings.
-			if not config.conf['general']['saveConfigurationOnExit']:
-				config.conf.save()
 		try:
 			conf['timeDisplayFormat']
 		except VdtTypeError:
+			validationFailed = True
 			conf.profiles[0]['timeDisplayFormat'] = 0
-			# We save the configuration, in case the user would not have checked the
-			# "Save configuration on exit" checkbox in General settings.
-			if not config.conf['general']['saveConfigurationOnExit']:
-				config.conf.save()
 		try:
 			conf['dateDisplayFormat']
 		except VdtTypeError:
 			conf.profiles[0]['dateDisplayFormat'] = 1
-			# We save the configuration, in case the user would not have checked the
-			# "Save configuration on exit" checkbox in General settings.
-			if not config.conf['general']['saveConfigurationOnExit']:
-				config.conf.save()
+			validationFailed = True
+		# We save the configuration, in case the user would not have checked the
+		# "Save configuration on exit" checkbox in General settings.
+		# Only do this if validation fails.
+		if validationFailed and not config.conf['general']['saveConfigurationOnExit']:
+			config.conf.save()
 		if not config.conf['clockAndCalendar']['alarmSound'] in paths.LIST_ALARMS:
 			alarmSound = paths.LIST_ALARMS[0]
 		else:
