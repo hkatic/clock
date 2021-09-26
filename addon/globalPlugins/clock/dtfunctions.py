@@ -89,8 +89,9 @@ def timeInRange(startTime: str, endTime: str, checkTime: str, use24hour: Optiona
 	start = parseTime(startTime, use24hour)
 	end = parseTime(endTime, use24hour)
 	check = parseTime(checkTime, use24hour)
+	# Assume 24-hour range within the same day.
+	# For example, if start is 12:00 and end is 06:00, assume 06:00 on the same day.
+	# With this, there is no need to add a one day delta.
 	if end < start:
-		end += timedelta(days=1)
-		if check < start:
-			check += timedelta(days=1)
+		return (start <= check) or (check < end)
 	return start <= check < end
