@@ -421,7 +421,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			d.Show()
 			gui.mainFrame.postPopup()
 		except gui.settingsDialogs.SettingsDialog.MultiInstanceErrorWithDialog:
-			wx.CallAfter(gui.messageBox, 
+			wx.CallAfter(
+				gui.messageBox,
 				# Translators: error message when attempting to open more than one alarm settings dialogs.
 				_("Schedule alarms dialog is already open."),
 				# Translators: title of the schedule alarms error dialog.
@@ -446,7 +447,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			d.Show()
 			gui.mainFrame.postPopup()
 		except gui.settingsDialogs.SettingsDialog.MultiInstanceErrorWithDialog:
-			wx.CallAfter(gui.messageBox, 
+			wx.CallAfter(
+				gui.messageBox,
 				# Translators: error message when attempting to open more than one alarm settings dialogs.
 				_("Schedule alarms dialog is already open."),
 				# Translators: title of the schedule alarms error dialog.
