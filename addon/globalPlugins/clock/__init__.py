@@ -218,6 +218,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			("s", self.script_stopwatchRun),
 			("r", self.script_stopwatchReset),
 			("a", self.script_alarmInfo),
+			("t", self.script_activateAlarmSettingsDialog),
 			("c", self.script_cancelAlarm),
 			("space", self.script_timeDisplay),
 			("p", self.script_stopLongAlarm),
