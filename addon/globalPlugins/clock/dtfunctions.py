@@ -2,7 +2,7 @@
 # Author: Hrvoje Katich and contributors
 # Copyright 2013-2021, released under GPL.
 
-from datetime import datetime, timedelta
+from datetime import datetime
 from typing import Optional
 
 
