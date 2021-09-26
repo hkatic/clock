@@ -414,10 +414,18 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		ui.message(msg)
 
 	def onAlarmSettingsDialog(self, evt):
-		gui.mainFrame.prePopup()
-		d = AlarmSettingsDialog(gui.mainFrame)
-		d.Show()
-		gui.mainFrame.postPopup()
+		try:
+			gui.mainFrame.prePopup()
+			d = AlarmSettingsDialog(gui.mainFrame)
+			d.Show()
+			gui.mainFrame.postPopup()
+		except gui.settingsDialogs.SettingsDialog.MultiInstanceErrorWithDialog:
+			wx.CallAfter(gui.messageBox, 
+				# Translators: error message when attempting to open more than one alarm settings dialogs.
+				_("Schedule alarms dialog is already open."),
+				# Translators: title of the schedule alarms error dialog.
+				_("Error"), wx.OK | wx.ICON_ERROR
+			)
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
@@ -431,7 +439,15 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		description=_("Display the alarm settings dialog box.")
 	)
 	def script_activateAlarmSettingsDialog(self, gesture):
-		gui.mainFrame.prePopup()
-		d = AlarmSettingsDialog(gui.mainFrame)
-		d.Show()
-		gui.mainFrame.postPopup()
+		try:
+			gui.mainFrame.prePopup()
+			d = AlarmSettingsDialog(gui.mainFrame)
+			d.Show()
+			gui.mainFrame.postPopup()
+		except gui.settingsDialogs.SettingsDialog.MultiInstanceErrorWithDialog:
+			wx.CallAfter(gui.messageBox, 
+				# Translators: error message when attempting to open more than one alarm settings dialogs.
+				_("Schedule alarms dialog is already open."),
+				# Translators: title of the schedule alarms error dialog.
+				_("Error"), wx.OK | wx.ICON_ERROR
+			)
