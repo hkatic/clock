@@ -81,7 +81,7 @@ timeFormats = (
 	"$$hh:$$m $$tt",
 	"$$hh:$$mm $$tt",
 	"$$h:$$mm $$tt",
-	"$$H:$$m:$$s",
+	"$$H:$$m:$$s $$tt",
 	"$$h:$$m $$tt",
 	"$$HH:$$mm",
 	"$$H:$$m:$$s",
