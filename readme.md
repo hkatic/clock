@@ -35,14 +35,13 @@ To use layered commands, press NVDA+Shift+F12 followed by one of the following k
 * S: Starts, resets or stops the stopwatch
 * R: Resets stopwatch to 0 without restarting it
 * A: gives the elapsed and remaining time before the next alarm
+* T: opens schedule alarms dialog.
 * C: Cancel the next alarm
 * Space: Speaks current stopwatch or count-down timer
 * p: If an alarm is too long, allows to stop it
 * H: List all layered commands (Help)
 
 ## Configuration and usage
-
-You can configure the add-on from Clock and Alarm setup panels found in NVDA Settings screen.
 
 To configure clock functionality, open NvDA menu, Preferences, then Settings, and configure the following options from Clock panel:
 
@@ -54,7 +53,7 @@ To configure clock functionality, open NvDA menu, Preferences, then Settings, an
 * Quiet hours time format (enabled if quiet hours is enabled): select how quiet hours options are presented (12-hour or 24-hour format).
 * Quiet hours start and end times: select hour and minute range for quiet hours from hours and minutes combo boxes.
 
-To configure alarms, open NVDA menu, Preferences, then Settings, then configure the next alarm using Alarm setup panel as follows::
+To schedule alarms, open NVDA menu, Tools, then select Schedule Alarms. The dialog contents include:
 
 * Alarm duration in: select alarm/timer duration between hours, minutes, and seconds.
 * Duration: enter alarm duration in the unit specified above.
