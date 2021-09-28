@@ -433,7 +433,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Display the alarm settings dialog box.")
+		description=_("Display schedule alarms dialog box.")
 	)
 	def script_activateAlarmSettingsDialog(self, gesture):
 		wx.CallAfter(self.onAlarmSettingsDialog, None)
