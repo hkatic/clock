@@ -23,7 +23,7 @@ addonHandler.initTranslation()
 class ClockSettingsPanel(SettingsPanel):
 
 	# Translators: This is the label for the clock settings panel.
-	title = _("Clock setup")
+	title = _("Clock")
 
 	def makeSettings(self, settingsSizer):
 		# Translators: This is the label for a combo box in the Clock settings dialog.
