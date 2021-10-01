@@ -26,7 +26,7 @@ addon_info = {
 	"addon_description" : _("""An advanced clock and calendar for NVDA.
 NVDA+F12, get current time.
 NVDA+F12 pressed twice quickly, get current date.
-NVDA+F12 pressed thrice quickly, reports the current day, the week number, the current year and the remaining days before the end of the year.
+NVDA+F12 pressed three times quickly, reports the current day, the week number, the current year and the remaining days before the end of the year.
 For other instructions, press Add-on help button in add-ons manager."""),
 	# version
 	"addon_version": "21.09",

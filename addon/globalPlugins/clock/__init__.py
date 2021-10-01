@@ -233,7 +233,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		description=_(
 			# Translators: Message presented in input help mode.
 			"Speaks current time. If pressed twice quickly, speaks current date. "
-			"If pressed thrice quickly, reports the current day, the week number, "
+			"If pressed three times quickly, reports the current day, the week number, "
 			"the current year and the days remaining before the end of the year."
 		),
 		category=globalCommands.SCRCAT_SYSTEM,
