@@ -420,8 +420,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				gui.messageBox,
 				# Translators: error message when attempting to open more than one alarm settings dialogs.
 				_("Schedule alarms dialog is already open."),
-				# Translators: title of the schedule alarms error dialog.
-				_("Error"), wx.OK | wx.ICON_ERROR
+				skipTranslation.translate("Error"), wx.OK | wx.ICON_ERROR
 			)
 
 	@scriptHandler.script(
