@@ -50,9 +50,9 @@ class ClockSettingsPanel(SettingsPanel):
 
 		self._timeAnnounceChoices = (
 			# Translators: This is a choice of the time report choices combo box.
-			_("speech and sound"),
+			_("message and sound"),
 			# Translators: This is a choice of the time report choices combo box.
-			_("speech only"),
+			_("message only"),
 			# Translators: This is a choice of the time report choices combo box.
 			_("sound only")
 		)
@@ -83,10 +83,10 @@ class ClockSettingsPanel(SettingsPanel):
 		self.minutesList = [str(min).zfill(2) for min in range(60)]
 
 		# Translators: This is the label for an group in the Clock settings dialog.
-		self._quietStartTime = _("Quiet hours start time:")
+		self._quietStartTime = _("Quiet hours start time")
 
 		# Translators: This is the label for an group in the Clock settings dialog.
-		self._quietEndTime = _("Quiet hours end time:")
+		self._quietEndTime = _("Quiet hours end time")
 
 		self.showSettingsDialog(settingsSizer=settingsSizer)
 
