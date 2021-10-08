@@ -48,48 +48,35 @@ msgid "0 seconds"
 msgstr "0 giây"
 
 #. Translators: Script category for Clock addon commands in input gestures dialog.
-#. Translators: Summary for this add-on to be shown on installation and add-on information.
+#. Translators: This is the label for the clock settings panel.
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on
+#. to be shown on installation and add-on information found in Add-ons Manager.
 msgid "Clock"
 msgstr "Đồng hồ"
 
-#. Translators: Item in the tools menu for the Clock Addon settings.
-msgid "Clock se&ttings..."
-msgstr "Cài đặ&t đồng hồ..."
+#. Translators: The name of the alarm item in NVDA Tools menu.
+msgid "Schedule a&larms..."
+msgstr ""
 
-#. Translators: The tooltyp text for the clock settings submenu.
-msgid "Clock and calendar setup"
-msgstr "Cài đặt đồng hồ và lịch"
-
-#. Translators: The name of the first item in the Clock settings submenu.
-#. Translators: This is the label for the clock settings panel.
-msgid "Clock setup"
-msgstr "Cài đặt đồng hồ"
-
-#. Translators: The tooltyp text for the first item in the Clock add-on submenu.
-msgid "Clock setup for times and dates"
-msgstr "Cài đặt cho ngày và giờ"
-
-#. Translators: The name of the second item in the Clock settings submenu.
-msgid "Alarm settin&gs"
-msgstr "cài đặt đồng hồ &bấm giờ "
-
-#. Translators: The tooltyp text for the second item in the Clock add-on submenu.
+#. Translators: The tooltyp text for the alarm item in NVDA Tools menu.
 msgid "Allows you to schedule an alarm"
 msgstr "cho phép bạn thiết lập đồng hồ bấm giờ "
 
-#, python-brace-format
-msgid "Day {day}, week {week} of {year}, remaining days {remain}."
-msgstr "Ngày {day}, Tuần {week} của {year}, Còn lại {remain} ngày."
-
 #. Translators: Message presented in input help mode.
+#, fuzzy
 msgid ""
 "Speaks current time. If pressed twice quickly, speaks current date. If "
-"pressed thrice quickly, reports the current day, the week number, the "
+"pressed three times quickly, reports the current day, the week number, the "
 "current year and the days remaining before the end of the year."
 msgstr ""
 "Đọc thời gian hiện tại. Nếu bấm nhanh hai lần, đọc ngày hiện tại. nếu bấm "
 "nhanh ba lần, thông báo ngày hiện tại, số tuần, năm hiện tại và số ngày còn "
 "lại trước khi kết thúc năm."
+
+#, python-brace-format
+msgid "Day {day}, week {week} of {year}, remaining days {remain}."
+msgstr "Ngày {day}, Tuần {week} của {year}, Còn lại {remain} ngày."
 
 #. Translators: Message presented in input help mode.
 msgid ""
@@ -98,6 +85,10 @@ msgid ""
 msgstr ""
 "Các lệnh layer cho đồng hồ và lịch. Sau khi bấm phím lệnh này, bấm H để xem "
 "thông tin trợ giúp."
+
+#. Translators: Message presented in input help mode.
+msgid "Starts, resets or stops the stopwatch."
+msgstr "Bắt đầu, đặt lại hay dừng đồng hồ bấm giờ."
 
 msgid "Reset. Running."
 msgstr "Đang khôi phục."
@@ -110,12 +101,13 @@ msgid "{0} stopped."
 msgstr "{0} đã dừng."
 
 #. Translators: Message presented in input help mode.
-msgid "Starts, resets or stops the stopwatch."
-msgstr "Bắt đầu, đặt lại hay dừng đồng hồ bấm giờ."
-
-#. Translators: Message presented in input help mode.
 msgid "Speaks current stopwatch or count-down timer."
 msgstr "đọc đồng hồ bấm giờ hoặc thời gian đếm ngược hiện tại."
+
+#. Translators: Message presented in input help mode.
+msgid "Gives the remaining and elapsed time before the next alarm."
+msgstr ""
+"đọc thời gian còn lại,và thời gian đã qua trước khi kết thúc đồng hồ bấm giờ "
 
 #, python-brace-format
 msgid "Elapsed time {elapsed}, remaining time {remaining}."
@@ -125,16 +117,15 @@ msgid "No alarm"
 msgstr "không chạy đồng hồ bấm giờ "
 
 #. Translators: Message presented in input help mode.
-msgid "Gives the remaining and elapsed time before the next alarm."
-msgstr ""
-"đọc thời gian còn lại,và thời gian đã qua trước khi kết thúc đồng hồ bấm giờ "
+msgid "Cancel the next alarm."
+msgstr "hủy đồng hồ bấm giờ sắp tới "
 
 msgid "Alarm cancelled"
 msgstr "đã hủy đồng hồ bấm giờ "
 
 #. Translators: Message presented in input help mode.
-msgid "Cancel the next alarm."
-msgstr "hủy đồng hồ bấm giờ sắp tới "
+msgid "Resets stopwatch to 0 without restarting it."
+msgstr "Đặt lại đồng hồ bấm giờ là 0 mà không bắt đầu lại."
 
 msgid ""
 "The stopwatch is already reset to 0. Use the clock layer command followed by "
@@ -147,10 +138,6 @@ msgid "Stopwatch reset."
 msgstr "Đã đặt lại đồng hồ bấm giờ."
 
 #. Translators: Message presented in input help mode.
-msgid "Resets stopwatch to 0 without restarting it."
-msgstr "Đặt lại đồng hồ bấm giờ là 0 mà không bắt đầu lại."
-
-#. Translators: Message presented in input help mode.
 msgid "Lists available commands in clock command layer."
 msgstr "Liệt kê các lệnh trong command layer của đồng hồ."
 
@@ -159,22 +146,27 @@ msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr ""
 "Cho phép kiểm tra đồng hồ bấm giờ  tiếp theo. Nếu bấm hai lần thì hủy nó."
 
+#. Translators: Message presented in input help mode.
+msgid "If an alarm is too long, allows to stop it."
+msgstr "nếu âm thanh phát quá lâu , bạn có thể dừng lại nó "
+
 msgid "No sound is launched."
 msgstr "Không có âm thanh nào được gọi."
 
 msgid "Sound stopped"
 msgstr "Âm thanh đã dừng"
 
-#. Translators: Message presented in input help mode.
-msgid "If an alarm is too long, allows to stop it."
-msgstr "nếu âm thanh phát quá lâu , bạn có thể dừng lại nó "
+#. Translators: error message when attempting to open more than one alarm settings dialogs.
+msgid "Schedule alarms dialog is already open."
+msgstr ""
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
 msgstr "Hiển thị hộp thoại cài đặt đồng hồ."
 
 #. Translators: Message presented in input help mode.
-msgid "Display the alarm settings dialog box."
+#, fuzzy
+msgid "Display schedule alarms dialog box."
 msgstr "Hiển thị hộp thoại cài đặt đồng hồ bấm giờ "
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
@@ -205,16 +197,19 @@ msgstr "mỗi 30 phút"
 msgid "every hour"
 msgstr "mỗi giờ"
 
-#. Transla	tors: This is the label for a combo box in the Clock settings dialog.
-msgid "&interval:"
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#, fuzzy
+msgid "&Interval:"
 msgstr "&thời gian thông báo "
 
 #. Translators: This is a choice of the time report choices combo box.
-msgid "speech and sound"
+#, fuzzy
+msgid "message and sound"
 msgstr "đọc và phát âm thanh "
 
 #. Translators: This is a choice of the time report choices combo box.
-msgid "speech only"
+#, fuzzy
+msgid "message only"
 msgstr "đọc "
 
 #. Translators: This is a choice of the time report choices combo box.
@@ -233,54 +228,68 @@ msgstr "&Chuông đồng hồ:"
 msgid "&Quiet hours"
 msgstr "&Giờ yên tĩnh"
 
-#. Translators: This is the label for a checkbox in the Clock settings dialog.
-msgid "Input in &24-hour format"
+#. Translators: This is a choice of the quiet hours time format choices.
+#, fuzzy
+msgid "12-hour format"
 msgstr "Nhập định dạng &24 giờ"
 
-#. Translators: This is the label for an edit field in the Clock settings dialog.
-msgid "Quiet hours start time:"
-msgstr "Thời gian bắt đầu giờ yên tĩnh:"
+#. Translators: This is a choice of the quiet hours time format choices.
+#, fuzzy
+msgid "24-hour format"
+msgstr "Nhập định dạng &24 giờ"
 
-#. Translators: This is the label for an edit field in the Clock settings dialog.
-msgid "Quiet hours end time:"
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#, fuzzy
+msgid "Quiet hours time &format:"
 msgstr "Thời gian kết thúc giờ yên tĩnh:"
 
-#. A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
-msgid ""
-"The value you entered for your quiet hours is erroneous, for a 24-hour "
-"format, the value must be HH:MM, for a 12-hour format, the value must be HH:"
-"MM followed by the AM or PM suffix, please reread the documentation. So your "
-"quiet hours have been deactivated for prevent any error in the configuration "
-"file."
-msgstr ""
-"Giá trị bạn đã nhập cho thời gian yên tĩnh là không đúng. Với định dạng 24 "
-"giờ, giá trị phải là HH:MM. Với định dạng 12 giờ, giá trị phải là HH:MM theo "
-"sau là hậu tố AM hoặc PM. Vui lòng đọc lại tài liệu hướng dẫn. Thời gian yên "
-"tĩnh của bạn đã bị vô hiệu hóa nhằm ngăn ngừa lỗi từ tập tin cấu hình."
+#. Translators: This is the label for an group in the Clock settings dialog.
+#, fuzzy
+msgid "Quiet hours start time"
+msgstr "Thời gian bắt đầu giờ yên tĩnh:"
 
-#. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
-msgid "Error"
-msgstr "Lỗi"
+#. Translators: This is the label for an group in the Clock settings dialog.
+#, fuzzy
+msgid "Quiet hours end time"
+msgstr "Thời gian kết thúc giờ yên tĩnh:"
 
-#. Translators: This is the label for the alarm settings panel.
-msgid "Alarm setup"
-msgstr "Cài đặt đồng hồ bấm giờ "
-
-#. Translators: This is an item of the alarm timer choices.
-msgid "Hours"
+#. Translators: the hour label in quiet hours group.
+#, fuzzy
+msgid "Hour:"
 msgstr "Giờ"
 
-#. Translators: This is an item of the alarm timer choices.
-msgid "Minutes"
+#. Translators: the minute label in quiet hours group.
+#, fuzzy
+msgid "Minute:"
 msgstr "Phút"
 
-#. Translators: This is an item of the alarm timer choices.
-msgid "Seconds"
-msgstr "Giây"
+#. Translators: This is the label for the alarm settings panel.
+msgid "Schedule alarms"
+msgstr ""
+
+#. Translators: This is an item of the alarm duration choices.
+#, fuzzy
+msgid "hours"
+msgstr "Giờ"
+
+#. Translators: This is an item of the alarm duration choices.
+#, fuzzy
+msgid "minutes"
+msgstr "Phút"
+
+#. Translators: This is an item of the alarm duration choices.
+#, fuzzy
+msgid "seconds"
+msgstr "0 giây"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
-msgid "Choose the type of timer &inputs before the alarm rings:"
-msgstr "Chọn kiểu thời gian "
+#, fuzzy
+msgid "&Alarm duration in:"
+msgstr "&Thời gian chờ đồng hồ bấm giờ :"
+
+#. Translators: This is the label for an edit field in the Alarm settings dialog.
+msgid "&Duration:"
+msgstr ""
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
@@ -293,10 +302,6 @@ msgstr "&Dừng"
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Pause"
 msgstr "&Tạm dừng"
-
-#. Translators: This is the label for an edit field in the Alarm settings dialog.
-msgid "Alarm &time waiting:"
-msgstr "&Thời gian chờ đồng hồ bấm giờ :"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
 #, python-brace-format
@@ -352,13 +357,15 @@ msgstr "Bây giờ là {hours}:{minutes}"
 msgid "It's {hours}:{minutes}:{seconds}"
 msgstr "Bây giờ là {hours}:{minutes}:{seconds}"
 
+#. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#, fuzzy
 msgid ""
 "An advanced clock and calendar for NVDA.\n"
 "NVDA+F12, get current time.\n"
 "NVDA+F12 pressed twice quickly, get current date.\n"
-"NVDA+F12 pressed thrice quickly, reports the current day, the week number, "
-"the current year and the remaining days before the end of the year.\n"
+"NVDA+F12 pressed three times quickly, reports the current day, the week "
+"number, the current year and the remaining days before the end of the year.\n"
 "For other instructions, press Add-on help button in add-ons manager."
 msgstr ""
 "Tiện ích lịch và đồng hồ nâng cao cho NVDA.\n"
@@ -367,3 +374,43 @@ msgstr ""
 "NVDA+nhanh ba lần, xem ngày hiện tại, số tuần, năm hiện tại và số ngày còn "
 "lại trước khi kết thúc năm.\n"
 "Để có thêm thông tin, bấm nút trợ giúp cho add-on trong trình quản lý add-on."
+
+#~ msgid "Clock se&ttings..."
+#~ msgstr "Cài đặ&t đồng hồ..."
+
+#~ msgid "Clock and calendar setup"
+#~ msgstr "Cài đặt đồng hồ và lịch"
+
+#~ msgid "Clock setup"
+#~ msgstr "Cài đặt đồng hồ"
+
+#~ msgid "Clock setup for times and dates"
+#~ msgstr "Cài đặt cho ngày và giờ"
+
+#~ msgid "Alarm settin&gs"
+#~ msgstr "cài đặt đồng hồ &bấm giờ "
+
+#~ msgid ""
+#~ "The value you entered for your quiet hours is erroneous, for a 24-hour "
+#~ "format, the value must be HH:MM, for a 12-hour format, the value must be "
+#~ "HH:MM followed by the AM or PM suffix, please reread the documentation. "
+#~ "So your quiet hours have been deactivated for prevent any error in the "
+#~ "configuration file."
+#~ msgstr ""
+#~ "Giá trị bạn đã nhập cho thời gian yên tĩnh là không đúng. Với định dạng "
+#~ "24 giờ, giá trị phải là HH:MM. Với định dạng 12 giờ, giá trị phải là HH:"
+#~ "MM theo sau là hậu tố AM hoặc PM. Vui lòng đọc lại tài liệu hướng dẫn. "
+#~ "Thời gian yên tĩnh của bạn đã bị vô hiệu hóa nhằm ngăn ngừa lỗi từ tập "
+#~ "tin cấu hình."
+
+#~ msgid "Error"
+#~ msgstr "Lỗi"
+
+#~ msgid "Alarm setup"
+#~ msgstr "Cài đặt đồng hồ bấm giờ "
+
+#~ msgid "Seconds"
+#~ msgstr "Giây"
+
+#~ msgid "Choose the type of timer &inputs before the alarm rings:"
+#~ msgstr "Chọn kiểu thời gian "

@@ -45,48 +45,35 @@ msgid "0 seconds"
 msgstr "0 sekund"
 
 #. Translators: Script category for Clock addon commands in input gestures dialog.
-#. Translators: Summary for this add-on to be shown on installation and add-on information.
+#. Translators: This is the label for the clock settings panel.
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on
+#. to be shown on installation and add-on information found in Add-ons Manager.
 msgid "Clock"
 msgstr "Zegar"
 
-#. Translators: Item in the tools menu for the Clock Addon settings.
-msgid "Clock se&ttings..."
-msgstr "&Ustawienia zegara..."
+#. Translators: The name of the alarm item in NVDA Tools menu.
+msgid "Schedule a&larms..."
+msgstr ""
 
-#. Translators: The tooltyp text for the clock settings submenu.
-msgid "Clock and calendar setup"
-msgstr "Ustawianie kalendarza i zegara"
-
-#. Translators: The name of the first item in the Clock settings submenu.
-#. Translators: This is the label for the clock settings panel.
-msgid "Clock setup"
-msgstr "Ustawienia zegara"
-
-#. Translators: The tooltyp text for the first item in the Clock add-on submenu.
-msgid "Clock setup for times and dates"
-msgstr "Ustawienia daty i czasu dla zegara"
-
-#. Translators: The name of the second item in the Clock settings submenu.
-msgid "Alarm settin&gs"
-msgstr "Ustawienia alarm&u"
-
-#. Translators: The tooltyp text for the second item in the Clock add-on submenu.
+#. Translators: The tooltyp text for the alarm item in NVDA Tools menu.
 msgid "Allows you to schedule an alarm"
 msgstr "Umożliwia zaplanowanie alarmu"
 
-#, python-brace-format
-msgid "Day {day}, week {week} of {year}, remaining days {remain}."
-msgstr "Dzień {day}, tydzień {week} w roku {year}, pozostałe dni {remain}."
-
 #. Translators: Message presented in input help mode.
+#, fuzzy
 msgid ""
 "Speaks current time. If pressed twice quickly, speaks current date. If "
-"pressed thrice quickly, reports the current day, the week number, the "
+"pressed three times quickly, reports the current day, the week number, the "
 "current year and the days remaining before the end of the year."
 msgstr ""
 "Wypowiada aktualny czas. Po dwukrotnym naciśnięciu, wymawia aktualną datę. "
 "Po trzykrotnym naciśnięciu, wymawia aktualny dzień, numer tygodnia w roku, "
 "aktualny rok i liczbę dni do końca roku."
+
+#, python-brace-format
+msgid "Day {day}, week {week} of {year}, remaining days {remain}."
+msgstr "Dzień {day}, tydzień {week} w roku {year}, pozostałe dni {remain}."
 
 #. Translators: Message presented in input help mode.
 msgid ""
@@ -95,6 +82,10 @@ msgid ""
 msgstr ""
 "Polecenia warstwowe zegara i kalendarza. Po naciśnięciu tego skrótu "
 "klawiszowego, naciśnij \"h\", aby uzyskać dodatkową pomoc."
+
+#. Translators: Message presented in input help mode.
+msgid "Starts, resets or stops the stopwatch."
+msgstr "Uruchamia, zatrzymuje lub resetuje stoper."
 
 msgid "Reset. Running."
 msgstr "Ponowne uruchomienie. Uruchomione."
@@ -107,12 +98,13 @@ msgid "{0} stopped."
 msgstr "{0} Zatrzymane."
 
 #. Translators: Message presented in input help mode.
-msgid "Starts, resets or stops the stopwatch."
-msgstr "Uruchamia, zatrzymuje lub resetuje stoper."
-
-#. Translators: Message presented in input help mode.
 msgid "Speaks current stopwatch or count-down timer."
 msgstr "Wymawia aktualny czas odliczony przez stoper lub licznik."
+
+#. Translators: Message presented in input help mode.
+msgid "Gives the remaining and elapsed time before the next alarm."
+msgstr ""
+"Podaje czas, który upłynął od poprzedniego alarmu i pozostał do następnego."
 
 #, python-brace-format
 msgid "Elapsed time {elapsed}, remaining time {remaining}."
@@ -122,16 +114,16 @@ msgid "No alarm"
 msgstr "Brak alarmu"
 
 #. Translators: Message presented in input help mode.
-msgid "Gives the remaining and elapsed time before the next alarm."
-msgstr ""
-"Podaje czas, który upłynął od poprzedniego alarmu i pozostał do następnego."
+msgid "Cancel the next alarm."
+msgstr "Umożliwia anulowanie następnego alarmu."
 
 msgid "Alarm cancelled"
 msgstr "Anulowano alarm"
 
 #. Translators: Message presented in input help mode.
-msgid "Cancel the next alarm."
-msgstr "Umożliwia anulowanie następnego alarmu."
+msgid "Resets stopwatch to 0 without restarting it."
+msgstr ""
+"Umożliwia wyzerowanie stopera, bez konieczności ponownego uruchamiania go."
 
 msgid ""
 "The stopwatch is already reset to 0. Use the clock layer command followed by "
@@ -144,11 +136,6 @@ msgid "Stopwatch reset."
 msgstr "Stoper zresetowany."
 
 #. Translators: Message presented in input help mode.
-msgid "Resets stopwatch to 0 without restarting it."
-msgstr ""
-"Umożliwia wyzerowanie stopera, bez konieczności ponownego uruchamiania go."
-
-#. Translators: Message presented in input help mode.
 msgid "Lists available commands in clock command layer."
 msgstr "Podaje dostępne klawisze warstwowe zegara."
 
@@ -158,22 +145,27 @@ msgstr ""
 "Umożliwia sprawdzenie następnego alarmu. Po dwukrotnym naciśnięciu, anuluje "
 "go."
 
+#. Translators: Message presented in input help mode.
+msgid "If an alarm is too long, allows to stop it."
+msgstr "Jeżeli alarm jest za długi, ta opcja umożliwia zatrzymanie tego że."
+
 msgid "No sound is launched."
 msgstr "Nie ma odtwarzanego dźwięku."
 
 msgid "Sound stopped"
 msgstr "dźwięk zatrzymany"
 
-#. Translators: Message presented in input help mode.
-msgid "If an alarm is too long, allows to stop it."
-msgstr "Jeżeli alarm jest za długi, ta opcja umożliwia zatrzymanie tego że."
+#. Translators: error message when attempting to open more than one alarm settings dialogs.
+msgid "Schedule alarms dialog is already open."
+msgstr ""
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
 msgstr "Wyświetla ustawienia zegara"
 
 #. Translators: Message presented in input help mode.
-msgid "Display the alarm settings dialog box."
+#, fuzzy
+msgid "Display schedule alarms dialog box."
 msgstr "Wyświetla ustawienia alarmu"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
@@ -204,16 +196,19 @@ msgstr "co 30 minut"
 msgid "every hour"
 msgstr "co godzinę"
 
-#. Transla	tors: This is the label for a combo box in the Clock settings dialog.
-msgid "&interval:"
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#, fuzzy
+msgid "&Interval:"
 msgstr "&Interwał:"
 
 #. Translators: This is a choice of the time report choices combo box.
-msgid "speech and sound"
+#, fuzzy
+msgid "message and sound"
 msgstr "Dźwięk i mowa"
 
 #. Translators: This is a choice of the time report choices combo box.
-msgid "speech only"
+#, fuzzy
+msgid "message only"
 msgstr "tylko mowa"
 
 #. Translators: This is a choice of the time report choices combo box.
@@ -232,55 +227,68 @@ msgstr "Dźwięk oznajmiania &godziny"
 msgid "&Quiet hours"
 msgstr "godziny &ciszy"
 
-#. Translators: This is the label for a checkbox in the Clock settings dialog.
-msgid "Input in &24-hour format"
+#. Translators: This is a choice of the quiet hours time format choices.
+#, fuzzy
+msgid "12-hour format"
 msgstr "Wprowadzanie w formacie&24-godzinnym"
 
-#. Translators: This is the label for an edit field in the Clock settings dialog.
-msgid "Quiet hours start time:"
-msgstr "początek godzin ciszy:"
+#. Translators: This is a choice of the quiet hours time format choices.
+#, fuzzy
+msgid "24-hour format"
+msgstr "Wprowadzanie w formacie&24-godzinnym"
 
-#. Translators: This is the label for an edit field in the Clock settings dialog.
-msgid "Quiet hours end time:"
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#, fuzzy
+msgid "Quiet hours time &format:"
 msgstr "koniec godzin ciszy:"
 
-#. A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
-msgid ""
-"The value you entered for your quiet hours is erroneous, for a 24-hour "
-"format, the value must be HH:MM, for a 12-hour format, the value must be HH:"
-"MM followed by the AM or PM suffix, please reread the documentation. So your "
-"quiet hours have been deactivated for prevent any error in the configuration "
-"file."
-msgstr ""
-"Wartości dla godzin ciszy są nieprawidłowe, dla 24-godzinnego formatu, "
-"Wartość musi wyglądać następująco: HH:MM, a dla 12-godzinnego formatu, HH:MM "
-"po czym musi być napisany sufiks AM lub PM, Proszę ponownie przeczytać "
-"dokumentację. Państwa godziny ciszy zostały wyłączon, aby zapobiec błędów w "
-"konfiguracji."
+#. Translators: This is the label for an group in the Clock settings dialog.
+#, fuzzy
+msgid "Quiet hours start time"
+msgstr "początek godzin ciszy:"
 
-#. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
-msgid "Error"
-msgstr "błąd"
+#. Translators: This is the label for an group in the Clock settings dialog.
+#, fuzzy
+msgid "Quiet hours end time"
+msgstr "koniec godzin ciszy:"
 
-#. Translators: This is the label for the alarm settings panel.
-msgid "Alarm setup"
-msgstr "Ustawienia alarmu"
-
-#. Translators: This is an item of the alarm timer choices.
-msgid "Hours"
+#. Translators: the hour label in quiet hours group.
+#, fuzzy
+msgid "Hour:"
 msgstr "Godzin"
 
-#. Translators: This is an item of the alarm timer choices.
-msgid "Minutes"
+#. Translators: the minute label in quiet hours group.
+#, fuzzy
+msgid "Minute:"
 msgstr "minut"
 
-#. Translators: This is an item of the alarm timer choices.
-msgid "Seconds"
-msgstr "sekund"
+#. Translators: This is the label for the alarm settings panel.
+msgid "Schedule alarms"
+msgstr ""
+
+#. Translators: This is an item of the alarm duration choices.
+#, fuzzy
+msgid "hours"
+msgstr "Godzin"
+
+#. Translators: This is an item of the alarm duration choices.
+#, fuzzy
+msgid "minutes"
+msgstr "minut"
+
+#. Translators: This is an item of the alarm duration choices.
+#, fuzzy
+msgid "seconds"
+msgstr "0 sekund"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
-msgid "Choose the type of timer &inputs before the alarm rings:"
-msgstr "Proszę wybrać typ wejścia &tajmera przed dzwonkiem alarma:"
+#, fuzzy
+msgid "&Alarm duration in:"
+msgstr "Czas &oczekiwania na alarm:"
+
+#. Translators: This is the label for an edit field in the Alarm settings dialog.
+msgid "&Duration:"
+msgstr ""
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
@@ -293,10 +301,6 @@ msgstr "&zatrzymaj"
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Pause"
 msgstr "&Wstrzymaj"
-
-#. Translators: This is the label for an edit field in the Alarm settings dialog.
-msgid "Alarm &time waiting:"
-msgstr "Czas &oczekiwania na alarm:"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
 #, python-brace-format
@@ -352,13 +356,15 @@ msgstr "Jest {hours}:{minutes}"
 msgid "It's {hours}:{minutes}:{seconds}"
 msgstr "jest {hours}:{minutes}:{seconds}"
 
+#. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#, fuzzy
 msgid ""
 "An advanced clock and calendar for NVDA.\n"
 "NVDA+F12, get current time.\n"
 "NVDA+F12 pressed twice quickly, get current date.\n"
-"NVDA+F12 pressed thrice quickly, reports the current day, the week number, "
-"the current year and the remaining days before the end of the year.\n"
+"NVDA+F12 pressed three times quickly, reports the current day, the week "
+"number, the current year and the remaining days before the end of the year.\n"
 "For other instructions, press Add-on help button in add-ons manager."
 msgstr ""
 "Zaawansowany zegar i kalendarz dla NVDA.\n"
@@ -367,6 +373,46 @@ msgstr ""
 "aktualny rok i liczbę dni do końca roku.\n"
 "Aby otrzymać pozostałe instrukcje, naciśnij pomoc dodatku w menedżerze "
 "dodatków NVDA."
+
+#~ msgid "Clock se&ttings..."
+#~ msgstr "&Ustawienia zegara..."
+
+#~ msgid "Clock and calendar setup"
+#~ msgstr "Ustawianie kalendarza i zegara"
+
+#~ msgid "Clock setup"
+#~ msgstr "Ustawienia zegara"
+
+#~ msgid "Clock setup for times and dates"
+#~ msgstr "Ustawienia daty i czasu dla zegara"
+
+#~ msgid "Alarm settin&gs"
+#~ msgstr "Ustawienia alarm&u"
+
+#~ msgid ""
+#~ "The value you entered for your quiet hours is erroneous, for a 24-hour "
+#~ "format, the value must be HH:MM, for a 12-hour format, the value must be "
+#~ "HH:MM followed by the AM or PM suffix, please reread the documentation. "
+#~ "So your quiet hours have been deactivated for prevent any error in the "
+#~ "configuration file."
+#~ msgstr ""
+#~ "Wartości dla godzin ciszy są nieprawidłowe, dla 24-godzinnego formatu, "
+#~ "Wartość musi wyglądać następująco: HH:MM, a dla 12-godzinnego formatu, HH:"
+#~ "MM po czym musi być napisany sufiks AM lub PM, Proszę ponownie przeczytać "
+#~ "dokumentację. Państwa godziny ciszy zostały wyłączon, aby zapobiec błędów "
+#~ "w konfiguracji."
+
+#~ msgid "Error"
+#~ msgstr "błąd"
+
+#~ msgid "Alarm setup"
+#~ msgstr "Ustawienia alarmu"
+
+#~ msgid "Seconds"
+#~ msgstr "sekund"
+
+#~ msgid "Choose the type of timer &inputs before the alarm rings:"
+#~ msgstr "Proszę wybrać typ wejścia &tajmera przed dzwonkiem alarma:"
 
 #~ msgid ""
 #~ "\n"

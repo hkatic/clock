@@ -48,48 +48,35 @@ msgid "0 seconds"
 msgstr "0 sekuntia"
 
 #. Translators: Script category for Clock addon commands in input gestures dialog.
-#. Translators: Summary for this add-on to be shown on installation and add-on information.
+#. Translators: This is the label for the clock settings panel.
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on
+#. to be shown on installation and add-on information found in Add-ons Manager.
 msgid "Clock"
 msgstr "Kello"
 
-#. Translators: Item in the tools menu for the Clock Addon settings.
-msgid "Clock se&ttings..."
-msgstr "&Kello..."
+#. Translators: The name of the alarm item in NVDA Tools menu.
+msgid "Schedule a&larms..."
+msgstr ""
 
-#. Translators: The tooltyp text for the clock settings submenu.
-msgid "Clock and calendar setup"
-msgstr "Kellon ja kalenterin asetukset"
-
-#. Translators: The name of the first item in the Clock settings submenu.
-#. Translators: This is the label for the clock settings panel.
-msgid "Clock setup"
-msgstr "Kellon asetukset"
-
-#. Translators: The tooltyp text for the first item in the Clock add-on submenu.
-msgid "Clock setup for times and dates"
-msgstr "Kellon Aika- ja päivämääräasetukset"
-
-#. Translators: The name of the second item in the Clock settings submenu.
-msgid "Alarm settin&gs"
-msgstr "&Hälytyksen asetukset"
-
-#. Translators: The tooltyp text for the second item in the Clock add-on submenu.
+#. Translators: The tooltyp text for the alarm item in NVDA Tools menu.
 msgid "Allows you to schedule an alarm"
 msgstr "Tästä voit ajastaa hälytyksen"
 
-#, python-brace-format
-msgid "Day {day}, week {week} of {year}, remaining days {remain}."
-msgstr "Päivä {day}, viikko {week} vuonna {year}, päiviä jäljellä {remain}."
-
 #. Translators: Message presented in input help mode.
+#, fuzzy
 msgid ""
 "Speaks current time. If pressed twice quickly, speaks current date. If "
-"pressed thrice quickly, reports the current day, the week number, the "
+"pressed three times quickly, reports the current day, the week number, the "
 "current year and the days remaining before the end of the year."
 msgstr ""
 "Puhuu kerran painettaessa nykyisen ajan, kahdesti painettaessa päivämäärän "
 "tai ilmoittaa kolmesti painettaessa päivän, viikon numeron sekä vuoden ja "
 "jäljellä olevien päivien määrän."
+
+#, python-brace-format
+msgid "Day {day}, week {week} of {year}, remaining days {remain}."
+msgstr "Päivä {day}, viikko {week} vuonna {year}, päiviä jäljellä {remain}."
 
 #. Translators: Message presented in input help mode.
 msgid ""
@@ -98,6 +85,10 @@ msgid ""
 msgstr ""
 "Kellon ja kalenterin komentokerroksen komennot. Saat lisäohjeita painamalla "
 "tämän komennon jälkeen H."
+
+#. Translators: Message presented in input help mode.
+msgid "Starts, resets or stops the stopwatch."
+msgstr "Käynnistää, nollaa tai pysäyttää sekuntikellon."
 
 msgid "Reset. Running."
 msgstr "Nollattu. Käynnissä."
@@ -110,12 +101,12 @@ msgid "{0} stopped."
 msgstr "{0} pysäytetty."
 
 #. Translators: Message presented in input help mode.
-msgid "Starts, resets or stops the stopwatch."
-msgstr "Käynnistää, nollaa tai pysäyttää sekuntikellon."
-
-#. Translators: Message presented in input help mode.
 msgid "Speaks current stopwatch or count-down timer."
 msgstr "Puhuu sekuntikellon tai ajastimen jäljellä olevan ajan."
+
+#. Translators: Message presented in input help mode.
+msgid "Gives the remaining and elapsed time before the next alarm."
+msgstr "Ilmoittaa kuluneen ja jäljellä olevan ajan ennen seuraavaa hälytystä."
 
 #, python-brace-format
 msgid "Elapsed time {elapsed}, remaining time {remaining}."
@@ -125,15 +116,15 @@ msgid "No alarm"
 msgstr "Ei hälytystä"
 
 #. Translators: Message presented in input help mode.
-msgid "Gives the remaining and elapsed time before the next alarm."
-msgstr "Ilmoittaa kuluneen ja jäljellä olevan ajan ennen seuraavaa hälytystä."
+msgid "Cancel the next alarm."
+msgstr "Peruu seuraavan hälytyksen."
 
 msgid "Alarm cancelled"
 msgstr "Hälytys peruttu"
 
 #. Translators: Message presented in input help mode.
-msgid "Cancel the next alarm."
-msgstr "Peruu seuraavan hälytyksen."
+msgid "Resets stopwatch to 0 without restarting it."
+msgstr "Nollaa sekuntikellon käynnistämättä sitä uudelleen."
 
 msgid ""
 "The stopwatch is already reset to 0. Use the clock layer command followed by "
@@ -146,10 +137,6 @@ msgid "Stopwatch reset."
 msgstr "Sekuntikello nollattu."
 
 #. Translators: Message presented in input help mode.
-msgid "Resets stopwatch to 0 without restarting it."
-msgstr "Nollaa sekuntikellon käynnistämättä sitä uudelleen."
-
-#. Translators: Message presented in input help mode.
 msgid "Lists available commands in clock command layer."
 msgstr ""
 "Näyttää luettelon käytettävissä olevista Kellon komentokerroksen komennoista."
@@ -160,22 +147,27 @@ msgstr ""
 "Ilmoittaa kerran painettaessa seuraavan hälytyksen ajankohdan tai kahdesti "
 "painettaessa peruu sen."
 
+#. Translators: Message presented in input help mode.
+msgid "If an alarm is too long, allows to stop it."
+msgstr "Pysäyttää hälytyksen, mikäli se kestää liian kauan."
+
 msgid "No sound is launched."
 msgstr "Ääntä ei toisteta."
 
 msgid "Sound stopped"
 msgstr "Ääni pysäytetty"
 
-#. Translators: Message presented in input help mode.
-msgid "If an alarm is too long, allows to stop it."
-msgstr "Pysäyttää hälytyksen, mikäli se kestää liian kauan."
+#. Translators: error message when attempting to open more than one alarm settings dialogs.
+msgid "Schedule alarms dialog is already open."
+msgstr ""
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
 msgstr "Näyttää Kellon asetukset -valintaikkunan."
 
 #. Translators: Message presented in input help mode.
-msgid "Display the alarm settings dialog box."
+#, fuzzy
+msgid "Display schedule alarms dialog box."
 msgstr "Näyttää Hälytyksen asetukset -valintaikkunan."
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
@@ -206,16 +198,19 @@ msgstr "30 minuutin välein"
 msgid "every hour"
 msgstr "tunnin välein"
 
-#. Transla	tors: This is the label for a combo box in the Clock settings dialog.
-msgid "&interval:"
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#, fuzzy
+msgid "&Interval:"
 msgstr "A&ikaväli:"
 
 #. Translators: This is a choice of the time report choices combo box.
-msgid "speech and sound"
+#, fuzzy
+msgid "message and sound"
 msgstr "puhe ja ääni"
 
 #. Translators: This is a choice of the time report choices combo box.
-msgid "speech only"
+#, fuzzy
+msgid "message only"
 msgstr "vain puhe"
 
 #. Translators: This is a choice of the time report choices combo box.
@@ -234,54 +229,68 @@ msgstr "Hä&lytysääni:"
 msgid "&Quiet hours"
 msgstr "&Hiljaiset tunnit"
 
-#. Translators: This is the label for a checkbox in the Clock settings dialog.
-msgid "Input in &24-hour format"
+#. Translators: This is a choice of the quiet hours time format choices.
+#, fuzzy
+msgid "12-hour format"
 msgstr "Syöte &24 tunnin muodossa"
 
-#. Translators: This is the label for an edit field in the Clock settings dialog.
-msgid "Quiet hours start time:"
-msgstr "Hiljaisten tuntien aloitusaika:"
+#. Translators: This is a choice of the quiet hours time format choices.
+#, fuzzy
+msgid "24-hour format"
+msgstr "Syöte &24 tunnin muodossa"
 
-#. Translators: This is the label for an edit field in the Clock settings dialog.
-msgid "Quiet hours end time:"
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#, fuzzy
+msgid "Quiet hours time &format:"
 msgstr "Hiljaisten tuntien päättymisaika:"
 
-#. A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
-msgid ""
-"The value you entered for your quiet hours is erroneous, for a 24-hour "
-"format, the value must be HH:MM, for a 12-hour format, the value must be HH:"
-"MM followed by the AM or PM suffix, please reread the documentation. So your "
-"quiet hours have been deactivated for prevent any error in the configuration "
-"file."
-msgstr ""
-"Syöttämäsi hiljaisten tuntien arvo on virheellinen. Arvon tulee olla 24 "
-"tunnin muodolle HH:MM ja 12 tunnin muodolle HH:MM, jonka jälkeen tulee AM- "
-"tai PM-jälkiliite. Hiljaiset tunnit -toiminto on poistettu käytöstä "
-"asetustiedoston virheiden välttämiseksi."
+#. Translators: This is the label for an group in the Clock settings dialog.
+#, fuzzy
+msgid "Quiet hours start time"
+msgstr "Hiljaisten tuntien aloitusaika:"
 
-#. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
-msgid "Error"
-msgstr "Virhe"
+#. Translators: This is the label for an group in the Clock settings dialog.
+#, fuzzy
+msgid "Quiet hours end time"
+msgstr "Hiljaisten tuntien päättymisaika:"
 
-#. Translators: This is the label for the alarm settings panel.
-msgid "Alarm setup"
-msgstr "Hälytyksen asetukset"
-
-#. Translators: This is an item of the alarm timer choices.
-msgid "Hours"
+#. Translators: the hour label in quiet hours group.
+#, fuzzy
+msgid "Hour:"
 msgstr "Tunnit"
 
-#. Translators: This is an item of the alarm timer choices.
-msgid "Minutes"
+#. Translators: the minute label in quiet hours group.
+#, fuzzy
+msgid "Minute:"
 msgstr "Minuutit"
 
-#. Translators: This is an item of the alarm timer choices.
-msgid "Seconds"
-msgstr "Sekunnit"
+#. Translators: This is the label for the alarm settings panel.
+msgid "Schedule alarms"
+msgstr ""
+
+#. Translators: This is an item of the alarm duration choices.
+#, fuzzy
+msgid "hours"
+msgstr "Tunnit"
+
+#. Translators: This is an item of the alarm duration choices.
+#, fuzzy
+msgid "minutes"
+msgstr "Minuutit"
+
+#. Translators: This is an item of the alarm duration choices.
+#, fuzzy
+msgid "seconds"
+msgstr "0 sekuntia"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
-msgid "Choose the type of timer &inputs before the alarm rings:"
-msgstr "Valitse ajastin&syötteen tyyppi ennen hälytyksen alkamista:"
+#, fuzzy
+msgid "&Alarm duration in:"
+msgstr "Hälytyksen &odotusaika:"
+
+#. Translators: This is the label for an edit field in the Alarm settings dialog.
+msgid "&Duration:"
+msgstr ""
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
@@ -294,10 +303,6 @@ msgstr "&Pysäytä"
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Pause"
 msgstr "&Keskeytä"
-
-#. Translators: This is the label for an edit field in the Alarm settings dialog.
-msgid "Alarm &time waiting:"
-msgstr "Hälytyksen &odotusaika:"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
 #, python-brace-format
@@ -353,13 +358,15 @@ msgstr "{hours}:{minutes}"
 msgid "It's {hours}:{minutes}:{seconds}"
 msgstr "{hours}:{minutes}:{seconds}"
 
+#. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#, fuzzy
 msgid ""
 "An advanced clock and calendar for NVDA.\n"
 "NVDA+F12, get current time.\n"
 "NVDA+F12 pressed twice quickly, get current date.\n"
-"NVDA+F12 pressed thrice quickly, reports the current day, the week number, "
-"the current year and the remaining days before the end of the year.\n"
+"NVDA+F12 pressed three times quickly, reports the current day, the week "
+"number, the current year and the remaining days before the end of the year.\n"
 "For other instructions, press Add-on help button in add-ons manager."
 msgstr ""
 "Edistynyt kello ja kalenteri NVDA:lle.\n"
@@ -368,6 +375,45 @@ msgstr ""
 "NVDA+F12 kolmesti painettaessa: ilmoittaa päivän, viikon numeron, kuluvan "
 "vuoden sekä sen jäljellä olevien päivien määrän.\n"
 "Muita ohjeita saat painamalla Ohje-painiketta Lisäosien hallinnassa."
+
+#~ msgid "Clock se&ttings..."
+#~ msgstr "&Kello..."
+
+#~ msgid "Clock and calendar setup"
+#~ msgstr "Kellon ja kalenterin asetukset"
+
+#~ msgid "Clock setup"
+#~ msgstr "Kellon asetukset"
+
+#~ msgid "Clock setup for times and dates"
+#~ msgstr "Kellon Aika- ja päivämääräasetukset"
+
+#~ msgid "Alarm settin&gs"
+#~ msgstr "&Hälytyksen asetukset"
+
+#~ msgid ""
+#~ "The value you entered for your quiet hours is erroneous, for a 24-hour "
+#~ "format, the value must be HH:MM, for a 12-hour format, the value must be "
+#~ "HH:MM followed by the AM or PM suffix, please reread the documentation. "
+#~ "So your quiet hours have been deactivated for prevent any error in the "
+#~ "configuration file."
+#~ msgstr ""
+#~ "Syöttämäsi hiljaisten tuntien arvo on virheellinen. Arvon tulee olla 24 "
+#~ "tunnin muodolle HH:MM ja 12 tunnin muodolle HH:MM, jonka jälkeen tulee "
+#~ "AM- tai PM-jälkiliite. Hiljaiset tunnit -toiminto on poistettu käytöstä "
+#~ "asetustiedoston virheiden välttämiseksi."
+
+#~ msgid "Error"
+#~ msgstr "Virhe"
+
+#~ msgid "Alarm setup"
+#~ msgstr "Hälytyksen asetukset"
+
+#~ msgid "Seconds"
+#~ msgstr "Sekunnit"
+
+#~ msgid "Choose the type of timer &inputs before the alarm rings:"
+#~ msgstr "Valitse ajastin&syötteen tyyppi ennen hälytyksen alkamista:"
 
 #~ msgid ""
 #~ "\n"

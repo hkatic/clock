@@ -47,48 +47,35 @@ msgid "0 seconds"
 msgstr "0 sekunde"
 
 #. Translators: Script category for Clock addon commands in input gestures dialog.
-#. Translators: Summary for this add-on to be shown on installation and add-on information.
+#. Translators: This is the label for the clock settings panel.
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on
+#. to be shown on installation and add-on information found in Add-ons Manager.
 msgid "Clock"
 msgstr "Sat"
 
-#. Translators: Item in the tools menu for the Clock Addon settings.
-msgid "Clock se&ttings..."
-msgstr "Podešavanja &sata"
+#. Translators: The name of the alarm item in NVDA Tools menu.
+msgid "Schedule a&larms..."
+msgstr ""
 
-#. Translators: The tooltyp text for the clock settings submenu.
-msgid "Clock and calendar setup"
-msgstr "Podešavanje sata i kalendara"
-
-#. Translators: The name of the first item in the Clock settings submenu.
-#. Translators: This is the label for the clock settings panel.
-msgid "Clock setup"
-msgstr "Podešavanje sata"
-
-#. Translators: The tooltyp text for the first item in the Clock add-on submenu.
-msgid "Clock setup for times and dates"
-msgstr "Podešavanje sata za vremena i datume"
-
-#. Translators: The name of the second item in the Clock settings submenu.
-msgid "Alarm settin&gs"
-msgstr "Podešavanja &Alarma"
-
-#. Translators: The tooltyp text for the second item in the Clock add-on submenu.
+#. Translators: The tooltyp text for the alarm item in NVDA Tools menu.
 msgid "Allows you to schedule an alarm"
 msgstr "Dozvoljavaju vam da podesite alarm"
 
-#, python-brace-format
-msgid "Day {day}, week {week} of {year}, remaining days {remain}."
-msgstr "Dan{day}, nedelja{week} {year} godine, preostalo {remain} dana."
-
 #. Translators: Message presented in input help mode.
+#, fuzzy
 msgid ""
 "Speaks current time. If pressed twice quickly, speaks current date. If "
-"pressed thrice quickly, reports the current day, the week number, the "
+"pressed three times quickly, reports the current day, the week number, the "
 "current year and the days remaining before the end of the year."
 msgstr ""
 "Izgovara trenutno vreme. Ako se pritisne dva puta brzo, izgovara trenutni "
 "datum. Ako se pritisne 3 puta brzo, prijavljuje trenutni dan, broj nedelje, "
 "trenutnu godinu i broj dana do sledeće godine."
+
+#, python-brace-format
+msgid "Day {day}, week {week} of {year}, remaining days {remain}."
+msgstr "Dan{day}, nedelja{week} {year} godine, preostalo {remain} dana."
 
 #. Translators: Message presented in input help mode.
 msgid ""
@@ -97,6 +84,10 @@ msgid ""
 msgstr ""
 "Komande za prečicu sada i kalendara. Nakon što pritisnete ovu prečicu, "
 "pritisnite h za dodatnu pomoć."
+
+#. Translators: Message presented in input help mode.
+msgid "Starts, resets or stops the stopwatch."
+msgstr "Pokreće, resetuje ili zaustavlja štopericu."
 
 msgid "Reset. Running."
 msgstr "Resetovanje. Pokrenuto."
@@ -109,12 +100,12 @@ msgid "{0} stopped."
 msgstr "{0} zaustavljen."
 
 #. Translators: Message presented in input help mode.
-msgid "Starts, resets or stops the stopwatch."
-msgstr "Pokreće, resetuje ili zaustavlja štopericu."
-
-#. Translators: Message presented in input help mode.
 msgid "Speaks current stopwatch or count-down timer."
 msgstr "Izgovara trenutno vreme štoperice ili odbrojavanja."
+
+#. Translators: Message presented in input help mode.
+msgid "Gives the remaining and elapsed time before the next alarm."
+msgstr "Prikazuje proteklo i preostalo vreme do sledećeg alarma."
 
 #, python-brace-format
 msgid "Elapsed time {elapsed}, remaining time {remaining}."
@@ -124,15 +115,15 @@ msgid "No alarm"
 msgstr "Nema alarma"
 
 #. Translators: Message presented in input help mode.
-msgid "Gives the remaining and elapsed time before the next alarm."
-msgstr "Prikazuje proteklo i preostalo vreme do sledećeg alarma."
+msgid "Cancel the next alarm."
+msgstr "Otkazuje sledeći alarm."
 
 msgid "Alarm cancelled"
 msgstr "Alarm otkazan"
 
 #. Translators: Message presented in input help mode.
-msgid "Cancel the next alarm."
-msgstr "Otkazuje sledeći alarm."
+msgid "Resets stopwatch to 0 without restarting it."
+msgstr "Vraća štopericu na 0 bez ponovnog pokretanja."
 
 msgid ""
 "The stopwatch is already reset to 0. Use the clock layer command followed by "
@@ -145,10 +136,6 @@ msgid "Stopwatch reset."
 msgstr "Resetovanje štoperice."
 
 #. Translators: Message presented in input help mode.
-msgid "Resets stopwatch to 0 without restarting it."
-msgstr "Vraća štopericu na 0 bez ponovnog pokretanja."
-
-#. Translators: Message presented in input help mode.
 msgid "Lists available commands in clock command layer."
 msgstr "Prikazuje dostupne prečice komande sata i kalendara."
 
@@ -157,22 +144,27 @@ msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr ""
 "Dozvoljava proveru sledećeg alarma. Ako se pritisne 2 puta, otkazuje ga."
 
+#. Translators: Message presented in input help mode.
+msgid "If an alarm is too long, allows to stop it."
+msgstr "Ako je alarm predug, dozvoljava njegovo zaustavljanje."
+
 msgid "No sound is launched."
 msgstr "Nijedan zvuk nije pokrenut."
 
 msgid "Sound stopped"
 msgstr "Zvuk zaustavljen"
 
-#. Translators: Message presented in input help mode.
-msgid "If an alarm is too long, allows to stop it."
-msgstr "Ako je alarm predug, dozvoljava njegovo zaustavljanje."
+#. Translators: error message when attempting to open more than one alarm settings dialogs.
+msgid "Schedule alarms dialog is already open."
+msgstr ""
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
 msgstr "Prikazuje dijalog podešavanja sata."
 
 #. Translators: Message presented in input help mode.
-msgid "Display the alarm settings dialog box."
+#, fuzzy
+msgid "Display schedule alarms dialog box."
 msgstr "Prikazuje dijalog podešavanja alarma."
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
@@ -203,16 +195,19 @@ msgstr "Na svaka 30 minuta"
 msgid "every hour"
 msgstr "Svakog časa"
 
-#. Transla	tors: This is the label for a combo box in the Clock settings dialog.
-msgid "&interval:"
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#, fuzzy
+msgid "&Interval:"
 msgstr "&Interval:"
 
 #. Translators: This is a choice of the time report choices combo box.
-msgid "speech and sound"
+#, fuzzy
+msgid "message and sound"
 msgstr "Govor i zvuk"
 
 #. Translators: This is a choice of the time report choices combo box.
-msgid "speech only"
+#, fuzzy
+msgid "message only"
 msgstr "Samo govor"
 
 #. Translators: This is a choice of the time report choices combo box.
@@ -231,54 +226,68 @@ msgstr "&Zvuk zvona sata:"
 msgid "&Quiet hours"
 msgstr "&Tihi časovi"
 
-#. Translators: This is the label for a checkbox in the Clock settings dialog.
-msgid "Input in &24-hour format"
+#. Translators: This is a choice of the quiet hours time format choices.
+#, fuzzy
+msgid "12-hour format"
 msgstr "Unos u &24 časovnom formatu"
 
-#. Translators: This is the label for an edit field in the Clock settings dialog.
-msgid "Quiet hours start time:"
-msgstr "Vreme početka tihih časova:"
+#. Translators: This is a choice of the quiet hours time format choices.
+#, fuzzy
+msgid "24-hour format"
+msgstr "Unos u &24 časovnom formatu"
 
-#. Translators: This is the label for an edit field in the Clock settings dialog.
-msgid "Quiet hours end time:"
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+#, fuzzy
+msgid "Quiet hours time &format:"
 msgstr "Vreme završetka tihih časova:"
 
-#. A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
-msgid ""
-"The value you entered for your quiet hours is erroneous, for a 24-hour "
-"format, the value must be HH:MM, for a 12-hour format, the value must be HH:"
-"MM followed by the AM or PM suffix, please reread the documentation. So your "
-"quiet hours have been deactivated for prevent any error in the configuration "
-"file."
-msgstr ""
-"Vrednost koju ste uneli za tihe časove je neispravna, za 24-časovni format,"
-"vrednost mora biti HH:MM, za 12-časovni format, vrednost mora biti HH:MM uz "
-"AM ili PM sufiks, molimo pročitajte dokumentaciju ponovo. Vaši tihi časovi "
-"su deaktivirani kako bi se sprečile greške u datoteci sa podešavanjima."
+#. Translators: This is the label for an group in the Clock settings dialog.
+#, fuzzy
+msgid "Quiet hours start time"
+msgstr "Vreme početka tihih časova:"
 
-#. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
-msgid "Error"
-msgstr "Greška"
+#. Translators: This is the label for an group in the Clock settings dialog.
+#, fuzzy
+msgid "Quiet hours end time"
+msgstr "Vreme završetka tihih časova:"
 
-#. Translators: This is the label for the alarm settings panel.
-msgid "Alarm setup"
-msgstr "Podešavanje alarma"
-
-#. Translators: This is an item of the alarm timer choices.
-msgid "Hours"
+#. Translators: the hour label in quiet hours group.
+#, fuzzy
+msgid "Hour:"
 msgstr "Časovi"
 
-#. Translators: This is an item of the alarm timer choices.
-msgid "Minutes"
+#. Translators: the minute label in quiet hours group.
+#, fuzzy
+msgid "Minute:"
 msgstr "Minuti"
 
-#. Translators: This is an item of the alarm timer choices.
-msgid "Seconds"
-msgstr "Sekunde"
+#. Translators: This is the label for the alarm settings panel.
+msgid "Schedule alarms"
+msgstr ""
+
+#. Translators: This is an item of the alarm duration choices.
+#, fuzzy
+msgid "hours"
+msgstr "Časovi"
+
+#. Translators: This is an item of the alarm duration choices.
+#, fuzzy
+msgid "minutes"
+msgstr "Minuti"
+
+#. Translators: This is an item of the alarm duration choices.
+#, fuzzy
+msgid "seconds"
+msgstr "0 sekunde"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
-msgid "Choose the type of timer &inputs before the alarm rings:"
-msgstr "Izaberi vrstu &unosa vremena pre nego što alarm zvoni:"
+#, fuzzy
+msgid "&Alarm duration in:"
+msgstr "Vreme čekanja do &alarma:"
+
+#. Translators: This is the label for an edit field in the Alarm settings dialog.
+msgid "&Duration:"
+msgstr ""
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
@@ -291,10 +300,6 @@ msgstr "&Zaustavi"
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Pause"
 msgstr "&Pauziraj"
-
-#. Translators: This is the label for an edit field in the Alarm settings dialog.
-msgid "Alarm &time waiting:"
-msgstr "Vreme čekanja do &alarma:"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
 #, python-brace-format
@@ -350,13 +355,15 @@ msgstr "Tačno je {hours}:{minutes}"
 msgid "It's {hours}:{minutes}:{seconds}"
 msgstr "Tačno je {hours}:{minutes}:{seconds}"
 
+#. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#, fuzzy
 msgid ""
 "An advanced clock and calendar for NVDA.\n"
 "NVDA+F12, get current time.\n"
 "NVDA+F12 pressed twice quickly, get current date.\n"
-"NVDA+F12 pressed thrice quickly, reports the current day, the week number, "
-"the current year and the remaining days before the end of the year.\n"
+"NVDA+F12 pressed three times quickly, reports the current day, the week "
+"number, the current year and the remaining days before the end of the year.\n"
 "For other instructions, press Add-on help button in add-ons manager."
 msgstr ""
 "Napredan sat i kalendar za NVDA.\n"
@@ -365,6 +372,46 @@ msgstr ""
 "NVDA+F12 pritisnuto tri puta brzo, prijavljuje trenutni dan, broj nedelje, "
 "trenutnu godinu i broj dana do sledeće godine.\n"
 "Za dodatna uputstva, pritisnite dugme pomoć dodatka u upravljaču dodacima."
+
+#~ msgid "Clock se&ttings..."
+#~ msgstr "Podešavanja &sata"
+
+#~ msgid "Clock and calendar setup"
+#~ msgstr "Podešavanje sata i kalendara"
+
+#~ msgid "Clock setup"
+#~ msgstr "Podešavanje sata"
+
+#~ msgid "Clock setup for times and dates"
+#~ msgstr "Podešavanje sata za vremena i datume"
+
+#~ msgid "Alarm settin&gs"
+#~ msgstr "Podešavanja &Alarma"
+
+#~ msgid ""
+#~ "The value you entered for your quiet hours is erroneous, for a 24-hour "
+#~ "format, the value must be HH:MM, for a 12-hour format, the value must be "
+#~ "HH:MM followed by the AM or PM suffix, please reread the documentation. "
+#~ "So your quiet hours have been deactivated for prevent any error in the "
+#~ "configuration file."
+#~ msgstr ""
+#~ "Vrednost koju ste uneli za tihe časove je neispravna, za 24-časovni "
+#~ "format,vrednost mora biti HH:MM, za 12-časovni format, vrednost mora biti "
+#~ "HH:MM uz AM ili PM sufiks, molimo pročitajte dokumentaciju ponovo. Vaši "
+#~ "tihi časovi su deaktivirani kako bi se sprečile greške u datoteci sa "
+#~ "podešavanjima."
+
+#~ msgid "Error"
+#~ msgstr "Greška"
+
+#~ msgid "Alarm setup"
+#~ msgstr "Podešavanje alarma"
+
+#~ msgid "Seconds"
+#~ msgstr "Sekunde"
+
+#~ msgid "Choose the type of timer &inputs before the alarm rings:"
+#~ msgstr "Izaberi vrstu &unosa vremena pre nego što alarm zvoni:"
 
 #~ msgid ""
 #~ "\n"
