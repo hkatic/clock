@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Clock 18.12\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2021-06-02 00:54+0330\n"
+"PO-Revision-Date: 2021-10-08 08:38+0330\n"
 "Last-Translator: Mohammadreza Rashad <mohammadreza5712@gmail.com>\n"
 "Language-Team: Mohammadreza Rashad <mohammadreza5712@gmail.com>\n"
 "Language: fa\n"
@@ -56,22 +56,21 @@ msgstr "ساعت"
 
 #. Translators: The name of the alarm item in NVDA Tools menu.
 msgid "Schedule a&larms..."
-msgstr ""
+msgstr "زمانبندیِ ه&شدارها..."
 
 #. Translators: The tooltyp text for the alarm item in NVDA Tools menu.
 msgid "Allows you to schedule an alarm"
 msgstr "اجازه میدهد تا یک هشدار تنظیم کنید."
 
 #. Translators: Message presented in input help mode.
-#, fuzzy
 msgid ""
 "Speaks current time. If pressed twice quickly, speaks current date. If "
 "pressed three times quickly, reports the current day, the week number, the "
 "current year and the days remaining before the end of the year."
 msgstr ""
 "زمان را اعلام میکند. اگر دو بار فشرده شود، تاریخ را اعلام میکند. اگر سه بار "
-"فشرده شود، شماره‌ی روز و هفته‌ی سالِ جاری و تعدادِ روزهای باقی‌مانده از سال را "
-"اعلام میکند."
+"فشرده شود، شماره‌ی روز، شماره‌ی هفته، سالِ جاری و تعدادِ روزهای باقی‌مانده از سال "
+"را اعلام میکند."
 
 #, python-brace-format
 msgid "Day {day}, week {week} of {year}, remaining days {remain}."
@@ -158,16 +157,15 @@ msgstr "صدا متوقف شد."
 
 #. Translators: error message when attempting to open more than one alarm settings dialogs.
 msgid "Schedule alarms dialog is already open."
-msgstr ""
+msgstr "پنجره‌ی زمانبندیِ هشدارها از قبل باز است."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
 msgstr "پنجره‌ی تنظیماتِ ساعت را نمایش میدهد."
 
 #. Translators: Message presented in input help mode.
-#, fuzzy
 msgid "Display schedule alarms dialog box."
-msgstr "تنظیماتِ هشدار را نمایش میدهد."
+msgstr "پنجره‌ی زمانبندیِ هشدارها را نمایش میدهد."
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Time display format:"
@@ -198,19 +196,16 @@ msgid "every hour"
 msgstr "هر ساعت"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
-#, fuzzy
 msgid "&Interval:"
 msgstr "&دوره‌ی زمانی:"
 
 #. Translators: This is a choice of the time report choices combo box.
-#, fuzzy
 msgid "message and sound"
-msgstr "گفتار و صدا"
+msgstr "پیام و صدا"
 
 #. Translators: This is a choice of the time report choices combo box.
-#, fuzzy
 msgid "message only"
-msgstr "فقط گفتار"
+msgstr "فقط پیام"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "sound only"
@@ -229,67 +224,56 @@ msgid "&Quiet hours"
 msgstr "ساعات &بی‌صدا"
 
 #. Translators: This is a choice of the quiet hours time format choices.
-#, fuzzy
 msgid "12-hour format"
-msgstr "ورودِ زمان در قالبِ &۲۴ ساعتی"
+msgstr "قالب ۱۲ ساعتی"
 
 #. Translators: This is a choice of the quiet hours time format choices.
-#, fuzzy
 msgid "24-hour format"
-msgstr "ورودِ زمان در قالبِ &۲۴ ساعتی"
+msgstr "قالبِ ۲۴ ساعتی"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
-#, fuzzy
 msgid "Quiet hours time &format:"
-msgstr "زمانِ پایانِ ساعاتِ بی‌صدا:"
+msgstr "&قالببندیِ زمانِ ساعاتِ بی‌صدا:"
 
 #. Translators: This is the label for an group in the Clock settings dialog.
-#, fuzzy
 msgid "Quiet hours start time"
-msgstr "زمانِ آغازِ ساعاتِ بی‌صدا:"
+msgstr "زمانِ آغازِ ساعاتِ بی‌صدا"
 
 #. Translators: This is the label for an group in the Clock settings dialog.
-#, fuzzy
 msgid "Quiet hours end time"
-msgstr "زمانِ پایانِ ساعاتِ بی‌صدا:"
+msgstr "زمانِ پایانِ ساعاتِ بی‌صدا"
 
 #. Translators: the hour label in quiet hours group.
-#, fuzzy
 msgid "Hour:"
-msgstr "ساعت"
+msgstr "ساعت:"
 
 #. Translators: the minute label in quiet hours group.
-#, fuzzy
 msgid "Minute:"
-msgstr "دقیقه"
+msgstr "دقیقه:"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Schedule alarms"
-msgstr ""
+msgstr "زمانبندیِ هشدارها"
 
 #. Translators: This is an item of the alarm duration choices.
-#, fuzzy
 msgid "hours"
 msgstr "ساعت"
 
 #. Translators: This is an item of the alarm duration choices.
-#, fuzzy
 msgid "minutes"
 msgstr "دقیقه"
 
 #. Translators: This is an item of the alarm duration choices.
-#, fuzzy
 msgid "seconds"
 msgstr "۰ ثانیه"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
-#, fuzzy
 msgid "&Alarm duration in:"
 msgstr "&زمانِ انتظار برای هشدار:"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 msgid "&Duration:"
-msgstr ""
+msgstr "&مدت زمان"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
@@ -359,7 +343,6 @@ msgstr "{hours}:{minutes}:{seconds}"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-#, fuzzy
 msgid ""
 "An advanced clock and calendar for NVDA.\n"
 "NVDA+F12, get current time.\n"
@@ -371,7 +354,8 @@ msgstr ""
 "یک ساعت و تقویمِ پیشرفته برای NVDA.\n"
 "NVDA+F12 را برای شِنیدنِ زمانِ جاری یک بار،\n"
 "برای شِنیدنِ تاریخِ جاری دو بار،\n"
-"و برای شِنیدنِ شماره‌ی روز و هفته از سالِ جاری، سه بار بفشارید.\n"
+"و برای شِنیدنِ روز جاری، شماره‌ی هفته، سالِ جاری، و روزهای باقی‌مانده تا پایانِ "
+"سال سه بار بفشارید.\n"
 "برای دستیابی به کارکردهای دیگر، دکمه‌ی راهنمای افزونه را در مدیرِ افزونه‌ها "
 "فشار دهید."
 
