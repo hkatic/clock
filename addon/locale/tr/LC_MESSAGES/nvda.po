@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: Clock 18.12dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2019-02-01 08:52+0300\n"
-"Last-Translator: José Manuel Delicado <jmdaweb@hotmail.com>\n"
+"PO-Revision-Date: 2021-10-19 14:49+0300\n"
+"Last-Translator: Çağrı Doğan <cagrid@hotmail.com>\n"
 "Language-Team: cagrid@hotmail.com\n"
 "Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ../../../globalPlugins/clock\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -55,14 +55,13 @@ msgstr "Saat"
 
 #. Translators: The name of the alarm item in NVDA Tools menu.
 msgid "Schedule a&larms..."
-msgstr ""
+msgstr "A&larm ayarla..."
 
 #. Translators: The tooltyp text for the alarm item in NVDA Tools menu.
 msgid "Allows you to schedule an alarm"
 msgstr "Alarm kurmanıza olanak tanır"
 
 #. Translators: Message presented in input help mode.
-#, fuzzy
 msgid ""
 "Speaks current time. If pressed twice quickly, speaks current date. If "
 "pressed three times quickly, reports the current day, the week number, the "
@@ -154,16 +153,15 @@ msgstr "Ses susturuldu"
 
 #. Translators: error message when attempting to open more than one alarm settings dialogs.
 msgid "Schedule alarms dialog is already open."
-msgstr ""
+msgstr "Alarm ayarı iletişim kutusu zaten açık"
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
 msgstr "Saat ayarları iletişim kutusunu gösterir."
 
 #. Translators: Message presented in input help mode.
-#, fuzzy
 msgid "Display schedule alarms dialog box."
-msgstr "Alarm ayarlama iletişim kutusunu gösterir."
+msgstr "Alarm ayarı iletişim kutusunu göster."
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Time display format:"
@@ -194,19 +192,16 @@ msgid "every hour"
 msgstr "saat başlarında"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
-#, fuzzy
 msgid "&Interval:"
 msgstr "Saat anons ara&lığı:"
 
 #. Translators: This is a choice of the time report choices combo box.
-#, fuzzy
 msgid "message and sound"
 msgstr "konuşma ve ses"
 
 #. Translators: This is a choice of the time report choices combo box.
-#, fuzzy
 msgid "message only"
-msgstr "Yalnızca konuşarak"
+msgstr "Yalnızca konuşma"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "sound only"
@@ -225,67 +220,56 @@ msgid "&Quiet hours"
 msgstr "Sessiz &saatler"
 
 #. Translators: This is a choice of the quiet hours time format choices.
-#, fuzzy
 msgid "12-hour format"
-msgstr "&24-saat formatı"
+msgstr "12-saat formatı"
 
 #. Translators: This is a choice of the quiet hours time format choices.
-#, fuzzy
 msgid "24-hour format"
-msgstr "&24-saat formatı"
+msgstr "24-saat formatı"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
-#, fuzzy
 msgid "Quiet hours time &format:"
-msgstr "Sessiz saatler bitiş zamanı:"
+msgstr "Sessiz saatler &formatı:"
 
 #. Translators: This is the label for an group in the Clock settings dialog.
-#, fuzzy
 msgid "Quiet hours start time"
 msgstr "Sessiz saatler başlangıç zamanı:"
 
 #. Translators: This is the label for an group in the Clock settings dialog.
-#, fuzzy
 msgid "Quiet hours end time"
 msgstr "Sessiz saatler bitiş zamanı:"
 
 #. Translators: the hour label in quiet hours group.
-#, fuzzy
 msgid "Hour:"
-msgstr "Saat"
+msgstr "Saat:"
 
 #. Translators: the minute label in quiet hours group.
-#, fuzzy
 msgid "Minute:"
-msgstr "Dakika"
+msgstr "Dakika:"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Schedule alarms"
-msgstr ""
+msgstr "Alarm ayarı"
 
 #. Translators: This is an item of the alarm duration choices.
-#, fuzzy
 msgid "hours"
 msgstr "Saat"
 
 #. Translators: This is an item of the alarm duration choices.
-#, fuzzy
 msgid "minutes"
 msgstr "Dakika"
 
 #. Translators: This is an item of the alarm duration choices.
-#, fuzzy
 msgid "seconds"
-msgstr "0 saniye"
+msgstr "saniye"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
-#, fuzzy
 msgid "&Alarm duration in:"
-msgstr "Alarm için &kalan süre:"
+msgstr "&Alarm süre birimi:"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 msgid "&Duration:"
-msgstr ""
+msgstr "&Süre:"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
@@ -346,16 +330,15 @@ msgstr "{hours} sa, {minutes} dak, {seconds} san"
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {hours}:{minutes}"
-msgstr "Saat {hours} {minutes}"
+msgstr "Saat {hours}:{minutes}"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {hours}:{minutes}:{seconds}"
-msgstr "Saat {hours} {minutes} {seconds}"
+msgstr "Saat {hours}:{minutes}:{seconds}"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-#, fuzzy
 msgid ""
 "An advanced clock and calendar for NVDA.\n"
 "NVDA+F12, get current time.\n"
@@ -371,298 +354,3 @@ msgstr ""
 "duymak için aynı tuşlara üç kez basın.\n"
 "Diğer Talimatlar için, NVDA eklentiler yöneticisinde, eklenti seçiliyken "
 "'yardım' düğmesine basın."
-
-#~ msgid "Clock se&ttings..."
-#~ msgstr "Saa&t ayarları..."
-
-#~ msgid "Clock and calendar setup"
-#~ msgstr "Configuración del reloj y del calendario"
-
-#~ msgid "Clock setup"
-#~ msgstr "Saat ayarları"
-
-#~ msgid "Clock setup for times and dates"
-#~ msgstr "Takvim ve saat ayarları"
-
-#~ msgid "Alarm settin&gs"
-#~ msgstr "Alarm ayarları..."
-
-#~ msgid ""
-#~ "The value you entered for your quiet hours is erroneous, for a 24-hour "
-#~ "format, the value must be HH:MM, for a 12-hour format, the value must be "
-#~ "HH:MM followed by the AM or PM suffix, please reread the documentation. "
-#~ "So your quiet hours have been deactivated for prevent any error in the "
-#~ "configuration file."
-#~ msgstr ""
-#~ "Sessiz saat için girdiğiniz değer hatalı, 24-saat formatı için, değer SS:"
-#~ "DD şeklinde olmalı, 12-saat formatı için, değer SS:DD olmalı ve "
-#~ "sonrasında AM ya da  PM eki ile, lütfen dokümantasyonu okuyun. "
-#~ "Dolayısıyla, yapılandırma dosyasında oluşabilecek sorunları engellemek "
-#~ "için sessiz saat ayarınız etkisizleştirildi."
-
-#~ msgid "Error"
-#~ msgstr "Hata"
-
-#~ msgid "Alarm setup"
-#~ msgstr "Alarm Kur"
-
-#~ msgid "Seconds"
-#~ msgstr "Saniye"
-
-#~ msgid "Choose the type of timer &inputs before the alarm rings:"
-#~ msgstr "Lütfen alarm zamanlayıcı birimini ve süreyi belirleyin:"
-
-#~ msgid ""
-#~ "\n"
-#~ "\t\tS: Starts, resets or stops the stopwatch.\n"
-#~ "\t\tR: Resets stopwatch to 0 without restarting it.\n"
-#~ "\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
-#~ "\t\tC: Cancel the next alarm.\n"
-#~ "\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
-#~ "\t\tH: List all layered commands (Help).\n"
-#~ "\t\t"
-#~ msgstr ""
-#~ "\n"
-#~ "\t\tS: Kronoometreyi başlatır, durdurur ya da sıfırlayıp yeniden "
-#~ "başlatır.\n"
-#~ "\t\tR: Kronometreyi yeniden başlatmaksızın sıfırlar.\n"
-#~ "\t\tA: Bir sonraki alarm hakkında bazı bilgiler verir.\n"
-#~ "\t\tC: Bir sonraki alarmı iptal eder.\n"
-#~ "\t\tAralık çubuğu: Geçerli kronometre değerini seslendirir.\n"
-#~ "\t\th: tüm katman komutlarını listeler (Yardım).\n"
-#~ "\t\t"
-
-#, fuzzy
-#~| msgid "Day {day}, week {week} of {year}, remaining days {remain}."
-#~ msgid "Day {day}, week {week} of {year}"
-#~ msgstr "Gün {day}, hafta {week}, yıl {year}, kalan gün {remain}"
-
-#, fuzzy
-#~| msgid ""
-#~| "Speaks current time. If pressed twice quickly, speaks current date. If "
-#~| "pressed thrice quickly, reports the current day, the week number, the "
-#~| "current year and the days remaining before the end of the year."
-#~ msgid ""
-#~ "Speaks current time. If pressed twice quickly, speaks current date. If "
-#~ "pressed thrice quickly, reports the current day and week number of the "
-#~ "year."
-#~ msgstr ""
-#~ "Saati söyler. İki kez basılırsa tarihi, üç kez basılırsa Yılın kaçıncı "
-#~ "gün ve haftasında olunduğunu ve yılın bitimine kaç gün kaldığını söyler."
-
-#, fuzzy
-#~| msgid "Starts, resets or stops the stopwatch."
-#~ msgid "Starts, stops or resets stopwatch."
-#~ msgstr "Kronometreyi başlatır, durdurur veya sıfırlar."
-
-#, fuzzy
-#~| msgid "Speaks current stopwatch or count-down timer."
-#~ msgid "Speaks current stopwatch or timer countdown."
-#~ msgstr "Mevcut kronometre ya da geri sayım sayacını seslendirir."
-
-#, fuzzy
-#~| msgid "Gives the remaining and elapsed time before the next alarm."
-#~ msgid "Gives the elapsed time and the remaining time before the next alarm."
-#~ msgstr "Alarm öncesinde geçen ve kalan süre bilgisini söyler."
-
-#, fuzzy
-#~| msgid "Cancel the next alarm."
-#~ msgid "Allows to cancel the next alarm."
-#~ msgstr "Alarmı kapatır"
-
-#, fuzzy
-#~| msgid "Resets stopwatch to 0 without restarting it."
-#~ msgid "Resets the stopwatch to 0 seconds, with out starting it."
-#~ msgstr "Kronometreyi sıfırlar ve yeniden başlatmaz."
-
-#, fuzzy
-#~| msgid ""
-#~| "\n"
-#~| "\t\tS: Starts, resets or stops the stopwatch.\n"
-#~| "\t\tR: Resets stopwatch to 0 without restarting it.\n"
-#~| "\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
-#~| "\t\tC: Cancel the next alarm.\n"
-#~| "\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
-#~| "\t\tH: List all layered commands (Help).\n"
-#~| "\t\t"
-#~ msgid ""
-#~ "\n"
-#~ "\t\tS: Start, stop or reset and restart the stopwatch.\n"
-#~ "\t\tR: Reset the stopwatch with out starting it again.\n"
-#~ "\t\tA: Gives some informations about the next alarm.\n"
-#~ "\t\tC: Cancel the next alarm.\n"
-#~ "\t\tSpacebar: Speak current stopwatch or count-down timer."
-#~ msgstr ""
-#~ "\n"
-#~ "\t\tS: Kronoometreyi başlatır, durdurur ya da sıfırlayıp yeniden "
-#~ "başlatır.\n"
-#~ "\t\tR: Kronometreyi yeniden başlatmaksızın sıfırlar.\n"
-#~ "\t\tA: Bir sonraki alarm hakkında bazı bilgiler verir.\n"
-#~ "\t\tC: Bir sonraki alarmı iptal eder.\n"
-#~ "\t\tAralık çubuğu: Geçerli kronometre değerini seslendirir.\n"
-#~ "\t\th: tüm katman komutlarını listeler (Yardım).\n"
-#~ "\t\t"
-
-#, fuzzy
-#~| msgid "It's {minutes} past {hours}"
-#~ msgid "It's {minutes} past {hours} {tm}"
-#~ msgstr "Saat {hours} {minutes} geçiyor"
-
-#, fuzzy
-#~| msgid "Cancel the next alarm."
-#~ msgid "Allows to check or cancel the next alarm."
-#~ msgstr "Alarmı kapatır"
-
-#~ msgid "Auto announce &interval:"
-#~ msgstr "&Otomatik anons aralığı:"
-
-#~ msgid "&Alarm"
-#~ msgstr "&Alarm"
-
-#, fuzzy
-#~| msgid "Alarm time waiting:"
-#~ msgid "Alarm time:"
-#~ msgstr "Alarm için kalan süre:"
-
-#~ msgid "%d hour, "
-#~ msgstr "%d saat, "
-
-#, fuzzy
-#~| msgid "%d hour, "
-#~ msgid "%d hours, "
-#~ msgstr "%d saat, "
-
-#~ msgid "%d minute, "
-#~ msgstr "%d dakika, "
-
-#, fuzzy
-#~| msgid "%d minute, "
-#~ msgid "%d minutes, "
-#~ msgstr "%d dakika, "
-
-#~ msgid "%s second"
-#~ msgstr "%s saniye"
-
-#, fuzzy
-#~| msgid "%s second"
-#~ msgid "%s seconds"
-#~ msgstr "%s saniye"
-
-#, fuzzy
-#~| msgid ""
-#~| "\n"
-#~| "\t\tS: Starts, resets or stops the stopwatch.\n"
-#~| "\t\tR: Resets stopwatch to 0 without restarting it.\n"
-#~| "\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
-#~| "\t\tC: Cancel the next alarm.\n"
-#~| "\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
-#~| "\t\tH: List all layered commands (Help).\n"
-#~| "\t\t"
-#~ msgid ""
-#~ "\n"
-#~ "S: Start, stop or reset and restart the stopwatch.\n"
-#~ "R: Reset the stopwatch with out starting it again.\n"
-#~ "Spacebar: Speak current stopwatch or count-down timer."
-#~ msgstr ""
-#~ "\n"
-#~ "\t\tS: Kronoometreyi başlatır, durdurur ya da sıfırlayıp yeniden "
-#~ "başlatır.\n"
-#~ "\t\tR: Kronometreyi yeniden başlatmaksızın sıfırlar.\n"
-#~ "\t\tA: Bir sonraki alarm hakkında bazı bilgiler verir.\n"
-#~ "\t\tC: Bir sonraki alarmı iptal eder.\n"
-#~ "\t\tAralık çubuğu: Geçerli kronometre değerini seslendirir.\n"
-#~ "\t\th: tüm katman komutlarını listeler (Yardım).\n"
-#~ "\t\t"
-
-#, fuzzy
-#~| msgid "It's {hours} o'clock and {minutes} minutes"
-#~ msgid "It's H o'clock and mm minutes"
-#~ msgstr "{hours} saat ve {minutes} dakika"
-
-#, fuzzy
-#~| msgid "It's {hours} o'clock, {minutes} minutes and {seconds} seconds"
-#~ msgid "It's H o'clock, mm minutes and ss seconds"
-#~ msgstr "{hours} saat, {minutes} dakika ve {seconds} saniye"
-
-#, fuzzy
-#~| msgid "{hours} o'clock, {minutes} minutes"
-#~ msgid "h o'clock, mm minutes"
-#~ msgstr "{hours} saat, {minutes} dakika"
-
-#, fuzzy
-#~| msgid "{hours} o'clock, {minutes} minutes, {seconds} seconds"
-#~ msgid "hh o'clock, mm minutes, ss seconds"
-#~ msgstr "{hours} saat, {minutes} dakika, {seconds} saniye"
-
-#~ msgid "It's mm past H"
-#~ msgstr "Saat H mm geçiyor"
-
-#~ msgid "hh mm min"
-#~ msgstr "sa hh, dak mm"
-
-#~ msgid "hh mm min ss sec"
-#~ msgstr "sa hh, dak mm, san ss"
-
-#~ msgid "It's H:mm"
-#~ msgstr "Saat H:mm"
-
-#~ msgid "It's HH:mm:ss"
-#~ msgstr "saat HH:mm:ss"
-
-#~ msgid "%H h, %M min"
-#~ msgstr "s %H, d %M"
-
-#~ msgid "%H h, %M min, %S sec"
-#~ msgstr "sa %H, dak %M, san %S"
-
-#~ msgid "%H:%M:%S"
-#~ msgstr "%H:%M:%S"
-
-#~ msgid "%H:%M"
-#~ msgstr "%H:%M"
-
-#~ msgid "It's %I:%M %p"
-#~ msgstr "%I:%M %p"
-
-#~ msgid "It's %I:%M:%S %p"
-#~ msgstr "%I:%M:%S %p"
-
-#~ msgid "%I:%M %p"
-#~ msgstr "%I:%M %p"
-
-#~ msgid "%I:%M:%S %p"
-#~ msgstr "%I:%M:%S %p"
-
-#~ msgid "%A, %B %d, %Y"
-#~ msgstr "%A, %B %d, %Y"
-
-#~ msgid "%Y-%d-%m"
-#~ msgstr "%Y-%d-%m"
-
-#~ msgid "%Y-%m-%d"
-#~ msgstr "%Y-%m-%d"
-
-#~ msgid "%d-%m-%Y"
-#~ msgstr "%d-%m-%Y"
-
-#~ msgid "%m-%d-%Y"
-#~ msgstr "%m-%d-%Y"
-
-#~ msgid "%m/%d/%Y"
-#~ msgstr "%m/%d/%Y"
-
-#~ msgid "%d/%m/%Y"
-#~ msgstr "%d/%m/%Y"
-
-#, fuzzy
-#~| msgid "Clock se&ttings..."
-#~ msgid "&Clock Settings..."
-#~ msgstr "Saa&t ayarları..."
-
-#~ msgid "Day %j, week %W of %Y."
-#~ msgstr "Día %j, semana %W de %Y."
-
-#, fuzzy
-#~| msgid "Clock se&ttings..."
-#~ msgid "Clock Settings"
-#~ msgstr "Saa&t ayarları..."

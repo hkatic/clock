@@ -8,55 +8,60 @@
 Cette extension active les fonctions avancées de l'horloge, de minuterie
 d'alarme et du calendrier pour NVDA.
 
-You can configure NvDA to announce time and date in formats other than what
-Windows provides by default. Additionally, you can obtain the current day,
-week number, as well as the remaining days before the end of the current
-year, and you can also set automatic time announcement on specified
-interval. There's also a stopwatch and Alarm timer features built-in to the
-add-on that lets you time your tasks, such as copying files, installing
-programs, or cooking meals.
+Vous pouvez configurer comment les dates et les heures doivent être
+annoncées par NVDA au lieu de toujours obtenir la date et l'heure fournit
+par défaut depuis Windows. En outre, vous pouvez obtenir le nombre actuel
+des jours et semaines de l'année en cours et vous pouvez également définir
+l'annonce automatique de l'heure sur un intervalle spécifié. Il y a aussi
+des fonctionnalités pour le chronomètre et minuterie d'alarme intégrés à
+l'extension, qui vous permet de chronométrer vos tâches, telles que la copie
+de fichiers, l'installation de programmes ou la préparation de repas
 
-Notes:
+Note:
 
-* if you install the add-on as an update, during the installation process,
-  the wizard detects if the old configuration is compatible with the new one
-  and offers to correct it before installing, then you'll just have to
-  validate the OK button to confirm that.
-* On Windows 10 and later, you can use Alarms and Clock app to manage
-  stopwatch and timers.
+* Si vous installez l'extension en tant que mise à jour, lors du processus
+  d'installation, l'assistant détecte si l'ancienne configuration est
+  compatible avec la nouvelle et vous propose de la corriger avant
+  l'installation. Il vous suffira alors de valider le bouton OK pour
+  confirmer cela.
+* Sous Windows 10 et ultérieure, vous pouvez utiliser des alarmes et une
+  application pour l'horloge pour gérer les chronomètres et les minuteries.
 
 ## Raccourcis clavier
 
 * NVDA+F12: obtenir l'heure actuelle
 * NVDA+F12 pressé deux fois rapidement: obtenir la date actuelle
-* NVDA+F12 pressed three times quickly: reports the current day, the week
-  number, the current year and the remaining days before the end of the year
-* NVDA+Shift+F12: enter clock layer
+* NVDA+F12 pressé trois fois rapidement: annoncer le jour actuel, le numéro
+  de la semaine, l'année en cours et les jours qui restent avant la fin de
+  l'année.
+* NVDA+Maj+F12: Entrée séquentielle de l'horloge
 
-## Unassigned commands
+## Commandes non assignées
 
-The following commands are not assigned by default; if you wish to assign
-them, use Input Gestures dialog to add custom commands. To do so, open NVDA
-menu, Preferences, then Input Gestures. Expand Clock category, then locate
-unassigned commands from the list below and select "Add", then type the
-gesture you wish to use.
+Les commandes suivantes ne sont assignées par défaut; Si vous souhaitez
+assigner un geste personnalisé vous pouvez ajouter un en utilisant la  boîte
+de dialogue Gestes de Commandes. Pour ce faire, ouvrez le menu NVDA,
+Préférences, puis Gestes de Commandes. Développé la catégorie Horloge, puis
+localisez les commandes non assignées dans la liste ci-dessous et
+sélectionnez "Ajouter", puis tapez le geste que vous souhaitez utiliser.
 
-* Elapsed and remaining time before the next alarm. pressing this gesture
-  twice quickly will cancel the next alarm.
-* Stop currently playing alarm sound.
+* Temps écoulé et temps restant avant la prochaine alarme. Appuyer deux fois
+  rapidement sur ce geste annulera rapidement la prochaine alarme.
+* Arrêter de lire le son de l'alarme actuelle.
 
 ## Commandes séquentielles
 
 Pour utiliser des commandes séquentielles, appuyez sur NVDA+Maj+F12 suivi de
 l'une des touches suivantes :
 
-* S: Starts, resets or stops the stopwatch
-* R: Resets stopwatch to 0 without restarting it
-* A: gives the elapsed and remaining time before the next alarm
-* C: Cancel the next alarm
-* Space: Speaks current stopwatch or count-down timer
-* p: If an alarm is too long, allows to stop it
-* H: List all layered commands (Help)
+* S: Démarre, réinitialise ou arrête le chronomètre;
+* R: Réinitialise le chronomètre à 0 sans le démarrer;
+* A: donne le temps écoulé et restant avant la prochaine alarme;
+* C: Annule la prochaine alarme;
+* Espace: Annonce le chronomètre actuel ou le compte à rebours de la
+  minuterie;
+* p: Si une alarme est trop longue, permet de l'arrêter;
+* H: Répertorie toutes les commandes séquentielles (Aide).
 
 ## Utilisation
 
