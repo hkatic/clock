@@ -23,10 +23,11 @@ Notes:
 
 ## Unassigned commands
 
-The following commands are not assigned by default; if you wish to assign them, use Input Gestures dialog to add custom commands. To do so, open NVDA menu, Preferences, then Input Gestures. Expand Clock category, then locate unassigned commands from the list below and select "Add", then type the gesture you wish to use.
+The following commands are not assigned by default; if you wish to assign them, use Input Gestures dialog to add custom commands. To do so, open NVDA menu, Preferences, then Input Gestures. Expand Clock category, then locate unassigned commands from the list below and select "Add", then enter the gesture you wish to use.
 
 * Elapsed and remaining time before the next alarm. pressing this gesture twice quickly will cancel the next alarm.
 * Stop currently playing alarm sound.
+* Display schedule alarms dialog box.
 
 ## Layered commands
 
@@ -48,7 +49,7 @@ To configure clock functionality, open NvDA menu, Preferences, then Settings, an
 * Time and date display format: use these combo boxes to configure how NVDA will announce time and date when you press NVDA+F12 once or twice quickly, respectively.
 * Interval: choose the time announcement interval from this combo box (off, every 10 minutes, 15 minutes, 30 minutes, or every hour).
 * Time announcement (enabled if interval is not off): choose between speech and sound, sound only, or speech only.
-* Clock chime sound (enabled if interval is not off): selct the clock chime sound.
+* Clock chime sound (enabled if interval is not off): select the clock chime sound.
 * Quiet hours (enabled if interval is not off): select this checkbox to configure quiet hours range when automatic time announcement should not occur.
 * Quiet hours time format (enabled if quiet hours is enabled): select how quiet hours options are presented (12-hour or 24-hour format).
 * Quiet hours start and end times: select hour and minute range for quiet hours from hours and minutes combo boxes.
