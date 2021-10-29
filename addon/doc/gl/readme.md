@@ -19,7 +19,7 @@ de alimentos.
 
 Notas:
 
-* Se instalas o complemento como unha actualización, durante o proceso de
+* se instalas o complemento como unha actualización, durante o proceso de
   instalación, o asistente detecta se a configuración vella é compatible coa
   nova e ofrece corrixila antes da instalación, de forma que só tes que
   validar o botón Aceptar para confirmalo.
@@ -46,6 +46,7 @@ utilizar.
 * Tempo transcorrido e restante antes da seguinte alarma. Premer este xesto
   dúas veces rapidamente cancelará a seguinte alarma.
 * Deter son de alarma en reprodución.
+* Amosar a caixa de diálogo de programación de alarmas.
 
 ## Ordes en capa
 
@@ -55,81 +56,49 @@ seguintes teclas:
 * S: Inicia, detén ou reinicia o cronómetro
 * R: Restablece o cronómetro a 0 sen reinicialo
 * A: Fornece o tempo transcorrido e restante ata a vindeira alarma
+* T: abre o diálogo de programación de alarmas.
 * C: Cancelar a vindeira alarma
 * Espazo: Anuncia o temporizador actual do cronómetro ou da conta atrás
 * p: Se unha alarma é demasiado longa, permite detela
 * H: Listar tódolos comandos en capa (Help=Axuda)
 
-## Uso
+## Configuración e uso
 
-* Abre o ciálogo de configuración deste complemento dende o diálogo de
-  Opcións de NVDA.
+Para configurar a funcionalidade de reloxo, abre o menú de NVDA,
+Preferencias, logo Opcions, e configura as seguintes opciónes dende o panel
+de Clock;
 
-    * No panel de configuración do reloxo, os dous primeiros controis de
-      caixa combinada permítenche escoller os formatos de amosado de hora e
-      data que prefiras.
-    * O control de caixa combinada etiquetado "Intervalo" permíteche
-      establecer o intervalo do anuncio automático da hora (cada 10 minutos,
-      cada 15 minutos, cada 30 minutos, cada hora ou desactivado).
-    * O control de caixa combinada etiquetado "Anunciado da hora" (só
-      visible se a opción "Desactivado" non está seleccionada na caixa
-      combinada intervalo) permíteche configurar como se informará do
-      anuncio automático da hora (fala e son, só fala ou só son) cando este
-      anunciado estea habilitado.
-    * O control de caixa combinada etiquetada "Son de campá do reloxo" (só
-      visible se a opción "Desactivado" non está seleccionada na caixa
-      combinada intervalo) permíteche elixir entre distintos sons de reloxo
-      que se reproducirán cando o anunciado automático da hora estea
-      habilitado e se informe mediante son.
-    * O control de caixa de verificación etiquetado "Horas caladas" (só
-      visible se a opción "Desactivado" non está seleccionada na caixa
-      combinada intervalo) permíteche configurar un rango de horas onde non
-      debería anunciarse a hora automaticamente.
-    * O control de caixa de verificación etiquetado "entrada en formato de
-      24 horas" (só visible se as horas caladas están activadas) permíteche
-      configurar se queres introducir as horas das horas caladas en formato
-      de 12 horas (A.M. ou P.M.) ou en formato europeo de 24 horas.
-    * Os controis de caixa de edición da hora de comezo e finalización (só
-      visible se as horas caladas están activadas) permítenche configurar o
-      rango de tempo das horas caladas. A hora debe introducirse no formato
-      HH:MM se a caixa de verificación "Entrada no formato de 24 horas" está
-      marcada, noutro caso deberás utilizar un formato de 12 horas como se
-      describe máis abaixo.
-    * Cando estea listo, tabula ata o botón Aceptar e actívao premendo intro
-      para gardar a túa configuración.
-    * No diálogo Configuración da alarma, o primeiro control de caixa
-      combinada permíteche escoller o teu temporizador de conta atrás
-      preferido antes do son da alarma.
-    * O control de caixa de edición permíteche escribir o teu tempo de
-      espera antes do son da alarma. Esta duración débese especificar cun ou
-      máis díxitos, non cun número decimal.
-    * O control de caixa combinada etiquetado "Son da alarma" permíteche
-      escoller entre varios sons de alarma que se reproducirán cando se
-      chegue o tempo de alarma.
-    * O botón pausa permíteche pausar/reanudar alarmas demasiado longas.
-    * O botón deter permíteche parar alarmas demasiado longas.
-    * Cando estea listo, tabula ó botón Aceptar e actívao premendo
-      intro. Debería amosarse unha mensaxe para lembrarche o tempo de agarda
-      antes da alarma.
+* Formato de amosado de hora e data: utiliza estes cadros combinados para
+  configurar como anunciará NVDA a hora e a data cando premas NVDA+F12 unha
+  vez ou dúas veces rapidamente, respectivamente.
+* Intervalo: escolle o intervalo de anunciado da hora neste cadro combinado
+  (desactivado, cada 10 minutos, 15 minutos, 30 minutos, ou cada hora).
+* Anuncio da hora (dispoñible se o intervalo non está desactivado): escolle
+  entre fala e son, só son ou só fala.
+* Son de campá do reloxo (dispoñible se intervalo non está desactivado):
+  selecciona o son da campá do reloxo.
+* Horas caladas (dispoñible se o intervalo non está desactivado): selecciona
+  esta caixa de verificación para configurar un rango de horas caladas onde
+  non debería anunciarse a hora automaticamente.
+* Formato de hora das horas caladas (dispoñible se as horas caladas están
+  activadas): selecciona como se presentan as opcións das horas caladas
+  (formato de 12 ou 24 horas).
+* Horas de inicio e finalización das horas caladas: selecciona o rango de
+  hora e minuto para as horas caladas nos cadros combinados de horas e
+  minutos.
 
-* Preme NVDA+F12 unha vez para obter a hora actual, dúas veces para obter a
-  data actual ou tres veces para obter o número de día, o número de semana,
-  o ano actual e o número de días restante ata o final do ano.
+Para programar alarmas, abre o menú de NVDA; Ferramentas, logo selecciona
+Programar alarmas. Os contidos do diálogo inclúen:
 
-## Sintaxe para utilizar nas horas caladas
+* Duración da alarma en: selecciona a duración da alarma/temporizador en
+  horas, minutos, e segundos.
+* Duración: introduce a duración da alarma na unidade especificada
+  anteriormente.
+* Son de alarma: selecciona o son de alarma a reproducir.
+* Botóns deter e pausa: deter ou pausar un son de alarma longo.
 
-1. Para evitar fallos, as horas caladas deben seguir unha sintaxe rigorosa e
-   precisa.
-2. Se marcas a caixa de verificación "Entrada en formato de 24 horas", o
-   formato debe ser "HH:MM".
-3. Se desmarcas a caixa de verificación "Entrada en formato de 24 horas", o
-   formato debe ser "HH:MM AM" ou "HH:MM PM", HH debe conter un formato de
-   12 horas, de 0 a 12 e o sufixo "AM"|"PM" pode estar en minúsculas ou
-   maiúsculas.
-4. Se marcas a caixa de verificación "Horas caladas" e deixas vacíos os
-   campos de "Hora de comezo das horas caladas" ou "Hora de finalización das
-   horas caladas", a caixa de verificación "Horas caladas" desmarcarase
-   automaticamente, para evitar erros.
+Faga click en OK, e un diálogo informarate da duración de alarma actualmente
+seleccionada.
 
 [[!tag dev stable]]
 

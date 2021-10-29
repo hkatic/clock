@@ -35,16 +35,16 @@ Nota:
 
 ## Comandi non assegnati:
 
-I seguenti comandi non sono assegnati per impostazione predefinita; se
-desideri assegnarli, usa la finestra di dialogo Gesti e tasti di immissione
-per aggiungere comandi personalizzati. Per farlo, apri il menu NVDA,
-Preferenze, quindi Gesti e tasti di immissione. Espandi la categoria
-Orologio, ed individua i comandi non assegnati dall'elenco sottostante e
-seleziona "Aggiungi", quindi digita il gesto che desideri utilizzare.
+The following commands are not assigned by default; if you wish to assign
+them, use Input Gestures dialog to add custom commands. To do so, open NVDA
+menu, Preferences, then Input Gestures. Expand Clock category, then locate
+unassigned commands from the list below and select "Add", then enter the
+gesture you wish to use.
 
 * Tempo trascorso e tempo rimanente prima dell'allarme successivo. premendo
   questo comando  due volte rapidamente si annullerà l'allarme successivo.
 * Interrompi la riproduzione del suono dell'allarme.
+* Display schedule alarms dialog box.
 
 ## comandi a livello:
 
@@ -54,74 +54,45 @@ tasti:
 * S: Avvia, interrompe o azzera per riavviare il cronometro.
 * R: Azzera il cronometro senza ripartire.
 * A: annuncia il tempo restante e trascorso per il timer;
+* T: opens schedule alarms dialog.
 * C: Annulla il Timer impostato.
 * BarraSpaziatrice: Legge il tempo trascorso nel cronometro.
 * P: interrompe il suono del timer;
 * H: elenca i comandi a livello disponibili.
 
-## Utilizzo
+## Configuration and usage
 
-* Apre la finestra di dialogo di configurazione per questo componente
-  aggiuntivo dalla finestra di dialogo Impostazioni NVDA.
+To configure clock functionality, open NvDA menu, Preferences, then
+Settings, and configure the following options from Clock panel:
 
-    * Nella finestra impostazioni orologio le prime due caselle di controllo
-      consentono di impostare il formato di visualizzazione dell'ora e della
-      data;
-    * La casella combinata "Segnale Orario" consente di controllare
-      l'annuncio automatico dell'ora che può essere spento oppure a
-      intervalli differenti (ogni 10 minuti,ogni 15 minuti, ogni 30 minuti o
-      ogni ora);
-    * La casella combinata "Avviso segnale orario" (visibile quando il
-      "Segnale orario" è attivo) consente di specificare in modo in cui
-      viene segnalata l'ora, voce e suono, solo suono, solo voce;
-    * La casella combinata "Suono segnale orario" (visibile se la casella
-      "Segnale orario" è attivo) permette di scegliere il suono per il
-      segnale orario;
-    * La casella di controllo "Fascia oraria inattiva" (visibile se il
-      "Segnale Orario" è attivo) consente di disattivare l'annuncio
-      automatico per un certo intervallo di tempo impostabile;
-    * La casella di controllo "Formato 24-ore" si riferisce alle
-      impostazioni della "Fascia Oraria Inattiva". Permette di scegliere se
-      inserire l'ora nel formato 12-ore (A.M. o  P.M.), oppure il formato
-      europeo 24-ore ;
-    * Nei campi editazione Inizio fascia oraria e fine fascia oraria è
-      possibile indicare l'inizio e la fine dell'intervallo di inattività
-      dell'annuncio dell'orario automatico. Questi campi editazione verranno
-      visualizzati solo se è attiva la casella di controllo per la fascia
-      oraria inattiva. L'ora deve essere inserita nel formato HH:MM se si
-      usa il formato "24-ore", in caso contrario, è necessario utilizzare il
-      formato 12-ore, come descritto di seguito;
-    * Premere il pulsante Ok o Applica per salvare le impostazioni;
-    * nelle impostazioni Timer, la prima casella di controllo permette di
-      scegliere l'unità di misura per il Timer;
-    * Nel campo editazione è possibile inserire il tempo di attesa prima del
-      suono d'allarme. Si possono inserire più cifre, i numeri decimali non
-      son validi;
-    * nella casella di controllo "suono per il Timer" si può scegliere tra
-      vari suoni che servirà come suono di allarme allo scadere del tempo;
-    * Il pulsante Pausa consente di sospendere o riprendere la riproduzione
-      dei suoni, utile quando si sceglie tra i suoni troppo lunghi;
-    * Il pulsante Stop permette di interrompere suoni troppo lunghi;
-    * Una volta impostato, premere il pulsante Ok per salvare la
-      configurazione. Verrà visualizzato un messaggio di conferma che
-      riporta il tempo di attesa impostato per il timer;
+* Time and date display format: use these combo boxes to configure how NVDA
+  will announce time and date when you press NVDA+F12 once or twice quickly,
+  respectively.
+* Interval: choose the time announcement interval from this combo box (off,
+  every 10 minutes, 15 minutes, 30 minutes, or every hour).
+* Time announcement (enabled if interval is not off): choose between speech
+  and sound, sound only, or speech only.
+* Clock chime sound (enabled if interval is not off): select the clock chime
+  sound.
+* Quiet hours (enabled if interval is not off): select this checkbox to
+  configure quiet hours range when automatic time announcement should not
+  occur.
+* Quiet hours time format (enabled if quiet hours is enabled): select how
+  quiet hours options are presented (12-hour or 24-hour format).
+* Quiet hours start and end times: select hour and minute range for quiet
+  hours from hours and minutes combo boxes.
 
-* NVDA+F12, annuncia l'ora corrente. - NVDA+F12 premuto  due volte
-  rapidamente, annuncia la data. - NVDA+F12 premuto tre volte rapidamente,
-  informa sul numero del giorno, della  settimana e i giorni restanti
-  rispetto all'anno in corso. 
+To schedule alarms, open NVDA menu, Tools, then select Schedule Alarms. The
+dialog contents include:
 
-## Formato per i valori della fascia oraria inattiva:
+* Alarm duration in: select alarm/timer duration between hours, minutes, and
+  seconds.
+* Duration: enter alarm duration in the unit specified above.
+* Alarm sound: select the alarm sound to be played.
+* Stop and pause buttons: stop or pause a long alarm sound.
 
-1. Per evitare errori, i valori vanno inseriti con un corretto formato.
-2. Se attivate la casella "24-ore", il formato dovrà essere "HH:MM".
-3. Se la casella "24-ore" è disattivata, il formato corretto sarà "HH:MM AM"
-   o "HH:MM PM", il valore HH ammette numeri da 0 a 12, la dicitura "AM" o
-   "PM" ammette sia minuscole che maiuscole.
-4. Quando si attiva la casella "Fascia oraria inattiva", e si lasciano  i
-   campi editazione "Inizio Fascia Oraria" o "Fine Fascia Oraria" vuoti o
-   con valori errati, la casella "Fascia Oraria Inattiva" verrà disattivata
-   automaticamente per evitare errori.
+Click OK, and a message will inform you the curretnly selected alarm
+duration.
 
 [[!tag dev stable]]
 

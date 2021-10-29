@@ -1,21 +1,21 @@
-# Uhr- und Kalender-Erweiterung für NVDA #
+# NVDA-Erweiterung für Uhr und Kalender #
 
-* Autoren: Hrvoje Katić, Abdel und NVDA-Community
+* Autoren: Hrvoje Katić, Abdel und die NVDA-Community
 * [Stabile Version herunterladen][1]
 * [Entwicklerversion herunterladen][2]
 * NVDA-Kompatibilität: 2019.3 und neuer
 
-Diese Erweiterung aktiviert die erweiterte Uhr-, Alarm-Timer- und
-Kalenderfunktion für NVDA.
+Diese NVDA-Erweiterung aktiviert die erweiterten Funktionen für Uhr, Wecker
+und Kalender.
 
 Sie können NVDA so konfigurieren, dass Uhrzeit und Datum in anderen als den
-von Windows standardmäßig bereitgestellten Formaten angesagt werden. Darüber
-hinaus können Sie den aktuellen Tag, die Wochennummer sowie die
-verbleibenden Tage bis zum Ende des laufenden Jahres abrufen und die
+von Windows standardmäßig bereitgestellten Formaten mitgeteilt
+werden. Darüber hinaus können Sie den aktuellen Tag, die Wochennummer sowie
+die verbleibenden Tage bis zum Ende des laufenden Jahres abrufen und die
 automatische Zeitansage in bestimmten Intervallen einstellen. In die
 Erweiterung sind auch eine Stoppuhr und ein Wecker integriert, mit denen Sie
 Ihre Aufgaben wie das Kopieren von Dateien, das Installieren von Programmen
-oder das Kochen von Mahlzeiten planen können.
+oder das Kochen von Mahlzeiten zeitlich festlegen können.
 
 Anmerkungen:
 
@@ -39,17 +39,18 @@ Anmerkungen:
 ## Nicht zugewiesene Befehle
 
 Die folgenden Befehle sind standardmäßig nicht zugewiesen; Wenn Sie sie
-zuweisen möchten, verwenden Sie das Dialogfeld Eingabegesten, um
+zuweisen möchten, verwenden Sie das Dialogfeld für die Tastenbefehle, um
 benutzerdefinierte Befehle hinzuzufügen. Öffnen Sie dazu das NVDA-Menü,
-Einstellungen und dann Tastenbefehle. Erweitern Sie die Kategorie Uhr,
+Einstellungen und dann Tastenbefehle. Erweitern Sie die Kategorie "Uhr",
 suchen Sie dann in der Liste unten nach nicht zugewiesenen Befehlen und
-wählen Sie "Hinzufügen" aus. Geben Sie dann den Tastenbefehl ein, den Sie
-verwenden möchten.
+wählen Sie "Hinzufügen" aus. Geben Sie dann den gewünschte Tastenkombination
+ein.
 
 * Verstrichene und verbleibende Zeit bis zum nächsten Alarm. Durch
   zweimaliges schnelles Drücken diesen Tastenbefehls wird der nächste Alarm
   abgebrochen.
 * Unterbricht den aktuellen Alarmton.
+* Dialogfeld "Geplante Alarme" anzeigen.
 
 ## Befehle
 
@@ -59,86 +60,49 @@ der folgenden Tasten:
 * S: Startet oder stoppt oder setzt die Stoppuhr zurück
 * R: Setzt die Stoppuhr auf 0 zurück, ohne sie neu zu starten
 * A: Gibt die verstrichene und verbleibende Zeit bis zum nächsten Alarm aus
+* T: Öffnet das Dialogfenster "Alarme planen".
 * C: Abbrechen des nächsten Alarms
 * Leertaste: Sagt die aktuelle Stoppuhr oder den Countdown-Timer an
 * p: Wenn ein Alarm anhält, kann dieser damit gestoppt werden
 * H: Alle Befehle auflisten (Hilfe)
 
-## Verwendung
+## Konfiguration und Nutzung
 
-* Öffnet den Konfigurationsdialog für diese Erweiterung über den
-  NVDA-Einstellungsdialog.
+Um die Uhr zu konfigurieren, öffnen Sie das NVDA-Menü, Optionen, dann
+Einstellungen und konfigurieren Sie die folgenden Optionen im Bedienfeld der
+Uhr:
 
-    * Im Setup-Panel können Sie mit den ersten beiden
-      Combo-Box-Steuerelementen Ihre bevorzugten Anzeigeformate für Uhrzeit
-      und Datum auswählen.
-    * Das mit "Intervall" beschriftete Kombinationsfeld-Steuerelement
-      ermöglicht Ihnen das Einstellen des Intervalls für die automatische
-      Zeitansage (Alle 10 Minuten, Alle 15 Minuten, Alle 30 Minuten,
-      Stündlich oder Ausgeschaltet).
-    * Mit dem Combobox-Steuerelement mit der Bezeichnung "Zeitansage" (nur
-      sichtbar, wenn in der Intervall-Combobox die Option "Aus" nicht
-      ausgewählt ist) können Sie konfigurieren, wie die automatische
-      Zeitansage angezeigt werden soll (Sprache und Ton, Nur Sprache oder
-      Nur Ton), sofern die automatische Zeitansage funktioniert.
-    * Die Combobox-Steuerung mit der Bezeichnung "Glockenschlag" (nur
-      sichtbar, wenn in der Intervall-Combobox die Auswahl „off“ nicht
-      ausgewählt ist) lässt Sie zwischen verschiedenen Uhrgeräuschen
-      auswählen, die bei der automatischen Zeitansage abgespielt und mit Ton
-      gemeldet werden.
-    * Mit dem Kontrollkästchen "Ruhezeiten" (nur sichtbar, wenn in der
-      Intervall-Kombinationsfeld die Option "Aus" nicht ausgewählt ist)
-      können Sie den Zeitbereich konfigurieren, in dem keine automatische
-      Zeitansage erfolgen soll.
-    * Mit dem Kontrollkästchen "Eingabe im 24-Stunden-Format" (nur sichtbar,
-      wenn Ruhezeiten aktiviert sind) können Sie konfigurieren, ob Sie die
-      Uhrzeit für Ruhezeiten im 12-Stunden-Format (AM oder PM) oder im
-      europäischen 24-Stunden-Format eingeben möchten .
-    * Über die Steuerelemente des Bearbeitungsfelds für Start- und Endzeit
-      (nur sichtbar, wenn Ruhezeiten aktiviert sind) können Sie den
-      Zeitbereich für Ruhezeiten konfigurieren. Die Uhrzeit sollte im Format
-      HH:MM eingegeben werden, wenn das Kontrollkästchen "Eingabe im
-      24-Stunden-Format" aktiviert ist, andernfalls müssen Sie wie unten
-      beschrieben ein 12-Stunden-Format verwenden.
-    * Wenn Sie fertig sind, klicken Sie auf die Schaltfläche "OK" und
-      aktivieren Sie sie, indem Sie die Eingabetaste betätigen, um die
-      Einstellungen zu speichern.
-    * Im Dialogfeld für die Alarm-Einstellung können Sie mit dem ersten
-      Steuerelement des Kombinationsfeldes den bevorzugten Countdown-Timer
-      vor dem Alarmton auswählen.
-    * Mit dem Steuerelement des Bearbeitungsfeldes können Sie die Wartezeit
-      bis zum Klingeln des Weckers eingeben. Diese Dauer muss mit einer oder
-      mehreren Stellen angegeben werden, keine Dezimalzahl.
-    * Die Steuerung des Kombinationsfeldes mit der Bezeichnung "Weckton"
-      lässt Sie zwischen verschiedenen Alarmtönen auswählen, die abgespielt
-      werden, wenn die Weckzeit erreicht ist.
-    * Mit der Pause-Taste können Sie anhaltende Alarme unterbrechen oder
-      fortsetzen.
-    * Mit der Stopptaste können Sie anhaltende Alarme stoppen.
-    * Wenn Sie fertig sind, klicken Sie auf die Schaltfläche "OK" und
-      aktivieren Sie sie durch Drücken der Eingabetaste. Es sollte eine
-      Meldung angezeigt werden, die Sie an die Wartezeit vor dem Wecker
-      erinnert.
+* Anzeigeformat für Uhrzeit und Datum: Verwenden Sie diese
+  Kombinationsfelder, um zu konfigurieren, wie NVDA Uhrzeit und Datum
+  mitteilt, wenn Sie NVDA+F12 ein- bzw. zweimal schnell drücken.
+* Intervall: Wählen Sie das Intervall für die Zeitansage aus diesem
+  Kombinationsfeld (Ausgeschaltet, Alle 10 Minuten, 15 Minuten, 30 Minuten
+  oder Stündlich).
+* Zeitansage (aktiviert, wenn Intervall nicht ausgeschaltet ist): Wählen Sie
+  zwischen "Ton und Ansage", "Nur Ton" oder "Nur Ansage" aus.
+* Alarmton (aktiviert, wenn Intervall nicht ausgeschaltet ist): Wählen Sie
+  den alarmton aus.
+* Ruhezeiten (aktiviert, wenn Intervall nicht deaktiviert ist): Aktivieren
+  Sie dieses Kontrollkästchen, um den Ruhezeitbereich zu konfigurieren, in
+  dem keine automatische Zeitansage erfolgen soll.
+* Zeitformat für Ruhezeiten (aktiviert, wenn Ruhezeiten aktiviert sind):
+  Wählen Sie aus, wie die Optionen für Ruhezeiten dargestellt werden
+  (12-Stunden- oder 24-Stunden-Format).
+* Start- und Endzeiten für Ruhezeiten: Wählen Sie den Bereich für Stunden
+  und Minuten für die Ruhezeiten aus den Kombinationsfeldern für Stunden und
+  Minuten aus.
 
-* Drücken Sie NVDA+F12 einmal, um die aktuelle Uhrzeit abzurufen, zweimal,
-  um das aktuelle Datum abzurufen, oder dreimal, um den aktuellen Tag, die
-  Wochennummer sowie die verbleibenden Tage vor dem Ende des aktuellen
-  Jahres abzurufen.
+Um Alarme zu planen, öffnen Sie das NVDA-Menü, Werkzeuge, und wählen Sie
+dann den eintrag "Alarme planen" aus. Die Dialogfelder umfassen:
 
-## Syntax für Ruhezeiten
+* Alarmdauer in: Wählen Sie die Alarm-/Weckdauer zwischen Stunden, Minuten
+  und Sekunden.
+* Dauer: Geben Sie die Alarmdauer in der oben angegebenen Einheit ein.
+* Alarmton: Wählen Sie den abzuspielenden Alarmton aus.
+* Stopp und Pause: Stoppen oder pausieren Sie einen anhaltenden Alarmton.
 
-1. Um Fehler zu vermeiden, müssen die Ruhezeiten einer strengen und präzisen
-   Syntax folgen.
-2. Wenn Sie das Kontrollkästchen "Eingabe im 24-Stunden-Format" aktivieren,
-   muss das Format "HH:MM" sein.
-3. Wenn Sie das Kontrollkästchen "Eingabe im 24-Stunden-Format"
-   deaktivieren, muss das Format "HH:MM AM" oder "HH:MM PM" sein, das HH
-   muss ein 12-Stunden-Format von 0 bis 12 und das "AM Das Suffix "|"PM"
-   kann klein oder groß geschrieben werden.
-4. Wenn Sie das Kontrollkästchen "Ruhezeit" aktivieren und das Feld
-   "Ruhezeit Startzeit" oder "Ruhezeit Endzeit" leer lassen oder einen
-   falschen Wert eingeben, wird das Kontrollkästchen "Ruhezeit" automatisch
-   deaktiviert, um Fehler zu vermeiden, und es wird eine Meldung angezeigt.
+Klicken Sie auf "OK" und eine Meldung informiert Sie über die aktuell
+ausgewählte Alarmdauer.
 
 [[!tag dev stable]]
 

@@ -45,6 +45,7 @@ gustaría utilizar.
 * Tiempo transcurrido y restante antes de la próxima alarma. Al pulsar dos
   veces rápidamente este gesto, se cancelará la alarma.
 * Detener sonido de la alarma actual en reproducción.
+* Mostrar cuadro de diálogo para programar alarmas.
 
 ## Órdenes de capa
 
@@ -55,82 +56,49 @@ siguientes teclas:
 * R: pone el cronómetro a 0 sin reiniciarlo
 * A: da el tiempo transcurrido y el tiempo restante antes de la próxima
   alarma
+* T: abre el diálogo de programación de alarmas.
 * C: cancela la próxima alarma
 * Espacio: verbaliza el cronómetro o la cuenta atrás actual
 * p: si una alarma es demasiado larga, permite pararla
 * H: lista todas las órdenes de capa (Ayuda)
 
-## Uso
+## Configuración y uso
 
-* Abre el diálogo de configuración de este complemento desde el diálogo de
-  opciones de NVDA.
+Para configurar la funcionalidad del reloj, abre el menú de NVDA,
+Preferencias, Opciones, y configura las siguientes opciones desde el panel
+Reloj:
 
-    * En el panel de configuración del reloj, los dos primeros cuadros
-      combinados permiten controlar tus formatos preferidos a la hora de
-      mostrar fecha y hora.
-    * El cuadro combinado llamado "Intervalo" te permite configurar el
-      intervalo de anuncio automático de la hora (cada 10 minutos, cada 15
-      minutos, cada 30 minutos, cada hora o desactivado).
-    * El cuadro combinado "Anuncio de la hora" (visible sólo si la opción
-      "Desactivado" no está seleccionada en el cuadro combinado de
-      intervalo) te permite configurar cómo debería anunciarse
-      automáticamente la hora (voz y sonido, sólo voz o sólo sonido) cuando
-      el anuncio automático de la hora está en funcionamiento.
-    * El cuadro combinado llamado "Sonido de la campana del reloj" (visible
-      sólo si la opción "Desactivado" no está seleccionada en el cuadro
-      combinado de intervalo) te permite elegir entre varios sonidos de
-      relojes, que se escucharán cuando el anuncio automático de la hora
-      esté en funcionamiento y con sonido.
-    * La casilla de verificación "Horas silenciosas" (visible sólo si la
-      opción "Desactivado" no está seleccionada en el cuadro combinado de
-      intervalo) te permite configurar un rango de tiempo en el que la hora
-      no se anunciará automáticamente.
-    * La casilla de verificación "Entrada en formato 24 horas" (visible sólo
-      si las horas silenciosas están activadas) te permite indicar si
-      quieres especificar las horas en formato de 12 horas (A.M. y P.M.) o
-      en formato europeo de 24 horas.
-    * Los cuadros de edición para las horas de inicio y finalización
-      (visibles sólo si las horas silenciosas están activadas) te permiten
-      configurar el rango de tiempo de las horas silenciosas. La hora
-      debería introducirse siguiendo el formato "HH:MM" si está activada la
-      entrada en formato de 24 horas, en cualquier otro caso se debe emplear
-      el formato de 12 horas que se describe a continuación.
-    * Cuando acabes, tabula hasta el botón Aceptar y actívalo pulsando intro
-      para guardar las opciones.
-    * En el diálogo de configuración de la alarma, el primer cuadro
-      combinado te permite elegir tu temporizador de cuenta atrás preferido
-      antes de que la alarma suene.
-    * El cuadro de edición te permite escribir un tiempo de espera antes de
-      que suene la alarma. Esta duración debe especificarse con uno o más
-      dígitos sin decimales.
-    * El cuadro combinado "Sonido de alarma" te permite elegir entre
-      diversos sonidos de alarma que se reproducirán cuando llegue la hora
-      de la alarma.
-    * El botón Pausar te permite pausar o reanudar las alarmas demasiado
-      largas.
-    * El botón Detener te permite parar las alarmas demasiado largas.
-    * Cuando acabes, tabula hasta el botón Aceptar y actívalo pulsando
-      intro. Se debería mostrar un mensaje para recordarte cuánto tiempo de
-      espera hay hasta la alarma.
+* Formato de visualización de fecha y hora: usa estos cuadros combinados
+  para configurar cómo anunciará NVDA la hora y la fecha al pulsar NVDA+f12
+  una o dos veces rápidamente, respectivamente.
+* Intervalo: elige el intervalo de anuncio de hora desde este cuadro
+  combinado (apagado, cada 10 minutos, 15 minutos, 30 minutos, o cada hora).
+* Anuncio de hora (habilitado si el intervalo no está apagado): elige entre
+  voz y sonido, sólo sonido o sólo voz.
+* Sonido de campana del reloj (habilitado si el intervalo no está apagado):
+  selecciona el sonido de la campana.
+* Horas silenciosas (habilitada si el intervalo no está apagado): selecciona
+  esta casilla para configurar el intervalo de horas silenciosas en el que
+  no debería producirse el anuncio automático de hora.
+* Formato de hora para las horas silenciosas (activado si las horas
+  silenciosas están activadas): selecciona cómo se presentan las opciones de
+  las horas silenciosas (formatos de 12 o 24 horas).
+* Horas de inicio y fin de las horas silenciosas: selecciona el intervalo de
+  horas y minutos de las horas silenciosas desde los cuadros combinados de
+  horas y minutos.
 
-* Pulsa NVDA+f12 una vez para obtener la hora actual, dos para obtener la
-  fecha, o tres para saber el día actual, número de semana y días restantes
-  para que se acabe el año en curso.
+Para programar alarmas, abre el menú de NVDA, Herramientas, Programar
+alarmas. Los contenidos del diálogo incluyen:
 
-## Sintaxis de las horas silenciosas
+* Duración de la alarma en: selecciona la duración de la alarma o el
+  temporizador entre horas, minutos y segundos.
+* Duración: introduce la duración de la alarma en la unidad indicada
+  anteriormente.
+* Sonido de alarma: elige el sonido de alarma que se reproducirá.
+* Botones detener y pausar: detener o pausar un sonido de alarma largo.
 
-1. Para evitar fallos, las horas silenciosas deben seguir una sintaxis
-   rigurosa y precisa.
-2. Si marcas la casilla "Entrada en formato 24 horas", el formato debe ser
-   "HH:MM".
-3. Si desmarcas la casilla "Entrada en formato de 24 horas", el formato debe
-   ser "HH:MM AM" o "HH:MM PM", HH debe contener un número entre 0 y 12 y
-   los sufijos "AM|PM" pueden estar en minúscula o mayúscula.
-4. Si marcas la casilla "horas silenciosas" y dejas los campos "Hora de
-   inicio de las horas silenciosas" o "Hora de finalización de las horas
-   silenciosas" vacíos o escribes un valor erróneo, se desmarcará la casilla
-   "Horas silenciosas" automáticamente para evitar errores y se mostrará un
-   mensaje.
+Pulsa Aceptar, y un mensaje te informará la duración de la alarma
+seleccionada actualmente.
 
 [[!tag dev stable]]
 

@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: Clock 18.12dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2018-12-15 18:53+0100\n"
-"PO-Revision-Date: 2019-02-01 10:07+0100\n"
+"PO-Revision-Date: 2021-10-27 14:59+0200\n"
 "Last-Translator: zvonimir stanecic <zvonimirek222@yandex.com>\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
@@ -58,22 +58,21 @@ msgstr "Часы"
 
 #. Translators: The name of the alarm item in NVDA Tools menu.
 msgid "Schedule a&larms..."
-msgstr ""
+msgstr "Расписание таймера"
 
 #. Translators: The tooltyp text for the alarm item in NVDA Tools menu.
 msgid "Allows you to schedule an alarm"
 msgstr "Позволяет установить таймер"
 
 #. Translators: Message presented in input help mode.
-#, fuzzy
 msgid ""
 "Speaks current time. If pressed twice quickly, speaks current date. If "
 "pressed three times quickly, reports the current day, the week number, the "
 "current year and the days remaining before the end of the year."
 msgstr ""
-"Сообщает текущее время. Если нажато дважды, сообщает текущую дату. Если "
-"нажато трижды, сообщает текущий день и номер недели в году, а также число "
-"дней, оставшихся перед концом года."
+"Произносит текущее время. При быстром нажатии дважды, произносится текущая "
+"дата. При быстром нажатии три раза сообщает текущий день, номер недели, "
+"текущий год и дни, оставшиеся до конца года."
 
 #, python-brace-format
 msgid "Day {day}, week {week} of {year}, remaining days {remain}."
@@ -160,16 +159,15 @@ msgstr "Звук остановлен"
 
 #. Translators: error message when attempting to open more than one alarm settings dialogs.
 msgid "Schedule alarms dialog is already open."
-msgstr ""
+msgstr "Диалоговое окно Расписание таймера уже открыто."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
 msgstr "Отображает диалоговое окно настроек часов."
 
 #. Translators: Message presented in input help mode.
-#, fuzzy
 msgid "Display schedule alarms dialog box."
-msgstr "Отображает диалоговое окно настроек таймера."
+msgstr "Отображает диалогового окна таймеров."
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Time display format:"
@@ -200,17 +198,14 @@ msgid "every hour"
 msgstr "каждый час"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
-#, fuzzy
 msgid "&Interval:"
-msgstr "&интервал:"
+msgstr "&Интервал:"
 
 #. Translators: This is a choice of the time report choices combo box.
-#, fuzzy
 msgid "message and sound"
 msgstr "речь и звук"
 
 #. Translators: This is a choice of the time report choices combo box.
-#, fuzzy
 msgid "message only"
 msgstr "только речь"
 
@@ -231,67 +226,56 @@ msgid "&Quiet hours"
 msgstr "&Тихий час"
 
 #. Translators: This is a choice of the quiet hours time format choices.
-#, fuzzy
 msgid "12-hour format"
-msgstr "Ввод в &24-часовом формате"
+msgstr "12-часовой формат"
 
 #. Translators: This is a choice of the quiet hours time format choices.
-#, fuzzy
 msgid "24-hour format"
-msgstr "Ввод в &24-часовом формате"
+msgstr "24-часовой формат"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
-#, fuzzy
 msgid "Quiet hours time &format:"
-msgstr "Время окончания тихого часа:"
+msgstr "Тихое время и формат часов:"
 
 #. Translators: This is the label for an group in the Clock settings dialog.
-#, fuzzy
 msgid "Quiet hours start time"
-msgstr "Время начала тихого часа:"
+msgstr "Время начала тихого часа"
 
 #. Translators: This is the label for an group in the Clock settings dialog.
-#, fuzzy
 msgid "Quiet hours end time"
-msgstr "Время окончания тихого часа:"
+msgstr "Время окончания тихого часа"
 
 #. Translators: the hour label in quiet hours group.
-#, fuzzy
 msgid "Hour:"
-msgstr "Часы"
+msgstr "Час:"
 
 #. Translators: the minute label in quiet hours group.
-#, fuzzy
 msgid "Minute:"
-msgstr "Минуты"
+msgstr "Минута:"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Schedule alarms"
-msgstr ""
+msgstr "Расписание таймера"
 
 #. Translators: This is an item of the alarm duration choices.
-#, fuzzy
 msgid "hours"
-msgstr "Часы"
+msgstr "часов"
 
 #. Translators: This is an item of the alarm duration choices.
-#, fuzzy
 msgid "minutes"
-msgstr "Минуты"
+msgstr "минут"
 
 #. Translators: This is an item of the alarm duration choices.
-#, fuzzy
 msgid "seconds"
-msgstr "0 секунд"
+msgstr "секунд"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
-#, fuzzy
 msgid "&Alarm duration in:"
-msgstr "Через какое время &сработает таймер:"
+msgstr "&Длительность таймера в:"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 msgid "&Duration:"
-msgstr ""
+msgstr "&Продолжительность:"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
@@ -361,7 +345,6 @@ msgstr "Сейчас {hours}:{minutes}:{seconds}"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-#, fuzzy
 msgid ""
 "An advanced clock and calendar for NVDA.\n"
 "NVDA+F12, get current time.\n"
@@ -370,13 +353,13 @@ msgid ""
 "number, the current year and the remaining days before the end of the year.\n"
 "For other instructions, press Add-on help button in add-ons manager."
 msgstr ""
-"Расширенные часы с календарём для NVDA.\n"
-"Нажмите NVDA + F12 для объявления текущего времени,\n"
-"дважды нажмите для объявления текущей даты,\n"
-"или трижды, чтобы получить день и номер недели в году, а также количество "
-"оставшихся дней до конца года.\n"
-"Для дополнительных инструкций, Нажмите на кнопку \"справка\" в управлении "
-"дополнениями."
+"Расширенные часы и календарь для NVDA.\n"
+"NVDA+F12, произносит текущее время.\n"
+"NVDA+F12 нажимается дважды быстро, получается текущая дата.\n"
+"NVDA+F12 нажато три раза быстро, сообщает текущий день, номер недели, "
+"текущий год и оставшиеся дни до конца года.\n"
+"Для получения других инструкций нажмите кнопку помощи по дополнениям в "
+"менеджере дополнений."
 
 #~ msgid "Clock se&ttings..."
 #~ msgstr "&Настройки часов..."

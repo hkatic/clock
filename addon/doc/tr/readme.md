@@ -41,11 +41,12 @@ istiyorsanız, özel komutlar eklemek için Girdi Hareketleri iletişim kutusunu
 kullanın. Bunu yapmak için NVDA menüsünü, Tercihler'i ve ardından Girdi
 Hareketlerini açın. Saat kategorisini genişletin, ardından aşağıdaki
 listeden atanmamış komutları bulun ve "Ekle"yi seçin, ardından kullanmak
-istediğiniz hareketi yapın.
+istediğiniz hareketi girin.
 
 * Bir sonraki alarmdan önce geçen ve kalan süre. bu harekete hızlıca iki kez
   basmak bir sonraki alarmı iptal edecektir.
 * Çalmakta olan alarm sesini durdurun.
+* Alarm ayarı iletişim kutusunu aç.
 
 ## Katman komutları
 
@@ -55,79 +56,47 @@ aşağıdaki tuşlardan birine basın:
 * S: Kronometreyi başlatır, sıfırlar veya durdurur
 * R: Kronometreyi yeniden başlatmadan sıfırlar
 * A: bir sonraki alarmdan önce kalan ve geçen süreyi verir
+* T: Alarm ayarı iletişim kutusunu açar.
 * C: Sonraki alarmı iptal eder
 * Boşluk: Geçerli kronometreyi veya geri sayım sayacını söyler
 * p: Bir alarm çok uzunsa, onu durdurmaya olanak tanır
 * H: Tüm katman komutlarını listeler. (Yardım)
 
-## kullanım
+## Yapılandırma ve kullanım
 
-* NVDA ayarlar iletişim kutusunda eklenti ile ilgili kategori altından
-  gerekli ayarları yapabilirsiniz.
+Saat işlevini yapılandırmak için NvDA menüsünü, Tercihler'i ve ardından
+Ayarlar'ı açın ve Saat panelinden aşağıdaki seçenekleri yapılandırın:
 
-    * Saat ayarı iletişim kutusunda, ilk iki seçim kutusu denetimi, tercih
-      ettiğiniz saat ve tarih görüntüleme biçimlerini seçmenize olanak
-      tanır.
-    * "saat anons Aralığı" etiketli seçim kutusu, otomatik zaman duyurusu
-      aralığını ayarlamanıza olanak tanır (Her 10 dakikada bir, Her 15
-      dakikada bir, Her 30 dakikada bir, Her saatte bir veya Kapalı);
-    * "saat anons" etiketli seçim kutusu denetimi (yalnızca Seçim Kutusu
-      aralığında "kapalı" seçeneği seçilmemişse görünür) otomatik saat
-      duyurusu çalışırken otomatik saat duyurusunun nasıl raporlanacağını
-      (Konuşma ve ses, Yalnızca konuşma veya Yalnızca ses) yapılandırmanıza
-      olanak tanır;
-    * "Saat zil sesi" etiketli seçim kutusu denetimi (yalnızca Birleşik
-      Giriş Kutusu aralığında "kapalı" seçeneği seçilmediğinde görünür)
-      otomatik zaman anonsu çalışırken çalınacak ve sesli olarak
-      bildirilecek çeşitli saat sesleri arasında seçim yapmanızı sağlar;
-    * "Sessiz saatler" etiketli Onay Kutusu denetimi (yalnızca Açılan Kutu
-      aralığında "kapalı" seçeneği seçili değilse görünür), otomatik zaman
-      duyurusunun gerçekleşmemesi gereken zaman aralığını yapılandırmanıza
-      olanak tanır;
-    * "24 saat biçiminde giriş" etiketli Onay Kutusu denetimi (yalnızca
-      sessiz saatler etkinleştirildiğinde görünür) sessiz saatler için 12
-      saatlik (A.M. veya P.M.) veya Avrupa 24 saatlik formatta zaman girmek
-      isteyip istemediğinizi yapılandırmanıza olanak tanır;
-    * Başlangıç ve bitiş zamanı için yazı alanı denetimleri (yalnızca sessiz
-      saatler etkinse görünür), sessiz saatler için zaman aralığını
-      yapılandırmanıza olanak tanır. "24 saatlik formatta giriş" onay kutusu
-      işaretliyse, saat SS:DD formatında girilmelidir, aksi takdirde aşağıda
-      açıklandığı gibi 12 saatlik bir format kullanmanız gerekir;
-    * Bittiğinde, Tamam düğmesine tıklayın ve ayarlarınızı kaydetmek için
-      Enter'a basarak etkinleştirin;
-    * Alarm kurma iletişim kutusunda, ilk seçim kutusu denetimi alarm
-      çalmadan önce tercih ettiğiniz geri sayım sayacını seçmenize olanak
-      tanır;
-    * Düzenleme kutusu kontrolü, alarm çalmadan önce beklediğiniz süreyi
-      yazmanıza olanak tanır. Bu süre ondalık sayı olarak değil, 1 veya daha
-      fazla basamakla belirtilmelidir;
-    * "Alarm sesi" etiketli seçim kutusu denetimi, alarm zamanı geldiğinde
-      çalınacak çeşitli alarm sesleri arasında seçim yapmanızı sağlar;
-    * Duraklat düğmesi, çok uzun alarmları duraklatmanıza/devam ettirmenize
-      olanak tanır;
-    * Durdur düğmesi, çok uzun alarmları durdurmanıza olanak tanır;
-    * Bittiğinde, Tamam düğmesine gidin ve Enter'a basarak
-      etkinleştirin. Alarmdan önceki bekleme süresini hatırlatmak için bir
-      mesaj görüntülenmelidir;
+* Saat ve tarih görüntüleme formatı: NVDA+F12'ye sırasıyla bir veya iki kez
+  hızlıca bastığınızda NVDA'nın saat ve tarihi nasıl duyuracağını
+  yapılandırmak için bu seçim kutularını kullanın.
+* Aralık: bu seçim kutusundan saat anons aralığını seçin (kapalı, her 10
+  dakikada bir, her 15 dakikada bir, her 30 dakikada bir veya her saat
+  başı).
+* Saat anonsu (aralık kapalı değilse etkinleştirilir): konuşma ve ses,
+  yalnızca ses veya yalnızca konuşma arasında seçim yapın.
+* Saat zil sesi (aralık kapalı değilse etkinleştirilir): saat zil sesini
+  seçin.
+* Sessiz saatler (aralık kapalı değilse etkinleştirilir): Otomatik saat
+  anonsunun yapılmaması gerektiğinde sessiz saatler aralığını yapılandırmak
+  için bu onay kutusunu işaretleyin.
+* Sessiz saat biçimi (sessiz saatler etkinse etkinleştirilir): sessiz saat
+  seçeneklerinin nasıl sunulacağını seçin (12 saatlik veya 24 saatlik
+  biçim).
+* Sessiz saatler başlangıçv e bitiş saatleri: Saat ve dakika seçim
+  kutularından sessiz saatler için saat ve dakika aralığını seçin.
 
-* Geçerli saati almak için NVDA+F12'ye bir kez, güncel tarihi almak için iki
-  kez veya geçerli günü, hafta numarasını ve mevcut yılın bitiminden önceki
-  kalan günleri almak için üç kez basın.
+Alarm programlamak için, NVDA menüsü, Araçlar'ı açın ve ardından Alarm
+ayarla'yı seçin. İletişim kutusu şunları içerir:
 
-## Sessiz saatler için kullanılacak sözdizimi
+* Alarm süre birimi: saat, dakika ve saniye arasında alarm/zamanlayıcı
+  süresini seçin.
+* Süre: yukarıda belirtilen birimde alarm süresini girin.
+* Alarm sesi: çalınacak alarm sesini seçin.
+* Durdur ve duraklat düğmeleri: uzun bir alarm sesini durdurun veya
+  duraklatın.
 
-1. Hatalardan kaçınmak için, sessiz saatler titiz ve kesin bir sözdizimi
-   izlemelidir;
-2. "24 saatlik formatta gir" onay kutusunu işaretlerseniz, format "SS:DD"
-   olmalıdır;
-3. "24 saatlik biçimde gir" onay kutusunun işaretini kaldırırsanız, biçim
-   "SS:DD ÖÖ" veya "SS:DD ÖÖ" olmalıdır, SS 0'dan 12 saatlik bir biçim
-   içermelidir 12'ye kadar ve "AM"|"PM" soneki küçük veya büyük harf
-   olabilir
-4. Sessiz saatler" onay kutusunu işaretlediğiniz halde "Sessiz saatler
-   başlangıç zamanı" veya "Sessiz saatler bitiş zamanı" alanını boş
-   tutarsanız veya yanlış bir değer girerseniz, "Sessiz saatler" onay
-   kutusunun işareti otomatik olarak kaldırılır , hataları önlemek için;
+Tamam'a bastığınızda şu anda seçilen alarm süresi  bildirilecektir.
 
 [[!tag dev stable]]
 
