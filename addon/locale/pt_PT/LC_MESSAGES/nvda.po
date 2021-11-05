@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Clock 18.12\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2018-12-12 08:31+0100\n"
-"PO-Revision-Date: 2021-10-14 18:23+0100\n"
+"PO-Revision-Date: 2021-10-30 19:23+0100\n"
 "Last-Translator: Ângelo Abrantes <ampa4374@gmail.com>\n"
 "Language-Team: Equipa Portuguesa do NVDA <ampa4374@gmail.com; rui."
 "fontes@tiflotecnia.com>\n"
@@ -106,12 +106,12 @@ msgstr "{0} parado."
 #. Translators: Message presented in input help mode.
 msgid "Speaks current stopwatch or count-down timer."
 msgstr ""
-"informa sobre o cronómetro actual ou fornece a contagem regressiva do "
+"Informa sobre o cronómetro actual ou fornece a contagem regressiva do "
 "cronómetro."
 
 #. Translators: Message presented in input help mode.
 msgid "Gives the remaining and elapsed time before the next alarm."
-msgstr "Anuncia o tempo decorrido e restante antes do próximo alarme"
+msgstr "Anuncia o tempo decorrido e restante antes do próximo alarme."
 
 #, python-brace-format
 msgid "Elapsed time {elapsed}, remaining time {remaining}."
@@ -122,7 +122,7 @@ msgstr "Sem alarme"
 
 #. Translators: Message presented in input help mode.
 msgid "Cancel the next alarm."
-msgstr "Cancelar o próximo alarme"
+msgstr "Cancelar o próximo alarme."
 
 msgid "Alarm cancelled"
 msgstr "Alarme cancelado"
@@ -147,7 +147,7 @@ msgstr "Lista os comandos disponíveis na camada de comando do relógio."
 
 #. Translators: Message presented in input help mode.
 msgid "Allows to check the next alarm. If pressed twice, cancels it."
-msgstr "Verifica o próximo alarme, duas vezes cancela-o"
+msgstr "Verifica o próximo alarme, duas vezes cancela-o."
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
@@ -169,7 +169,7 @@ msgstr "Mostra o diálogo de configurações do relógio."
 
 #. Translators: Message presented in input help mode.
 msgid "Display schedule alarms dialog box."
-msgstr "Mostra O diálogo de configuração de alarmes"
+msgstr "Mostra O diálogo de configuração de alarmes."
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Time display format:"
@@ -201,7 +201,7 @@ msgstr "cada hora"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Interval:"
-msgstr "&Intervalo"
+msgstr "&Intervalo:"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "message and sound"
@@ -213,7 +213,7 @@ msgstr "somente mensagem"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "sound only"
-msgstr "Apenas som"
+msgstr "apenas som"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Time &announcement:"
@@ -221,7 +221,7 @@ msgstr "&Anúncio da hora:"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Clock chime &sound:"
-msgstr "&Som da campainha do relógio"
+msgstr "&Som da campainha do relógio:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "&Quiet hours"
@@ -237,15 +237,15 @@ msgstr "Formato 24 horas"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Quiet hours time &format:"
-msgstr "&Formato do  Horário de silêncio"
+msgstr "&Formato do  Horário de silêncio:"
 
 #. Translators: This is the label for an group in the Clock settings dialog.
 msgid "Quiet hours start time"
-msgstr "Início das horas silenciosas:"
+msgstr "Início das horas silenciosas"
 
 #. Translators: This is the label for an group in the Clock settings dialog.
 msgid "Quiet hours end time"
-msgstr "Fim das horas silenciosas:"
+msgstr "Fim das horas silenciosas"
 
 #. Translators: the hour label in quiet hours group.
 msgid "Hour:"
@@ -253,7 +253,7 @@ msgstr "Hora:"
 
 #. Translators: the minute label in quiet hours group.
 msgid "Minute:"
-msgstr "Minuto;"
+msgstr "Minuto:"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Schedule alarms"
@@ -281,7 +281,7 @@ msgstr "&Duração:"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
-msgstr "&Som do alarme"
+msgstr "&Som do alarme:"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Stop"

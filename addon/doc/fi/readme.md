@@ -1,19 +1,20 @@
 # Kello ja kalenteri #
 
-* Authors: Hrvoje Katić, Abdel and NVDA contributors
-* Download [stable version][1]
-* Download [development version][2]
+* Tekijät: Hrvoje Katić, Abdel sekä muut NVDA-projektiin osallistujat;
+* Lataa [vakaa versio][1]
+* Lataa [kehitysversio][2]
 * Yhteensopivuus: NVDA 2019.3 ja uudemmat
 
 Tämä lisäosa lisää NVDA:han edistyneen kellon, ajastimen sekä kalenterin.
 
-You can configure NvDA to announce time and date in formats other than what
-Windows provides by default. Additionally, you can obtain the current day,
-week number, as well as the remaining days before the end of the current
-year, and you can also set automatic time announcement on specified
-interval. There's also a stopwatch and Alarm timer features built-in to the
-add-on that lets you time your tasks, such as copying files, installing
-programs, or cooking meals.
+Voit määrittää NVDA:n ilmoittamaan kellonajan ja päivämäärän muissa kuin
+Windowsin oletusarvoisesti tarjoamissa muodoissa. Lisäksi voit saada
+selville nykyisen päivän, viikon numeron sekä kuluvan vuoden jäljellä olevat
+päivät, ja voit myös ottaa käyttöön tietyin väliajoin tapahtuvan
+automaattisen kellonajan ilmoittamisen. Lisäosaan on sisäänrakennettu myös
+sekuntikello ja ajastin, jonka avulla voit mitata tehtäviesi, kuten
+tiedostojen kopioinnin, ohjelmien asentamisen tai aterioiden valmistuksen,
+keston.
 
 Huomautuksia
 
@@ -26,13 +27,13 @@ Huomautuksia
 
 ## Näppäinkomennot
 
-* NVDA+F12: puhu nykyinen kellonaika
-* NVDA+F12 kahdesti painettuna: puhu nykyinen päivämäärä
-* NVDA+F12 pressed three times quickly: reports the current day, the week
-  number, the current year and the remaining days before the end of the year
+* NVDA+F12: Puhu nykyinen kellonaika
+* NVDA+F12 kahdesti painettuna: Puhu nykyinen päivämäärä
+* NVDA+F12 kolmesti painettuna: Ilmoittaa nykyisen päivän, viikon numeron,
+  kuluvan vuoden sekä sen jäljellä olevat päivät
 * NVDA+Vaihto+F12: ota käyttöön kellon komentokerros
 
-## Unassigned commands
+## Määrittämättömät komennot
 
 Seuraavia komentoja ei ole oletusarvoisesti määritetty. Mikäli haluat
 määrittää ne, käytä Syötekomennot-valintaikkunaa haluamiesi komentojen
@@ -43,10 +44,10 @@ paina sitten syötekomentoa, jota haluat käyttää.
 
 * Kulunut ja jäljellä oleva aika ennen seuraavaa hälytystä. Tämän
   syötekomennon kahdesti painaminen peruuttaa seuraavan hälytyksen.
-* Keskeytä tällä hetkellä soiva hälytysääni.
+* Pysäytä tällä hetkellä soiva hälytysääni.
 * Näytä hälytysten ajastusvalintaikkuna.
 
-## Layered commands
+## Komentokerroksen komennot
 
 Käytä komentokerroskomentoja painamalla NVDA+Vaihto+F12 ja sitten jotakin
 seuraavista näppäimistä:
@@ -56,43 +57,49 @@ seuraavista näppäimistä:
 * A: Puhuu kuluneen ja jäljellä olevan ajan ennen seuraavaa hälytystä
 * T: Avaa hälytysten ajastusvalintaikkunan
 * C: Peruuta seuraava hälytys
-* Space: Speaks current stopwatch or count-down timer
-* p: If an alarm is too long, allows to stop it
-* H: List all layered commands (Help)
+* Välilyönti: Puhuu nykyisen sekuntikellon tai ajastimen
+* P: Lopettaa hälytyksen, mikäli se kestää liian kauan
+* H: Luetteloi kaikki komentokerroksen komennot
 
-## Configuration and usage
+## Määrittäminen ja käyttö
 
-To configure clock functionality, open NvDA menu, Preferences, then
-Settings, and configure the following options from Clock panel:
+Määritä kello siirtymällä NVDA-valikkoon, avaamalla Asetukset-alivalikko,
+valitsemalla Asetukset ja määrittämällä seuraavat asetukset
+Kello-paneelista:
 
-* Time and date display format: use these combo boxes to configure how NVDA
-  will announce time and date when you press NVDA+F12 once or twice quickly,
-  respectively.
-* Interval: choose the time announcement interval from this combo box (off,
-  every 10 minutes, 15 minutes, 30 minutes, or every hour).
-* Time announcement (enabled if interval is not off): choose between speech
-  and sound, sound only, or speech only.
-* Clock chime sound (enabled if interval is not off): select the clock chime
-  sound.
-* Quiet hours (enabled if interval is not off): select this checkbox to
-  configure quiet hours range when automatic time announcement should not
-  occur.
-* Quiet hours time format (enabled if quiet hours is enabled): select how
-  quiet hours options are presented (12-hour or 24-hour format).
-* Quiet hours start and end times: select hour and minute range for quiet
-  hours from hours and minutes combo boxes.
+* Kellonajan ja päivämäärän näyttömuoto: Määritä näistä yhdistelmäruuduista,
+  miten NVDA puhuu kellonajan ja päivämäärän painaessasi kerran tai kahdesti
+  NVDA+F12.
+* Aikaväli: Valitse tästä yhdistelmäruudusta kellonajan ilmoittamisen
+  aikaväli (pois käytöstä, 10 minuutin välein, 15 minuutin välein, 30
+  minuutin välein tai tunnin välein).
+* Kellonajan ilmoittaminen (käytössä, mikäli aikaväliksi ei ole määritetty
+  "pois käytöstä"): Valitse vaihtoehtojen puhe ja ääni, vain ääni tai vain
+  puhe väliltä.
+* Kellon ääni (käytössä, mikäli aikaväliksi ei ole määritetty "pois
+  käytöstä"): Valitse kellon ääni.
+* Hiljaiset tunnit (käytössä, mikäli aikaväliksi ei ole määritetty "pois
+  käytöstä"): Valitse tämä valintaruutu määrittääksesi hiljaiset tunnit,
+  joiden aikana automaattinen kellonajan puhuminen ei ole käytössä.
+* Hiljaisten tuntien ajan muoto (käytössä, mikäli hiljaiset tunnit ovat
+  käytössä): Valitse, miten hiljaisten tuntien vaihtoehdot näytetään (12
+  tunnin tai 24 tunnin muoto).
+* Hiljaisten tuntien alkamis- ja päättymisajat: Valitse tunnit- ja
+  minuutit-yhdistelmäruuduista hiljaisten tuntien alkamis- ja päättymisaika.
 
-To schedule alarms, open NVDA menu, Tools, then select Schedule Alarms. The
-dialog contents include:
+Ajasta hälytyksiä menemällä NVDA-valikkoon, Avaamalla Työkalut-alivalikon ja
+valitsemalla sitten Ajasta hälytyksiä. Valintaikkunassa ovat käytettävissä
+seuraavat vaihtoehdot:
 
-* Alarm duration in: select alarm/timer duration between hours, minutes, and
-  seconds.
-* Duration: enter alarm duration in the unit specified above.
-* Alarm sound: select the alarm sound to be played.
-* Stop and pause buttons: stop or pause a long alarm sound.
+* Hälytyksen keston yksikkö: Valitse hälytyksen/ajastimen kesto tuntien,
+  minuuttien ja sekuntien väliltä.
+* Kesto: Anna hälytyksen kesto yllä mainitussa yksikössä.
+* Hälytysääni: Valitse soitettava hälytysääni.
+* Lopeta- ja pysäytä-painikkeet: Lopeta tai pysäytä pitkän hälytysäänen
+  soittaminen.
 
-Click OK, and a message will inform you the curretnly selected alarm
-duration.
+Paina OK, jonka jälkeen näytetään nykyisen hälytyksen keston kertova
+ilmoitus.
 
 [[!tag dev stable]]
 
