@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Clock 18.12\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2018-12-12 08:31+0100\n"
-"PO-Revision-Date: 2021-10-30 19:23+0100\n"
+"PO-Revision-Date: 2021-11-11 05:53-0800\n"
 "Last-Translator: Ângelo Abrantes <ampa4374@gmail.com>\n"
 "Language-Team: Equipa Portuguesa do NVDA <ampa4374@gmail.com; rui."
 "fontes@tiflotecnia.com>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 1.8.9\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -360,135 +360,3 @@ msgstr ""
 "actual ou pressione três vezes para obter o dia e a semana do ano actual.\n"
 "Para outras instruções, pressione o botão de ajuda do extra no gestor de "
 "extras\"."
-
-#~ msgid "Clock se&ttings..."
-#~ msgstr "Configurações do &Relógio..."
-
-#~ msgid "Clock and calendar setup"
-#~ msgstr "Configuração do relógio e do calendário"
-
-#~ msgid "Clock setup"
-#~ msgstr "Configurações do relógio:"
-
-#~ msgid "Clock setup for times and dates"
-#~ msgstr "Configuração do relógio para a data e hora"
-
-#~ msgid "Alarm settin&gs"
-#~ msgstr "Configurações do &alarme"
-
-#~ msgid ""
-#~ "The value you entered for your quiet hours is erroneous, for a 24-hour "
-#~ "format, the value must be HH:MM, for a 12-hour format, the value must be "
-#~ "HH:MM followed by the AM or PM suffix, please reread the documentation. "
-#~ "So your quiet hours have been deactivated for prevent any error in the "
-#~ "configuration file."
-#~ msgstr ""
-#~ "O valor digitado para as suas horas de silêncio é incorrecto; para um "
-#~ "formato de 24 horas, o valor deve ser HH:MM, para um formato de 12 horas, "
-#~ "o valor deve ser HH:MM seguido do sufixo AM ou PM, por favor, volte a ler "
-#~ "a documentação. Por esse motivo, as suas horas de silêncio foram "
-#~ "desactivadas para evitar qualquer erro no ficheiro de configuração."
-
-#~ msgid "Error"
-#~ msgstr "erro"
-
-#~ msgid "Alarm setup"
-#~ msgstr "Configuração do alarme:"
-
-#~ msgid "Seconds"
-#~ msgstr "Segundos"
-
-#~ msgid "Choose the type of timer &inputs before the alarm rings:"
-#~ msgstr "Escolha o tipo de entrada antes do alarme tocar"
-
-#~ msgid ""
-#~ "\n"
-#~ "\t\tS: Starts, resets or stops the stopwatch.\n"
-#~ "\t\tR: Resets stopwatch to 0 without restarting it.\n"
-#~ "\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
-#~ "\t\tC: Cancel the next alarm.\n"
-#~ "\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
-#~ "\t\tH: List all layered commands (Help).\n"
-#~ "\t\t"
-#~ msgstr ""
-#~ "\n"
-#~ "S: Inicia, pára ou reinicia o cronómetro.\n"
-#~ "R: Redefine o cronómetro sem começar de novo.\n"
-#~ "Barra de espaço: fala o cronómetro actual ou o cronómetro de contagem "
-#~ "regressiva.\n"
-#~ "\t\tH: Lista todos os comandos em camada (Help).\n"
-#~ "\t\t"
-
-#~ msgid "Auto announce &interval:"
-#~ msgstr "Intervalo do anúncio automático:"
-
-#~ msgid "%d hour, "
-#~ msgstr "%d hora, "
-
-#~ msgid "%d minute, "
-#~ msgstr "%d minuto, "
-
-#~ msgid "%s second"
-#~ msgstr "%s segundo"
-
-#~ msgid "It's mm past H"
-#~ msgstr "São H e mm"
-
-#~ msgid "hh mm min"
-#~ msgstr "hh mm min"
-
-#~ msgid "hh mm min ss sec"
-#~ msgstr "hh h, mm min, ss seg"
-
-#~ msgid "It's H:mm"
-#~ msgstr "São H:mm"
-
-#~ msgid "It's HH:mm:ss"
-#~ msgstr "são HH:mm:ss"
-
-#~ msgid "%H h, %M min"
-#~ msgstr "%H h, %M min"
-
-#~ msgid "%H:%M:%S"
-#~ msgstr "%H:%M:%S"
-
-#~ msgid "%H:%M"
-#~ msgstr "%H:%M"
-
-#~ msgid "It's %I:%M %p"
-#~ msgstr "São %I:%M %p"
-
-#~ msgid "It's %I:%M:%S %p"
-#~ msgstr "São %I:%M:%S %p"
-
-#~ msgid "%I:%M %p"
-#~ msgstr "%I:%M %p"
-
-#~ msgid "%I:%M:%S %p"
-#~ msgstr "%I:%M:%S %p"
-
-#~ msgid "%A, %B %d, %Y"
-#~ msgstr "%A, %B %d, %Y"
-
-#~ msgid "%Y-%d-%m"
-#~ msgstr "%Y-%d-%m"
-
-#, fuzzy
-#~| msgid "%d-%m-%Y"
-#~ msgid "%Y-%m-%d"
-#~ msgstr "%d-%m-%Y"
-
-#~ msgid "%d-%m-%Y"
-#~ msgstr "%d-%m-%Y"
-
-#~ msgid "%m-%d-%Y"
-#~ msgstr "%m-%d-%Y"
-
-#~ msgid "%m/%d/%Y"
-#~ msgstr "%m/%d/%Y"
-
-#~ msgid "%d/%m/%Y"
-#~ msgstr "%d/%m/%Y"
-
-#~ msgid "Day %j, week %W of %Y."
-#~ msgstr "Dia %j, semana %W de %Y."

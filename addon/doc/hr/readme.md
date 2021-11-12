@@ -1,91 +1,98 @@
 # Sat i kalendar, dodatak za NVDA #
 
-* Authors: Hrvoje Katić, Abdel and NVDA contributors
-* Download [stable version][1]
-* Download [development version][2]
-* NVDA compatibility: 2019.3 and beyond
+* Autori: Hrvoje Katić, Abdel i NVDA suradnici
+* Preuzmi [stabilnu verziju][1]
+* Preuzmi [razvojnu verziju][2]
+* NVDA kompatibilnost: 2019.3 i nadalje
 
-This add-on enables the advanced clock, alarm timer and calendar
-functionality for NVDA.
+Ovaj dodatak omogućuje funkcionalnosti za napredni sat, postavljanje alarma
+i kalendar za NVDA.
 
-Umjesto dobivanja podataka za vrijeme i datum od Windowsa, moguće je
-prilagoditi način izgovora i prikaza na brajičnom retku za vrijeme i datum
-putem NVDA.
+You can configure NvDA to announce time and date in formats other than what
+Windows provides by default. Additionally, you can obtain the current day,
+week number, as well as the remaining days before the end of the current
+year, and you can also set automatic time announcement on specified
+interval. There's also a stopwatch and Alarm timer features built-in to the
+add-on that lets you time your tasks, such as copying files, installing
+programs, or cooking meals.
 
-Osim toga je moguće saznati trenutačni dan, broj tjedna i broj preostalih
-dana tekuće godine. Može se postaviti i automatska najava vremena u
-određenim intervalima.
+Napomene:
 
-There's also a stopwatch and Alarm timer features built-in to the add-on
-that lets you time your tasks, such as copying files, installing programs,
-or cooking meals.
-
-## Napomena:
-
-Ako se dodatak instalira kao nadogradnja, tijekom instalacije čarobnjak
-otkriva je li stara konfiguracija kompatibilna s novom i nudi mogućnost za
-njeno ispravljanja prije instalacije. To se jednostavno potvrđuje gumbom „U
-redu”.
-
-## Primjena
-
-*	Open the configuration dialog for this add-on from NVDA Settings dialog.
-	*	In the Clock setup panel, the first two Combo Box controls allow you to choose your prefered time and date display formats.
-	*	The Combo Box control labeled "Interval" allows you to set the interval for automatic time announcement (Every 10 minutes, Every 15 minutes, Every 30 minutes, Every hour, or Off).
-	*	The Combo Box control labeled "Time announcement" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure how the automatic time announcement should be reported (Speech and sound, Speech only, or Sound only) when automatic time announcement is working.
-	*	The Combo box control labeled "Clock chime sound" (only visible if the choice "off" is not selected in the interval Combo Box) lets you choose between various clock sounds that will be played when automatic time announcement is working and reported with sound.
-	*	The Checkbox control labeled "Quiet hours" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure time range when automatic time announcement shouldn't occur.
-	*	The Checkbox control labeled "input in 24-hour format" (only visible if quiet hours are enabled) allows you to configure whether you want to input time for quiet hours in 12-hour (A.M. or P.M.), or european 24-hour format.
-	*	The Edit box controls for start and end time (only visible if quiet hours are enabled) let you configure time range for quiet hours. The time should be entered in HH:MM format if the "input in 24-hour format" checkbox is checked, otherwise you must use a 12 hour format as described below.
-	*	When done, tab to the OK button and activate it by pressing Enter to save your settings.
-	*	In the Alarm setup dialog, the first Combo Box control allow you to choose your prefered countdown timer before the alarm ring.
-	*	The Edit box control lets you type your time waiting before the alarm ring. This duration must be specified in 1 or more digits, not a decimal number.
-	*	The Combo box control labeled "Alarm sound" lets you choose between various alarm sounds that will be played when the alarm time arrives.
-	*	The pause button allows you to pause/resume too long alarms.
-	*	The stop button allows you to stop too long alarms.
-	*	When done, tab to the OK button and activate it by pressing Enter. A message should be displayed to remind you of the waiting time before the alarm.
-*	Press NVDA+F12 once to get current time, twice to get current date, or three times to get the current day, week number, as well as the remaining days before the end of the current year.
+* Ako se dodatak instalira kao nadogradnja, tijekom instalacije čarobnjak
+  otkriva je li stara konfiguracija kompatibilna s novom i nudi mogućnost za
+  njeno ispravljanja prije instalacije. To se jednostavno potvrđuje gumbom
+  „U redu”.
+* U sustavu Windows 10 i novijim, možeš koristiti aplikaciju Alarmi i sat za
+  upravljanje štopericom i mjeračima vremena.
 
 ## Tipkovničke naredbe
 
-* NVDA+F12: get current time
-* NVDA+F12 pressed twice quickly: get current date
-* NVDA+F12 pressed three times quickly: reports the current day, the week
-  number, the current year and the remaining days before the end of the
-  year.
-* There is a script that gives the remaining and elapsed time before the
-  next alarm. There is no keyboard gesture assigned to this script, you will
-  have to do it yourself in the "Input gestures" dialog box, in the "Clock"
-  category. pressing this gesture twice quickly will cancel the next alarm.
-* There is another script to stop the sound that is currently playing, its
-  gesture is also not defined. That script can also be called using the
-  clock layer commands described below.
+* NVDA+F12: saznaj trenutačno vrijeme
+* Pritisni NVDA+F12 dvaput brzo: saznaj trenutačni datum
+* Pritisni NVDA+F12 triput brzo: izvještava o trenutačnom danu, broju
+  tjedna, tekućoj godini i o danima koji su preostali do kraja godine
+* NVDA+Shift+F12: uđi u sloj sata
+
+## Nedodijeljene naredbe
+
+The following commands are not assigned by default; if you wish to assign
+them, use Input Gestures dialog to add custom commands. To do so, open NVDA
+menu, Preferences, then Input Gestures. Expand Clock category, then locate
+unassigned commands from the list below and select "Add", then enter the
+gesture you wish to use.
+
+* Elapsed and remaining time before the next alarm. pressing this gesture
+  twice quickly will cancel the next alarm.
+* Zaustavi trenutačnu reprodukciju zvuka alarma.
+* Prikaži dijaloški okvir zakazanih alarma.
 
 ## Višeslojne naredbe
 
 Za korištenje višeslojnih naredbi, pritisni NVDA+šift+F12 i zatim jednu od
 sljedećih tipki:
 
-* S: Pokreće, zaustavlja ili resetira štopericu;
-* R: Resetira štopericu na nulu bez ponovnog pokretanja;
-* A: Izdaje proteklo vrijeme i preostalo vrijeme prije sljedećeg alarma;
-* C: Otkaži sljedeći alarm;
-* Razmaknica: Izgovara trenutačno stanje štoperice ili odbrojavanja vremena;
-* p: Ako alarm traje predugo, dozvoli ga zaustaviti;
-* H: Popis svih višeslojnih prečaca (Pomoć).
+* S: Pokreće, resetira ili zaustavlja štopericu
+* R: Resetira štopericu na nulu bez ponovnog pokretanja
+* A: Izdaje proteklo vrijeme i preostalo vrijeme prije sljedećeg alarma
+* T: Otvara dijalog za zakazivanje alarma.
+* C: Otkaži sljedeći alarm
+* Razmaknica: Izgovara trenutačno stanje štoperice ili odbrojavanja vremena
+* p: Ako alarm traje predugo, može ga se zaustaviti
+* H: Popis svih višeslojnih prečaca (Pomoć)
 
-## Sintaksa za sate mirovanja
+## Configuration and usage
 
-* To avoid bugs, the quiet hours must follow a rigorous and precise syntax.
-* If you check the "Input in 24-hour format" checkbox, the format must be
-  "HH:MM".
-* If you uncheck the "Input in 24-hour format" checkbox, the format must be
-  "HH:MM AM" or "HH:MM PM", the HH must contain a 12-hour format, from 0 to
-  12 and the "AM"|"PM" suffix can be in lowercase or uppercase.
-* If you check the Quiet hours" checkbox and keep the "Quiet hours start
-  time" or "Quiet hours end time" field empty, or type a mistaken value, the
-  "Quiet hours" checkbox will be unchecked automatically to avoid errorss
-  and a message will be displayed.
+To configure clock functionality, open NvDA menu, Preferences, then
+Settings, and configure the following options from Clock panel:
+
+* Time and date display format: use these combo boxes to configure how NVDA
+  will announce time and date when you press NVDA+F12 once or twice quickly,
+  respectively.
+* Interval: choose the time announcement interval from this combo box (off,
+  every 10 minutes, 15 minutes, 30 minutes, or every hour).
+* Time announcement (enabled if interval is not off): choose between speech
+  and sound, sound only, or speech only.
+* Clock chime sound (enabled if interval is not off): select the clock chime
+  sound.
+* Quiet hours (enabled if interval is not off): select this checkbox to
+  configure quiet hours range when automatic time announcement should not
+  occur.
+* Quiet hours time format (enabled if quiet hours is enabled): select how
+  quiet hours options are presented (12-hour or 24-hour format).
+* Quiet hours start and end times: select hour and minute range for quiet
+  hours from hours and minutes combo boxes.
+
+To schedule alarms, open NVDA menu, Tools, then select Schedule Alarms. The
+dialog contents include:
+
+* Alarm duration in: select alarm/timer duration between hours, minutes, and
+  seconds.
+* Duration: enter alarm duration in the unit specified above.
+* Alarm sound: select the alarm sound to be played.
+* Gumbovi „Prekid” i „Pauza”: prekini ili pauziraj duge alarme.
+
+Pritisni U redu i poruka će te obavijestiti o trenutačno odabranom trajanju
+alarma.
 
 [[!tag dev stable]]
 

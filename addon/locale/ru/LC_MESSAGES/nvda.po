@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: Clock 18.12dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2018-12-15 18:53+0100\n"
-"PO-Revision-Date: 2021-10-27 14:59+0200\n"
+"PO-Revision-Date: 2021-11-11 05:53-0800\n"
 "Last-Translator: zvonimir stanecic <zvonimirek222@yandex.com>\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 1.8.9\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
@@ -360,135 +360,3 @@ msgstr ""
 "текущий год и оставшиеся дни до конца года.\n"
 "Для получения других инструкций нажмите кнопку помощи по дополнениям в "
 "менеджере дополнений."
-
-#~ msgid "Clock se&ttings..."
-#~ msgstr "&Настройки часов..."
-
-#~ msgid "Clock and calendar setup"
-#~ msgstr "Настройки часов и календаря"
-
-#~ msgid "Clock setup"
-#~ msgstr "Настройки часов"
-
-#~ msgid "Clock setup for times and dates"
-#~ msgstr "Настройки даты и времени"
-
-#~ msgid "Alarm settin&gs"
-#~ msgstr "&Настройки таймера"
-
-#~ msgid ""
-#~ "The value you entered for your quiet hours is erroneous, for a 24-hour "
-#~ "format, the value must be HH:MM, for a 12-hour format, the value must be "
-#~ "HH:MM followed by the AM or PM suffix, please reread the documentation. "
-#~ "So your quiet hours have been deactivated for prevent any error in the "
-#~ "configuration file."
-#~ msgstr ""
-#~ "Значение ваши тихих часов - ошибочное, для 24-часового формата, значение "
-#~ "должно выглядет как HH:MM, но для 12-часового формата, значение должно "
-#~ "выглядет как HH:MM с суффиксом AM/PM после чисел, Пожалуйста, прочитайте "
-#~ "документацию. Ваши тихие часы выключены, чтобы избежать ошибки в "
-#~ "конфигурации."
-
-#~ msgid "Error"
-#~ msgstr "Ошибка"
-
-#~ msgid "Alarm setup"
-#~ msgstr "Настройки таймера"
-
-#~ msgid "Seconds"
-#~ msgstr "Секунды"
-
-#~ msgid "Choose the type of timer &inputs before the alarm rings:"
-#~ msgstr "Выберите единицу времени, через которую сработает &таймер:"
-
-#~ msgid ""
-#~ "\n"
-#~ "\t\tS: Starts, resets or stops the stopwatch.\n"
-#~ "\t\tR: Resets stopwatch to 0 without restarting it.\n"
-#~ "\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
-#~ "\t\tC: Cancel the next alarm.\n"
-#~ "\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
-#~ "\t\tH: List all layered commands (Help).\n"
-#~ "\t\t"
-#~ msgstr ""
-#~ "\n"
-#~ "\t\tS: Запускает, останавливает или сбрасывает и перезапускает "
-#~ "секундомер.\n"
-#~ "\t\tR: Сбрасывает секундомер без последующего его запуска.\n"
-#~ "\t\tA: Показывает информацию о следующем таймере.\n"
-#~ "\t\tC: отменяет следующий таймер.\n"
-#~ "\t\tПробел: сообщает текущее время секундомера или таймера обратного "
-#~ "отсчёта.\t\tH: показывает список всех команд в группе.\n"
-#~ "\t\t"
-
-#~ msgid "Auto announce &interval:"
-#~ msgstr "&Интервал автооповещения времени:"
-
-#~ msgid "%d hour, "
-#~ msgstr "%d час, "
-
-#~ msgid "%d minute, "
-#~ msgstr "%d минута, "
-
-#~ msgid "%s second"
-#~ msgstr "%s секунда"
-
-#~ msgid "It's mm past H"
-#~ msgstr "Сейчас mm без H"
-
-#~ msgid "hh mm min"
-#~ msgstr "hh mm мин"
-
-#~ msgid "hh mm min ss sec"
-#~ msgstr "hh mm мин ss сек"
-
-#~ msgid "It's H:mm"
-#~ msgstr "Сейчас H:mm"
-
-#~ msgid "It's HH:mm:ss"
-#~ msgstr "Сейчас HH:mm:ss"
-
-#~ msgid "%H h, %M min"
-#~ msgstr "%H час, %M мин"
-
-#~ msgid "%H h, %M min, %S sec"
-#~ msgstr "%H час, %M мин, %S сек"
-
-#~ msgid "%H:%M:%S"
-#~ msgstr "%H:%M:%S"
-
-#~ msgid "%H:%M"
-#~ msgstr "%H:%M"
-
-#~ msgid "It's %I:%M %p"
-#~ msgstr "Сейчас %I:%M %p"
-
-#~ msgid "It's %I:%M:%S %p"
-#~ msgstr "Сейчас %I:%M:%S %p"
-
-#~ msgid "%I:%M %p"
-#~ msgstr "%I:%M %p"
-
-#~ msgid "%I:%M:%S %p"
-#~ msgstr "%I:%M:%S %p"
-
-#~ msgid "%A, %B %d, %Y"
-#~ msgstr "%A, %B %d, %Y"
-
-#~ msgid "%Y-%d-%m"
-#~ msgstr "%Y-%d-%m"
-
-#~ msgid "%Y-%m-%d"
-#~ msgstr "%Y-%m-%d"
-
-#~ msgid "%d-%m-%Y"
-#~ msgstr "%d-%m-%Y"
-
-#~ msgid "%m-%d-%Y"
-#~ msgstr "%m-%d-%Y"
-
-#~ msgid "%m/%d/%Y"
-#~ msgstr "%m/%d/%Y"
-
-#~ msgid "%d/%m/%Y"
-#~ msgstr "%d/%m/%Y"

@@ -5,18 +5,17 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: clock 18.12\n"
+"Project-Id-Version: clock\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2019-02-01 05:26+0800\n"
+"PO-Revision-Date: 2021-11-11 05:55-0800\n"
 "Last-Translator: dingpengyu <dingpengyu06@gmail.com>\n"
-"Language-Team: NVDASimplified Chinese team All volunteers <Copyright (C) "
-"2010-2019>\n"
+"Language-Team: cary-rowen <manchen_0528@outlook.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 1.8.9\n"
 
 #. Translators: the label of a message box dialog.
 msgid ""
@@ -25,7 +24,7 @@ msgid ""
 "confirm these corrections"
 msgstr ""
 "您使用的日期和时间格式与此版本的时钟插件不兼容，这将在安装过程中得到修复。单"
-"击“确认”以确定这些修复"
+"击“确认”以进行修复。"
 
 #. Translators: the title of a message box dialog.
 msgid "Time and date format corrections"
@@ -56,41 +55,40 @@ msgstr "时钟"
 
 #. Translators: The name of the alarm item in NVDA Tools menu.
 msgid "Schedule a&larms..."
-msgstr ""
+msgstr "设置提醒(&A)..."
 
 #. Translators: The tooltyp text for the alarm item in NVDA Tools menu.
 msgid "Allows you to schedule an alarm"
-msgstr "允许安排闹钟"
+msgstr "可以设置倒计时提醒"
 
 #. Translators: Message presented in input help mode.
-#, fuzzy
 msgid ""
 "Speaks current time. If pressed twice quickly, speaks current date. If "
 "pressed three times quickly, reports the current day, the week number, the "
 "current year and the days remaining before the end of the year."
 msgstr ""
-"读出当前时间。快速按两次，读出当前日期。快速按三次，则朗读当前日期，周数，当"
-"前年份和年底前剩余天数。"
+"读出当前时间。连按两次，读出当前日期。连按三次，读出当前日期，周数，当前年份"
+"和本年剩余天数。"
 
 #, python-brace-format
 msgid "Day {day}, week {week} of {year}, remaining days {remain}."
-msgstr "天{day} ,周{week} 年 {year}, 剩于天数 {remain}。"
+msgstr "{year}年，已经过去{day}天，{week}周，剩于{remain}天。"
 
 #. Translators: Message presented in input help mode.
 msgid ""
 "Clock and calendar layer commands. After pressing this keystroke, press H "
 "for additional help."
-msgstr "时钟和日历层命令。按下此键后，按H获取帮助。"
+msgstr "时钟命令面板：按下该键，随后按字母 H 获取帮助信息。"
 
 #. Translators: Message presented in input help mode.
 msgid "Starts, resets or stops the stopwatch."
-msgstr "启动,重置或停止秒表。"
+msgstr "启动、重置或停止秒表。"
 
 msgid "Reset. Running."
-msgstr "重启。运行。"
+msgstr "重置。开始。"
 
 msgid "Running."
-msgstr "运行。"
+msgstr "开始"
 
 #, python-brace-format
 msgid "{0} stopped."
@@ -98,68 +96,67 @@ msgstr "{0} 停止。"
 
 #. Translators: Message presented in input help mode.
 msgid "Speaks current stopwatch or count-down timer."
-msgstr "读出当前的秒表或计时器。"
+msgstr "读出当前秒表或上次计时器的时间。"
 
 #. Translators: Message presented in input help mode.
 msgid "Gives the remaining and elapsed time before the next alarm."
-msgstr "给出下一次闹钟剩余时间。"
+msgstr "读出距离下依次提醒的剩余时间。"
 
 #, python-brace-format
 msgid "Elapsed time {elapsed}, remaining time {remaining}."
-msgstr "已经过去 {elapsed}, 还剩 {remaining}."
+msgstr "已过去 {elapsed}, 还剩 {remaining}."
 
 msgid "No alarm"
-msgstr "无闹钟"
+msgstr "无提醒"
 
 #. Translators: Message presented in input help mode.
 msgid "Cancel the next alarm."
-msgstr "跳过下一个闹钟。"
+msgstr "取消下一个提醒。"
 
 msgid "Alarm cancelled"
-msgstr "取消闹钟"
+msgstr "已取消提醒"
 
 #. Translators: Message presented in input help mode.
 msgid "Resets stopwatch to 0 without restarting it."
-msgstr "将秒表重置为0而不重新启动。"
+msgstr "重置秒表但不重新开始。"
 
 msgid ""
 "The stopwatch is already reset to 0. Use the clock layer command followed by "
 "s to start it."
-msgstr "秒表已经重置为0。使用时钟层命令s可启动。"
+msgstr "秒表已经重置为 0。在时钟命令面板按s可启动。"
 
 msgid "Stopwatch reset."
 msgstr "秒表重置。"
 
 #. Translators: Message presented in input help mode.
 msgid "Lists available commands in clock command layer."
-msgstr "列出时钟命令层中的可用命令。"
+msgstr "读出时钟命令面板中的可用命令。"
 
 #. Translators: Message presented in input help mode.
 msgid "Allows to check the next alarm. If pressed twice, cancels it."
-msgstr "允许检查下一个闹钟。如果按两次，则取消。"
+msgstr "查看下一个提醒，连按两次取消。"
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
-msgstr "如果闹铃太长，则允许停止闹铃。"
+msgstr "停止响铃（如果响铃时间过长）"
 
 msgid "No sound is launched."
-msgstr "没有声音发出。"
+msgstr "不播放声音"
 
 msgid "Sound stopped"
 msgstr "声音停止"
 
 #. Translators: error message when attempting to open more than one alarm settings dialogs.
 msgid "Schedule alarms dialog is already open."
-msgstr ""
+msgstr "提醒设置对话框已打开。"
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
 msgstr "显示时钟设置对话框。"
 
 #. Translators: Message presented in input help mode.
-#, fuzzy
 msgid "Display schedule alarms dialog box."
-msgstr "显示闹钟设置对话框。"
+msgstr "显示提醒设置对话框"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Time display format:"
@@ -175,32 +172,29 @@ msgstr "关闭"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "every 10 minutes"
-msgstr "每10分钟一次"
+msgstr "10分钟"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "every 15 minutes"
-msgstr "每15分钟一次"
+msgstr "15分钟"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "every 30 minutes"
-msgstr "每30分钟一次"
+msgstr "30 分钟"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "every hour"
-msgstr "每隔一小时"
+msgstr "1 小时"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
-#, fuzzy
 msgid "&Interval:"
-msgstr "间隔(&I):"
+msgstr "报时间隔(&I):"
 
 #. Translators: This is a choice of the time report choices combo box.
-#, fuzzy
 msgid "message and sound"
-msgstr "合成器和音效"
+msgstr "语音和音效"
 
 #. Translators: This is a choice of the time report choices combo box.
-#, fuzzy
 msgid "message only"
 msgstr "只有语音"
 
@@ -210,7 +204,7 @@ msgstr "只有音效"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Time &announcement:"
-msgstr "时钟和通知(&A):"
+msgstr "报时方式(&A):"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Clock chime &sound:"
@@ -218,87 +212,76 @@ msgstr "时钟铃声(&S):"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "&Quiet hours"
-msgstr "夜间模式设置(&Q)"
+msgstr "设置免打扰时段(&H)"
 
 #. Translators: This is a choice of the quiet hours time format choices.
-#, fuzzy
 msgid "12-hour format"
-msgstr "以24小时格式显示(&2)"
+msgstr "12 小时制"
 
 #. Translators: This is a choice of the quiet hours time format choices.
-#, fuzzy
 msgid "24-hour format"
-msgstr "以24小时格式显示(&2)"
+msgstr "24 小时制"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
-#, fuzzy
 msgid "Quiet hours time &format:"
-msgstr "夜间模式结束时间："
+msgstr "免打扰时段时间格式:"
 
 #. Translators: This is the label for an group in the Clock settings dialog.
-#, fuzzy
 msgid "Quiet hours start time"
-msgstr "夜间模式开始时间："
+msgstr "免打扰时段开始"
 
 #. Translators: This is the label for an group in the Clock settings dialog.
-#, fuzzy
 msgid "Quiet hours end time"
-msgstr "夜间模式结束时间："
+msgstr "免打扰时段结束"
 
 #. Translators: the hour label in quiet hours group.
-#, fuzzy
 msgid "Hour:"
-msgstr "小时"
+msgstr "时:"
 
 #. Translators: the minute label in quiet hours group.
-#, fuzzy
 msgid "Minute:"
-msgstr "分钟"
+msgstr "分:"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Schedule alarms"
-msgstr ""
+msgstr "设置提醒"
 
 #. Translators: This is an item of the alarm duration choices.
-#, fuzzy
 msgid "hours"
 msgstr "小时"
 
 #. Translators: This is an item of the alarm duration choices.
-#, fuzzy
 msgid "minutes"
 msgstr "分钟"
 
 #. Translators: This is an item of the alarm duration choices.
-#, fuzzy
 msgid "seconds"
-msgstr "0 秒"
+msgstr "秒"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
-#, fuzzy
 msgid "&Alarm duration in:"
-msgstr "&闹钟间隔时间:"
+msgstr "倒计时单位:"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 msgid "&Duration:"
-msgstr ""
+msgstr "倒计时时间(&D):"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
-msgstr "闹铃声(&L):"
+msgstr "铃声(&L):"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Stop"
-msgstr "&停止"
+msgstr "停止(&S)"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Pause"
-msgstr "&暂停"
+msgstr "暂停(&P)"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
 #, python-brace-format
 msgid "You've chosen an alarm to be triggered in {tm} {unit}"
-msgstr "您已选择在{tm} {unit}中触发闹钟"
+msgstr "将在 {tm} {unit} 后提醒您。"
 
 #. Translators: The title of the dialog which appears when the user has chosen to trigger an alarm.
 msgid "Confirmation"
@@ -307,17 +290,17 @@ msgstr "确认"
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {hours} o'clock and {minutes} minutes"
-msgstr "现在 {hours} 点  {minutes} 分"
+msgstr "现在是 {hours}点 {minutes}分"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {hours} o'clock, {minutes} minutes and {seconds} seconds"
-msgstr "现在{hours} 点, {minutes} 分 {seconds} 秒"
+msgstr "现在是 {hours}点, {minutes}分, {seconds}秒"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "{hours} o'clock, {minutes} minutes"
-msgstr "{hours} ,点 {minutes} 分"
+msgstr "{hours} 点, {minutes} 分"
 
 #. Translators: A time formating.
 #, python-brace-format
@@ -327,31 +310,30 @@ msgstr "{hours} 点, {minutes} 分, {seconds} 秒"
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {minutes} past {hours}"
-msgstr "{hours} ,点 {minutes} 分"
+msgstr "现在是 {hours}点 {minutes}分"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "{hours} h {minutes} min"
-msgstr "{hours} 点 {minutes} 分"
+msgstr "{hours}点 {minutes}分"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "{hours} h, {minutes} min, {seconds} sec"
-msgstr "{hours} 点, {minutes} 分, {seconds} 秒"
+msgstr "{hours}点 {minutes}分 {seconds}秒"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {hours}:{minutes}"
-msgstr "现在 {hours}:{minutes}"
+msgstr "现在是 {hours}:{minutes}"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {hours}:{minutes}:{seconds}"
-msgstr "现在{hours}:{minutes}:{seconds}"
+msgstr "现在是 {hours}:{minutes}:{seconds}"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-#, fuzzy
 msgid ""
 "An advanced clock and calendar for NVDA.\n"
 "NVDA+F12, get current time.\n"
@@ -360,63 +342,8 @@ msgid ""
 "number, the current year and the remaining days before the end of the year.\n"
 "For other instructions, press Add-on help button in add-ons manager."
 msgstr ""
-"NVDA的高级时钟和日历插件。 NVDA + F12，读出当前时间。 NVDA + F12快速按两次，"
-"读出当前日期。 NVDA + F12快速按三次，读出当天，周数，当前年份和今年年底前的剩"
-"余天数。有关其他说明，请使用插件管理器中的插件帮助进行查看。"
-
-#~ msgid "Clock se&ttings..."
-#~ msgstr "时钟设置(&T)..."
-
-#~ msgid "Clock and calendar setup"
-#~ msgstr "时钟日历设置"
-
-#~ msgid "Clock setup"
-#~ msgstr "时钟设置"
-
-#~ msgid "Clock setup for times and dates"
-#~ msgstr "时钟和日期设置"
-
-#~ msgid "Alarm settin&gs"
-#~ msgstr "闹钟设置(&G)"
-
-#~ msgid ""
-#~ "The value you entered for your quiet hours is erroneous, for a 24-hour "
-#~ "format, the value must be HH:MM, for a 12-hour format, the value must be "
-#~ "HH:MM followed by the AM or PM suffix, please reread the documentation. "
-#~ "So your quiet hours have been deactivated for prevent any error in the "
-#~ "configuration file."
-#~ msgstr ""
-#~ "您为夜间模式输入的值是错误的，对于24小时格式，值必须为HH：MM，对于12小时格"
-#~ "式，值必须为HH：MM后跟AM或PM后缀，请重是。因此，您的夜间模式已停用，以防止"
-#~ "配置文件中出现错误。"
-
-#~ msgid "Error"
-#~ msgstr "错误"
-
-#~ msgid "Alarm setup"
-#~ msgstr "闹钟设置"
-
-#~ msgid "Seconds"
-#~ msgstr "秒"
-
-#~ msgid "Choose the type of timer &inputs before the alarm rings:"
-#~ msgstr "&在闹铃响起之前选择定时器的类型:"
-
-#~ msgid ""
-#~ "\n"
-#~ "\t\tS: Starts, resets or stops the stopwatch.\n"
-#~ "\t\tR: Resets stopwatch to 0 without restarting it.\n"
-#~ "\t\tA: Gives the remaining and elapsed time before the next alarm.\n"
-#~ "\t\tC: Cancel the next alarm.\n"
-#~ "\t\tSpacebar: Speaks current stopwatch or count-down timer.\n"
-#~ "\t\tH: List all layered commands (Help).\n"
-#~ "\t\t"
-#~ msgstr ""
-#~ "\n"
-#~ "\t\tS: 启动，重置或停止秒表。\n"
-#~ "\t\tR: 将秒表重置为0而不重新启动。\n"
-#~ "\t\tA: 给出下一次的闹钟剩余时间和经过时间。\n"
-#~ "\t\tC: 取消下一个闹钟。\n"
-#~ "\t\tSpacebar: 读出当前的秒表或计时器。\n"
-#~ "\t\tH: 列出所有分层命令 (Help).\n"
-#~ "\t\t"
+"NVDA 的时钟日历插件。\n"
+"NVDA+F12，读出当前时间。\n"
+"NVDA+F12 连按两次，读出当前日期。\n"
+"NVDA+F12连按三次，读出当前日期、周数、当前年份和本年剩余天数。\n"
+"有关该插件的其他说明，请在插件管理器点“帮助”按钮查看。"
