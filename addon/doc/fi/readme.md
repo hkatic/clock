@@ -55,7 +55,7 @@ seuraavista näppäimistä:
 * S: Käynnistää, nollaa tai pysäyttää sekuntikellon
 * R: Nollaa sekuntikellon uudelleenkäynnistämättä sitä
 * A: Puhuu kuluneen ja jäljellä olevan ajan ennen seuraavaa hälytystä
-* T: Avaa hälytysten ajastusvalintaikkunan
+* T: Avaa hälytysten ajoitusvalintaikkunan
 * C: Peruuta seuraava hälytys
 * Välilyönti: Puhuu nykyisen sekuntikellon tai ajastimen
 * P: Lopettaa hälytyksen, mikäli se kestää liian kauan
