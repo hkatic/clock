@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: clock\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2021-10-29 18:31+0200\n"
+"PO-Revision-Date: 2021-11-13 21:06+0200\n"
 "Last-Translator: Jani Kinnunen <janikinnunen340@gmail.com>\n"
 "Language-Team: Jani Kinnunen <janikinnunen340@gmail.com>\n"
 "Language: fi\n"
@@ -258,15 +258,15 @@ msgstr "Ajoita hälytyksiä"
 
 #. Translators: This is an item of the alarm duration choices.
 msgid "hours"
-msgstr "tuntia"
+msgstr "tunnit"
 
 #. Translators: This is an item of the alarm duration choices.
 msgid "minutes"
-msgstr "minuuttia"
+msgstr "minuutit"
 
 #. Translators: This is an item of the alarm duration choices.
 msgid "seconds"
-msgstr "sekuntia"
+msgstr "sekunnit"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "&Alarm duration in:"
@@ -320,7 +320,7 @@ msgstr "{hours} tuntia, {minutes} minuuttia, {seconds} sekuntia"
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {minutes} past {hours}"
-msgstr "Kello on {minutes} yli {hours}"
+msgstr "{minutes} yli {hours}"
 
 #. Translators: A time formating.
 #, python-brace-format
