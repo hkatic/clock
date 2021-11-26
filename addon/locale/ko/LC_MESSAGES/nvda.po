@@ -1,0 +1,373 @@
+# Brazilian Portuguese translation of Clock add-on.
+# Copyright (C) 2020 NVDA Contributors.
+# This file is distributed under the same license as the NVDA package.
+# Ângelo Abrantes <ampa4374@gmail.com>, 2018-2019.
+# Rui Fontes <rui.fontes@tiflotecnia.com>, 2018.
+# Tiago Melo Casal <tcasal@intervox.nce.ufrj.br>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Clock add-on\n"
+"Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
+"POT-Creation-Date: 2020-01-03 03:15+1000\n"
+"PO-Revision-Date: 2021-11-07 16:05+0900\n"
+"Last-Translator: ungjinPark <ungjin312@kakao.com>\n"
+"Language-Team: NVDA Korean Translation Team (NVDA 한국어 번역팀) "
+"<ungjin312kakao.com>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#. Translators: the label of a message box dialog.
+msgid ""
+"The date and time format you were using are not compatible with this version "
+"of the Clock add-on, this will be fixed during installation. Click OK to "
+"confirm these corrections"
+msgstr ""
+"이 Clock 추가기능 버전에서 사용하신 날짜 및 시간 형식을 지원하지 않습니다. 설"
+"치 중에 수정되오니 OK 버튼을 눌러 수정하세요."
+
+#. Translators: the title of a message box dialog.
+msgid "Time and date format corrections"
+msgstr "시간 및 날짜 형식 수정"
+
+#, python-brace-format
+msgid "{hours} hours, "
+msgstr "{hours}시"
+
+#, python-brace-format
+msgid "{minutes} minutes, "
+msgstr "{minutes}분"
+
+#, python-brace-format
+msgid "{seconds} seconds"
+msgstr "{seconds}초"
+
+msgid "0 seconds"
+msgstr "0초"
+
+#. Translators: Script category for Clock addon commands in input gestures dialog.
+#. Translators: Summary for this add-on to be shown on installation and add-on information.
+msgid "Clock"
+msgstr "시계"
+
+#. Translators: Item in the tools menu for the Clock Addon settings.
+msgid "Clock se&ttings..."
+msgstr "시계 설정(&T)..."
+
+#. Translators: The tooltyp text for the clock settings submenu.
+msgid "Clock and calendar setup"
+msgstr "시계 및 달력 설정"
+
+#. Translators: The name of the first item in the Clock settings submenu.
+#. Translators: This is the label for the clock settings panel.
+msgid "Clock setup"
+msgstr "시계 설정"
+
+#. Translators: The tooltyp text for the first item in the Clock add-on submenu.
+msgid "Clock setup for times and dates"
+msgstr "시간 및 날짜 설정"
+
+#. Translators: The name of the second item in the Clock settings submenu.
+msgid "Alarm settin&gs"
+msgstr "알람 설정(&G)"
+
+#. Translators: The tooltyp text for the second item in the Clock add-on submenu.
+msgid "Allows you to schedule an alarm"
+msgstr "알람 일정을 설정할 수 있습니다."
+
+#, python-brace-format
+msgid "Day {day}, week {week} of {year}, remaining days {remain}."
+msgstr "{year}년의 {week}번째 주, {day}번째 날, 내년까지 {remain}일 남음."
+
+#. Translators: Message presented in input help mode.
+msgid ""
+"Speaks current time. If pressed twice quickly, speaks current date. If "
+"pressed thrice quickly, reports the current day, the week number, the "
+"current year and the days remaining before the end of the year."
+msgstr ""
+"현재 시간을 알립니다. 빠르게 두 번 누르면 현재 날짜를 알립니다. 빠르게 세 번 "
+"누르면, 지금 1년 중, 몇번째 주, 몇번째 날인지, 내년까지 며칠 남았는지 알립니"
+"다."
+
+#. Translators: Message presented in input help mode.
+msgid ""
+"Clock and calendar layer commands. After pressing this keystroke, press H "
+"for additional help."
+msgstr ""
+"시계 및 달력 레이어 명령입니다. 이 단축키를 누른 다음, H키를 누르면 추가 도움"
+"말을 들을 수 있습니다."
+
+msgid "Reset. Running."
+msgstr "초기화, 실행"
+
+msgid "Running."
+msgstr "실행."
+
+#, python-brace-format
+msgid "{0} stopped."
+msgstr "{0} 정지됨."
+
+#. Translators: Message presented in input help mode.
+msgid "Starts, resets or stops the stopwatch."
+msgstr "스탑워치를 시작, 초기화 또는 정지합니다."
+
+#. Translators: Message presented in input help mode.
+msgid "Speaks current stopwatch or count-down timer."
+msgstr "현재 스탑워치 또는 카운트다운 타이머를 알립니다."
+
+#, python-brace-format
+msgid "Elapsed time {elapsed}, remaining time {remaining}."
+msgstr "{elapsed} 경과, {remaining} 남음."
+
+msgid "No alarm"
+msgstr "알람이 없습니다."
+
+#. Translators: Message presented in input help mode.
+msgid "Gives the remaining and elapsed time before the next alarm."
+msgstr "다음 알람의 경과 시간과 남은 시간을 알립니다."
+
+msgid "Alarm cancelled"
+msgstr "알람 취소됨"
+
+#. Translators: Message presented in input help mode.
+msgid "Cancel the next alarm."
+msgstr "다음 알람을 취소합니다."
+
+msgid ""
+"The stopwatch is already reset to 0. Use the clock layer command followed by "
+"s to start it."
+msgstr ""
+"스톱워치가 이미 초기화되었습니다. 시계 레이어 명령의 S키를 사용하여 시작하세"
+"요."
+
+msgid "Stopwatch reset."
+msgstr "스톱워치가 초기화되었습니다."
+
+#. Translators: Message presented in input help mode.
+msgid "Resets stopwatch to 0 without restarting it."
+msgstr "재시작하지 않고 스톱워치를 초기화합니다."
+
+#. Translators: Message presented in input help mode.
+msgid "Lists available commands in clock command layer."
+msgstr "시계 레이어 명령 중 사용 가능한 명령을 나열합니다."
+
+#. Translators: Message presented in input help mode.
+msgid "Allows to check the next alarm. If pressed twice, cancels it."
+msgstr ""
+"다음 알람을 확인합니다. 빠르게 두 번 누르면 다음 알람을 취소할 수 있습니다."
+
+msgid "No sound is launched."
+msgstr "소리가 재생되지 않습니다."
+
+msgid "Sound stopped"
+msgstr "소리 정지됨"
+
+#. Translators: Message presented in input help mode.
+msgid "If an alarm is too long, allows to stop it."
+msgstr "알람을 정지합니다."
+
+#. Translators: Message presented in input help mode.
+msgid "Display the clock settings dialog box."
+msgstr "시계 설정 대화상자를 엽니다."
+
+#. Translators: Message presented in input help mode.
+msgid "Display the alarm settings dialog box."
+msgstr "알람 설정 대화상자를 엽니다."
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+msgid "&Time display format:"
+msgstr "시간 표시 형식(&T):"
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+msgid "&Date display format:"
+msgstr "날짜 표시 형식(&D):"
+
+#. Translators: This is a choice of the auto announce choices combo box.
+msgid "off"
+msgstr "끔"
+
+#. Translators: This is a choice of the auto announce choices combo box.
+msgid "every 10 minutes"
+msgstr "10분마다"
+
+#. Translators: This is a choice of the auto announce choices combo box.
+msgid "every 15 minutes"
+msgstr "15분마다"
+
+#. Translators: This is a choice of the auto announce choices combo box.
+msgid "every 30 minutes"
+msgstr "30분마다"
+
+#. Translators: This is a choice of the auto announce choices combo box.
+msgid "every hour"
+msgstr "매시간"
+
+#. Transla	tors: This is the label for a combo box in the Clock settings dialog.
+msgid "&interval:"
+msgstr "알림 반복(&I)"
+
+#. Translators: This is a choice of the time report choices combo box.
+msgid "speech and sound"
+msgstr "알림 말하기 및 알림음 재생"
+
+#. Translators: This is a choice of the time report choices combo box.
+msgid "speech only"
+msgstr "알림 말하기"
+
+#. Translators: This is a choice of the time report choices combo box.
+msgid "sound only"
+msgstr "알림음 재생"
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+msgid "Time &announcement:"
+msgstr "시간 알림(&A):"
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+msgid "Clock chime &sound:"
+msgstr "시계 알림음(&S):"
+
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+msgid "&Quiet hours"
+msgstr "방해금지(&Q)"
+
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+msgid "Input in &24-hour format"
+msgstr "24시간 형식으로 입력(&2)"
+
+#. Translators: This is the label for an edit field in the Clock settings dialog.
+msgid "Quiet hours start time:"
+msgstr "방해금지 시작 시간:"
+
+#. Translators: This is the label for an edit field in the Clock settings dialog.
+msgid "Quiet hours end time:"
+msgstr "방해금지 종료 시간:"
+
+#. A message that appears to inform the user that he has entered a mistaken value for the quiet hours.
+msgid ""
+"The value you entered for your quiet hours is erroneous, for a 24-hour "
+"format, the value must be HH:MM, for a 12-hour format, the value must be HH:"
+"MM followed by the AM or PM suffix, please reread the documentation. So your "
+"quiet hours have been deactivated for prevent any error in the configuration "
+"file."
+msgstr ""
+"입력하신 값이 잘못되었습니다. 24시간 형식이라면 값은 반드시 HH-MM 형식이여야 "
+"합니다. 12시간 형식이라면 값은 반드시 HH:MM 형식이여야만 AM/PM(오전/오후) 글"
+"자가 따라 붙습니다."
+
+#. Translators: The title of the dialog which appears when the user has chosen a mistaken value for his quiet hours.
+msgid "Error"
+msgstr "오류"
+
+#. Translators: This is the label for the alarm settings panel.
+msgid "Alarm setup"
+msgstr "알람 설정"
+
+#. Translators: This is an item of the alarm timer choices.
+msgid "Hours"
+msgstr "시"
+
+#. Translators: This is an item of the alarm timer choices.
+msgid "Minutes"
+msgstr "분"
+
+#. Translators: This is an item of the alarm timer choices.
+msgid "Seconds"
+msgstr "초"
+
+#. Translators: This is the label for a combo box in the Alarm settings dialog.
+msgid "Choose the type of timer &inputs before the alarm rings:"
+msgstr "알람 시간 단위를 선택하세요(&I):"
+
+#. Translators: This is the label for a combo box in the Alarm settings dialog.
+msgid "A&larm sound:"
+msgstr "알람음(&L):"
+
+#. Translators: This is the label for a button in the Alarm settings dialog.
+msgid "&Stop"
+msgstr "정지(&S)"
+
+#. Translators: This is the label for a button in the Alarm settings dialog.
+msgid "&Pause"
+msgstr "일시정지(&P)"
+
+#. Translators: This is the label for an edit field in the Alarm settings dialog.
+msgid "Alarm &time waiting:"
+msgstr "알람 대기 시간(&T):"
+
+#. Translators: The message displayed after a countdown for an alarm has been chosen.
+#, python-brace-format
+msgid "You've chosen an alarm to be triggered in {tm} {unit}"
+msgstr "{tm} {unit}에 알람을 설정하셨습니다."
+
+#. Translators: The title of the dialog which appears when the user has chosen to trigger an alarm.
+msgid "Confirmation"
+msgstr "확인"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "It's {hours} o'clock and {minutes} minutes"
+msgstr "현재시간, {hours}시 {minutes}분입니다."
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "It's {hours} o'clock, {minutes} minutes and {seconds} seconds"
+msgstr "현재시간, {hours}시, {minutes}분 {seconds}초입니다."
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "{hours} o'clock, {minutes} minutes"
+msgstr "{hours}시, {minutes}분"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "{hours} o'clock, {minutes} minutes, {seconds} seconds"
+msgstr "{hours}시, {minutes}분, {seconds}초"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "It's {minutes} past {hours}"
+msgstr "현재시간, {hours}시 {minutes}분"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "{hours} h {minutes} min"
+msgstr "{hours}시 {minutes}분"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "{hours} h, {minutes} min, {seconds} sec"
+msgstr "{hours}시, {minutes}분, {seconds}초"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "It's {hours}:{minutes}"
+msgstr "현재시간, {hours}:{minutes}"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "It's {hours}:{minutes}:{seconds}"
+msgstr "São {hours}:{minutes}:{seconds}"
+
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+msgid ""
+"An advanced clock and calendar for NVDA.\n"
+"NVDA+F12, get current time.\n"
+"NVDA+F12 pressed twice quickly, get current date.\n"
+"NVDA+F12 pressed thrice quickly, reports the current day, the week number, "
+"the current year and the remaining days before the end of the year.\n"
+"For other instructions, press Add-on help button in add-ons manager."
+msgstr ""
+"시계 및 달력(Clock and Calendar) NVDA 추가기능\n"
+"NVDA+F12, 현재 시간을 알립니다.\n"
+"NVDA+F12(빠르기 두 번), 현재 날짜를 알립니다.\n"
+"NVDA+F12(빠르게 세 번), 현재 몇번째 주, 며칠째인지, 내년까지 남은 D-DAY를 알"
+"립니다. \n"
+"다른 도움이 필요하다면 '추가기능 관리'의 '도움말' 버튼으로 문서를 확인할 수 "
+"있습니다."
