@@ -3,7 +3,7 @@
 * Authors: Hrvoje Katić, Abdel and NVDA contributors
 * Download [stable version][1]
 * Download [development version][2]
-* NVDA compatibility: 2019.3 and beyond
+* NVDA compatibility: 2019.3 and later
 
 This add-on enables the advanced clock, alarm timer and calendar functionality for NVDA.
 
