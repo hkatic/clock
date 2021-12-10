@@ -3,7 +3,7 @@
 * 作者： Hrvoje Katić, Abdel and NVDA contributors
 * 下载 [稳定版][1]
 * 下载 [开发板][2]
-* NVDA 兼容性：2019.3 及以后
+* NVDA compatibility: 2019.3 and later
 
 NVDA 的时钟插件。
 

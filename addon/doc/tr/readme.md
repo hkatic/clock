@@ -3,7 +3,7 @@
 * Yazarlar: Hrvoje Katić, Abdel ve NVDA'ya katkıda bulunanlar
 * [Kararlı Sürüm][1]ü indir
 * [geliştirici sürümü][2].nü indir
-* NVDA uyumluluğu: 2019.3 ve sonrası
+* NVDA uyumluluğu: 2019.3 ve üstü
 
 Bu eklenti, NVDA için gelişmiş saat, alarm zamanlayıcı ve takvim
 işlevselliğini etkinleştirir.

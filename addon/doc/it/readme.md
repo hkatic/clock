@@ -3,7 +3,7 @@
 * Authori: Hrvoje Katić, Abdel e altri collaboratori di NVDA.
 * Scarica la [versione stabile][1]
 * Scarica la [versione in sviluppo][2]
-* Compatibilità con NVDA: 2019.3 e successive.
+* NVDA compatibility: 2019.3 and later
 
 Questo componente aggiuntivo presenta impostazioni avanzate per l'orologio,
 il calendario e funzioni di timer e cronometro per NVDA.

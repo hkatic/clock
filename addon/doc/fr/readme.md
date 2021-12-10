@@ -3,7 +3,7 @@
 * Auteurs : Hrvoje Katić, Abdel et contributeurs de NVDA
 * Télécharger [version stable][1]
 * Télécharger [version de développement][2]
-* Compatibilité NVDA : 2019.3 et ultérieure
+* NVDA compatibility: 2019.3 and later
 
 Cette extension active les fonctions avancées de l'horloge, de minuterie
 d'alarme et du calendrier pour NVDA.

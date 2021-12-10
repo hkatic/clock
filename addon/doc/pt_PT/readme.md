@@ -3,7 +3,7 @@
 * Autores: Hrvoje Katić, Abdel e colaboradores do NVDA
 * Baixar a [versão estável][1]
 * Baixar [versão de desenvolvimento][2]
-* Compatibilidade com o NVDA: 2019.3 e seguintes
+* NVDA compatibility: 2019.3 and later
 
 Este complemento permite a funcionalidade avançada de relógio, temporizador
 de alarme e calendário para NVDA.
