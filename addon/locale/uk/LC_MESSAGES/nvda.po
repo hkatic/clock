@@ -1,0 +1,458 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the clock package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: clock 19.09\n"
+"Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2021-12-14 13:11-0800\n"
+"Last-Translator: Volodymyr Pyrih <vp88.mobile@gmail.com>\n"
+"Language-Team: \n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 1.8.9\n"
+"X-Poedit-Basepath: ../../../globalPlugins\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#. Translators: the label of a message box dialog.
+msgid ""
+"The date and time format you were using are not compatible with this version "
+"of the Clock add-on, this will be fixed during installation. Click OK to "
+"confirm these corrections"
+msgstr ""
+"Формат дати й часу, який ви використовували, не сумісний з цією версією "
+"годинника, його буде виправлено під час встановлення. Для підтвердження цих "
+"виправлень натисніть «Гаразд»"
+
+#. Translators: the title of a message box dialog.
+msgid "Time and date format corrections"
+msgstr "Виправлення формату часу й дати"
+
+#, python-brace-format
+msgid "{hours} hours, "
+msgstr "{hours} година, "
+
+#, python-brace-format
+msgid "{minutes} minutes, "
+msgstr "{minutes} хвилин, "
+
+#, python-brace-format
+msgid "{seconds} seconds"
+msgstr "{seconds} секунд"
+
+msgid "0 seconds"
+msgstr "0 секунд"
+
+#. Translators: Script category for Clock addon commands in input gestures dialog.
+#. Translators: This is the label for the clock settings panel.
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on
+#. to be shown on installation and add-on information found in Add-ons Manager.
+msgid "Clock"
+msgstr "Годинник"
+
+#. Translators: The name of the alarm item in NVDA Tools menu.
+msgid "Schedule a&larms..."
+msgstr "Запланувати &таймер..."
+
+#. Translators: The tooltyp text for the alarm item in NVDA Tools menu.
+msgid "Allows you to schedule an alarm"
+msgstr "Дозволяє вам запланувати таймер"
+
+#. Translators: Message presented in input help mode.
+msgid ""
+"Speaks current time. If pressed twice quickly, speaks current date. If "
+"pressed three times quickly, reports the current day, the week number, the "
+"current year and the days remaining before the end of the year."
+msgstr ""
+"Промовляє поточний час. Якщо натиснути швидко двічі, промовляє поточну дату. "
+"Якщо натиснути швидко тричі, промовляє поточний день, номер тижня поточного "
+"року і кількість днів, яка залишилася до кінця року."
+
+#, python-brace-format
+msgid "Day {day}, week {week} of {year}, remaining days {remain}."
+msgstr ""
+"День {day}, {week} тиждень {year} року, до кінця року залишилося {remain} "
+"днів."
+
+#. Translators: Message presented in input help mode.
+msgid ""
+"Clock and calendar layer commands. After pressing this keystroke, press H "
+"for additional help."
+msgstr ""
+"Багаторівневі команди годинника й календаря. Після натискання цієї команди "
+"натисніть a для додаткової інформації."
+
+#. Translators: Message presented in input help mode.
+msgid "Starts, resets or stops the stopwatch."
+msgstr "Запускає, перезапускає або зупиняє секундомір."
+
+msgid "Reset. Running."
+msgstr "Обнулено. Запущено."
+
+msgid "Running."
+msgstr "Запущено."
+
+#, python-brace-format
+msgid "{0} stopped."
+msgstr "{0} зупинено."
+
+#. Translators: Message presented in input help mode.
+msgid "Speaks current stopwatch or count-down timer."
+msgstr "Промовляє поточний секундомір або таймер зворотного відліку."
+
+#. Translators: Message presented in input help mode.
+msgid "Gives the remaining and elapsed time before the next alarm."
+msgstr "Повідомляє про час, який минув та залишився до наступного таймера."
+
+#, python-brace-format
+msgid "Elapsed time {elapsed}, remaining time {remaining}."
+msgstr "Минуло часу {elapsed}, залишилося часу {remaining}"
+
+msgid "No alarm"
+msgstr "таймер вимкнено"
+
+#. Translators: Message presented in input help mode.
+msgid "Cancel the next alarm."
+msgstr "Скасовує наступний таймер."
+
+msgid "Alarm cancelled"
+msgstr "таймер скасовано"
+
+#. Translators: Message presented in input help mode.
+msgid "Resets stopwatch to 0 without restarting it."
+msgstr "Обнуляє секундомір без перезапуску."
+
+msgid ""
+"The stopwatch is already reset to 0. Use the clock layer command followed by "
+"s to start it."
+msgstr ""
+"Секундомір вже обнулено. Щоб запустити його, натисніть багаторівневу команду "
+"і слідом за нею s."
+
+msgid "Stopwatch reset."
+msgstr "Перезапуск секундоміра."
+
+#. Translators: Message presented in input help mode.
+msgid "Lists available commands in clock command layer."
+msgstr "Перелічує доступні багаторівневі команди годинника."
+
+#. Translators: Message presented in input help mode.
+msgid "Allows to check the next alarm. If pressed twice, cancels it."
+msgstr ""
+"Дозволяє перевірити наступний таймер. Якщо натиснути двічі, вимикає його."
+
+#. Translators: Message presented in input help mode.
+msgid "If an alarm is too long, allows to stop it."
+msgstr "Якщо таймер задовгий, дозволяє зупинити його."
+
+msgid "No sound is launched."
+msgstr "Немає звуку."
+
+msgid "Sound stopped"
+msgstr "Звук вимкнено"
+
+#. Translators: error message when attempting to open more than one alarm settings dialogs.
+msgid "Schedule alarms dialog is already open."
+msgstr "Діалог планування таймера вже відкрито."
+
+#. Translators: Message presented in input help mode.
+msgid "Display the clock settings dialog box."
+msgstr "Показує діалог налаштувань годинника."
+
+#. Translators: Message presented in input help mode.
+msgid "Display schedule alarms dialog box."
+msgstr "Показує діалог планування таймера."
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+msgid "&Time display format:"
+msgstr "&Формат виведення часу:"
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+msgid "&Date display format:"
+msgstr "&формат виведення дати:"
+
+#. Translators: This is a choice of the auto announce choices combo box.
+msgid "off"
+msgstr "вимкнено"
+
+#. Translators: This is a choice of the auto announce choices combo box.
+msgid "every 10 minutes"
+msgstr "кожні 10 хвилин"
+
+#. Translators: This is a choice of the auto announce choices combo box.
+msgid "every 15 minutes"
+msgstr "кожні 15 хвилин"
+
+#. Translators: This is a choice of the auto announce choices combo box.
+msgid "every 30 minutes"
+msgstr "кожні півгодини"
+
+#. Translators: This is a choice of the auto announce choices combo box.
+msgid "every hour"
+msgstr "щогодини"
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+msgid "&Interval:"
+msgstr "&Часовий проміжок:"
+
+#. Translators: This is a choice of the time report choices combo box.
+msgid "message and sound"
+msgstr "повідомлення і звук"
+
+#. Translators: This is a choice of the time report choices combo box.
+msgid "message only"
+msgstr "лише повідомлення"
+
+#. Translators: This is a choice of the time report choices combo box.
+msgid "sound only"
+msgstr "лише звук"
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+msgid "Time &announcement:"
+msgstr "Оголошення &часу:"
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+msgid "Clock chime &sound:"
+msgstr "Звук &годинника:"
+
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+msgid "&Quiet hours"
+msgstr "&Тихі години"
+
+#. Translators: This is a choice of the quiet hours time format choices.
+msgid "12-hour format"
+msgstr "12-годинний формат"
+
+#. Translators: This is a choice of the quiet hours time format choices.
+msgid "24-hour format"
+msgstr "24-годинний формат"
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+msgid "Quiet hours time &format:"
+msgstr "Формат часу &тихих годин:"
+
+#. Translators: This is the label for an group in the Clock settings dialog.
+msgid "Quiet hours start time"
+msgstr "Початок часу тихих годин"
+
+#. Translators: This is the label for an group in the Clock settings dialog.
+msgid "Quiet hours end time"
+msgstr "Завершення часу тихих годин"
+
+#. Translators: the hour label in quiet hours group.
+msgid "Hour:"
+msgstr "Година:"
+
+#. Translators: the minute label in quiet hours group.
+msgid "Minute:"
+msgstr "Хвилина:"
+
+#. Translators: This is the label for the alarm settings panel.
+msgid "Schedule alarms"
+msgstr "Запланувати таймер"
+
+#. Translators: This is an item of the alarm duration choices.
+msgid "hours"
+msgstr "годинах"
+
+#. Translators: This is an item of the alarm duration choices.
+msgid "minutes"
+msgstr "хвилинах"
+
+#. Translators: This is an item of the alarm duration choices.
+msgid "seconds"
+msgstr "секундах"
+
+#. Translators: This is the label for a combo box in the Alarm settings dialog.
+msgid "&Alarm duration in:"
+msgstr "&Тривалість таймера у:"
+
+#. Translators: This is the label for an edit field in the Alarm settings dialog.
+msgid "&Duration:"
+msgstr "&Тривалість:"
+
+#. Translators: This is the label for a combo box in the Alarm settings dialog.
+msgid "A&larm sound:"
+msgstr "Звук &таймера:"
+
+#. Translators: This is the label for a button in the Alarm settings dialog.
+msgid "&Stop"
+msgstr "&Зупинити"
+
+#. Translators: This is the label for a button in the Alarm settings dialog.
+msgid "&Pause"
+msgstr "&Пауза"
+
+#. Translators: The message displayed after a countdown for an alarm has been chosen.
+#, python-brace-format
+msgid "You've chosen an alarm to be triggered in {tm} {unit}"
+msgstr "Ви обрали таймер, який спрацює через {tm} {unit}"
+
+#. Translators: The title of the dialog which appears when the user has chosen to trigger an alarm.
+msgid "Confirmation"
+msgstr "Підтвердження"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "It's {hours} o'clock and {minutes} minutes"
+msgstr "Зараз {hours} година {minutes} хвилин"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "It's {hours} o'clock, {minutes} minutes and {seconds} seconds"
+msgstr "Зараз {hours} година, {minutes} хвилин та {seconds} секунд"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "{hours} o'clock, {minutes} minutes"
+msgstr "{hours} година, {minutes} хвилин"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "{hours} o'clock, {minutes} minutes, {seconds} seconds"
+msgstr "{hours} година, {minutes} хвилин, {seconds} секунд"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "It's {minutes} past {hours}"
+msgstr "Зараз {minutes} після {hours}"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "{hours} h {minutes} min"
+msgstr "{hours} год {minutes} хв"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "{hours} h, {minutes} min, {seconds} sec"
+msgstr "{hours} год, {minutes} хв, {seconds} сек"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "It's {hours}:{minutes}"
+msgstr "Зараз {hours}:{minutes}"
+
+#. Translators: A time formating.
+#, python-brace-format
+msgid "It's {hours}:{minutes}:{seconds}"
+msgstr "Зараз {hours}:{minutes}:{seconds}"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+msgid ""
+"An advanced clock and calendar for NVDA.\n"
+"NVDA+F12, get current time.\n"
+"NVDA+F12 pressed twice quickly, get current date.\n"
+"NVDA+F12 pressed three times quickly, reports the current day, the week "
+"number, the current year and the remaining days before the end of the year.\n"
+"For other instructions, press Add-on help button in add-ons manager."
+msgstr ""
+"Розширений годинник і календар для NVDA.\n"
+"NVDA+F12, промовляє поточний час.\n"
+"NVDA+F12, натиснуті  двічі і швидко, промовляє поточну дату.\n"
+"NVDA+F12 натиснуті швидко тричі, промовляє поточний день, номер тижня "
+"поточного року і кількість днів, які залишилися до кінця року.\n"
+"Для отримання інших інструкцій натисніть кнопку «Довідка» у менеджері "
+"додатків."
+
+#~ msgid "Clock se&ttings..."
+#~ msgstr "Налаштування &годинника..."
+
+#~ msgid "Clock and calendar setup"
+#~ msgstr "Встановлення годинника й календаря"
+
+#~ msgid "Clock setup for times and dates"
+#~ msgstr "Встановлення часу й дати"
+
+#~ msgid "Alarm settin&gs"
+#~ msgstr "Налаштування &таймера"
+
+#~ msgid ""
+#~ "Speaks current time. If pressed twice quickly, speaks current date. If "
+#~ "pressed thrice quickly, reports the current day, the week number, the "
+#~ "current year and the days remaining before the end of the year."
+#~ msgstr ""
+#~ "Промовляє поточний час. Якщо натиснути швидко двічі, промовляє поточну "
+#~ "дату. Якщо натиснути швидко тричі, повідомляє про поточний день, номер "
+#~ "тижня, поточний рік та скільки днів залишилося до кінця року."
+
+#~ msgid "Display the alarm settings dialog box."
+#~ msgstr "Показує діалог налаштувань таймера."
+
+#~ msgid "Clock setup"
+#~ msgstr "Встановлення годинника"
+
+#~ msgid "&interval:"
+#~ msgstr "&проміжок:"
+
+#~ msgid "speech and sound"
+#~ msgstr "мовлення і звук"
+
+#~ msgid "speech only"
+#~ msgstr "лише мовлення"
+
+#~ msgid "Input in &24-hour format"
+#~ msgstr "Введення у &24-годинному форматі"
+
+#~ msgid "Quiet hours start time:"
+#~ msgstr "Час початку тихих годин:"
+
+#~ msgid "Quiet hours end time:"
+#~ msgstr "Час закінчення тихих годин:"
+
+#~ msgid ""
+#~ "The value you entered for your quiet hours is erroneous, for a 24-hour "
+#~ "format, the value must be HH:MM, for a 12-hour format, the value must be "
+#~ "HH:MM followed by the AM or PM suffix, please reread the documentation. "
+#~ "So your quiet hours have been deactivated for prevent any error in the "
+#~ "configuration file."
+#~ msgstr ""
+#~ "Введено хибне значення для тихих годин. Для 24-годинного формату значення "
+#~ "має бути ГГ:ХХ, для 12-годинного формату значення має бути ГГ:ХХ, а потім "
+#~ "суфікс AM або PM. Будь ласка, перечитайте документацію. Отже, для "
+#~ "запобігання помилок у файлі конфігурації ваші тихі години деактивовано."
+
+#~ msgid "Error"
+#~ msgstr "Помилка"
+
+#~ msgid "Alarm setup"
+#~ msgstr "Встановлення таймера"
+
+#~ msgid "Hours"
+#~ msgstr "Години"
+
+#~ msgid "Minutes"
+#~ msgstr "Хвилини"
+
+#~ msgid "Seconds"
+#~ msgstr "Секунди"
+
+#~ msgid "Choose the type of timer &inputs before the alarm rings:"
+#~ msgstr "Оберіть спосіб введення &часу, перш ніж таймер задзвонить:"
+
+#~ msgid "Alarm &time waiting:"
+#~ msgstr "Час &очікування таймера:"
+
+#~ msgid ""
+#~ "An advanced clock and calendar for NVDA.\n"
+#~ "NVDA+F12, get current time.\n"
+#~ "NVDA+F12 pressed twice quickly, get current date.\n"
+#~ "NVDA+F12 pressed thrice quickly, reports the current day, the week "
+#~ "number, the current year and the remaining days before the end of the "
+#~ "year.\n"
+#~ "For other instructions, press Add-on help button in add-ons manager."
+#~ msgstr ""
+#~ "Розширений годинник та календар для NVDA.\n"
+#~ "NVDA+F12 повідомляє про поточний час.\n"
+#~ "NVDA+F12, швидко натиснуті двічі, повідомляє поточну дату.\n"
+#~ "NVDA+F12, швидко натиснуті тричі, повідомляє поточний день, номер тижня, "
+#~ "поточний рік та скільки днів залишилося до кінця року.\n"
+#~ "Для подальших інструкцій натисніть кнопку «Довідка» в менеджері додатків."

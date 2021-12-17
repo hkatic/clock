@@ -3,7 +3,7 @@
 * Autores: Hrvoje Katić, Abdel e contribuíntes co NVDA
 * Descargar  [versión estable][1]
 * Descarga [versión de desenvolvemento][2]
-* NVDA compatibility: 2019.3 and later
+* Compatibilidade con NVDA: 2019.3 en diante
 
 Este complemento habilita a funcionalidade avanzada de reloxo, temporizador
 con alarma e calendario para NVDA.
@@ -65,8 +65,8 @@ seguintes teclas:
 ## Configuración e uso
 
 Para configurar a funcionalidade de reloxo, abre o menú de NVDA,
-Preferencias, logo Opcions, e configura as seguintes opciónes dende o panel
-de Clock;
+Preferencias, logo Opcions, e configura as seguintes opcións dende o panel
+de Clock:
 
 * Formato de amosado de hora e data: utiliza estes cadros combinados para
   configurar como anunciará NVDA a hora e a data cando premas NVDA+F12 unha

@@ -1,16 +1,16 @@
 # Brazilian Portuguese translation of Clock add-on.
-# Copyright (C) 2020 NVDA Contributors.
+# Copyright (C) 2020-2021 NVDA Contributors.
 # This file is distributed under the same license as the NVDA package.
 # Ângelo Abrantes <ampa4374@gmail.com>, 2018-2019.
 # Rui Fontes <rui.fontes@tiflotecnia.com>, 2018.
-# Tiago Melo Casal <tcasal@intervox.nce.ufrj.br>, 2020.
+# Tiago Melo Casal <tcasal@intervox.nce.ufrj.br>, 2020-2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Clock add-on\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2020-01-03 03:15+1000\n"
-"PO-Revision-Date: 2020-06-06 12:35-0300\n"
+"PO-Revision-Date: 2021-12-15 23:38-0300\n"
 "Last-Translator: Tiago Melo Casal <tcasal@intervox.nce.ufrj.br>\n"
 "Language-Team: NVDA Brazilian Portuguese translation team (Equipe de "
 "tradução do NVDA para Português Brasileiro) <clever97@gmail.com>\n"
@@ -63,22 +63,21 @@ msgstr "Relógio"
 
 #. Translators: The name of the alarm item in NVDA Tools menu.
 msgid "Schedule a&larms..."
-msgstr ""
+msgstr "Agendar a&larmes..."
 
 #. Translators: The tooltyp text for the alarm item in NVDA Tools menu.
 msgid "Allows you to schedule an alarm"
 msgstr "Permite agendar um alarme"
 
 #. Translators: Message presented in input help mode.
-#, fuzzy
 msgid ""
 "Speaks current time. If pressed twice quickly, speaks current date. If "
 "pressed three times quickly, reports the current day, the week number, the "
 "current year and the days remaining before the end of the year."
 msgstr ""
 "Fala a hora atual. Se pressionado duas vezes rapidamente, fala a data atual. "
-"Se pressionado três vezes rapidamente, relata o dia atual, o número da "
-"semana, o ano atual e os dias restantes para o fim do ano."
+"Se pressionado três vezes rapidamente, informa o dia atual, o número da "
+"semana, o ano atual e os dias restantes para o final do ano."
 
 #, python-brace-format
 msgid "Day {day}, week {week} of {year}, remaining days {remain}."
@@ -163,16 +162,15 @@ msgstr "Som parado"
 
 #. Translators: error message when attempting to open more than one alarm settings dialogs.
 msgid "Schedule alarms dialog is already open."
-msgstr ""
+msgstr "O diálogo agendar alarmes já está aberto."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
 msgstr "Mostra a caixa de diálogo de configurações do relógio."
 
 #. Translators: Message presented in input help mode.
-#, fuzzy
 msgid "Display schedule alarms dialog box."
-msgstr "Mostra a caixa de diálogo de configurações do alarme."
+msgstr "Exibe a caixa de diálogo agendar alarmes."
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Time display format:"
@@ -203,19 +201,16 @@ msgid "every hour"
 msgstr "a cada hora"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
-#, fuzzy
 msgid "&Interval:"
-msgstr "&intervalo:"
+msgstr "&Intervalo:"
 
 #. Translators: This is a choice of the time report choices combo box.
-#, fuzzy
 msgid "message and sound"
-msgstr "voz e som"
+msgstr "mensagem e som"
 
 #. Translators: This is a choice of the time report choices combo box.
-#, fuzzy
 msgid "message only"
-msgstr "apenas voz"
+msgstr "apenas mensagem"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "sound only"
@@ -234,67 +229,56 @@ msgid "&Quiet hours"
 msgstr "&Horas silenciosas"
 
 #. Translators: This is a choice of the quiet hours time format choices.
-#, fuzzy
 msgid "12-hour format"
-msgstr "Entrada no formato de 24 horas"
+msgstr "formato de 12 horas"
 
 #. Translators: This is a choice of the quiet hours time format choices.
-#, fuzzy
 msgid "24-hour format"
-msgstr "Entrada no formato de 24 horas"
+msgstr "formato de 24 horas"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
-#, fuzzy
 msgid "Quiet hours time &format:"
-msgstr "Fim das horas silenciosas:"
+msgstr "Formato de horas silenciosas:"
 
 #. Translators: This is the label for an group in the Clock settings dialog.
-#, fuzzy
 msgid "Quiet hours start time"
-msgstr "Início das horas silenciosas:"
+msgstr "Horário de início das horas silenciosas"
 
 #. Translators: This is the label for an group in the Clock settings dialog.
-#, fuzzy
 msgid "Quiet hours end time"
-msgstr "Fim das horas silenciosas:"
+msgstr "Horário de término das horas silenciosas"
 
 #. Translators: the hour label in quiet hours group.
-#, fuzzy
 msgid "Hour:"
-msgstr "Horas"
+msgstr "Hora:"
 
 #. Translators: the minute label in quiet hours group.
-#, fuzzy
 msgid "Minute:"
-msgstr "Minutos"
+msgstr "Minuto:"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Schedule alarms"
-msgstr ""
+msgstr "Agendar alarmes"
 
 #. Translators: This is an item of the alarm duration choices.
-#, fuzzy
 msgid "hours"
-msgstr "Horas"
+msgstr "horas"
 
 #. Translators: This is an item of the alarm duration choices.
-#, fuzzy
 msgid "minutes"
-msgstr "Minutos"
+msgstr "minutos"
 
 #. Translators: This is an item of the alarm duration choices.
-#, fuzzy
 msgid "seconds"
-msgstr "0 segundos"
+msgstr "segundos"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
-#, fuzzy
 msgid "&Alarm duration in:"
-msgstr "&Tempo de espera do alarme:"
+msgstr "&Duração do alarme em:"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 msgid "&Duration:"
-msgstr ""
+msgstr "&Duração:"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
@@ -364,7 +348,6 @@ msgstr "São {hours}:{minutes}:{seconds}"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-#, fuzzy
 msgid ""
 "An advanced clock and calendar for NVDA.\n"
 "NVDA+F12, get current time.\n"
@@ -373,12 +356,12 @@ msgid ""
 "number, the current year and the remaining days before the end of the year.\n"
 "For other instructions, press Add-on help button in add-ons manager."
 msgstr ""
-"Um relógio e calendário avançados para o NVDA.\n"
+"Um relógio e calendário avançados para NVDA.\n"
 "NVDA+F12, obtém a hora atual.\n"
 "NVDA+F12 pressionado duas vezes rapidamente, obtém a data atual.\n"
-"NVDA+F12 pressionado três vezes rapidamente, relata o dia atual, o número da "
-"semana, o ano atual e os dias restantes para o fim do ano.\n"
-"Para outras instruções, pressione o botão Ajuda do complemento no gestor de "
+"NVDA+F12 pressionado três vezes rapidamente, informa o dia atual, o número "
+"da semana, o ano atual e os dias restantes para o fim do ano.\n"
+"Para outras instruções, pressione o botão ajuda do complemento no gestor de "
 "complementos."
 
 #~ msgid "Clock se&ttings..."
