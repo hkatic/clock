@@ -12,8 +12,10 @@ import globalPluginHandler
 import gui
 from . import paths
 import scriptHandler
+from logHandler import log
 import ui
 from . import formats
+from collections import Counter
 import nvwave
 from . import clockHandler
 from . import stopwatchHandler
@@ -152,6 +154,17 @@ def getDayAndWeekOfYear(date: str) -> Tuple[int, ...]:
 	return (nDayOfYear, nWeekOfYear, curYear, daysRemaining)
 
 
+def checkLocalTimeFormats():
+	"""A function that checks that each localized time format is unique.
+	In case two or more identical time formats are found, a warning is logged, to give translators the
+	opportunity to improve their translations by translating uniquely each time format.
+	"""
+	fmtCounter = Counter(formats.timeFormats)
+	for (fmt, nbOccurrences) in fmtCounter.items():
+		if nbOccurrences > 1:
+			log.debugWarning(f"The format '{fmt}' appears {nbOccurrences} times for the current localization.")
+
+
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	# Translators: Script category for Clock addon commands in input gestures dialog.
@@ -163,6 +176,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		super(globalPluginHandler.GlobalPlugin, self).__init__()
 		if globalVars.appArgs.secure or config.isAppX:
 			return
+		checkLocalTimeFormats()
 		gui.NVDASettingsDialog.categoryClasses.append(ClockSettingsPanel)
 		self.toolsMenu = gui.mainFrame.sysTrayIcon.toolsMenu
 		self.alarmSettings = self.toolsMenu.Append(
