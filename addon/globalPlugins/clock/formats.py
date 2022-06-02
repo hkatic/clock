@@ -3,7 +3,6 @@
 # Author: Hrvoje Katich and contributors
 # Copyright 2013-2021, released under GPL.
 
-import collections
 import winKernel
 import re
 import addonHandler
@@ -11,8 +10,7 @@ addonHandler.initTranslation()
 
 # A regular expression to match and facilitate translation for words that are
 # not part of the formatting symbols.
-# Ignore Flake8 W605: invalid escape sequence (\w)
-ptrn = "(\w+'?\w*|\$+[hmst]{1,2})"  # NOQA: W605
+ptrn = r"(\w+'?\w*|\$+[hmst]{1,2})"
 rgx = re.compile(ptrn, re.U | re.I)
 
 
@@ -55,27 +53,27 @@ def timeMarker():
 
 
 timeFormats = (
-	# Translators: A time formating.
+	# Translators: A time formating (should be different from other time formattings)
 	_("It's {hours} o'clock and {minutes} minutes").format(hours="$$H", minutes="$$m"),
-	# Translators: A time formating.
+	# Translators: A time formating (should be different from other time formattings)
 	_("It's {hours} o'clock, {minutes} minutes and {seconds} seconds").format(
 		hours="$$H", minutes="$$m", seconds="$$s"
 	),
-	# Translators: A time formating.
+	# Translators: A time formating (should be different from other time formattings)
 	_("{hours} o'clock, {minutes} minutes").format(hours="$$H", minutes="$$mm"),
-	# Translators: A time formating.
+	# Translators: A time formating (should be different from other time formattings)
 	_("{hours} o'clock, {minutes} minutes, {seconds} seconds").format(
 		hours="$$H", minutes="$$mm", seconds="$$ss"
 	),
-	# Translators: A time formating.
+	# Translators: A time formating (should be different from other time formattings)
 	_("It's {minutes} past {hours}").format(minutes="$$m", hours="$$H"),
-	# Translators: A time formating.
+	# Translators: A time formating (should be different from other time formattings)
 	_("{hours} h {minutes} min").format(hours="$$H", minutes="$$m"),
-	# Translators: A time formating.
+	# Translators: A time formating (should be different from other time formattings)
 	_("{hours} h, {minutes} min, {seconds} sec").format(hours="$$H", minutes="$$m", seconds="$$s"),
-	# Translators: A time formating.
+	# Translators: A time formating (should be different from other time formattings)
 	_("It's {hours}:{minutes}").format(hours="$$H", minutes="$$m"),
-	# Translators: A time formating.
+	# Translators: A time formating (should be different from other time formattings)
 	_("It's {hours}:{minutes}:{seconds}").format(hours="$$HH", minutes="$$mm", seconds="$$ss"),
 	"$$hh:$$mm:$$ss $$tt",
 	"$$hh:$$m $$tt",
@@ -89,11 +87,7 @@ timeFormats = (
 	"$$H:$$m",
 )
 
-timeFormatsDic = collections.OrderedDict()
-for fmt in timeFormats:
-	timeFormatsDic[fmt] = winKernel.GetTimeFormatEx(None, None, None, rgx.sub(repl, fmt))
-
-timeDisplayFormats = list(timeFormatsDic.values())
+timeDisplayFormats = [winKernel.GetTimeFormatEx(None, None, None, rgx.sub(repl, fmt)) for fmt in timeFormats]
 
 dateFormats = (
 	"dddd, MMMM dd, yyyy",
@@ -108,8 +102,4 @@ dateFormats = (
 	"dd/MM/yyyy"
 )
 
-dateFormatsDic = collections.OrderedDict()
-for fmt in dateFormats:
-	dateFormatsDic[fmt] = winKernel.GetDateFormatEx(None, None, None, fmt)
-
-dateDisplayFormats = list(dateFormatsDic.values())
+dateDisplayFormats = [winKernel.GetDateFormatEx(None, None, None, fmt) for fmt in dateFormats]
