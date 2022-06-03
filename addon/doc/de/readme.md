@@ -3,7 +3,7 @@
 * Autoren: Hrvoje Katić, Abdel und die NVDA-Community
 * [Stabile Version herunterladen][1]
 * [Entwicklerversion herunterladen][2]
-* NVDA compatibility: 2019.3 and later
+* NVDA-Kompatibilität: 2019.3 und neuer
 
 Diese NVDA-Erweiterung aktiviert die erweiterten Funktionen für Uhr, Wecker
 und Kalender.

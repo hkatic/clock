@@ -3,7 +3,7 @@
 * Auteurs : Hrvoje Katić, Abdel et contributeurs de NVDA
 * Télécharger [version stable][1]
 * Télécharger [version de développement][2]
-* NVDA compatibility: 2019.3 and later
+* Compatibilité NVDA : 2019.3 et ultérieure
 
 Cette extension active les fonctions avancées de l'horloge, de minuterie
 d'alarme et du calendrier pour NVDA.
@@ -48,7 +48,7 @@ sélectionnez "Ajouter", puis entrez le geste que vous souhaitez utiliser.
 * Temps écoulé et temps restant avant la prochaine alarme. Appuyer deux fois
   rapidement sur ce geste annulera rapidement la prochaine alarme.
 * Arrête de jouer le son de l'alarme actuelle.
-* Afficher la boîte de dialogue Planifier les alarmes.
+* Afficher la boîte de dialogue Programmer des alarmes.
 
 ## Commandes séquentielles
 
@@ -58,7 +58,7 @@ l'une des touches suivantes :
 * S: Démarre, réinitialise ou arrête le chronomètre;
 * R: Réinitialise le chronomètre à 0 sans le démarrer;
 * A: donne le temps écoulé et restant avant la prochaine alarme;
-* T: Ouvre la boîte de dialogue Planifier les alarmes.
+* T: Ouvre la boîte de dialogue Programmer des alarmes.
 * C: Annule la prochaine alarme;
 * Espace: Annonce le chronomètre actuel ou le compte à rebours de la
   minuterie;
@@ -98,8 +98,7 @@ Planifier les alarmes. Le contenu de la boîte de dialogue comprend:
   heures, minutes et secondes.
 * Durée: Entrez la durée de l'alarme dans l'unité spécifiée ci-dessus.
 * Son de l'alarme: Sélectionnez le son de l'alarme à jouer.
-* Les boutons Arrêter ou Pause: Arrête ou met en pause un son d'allarme
-  long.
+* Les boutons Arrêter ou Pause: Arrête ou met en pause un son d'alarme long.
 
 Cliquez sur OK, et un message vous informera de la durée de l'alarme
 actuellement sélectionnée.

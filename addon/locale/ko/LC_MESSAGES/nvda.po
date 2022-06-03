@@ -1,19 +1,17 @@
 # Brazilian Portuguese translation of Clock add-on.
 # Copyright (C) 2020 NVDA Contributors.
 # This file is distributed under the same license as the NVDA package.
-# Ângelo Abrantes <ampa4374@gmail.com>, 2018-2019.
-# Rui Fontes <rui.fontes@tiflotecnia.com>, 2018.
-# Tiago Melo Casal <tcasal@intervox.nce.ufrj.br>, 2020.
+# Ungjin Park <ungjin312@kakao.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Clock add-on\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2020-01-03 03:15+1000\n"
-"PO-Revision-Date: 2021-11-07 16:05+0900\n"
+"PO-Revision-Date: 2022-04-03 10:10+0900\n"
 "Last-Translator: ungjinPark <ungjin312@kakao.com>\n"
 "Language-Team: NVDA Korean Translation Team (NVDA 한국어 번역팀) "
-"<ungjin312kakao.com>\n"
+"<ungjin312@kakao.com>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,7 +29,7 @@ msgid ""
 "confirm these corrections"
 msgstr ""
 "이 Clock 추가기능 버전에서 사용하신 날짜 및 시간 형식을 지원하지 않습니다. 설"
-"치 중에 수정되오니 OK 버튼을 눌러 수정하세요."
+"치 중에 수정되오니 OK 버튼을 눌러 수정하세요"
 
 #. Translators: the title of a message box dialog.
 msgid "Time and date format corrections"
@@ -39,11 +37,11 @@ msgstr "시간 및 날짜 형식 수정"
 
 #, python-brace-format
 msgid "{hours} hours, "
-msgstr "{hours}시"
+msgstr "{hours}시, "
 
 #, python-brace-format
 msgid "{minutes} minutes, "
-msgstr "{minutes}분"
+msgstr "{minutes}분, "
 
 #, python-brace-format
 msgid "{seconds} seconds"
@@ -80,7 +78,7 @@ msgstr "알람 설정(&G)"
 
 #. Translators: The tooltyp text for the second item in the Clock add-on submenu.
 msgid "Allows you to schedule an alarm"
-msgstr "알람 일정을 설정할 수 있습니다."
+msgstr "알람 일정을 설정할 수 있습니다"
 
 #, python-brace-format
 msgid "Day {day}, week {week} of {year}, remaining days {remain}."
@@ -127,7 +125,7 @@ msgid "Elapsed time {elapsed}, remaining time {remaining}."
 msgstr "{elapsed} 경과, {remaining} 남음."
 
 msgid "No alarm"
-msgstr "알람이 없습니다."
+msgstr "알람이 없습니다"
 
 #. Translators: Message presented in input help mode.
 msgid "Gives the remaining and elapsed time before the next alarm."
@@ -313,12 +311,12 @@ msgstr "확인"
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {hours} o'clock and {minutes} minutes"
-msgstr "현재시간, {hours}시 {minutes}분입니다."
+msgstr "현재시간, {hours}시 {minutes}분입니다"
 
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {hours} o'clock, {minutes} minutes and {seconds} seconds"
-msgstr "현재시간, {hours}시, {minutes}분 {seconds}초입니다."
+msgstr "현재시간, {hours}시, {minutes}분 {seconds}초입니다"
 
 #. Translators: A time formating.
 #, python-brace-format
@@ -353,7 +351,7 @@ msgstr "현재시간, {hours}:{minutes}"
 #. Translators: A time formating.
 #, python-brace-format
 msgid "It's {hours}:{minutes}:{seconds}"
-msgstr "São {hours}:{minutes}:{seconds}"
+msgstr "현재시간 {hours}:{minutes}:{seconds}"
 
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 msgid ""

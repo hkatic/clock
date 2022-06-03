@@ -36,14 +36,14 @@ Huomautuksia
 ## Määrittämättömät komennot
 
 Seuraavia komentoja ei ole oletusarvoisesti määritetty. Mikäli haluat
-määrittää ne, käytä Syötekomennot-valintaikkunaa haluamiesi komentojen
+määrittää ne, käytä Näppäinkomennot-valintaikkunaa haluamiesi komentojen
 lisäämiseen. Tämä tehdään avaamalla NVDA-valikko ja valitsemalla sitten
-Asetukset-alivalikosta Syötekomennot. Laajenna Kello-kategoria, etsi
+Asetukset-alivalikosta Näppäinkomennot. Laajenna Kello-kategoria, etsi
 määrittämättömät komennot alla olevasta luettelosta, valitse "Lisää" ja
-paina sitten syötekomentoa, jota haluat käyttää.
+paina sitten näppäinkomentoa, jota haluat käyttää.
 
 * Kulunut ja jäljellä oleva aika ennen seuraavaa hälytystä. Tämän
-  syötekomennon kahdesti painaminen peruuttaa seuraavan hälytyksen.
+  näppäinkomennon kahdesti painaminen peruuttaa seuraavan hälytyksen.
 * Pysäytä tällä hetkellä soiva hälytysääni.
 * Näytä hälytysten ajastusvalintaikkuna.
 
