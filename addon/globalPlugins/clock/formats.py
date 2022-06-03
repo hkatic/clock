@@ -5,6 +5,7 @@
 
 import winKernel
 import re
+from datetime import datetime
 import addonHandler
 addonHandler.initTranslation()
 
@@ -13,6 +14,10 @@ addonHandler.initTranslation()
 ptrn = r"(\w+'?\w*|\$+[hmst]{1,2})"
 rgx = re.compile(ptrn, re.U | re.I)
 
+# An example date/time
+# This example should have single digit for hours, minutes and seconds so that one and two digit formats
+# are distinguishable.
+DT_EXAMPLE = datetime(2022, 6, 2, 1, 5, 9)
 
 def repl(match):
 	"""
@@ -41,7 +46,6 @@ def timeMarker():
 	@returns: The time marker am or pm corresponding to the current time.
 	@rtype: basestring.
 	"""
-	from datetime import datetime
 	tm = ""
 	dt = int(datetime.now().strftime("%H"))
 	if dt > 12:
@@ -51,6 +55,16 @@ def timeMarker():
 			tm = "am"
 	return tm
 
+def is24HourFormat(fmt):
+	"""
+	A function that indicates if a time format is a 24-hour format.
+	@param fmt: A time format.
+	@type fmt: basestring.
+	@returns: True if the time format is a 24-hour format, False if it is a 12-hour format.
+	@rtype: bool.
+	"""
+	return "$$H" in fmt
+	
 
 timeFormats = (
 	# Translators: A time formating (should be different from other time formattings)
@@ -87,7 +101,12 @@ timeFormats = (
 	"$$H:$$m",
 )
 
-timeDisplayFormats = [winKernel.GetTimeFormatEx(None, None, None, rgx.sub(repl, fmt)) for fmt in timeFormats]
+timeDisplayFormats = [(
+	# Translators: A way to display 24-hour formats in the time display formats list in the settings panel.
+	_('{fmt} (24-hour format)') if is24HourFormat(fmt) else
+	# Translators: A way to display 12-hour formats in the time display formats list in the settings panel.
+	_('{fmt} (12-hour format)')
+).format(fmt=winKernel.GetTimeFormatEx(None, None, DT_EXAMPLE, rgx.sub(repl, fmt))) for fmt in timeFormats]
 
 dateFormats = (
 	"dddd, MMMM dd, yyyy",
