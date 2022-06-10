@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: clock 19.01.2\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2022-01-06 16:26+0100\n"
+"PO-Revision-Date: 2022-06-03 12:06+0200\n"
 "Last-Translator: Cyrille Bougot <cyrille.bougot2@laposte.net>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -156,7 +156,7 @@ msgstr "Son arrêté"
 
 #. Translators: error message when attempting to open more than one alarm settings dialogs.
 msgid "Schedule alarms dialog is already open."
-msgstr "La boîte de dialogue Programmer des alarmes est déjà ouverte"
+msgstr "La boîte de dialogue Programmer des alarmes est déjà ouverte."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
@@ -224,11 +224,11 @@ msgstr "H&eures silencieuses"
 
 #. Translators: This is a choice of the quiet hours time format choices.
 msgid "12-hour format"
-msgstr "Entrée au format 12 heures"
+msgstr "format 12 heures"
 
 #. Translators: This is a choice of the quiet hours time format choices.
 msgid "24-hour format"
-msgstr "Entrée au format 24 heures"
+msgstr "format 24 heures"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Quiet hours time &format:"
@@ -295,50 +295,60 @@ msgstr "Vous avez choisi une alarme à déclencher dans {tm} {unit}"
 msgid "Confirmation"
 msgstr "Confirmation"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "It's {hours} o'clock and {minutes} minutes"
 msgstr "Il est {hours} heures et {minutes} minutes"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "It's {hours} o'clock, {minutes} minutes and {seconds} seconds"
 msgstr "Il est {hours} heures, {minutes} minutes et {seconds} secondes"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "{hours} o'clock, {minutes} minutes"
 msgstr "{hours} heures, {minutes} minutes"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "{hours} o'clock, {minutes} minutes, {seconds} seconds"
 msgstr "{hours} heures, {minutes} minutes, {seconds} secondes"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "It's {minutes} past {hours}"
-msgstr "Il est {hours} heures et {minutes} minutes"
+msgstr "Il est {hours} heures {minutes}"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "{hours} h {minutes} min"
 msgstr "{hours} h {minutes} min"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "{hours} h, {minutes} min, {seconds} sec"
 msgstr "{hours} h, {minutes} min, {seconds} sec"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "It's {hours}:{minutes}"
 msgstr "Il est {hours}:{minutes}"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "It's {hours}:{minutes}:{seconds}"
 msgstr "Il est {hours}:{minutes}:{seconds}"
+
+#. Translators: A way to display 24-hour formats in the time display formats list in the settings panel.
+#, fuzzy, python-brace-format
+msgid "{fmt} (24-hour format)"
+msgstr "format 24 heures"
+
+#. Translators: A way to display 12-hour formats in the time display formats list in the settings panel.
+#, fuzzy, python-brace-format
+msgid "{fmt} (12-hour format)"
+msgstr "format 12 heures"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager

@@ -69,8 +69,8 @@ msgid ""
 "pressed three times quickly, reports the current day, the week number, the "
 "current year and the days remaining before the end of the year."
 msgstr ""
-"يُعلن الوقت الحالي. عند ضغطه مرتين سريعا يُعلن عن التاريخ الحالي. عند ضغطه ثلاث "
-"مرات سريعة، يُعلن عن اليوم الحالي، ورقم الأسبوع، والسنة الحالية، والأيام "
+"يُعلن الوقت الحالي. عند ضغطه مرتين سريعا يُعلن عن التاريخ الحالي. عند ضغطه "
+"ثلاث مرات سريعة، يُعلن عن اليوم الحالي، ورقم الأسبوع، والسنة الحالية، والأيام "
 "المتبقية قبل انتهائها."
 
 #, python-brace-format
@@ -79,8 +79,8 @@ msgstr "اليوم {day}، الأسبوع {week} من سنة {year}، الأيا
 
 #. Translators: Message presented in input help mode.
 msgid ""
-"Clock and calendar layer commands. After pressing this keystroke, press H for "
-"additional help."
+"Clock and calendar layer commands. After pressing this keystroke, press H "
+"for additional help."
 msgstr ""
 "الأوامر الخاصة بإضافة الساعة والتقويم. عند ضغط مفتاح الاختصار هذا، اضغط على "
 "حرف الألف للمساعدة."
@@ -308,50 +308,60 @@ msgstr "لقد اخترت منبها ليتم تشغيله في {tm} {unit}"
 msgid "Confirmation"
 msgstr "تأكيد"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "It's {hours} o'clock and {minutes} minutes"
 msgstr "الساعة الآن {hours}، و{minutes} دقيقة"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "It's {hours} o'clock, {minutes} minutes and {seconds} seconds"
 msgstr "الساعة الآن {hours}، و{minutes} دقيقة و{seconds} ثانية"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "{hours} o'clock, {minutes} minutes"
 msgstr "الساعة {hours}و {minutes} دقيقة"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "{hours} o'clock, {minutes} minutes, {seconds} seconds"
 msgstr "الساعة {hours}، و{minutes} دقيقة، و{seconds} ثانية"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "It's {minutes} past {hours}"
 msgstr "إنها الآن {minutes} دقيقة بعد الساعة {hours}"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "{hours} h {minutes} min"
 msgstr "{hours} س {minutes} د"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "{hours} h, {minutes} min, {seconds} sec"
 msgstr "{hours} س، {minutes} د، {seconds} ث"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "It's {hours}:{minutes}"
 msgstr "إنها الآن {hours}:{minutes}"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "It's {hours}:{minutes}:{seconds}"
 msgstr "إنها الآن {hours}:{minutes}:{seconds}"
+
+#. Translators: A way to display 24-hour formats in the time display formats list in the settings panel.
+#, fuzzy, python-brace-format
+msgid "{fmt} (24-hour format)"
+msgstr "استخدام نسق ال&24 ساعة"
+
+#. Translators: A way to display 12-hour formats in the time display formats list in the settings panel.
+#, fuzzy, python-brace-format
+msgid "{fmt} (12-hour format)"
+msgstr "استخدام نسق ال&24 ساعة"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager

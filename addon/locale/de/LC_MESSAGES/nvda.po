@@ -298,50 +298,60 @@ msgstr ""
 msgid "Confirmation"
 msgstr "Bestätigung"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "It's {hours} o'clock and {minutes} minutes"
 msgstr "Es ist {hours} Uhr und {minutes} Minuten"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "It's {hours} o'clock, {minutes} minutes and {seconds} seconds"
 msgstr "Es ist {hours} Uhr, {minutes} Minuten und {seconds} Sekunden"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "{hours} o'clock, {minutes} minutes"
 msgstr "{hours} Uhr, {minutes} Minuten"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "{hours} o'clock, {minutes} minutes, {seconds} seconds"
 msgstr "{hours} Uhr, {minutes} Minuten, {seconds} Sekunden"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "It's {minutes} past {hours}"
 msgstr "Es ist {minutes} nach {hours}"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "{hours} h {minutes} min"
 msgstr "{hours} Std {minutes} Min"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "{hours} h, {minutes} min, {seconds} sec"
 msgstr "{hours} Std, {minutes} Min, {seconds} Sek"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "It's {hours}:{minutes}"
 msgstr "Es ist {hours}:{minutes}"
 
-#. Translators: A time formating.
+#. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "It's {hours}:{minutes}:{seconds}"
 msgstr "Es ist {hours}:{minutes}:{seconds}"
+
+#. Translators: A way to display 24-hour formats in the time display formats list in the settings panel.
+#, fuzzy, python-brace-format
+msgid "{fmt} (24-hour format)"
+msgstr "24-Stunden-Format"
+
+#. Translators: A way to display 12-hour formats in the time display formats list in the settings panel.
+#, fuzzy, python-brace-format
+msgid "{fmt} (12-hour format)"
+msgstr "12-Stunden-Format"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
