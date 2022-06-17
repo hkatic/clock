@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: clock\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2021-11-13 21:06+0200\n"
+"PO-Revision-Date: 2022-06-10 12:19+0200\n"
 "Last-Translator: Jani Kinnunen <janikinnunen340@gmail.com>\n"
 "Language-Team: Jani Kinnunen <janikinnunen340@gmail.com>\n"
 "Language: fi\n"
@@ -198,23 +198,23 @@ msgstr "tunnin välein"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Interval:"
-msgstr "A&ikaväli:"
+msgstr "Kellonaika i&lmoitetaan:"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "message and sound"
-msgstr "puhe ja ääni"
+msgstr "puheella ja äänellä"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "message only"
-msgstr "vain puhe"
+msgstr "vain puheella"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "sound only"
-msgstr "vain ääni"
+msgstr "vain äänellä"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Time &announcement:"
-msgstr "Kellonajan &ilmoitus:"
+msgstr "Kellonajan &ilmoittaminen:"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Clock chime &sound:"
@@ -343,14 +343,14 @@ msgid "It's {hours}:{minutes}:{seconds}"
 msgstr "{hours}:{minutes}:{seconds}"
 
 #. Translators: A way to display 24-hour formats in the time display formats list in the settings panel.
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid "{fmt} (24-hour format)"
-msgstr "24 tunnin muoto"
+msgstr "{fmt} (24 tunnin muoto)"
 
 #. Translators: A way to display 12-hour formats in the time display formats list in the settings panel.
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid "{fmt} (12-hour format)"
-msgstr "12 tunnin muoto"
+msgstr "{fmt} (12 tunnin muoto)"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager

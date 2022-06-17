@@ -70,17 +70,18 @@ Kello-paneelista:
 * Kellonajan ja päivämäärän näyttömuoto: Määritä näistä yhdistelmäruuduista,
   miten NVDA puhuu kellonajan ja päivämäärän painaessasi kerran tai kahdesti
   NVDA+F12.
-* Aikaväli: Valitse tästä yhdistelmäruudusta kellonajan ilmoittamisen
-  aikaväli (pois käytöstä, 10 minuutin välein, 15 minuutin välein, 30
-  minuutin välein tai tunnin välein).
-* Kellonajan ilmoittaminen (käytössä, mikäli aikaväliksi ei ole määritetty
-  "pois käytöstä"): Valitse vaihtoehtojen puhe ja ääni, vain ääni tai vain
-  puhe väliltä.
-* Kellon ääni (käytössä, mikäli aikaväliksi ei ole määritetty "pois
-  käytöstä"): Valitse kellon ääni.
-* Hiljaiset tunnit (käytössä, mikäli aikaväliksi ei ole määritetty "pois
-  käytöstä"): Valitse tämä valintaruutu määrittääksesi hiljaiset tunnit,
-  joiden aikana automaattinen kellonajan puhuminen ei ole käytössä.
+* Kellonajan ilmoitus: Valitse tästä yhdistelmäruudusta kellonajan
+  ilmoittamisen aikaväli (pois käytöstä, 10 minuutin välein, 15 minuutin
+  välein, 30 minuutin välein tai tunnin välein).
+* Kellonajan ilmoittaminen (käytössä, mikäli kellonajan ilmoituksen
+  aikaväliksi ei ole määritetty "pois käytöstä"): Valitse vaihtoehtojen
+  "puheella ja äänellä", "vain äänellä" tai "vain puheella" väliltä.
+* Kellon ääni (käytössä, mikäli kellonajan ilmoituksen aikaväliksi ei ole
+  määritetty "pois käytöstä"): Valitse kellon ääni.
+* Hiljaiset tunnit (käytössä, mikäli kellonajan ilmoituksen aikaväliksi ei
+  ole määritetty "pois käytöstä"): Valitse tämä valintaruutu määrittääksesi
+  hiljaiset tunnit, joiden aikana automaattinen kellonajan puhuminen ei ole
+  käytössä.
 * Hiljaisten tuntien ajan muoto (käytössä, mikäli hiljaiset tunnit ovat
   käytössä): Valitse, miten hiljaisten tuntien vaihtoehdot näytetään (12
   tunnin tai 24 tunnin muoto).

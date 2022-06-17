@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: clock 19.01.2\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2022-06-03 12:06+0200\n"
+"PO-Revision-Date: 2022-06-10 08:53+0200\n"
 "Last-Translator: Cyrille Bougot <cyrille.bougot2@laposte.net>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -341,14 +341,14 @@ msgid "It's {hours}:{minutes}:{seconds}"
 msgstr "Il est {hours}:{minutes}:{seconds}"
 
 #. Translators: A way to display 24-hour formats in the time display formats list in the settings panel.
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid "{fmt} (24-hour format)"
-msgstr "format 24 heures"
+msgstr "{fmt} (format 24 heures)"
 
 #. Translators: A way to display 12-hour formats in the time display formats list in the settings panel.
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid "{fmt} (12-hour format)"
-msgstr "format 12 heures"
+msgstr "{fmt} (format 12 heures)"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager

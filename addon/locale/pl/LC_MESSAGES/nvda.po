@@ -3,17 +3,17 @@ msgstr ""
 "Project-Id-Version: Clock 18.12dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2018-12-15 18:53+0100\n"
-"PO-Revision-Date: 2021-11-15 16:48+0100\n"
-"Last-Translator: zvonimir stanecic <zvonimirek222@yandex.com>\n"
+"PO-Revision-Date: 2022-06-12 16:47+0200\n"
+"Last-Translator: Zvonimir <9a5dsz@gozaltech.org>\n"
 "Language-Team: \n"
 "Language: pl_PL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
-"X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.1\n"
+"X-Poedit-Basepath: .\n"
 
 #. Translators: the label of a message box dialog.
 msgid ""
@@ -200,7 +200,7 @@ msgstr "&Interwał:"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "message and sound"
-msgstr "Dźwięk i komunikat"
+msgstr "komunikati dźwięk"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "message only"
@@ -216,7 +216,7 @@ msgstr "Oznajmianie &czasu:"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Clock chime &sound:"
-msgstr "Dźwięk oznajmiania &godziny"
+msgstr "Dźwięk oznajmiania &godziny:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "&Quiet hours"
@@ -276,7 +276,7 @@ msgstr "&Czas trwania:"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
-msgstr "Dźwięk a&larmu"
+msgstr "Dźwięk A&larmu:"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Stop"
@@ -338,17 +338,17 @@ msgstr "Jest {hours}:{minutes}"
 #. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "It's {hours}:{minutes}:{seconds}"
-msgstr "jest {hours}:{minutes}:{seconds}"
+msgstr "Jest {hours}:{minutes}:{seconds}"
 
 #. Translators: A way to display 24-hour formats in the time display formats list in the settings panel.
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid "{fmt} (24-hour format)"
-msgstr "Format 24-godzinny"
+msgstr "{fmt} (format 24-godzinny)"
 
 #. Translators: A way to display 12-hour formats in the time display formats list in the settings panel.
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid "{fmt} (12-hour format)"
-msgstr "Format 12-godzinny"
+msgstr "{fmt} (format 12-godzinny)"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager

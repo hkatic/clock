@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: Clock 18.12\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2018-12-12 07:57+0100\n"
-"PO-Revision-Date: 2021-10-17 20:03-0700\n"
+"PO-Revision-Date: 2022-06-10 20:41+0200\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: HR <hrvojekatic@gmail.com>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -27,13 +27,13 @@ msgid ""
 "of the Clock add-on, this will be fixed during installation. Click OK to "
 "confirm these corrections"
 msgstr ""
-"Oblik datuma i vremena koji ste koristili nisu kompatibilni s ovom verzijom "
-"dodatka Sat, a to će se popraviti tijekom instalacije. Kliknite U redu da "
-"biste potvrdili ove ispravke"
+"Format datuma i vremena koji si koristio/koristila nisu kompatibilni s ovom "
+"verzijom dodatka „Sat”. To će se popraviti tijekom instalacije. Pritisni „U "
+"redu” za potvrđivanje ovih ispravaka"
 
 #. Translators: the title of a message box dialog.
 msgid "Time and date format corrections"
-msgstr "Ispravci oblika vremena i datuma"
+msgstr "Ispravci formata vremena i datuma"
 
 #, python-brace-format
 msgid "{hours} hours, "
@@ -72,10 +72,9 @@ msgid ""
 "pressed three times quickly, reports the current day, the week number, the "
 "current year and the days remaining before the end of the year."
 msgstr ""
-"Izgovara trenutno vrijeme. Ako se pritisne dva puta brzo, izgovara trenutni "
-"datum. Ako se pritisne tri puta brzo, biti 'e iygovoren broj dana koji "
-"traje, broju tjedna, tekućoj godini i danima koji su preostali prije kraja "
-"godine."
+"Izgovara trenutačno vrijeme. Ako se pritisne dva puta brzo, izgovara "
+"trenutačni datum. Ako se pritisne tri puta brzo, izgovara trenutačni dan, "
+"broj tjedna, trenutačnu godinu i broj dana do kraja godine."
 
 #, python-brace-format
 msgid "Day {day}, week {week} of {year}, remaining days {remain}."
@@ -87,7 +86,7 @@ msgid ""
 "for additional help."
 msgstr ""
 "Višeslojne naredbe za sat i kalendar. Nakon pritiskanja ove tipkovničke "
-"kombinacije, pritisni „H” za dodatnu pomoć."
+"kombinacije, pritisni tipku „H” za dodatnu pomoć."
 
 #. Translators: Message presented in input help mode.
 msgid "Starts, resets or stops the stopwatch."
@@ -109,7 +108,7 @@ msgstr "Izgovara trenutačno stanje štoperice ili odbrojavanja vremena."
 
 #. Translators: Message presented in input help mode.
 msgid "Gives the remaining and elapsed time before the next alarm."
-msgstr "Izdaje proteklo vrijeme i preostalo vrijeme prije sljedećeg alarma."
+msgstr "Javlja preostalo i proteklo vrijeme vrijeme prije sljedećeg alarma."
 
 #, python-brace-format
 msgid "Elapsed time {elapsed}, remaining time {remaining}."
@@ -141,12 +140,12 @@ msgstr "Resetiranje štoperice."
 
 #. Translators: Message presented in input help mode.
 msgid "Lists available commands in clock command layer."
-msgstr "Ispisuje dostupne naredbe za sat."
+msgstr "Ispisuje dostupne naredbe u sloju naredbi za sat."
 
 #. Translators: Message presented in input help mode.
 msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr ""
-"Omogućuje provjeravanje sljedećeg alarm. Ako se pritisne dvaput, otkazuje "
+"Omogućuje provjeravanje sljedećeg alarma. Ako se pritisne dvaput, otkazuje "
 "alarm."
 
 #. Translators: Message presented in input help mode.
@@ -161,7 +160,7 @@ msgstr "Zvuk zaustavljen"
 
 #. Translators: error message when attempting to open more than one alarm settings dialogs.
 msgid "Schedule alarms dialog is already open."
-msgstr "Dijaloški okvir Zakazivanje alarma već je otvoren."
+msgstr "Dijaloški okvir „Zakazivanje alarma” je već otvoren."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
@@ -237,7 +236,7 @@ msgstr "24-satni format"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Quiet hours time &format:"
-msgstr "Tihi sati i oblikovanje &vremena:"
+msgstr "Tihi sati i format &vremena:"
 
 #. Translators: This is the label for an group in the Clock settings dialog.
 msgid "Quiet hours start time"
@@ -265,11 +264,11 @@ msgstr "sati"
 
 #. Translators: This is an item of the alarm duration choices.
 msgid "minutes"
-msgstr "minuta"
+msgstr "minute"
 
 #. Translators: This is an item of the alarm duration choices.
 msgid "seconds"
-msgstr "sekundi"
+msgstr "sekunde"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "&Alarm duration in:"
@@ -303,7 +302,7 @@ msgstr "Potvrda"
 #. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "It's {hours} o'clock and {minutes} minutes"
-msgstr "Sada je {hours} i {minutes}"
+msgstr "Sada je {hours} i {minutes} min"
 
 #. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
@@ -346,14 +345,14 @@ msgid "It's {hours}:{minutes}:{seconds}"
 msgstr "Sada je {hours}:{minutes}:{seconds}"
 
 #. Translators: A way to display 24-hour formats in the time display formats list in the settings panel.
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid "{fmt} (24-hour format)"
-msgstr "24-satni format"
+msgstr "{fmt} (24-satni format)"
 
 #. Translators: A way to display 12-hour formats in the time display formats list in the settings panel.
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid "{fmt} (12-hour format)"
-msgstr "12-satni format"
+msgstr "{fmt} (12-satni format)"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
@@ -366,8 +365,8 @@ msgid ""
 "For other instructions, press Add-on help button in add-ons manager."
 msgstr ""
 "Napredni sat i kalendar za NVDA.\n"
-"NVDA+F12, izgovara trenutno vrijeme.\n"
-"NVDA+F12 pritisnut dva puta brzo, izgovara trenutni datum.\n"
-"NVDA+F12 pritisnut  tri puta brzo, izgovara trenutni dan, broj tjedna, "
-"trenutnu godinu i preostale dane do kraja godine.\n"
-"Za ostale upute pritisnite gumb pomoć dodatka u upravitelju dodataka."
+"NVDA+F12, izgovara trenutačno vrijeme.\n"
+"NVDA+F12 pritisnut dva puta brzo, izgovara trenutačni datum.\n"
+"NVDA+F12 pritisnut tri puta brzo, izgovara trenutačni dan, broj tjedna, "
+"trenutačnu godinu i preostale dane do kraja godine.\n"
+"Za ostale upute pritisni gumb pomoć dodatka u upravljaču dodataka."
