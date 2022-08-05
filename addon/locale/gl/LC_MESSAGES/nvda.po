@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: clock 18.12\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2021-11-11 05:51-0800\n"
+"PO-Revision-Date: 2022-08-03 13:01+0200\n"
 "Last-Translator: Iván Novegil Cancelas <ivan.novegil.cancelas@gmail.com>\n"
 "Language-Team: \n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #. Translators: the label of a message box dialog.
 msgid ""
@@ -23,9 +23,9 @@ msgid ""
 "of the Clock add-on, this will be fixed during installation. Click OK to "
 "confirm these corrections"
 msgstr ""
-"O formato de hora e data que viñas utilizando non é compatible coa versión "
-"actual do complemento Clock, arranxarase durante a instalación. Preme "
-"Aceptar para confirmar estas correccións"
+"O formato de data e hora que viñas utilizando non é compatible coa versión "
+"actual do complemento Clock, arranxarase durante a instalación. Preme OK "
+"para confirmar estas correccións"
 
 #. Translators: the title of a message box dialog.
 msgid "Time and date format corrections"
@@ -56,7 +56,7 @@ msgstr "Clock"
 
 #. Translators: The name of the alarm item in NVDA Tools menu.
 msgid "Schedule a&larms..."
-msgstr "Programar a&larmas"
+msgstr "Programar a&larmas..."
 
 #. Translators: The tooltyp text for the alarm item in NVDA Tools menu.
 msgid "Allows you to schedule an alarm"
@@ -271,7 +271,7 @@ msgstr "Duración da &alarma en:"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 msgid "&Duration:"
-msgstr "&Duración"
+msgstr "&Duración:"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
@@ -340,14 +340,14 @@ msgid "It's {hours}:{minutes}:{seconds}"
 msgstr "Son as {hours}:{minutes}:{seconds}"
 
 #. Translators: A way to display 24-hour formats in the time display formats list in the settings panel.
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid "{fmt} (24-hour format)"
-msgstr "formato de 24 horas"
+msgstr "{fmt} (formato de 24 horas)"
 
 #. Translators: A way to display 12-hour formats in the time display formats list in the settings panel.
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid "{fmt} (12-hour format)"
-msgstr "formato de 12 horas"
+msgstr "{fmt} (formato de 12 horas)"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
