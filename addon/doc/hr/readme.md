@@ -3,7 +3,7 @@
 * Autori: Hrvoje Katić, Abdel i NVDA suradnici
 * Preuzmi [stabilnu verziju][1]
 * Preuzmi [razvojnu verziju][2]
-* NVDA compatibility: 2019.3 and later
+* NVDA kompatibilnost: 2019.3 i novije verzije
 
 Ovaj dodatak omogućuje funkcionalnosti za napredni sat, postavljanje alarma
 i kalendar za NVDA.

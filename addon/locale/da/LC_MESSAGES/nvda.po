@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: clock 18.12\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2022-01-30 16:50+0100\n"
-"Last-Translator: Daniel Gartmann <dg@danielgartmann.dk>\n"
+"PO-Revision-Date: 2022-11-05 12:34+0100\n"
+"Last-Translator: Nicolai Svendsen <chojiro1990@gmail.com>\n"
 "Language-Team: Dansk NVDA <dansk@nvda.dk>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.2\n"
 
 #. Translators: the label of a message box dialog.
 msgid ""
@@ -173,7 +173,7 @@ msgstr "&Tidsvisningsformat:"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Date display format:"
-msgstr "&Datovisningsformat:"
+msgstr "Visningsformat for dato og klokkeslæt:"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 msgid "off"
@@ -277,7 +277,7 @@ msgstr "&Varighed:"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
-msgstr "A&larmens lyd:"
+msgstr "A&larmlyd:"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Stop"
@@ -342,14 +342,14 @@ msgid "It's {hours}:{minutes}:{seconds}"
 msgstr "Den er {hours}:{minutes}:{seconds}"
 
 #. Translators: A way to display 24-hour formats in the time display formats list in the settings panel.
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid "{fmt} (24-hour format)"
-msgstr "24-timers format"
+msgstr "{fmt} (24-timers format)"
 
 #. Translators: A way to display 12-hour formats in the time display formats list in the settings panel.
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid "{fmt} (12-hour format)"
-msgstr "12-timers format"
+msgstr "{fmt} (12-timers format)"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager

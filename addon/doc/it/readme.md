@@ -44,7 +44,7 @@ gesture you wish to use.
 * Tempo trascorso e tempo rimanente prima dell'allarme successivo. premendo
   questo comando  due volte rapidamente si annullerà l'allarme successivo.
 * Interrompi la riproduzione del suono dell'allarme.
-* Display schedule alarms dialog box.
+* Visualizza la finestra di dialogo degli allarmi programmati.
 
 ## comandi a livello:
 
@@ -54,22 +54,23 @@ tasti:
 * S: Avvia, interrompe o azzera per riavviare il cronometro.
 * R: Azzera il cronometro senza ripartire.
 * A: annuncia il tempo restante e trascorso per il timer;
-* T: opens schedule alarms dialog.
+* T: apre la finestra di dialogo degli allarmi programmati.
 * C: Annulla il Timer impostato.
 * BarraSpaziatrice: Legge il tempo trascorso nel cronometro.
 * P: interrompe il suono del timer;
 * H: elenca i comandi a livello disponibili.
 
-## Configuration and usage
+## Configurazione e utilizzo
 
-To configure clock functionality, open NvDA menu, Preferences, then
-Settings, and configure the following options from Clock panel:
+Per configurare la funzionalità dell'orologio, apri il menu NvDA,
+Preferenze, quindi Impostazioni e configura le seguenti opzioni dal pannello
+Orologio:
 
-* Time and date display format: use these combo boxes to configure how NVDA
-  will announce time and date when you press NVDA+F12 once or twice quickly,
-  respectively.
-* Interval: choose the time announcement interval from this combo box (off,
-  every 10 minutes, 15 minutes, 30 minutes, or every hour).
+* Formato di visualizzazione dell'ora e della data: usa queste caselle
+  combinate per configurare come NVDA annuncerà l'ora e la data quando premi
+  NVDA+F12 una o due volte velocemente, rispettivamente.
+* Intervallo: scegli l'intervallo di tempo dell'annuncio da questa casella
+  combinata (off, ogni 10 minuti, 15 minuti, 30 minuti o ogni ora).
 * Time announcement (enabled if interval is not off): choose between speech
   and sound, sound only, or speech only.
 * Clock chime sound (enabled if interval is not off): select the clock chime

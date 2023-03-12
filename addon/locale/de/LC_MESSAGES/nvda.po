@@ -9,13 +9,13 @@ msgstr ""
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2018-12-10 03:30+1000\n"
 "PO-Revision-Date: \n"
-"Last-Translator: René Linke <rene.linke@hamburg.de>\n"
+"Last-Translator: Karl Eick <hozosch@web.de>\n"
 "Language-Team: \n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.1\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #. Translators: the label of a message box dialog.
 msgid ""
@@ -75,7 +75,8 @@ msgstr ""
 
 #, python-brace-format
 msgid "Day {day}, week {week} of {year}, remaining days {remain}."
-msgstr "Tag {day}, Woche {week} in {year}, verbleibende Tage {remain}."
+msgstr ""
+"Tag {day}, Woche {week} des Jahres {year}, {remain} Tage bis zum Jahresende."
 
 #. Translators: Message presented in input help mode.
 msgid ""
