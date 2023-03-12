@@ -1,51 +1,14 @@
-name: automatic-release
+name: pre-release
 
 on:
-  workflow_call:
+  push:
+    branches:
+      - main
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 0 * * 6'
 
 jobs:
-  l10n:
-    name: l10n
-    continue-on-error: true
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    - name: Push l10n updates
-      run: |
-        git config --global user.name github-actions
-        git config --global user.email github-actions@github.com
-        git remote add l10n https://github.com/nvdaaddons/${GITHUB_REPOSITORY#*/}
-        git fetch l10n
-        git reset l10n/stable addon/doc addon/locale
-        git commit -m "Update translations"
-        git pull
-        git push
-
   pre-release:
-    name: Pre Release
-    needs: l10n
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.8
-    - name: Install dependencies
-      run: |
-        pip install scons markdown
-        sudo apt update
-        sudo apt install gettext
-    - name: Build
-      run: scons version=${{ github.sha }}
-    - name: Automatic release
-      uses: marvinpinto/action-automatic-releases@latest
-      with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        automatic_release_tag: latest
-        prerelease: true
-        title: Development Build
-        files: |
-          *.nvda-addon
+    uses: nvdaes/nvdaAddonWorkflows/.github/workflows/automaticRelease.yaml@main
+    
