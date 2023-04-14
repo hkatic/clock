@@ -2,7 +2,7 @@
 
 * Yazarlar: Hrvoje Katić, Abdel ve NVDA'ya katkıda bulunanlar
 * [Kararlı Sürüm][1]ü indir
-* [geliştirici sürümü][2].nü indir
+
 * NVDA uyumluluğu: 2019.3 ve üstü
 
 Bu eklenti, NVDA için gelişmiş saat, alarm zamanlayıcı ve takvim
@@ -98,8 +98,7 @@ ayarla'yı seçin. İletişim kutusu şunları içerir:
 
 Tamam'a bastığınızda şu anda seçilen alarm süresi  bildirilecektir.
 
-[[!tag dev stable]]
+[[!tag stable]]
 
-[1]: https://addons.nvda-project.org/files/get.php?file=cac
-
-[2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
+[1]:
+https://github.com/hkatic/clock/releases/download/24.04.0/clock-24.04.0.nvda-addon

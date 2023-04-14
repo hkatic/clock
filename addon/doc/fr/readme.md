@@ -2,7 +2,7 @@
 
 * Auteurs : Hrvoje Katić, Abdel et contributeurs de NVDA
 * Télécharger [version stable][1]
-* Télécharger [version de développement][2]
+
 * Compatibilité NVDA : 2019.3 et ultérieure
 
 Cette extension active les fonctions avancées de l'horloge, de minuterie
@@ -103,8 +103,7 @@ Planifier les alarmes. Le contenu de la boîte de dialogue comprend:
 Cliquez sur OK, et un message vous informera de la durée de l'alarme
 actuellement sélectionnée.
 
-[[!tag dev stable]]
+[[!tag stable]]
 
-[1]: https://addons.nvda-project.org/files/get.php?file=cac
-
-[2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
+[1]:
+https://github.com/hkatic/clock/releases/download/24.04.0/clock-24.04.0.nvda-addon

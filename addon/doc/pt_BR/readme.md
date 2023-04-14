@@ -2,7 +2,7 @@
 
 * Autores: Hrvoje Katić, Abdel e colaboradores do NVDA
 * Baixe a [versão estável][1]
-* Baixe a [versão em desenvolvimento][2]
+
 * Compatibilidade com NVDA: 2019.3 e posteriores
 
 Este complemento habilita a funcionalidade avançada de relógio, temporizador
@@ -98,8 +98,7 @@ Alarmes. O conteúdo da caixa de diálogo inclui:
 Clique em OK e uma mensagem informará a duração do alarme atualmente
 selecionado.
 
-[[!tag dev stable]]
+[[!tag stable]]
 
-[1]: https://addons.nvda-project.org/files/get.php?file=cac
-
-[2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
+[1]:
+https://github.com/hkatic/clock/releases/download/24.04.0/clock-24.04.0.nvda-addon
