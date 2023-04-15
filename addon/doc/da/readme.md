@@ -2,7 +2,7 @@
 
 * Forfattere: Hrvoje Katić, Abdel og NVDA-bidragydere
 * Download [stabil version][1]
-* Download [udviklingsversion][2]
+
 * NVDA-kompatibilitet: 2019.3 og nyere
 
 Denne tilføjelse tilføjer avancerede ur, alarm, tidtagning  og
@@ -98,9 +98,7 @@ vælge Indstil alarmer. Dialogen indeholder følgende indstillinger:
 Klik på OK, og en meddelelse vil informere dig om den aktuelt valgte
 alarmvarighed.
 
-[[!tag dev stable]]
-[[!tag dev]]
+[[!tag stable]]
 
-[1]: https://addons.nvda-project.org/files/get.php?file=cac
-
-[2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
+[1]:
+https://github.com/hkatic/clock/releases/download/24.04.0/clock-24.04.0.nvda-addon

@@ -2,7 +2,7 @@
 
 * Autorzy: Hrvoje Katić, Abdel i współpracownicy NVDA
 * Pobierz [wersja stabilna][1]
-* Pobierz [Wersja rozwojowa][2]
+
 * Zgodność z NVDA: 2019.3 i nowsze
 
 Ten dodatek umożliwia zaawansowane funkcje zegara, timera alarmowego i
@@ -98,8 +98,7 @@ Zaplanuj alarmy. Zawartość okna dialogowego obejmuje:
 Kliknij przycisk OK, a pojawi się komunikat informujący o wybranym czasie
 trwania alarmu.
 
-[[!tag dev stable]]
+[[!tag stable]]
 
-[1]: https://addons.nvda-project.org/files/get.php?file=cac
-
-[2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
+[1]:
+https://github.com/hkatic/clock/releases/download/24.04.0/clock-24.04.0.nvda-addon

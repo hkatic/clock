@@ -2,7 +2,7 @@
 
 * Autoren: Hrvoje Katić, Abdel und die NVDA-Community
 * [Stabile Version herunterladen][1]
-* [Entwicklerversion herunterladen][2]
+
 * NVDA-Kompatibilität: 2019.3 und neuer
 
 Diese NVDA-Erweiterung aktiviert die erweiterten Funktionen für Uhr, Wecker
@@ -104,8 +104,7 @@ dann den eintrag "Alarme planen" aus. Die Dialogfelder umfassen:
 Klicken Sie auf "OK" und eine Meldung informiert Sie über die aktuell
 ausgewählte Alarmdauer.
 
-[[!tag dev stable]]
+[[!tag stable]]
 
-[1]: https://addons.nvda-project.org/files/get.php?file=cac
-
-[2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
+[1]:
+https://github.com/hkatic/clock/releases/download/24.04.0/clock-24.04.0.nvda-addon

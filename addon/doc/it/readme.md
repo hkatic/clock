@@ -2,7 +2,7 @@
 
 * Authori: Hrvoje Katić, Abdel e altri collaboratori di NVDA.
 * Scarica la [versione stabile][1]
-* Scarica la [versione in sviluppo][2]
+
 * NVDA compatibility: 2019.3 and later
 
 Questo componente aggiuntivo presenta impostazioni avanzate per l'orologio,
@@ -95,8 +95,7 @@ dialog contents include:
 Click OK, and a message will inform you the curretnly selected alarm
 duration.
 
-[[!tag dev stable]]
+[[!tag stable]]
 
-[1]: https://addons.nvda-project.org/files/get.php?file=cac
-
-[2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
+[1]:
+https://github.com/hkatic/clock/releases/download/24.04.0/clock-24.04.0.nvda-addon

@@ -2,7 +2,7 @@
 
 * Autori: Hrvoje Katić, Abdel i NVDA suradnici
 * Preuzmi [stabilnu verziju][1]
-* Preuzmi [razvojnu verziju][2]
+
 * NVDA kompatibilnost: 2019.3 i novije verzije
 
 Ovaj dodatak omogućuje funkcionalnosti za napredni sat, postavljanje alarma
@@ -74,9 +74,9 @@ Settings, and configure the following options from Clock panel:
   and sound, sound only, or speech only.
 * Clock chime sound (enabled if interval is not off): select the clock chime
   sound.
-* Quiet hours (enabled if interval is not off): select this checkbox to
-  configure quiet hours range when automatic time announcement should not
-  occur.
+* „Sati mirovanja” (uključeno ako interval nije isključen): odaberi ovaj
+  potvrdni okvir za konfiguriranje vremenskog raspona sata mirovanja u kojem
+  se automatska najava vremena ne primijenjuje.
 * Quiet hours time format (enabled if quiet hours is enabled): select how
   quiet hours options are presented (12-hour or 24-hour format).
 * Quiet hours start and end times: select hour and minute range for quiet
@@ -94,8 +94,7 @@ dialog contents include:
 Pritisni U redu i poruka će te obavijestiti o trenutačno odabranom trajanju
 alarma.
 
-[[!tag dev stable]]
+[[!tag stable]]
 
-[1]: https://addons.nvda-project.org/files/get.php?file=cac
-
-[2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
+[1]:
+https://github.com/hkatic/clock/releases/download/24.04.0/clock-24.04.0.nvda-addon

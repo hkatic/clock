@@ -2,7 +2,7 @@
 
 * Tekijät: Hrvoje Katić, Abdel sekä muut NVDA-projektiin osallistujat;
 * Lataa [vakaa versio][1]
-* Lataa [kehitysversio][2]
+
 * Yhteensopivuus: NVDA 2019.3 ja uudemmat
 
 Tämä lisäosa lisää NVDA:han edistyneen kellon, ajastimen sekä kalenterin.
@@ -102,8 +102,7 @@ seuraavat vaihtoehdot:
 Paina OK, jonka jälkeen näytetään nykyisen hälytyksen keston kertova
 ilmoitus.
 
-[[!tag dev stable]]
+[[!tag stable]]
 
-[1]: https://addons.nvda-project.org/files/get.php?file=cac
-
-[2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
+[1]:
+https://github.com/hkatic/clock/releases/download/24.04.0/clock-24.04.0.nvda-addon

@@ -2,7 +2,7 @@
 
 * Автори: Hrvoje Katić, Abdel and NVDA contributors
 * Завантажити [стабільну версію][1]
-* Завантажити [версію в розробці][2]
+
 * Сумісність з NVDA: 2019.3 і пізніші
 
 Цей додаток надає розширені функції годинника, таймера й календаря для NVDA.
@@ -93,8 +93,7 @@
 
 Натисніть «Гаразд» і почуєте вибрану тривалість таймера.
 
-[[!tag dev stable]]
+[[!tag stable]]
 
-[1]: https://addons.nvda-project.org/files/get.php?file=cac
-
-[2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
+[1]:
+https://github.com/hkatic/clock/releases/download/24.04.0/clock-24.04.0.nvda-addon

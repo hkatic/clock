@@ -2,7 +2,7 @@
 
 * Автори: Hrvoje Katić, Abdel и други сътрудници
 * Изтегляне на [стабилна версия][1]
-* Изтегляне на [тестова версия][2]
+
 * Съвместимост с NVDA: от 2019.3 и по-нови версии
 
 Тази добавка за NVDA разширява възможностите за работа с часовника, алармата
@@ -99,8 +99,7 @@
 Задействайте бутона "OK" и съобщение ще ви информира за продължителността на
 текущо избраната аларма.
 
-[[!tag dev stable]]
+[[!tag stable]]
 
-[1]: https://addons.nvda-project.org/files/get.php?file=cac
-
-[2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
+[1]:
+https://github.com/hkatic/clock/releases/download/24.04.0/clock-24.04.0.nvda-addon
