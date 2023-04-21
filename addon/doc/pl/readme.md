@@ -100,5 +100,4 @@ trwania alarmu.
 
 [[!tag stable]]
 
-[1]:
-https://github.com/hkatic/clock/releases/download/24.04.0/clock-24.04.0.nvda-addon
+[1]: https://www.nvaccess.org/addonStore/legacy?file=clock
