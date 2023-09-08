@@ -35,11 +35,11 @@ Nota:
 
 ## Comandi non assegnati:
 
-I seguenti comandi non sono assegnati per impostazione predefinita; se desideri
-utilizzarli, usa la finestra di dialogo Gesti di input per aggiungere comandi personalizzati. Per fare ciò, apri
-il menu di NVDA, Preferenze, quindi Gesti di input. Espandi la categoria Orologio, quindi individua
-comandi non assegnati nell'elenco e seleziona "Aggiungi", quindi inserisci il
-gesto che desideri utilizzare.
+The following commands are not assigned by default; if you wish to assign
+them, use Input Gestures dialog to add custom commands. To do so, open NVDA
+menu, Preferences, then Input Gestures. Expand Clock category, then locate
+unassigned commands from the list below and select "Add", then enter the
+gesture you wish to use.
 
 * Tempo trascorso e tempo rimanente prima dell'allarme successivo. premendo
   questo comando  due volte rapidamente si annullerà l'allarme successivo.
@@ -69,13 +69,12 @@ Orologio:
 * Formato di visualizzazione dell'ora e della data: usa queste caselle
   combinate per configurare come NVDA annuncerà l'ora e la data quando premi
   NVDA+F12 una o due volte velocemente, rispettivamente.
-* Segnale orario: scegli l'intervallo di tempo dell'annuncio da questa casella
+* Intervallo: scegli l'intervallo di tempo dell'annuncio da questa casella
   combinata (off, ogni 10 minuti, 15 minuti, 30 minuti o ogni ora).
-* Avviso segnale orario (abilitato se "Segnale orario" non è su off): scegli tra suono
-  e voce, solo suono o solo voce.
-* Suono segnale orario (abilitato se "Segnale orario" non è su off): Seleziona il suono predefinito della campana dell'orologio per i minuti intermedi e l'inizio dell'ora.
-* Separa suoni segnale orario e minuti intermedi (abilitato se "Segnale orario" non è su off, disattivata per impostazione predefinita): Attiva questa casella di controllo per personalizzare i suoni per i minuti intermedi separatamente dal segnale orario.
-* Suono minuti intermedi (abilitato se è selezionata la casella "Separa suoni segnale orario e minuti intermedi"): Seleziona il suono della campana dell'orologio specificamente per i minuti intermedi.
+* Time announcement (enabled if interval is not off): choose between speech
+  and sound, sound only, or speech only.
+* Clock chime sound (enabled if interval is not off): select the clock chime
+  sound.
 * Quiet hours (enabled if interval is not off): select this checkbox to
   configure quiet hours range when automatic time announcement should not
   occur.

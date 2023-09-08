@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2018-12-14 14:31+0100\n"
-"PO-Revision-Date: 2023-09-08 10:56+0200\n"
+"PO-Revision-Date: 2022-07-24 15:09+0100\n"
 "Last-Translator: Chris <llajta2012@gmail.com>\n"
 "Language-Team: \n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 1.6.11\n"
 "X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Translators: the label of a message box dialog.
 msgid ""
@@ -212,14 +212,6 @@ msgstr "&Avviso segnale orario:"
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Clock chime &sound:"
 msgstr "Suono &segnale orario:"
-
-#. Translators: This is the label for a checkbox in the Clock settings dialog.
-msgid "&Separate hour and intermediate minute chimes"
-msgstr "&Separa suoni segnale orario e minuti intermedi"
-
-#. Translators: This is the label for a combo box in the Clock settings dialog.
-msgid "Intermediate minutes chime &sound:"
-msgstr "Suono &minuti intermedi:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "&Quiet hours"
