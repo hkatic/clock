@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2018-12-14 14:31+0100\n"
-"PO-Revision-Date: 2023-09-07 20:33+0200\n"
+"PO-Revision-Date: 2023-09-08 10:56+0200\n"
 "Last-Translator: Chris <llajta2012@gmail.com>\n"
 "Language-Team: \n"
 "Language: it\n"
@@ -214,12 +214,12 @@ msgid "Clock chime &sound:"
 msgstr "Suono &segnale orario:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
-msgid "&Separate hour/minute chimes"
-msgstr "&Separazione suoni Ora/Minuti"
+msgid "&Separate hour and intermediate minute chimes"
+msgstr "&Separa suoni segnale orario e minuti intermedi"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
-msgid "Interval chime &sound:"
-msgstr "Suono &intervalli:"
+msgid "Intermediate minutes chime &sound:"
+msgstr "Suono &minuti intermedi:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "&Quiet hours"

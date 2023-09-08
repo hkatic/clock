@@ -64,10 +64,10 @@ class ClockSettingsPanel(SettingsPanel):
 		self._timeReportSound = _("Clock chime &sound:")
 
 		# Translators: This is the label for a checkbox in the Clock settings dialog.
-		self._separateReportSounds = _("&Separate hour/minute chimes")
+		self._separateReportSounds = _("&Separate hour and intermediate minute chimes")
 
 		# Translators: This is the label for a combo box in the Clock settings dialog.
-		self._timeIntermediateReportSound = _("Interval chime &sound:")
+		self._timeIntermediateReportSound = _("Intermediate minutes chime &sound:")
 
 		# Translators: This is the label for a checkbox in the Clock settings dialog.
 		self._quietHours = _("&Quiet hours")
@@ -170,7 +170,7 @@ class ClockSettingsPanel(SettingsPanel):
 		evt.Skip()
 		self._timeReportChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._quietHoursCheckBox.Enabled = bool(self._autoAnnounceChoice.GetSelection())
-		self._timeIntermediateReportSoundChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection())
+		self._timeIntermediateReportSoundChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection() and self._separateReportSoundsCheckBox.IsChecked())
 		self._timeReportSoundChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._separateReportSoundsCheckBox.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._input24HourFormatChoice.Enabled = (

@@ -50,8 +50,8 @@ To configure clock functionality, open NVDA menu, Preferences, then Settings, an
 * Interval: choose the time announcement interval from this combo box (off, every 10 minutes, 15 minutes, 30 minutes, or every hour).
 * Time announcement (enabled if interval is not off): choose between speech and sound, sound only, or speech only.
 * Clock chime sound (enabled if interval is not off): Select the default clock chime sound for both intervals and the top of the hour.
-* Separate hour/minute chimes (enabled if interval is not off, disabled by default): Enable this checkbox to customize chimes for intervals separately from the hourly chime.
-  * Interval chime sound (enabled if "Separate hour/minute chimes" is checked): Select the clock chime sound specifically for intervals.
+* Separate hour and intermediate minute chimes (enabled if interval is not off, disabled by default): Enable this checkbox to customize chimes for intermediate minutes separately from the hourly chime.
+  * Intermediate minutes chime sound (enabled if "Separate hour and intermediate minute chimes" is checked): Select the clock chime sound specifically for intermediate minutes.
 * Quiet hours (enabled if interval is not off): select this checkbox to configure quiet hours range when automatic time announcement should not occur.
 * Quiet hours time format (enabled if quiet hours is enabled): select how quiet hours options are presented (12-hour or 24-hour format).
 * Quiet hours start and end times: select hour and minute range for quiet hours from hours and minutes combo boxes.
