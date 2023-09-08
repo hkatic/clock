@@ -64,6 +64,12 @@ class ClockSettingsPanel(SettingsPanel):
 		self._timeReportSound = _("Clock chime &sound:")
 
 		# Translators: This is the label for a checkbox in the Clock settings dialog.
+		self._separateReportSounds = _("&Separate hour and intermediate minute chimes")
+
+		# Translators: This is the label for a combo box in the Clock settings dialog.
+		self._timeIntermediateReportSound = _("Intermediate minutes chime &sound:")
+
+		# Translators: This is the label for a checkbox in the Clock settings dialog.
 		self._quietHours = _("&Quiet hours")
 
 		self._quietHourTimeFormatChoices = (
@@ -107,6 +113,12 @@ class ClockSettingsPanel(SettingsPanel):
 		self._timeReportSoundChoice = clockSettingsGuiHelper.addLabeledControl(
 			self._timeReportSound, wx.Choice, choices=paths.LIST_SOUNDS
 		)
+		self._separateReportSoundsCheckBox = clockSettingsGuiHelper.addItem(
+			wx.CheckBox(self, label=self._separateReportSounds)
+		)
+		self._timeIntermediateReportSoundChoice = clockSettingsGuiHelper.addLabeledControl(
+			self._timeIntermediateReportSound, wx.Choice, choices=paths.LIST_SOUNDS
+		)		
 		self._quietHoursCheckBox = clockSettingsGuiHelper.addItem(
 			wx.CheckBox(self, label=self._quietHours)
 		)
@@ -144,7 +156,10 @@ class ClockSettingsPanel(SettingsPanel):
 		)
 
 		# Event.
+		self._timeIntermediateReportSoundChoice.SetStringSelection(config.conf["clockAndCalendar"]["timeIntermediateReportSound"])
 		self._timeReportSoundChoice.SetStringSelection(config.conf["clockAndCalendar"]["timeReportSound"])
+		self._timeIntermediateReportSoundChoice.Bind(wx.EVT_CHOICE, self.onSoundSelected)
+		self._separateReportSoundsCheckBox.Bind(wx.EVT_CHECKBOX, self.onSeparateReportSoundsToggle)
 		self._timeReportSoundChoice.Bind(wx.EVT_CHOICE, self.onSoundSelected)
 		self._autoAnnounceChoice.Bind(wx.EVT_CHOICE, self.onAutoAnnounce)
 		self._quietHoursCheckBox.Bind(wx.EVT_CHECKBOX, self.onQuietHoursToggle)
@@ -155,7 +170,9 @@ class ClockSettingsPanel(SettingsPanel):
 		evt.Skip()
 		self._timeReportChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._quietHoursCheckBox.Enabled = bool(self._autoAnnounceChoice.GetSelection())
+		self._timeIntermediateReportSoundChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection() and self._separateReportSoundsCheckBox.IsChecked())
 		self._timeReportSoundChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection())
+		self._separateReportSoundsCheckBox.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._input24HourFormatChoice.Enabled = (
 			self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled()
 		)
@@ -166,6 +183,10 @@ class ClockSettingsPanel(SettingsPanel):
 
 	def onSoundSelected(self, evt):
 		return nvwave.playWaveFile(os.path.join(paths.SOUNDS_DIR, evt.GetString()))
+
+	def onSeparateReportSoundsToggle(self, evt):
+		evt.Skip()
+		self._timeIntermediateReportSoundChoice.Enabled = self._separateReportSoundsCheckBox.IsChecked()
 
 	def onQuietHoursToggle(self, evt):
 		evt.Skip()
@@ -214,6 +235,7 @@ class ClockSettingsPanel(SettingsPanel):
 		self._autoAnnounceChoice.SetSelection(config.conf["clockAndCalendar"]["autoAnnounce"])
 		self._timeReportChoice.SetSelection(config.conf["clockAndCalendar"]["timeReporting"])
 		self._quietHoursCheckBox.SetValue(config.conf["clockAndCalendar"]["quietHours"])
+		self._separateReportSoundsCheckBox.SetValue(config.conf["clockAndCalendar"]["separateReportSounds"])
 		self._input24HourFormatChoice.SetSelection(config.conf["clockAndCalendar"]["input24HourFormat"])
 		self.startHourEntry.SetSelection(quietHoursStartTime.hour)
 		self.startMinEntry.SetSelection(quietHoursStartTime.minute)
@@ -222,6 +244,7 @@ class ClockSettingsPanel(SettingsPanel):
 		self._timeReportChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._quietHoursCheckBox.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._timeReportSoundChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection())
+		self._timeIntermediateReportSoundChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection() and self._separateReportSoundsCheckBox.IsChecked())
 		self._input24HourFormatChoice.Enabled = (
 			self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled()
 		)
@@ -236,6 +259,8 @@ class ClockSettingsPanel(SettingsPanel):
 		config.conf["clockAndCalendar"]["input24HourFormat"] = bool(self._input24HourFormatChoice.GetSelection())
 		config.conf["clockAndCalendar"]["autoAnnounce"] = self._autoAnnounceChoice.GetSelection()
 		config.conf["clockAndCalendar"]["timeReporting"] = self._timeReportChoice.GetSelection()
+		config.conf["clockAndCalendar"]["timeIntermediateReportSound"] = self._timeIntermediateReportSoundChoice.GetStringSelection()
+		config.conf["clockAndCalendar"]["separateReportSounds"] = self._separateReportSoundsCheckBox.GetValue()
 		config.conf["clockAndCalendar"]["timeReportSound"] = self._timeReportSoundChoice.GetStringSelection()
 		quietHours = self._quietHoursCheckBox.GetValue()
 		config.conf["clockAndCalendar"]["quietHours"] = quietHours

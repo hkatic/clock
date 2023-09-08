@@ -73,7 +73,13 @@ class Clock(object):
 		now = datetime.now()
 		if self.quietHoursAreActive():
 			return
-		waveFile = os.path.join(paths.SOUNDS_DIR, config.conf["clockAndCalendar"]["timeReportSound"])
+		if config.conf["clockAndCalendar"]["separateReportSounds"] == True:
+				if now.minute == 0:
+					waveFile = os.path.join(paths.SOUNDS_DIR, config.conf["clockAndCalendar"]["timeReportSound"])
+				else:
+					waveFile = os.path.join(paths.SOUNDS_DIR, config.conf["clockAndCalendar"]["timeIntermediateReportSound"])
+		else:
+			waveFile = os.path.join(paths.SOUNDS_DIR, config.conf["clockAndCalendar"]["timeReportSound"])
 		if config.conf["clockAndCalendar"]["timeReporting"] != 1:
 			nvwave.playWaveFile(waveFile)
 		if config.conf["clockAndCalendar"]["timeReporting"] != 2:
