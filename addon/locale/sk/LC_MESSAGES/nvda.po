@@ -69,7 +69,8 @@ msgid ""
 "current year and the days remaining before the end of the year."
 msgstr ""
 "Oznamuje čas. Stlačené 2 krát oznamuje dátum. Stlačené 3 krát oznamuje "
-"aktuálny deň, číslo týždňa, aktuálny rok a počet dní zostávajúcich do konca roka."
+"aktuálny deň, číslo týždňa, aktuálny rok a počet dní zostávajúcich do konca "
+"roka."
 
 #, python-brace-format
 msgid "Day {day}, week {week} of {year}, remaining days {remain}."
@@ -216,6 +217,14 @@ msgstr "&oznamovanie času:"
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Clock chime &sound:"
 msgstr "&Zvuk:"
+
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
+msgid "&Separate hour and intermediate minute chimes"
+msgstr ""
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+msgid "Intermediate minutes chime &sound:"
+msgstr ""
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "&Quiet hours"
