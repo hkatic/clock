@@ -219,6 +219,14 @@ msgid "Clock chime &sound:"
 msgstr "&Звуков сигнал за часовника:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
+msgid "&Separate hour and intermediate minute chimes"
+msgstr ""
+
+#. Translators: This is the label for a combo box in the Clock settings dialog.
+msgid "Intermediate minutes chime &sound:"
+msgstr ""
+
+#. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "&Quiet hours"
 msgstr "&Тихи часове"
 
