@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: clock\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2022-06-10 12:19+0200\n"
+"PO-Revision-Date: 2023-10-20 12:04+0200\n"
 "Last-Translator: Jani Kinnunen <janikinnunen340@gmail.com>\n"
 "Language-Team: Jani Kinnunen <janikinnunen340@gmail.com>\n"
 "Language: fi\n"
@@ -57,7 +57,7 @@ msgstr "Kello"
 
 #. Translators: The name of the alarm item in NVDA Tools menu.
 msgid "Schedule a&larms..."
-msgstr "Ajoita &hälytyksiä..."
+msgstr "&Hälytysten ajoitus..."
 
 #. Translators: The tooltyp text for the alarm item in NVDA Tools menu.
 msgid "Allows you to schedule an alarm"
@@ -151,14 +151,14 @@ msgid "If an alarm is too long, allows to stop it."
 msgstr "Lopettaa hälytyksen, mikäli se kestää liian kauan."
 
 msgid "No sound is launched."
-msgstr "Ääntä ei soiteta."
+msgstr "Hälytysääntä ei soiteta."
 
 msgid "Sound stopped"
-msgstr "Äänen soitto lopetettu"
+msgstr "Hälytysäänen soitto lopetettu"
 
 #. Translators: error message when attempting to open more than one alarm settings dialogs.
 msgid "Schedule alarms dialog is already open."
-msgstr "Hälytysten ajoitusvalintaikkuna on jo avoinna."
+msgstr "Hälytystenajoitusvalintaikkuna on jo avoinna."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
@@ -222,11 +222,11 @@ msgstr "Ke&llon ääni:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "&Separate hour and intermediate minute chimes"
-msgstr ""
+msgstr "Er&illiset tunnin ja puolen tunnin ilmoitusäänet"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Intermediate minutes chime &sound:"
-msgstr ""
+msgstr "Puolen tunnin i&lmoitusääni:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "&Quiet hours"
@@ -262,7 +262,7 @@ msgstr "Minuutit:"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Schedule alarms"
-msgstr "Ajoita hälytyksiä"
+msgstr "Hälytysten ajoitus"
 
 #. Translators: This is an item of the alarm duration choices.
 msgid "hours"
@@ -308,22 +308,22 @@ msgstr "Vahvistus"
 #. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "It's {hours} o'clock and {minutes} minutes"
-msgstr "Kello on {hours} tuntia ja {minutes} minuuttia"
+msgstr "Kello on {hours}.{minutes}"
 
 #. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "It's {hours} o'clock, {minutes} minutes and {seconds} seconds"
-msgstr "Kello on {hours} tuntia, {minutes} minuuttia ja {seconds} sekuntia"
+msgstr "Kello on {hours}.{minutes}.{seconds}"
 
 #. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "{hours} o'clock, {minutes} minutes"
-msgstr "{hours} tuntia, {minutes} minuuttia"
+msgstr "{hours}.{minutes}"
 
 #. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "{hours} o'clock, {minutes} minutes, {seconds} seconds"
-msgstr "{hours} tuntia, {minutes} minuuttia, {seconds} sekuntia"
+msgstr "{hours}.{minutes}.{seconds}"
 
 #. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
@@ -333,22 +333,22 @@ msgstr "{minutes} yli {hours}"
 #. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
 msgid "{hours} h {minutes} min"
-msgstr "{hours} h {minutes} min"
-
-#. Translators: A time formating (should be different from other time formattings)
-#, python-brace-format
-msgid "{hours} h, {minutes} min, {seconds} sec"
-msgstr "{hours} h, {minutes} min, {seconds} sek"
-
-#. Translators: A time formating (should be different from other time formattings)
-#, python-brace-format
-msgid "It's {hours}:{minutes}"
 msgstr "{hours}:{minutes}"
 
 #. Translators: A time formating (should be different from other time formattings)
 #, python-brace-format
-msgid "It's {hours}:{minutes}:{seconds}"
+msgid "{hours} h, {minutes} min, {seconds} sec"
 msgstr "{hours}:{minutes}:{seconds}"
+
+#. Translators: A time formating (should be different from other time formattings)
+#, python-brace-format
+msgid "It's {hours}:{minutes}"
+msgstr "Kello on {hours}:{minutes}"
+
+#. Translators: A time formating (should be different from other time formattings)
+#, python-brace-format
+msgid "It's {hours}:{minutes}:{seconds}"
+msgstr "Kello on {hours}:{minutes}:{seconds}"
 
 #. Translators: A way to display 24-hour formats in the time display formats list in the settings panel.
 #, python-brace-format
