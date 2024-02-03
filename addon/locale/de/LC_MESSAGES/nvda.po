@@ -9,13 +9,13 @@ msgstr ""
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2018-12-10 03:30+1000\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Karl Eick <hozosch@web.de>\n"
+"Last-Translator: René Linke <rene.linke@hamburg.de>\n"
 "Language-Team: \n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #. Translators: the label of a message box dialog.
 msgid ""
@@ -24,7 +24,7 @@ msgid ""
 "confirm these corrections"
 msgstr ""
 "Das von Ihnen verwendete Datums- und Uhrzeitformat ist nicht mit dieser "
-"Version der Erweiterung kompatibel. Dies wird während der Installation "
+"Version der NVDA-Erweiterung kompatibel. Dies wird während der Installation "
 "automatisch berichtigt. Klicken Sie auf \"OK\", um dies zu bestätigen"
 
 #. Translators: the title of a message box dialog.
@@ -56,11 +56,11 @@ msgstr "Uhr"
 
 #. Translators: The name of the alarm item in NVDA Tools menu.
 msgid "Schedule a&larms..."
-msgstr "Wecker p&lanen..."
+msgstr "Wecker stellen..."
 
 #. Translators: The tooltyp text for the alarm item in NVDA Tools menu.
 msgid "Allows you to schedule an alarm"
-msgstr "Ermöglicht Ihnen, einen Wecker zu planen"
+msgstr "Stellt einen Wecker"
 
 #. Translators: Message presented in input help mode.
 msgid ""
@@ -107,21 +107,21 @@ msgstr "Zeigt die aktuelle Stoppuhr oder den Countdown-Timer an."
 #. Translators: Message presented in input help mode.
 msgid "Gives the remaining and elapsed time before the next alarm."
 msgstr ""
-"Zeigt die verbleibende und verstrichene Zeit bis zum nächsten Weckruf an."
+"Zeigt die verbleibende und verstrichene Zeit bis zum nächsten Wecker an."
 
 #, python-brace-format
 msgid "Elapsed time {elapsed}, remaining time {remaining}."
 msgstr "Verstrichene Zeit {elapsed}, verbleibende Zeit {remaining}."
 
 msgid "No alarm"
-msgstr "Kein Weckruf"
+msgstr "Kein Wecker"
 
 #. Translators: Message presented in input help mode.
 msgid "Cancel the next alarm."
-msgstr "Bricht den nächsten Alarm ab."
+msgstr "Bricht den nächsten Wecker ab."
 
 msgid "Alarm cancelled"
-msgstr "Alarm abgebrochen"
+msgstr "Wecker abgebrochen"
 
 #. Translators: Message presented in input help mode.
 msgid "Resets stopwatch to 0 without restarting it."
@@ -144,22 +144,22 @@ msgstr "Listet die verfügbaren Befehle auf."
 #. Translators: Message presented in input help mode.
 msgid "Allows to check the next alarm. If pressed twice, cancels it."
 msgstr ""
-"Überprüft den nächsten Alarm. Bei zweimaligem Drücken wird dieser "
+"Überprüft den nächsten Wecker. Bei zweimaligem Drücken wird dieser "
 "abgebrochen."
 
 #. Translators: Message presented in input help mode.
 msgid "If an alarm is too long, allows to stop it."
-msgstr "Wenn ein Alarm anhält, kann dieser damit gestoppt werden."
+msgstr "Wenn ein Wecker anhält, kann dieser damit gestoppt werden."
 
 msgid "No sound is launched."
-msgstr "Es wird kein Ton wiedergegeben."
+msgstr "Es wird kein Sound wiedergegeben."
 
 msgid "Sound stopped"
-msgstr "Ton gestoppt"
+msgstr "Sound gestoppt"
 
 #. Translators: error message when attempting to open more than one alarm settings dialogs.
 msgid "Schedule alarms dialog is already open."
-msgstr "Das Dialogfeld für die Wecker-Planung ist bereits geöffnet."
+msgstr "Das Dialogfeld für den Wecker ist bereits geöffnet."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
@@ -167,7 +167,7 @@ msgstr "Zeigt das Dialogfeld für die Einstellungen der Uhr an."
 
 #. Translators: Message presented in input help mode.
 msgid "Display schedule alarms dialog box."
-msgstr "Zeigt das Dialogfeld für die Wecker-Planung an."
+msgstr "Zeigt das Dialogfeld für den Wecker an."
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Time display format:"
@@ -203,15 +203,15 @@ msgstr "&Intervall:"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "message and sound"
-msgstr "Nachricht und Ton"
+msgstr "Meldung und Sound"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "message only"
-msgstr "Nur Nachricht"
+msgstr "Nur Meldung"
 
 #. Translators: This is a choice of the time report choices combo box.
 msgid "sound only"
-msgstr "Nur Ton"
+msgstr "Nur Sound"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Time &announcement:"
@@ -219,15 +219,15 @@ msgstr "Zeit&ansage:"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Clock chime &sound:"
-msgstr "Glockenschlag für die Uhr:"
+msgstr "Glockenton für die Uhr:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "&Separate hour and intermediate minute chimes"
-msgstr ""
+msgstr "&Separater Stunden- und Zwischenminuten-Sound"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Intermediate minutes chime &sound:"
-msgstr ""
+msgstr "&Sound für Zwischenminuten:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "&Quiet hours"
@@ -263,7 +263,7 @@ msgstr "Minute:"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Schedule alarms"
-msgstr "Wecker planen"
+msgstr "Wecker stellen"
 
 #. Translators: This is an item of the alarm duration choices.
 msgid "hours"
@@ -279,7 +279,7 @@ msgstr "Sekunden"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "&Alarm duration in:"
-msgstr "&Alarmdauer in:"
+msgstr "&Dauer des Weckers in:"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 msgid "&Duration:"
@@ -287,7 +287,7 @@ msgstr "&Dauer:"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 msgid "A&larm sound:"
-msgstr "A&larmton:"
+msgstr "&Sound des Weckers:"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Stop"
@@ -301,7 +301,7 @@ msgstr "An&halten"
 #, python-brace-format
 msgid "You've chosen an alarm to be triggered in {tm} {unit}"
 msgstr ""
-"Sie haben einen Alarm ausgewählt, der in {tm} {unit} ausgelöst werden soll"
+"Sie haben einen Wecker ausgewählt, der in {tm} {unit} ausgelöst werden soll"
 
 #. Translators: The title of the dialog which appears when the user has chosen to trigger an alarm.
 msgid "Confirmation"
@@ -374,8 +374,8 @@ msgid ""
 msgstr ""
 "Eine erweiterte Uhr und ein Kalender für NVDA.\n"
 "NVDA+F12: Aktuelle Uhrzeit abrufen.\n"
-"NVDA+F12 zweimal schnell drücken: Aktuelles Datum abrufen.\n"
-"NVDA+F12 dreimal schnell gedrückt: Zeigt den aktuellen Tag, die "
+"NVDA+F12: Zweimal schnell drücken: Aktuelles Datum abrufen.\n"
+"NVDA+F12: Dreimal schnell gedrückt: Zeigt den aktuellen Tag, die "
 "Wochennummer, das aktuelle Jahr und die verbleibenden Tage bis zum "
 "Jahresende an.\n"
 "Um weitere Anweisungen zu erhalten, klicken Sie in \"Erweiterung verwalten\" "
