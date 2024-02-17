@@ -1,6 +1,6 @@
 # Ur og kalender for NVDA #
 
-* Forfattere: Hrvoje Katić, Abdel og NVDA-bidragydere
+* Authors: Hrvoje Katić, Abdel and NVDA contributors
 * Download [stabil version][1]
 
 * NVDA-kompatibilitet: 2019.3 og nyere

@@ -1,6 +1,6 @@
 # Extra de Relógio e calendário para o NVDA #
 
-* Autores: Hrvoje Katić, Abdel e colaboradores do NVDA
+* Authors: Hrvoje Katić, Abdel and NVDA contributors
 * Baixar a [versão estável][1]
 
 * NVDA compatibility: 2019.3 and later

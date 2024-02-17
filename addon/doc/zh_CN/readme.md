@@ -1,6 +1,6 @@
 # NVDA 时钟插件 #
 
-* 作者： Hrvoje Katić, Abdel and NVDA contributors
+* Authors: Hrvoje Katić, Abdel and NVDA contributors
 * 下载 [稳定版][1]
 
 * NVDA 兼容性：2019.3 及更高版本

@@ -1,6 +1,6 @@
 # Kello ja kalenteri #
 
-* Tekijät: Hrvoje Katić, Abdel sekä muut NVDA-projektiin osallistujat;
+* Authors: Hrvoje Katić, Abdel and NVDA contributors
 * Lataa [vakaa versio][1]
 
 * Yhteensopivuus: NVDA 2019.3 ja uudemmat

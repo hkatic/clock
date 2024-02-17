@@ -1,6 +1,6 @@
 # Sat i kalendar, dodatak za NVDA #
 
-* Autori: Hrvoje Katić, Abdel i NVDA suradnici
+* Authors: Hrvoje Katić, Abdel and NVDA contributors
 * Preuzmi [stabilnu verziju][1]
 
 * NVDA kompatibilnost: 2019.3 i novije verzije

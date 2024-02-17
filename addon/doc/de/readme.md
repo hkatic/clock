@@ -1,6 +1,6 @@
 # NVDA-Erweiterung für Uhr und Kalender #
 
-* Autoren: Hrvoje Katić, Abdel und die NVDA-Community
+* Authors: Hrvoje Katić, Abdel and NVDA contributors
 * [Stabile Version herunterladen][1]
 
 * NVDA-Kompatibilität: 2019.3 und neuer

@@ -18,7 +18,7 @@ tanıyan bir kronometre ve Alarm zamanlayıcı özellikleri de vardır.
 
 Notlar:
 
-* Eklentiyi güncelleme olarak yüklerseniz, yükleme işlemi sırasında sihirbaz
+* eklentiyi güncelleme olarak yüklerseniz, yükleme işlemi sırasında sihirbaz
   eski konfigürasyonun yenisiyle uyumlu olup olmadığını algılar ve
   yüklemeden önce düzeltmeyi önerir, ardından onaylamak için tamam düğmesini
   seçmeniz yeterlidir.
@@ -27,11 +27,11 @@ Notlar:
 
 ## Tuş komutları
 
-* NVDA+F12, şimdiki zamanı al;
-* NVDA+F12'ye iki kez hızlıca basıldığında güncel tarihi alın;
+* NVDA+F12, şimdiki zamanı al
+* NVDA+F12'ye iki kez hızlıca basıldığında güncel tarihi alın
 * NVDA+F12'ye hızlı bir şekilde üç kez basıldığında içinde bulunulan günü,
   hafta numarasını, içinde bulunulan yılı ve yılın bitmesi için kalan
-  günleri bildirir.
+  günleri bildirir
 * NVDA+Shift+F12: saat komut katmanına girin
 
 ## Atanmamış komutlar

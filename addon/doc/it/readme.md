@@ -1,6 +1,6 @@
 # Clock: impostazioni avanzate per l'ora ed il calendario con NVDA #
 
-* Authori: Hrvoje Katić, Abdel e altri collaboratori di NVDA.
+* Authors: Hrvoje Katić, Abdel and NVDA contributors
 * Scarica la [versione stabile][1]
 
 * NVDA compatibility: 2019.3 and later
