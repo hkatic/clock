@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: Clock 18.12dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2018-12-15 18:53+0100\n"
-"PO-Revision-Date: 2022-06-12 16:50+0200\n"
+"PO-Revision-Date: 2024-05-03 15:27+0500\n"
 "Last-Translator: Zvonimir <9a5dsz@gozaltech.org>\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 3.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #. Translators: the label of a message box dialog.
 msgid ""
@@ -25,9 +25,9 @@ msgid ""
 "of the Clock add-on, this will be fixed during installation. Click OK to "
 "confirm these corrections"
 msgstr ""
-"Форматы даты и времени несовместимы с данной версией дополнения. Они будут "
-"исправлены в процессе установки. Нажмите OK для подтверждения этих "
-"исправлений"
+"Формат даты и времени, который вы использовали, несовместим с данной версией "
+"дополнения , это будет исправлено во время установки. Нажмите \"ОК\", чтобы "
+"подтвердить эти исправления"
 
 #. Translators: the title of a message box dialog.
 msgid "Time and date format corrections"
@@ -58,7 +58,7 @@ msgstr "Часы"
 
 #. Translators: The name of the alarm item in NVDA Tools menu.
 msgid "Schedule a&larms..."
-msgstr "Расписание &таймера..."
+msgstr "Расписание &таймеров..."
 
 #. Translators: The tooltyp text for the alarm item in NVDA Tools menu.
 msgid "Allows you to schedule an alarm"
@@ -71,7 +71,7 @@ msgid ""
 "current year and the days remaining before the end of the year."
 msgstr ""
 "Произносит текущее время. При быстром нажатии дважды, произносится текущая "
-"дата. При быстром нажатии три раза сообщает текущий день, номер недели, "
+"дата. При быстром нажатии трижды сообщает текущий день, номер недели, "
 "текущий год и дни, оставшиеся до конца года."
 
 #, python-brace-format
@@ -84,11 +84,11 @@ msgid ""
 "for additional help."
 msgstr ""
 "Команды часов и календаря. После нажатия этого сочетания клавиш, нажмите H "
-"для дополнительной помощи."
+"для получения дополнительной справки."
 
 #. Translators: Message presented in input help mode.
 msgid "Starts, resets or stops the stopwatch."
-msgstr "Запускает, останавливает или перезапускает секундомер."
+msgstr "Запускает, сбрасывает или останавливает секундомер."
 
 msgid "Reset. Running."
 msgstr "Сброс. Запуск."
@@ -114,7 +114,7 @@ msgid "Elapsed time {elapsed}, remaining time {remaining}."
 msgstr "Прошло {elapsed}, осталось {remaining}."
 
 msgid "No alarm"
-msgstr "Не установлено ни одного таймера"
+msgstr "Нет установленных таймеров"
 
 #. Translators: Message presented in input help mode.
 msgid "Cancel the next alarm."
@@ -159,15 +159,15 @@ msgstr "Звук остановлен"
 
 #. Translators: error message when attempting to open more than one alarm settings dialogs.
 msgid "Schedule alarms dialog is already open."
-msgstr "Диалоговое окно Расписание таймера уже открыто."
+msgstr "Диалог Расписание таймеров уже открыт."
 
 #. Translators: Message presented in input help mode.
 msgid "Display the clock settings dialog box."
-msgstr "Отображает диалоговое окно настроек часов."
+msgstr "Показывает диалог настроек часов."
 
 #. Translators: Message presented in input help mode.
 msgid "Display schedule alarms dialog box."
-msgstr "Отображает диалогового окна таймеров."
+msgstr "Показывает диалог расписание таймеров."
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Time display format:"
@@ -219,15 +219,15 @@ msgstr "&Объявление времени:"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Clock chime &sound:"
-msgstr "Бой часов &звук:"
+msgstr "&звук Бой часов:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "&Separate hour and intermediate minute chimes"
-msgstr ""
+msgstr "Разделять &сигналы часов и промежуточных минут"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "Intermediate minutes chime &sound:"
-msgstr ""
+msgstr "Звук сигнала промежуточных &минут:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 msgid "&Quiet hours"
@@ -263,7 +263,7 @@ msgstr "Минута:"
 
 #. Translators: This is the label for the alarm settings panel.
 msgid "Schedule alarms"
-msgstr "Расписание таймера"
+msgstr "Расписание таймеров"
 
 #. Translators: This is an item of the alarm duration choices.
 msgid "hours"
@@ -291,11 +291,11 @@ msgstr "Сигнал &таймера:"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Stop"
-msgstr "&Стоп"
+msgstr "&Остановить"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Pause"
-msgstr "&Пауза"
+msgstr "&Приостановить"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
 #, python-brace-format
@@ -373,8 +373,8 @@ msgid ""
 msgstr ""
 "Расширенные часы и календарь для NVDA.\n"
 "NVDA+F12, произносит текущее время.\n"
-"NVDA+F12 нажимается дважды быстро, получается текущая дата.\n"
-"NVDA+F12 нажато три раза быстро, сообщает текущий день, номер недели, "
-"текущий год и оставшиеся дни до конца года.\n"
-"Для получения других инструкций нажмите кнопку помощи по дополнениям в "
+"NVDA+F12 дважды быстро, произносит текущую дату.\n"
+"NVDA+F12 трижды быстро, сообщает текущий день, номер недели, текущий год и "
+"оставшиеся дни до конца года.\n"
+"Для получения других инструкций нажмите кнопку  справка по дополнениям в "
 "менеджере дополнений."
