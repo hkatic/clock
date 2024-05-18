@@ -1,6 +1,6 @@
 # Sat i kalendar, dodatak za NVDA #
 
-* Authors: Hrvoje Katić, Abdel and NVDA contributors
+* Autori: Hrvoje Katić, Abdel i NVDA doprinositelji
 * Preuzmi [stabilnu verziju][1]
 
 * NVDA kompatibilnost: 2019.3 i novije verzije
@@ -18,7 +18,7 @@ programs, or cooking meals.
 
 Napomene:
 
-* Ako se dodatak instalira kao nadogradnja, tijekom instalacije čarobnjak
+* ako se dodatak instalira kao nadogradnja, tijekom instalacije čarobnjak
   otkriva je li stara konfiguracija kompatibilna s novom i nudi mogućnost za
   njeno ispravljanja prije instalacije. To se jednostavno potvrđuje gumbom
   „U redu”.
