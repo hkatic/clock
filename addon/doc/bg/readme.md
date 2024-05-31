@@ -1,6 +1,6 @@
 # Добавка за NVDA за часовника и календара #
 
-* Authors: Hrvoje Katić, Abdel and NVDA contributors
+* Автори: Hrvoje Katić, Abdel и други сътрудници на NVDA
 * Изтегляне на [стабилна версия][1]
 
 * Съвместимост с NVDA: от 2019.3 и по-нови версии
