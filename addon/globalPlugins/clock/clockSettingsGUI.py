@@ -14,7 +14,7 @@ import os
 import wx
 from . import alarmHandler
 from . import dtfunctions
-from gui.settingsDialogs import SettingsPanel
+from gui.settingsDialogs import SettingsPanel, SettingsDialog
 
 import addonHandler
 addonHandler.initTranslation()
@@ -289,7 +289,7 @@ class ClockSettingsPanel(SettingsPanel):
 		config.conf["clockAndCalendar"]["quietHoursEndTime"] = quietHoursEndTime
 
 
-class AlarmSettingsDialog(SettingsPanel):
+class AlarmSettingsDialog(SettingsDialog):
 
 	# Translators: This is the label for the alarm settings panel.
 	title = _("Schedule alarms")
