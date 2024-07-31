@@ -32,8 +32,6 @@ sys.path.remove(sys.path[-1])
 import time
 from winKernel import GetTimeFormatEx, GetDateFormatEx
 from configobj.validate import VdtTypeError
-from functools import wraps
-from .speechOnDemand import getSpeechOnDemandParameter, executeWithSpeakOnDemand
 
 import addonHandler
 addonHandler.initTranslation()
@@ -57,9 +55,6 @@ confspec = {
 	'quietHoursEndTime': 'string(default="")',
 }
 config.conf.spec["clockAndCalendar"] = confspec
-
-# Define speakOnDemand parameter for all scripts needing it
-speakOnDemand = getSpeechOnDemandParameter()
 
 
 def secondsToString(seconds: float) -> str:
@@ -258,8 +253,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			"the current year and the days remaining before the end of the year."
 		),
 		category=globalCommands.SCRCAT_SYSTEM,
-		gesture="kb:NVDA+f12",
-		**speakOnDemand,
+		gesture="kb:NVDA+f12"
 	)
 	def script_reportTimeAndDate(self, gesture):
 		now = datetime.now()
@@ -285,7 +279,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	globalCommands.commands.script_dateTime.__func__.__doc__ = ""
 
 	def getScript(self, gesture):
-		if not self.clockLayerModeActive:
+		if (
+			not hasattr(self, "clockLayerModeActive")
+			or (hasattr(self, "clockLayerModeActive") and not self.clockLayerModeActive)
+		):
 			return globalPluginHandler.GlobalPlugin.getScript(self, gesture)
 		script = globalPluginHandler.GlobalPlugin.getScript(self, gesture)
 		if not script:
@@ -293,10 +290,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.layeredScriptToRun = next(
 			(x[1] for x in self._clockLayerGestures if x[0] == gesture.mainKeyName), None
 		)
-		@wraps(self.layeredScriptToRun)
-		def wrappedScript(*args, **kw):
-			return self.runAndFinish(*args, **kw)
-		return wrappedScript
+		return self.runAndFinish
 
 	def runAndFinish(self, gesture):
 		if self.layeredScriptToRun is not None:
@@ -349,16 +343,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Speaks current stopwatch or count-down timer."),
-		**speakOnDemand,
+		description=_("Speaks current stopwatch or count-down timer.")
 	)
 	def script_timeDisplay(self, gesture):
 		ui.message(secondsToString(self.stopwatch.elapsedTime()))
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Gives the remaining and elapsed time before the next alarm."),
-		**speakOnDemand,
+		description=_("Gives the remaining and elapsed time before the next alarm.")
 	)
 	def script_alarmInfo(self, gesture):
 		if alarmHandler.run and alarmHandler.run.is_alive():
@@ -398,16 +390,22 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Lists available commands in clock command layer."),
-		**speakOnDemand,
+		description=_("Lists available commands in clock command layer.")
 	)
 	def script_getHelp(self, gesture):
 		ui.message("\n".join(x[0] + " : " + x[1].__doc__ if x[0] != "space" else skipTranslation.translate(x[0]) + " : " + x[1].__doc__ for x in self._clockLayerGestures))  # NOQA: E501
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Allows to check the next alarm. If pressed twice, cancels it."),
-		**speakOnDemand,
+		description=_("Lists available commands in clock command layer, showing them in browse mode.")
+	)
+	def script_getHelpInBrowseMode(self, gesture):
+		browseableMessageText = "<ul><li>" + ("</li><li>".join(x[0] + " : " + x[1].__doc__ if x[0] != "space" else skipTranslation.translate(x[0]) + " : " + x[1].__doc__ for x in self._clockLayerGestures)) + "</li></ul>"  # NOQA: E501
+		ui.browseableMessage(browseableMessageText, self.scriptCategory, isHtml=True)
+
+	@scriptHandler.script(
+		# Translators: Message presented in input help mode.
+		description=_("Allows to check the next alarm. If pressed twice, cancels it.")
 	)
 	def script_checkOrCancelAlarm(self, gestures):
 		if alarmHandler.run and alarmHandler.run.is_alive():

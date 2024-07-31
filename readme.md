@@ -28,6 +28,7 @@ The following commands are not assigned by default; if you wish to assign them, 
 * Elapsed and remaining time before the next alarm. pressing this gesture twice quickly will cancel the next alarm.
 * Stop currently playing alarm sound.
 * Display schedule alarms dialog box.
+* Show layered commands (keys to be pressed after NVDA+Shift+F12).
 
 ## Layered commands
 
