@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: clock\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2018-12-13 15:50+1000\n"
-"PO-Revision-Date: 2024-02-23 00:00+0200\n"
+"PO-Revision-Date: 2024-07-27 12:37+0300\n"
 "Last-Translator: Jani Kinnunen <janikinnunen340@gmail.com>\n"
 "Language-Team: Jani Kinnunen <janikinnunen340@gmail.com>\n"
 "Language: fi\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #. Translators: the label of a message box dialog.
 msgid ""
@@ -30,7 +30,7 @@ msgstr ""
 
 #. Translators: the title of a message box dialog.
 msgid "Time and date format corrections"
-msgstr "Kellonajan ja päivämäärän näyttömuodon korjaukset"
+msgstr "Ajan ja päivämäärän näyttömuodon korjaukset"
 
 #, python-brace-format
 msgid "{hours} hours, "
@@ -97,7 +97,7 @@ msgstr "Käynnissä."
 
 #, python-brace-format
 msgid "{0} stopped."
-msgstr "{0} lopetettu."
+msgstr "{0} pysäytetty."
 
 #. Translators: Message presented in input help mode.
 msgid "Speaks current stopwatch or count-down timer."
@@ -170,7 +170,7 @@ msgstr "Näyttää hälytysten ajoitusvalintaikkunan."
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Time display format:"
-msgstr "Kellon&ajan näyttömuoto:"
+msgstr "&Ajan näyttömuoto:"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 msgid "&Date display format:"
@@ -290,7 +290,7 @@ msgstr "Häl&ytysääni:"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Stop"
-msgstr "Lo&peta"
+msgstr "P&ysäytä"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 msgid "&Pause"
