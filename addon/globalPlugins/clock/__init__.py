@@ -7,13 +7,16 @@ from typing import Tuple
 import sys
 from . import skipTranslation
 import globalVars
-import versionInfo
 from . import alarmHandler
 import globalPluginHandler
 import gui
+import threading
+
+import speech
+import core
+
 from . import paths
 import scriptHandler
-import speech
 from logHandler import log
 import ui
 from . import formats
@@ -169,7 +172,6 @@ def checkLocalTimeFormats():
 			log.debugWarning(f"The format '{fmt}' appears {nbOccurrences} times for the current localization.")
 
 
-# supports speakOnDemand mode for NVDA2024.1 and later. Issue #48, #52
 # Copyright (C) 2023-2024 Cyrille Bougot
 def isSpeechOnDemandFeatureAvailable():
 	"""Indicates if the speech on-demand feature is available in the current version of NVDA.
@@ -196,6 +198,30 @@ def getSpeechOnDemandParameter():
 		return {'speakOnDemand': True}
 	else:
 		return {}
+
+
+def executeWithSpeakOnDemand(f, *args, **kwargs):
+	"""Allows to execute a function forcing the on-demand mode for its execution.
+	This may be useful for a functions that is scheduled by an on-demand script
+	to be run after the script execution has finished, e.g. using `core.callLater`.
+	This function should only be called from the main thread.
+
+	Parameters:
+	f: function to execute.
+	args: unnamed arguments to pass to the function.
+	kwargs: keyword arguments to pass to the function.
+	"""
+
+	if threading.get_ident() != core.mainThreadId:
+		raise RuntimeError('This function should only be executed from the main thread.')
+
+	if not isSpeechOnDemandFeatureAvailable() or speech.getState().speechMode != speech.SpeechMode.onDemand:
+		return f(*args, **kwargs)
+	try:
+		speech.setSpeechMode(speech.SpeechMode.talk)
+		return f(*args, **kwargs)
+	finally:
+		speech.setSpeechMode(speech.SpeechMode.onDemand)
 
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
