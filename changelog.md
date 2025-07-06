@@ -1,4 +1,4 @@
-## Changes for 20250703.0.0
+## Changes for 20250706.1.0
 
 * Updated for compatibility with NVDA extension API for 2025;
 * Added 5 minutes in Interval thanks to @KefaslUNGU;
