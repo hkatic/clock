@@ -1,0 +1,160 @@
+name: Manual release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Add-on version, if not defined, will be set to today's date in the format recommended by nvaccess/addonStore"
+        required: false
+        default: ''
+      prerelease:
+        description: 'True if this is a prerelease'
+        type: boolean
+        required: false
+        default: false
+      channel:
+        type: choice
+        description: Choose a channel for your release
+        options:
+        - stable
+        - dev
+        - beta
+        default: stable
+        required: false
+
+jobs:
+  buildAndUpload:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+
+    - name: Date formatting
+      uses: ajilraju/actions-date@master #release v0.1
+      with:
+        args: date +%F
+
+    - name: Environment variable for current date
+      run: echo "CUR_DATE=$(date +%Y%m%d)" >> $GITHUB_ENV
+
+    - name: Environment variable for tag_name
+      run: echo "TAG_NAME="v"$(echo ${{ env.CUR_DATE }} | cut -c 3-4)"."$(echo ${{ env.CUR_DATE }} | cut -c 5-6)"."$(echo ${{ env.CUR_DATE }} | cut -c 7-8)" >> $GITHUB_ENV
+
+    - name: Environment variable for current year
+      run: echo "CUR_YEAR=$(echo ${{ env.CUR_DATE }} | cut -c 1-4)" >> $GITHUB_ENV
+
+    - name: Environment variable for dev
+      if: ${{ inputs.prerelease == true && inputs.channel == 'dev'}}
+      run: |
+        echo 'MINOR_PATCH=1.0' >> $GITHUB_ENV
+        echo 'TAG_NAME=${{ env.TAG_NAME }}-dev' >> $GITHUB_ENV
+
+    - name: Environment variable for beta
+      if: ${{ inputs.prerelease == true && inputs.channel == 'beta'}}
+      run: |
+        echo 'MINOR_PATCH=0.1' >> $GITHUB_ENV
+        echo 'TAG_NAME=${{ env.TAG_NAME }}-beta' >> $GITHUB_ENV
+
+    - name: Environment variable for stable
+      if: ${{ inputs.prerelease == false && inputs.channel == 'stable' }}
+      run: echo 'MINOR_PATCH=0.0' >> $GITHUB_ENV
+
+    - name: Set build version when version is empty
+      if: ${{ inputs.version == '' }}
+      run: echo 'BUILD_VERSION=${{ env.CUR_DATE }}.${{ env.MINOR_PATCH }}' >> $GITHUB_ENV
+
+    - name: Set build version when version is not empty
+      if: ${{ inputs.version != '' }}
+      run: echo 'BUILD_VERSION=${{ github.event.inputs.version }}' >> $GITHUB_ENV
+
+    - name: Check BUILD_VERSION environment variable
+      run: echo '${{ env.BUILD_VERSION }}'
+
+    - name: Check TAG_NAME environment variable
+      run: echo '${{ env.TAG_NAME }}'
+
+    - name: Check cur_year environment variable
+      run: echo '${{ env.CUR_YEAR }}'
+
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.8
+
+    - name: Install dependencies
+      run: |
+        pip install -U pip scons markdown flake8 flake8-tabs mypy
+        sudo apt update
+        sudo apt install gettext
+
+    - name: Lint with flake8
+      run: |
+        # Stop the build if there are any errors
+        flake8 addon --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 addon --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+    - name: Lint with mypy
+      run: |
+        python -m mypy addon
+
+    - name: Add add-on version
+      run: |
+        import re
+        version='${{ env.BUILD_VERSION }}'
+        year='${{ env.CUR_YEAR }}'
+        with open("buildVars.py", 'r+', encoding='utf-8') as f:
+          text=f.read()
+          pattern=r"\"addon_lastTestedNVDAVersion\": .*?(\d{4})"
+          match=re.search(pattern, text)
+          checkYear=match.group(1)
+          text=re.sub(r"\"addon_version\": .*?,", f"\"addon_version\": \"{version}\",", text)
+          if checkYear<year:
+            text=re.sub(r"\"addon_lastTestedNVDAVersion\": .*?,", f"\"addon_lastTestedNVDAVersion\": \"{year}.1.0\",", text)
+          f.seek(0)
+          f.write(text)
+          f.truncate()
+        with open("changelog.md", 'r+', encoding='utf-8') as f:
+          text=f.read()
+          text=re.sub("Changes for [^\r\n]+", f"Changes for {version}", text)
+          f.seek(0)
+          f.write(text)
+          f.truncate()
+      shell: python 
+
+
+    - name: Check if there are any changes
+      id: verify_diff
+      run: |
+        git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
+
+    - name: Commit and push changes
+      if: steps.verify_diff.outputs.changed == 'true'
+      run: |
+        git config --local user.name 'github-actions'
+        git config --local user.email 'github-actions@github.com'
+        git commit -a -m "Update buildVars and changelog"
+        git tag ${{ env.TAG_NAME }}
+        git push origin HEAD:${{ github.ref_name }}
+        git push origin ${{ env.TAG_NAME }}:refs/tags/${{ env.TAG_NAME }}
+
+    - name: Build add-on
+      run: scons version=${{ env.BUILD_VERSION }}
+
+    - name: Calculate sha256
+      run: sha256sum *.nvda-addon >> sha256.txt
+
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        files: |
+          *.nvda-addon
+          sha256.txt
+        generate_release_notes: true
+        prerelease: ${{ github.event.inputs.prerelease }}
+        tag_name: ${{ env.TAG_NAME }}
+        body_path: 'changelog.md'

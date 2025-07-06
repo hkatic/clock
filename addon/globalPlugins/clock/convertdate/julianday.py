@@ -10,7 +10,7 @@ is a continuous count of days since the beginning of the Julian era on January 1
 """
 from datetime import datetime
 
-from pytz import utc
+from pytz import utc  # type: ignore
 
 from . import gregorian, julian
 

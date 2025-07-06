@@ -15,10 +15,11 @@ import wx
 from . import alarmHandler
 from . import dtfunctions
 from gui.settingsDialogs import SettingsPanel, SettingsDialog
+from typing import Callable
 
 import addonHandler
 addonHandler.initTranslation()
-
+_: Callable[[str], str]
 
 class ClockSettingsPanel(SettingsPanel):
 
@@ -35,6 +36,8 @@ class ClockSettingsPanel(SettingsPanel):
 		self._announceChoices = (
 			# Translators: This is a choice of the auto announce choices combo box.
 			_("off"),
+            			# Translators: This is a choice of the auto announce choices combo box.
+			_("every 5 minutes"),
 			# Translators: This is a choice of the auto announce choices combo box.
 			_("every 10 minutes"),
 			# Translators: This is a choice of the auto announce choices combo box.

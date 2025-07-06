@@ -35,14 +35,17 @@ def getWaveFileDuration(sound: str) -> int:
 	return int(duration)
 
 
-AutoAnnounceIntervalEvery10Mins = 1
-AutoAnnounceIntervalEvery15Mins = 2
-AutoAnnounceIntervalEvery30Mins = 3
-AutoAnnounceIntervalEveryHour = 4
+AutoAnnounceIntervalEvery5Mins = 1
+AutoAnnounceIntervalEvery10Mins = 2
+AutoAnnounceIntervalEvery15Mins = 3
+AutoAnnounceIntervalEvery30Mins = 4
+AutoAnnounceIntervalEveryHour = 5
 
 
 autoAnnounceIntervals: Dict[int, int] = {
+	AutoAnnounceIntervalEvery5Mins: 5,
 	AutoAnnounceIntervalEvery10Mins: 10,
+
 	AutoAnnounceIntervalEvery15Mins: 15,
 	AutoAnnounceIntervalEvery30Mins: 30,
 	AutoAnnounceIntervalEveryHour: 60,

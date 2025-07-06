@@ -1,0 +1,73 @@
+name: Release On Tag
+on:
+  push:
+    tags:
+      - v*
+  workflow_call:
+
+jobs:
+  create-release-on-tag:
+    name: Create release on tag
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    permissions: write-all
+
+    steps:
+    - name: Date formatting
+      uses: ajilraju/actions-date@master #release v0.1
+      with:
+        args: date +%F
+
+    - name: Environment variable for current date
+      run: |
+        echo "CUR_DATE=$(date +%Y%m%d)" >> $GITHUB_ENV
+
+    - name: Conditional environment variables for dev
+      if: ${{ endsWith(github.ref_name, '-dev') }}
+      run: |
+        echo 'RELEASE_TITLE=Dev build' >> $GITHUB_ENV
+        echo 'MINOR_PATCH=1.0' >> $GITHUB_ENV
+        echo 'PRE_RELEASE=true' >> $GITHUB_ENV
+
+    - name: Conditional environment variables for stable
+      if: ${{ !endsWith(github.ref_name, '-dev') }}
+      run: |
+        echo 'RELEASE_TITLE=Stable build' >> $GITHUB_ENV
+        echo 'MINOR_PATCH=0.0' >> $GITHUB_ENV
+        echo 'PRE_RELEASE=false' >> $GITHUB_ENV
+
+    - name: Check new environment variables
+      run: |
+        echo '${{ env.CUR_DATE }} ${{ env.RELEASE_TITLE }} ${{ env.PRE_RELEASE }} ${{ env.MINOR_PATCH }}'
+
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        pip install scons markdown
+        sudo apt update
+        sudo apt install gettext
+
+    - name: Built
+      run: |
+        scons version=${{ env.CUR_DATE }}.${{ env.MINOR_PATCH }}
+
+    - name: Calculate sha256
+      run: sha256sum *.nvda-addon >> sha256.txt
+
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        files: |
+          *.nvda-addon
+          sha256.txt
+        generate_release_notes: true
+        prerelease: ${{ env.PRE_RELEASE }}
+        tag_name: ${{ github.ref_name }}
+        body_path: 'changelog.md'
