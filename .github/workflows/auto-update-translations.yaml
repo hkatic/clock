@@ -1,0 +1,14 @@
+name: Auto update translations
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 0 * * 6'
+
+jobs:
+  auto_update_translations:
+    uses: abdel792/autoUpdateTranslations/.github/workflows/l10n-updates.yaml@8ac89c644395cf2aad6e03a4bb2be5c36526d12a
+    
