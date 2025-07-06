@@ -175,7 +175,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	clockLayerModeActive = False
 	layeredScriptToRun = None
 
-	def __init__(self):
+	def __init__(self):  # noqa: C901
 		super().__init__()
 		if globalVars.appArgs.secure or config.isAppX:
 			return
