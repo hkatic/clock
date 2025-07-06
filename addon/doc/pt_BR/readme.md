@@ -1,6 +1,6 @@
 # Complemento de relógio e calendário para o NVDA (Clock and calendar Add-on for NVDA) #
 
-* Authors: Hrvoje Katić, Abdel and NVDA contributors
+* Autores: Hrvoje Katić, Abdel e colaboradores do NVDA
 * Baixe a [versão estável][1]
 
 * Compatibilidade com NVDA: 2019.3 e posteriores
