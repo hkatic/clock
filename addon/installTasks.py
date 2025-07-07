@@ -12,7 +12,15 @@ addonHandler.initTranslation()
 def onInstall():
 	import gui
 	import wx
+	addon = next((addon for addon in addonHandler.getRunningAddons() if addon.name == "clock"), None)
 	curProfile = config.conf.profiles[0]
+	if addon and addon.version < "31.08.1":
+		# We're migrating from a version that doesn't support 5-minute intervals; therefore, we must update the configuration key value.
+		if config.conf["clockAndCalendar"]["autoAnnounce"] > 0:
+			config.conf["clockAndCalendar"]["autoAnnounce"]+= 1
+			# For those who have not checked the "Save configuration on exit" checkbox.
+			if not config.conf["general"]["saveConfigurationOnExit"]:
+				config.conf.save()
 	if (
 		'clockAndCalendar' in curProfile and (
 			'timeDisplayFormat' in list(curProfile['clockAndCalendar'].keys())
