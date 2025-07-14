@@ -3,8 +3,9 @@
 # Author: Hrvoje Katich and contributors
 # Copyright 2013-2021, released under GPL.
 
-from typing import Tuple
+from typing import Tuple, Callable
 import sys
+import speech
 from . import skipTranslation
 import globalVars
 from . import alarmHandler
@@ -35,7 +36,7 @@ from configobj.validate import VdtTypeError
 
 import addonHandler
 addonHandler.initTranslation()
-
+_: Callable[[str], str]
 
 confspec = {
 	'timeDisplayFormat': 'integer(default=0)',
@@ -174,8 +175,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	clockLayerModeActive = False
 	layeredScriptToRun = None
 
-	def __init__(self):
-		super(globalPluginHandler.GlobalPlugin, self).__init__()
+	def __init__(self):  # noqa: C901
+		super().__init__()
 		if globalVars.appArgs.secure or config.isAppX:
 			return
 		checkLocalTimeFormats()
@@ -237,7 +238,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		)
 
 	def terminate(self):
-		super(GlobalPlugin, self).terminate()
+		super().terminate()
 		gui.NVDASettingsDialog.categoryClasses.remove(ClockSettingsPanel)
 		try:
 			self.toolsMenu.Remove(self.alarmSettings)
@@ -256,6 +257,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gesture="kb:NVDA+f12"
 	)
 	def script_reportTimeAndDate(self, gesture):
+		curMode = speech.getState().speechMode
+		if hasattr(speech.SpeechMode, "onDemand") and curMode == speech.SpeechMode.onDemand:
+			speech.setSpeechMode(speech.SpeechMode.talk)
 		now = datetime.now()
 		if scriptHandler.getLastScriptRepeatCount() == 0:
 			msg = GetTimeFormatEx(
@@ -273,6 +277,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				"Day {day}, week {week} of {year}, remaining days {remain}."
 			).format(day=informations[0], week=informations[1], year=informations[2], remain=informations[3])
 		ui.message(msg)
+		speech.setSpeechMode(curMode)
 	# We remove the docstring from the original dateTime script
 	# to have only one entry in the "System status" category,
 	# it will be automatically restored if the Clock add-on is disabled or uninstalled.
@@ -317,6 +322,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gesture="kb:NVDA+shift+f12"
 	)
 	def script_clockLayerCommands(self, gesture):
+		curMode = speech.getState().speechMode
+		if hasattr(speech.SpeechMode, "onDemand") and curMode == speech.SpeechMode.onDemand:
+			speech.setSpeechMode(speech.SpeechMode.talk)
 		if self.clockLayerModeActive:
 			self.script_error(gesture)
 			return
@@ -324,12 +332,16 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.bindGesture("kb:%s" % gesture[0], gesture[1].__name__[7:])
 		self.clockLayerModeActive = True
 		tones.beep(100, 10)
+		speech.setSpeechMode(curMode)
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
 		description=_("Starts, resets or stops the stopwatch.")
 	)
 	def script_stopwatchRun(self, gesture):
+		curMode = speech.getState().speechMode
+		if curMode == speech.SpeechMode.onDemand:
+			speech.setSpeechMode(speech.SpeechMode.talk)
 		if not self.stopwatch.running and self.stopwatch.startTime:
 			self.stopwatch.reset()
 			self.stopwatch.start()
@@ -340,19 +352,27 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		else:
 			self.stopwatch.stop()
 			ui.message(_("{0} stopped.").format(secondsToString(self.stopwatch.elapsedTime())))
+			speech.setSpeechMode(curMode)
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
 		description=_("Speaks current stopwatch or count-down timer.")
 	)
 	def script_timeDisplay(self, gesture):
+		curMode = speech.getState().speechMode
+		if hasattr(speech.SpeechMode, "onDemand") and curMode == speech.SpeechMode.onDemand:
+			speech.setSpeechMode(speech.SpeechMode.talk)
 		ui.message(secondsToString(self.stopwatch.elapsedTime()))
+		speech.setSpeechMode(curMode)
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
 		description=_("Gives the remaining and elapsed time before the next alarm.")
 	)
 	def script_alarmInfo(self, gesture):
+		curMode = speech.getState().speechMode
+		if hasattr(speech.SpeechMode, "onDemand") and curMode == speech.SpeechMode.onDemand:
+			speech.setSpeechMode(speech.SpeechMode.talk)
 		if alarmHandler.run and alarmHandler.run.is_alive():
 			elapsedTime = alarmHandler.run.elapsed()
 			remainingTime = alarmHandler.run.remaining()
@@ -362,24 +382,32 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		else:
 			msg = _("No alarm")
 		ui.message(msg)
+		speech.setSpeechMode(curMode)
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
 		description=_("Cancel the next alarm.")
 	)
 	def script_cancelAlarm(self, gesture):
+		curMode = speech.getState().speechMode
+		if hasattr(speech.SpeechMode, "onDemand") and curMode == speech.SpeechMode.onDemand:
+			speech.setSpeechMode(speech.SpeechMode.talk)
 		if alarmHandler.run and alarmHandler.run.is_alive():
 			alarmHandler.run.cancel()
 			msg = _("Alarm cancelled")
 		else:
 			msg = _("No alarm")
 		ui.message(msg)
+		speech.setSpeechMode(curMode)
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
 		description=_("Resets stopwatch to 0 without restarting it.")
 	)
 	def script_stopwatchReset(self, gesture):
+		curMode = speech.getState().speechMode
+		if hasattr(speech.SpeechMode, "onDemand") and curMode == speech.SpeechMode.onDemand:
+			speech.setSpeechMode(speech.SpeechMode.talk)
 		if self.stopwatch.startTime is None and self.stopwatch.stopTime is None and not self.stopwatch.running:
 			ui.message(
 				_("The stopwatch is already reset to 0. Use the clock layer command followed by s to start it.")
@@ -387,27 +415,39 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			return
 		self.stopwatch.reset()
 		ui.message(_("Stopwatch reset."))
+		speech.setSpeechMode(curMode)
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
 		description=_("Lists available commands in clock command layer.")
 	)
 	def script_getHelp(self, gesture):
+		curMode = speech.getState().speechMode
+		if hasattr(speech.SpeechMode, "onDemand") and curMode == speech.SpeechMode.onDemand:
+			speech.setSpeechMode(speech.SpeechMode.talk)
 		ui.message("\n".join(x[0] + " : " + x[1].__doc__ if x[0] != "space" else skipTranslation.translate(x[0]) + " : " + x[1].__doc__ for x in self._clockLayerGestures))  # NOQA: E501
+		speech.setSpeechMode(curMode)
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
 		description=_("Lists available commands in clock command layer, showing them in browse mode.")
 	)
 	def script_getHelpInBrowseMode(self, gesture):
+		curMode = speech.getState().speechMode
+		if hasattr(speech.SpeechMode, "onDemand") and curMode == speech.SpeechMode.onDemand:
+			speech.setSpeechMode(speech.SpeechMode.talk)
 		browseableMessageText = "<ul><li>" + ("</li><li>".join(x[0] + " : " + x[1].__doc__ if x[0] != "space" else skipTranslation.translate(x[0]) + " : " + x[1].__doc__ for x in self._clockLayerGestures)) + "</li></ul>"  # NOQA: E501
 		ui.browseableMessage(browseableMessageText, self.scriptCategory, isHtml=True)
+		speech.setSpeechMode(curMode)
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
 		description=_("Allows to check the next alarm. If pressed twice, cancels it.")
 	)
-	def script_checkOrCancelAlarm(self, gestures):
+	def script_checkOrCancelAlarm(self, gesture):
+		curMode = speech.getState().speechMode
+		if hasattr(speech.SpeechMode, "onDemand") and curMode == speech.SpeechMode.onDemand:
+			speech.setSpeechMode(speech.SpeechMode.talk)
 		if alarmHandler.run and alarmHandler.run.is_alive():
 			elapsedTime = alarmHandler.run.elapsed()
 			remainingTime = alarmHandler.run.remaining()
@@ -421,17 +461,22 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		else:
 			msg = _("No alarm")
 		ui.message(msg)
+		speech.setSpeechMode(curMode)
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
 		description=_("If an alarm is too long, allows to stop it.")
 	)
 	def script_stopLongAlarm(self, gesture):
+		curMode = speech.getState().speechMode
+		if hasattr(speech.SpeechMode, "onDemand") and curMode == speech.SpeechMode.onDemand:
+			speech.setSpeechMode(speech.SpeechMode.talk)
 		msg = _("No sound is launched.")
 		if nvwave.fileWavePlayer is not None:
 			nvwave.fileWavePlayer.stop()
 			msg = _("Sound stopped")
 		ui.message(msg)
+		speech.setSpeechMode(curMode)
 
 	def onAlarmSettingsDialog(self, evt):
 		try:
@@ -452,11 +497,19 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		description=_("Display the clock settings dialog box.")
 	)
 	def script_activateClockSettingsDialog(self, gesture):
+		curMode = speech.getState().speechMode
+		if hasattr(speech.SpeechMode, "onDemand") and curMode == speech.SpeechMode.onDemand:
+			speech.setSpeechMode(speech.SpeechMode.talk)
 		wx.CallAfter(gui.mainFrame._popupSettingsDialog, gui.NVDASettingsDialog, ClockSettingsPanel)
+		speech.setSpeechMode(curMode)
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
 		description=_("Display schedule alarms dialog box.")
 	)
 	def script_activateAlarmSettingsDialog(self, gesture):
+		curMode = speech.getState().speechMode
+		if hasattr(speech.SpeechMode, "onDemand") and curMode == speech.SpeechMode.onDemand:
+			speech.setSpeechMode(speech.SpeechMode.talk)
 		wx.CallAfter(self.onAlarmSettingsDialog, None)
+		speech.setSpeechMode(curMode)

@@ -6,9 +6,10 @@
 import winKernel
 import re
 from datetime import datetime
+from typing import Callable
 import addonHandler
 addonHandler.initTranslation()
-
+_: Callable[[str], str]
 # A regular expression to match and facilitate translation for words that are
 # not part of the formatting symbols.
 ptrn = r"(\w+'?\w*|\$+[hmst]{1,2})"
