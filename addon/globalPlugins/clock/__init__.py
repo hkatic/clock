@@ -163,7 +163,7 @@ def checkLocalTimeFormats():
 	opportunity to improve their translations by translating uniquely each time format.
 	"""
 	fmtCounter = Counter(formats.timeFormats)
-	for fmt, nbOccurrences in fmtCounter.items():
+	for (fmt, nbOccurrences) in fmtCounter.items():
 		if nbOccurrences > 1:
 			log.debugWarning(f"The format '{fmt}' appears {nbOccurrences} times for the current localization.")
 
@@ -254,7 +254,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			"the current year and the days remaining before the end of the year."
 		),
 		category=globalCommands.SCRCAT_SYSTEM,
-		gesture="kb:NVDA+f12",
+		gesture="kb:NVDA+f12"
 	)
 	def script_reportTimeAndDate(self, gesture):
 		curMode = speech.getState().speechMode
@@ -284,9 +284,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	globalCommands.commands.script_dateTime.__func__.__doc__ = ""
 
 	def getScript(self, gesture):
-		if not self.clockLayerModeActive:
-			return super().getScript(gesture)
-		script = super().getScript(gesture)
+		if (
+			not hasattr(self, "clockLayerModeActive")
+			or (hasattr(self, "clockLayerModeActive") and not self.clockLayerModeActive)
+		):
+			return globalPluginHandler.GlobalPlugin.getScript(self, gesture)
+		script = globalPluginHandler.GlobalPlugin.getScript(self, gesture)
 		if not script:
 			return self.script_error
 		self.layeredScriptToRun = next(
@@ -316,7 +319,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			# Translators: Message presented in input help mode.
 			"Clock and calendar layer commands. After pressing this keystroke, press H for additional help."
 		),
-		gesture="kb:NVDA+shift+f12",
+		gesture="kb:NVDA+shift+f12"
 	)
 	def script_clockLayerCommands(self, gesture):
 		curMode = speech.getState().speechMode
@@ -333,7 +336,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Starts, resets or stops the stopwatch."),
+		description=_("Starts, resets or stops the stopwatch.")
 	)
 	def script_stopwatchRun(self, gesture):
 		curMode = speech.getState().speechMode
@@ -353,7 +356,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Speaks current stopwatch or count-down timer."),
+		description=_("Speaks current stopwatch or count-down timer.")
 	)
 	def script_timeDisplay(self, gesture):
 		curMode = speech.getState().speechMode
@@ -364,7 +367,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Gives the remaining and elapsed time before the next alarm."),
+		description=_("Gives the remaining and elapsed time before the next alarm.")
 	)
 	def script_alarmInfo(self, gesture):
 		curMode = speech.getState().speechMode
@@ -383,7 +386,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Cancel the next alarm."),
+		description=_("Cancel the next alarm.")
 	)
 	def script_cancelAlarm(self, gesture):
 		curMode = speech.getState().speechMode
@@ -416,7 +419,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Lists available commands in clock command layer."),
+		description=_("Lists available commands in clock command layer.")
 	)
 	def script_getHelp(self, gesture):
 		curMode = speech.getState().speechMode
@@ -427,7 +430,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Lists available commands in clock command layer, showing them in browse mode."),
+		description=_("Lists available commands in clock command layer, showing them in browse mode.")
 	)
 	def script_getHelpInBrowseMode(self, gesture):
 		curMode = speech.getState().speechMode
@@ -439,7 +442,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Allows to check the next alarm. If pressed twice, cancels it."),
+		description=_("Allows to check the next alarm. If pressed twice, cancels it.")
 	)
 	def script_checkOrCancelAlarm(self, gesture):
 		curMode = speech.getState().speechMode
@@ -462,7 +465,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("If an alarm is too long, allows to stop it."),
+		description=_("If an alarm is too long, allows to stop it.")
 	)
 	def script_stopLongAlarm(self, gesture):
 		curMode = speech.getState().speechMode
@@ -491,7 +494,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Display the clock settings dialog box."),
+		description=_("Display the clock settings dialog box.")
 	)
 	def script_activateClockSettingsDialog(self, gesture):
 		curMode = speech.getState().speechMode
@@ -502,7 +505,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Display schedule alarms dialog box."),
+		description=_("Display schedule alarms dialog box.")
 	)
 	def script_activateAlarmSettingsDialog(self, gesture):
 		curMode = speech.getState().speechMode
