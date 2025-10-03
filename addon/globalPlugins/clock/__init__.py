@@ -263,16 +263,16 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		now = datetime.now()
 		if scriptHandler.getLastScriptRepeatCount() == 0:
 			msg = GetTimeFormatEx(
-				None, None, now, formats.rgx.sub(
+				None, 0, now, formats.rgx.sub(
 					formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']]
 				)
 			)
 		elif scriptHandler.getLastScriptRepeatCount() == 1:
 			msg = GetDateFormatEx(
-				None, None, None, formats.dateFormats[config.conf['clockAndCalendar']['dateDisplayFormat']]
+				None, 0, None, formats.dateFormats[config.conf['clockAndCalendar']['dateDisplayFormat']]
 			)
 		else:
-			informations = getDayAndWeekOfYear(GetDateFormatEx(None, None, None, "yyyy/M/d"))
+			informations = getDayAndWeekOfYear(GetDateFormatEx(None, 0, None, "yyyy/M/d"))
 			msg = _(
 				"Day {day}, week {week} of {year}, remaining days {remain}."
 			).format(day=informations[0], week=informations[1], year=informations[2], remain=informations[3])
