@@ -109,7 +109,7 @@ timeDisplayFormats = [(
 	_('{fmt} (24-hour format)') if is24HourFormat(fmt) else
 	# Translators: A way to display 12-hour formats in the time display formats list in the settings panel.
 	_('{fmt} (12-hour format)')
-).format(fmt=winKernel.GetTimeFormatEx(None, None, DT_EXAMPLE, rgx.sub(repl, fmt))) for fmt in timeFormats]
+).format(fmt=winKernel.GetTimeFormatEx(None, 0, DT_EXAMPLE, rgx.sub(repl, fmt))) for fmt in timeFormats]
 
 dateFormats = (
 	"dddd, MMMM dd, yyyy",
@@ -124,4 +124,4 @@ dateFormats = (
 	"dd/MM/yyyy"
 )
 
-dateDisplayFormats = [winKernel.GetDateFormatEx(None, None, None, fmt) for fmt in dateFormats]
+dateDisplayFormats = [winKernel.GetDateFormatEx(None, 0, None, fmt) for fmt in dateFormats]
