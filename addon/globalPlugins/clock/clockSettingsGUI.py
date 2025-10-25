@@ -3,6 +3,7 @@
 # Author: Hrvoje Katich and contributors
 # Copyright 2013-2021, released under GPL.
 
+import shutil
 import re
 import datetime
 from . import paths
@@ -116,12 +117,16 @@ class ClockSettingsPanel(SettingsPanel):
 		self._timeReportSoundChoice = clockSettingsGuiHelper.addLabeledControl(
 			self._timeReportSound, wx.Choice, choices=paths.LIST_SOUNDS
 		)
+		self.addCustomSoundButton = clockSettingsGuiHelper.addItem(wx.Button(self, label=_("Add custom sound")))
+		self.addCustomSoundButton.Bind(wx.EVT_BUTTON, lambda evt: self.onAddCustomSound(evt, soundType="timeReportSound"))
 		self._separateReportSoundsCheckBox = clockSettingsGuiHelper.addItem(
 			wx.CheckBox(self, label=self._separateReportSounds)
 		)
 		self._timeIntermediateReportSoundChoice = clockSettingsGuiHelper.addLabeledControl(
 			self._timeIntermediateReportSound, wx.Choice, choices=paths.LIST_SOUNDS
-		)		
+		)
+		self.addCustomIntermediateSoundButton = clockSettingsGuiHelper.addItem(wx.Button(self, label=_("Add custom sound")))
+		self.addCustomIntermediateSoundButton.Bind(wx.EVT_BUTTON, lambda evt: self.onAddCustomSound(evt, soundType="timeIntermediateReportSound"))		
 		self._quietHoursCheckBox = clockSettingsGuiHelper.addItem(
 			wx.CheckBox(self, label=self._quietHours)
 		)
@@ -159,8 +164,7 @@ class ClockSettingsPanel(SettingsPanel):
 		)
 
 		# Event.
-		self._timeIntermediateReportSoundChoice.SetStringSelection(config.conf["clockAndCalendar"]["timeIntermediateReportSound"])
-		self._timeReportSoundChoice.SetStringSelection(config.conf["clockAndCalendar"]["timeReportSound"])
+		
 		self._timeIntermediateReportSoundChoice.Bind(wx.EVT_CHOICE, self.onSoundSelected)
 		self._separateReportSoundsCheckBox.Bind(wx.EVT_CHECKBOX, self.onSeparateReportSoundsToggle)
 		self._timeReportSoundChoice.Bind(wx.EVT_CHOICE, self.onSoundSelected)
@@ -174,7 +178,9 @@ class ClockSettingsPanel(SettingsPanel):
 		self._timeReportChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._quietHoursCheckBox.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._timeIntermediateReportSoundChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection() and self._separateReportSoundsCheckBox.IsChecked())
+		self.addCustomIntermediateSoundButton.Show(self._separateReportSoundsCheckBox.IsChecked())
 		self._timeReportSoundChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection())
+		self.addCustomSoundButton.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._separateReportSoundsCheckBox.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._input24HourFormatChoice.Enabled = (
 			self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled()
@@ -184,12 +190,44 @@ class ClockSettingsPanel(SettingsPanel):
 		self.endHourEntry.Enable(self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled())
 		self.endMinEntry.Enable(self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled())
 
+	import shutil
+
+	def onAddCustomSound(self, evt, soundType):
+		dlg = wx.FileDialog(
+			self,
+			message=_("Choose a custom sound file"),
+			defaultDir=os.path.expanduser("~"),
+			wildcard="WAV files (*.wav)|*.wav",
+			style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST
+		)
+		if dlg.ShowModal() == wx.ID_OK:
+			customSoundPath = dlg.GetPath()
+			destDir = paths.CUSTOM_CLOCK_TIME_DIR
+			if not os.path.exists(destDir):
+				os.makedirs(destDir)
+			shutil.copy(customSoundPath, destDir)
+			newSound = os.path.basename(customSoundPath)
+			config.conf["clockAndCalendar"][soundType] = newSound
+			if soundType == "timeReportSound":
+				self._timeReportSoundChoice.Append(newSound)
+				self._timeReportSoundChoice.SetStringSelection(newSound)
+			elif soundType == "timeIntermediateReportSound":
+				self._timeIntermediateReportSoundChoice.Append(newSound)
+				self._timeIntermediateReportSoundChoice.SetStringSelection(newSound)
+			nvwave.playWaveFile(os.path.join(destDir, newSound))
+		dlg.Destroy()
+
 	def onSoundSelected(self, evt):
-		return nvwave.playWaveFile(os.path.join(paths.SOUNDS_DIR, evt.GetString()))
+		selectedSound = evt.GetString()
+		soundDir = paths.SOUNDS_DIR
+		if selectedSound not in os.listdir(soundDir):
+			soundDir = paths.CUSTOM_CLOCK_TIME_DIR
+		return nvwave.playWaveFile(os.path.join(soundDir, selectedSound))
 
 	def onSeparateReportSoundsToggle(self, evt):
 		evt.Skip()
 		self._timeIntermediateReportSoundChoice.Enabled = self._separateReportSoundsCheckBox.IsChecked()
+		self.addCustomIntermediateSoundButton.Show(self._separateReportSoundsCheckBox.IsChecked())
 
 	def onQuietHoursToggle(self, evt):
 		evt.Skip()
@@ -237,6 +275,8 @@ class ClockSettingsPanel(SettingsPanel):
 			quietHoursEndTime = datetime.time()
 		self._autoAnnounceChoice.SetSelection(config.conf["clockAndCalendar"]["autoAnnounce"])
 		self._timeReportChoice.SetSelection(config.conf["clockAndCalendar"]["timeReporting"])
+		self._timeReportSoundChoice.SetStringSelection(config.conf["clockAndCalendar"]["timeReportSound"])
+		self._timeIntermediateReportSoundChoice.SetStringSelection(config.conf["clockAndCalendar"]["timeIntermediateReportSound"])
 		self._quietHoursCheckBox.SetValue(config.conf["clockAndCalendar"]["quietHours"])
 		self._separateReportSoundsCheckBox.SetValue(config.conf["clockAndCalendar"]["separateReportSounds"])
 		self._input24HourFormatChoice.SetSelection(config.conf["clockAndCalendar"]["input24HourFormat"])
@@ -247,7 +287,9 @@ class ClockSettingsPanel(SettingsPanel):
 		self._timeReportChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._quietHoursCheckBox.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._timeReportSoundChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection())
+		self.addCustomSoundButton.Enabled = bool(self._autoAnnounceChoice.GetSelection())
 		self._timeIntermediateReportSoundChoice.Enabled = bool(self._autoAnnounceChoice.GetSelection() and self._separateReportSoundsCheckBox.IsChecked())
+		self.addCustomIntermediateSoundButton.Show(self._separateReportSoundsCheckBox.IsChecked())
 		self._input24HourFormatChoice.Enabled = (
 			self._quietHoursCheckBox.IsChecked() and self._quietHoursCheckBox.IsEnabled()
 		)
@@ -339,6 +381,8 @@ class AlarmSettingsDialog(SettingsDialog):
 		self._alarmSoundChoice = alarmSettingsGuiHelper.addLabeledControl(
 			self._alarmSoundTitle, wx.Choice, choices=paths.LIST_ALARMS
 		)
+		self.addCustomAlarmSoundButton = alarmSettingsGuiHelper.addItem(wx.Button(self, label=_("Add custom sound")))
+		self.addCustomAlarmSoundButton.Bind(wx.EVT_BUTTON, self.onAddCustomAlarmSound)
 		self.stopButton = alarmSettingsGuiHelper.addItem(wx.Button(self, label=self.stopLabel))
 		self.pauseButton = alarmSettingsGuiHelper.addItem(wx.Button(self, label=self.pauseLabel))
 
@@ -347,15 +391,8 @@ class AlarmSettingsDialog(SettingsDialog):
 		self.stopButton.Bind(wx.EVT_BUTTON, self.onStop)
 		self.pauseButton.Bind(wx.EVT_BUTTON, self.onPause)
 
-		if config.conf['clockAndCalendar']['alarmSound'] in paths.LIST_ALARMS:
-			self._alarmSoundChoice.SetStringSelection(config.conf["clockAndCalendar"]["alarmSound"])
-		else:
-			self._alarmSoundChoice.SetStringSelection(paths.LIST_ALARMS[0])
 		curChoice = config.conf["clockAndCalendar"]["alarmTimerChoice"]
-		for index, name in enumerate(self._alarmTimerChoices):
-			if index == curChoice:
-				self._alarmTimerChoice.SetSelection(index)
-				break
+		self._alarmSoundChoice.SetStringSelection(config.conf["clockAndCalendar"]["alarmSound"])
 
 	def onStop(self, evt):
 		if nvwave.fileWavePlayer is not None:
@@ -370,9 +407,34 @@ class AlarmSettingsDialog(SettingsDialog):
 		self.pause = not self.pause
 		return nvwave.fileWavePlayer.pause(self.pause)
 
+	def onAddCustomAlarmSound(self, evt):
+		dlg = wx.FileDialog(
+			self,
+			message=_("Choose a custom alarm sound file"),
+			defaultDir=os.path.expanduser("~"),
+			wildcard="WAV files (*.wav)|*.wav",
+			style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST
+		)
+		if dlg.ShowModal() == wx.ID_OK:
+			customSoundPath = dlg.GetPath()
+			destDir = paths.CUSTOM_ALARMS_DIR
+			if not os.path.exists(destDir):
+				os.makedirs(destDir)
+			shutil.copy(customSoundPath, destDir)
+			newSound = os.path.basename(customSoundPath)
+			config.conf["clockAndCalendar"]["alarmSound"] = newSound
+			self._alarmSoundChoice.Append(newSound)
+			self._alarmSoundChoice.SetStringSelection(newSound)
+			nvwave.playWaveFile(os.path.join(destDir, newSound))
+		dlg.Destroy()
+
 	def onAlarmSelected(self, evt):
 		self.pause = False
-		return nvwave.playWaveFile(os.path.join(paths.ALARMS_DIR, evt.GetString()))
+		selectedSound = evt.GetString()
+		soundDir = paths.ALARMS_DIR
+		if selectedSound not in os.listdir(soundDir):
+			soundDir = paths.CUSTOM_ALARMS_DIR
+		return nvwave.playWaveFile(os.path.join(soundDir, selectedSound))
 
 	def onOk(self, evt):
 		config.conf["clockAndCalendar"]["alarmSound"] = self._alarmSoundChoice.GetStringSelection()
