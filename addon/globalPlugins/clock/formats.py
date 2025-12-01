@@ -6,6 +6,9 @@
 import winKernel
 import re
 from datetime import datetime
+import logging
+
+log = logging.getLogger(__name__)
 from typing import Callable
 import addonHandler
 addonHandler.initTranslation()
@@ -124,4 +127,54 @@ dateFormats = (
 	"dd/MM/yyyy"
 )
 
-dateDisplayFormats = [winKernel.GetDateFormatEx(None, 0, None, fmt) for fmt in dateFormats]
+def safeGetTimeFormatEx(locale, flags, timeObj, fmt):
+    """
+    Safe wrapper for winKernel.GetTimeFormatEx.
+
+    Older NVDA/ctypes versions accepted flags=None and implicitly treated it as 0.
+    Newer versions of ctypes (NVDA 2024.2+) no longer allow None for DWORD
+    arguments, causing TypeError. This wrapper ensures full backward and forward
+    compatibility by normalizing None -> 0.
+
+    No behavioral changes, just safer argument handling.
+    """
+    if flags is None:
+        flags = 0
+    return winKernel.GetTimeFormatEx(locale, flags, timeObj, fmt)
+
+def safeGetDateFormatEx(locale, flags, dateObj, fmt):
+    """
+    Safe wrapper for winKernel.GetDateFormatEx.
+
+    Older NVDA/ctypes versions accepted flags=None and implicitly treated it as 0.
+    Newer versions of ctypes (NVDA 2024.2+) no longer allow None for DWORD
+    arguments, causing TypeError. This wrapper ensures full backward and forward
+    compatibility by normalizing None -> 0.
+
+    No behavioral changes, just safer argument handling.
+    """
+    if flags is None:
+        flags = 0
+    try:
+        return winKernel.GetDateFormatEx(locale, flags, dateObj, fmt)
+    except Exception as e:
+        log.debug(f"Clock: Failed GetDateFormatEx for '{fmt}', falling back. Error: {e}")
+        return fmt
+
+def _buildDateDisplayFormats():
+	"""
+	Generate Windows-formatted date strings from the list of format patterns.
+	The call to GetDateFormatEx previously used None for the flags parameter,
+	but newer NVDA/ctypes versions require an integer. Additionally, to keep
+	the add-on robust against future API or locale changes, each format is
+	wrapped in a try/except block to prevent import-time crashes.
+	"""
+	formatted = []
+	for fmt in dateFormats:
+		# Use the unified safe wrapper to stay compatible with all NVDA/ctypes versions.
+		value = safeGetDateFormatEx(None, None, None, fmt)
+		formatted.append(value)
+	return formatted
+
+# Build date display formats safely (NVDA 2024+ compatible).
+dateDisplayFormats = _buildDateDisplayFormats()

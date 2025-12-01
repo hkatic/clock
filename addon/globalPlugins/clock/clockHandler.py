@@ -13,7 +13,7 @@ import ui
 import os
 import wx
 from . import formats
-from winKernel import GetTimeFormatEx
+from .formats import safeGetTimeFormatEx
 
 
 # A function for getting wav file duration (inspired from this topic:
@@ -57,6 +57,8 @@ class Clock(object):
 	def __init__(self) -> None:
 		self._autoAnnounceClockTimer = wx.PyTimer(self._handleClockAnnouncement)
 		self._autoAnnounceClockTimer.Start(1000)
+		# Track last minute for which we already announced the time, to avoid double chimes
+		self._lastAnnouncedStamp = None
 
 	def terminate(self) -> None:
 		self._autoAnnounceClockTimer.Stop()
@@ -64,13 +66,24 @@ class Clock(object):
 
 	def _handleClockAnnouncement(self) -> None:
 		now = datetime.now()
+		# wx.PyTimer is not guaranteed to fire exactly once per second.
+		# Without extra guarding it may call this handler twice within the same wall clock second,
+		# which can result in double hourly chimes.
 		if now.second != 0:
 			return
 		autoAnnounce = config.conf["clockAndCalendar"]["autoAnnounce"]
 		if autoAnnounce not in autoAnnounceIntervals:
 			return
-		if divmod(now.minute, autoAnnounceIntervals[autoAnnounce])[1] == 0:
-			self.reportClock()
+		# Only act on minutes that match the chosen interval
+		if divmod(now.minute, autoAnnounceIntervals[autoAnnounce])[1] != 0:
+			return
+		# Make sure we only announce once per (day, hour, minute) even if the handler
+		# gets called multiple times within the same second.
+		stamp = (now.year, now.month, now.day, now.hour, now.minute)
+		if stamp == self._lastAnnouncedStamp:
+			return
+		self._lastAnnouncedStamp = stamp
+		self.reportClock()
 
 	def reportClock(self) -> None:
 		now = datetime.now()
@@ -91,7 +104,7 @@ class Clock(object):
 				wx.CallLater(
 					10 + (1000 * waveFileDuration),
 					ui.message,
-					GetTimeFormatEx(
+					safeGetTimeFormatEx(
 						None, None, now, formats.rgx.sub(
 							formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']]
 						)
@@ -99,7 +112,7 @@ class Clock(object):
 				)
 			else:
 				ui.message(
-					GetTimeFormatEx(
+					safeGetTimeFormatEx(
 						None, None, now, formats.rgx.sub(
 							formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']]
 						)

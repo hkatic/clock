@@ -31,7 +31,7 @@ sys.path.append(os.path.join(os.path.abspath(os.path.dirname(__file__))))
 from . import convertdate
 sys.path.remove(sys.path[-1])
 import time
-from winKernel import GetTimeFormatEx, GetDateFormatEx
+from .formats import safeGetTimeFormatEx, safeGetDateFormatEx
 from configobj.validate import VdtTypeError
 
 import addonHandler
@@ -262,17 +262,17 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			speech.setSpeechMode(speech.SpeechMode.talk)
 		now = datetime.now()
 		if scriptHandler.getLastScriptRepeatCount() == 0:
-			msg = GetTimeFormatEx(
-				None, 0, now, formats.rgx.sub(
+			msg = safeGetTimeFormatEx(
+				None, None, now, formats.rgx.sub(
 					formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']]
 				)
 			)
 		elif scriptHandler.getLastScriptRepeatCount() == 1:
-			msg = GetDateFormatEx(
-				None, 0, None, formats.dateFormats[config.conf['clockAndCalendar']['dateDisplayFormat']]
+			msg = safeGetDateFormatEx(
+				None, None, None, formats.dateFormats[config.conf['clockAndCalendar']['dateDisplayFormat']]
 			)
 		else:
-			informations = getDayAndWeekOfYear(GetDateFormatEx(None, 0, None, "yyyy/M/d"))
+			informations = getDayAndWeekOfYear(safeGetDateFormatEx(None, None, None, "yyyy/M/d"))
 			msg = _(
 				"Day {day}, week {week} of {year}, remaining days {remain}."
 			).format(day=informations[0], week=informations[1], year=informations[2], remain=informations[3])
