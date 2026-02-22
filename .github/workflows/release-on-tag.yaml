@@ -41,7 +41,7 @@ jobs:
         echo '${{ env.CUR_DATE }} ${{ env.RELEASE_TITLE }} ${{ env.PRE_RELEASE }} ${{ env.MINOR_PATCH }}'
 
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v6
     - name: Set up Python 3.8
       uses: actions/setup-python@v4
       with:
