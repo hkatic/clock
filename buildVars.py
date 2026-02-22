@@ -27,10 +27,11 @@ NVDA+F12 pressed twice quickly, get current date.
 NVDA+F12 pressed three times quickly, reports the current day, the week number, the current year and the remaining days before the end of the year.
 For other instructions, press  actions button in add-on store, then go to help."""),
 	# version
-	addon_version="20251005.1.0",
+	addon_version="20260221.0.1",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
-	addon_changelog=_("""added NVDA 2026.1 compatibility """),
+	addon_changelog=_("""Changes for 20260221.0.1
+Using the latest version of the addonTemplate."""),
 	# Author(s)
 	addon_author="Hrvoje Katic <hrvojekatic@gmail.com>, Abdel <abdelkrim.bensaid@gmail.com>",
 	# URL for the add-on documentation support
@@ -48,7 +49,7 @@ For other instructions, press  actions button in add-on store, then go to help."
 	# Do not change unless you know what you are doing!
 	addon_updateChannel=None,
 	# Add-on license such as GPL 2
-	addon_license="GPL-2.0",
+	addon_license="GPL v2",
 	# URL for the license document the ad-on is licensed under
 	addon_licenseURL="https://www.gnu.org/licenses/gpl-2.0.html",
 )
