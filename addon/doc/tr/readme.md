@@ -28,6 +28,7 @@ Aşağıdaki komutlar varsayılan olarak atanmamıştır; bunları atamak istiyo
 * Bir sonraki alarmdan önce geçen ve kalan süre. bu harekete hızlıca iki kez basmak bir sonraki alarmı iptal edecektir.
 * Çalmakta olan alarm sesini durdurun.
 * Alarm ayarı iletişim kutusunu aç.
+* Komut katmanını gösterir (NVDA+Shift+F12'den sonra basılacak tuşlar).
 
 ## Katman komutları
 
