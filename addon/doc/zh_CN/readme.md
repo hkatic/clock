@@ -1,70 +1,70 @@
-# NVDA 时钟和日历插件 #
+# Clock and calendar Add-on for NVDA #
 
-* 作者：Hrvoje Katić, Abdel and NVDA contributors
-* 下载 [稳定版][1]
-* 下载 [开发版][2]
-* NVDA 兼容性：2019.3 及更高版本
+* Authors: Hrvoje Katić, Abdel and NVDA contributors
+* Download [stable version][1]
+* Download [development version][2]
+* NVDA compatibility: 2019.3 and later
 
-此插件为 NVDA 启用了高级时钟、闹钟和日历功能。
+This add-on enables the advanced clock, alarm timer and calendar functionality for NVDA.
 
-借助这个插件，您可以让 NVDA 以 Windows 默认时间格式以外的格式读出日期时间。此外，您还可以查看当前年份、已过天数或周数，以及本年的剩余天数，还能够按照指定的间隔播报时间。插件还具备提醒和秒表计时器功能，您可以为某些任务计时或设置提醒（如复制文件、安装程序或做饭等）。
+You can configure NVDA to announce time and date in formats other than what Windows provides by default. Additionally, you can obtain the current day, week number, as well as the remaining days before the end of the current year, and you can also set automatic time announcement on specified interval. There's also a stopwatch and Alarm timer features built-in to the add-on that lets you time your tasks, such as copying files, installing programs, or cooking meals.
 
-注：
+Notes:
 
-* 如果您正在安装的插件高于先前版本，在安装过程中，安装向导会检测旧配置是否与新配置兼容，并可以进行相应的自动更正，在此过程中您只需确认即可。
-* 在 Windows 10 及以后版本的操作系统上，您可以使用闹钟和提醒应用程序来管理秒表和计时器。
+* if you install the add-on as an update, during the installation process, the wizard detects if the old configuration is compatible with the new one and offers to correct it before installing, then you'll just have to validate the OK button to confirm that.
+* On Windows 10 and later, you can use Alarms and Clock app to manage stopwatch and timers.
 
-## 键盘命令
+## Key commands
 
-* NVDA+F12：读出当前时间
-* NVDA+F12 连按两次：读出当前日期
-* NVDA+F12 连按三次：读出当前日期，周数、年份及本年的剩余天数
-* NVDA+Shift+F12：打开时钟命令面板
+* NVDA+F12: get current time
+* NVDA+F12 pressed twice quickly: get current date
+* NVDA+F12 pressed three times quickly: reports the current day, the week number, the current year and the remaining days before the end of the year
+* NVDA+Shift+F12: enter clock layer
 
-## 未分配的命令
+## Unassigned commands
 
-以下命令默认没有分配快捷键；如果您想为这些命令分配快捷键，请在按键与手势对话框内添加。打开 NVDA 菜单，选项，找到“按键与手势”。展开时钟类别，然后选择要分配快捷键的命令，点击“添加”按钮，按下您想分配的快捷键即可。
+The following commands are not assigned by default; if you wish to assign them, use Input Gestures dialog to add custom commands. To do so, open NVDA menu, Preferences, then Input Gestures. Expand Clock category, then locate unassigned commands from the list below and select "Add", then enter the gesture you wish to use.
 
-* 读出距离下一个提醒的时间。连按两次取消。
-* 停止当前响铃。
-* 显示提醒设置对话框。
-* 显示命令面板（在按 NVDA+Shift+F12 后需要按下的按键）。
+* Elapsed and remaining time before the next alarm. pressing this gesture twice quickly will cancel the next alarm.
+* Stop currently playing alarm sound.
+* Display schedule alarms dialog box.
+* Show layered commands (keys to be pressed after NVDA+Shift+F12).
 
-## 命令面板
+## Layered commands
 
-要使用命令面板，请先按NVDA + Shift + F12，然后按下相应功能的对应快捷键：
+To use layered commands, press NVDA+Shift+F12 followed by one of the following keys:
 
-* s : 启动、重置或停止秒表
-* r : 重置秒表但不重新开始
-* A: 读出距离下依次提醒的已经过时间和剩余时间
-* t: 显示提醒设置对话框。
-* c : 取消下一个提醒
-* 空格 : 读出当前秒表或上次计时器的时间
-* p : 停止响铃（如果响铃时间过长）
-* h : 读出时钟命令面板中的可用命令
+* S: Starts, resets or stops the stopwatch
+* R: Resets stopwatch to 0 without restarting it
+* A: gives the elapsed and remaining time before the next alarm
+* T: opens schedule alarms dialog.
+* C: Cancel the next alarm
+* Space: Speaks current stopwatch or count-down timer
+* p: If an alarm is too long, allows to stop it
+* H: List all layered commands (Help)
 
-## 设置和使用
+## Configuration and usage
 
-要设置时钟插件的功能，请打开 NvDA 菜单、选项、设置，然后在时钟面板设置以下选项：
+To configure clock functionality, open NVDA menu, Preferences, then Settings, and configure the following options from Clock panel:
 
-* 时间和日期显示格式：使用这两个组合框来设置当您分别快速按 NVDA+F12 一次或两次时 NVDA 应该如何读出时间和日期。
-* 报时间隔：在此组合框中选择报时间隔（关闭、每 10 分钟、15 分钟、30 分钟或每小时）。
-* 报时方式（如果报时间隔未关闭则该设置有效）：在语音和音效、只有音效或只有语音之间进行选择。
-* 时钟铃声（如果报时间隔未关闭则该设置有效）：选择时钟铃声。
-* 区分整点与分钟铃声（默认禁用，仅当报时间隔未关闭时生效）：启用此复选框可为分钟报时设置不同于整点报时的铃声。
-  * 分钟铃声（仅当选中“区分整点与分钟铃声”时启用）：选择专用于分钟报时的铃声。
-* 免打扰时段（仅在“报时间隔”组合框中未选择“关闭”选项时才可见）允许您设置不自动报时的时间范围。
-* 免打扰时段时间格式：选择免打扰时段的显示方式（12 小时制或 24 小时制）。
-* 免打扰时段的开始和结束时间：从小时和分钟组合框中选择免打扰时段的开始和结束时间点。
+* Time and date display format: use these combo boxes to configure how NVDA will announce time and date when you press NVDA+F12 once or twice quickly, respectively.
+* Interval: choose the time announcement interval from this combo box (off, every 10 minutes, 15 minutes, 30 minutes, or every hour).
+* Time announcement (enabled if interval is not off): choose between speech and sound, sound only, or speech only.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for  intermediate minutes and the top of the hour.
+* Separate hour and intermediate minute chimes (enabled if interval is not off, disabled by default): Enable this checkbox to customize chimes for intermediate minutes separately from the hourly chime.
+  * Intermediate minutes chime sound (enabled if "Separate hour and intermediate minute chimes" is checked): Select the clock chime sound specifically for intermediate minutes.
+* Quiet hours (enabled if interval is not off): select this checkbox to configure quiet hours range when automatic time announcement should not occur.
+* Quiet hours time format (enabled if quiet hours is enabled): select how quiet hours options are presented (12-hour or 24-hour format).
+* Quiet hours start and end times: select hour and minute range for quiet hours from hours and minutes combo boxes.
 
-要设置提醒，请打开 NVDA 菜单,工具,设置提醒，设置对话框内包括：
+To schedule alarms, open NVDA menu, Tools, then select Schedule Alarms. The dialog contents include:
 
-* 倒计时单位：在小时、分钟和秒之间选择用于设置倒计时提醒的时间单位。
-* 倒计时时间：根据以上所选的单位输入相应的时间。
-* 铃声：选择提醒时播放的铃声。
-* 停止和暂停按钮：停止或暂停较长的铃声预览。
+* Alarm duration in: select alarm/timer duration between hours, minutes, and seconds.
+* Duration: enter alarm duration in the unit specified above.
+* Alarm sound: select the alarm sound to be played.
+* Stop and pause buttons: stop or pause a long alarm sound.
 
-点击“确认”，随后会显示一个对话框告诉您提醒开始的时间。
+Click OK, and a message will inform you the curretnly selected alarm duration.
 
 [1]: https://addons.nvda-project.org/files/get.php?file=cac
 

@@ -1,103 +1,71 @@
-# Ur og kalender for NVDA #
+# Clock and calendar Add-on for NVDA #
 
 * Authors: Hrvoje Katić, Abdel and NVDA contributors
-* Download [stabil version][1]
+* Download [stable version][1]
+* Download [development version][2]
+* NVDA compatibility: 2019.3 and later
 
-* NVDA-kompatibilitet: 2019.3 og nyere
+This add-on enables the advanced clock, alarm timer and calendar functionality for NVDA.
 
-Denne tilføjelse tilføjer avancerede ur, alarm, tidtagning  og
-kalenderfunktionalitet til NVDA.
+You can configure NVDA to announce time and date in formats other than what Windows provides by default. Additionally, you can obtain the current day, week number, as well as the remaining days before the end of the current year, and you can also set automatic time announcement on specified interval. There's also a stopwatch and Alarm timer features built-in to the add-on that lets you time your tasks, such as copying files, installing programs, or cooking meals.
 
-Du kan konfigurere NvDA til at annoncere klokkeslæt og dato i andre
-formater, end hvad Windows leverer som standard. Derudover kan du få den
-aktuelle dag, ugenummer samt de resterende dage inden udgangen af det
-aktuelle år, og du kan også indstille automatiske tidsannoncering for et
-angivet interval. Der er også et stopur og tidtagningsfunktioner indbygget i
-tilføjelsen, der lader dig time dine opgaver, såsom kopiering af filer,
-installation af programmer eller tilberedning af måltider.
+Notes:
 
-Bemærkninger:
+* if you install the add-on as an update, during the installation process, the wizard detects if the old configuration is compatible with the new one and offers to correct it before installing, then you'll just have to validate the OK button to confirm that.
+* On Windows 10 and later, you can use Alarms and Clock app to manage stopwatch and timers.
 
-* Hvis du installerer tilføjelsen som en opdatering, opdager guiden under
-  installationsprocessen, om den gamle konfiguration er kompatibel med den
-  nye, og tilbyder at rette den før installation. Tryk på "ok" for at
-  bekræfte.
-* I Windows 10 og nyere kan du bruge appen Alarmer og ur til at administrere
-  stopur og timere.
+## Key commands
 
-## Tastaturkommandoer
+* NVDA+F12: get current time
+* NVDA+F12 pressed twice quickly: get current date
+* NVDA+F12 pressed three times quickly: reports the current day, the week number, the current year and the remaining days before the end of the year
+* NVDA+Shift+F12: enter clock layer
 
-* NVDA+F12: Få den aktuelle tid oplyst.
-* NVDA+F12 trykket hurtigt to gange: få aktuel dato
-* NVDA+F12 trykket tre gange hurtigt: Oplyser den aktuelle dag, ugenummeret,
-  det aktuelle år og de resterende dage før årets udgang.
-* NVDA+Shift+F12: indtast urlag
+## Unassigned commands
 
-## Ikke-tildelte kommandoer
+The following commands are not assigned by default; if you wish to assign them, use Input Gestures dialog to add custom commands. To do so, open NVDA menu, Preferences, then Input Gestures. Expand Clock category, then locate unassigned commands from the list below and select "Add", then enter the gesture you wish to use.
 
-Følgende kommandoer er ikke tildelt som standard. Hvis du ønsker at
-tilknytte dem, skal du bruge dialogboksen "Håndter kommandoer" til at
-tilføje brugerdefinerede kommandoer. For at gøre det skal du åbne
-NVDA-menuen, Opsætning og derefter Håndter kommandoer. Udvid kategorien Ur,
-find derefter ikke-tildelte kommandoer fra listen nedenfor, og vælg
-"Tilføj", og indtast derefter den kommando, du ønsker at bruge.
+* Elapsed and remaining time before the next alarm. pressing this gesture twice quickly will cancel the next alarm.
+* Stop currently playing alarm sound.
+* Display schedule alarms dialog box.
+* Show layered commands (keys to be pressed after NVDA+Shift+F12).
 
-* Forløbet og resterende tid før næste alarm. Hvis du trykker denne kommando
-  to gange hurtigt, annulleres den næste alarm.
-* Stop afspilning af den aktuelle alarmlyd
-* Vis dialog til indstilling af alarmer
+## Layered commands
 
-## Lagrede kommandoer
+To use layered commands, press NVDA+Shift+F12 followed by one of the following keys:
 
-For at bruge lagrede kommandoer skal du trykke på NVDA+Skift+F12 efterfulgt
-af en af følgende taster:
+* S: Starts, resets or stops the stopwatch
+* R: Resets stopwatch to 0 without restarting it
+* A: gives the elapsed and remaining time before the next alarm
+* T: opens schedule alarms dialog.
+* C: Cancel the next alarm
+* Space: Speaks current stopwatch or count-down timer
+* p: If an alarm is too long, allows to stop it
+* H: List all layered commands (Help)
 
-* S: Starter, nulstiller eller stopper stopuret
-* R: Nulstiller stopuret til 0 uden at genstarte det
-* A: Giver den resterende og forløbet tid før den næste alarm
-* T: Åbner dialogen til indstilling af alarmer.
-* C: Annuller den næste alarm
-* Mellemrum: Udtaler nuværende stopur eller nedtælling
-* P: Hvis en alarm er for lang, kan du stoppe den via dette tastetryk.
-* H: Liste over alle lagdelte kommandoer (Hjælp)
+## Configuration and usage
 
-## Konfiguration og brug
+To configure clock functionality, open NVDA menu, Preferences, then Settings, and configure the following options from Clock panel:
 
-For at konfigurere urfunktionaliteten skal du åbne NvDA-menuen, Opsætning og
-derefter Indstillinger og konfigurere følgende muligheder fra
-indstillingskategorien Ur:
+* Time and date display format: use these combo boxes to configure how NVDA will announce time and date when you press NVDA+F12 once or twice quickly, respectively.
+* Interval: choose the time announcement interval from this combo box (off, every 10 minutes, 15 minutes, 30 minutes, or every hour).
+* Time announcement (enabled if interval is not off): choose between speech and sound, sound only, or speech only.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for  intermediate minutes and the top of the hour.
+* Separate hour and intermediate minute chimes (enabled if interval is not off, disabled by default): Enable this checkbox to customize chimes for intermediate minutes separately from the hourly chime.
+  * Intermediate minutes chime sound (enabled if "Separate hour and intermediate minute chimes" is checked): Select the clock chime sound specifically for intermediate minutes.
+* Quiet hours (enabled if interval is not off): select this checkbox to configure quiet hours range when automatic time announcement should not occur.
+* Quiet hours time format (enabled if quiet hours is enabled): select how quiet hours options are presented (12-hour or 24-hour format).
+* Quiet hours start and end times: select hour and minute range for quiet hours from hours and minutes combo boxes.
 
-* Visningsformat for klokkeslæt og dato: Brug disse kombinationsbokse til at
-  konfigurere, hvordan NVDA vil annoncere klokkeslæt og dato, når du trykker
-  på NVDA+F12 en eller to gange hurtigt.
-* Interval: Vælg tidsmeddelelsesintervallet fra denne combo box( fra, hvert
-  10. minut, 15. minut, 30. minut eller hver time).
-* Tidsannoncering (aktiveret, hvis interval ikke er slået fra): vælg mellem
-  tale og lyd, kun lyd eller kun tale.
-* Urets ringelyd  (aktiveret, hvis interval ikke er slået fra): vælg lyden
-  for uret.
-* Checkboxe "Stilletimer" (kun synlig, hvis muligheden "Fra" ikke er valgt i
-  boksen) giver dig mulighed for at konfigurere tidsintervallet, hvor den
-  automatiske tidsannoncering ikke skal forekomme.
-* Tidsformat for stilletimer (aktiveret, hvis stilletimer er aktiveret):
-  vælg, hvordan indstillingerne for stilletimer præsenteres (12-timers eller
-  24-timers format).
-* Stilletimers start- og sluttidspunkter: Vælg time- og minutinterval for
-  stilletimer fra combo boxe for timer og minutter.
+To schedule alarms, open NVDA menu, Tools, then select Schedule Alarms. The dialog contents include:
 
-For at planlægge alarmer skal du åbne NVDA-menuen, Værktøjer, og derefter
-vælge Indstil alarmer. Dialogen indeholder følgende indstillinger:
+* Alarm duration in: select alarm/timer duration between hours, minutes, and seconds.
+* Duration: enter alarm duration in the unit specified above.
+* Alarm sound: select the alarm sound to be played.
+* Stop and pause buttons: stop or pause a long alarm sound.
 
-* Alarmens varighed i: Vælg alarm/timer-varighed mellem timer, minutter og
-  sekunder.
-* Varighed: Indtast alarmvarigheden som anvist ovenfor.
-* Alarmlyd: Vælg den alarmlyd, der skal afspilles.
-* Knapper til pause og stop giver dig mulighed for at sætte alarmen på pause
-  og genoptage lange alarmer.
+Click OK, and a message will inform you the curretnly selected alarm duration.
 
-Klik på OK, og en meddelelse vil informere dig om den aktuelt valgte
-alarmvarighed.
+[1]: https://addons.nvda-project.org/files/get.php?file=cac
 
-[[!tag stable]]
-
-[1]: https://www.nvaccess.org/addonStore/legacy?file=clock
+[2]: https://addons.nvda-project.org/files/get.php?file=cac-dev

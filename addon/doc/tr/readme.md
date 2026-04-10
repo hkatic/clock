@@ -1,70 +1,70 @@
-# NVDA için saat ve takvim Eklentisi #
+# Clock and calendar Add-on for NVDA #
 
-* Yazarlar: Hrvoje Katić, Abdel ve NVDA'ya katkıda bulunanlar
-* [Kararlı Sürümü İndir][1]
-* [Geliştirici sürümünü indir][2]
-* NVDA uyumluluğu: 2019.3 ve üstü
+* Authors: Hrvoje Katić, Abdel and NVDA contributors
+* Download [stable version][1]
+* Download [development version][2]
+* NVDA compatibility: 2019.3 and later
 
-Bu eklenti, NVDA için gelişmiş saat, alarm zamanlayıcı ve takvim işlevselliğini etkinleştirir.
+This add-on enables the advanced clock, alarm timer and calendar functionality for NVDA.
 
-NVDA'yı, Windows'un varsayılan olarak sağladığından farklı biçimlerde saat ve tarihi duyuracak şekilde yapılandırabilirsiniz. Ayrıca içinde bulunulan gün, hafta numarası ve içinde bulunulan yılın bitmesine kalan gün sayısı bilgisini alabilir, ayrıca belirtilen aralıkta otomatik saat duyurusu ayarlayabilirsiniz. Eklentide yerleşik olarak bulunan ve dosya kopyalama, program yükleme veya yemek pişirme gibi görevlerinizi zamanlamanıza olanak tanıyan bir kronometre ve Alarm zamanlayıcı özellikleri de vardır.
+You can configure NVDA to announce time and date in formats other than what Windows provides by default. Additionally, you can obtain the current day, week number, as well as the remaining days before the end of the current year, and you can also set automatic time announcement on specified interval. There's also a stopwatch and Alarm timer features built-in to the add-on that lets you time your tasks, such as copying files, installing programs, or cooking meals.
 
-Notlar:
+Notes:
 
-* eklentiyi güncelleme olarak yüklerseniz, yükleme işlemi sırasında sihirbaz eski konfigürasyonun yenisiyle uyumlu olup olmadığını algılar ve yüklemeden önce düzeltmeyi önerir, ardından onaylamak için tamam düğmesini seçmeniz yeterlidir.
-* Windows 10 ve sonraki sürümlerde, kronometreyi ve zamanlayıcıları yönetmek için Alarmlar ve Saat uygulamasını kullanabilirsiniz.
+* if you install the add-on as an update, during the installation process, the wizard detects if the old configuration is compatible with the new one and offers to correct it before installing, then you'll just have to validate the OK button to confirm that.
+* On Windows 10 and later, you can use Alarms and Clock app to manage stopwatch and timers.
 
-## Tuş komutları
+## Key commands
 
-* NVDA+F12, şimdiki zamanı al
-* NVDA+F12'ye iki kez hızlıca basıldığında güncel tarihi alın
-* NVDA+F12'ye hızlı bir şekilde üç kez basıldığında içinde bulunulan günü, hafta numarasını, içinde bulunulan yılı ve yılın bitmesi için kalan günleri bildirir
-* NVDA+Shift+F12: saat komut katmanına girin
+* NVDA+F12: get current time
+* NVDA+F12 pressed twice quickly: get current date
+* NVDA+F12 pressed three times quickly: reports the current day, the week number, the current year and the remaining days before the end of the year
+* NVDA+Shift+F12: enter clock layer
 
-## Atanmamış komutlar
+## Unassigned commands
 
-Aşağıdaki komutlar varsayılan olarak atanmamıştır; bunları atamak istiyorsanız, özel komutlar eklemek için Girdi Hareketleri iletişim kutusunu kullanın. Bunu yapmak için NVDA menüsünü, Tercihler'i ve ardından Girdi Hareketlerini açın. Saat kategorisini genişletin, ardından aşağıdaki listeden atanmamış komutları bulun ve "Ekle"yi seçin, ardından kullanmak istediğiniz hareketi girin.
+The following commands are not assigned by default; if you wish to assign them, use Input Gestures dialog to add custom commands. To do so, open NVDA menu, Preferences, then Input Gestures. Expand Clock category, then locate unassigned commands from the list below and select "Add", then enter the gesture you wish to use.
 
-* Bir sonraki alarmdan önce geçen ve kalan süre. bu harekete hızlıca iki kez basmak bir sonraki alarmı iptal edecektir.
-* Çalmakta olan alarm sesini durdurun.
-* Alarm ayarı iletişim kutusunu aç.
-* Komut katmanını gösterir (NVDA+Shift+F12'den sonra basılacak tuşlar).
+* Elapsed and remaining time before the next alarm. pressing this gesture twice quickly will cancel the next alarm.
+* Stop currently playing alarm sound.
+* Display schedule alarms dialog box.
+* Show layered commands (keys to be pressed after NVDA+Shift+F12).
 
-## Katman komutları
+## Layered commands
 
-Katman komutlarını kullanmak için NVDA+Shift+F12 tuşlarına ve ardından aşağıdaki tuşlardan birine basın:
+To use layered commands, press NVDA+Shift+F12 followed by one of the following keys:
 
-* S: Kronometreyi başlatır, sıfırlar veya durdurur
-* R: Kronometreyi yeniden başlatmadan sıfırlar
-* A: bir sonraki alarmdan önce kalan ve geçen süreyi verir
-* T: Alarm ayarı iletişim kutusunu açar.
-* C: Sonraki alarmı iptal eder
-* Boşluk: Geçerli kronometreyi veya geri sayım sayacını söyler
-* p: Bir alarm çok uzunsa, onu durdurmaya olanak tanır
-* H: Tüm katman komutlarını listeler. (Yardım)
+* S: Starts, resets or stops the stopwatch
+* R: Resets stopwatch to 0 without restarting it
+* A: gives the elapsed and remaining time before the next alarm
+* T: opens schedule alarms dialog.
+* C: Cancel the next alarm
+* Space: Speaks current stopwatch or count-down timer
+* p: If an alarm is too long, allows to stop it
+* H: List all layered commands (Help)
 
-## Yapılandırma ve kullanım
+## Configuration and usage
 
-Saat işlevini yapılandırmak için NvDA menüsünü, Tercihler'i ve ardından Ayarlar'ı açın ve Saat panelinden aşağıdaki seçenekleri yapılandırın:
+To configure clock functionality, open NVDA menu, Preferences, then Settings, and configure the following options from Clock panel:
 
-* Saat ve tarih görüntüleme formatı: NVDA+F12'ye sırasıyla bir veya iki kez hızlıca bastığınızda NVDA'nın saat ve tarihi nasıl duyuracağını yapılandırmak için bu seçim kutularını kullanın.
-* Aralık: bu seçim kutusundan saat anons aralığını seçin (kapalı, her 10 dakikada bir, her 15 dakikada bir, her 30 dakikada bir veya her saat başı).
-* Saat anonsu (aralık kapalı değilse etkinleştirilir): konuşma ve ses, yalnızca ses veya yalnızca konuşma arasında seçim yapın.
-* Saat zil sesi (aralık kapalı değilse etkinleştirilir): saat zil sesini seçin.
-* Ayrı saat ve ara dakika zilleri (aralık kapalı değilse etkindir, varsayılan olarak devre dışıdır): Ara dakikalar için zilleri saatlik zilden ayrı olarak özelleştirmek için bu onay kutusunu etkinleştirin.
-  * Ara dakika zil sesi ("Saat ve ara dakika zillerini ayır" işaretliyse etkin): Özellikle ara dakikalar için saat zil sesini seçin.
-* Sessiz saatler (aralık kapalı değilse etkinleştirilir): Otomatik saat anonsunun yapılmaması gerektiğinde sessiz saatler aralığını yapılandırmak için bu onay kutusunu işaretleyin.
-* Sessiz saat biçimi (sessiz saatler etkinse etkinleştirilir): sessiz saat seçeneklerinin nasıl sunulacağını seçin (12 saatlik veya 24 saatlik biçim).
-* Sessiz saatler başlangıçv e bitiş saatleri: Saat ve dakika seçim kutularından sessiz saatler için saat ve dakika aralığını seçin.
+* Time and date display format: use these combo boxes to configure how NVDA will announce time and date when you press NVDA+F12 once or twice quickly, respectively.
+* Interval: choose the time announcement interval from this combo box (off, every 10 minutes, 15 minutes, 30 minutes, or every hour).
+* Time announcement (enabled if interval is not off): choose between speech and sound, sound only, or speech only.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for  intermediate minutes and the top of the hour.
+* Separate hour and intermediate minute chimes (enabled if interval is not off, disabled by default): Enable this checkbox to customize chimes for intermediate minutes separately from the hourly chime.
+  * Intermediate minutes chime sound (enabled if "Separate hour and intermediate minute chimes" is checked): Select the clock chime sound specifically for intermediate minutes.
+* Quiet hours (enabled if interval is not off): select this checkbox to configure quiet hours range when automatic time announcement should not occur.
+* Quiet hours time format (enabled if quiet hours is enabled): select how quiet hours options are presented (12-hour or 24-hour format).
+* Quiet hours start and end times: select hour and minute range for quiet hours from hours and minutes combo boxes.
 
-Alarm programlamak için, NVDA menüsü, Araçlar'ı açın ve ardından Alarm ayarla'yı seçin. İletişim kutusu şunları içerir:
+To schedule alarms, open NVDA menu, Tools, then select Schedule Alarms. The dialog contents include:
 
-* Alarm süre birimi: saat, dakika ve saniye arasında alarm/zamanlayıcı süresini seçin.
-* Süre: yukarıda belirtilen birimde alarm süresini girin.
-* Alarm sesi: çalınacak alarm sesini seçin.
-* Durdur ve duraklat düğmeleri: uzun bir alarm sesini durdurun veya duraklatın.
+* Alarm duration in: select alarm/timer duration between hours, minutes, and seconds.
+* Duration: enter alarm duration in the unit specified above.
+* Alarm sound: select the alarm sound to be played.
+* Stop and pause buttons: stop or pause a long alarm sound.
 
-Tamam'a bastığınızda şu anda seçilen alarm süresi  bildirilecektir.
+Click OK, and a message will inform you the curretnly selected alarm duration.
 
 [1]: https://addons.nvda-project.org/files/get.php?file=cac
 
