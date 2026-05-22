@@ -1,70 +1,70 @@
-# Дополнение часов и календаря для NVDA #
+# Clock and calendar Add-on for NVDA #
 
-* Авторы: Hrvoje Katić, Abdel и учасники сообщества NVDA
-* Загрузить [стабильную версию][1]
-* Загрузить [разрабатываемую версию][2]
-* Совместимость с NVDA: 2019.3 и позже
+* Authors: Hrvoje Katić, Abdel and NVDA contributors
+* Download [stable version][1]
+* Download [development version][2]
+* NVDA compatibility: 2019.3 and later
 
-Это дополнение включает расширенные функции часов, будильника и календаря для NVDA.
+This add-on enables the advanced clock, alarm timer and calendar functionality for NVDA.
 
-Вы можете настроить NVDA так, чтобы она объявляла время и дату в форматах, отличных от тех, которые Windows предоставляет по умолчанию. Кроме того, вы можете получать информацию о текущем дне, номере недели, а также об оставшихся днях до конца текущего года, и вы также можете настроить автоматическое объявление времени с указанным интервалом. В дополнение также встроены функции секундомера и таймера будильника, которые позволяют засекать время выполнения таких задач, как копирование файлов, установка программ или приготовление пищи.
+You can configure NVDA to announce time and date in formats other than what Windows provides by default. Additionally, you can obtain the current day, week number, as well as the remaining days before the end of the current year, and you can also set automatic time announcement on specified interval. There's also a stopwatch and Alarm timer features built-in to the add-on that lets you time your tasks, such as copying files, installing programs, or cooking meals.
 
-Примечания:
+Notes:
 
-* если вы устанавливаете дополнение как обновление, то в процессе установки мастер определяет, совместима ли старая конфигурация с новой, и предлагает исправить её перед установкой, тогда вам просто нужно будет нажать кнопку OK, чтобы подтвердить это.
-* В Windows 10 и выше вы можете использовать приложение часы и будильник для управления секундомером и таймерами.
+* if you install the add-on as an update, during the installation process, the wizard detects if the old configuration is compatible with the new one and offers to correct it before installing, then you'll just have to validate the OK button to confirm that.
+* On Windows 10 and later, you can use Alarms and Clock app to manage stopwatch and timers.
 
-## Клавиатурные команды
+## Key commands
 
-* NVDA+F12: узнать текущее время
-* NVDA+F12 дважды быстро: узнать текущую дату
-* NVDA+F12 трижды быстро: объявляет текущий день, номер недели, текущий год и оставшиеся дни до конца года
-* NVDA+Shift+F12: войти в уровень часов
+* NVDA+F12: get current time
+* NVDA+F12 pressed twice quickly: get current date
+* NVDA+F12 pressed three times quickly: reports the current day, the week number, the current year and the remaining days before the end of the year
+* NVDA+Shift+F12: enter clock layer
 
-## Неназначенные команды
+## Unassigned commands
 
-Следующие команды по умолчанию не назначены; если вы хотите их назначить, используйте диалог жестов ввода для добавления пользовательских команд. Для этого откройте меню NVDA, Параметры, затем жесты ввода. Разверните категорию "Часы", найдите в списке ниже неназначенные команды и выберите "Добавить", введите жест, который вы хотите использовать.
+The following commands are not assigned by default; if you wish to assign them, use Input Gestures dialog to add custom commands. To do so, open NVDA menu, Preferences, then Input Gestures. Expand Clock category, then locate unassigned commands from the list below and select "Add", then enter the gesture you wish to use.
 
-* Истёкшее и оставшееся время до следующего срабатывания будильника. быстрое повторное нажатие этого жеста приведёт к отмене следующего срабатывания будильника.
-* Остановить воспроизведение текущего сигнала будильника.
-* Показать диалог расписания сигналов будильников.
-* Показать многоуровневые команды (клавиши, которые следует нажимать после NVDA+Shift+F12).
+* Elapsed and remaining time before the next alarm. pressing this gesture twice quickly will cancel the next alarm.
+* Stop currently playing alarm sound.
+* Display schedule alarms dialog box.
+* Show layered commands (keys to be pressed after NVDA+Shift+F12).
 
-## Многоуровневые команды
+## Layered commands
 
-Чтобы использовать многоуровневые команды, нажмите NVDA+Shift+F12, а затем одну из следующих клавиш:
+To use layered commands, press NVDA+Shift+F12 followed by one of the following keys:
 
-* S: Запускает, сбрасывает или останавливает секундомер
-* R: Сбрасывает значение секундомера на 0 без его перезапуска
-* A: показывает прошедшее и оставшееся время до следующего сигнала будильника
-* T: открывает диалог планирования сигналов будильника.
-* C: Отменить следующий сигнал будильника
-* Пробел: Проговаривает текущий секундомер или таймер обратного отсчёта
-* p: Если сигнал будильника слишком длинный, позволяет остановить его
-* H: Перечислить все многоуровневые команды (Справка)
+* S: Starts, resets or stops the stopwatch
+* R: Resets stopwatch to 0 without restarting it
+* A: gives the elapsed and remaining time before the next alarm
+* T: opens schedule alarms dialog.
+* C: Cancel the next alarm
+* Space: Speaks current stopwatch or count-down timer
+* p: If an alarm is too long, allows to stop it
+* H: List all layered commands (Help)
 
-## Настройка и использование
+## Configuration and usage
 
-Чтобы настроить функциональность часов, откройте меню NVDA, "Параметры", затем "Настройки" и настройте следующие параметры на панели часов:
+To configure clock functionality, open NVDA menu, Preferences, then Settings, and configure the following options from Clock panel:
 
-* Формат отображения времени и даты: используйте эти комбинированные списки, чтобы настроить, как NVDA будет объявлять время и дату при быстром нажатии NVDA+F12 один или два раза соответственно.
-* Интервал: выберите интервал объявления времени в этом комбинированном списке (отключён, каждые 10 минут, 15 минут, 30 минут или каждый час).
-* Объявление времени (включено, если интервал не отключен): выберите между речью и звуком, только звуком или только речью.
-* Звук боя часов  (включен, если интервал не отключен): Выберите звук звонка часов по умолчанию для промежуточных минут и начала часа.
-* Разделять сигналы часов и промежуточных минут (включено, если интервал не отключен, отключено по умолчанию): Установите этот флажок, чтобы настроить звуковые сигналы для промежуточных минут отдельно от почасового сигнала.
-  * Звуковой сигнал промежуточных минут (включено, если установлен флажок "Разделять часовые и промежуточные минутные звонки"): Выберите звук боя часов специально для промежуточных минут.
-* Тихий час (включён, если интервал не отключён): установите этот флажок, чтобы настроить диапазон тихих часов, когда не будет работать автоматическое объявление времени.
-* Формат времени тихого часа (включен, если включена функция "тихий час"): выберите способ отображения параметров "тихих часов" (12-часовой или 24-часовой формат).
-* Время начала и окончания тихого часа: выберите диапазон часов и минут для тихих часов в комбинированных списках часов и минут.
+* Time and date display format: use these combo boxes to configure how NVDA will announce time and date when you press NVDA+F12 once or twice quickly, respectively.
+* Interval: choose the time announcement interval from this combo box (off, every 10 minutes, 15 minutes, 30 minutes, or every hour).
+* Time announcement (enabled if interval is not off): choose between speech and sound, sound only, or speech only.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for  intermediate minutes and the top of the hour.
+* Separate hour and intermediate minute chimes (enabled if interval is not off, disabled by default): Enable this checkbox to customize chimes for intermediate minutes separately from the hourly chime.
+  * Intermediate minutes chime sound (enabled if "Separate hour and intermediate minute chimes" is checked): Select the clock chime sound specifically for intermediate minutes.
+* Quiet hours (enabled if interval is not off): select this checkbox to configure quiet hours range when automatic time announcement should not occur.
+* Quiet hours time format (enabled if quiet hours is enabled): select how quiet hours options are presented (12-hour or 24-hour format).
+* Quiet hours start and end times: select hour and minute range for quiet hours from hours and minutes combo boxes.
 
-Чтобы запланировать сигналы будильника, откройте меню NVDA, Сервис, затем выберите Запланировать сигналы будильника. Содержимое диалога включает:
+To schedule alarms, open NVDA menu, Tools, then select Schedule Alarms. The dialog contents include:
 
-* Длительность срабатывания будильника в: выберите длительность срабатывания будильника/таймера в диапазоне часов, минут и секунд.
-* Длительность: введите продолжительность срабатывания будильника в единице измерения, указанной выше.
-* Звуковой сигнал будильника: выберите звуковой сигнал будильника, который будет воспроизводиться.
-* Кнопки остановки и паузы: остановка или приостановка длительного звукового сигнала будильника.
+* Alarm duration in: select alarm/timer duration between hours, minutes, and seconds.
+* Duration: enter alarm duration in the unit specified above.
+* Alarm sound: select the alarm sound to be played.
+* Stop and pause buttons: stop or pause a long alarm sound.
 
-Нажмите OK, и в сообщении будет указана выбранная в данный момент продолжительность сигнала будильника.
+Click OK, and a message will inform you the curretnly selected alarm duration.
 
 [1]: https://addons.nvda-project.org/files/get.php?file=cac
 

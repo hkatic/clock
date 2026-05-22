@@ -1,105 +1,71 @@
-# Complemento reloj y calendario para NVDA #
+# Clock and calendar Add-on for NVDA #
 
-* Autores: Hrvoje Katić, Abdel y colaboradores de NVDA
-* Descargar [versión estable][1]
+* Authors: Hrvoje Katić, Abdel and NVDA contributors
+* Download [stable version][1]
+* Download [development version][2]
+* NVDA compatibility: 2019.3 and later
 
-* Compatibilidad con NVDA: de 2019.3 en adelante
+This add-on enables the advanced clock, alarm timer and calendar functionality for NVDA.
 
-Este complemento habilita funciones avanzadas de reloj, temporizador de
-alarma   y  calendario para NVDA.
+You can configure NVDA to announce time and date in formats other than what Windows provides by default. Additionally, you can obtain the current day, week number, as well as the remaining days before the end of the current year, and you can also set automatic time announcement on specified interval. There's also a stopwatch and Alarm timer features built-in to the add-on that lets you time your tasks, such as copying files, installing programs, or cooking meals.
 
-Puedes configurar NVDA para que anuncie la fecha y la hora en formatos
-distintos a los que tiene Windows por defecto. Además, puedes obtener el día
-actual, número de semana, así como los días restantes para que acabe el año
-en curso, y también puedes establecer el anuncio automático de la hora tras
-un intervalo dado. También hay funciones de temporizador de alarma y
-cronómetro incorporadas en el complemento que te permiten medir tus tareas,
-tales como copiar archivos, instalar programas o cocinar comida.
+Notes:
 
-Notas:
+* if you install the add-on as an update, during the installation process, the wizard detects if the old configuration is compatible with the new one and offers to correct it before installing, then you'll just have to validate the OK button to confirm that.
+* On Windows 10 and later, you can use Alarms and Clock app to manage stopwatch and timers.
 
-* si instalas el complemento como una actualización, durante el proceso de
-  instalación, el asistente detecta si la configuración anterior es
-  compatible con la nueva y ofrece corregirla antes de instalar. Simplemente
-  debes validar con el botón Aceptar para confirmar.
-* En Windows 10 o posterior, puedes usar la aplicación Reloj y alarmas para
-  gestionar cronómetros y temporizadores.
+## Key commands
 
-## Teclas de órdenes
+* NVDA+F12: get current time
+* NVDA+F12 pressed twice quickly: get current date
+* NVDA+F12 pressed three times quickly: reports the current day, the week number, the current year and the remaining days before the end of the year
+* NVDA+Shift+F12: enter clock layer
 
-* NVDA+f12: obtiene la hora actual
-* NVDA+f12 pulsado dos veces rápidamente: obtiene la fecha actual
-* NVDA+F12 pulsado tres veces rápidamente: anuncia el número de día, número
-  de semana, el año actual y los días que faltan hasta fin de año
-* NVDA+shift+f12: entra en la capa del reloj
+## Unassigned commands
 
-## Órdenes sin asignar
+The following commands are not assigned by default; if you wish to assign them, use Input Gestures dialog to add custom commands. To do so, open NVDA menu, Preferences, then Input Gestures. Expand Clock category, then locate unassigned commands from the list below and select "Add", then enter the gesture you wish to use.
 
-Las siguientes órdenes vienen sin asignar por defecto; si quieres
-asignarlas, utiliza el diálogo Gestos de entrada para añadir órdenes
-personalizadas. Para ello, abre el menú NVDA, Preferencias, y luego Gestos
-de entrada. Expande la categoría Reloj, encuentra las órdenes sin asignar de
-la lista de debajo y selecciona "Añadir". Finalmente, teclea el gesto que te
-gustaría utilizar.
+* Elapsed and remaining time before the next alarm. pressing this gesture twice quickly will cancel the next alarm.
+* Stop currently playing alarm sound.
+* Display schedule alarms dialog box.
+* Show layered commands (keys to be pressed after NVDA+Shift+F12).
 
-* Tiempo transcurrido y restante antes de la próxima alarma. Al pulsar dos
-  veces rápidamente este gesto, se cancelará la alarma.
-* Detener sonido de la alarma actual en reproducción.
-* Mostrar cuadro de diálogo para programar alarmas.
+## Layered commands
 
-## Órdenes de capa
+To use layered commands, press NVDA+Shift+F12 followed by one of the following keys:
 
-Para usar las órdenes en capa, pulsa NVDA+Shift+F12 seguido de una de las
-siguientes teclas:
+* S: Starts, resets or stops the stopwatch
+* R: Resets stopwatch to 0 without restarting it
+* A: gives the elapsed and remaining time before the next alarm
+* T: opens schedule alarms dialog.
+* C: Cancel the next alarm
+* Space: Speaks current stopwatch or count-down timer
+* p: If an alarm is too long, allows to stop it
+* H: List all layered commands (Help)
 
-* S: inicia, detiene o reinicia el cronómetro
-* R: pone el cronómetro a 0 sin reiniciarlo
-* A: da el tiempo transcurrido y el tiempo restante antes de la próxima
-  alarma
-* T: abre el diálogo de programación de alarmas.
-* C: cancela la próxima alarma
-* Espacio: verbaliza el cronómetro o la cuenta atrás actual
-* p: si una alarma es demasiado larga, permite pararla
-* H: lista todas las órdenes de capa (Ayuda)
+## Configuration and usage
 
-## Configuración y uso
+To configure clock functionality, open NVDA menu, Preferences, then Settings, and configure the following options from Clock panel:
 
-Para configurar la funcionalidad del reloj, abre el menú de NVDA,
-Preferencias, Opciones, y configura las siguientes opciones desde el panel
-Reloj:
+* Time and date display format: use these combo boxes to configure how NVDA will announce time and date when you press NVDA+F12 once or twice quickly, respectively.
+* Interval: choose the time announcement interval from this combo box (off, every 10 minutes, 15 minutes, 30 minutes, or every hour).
+* Time announcement (enabled if interval is not off): choose between speech and sound, sound only, or speech only.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for  intermediate minutes and the top of the hour.
+* Separate hour and intermediate minute chimes (enabled if interval is not off, disabled by default): Enable this checkbox to customize chimes for intermediate minutes separately from the hourly chime.
+  * Intermediate minutes chime sound (enabled if "Separate hour and intermediate minute chimes" is checked): Select the clock chime sound specifically for intermediate minutes.
+* Quiet hours (enabled if interval is not off): select this checkbox to configure quiet hours range when automatic time announcement should not occur.
+* Quiet hours time format (enabled if quiet hours is enabled): select how quiet hours options are presented (12-hour or 24-hour format).
+* Quiet hours start and end times: select hour and minute range for quiet hours from hours and minutes combo boxes.
 
-* Formato de visualización de fecha y hora: usa estos cuadros combinados
-  para configurar cómo anunciará NVDA la hora y la fecha al pulsar NVDA+f12
-  una o dos veces rápidamente, respectivamente.
-* Intervalo: elige el intervalo de anuncio de hora desde este cuadro
-  combinado (apagado, cada 10 minutos, 15 minutos, 30 minutos, o cada hora).
-* Anuncio de hora (habilitado si el intervalo no está apagado): elige entre
-  voz y sonido, sólo sonido o sólo voz.
-* Sonido de campana del reloj (habilitado si el intervalo no está apagado):
-  selecciona el sonido de la campana.
-* Horas silenciosas (habilitada si el intervalo no está apagado): selecciona
-  esta casilla para configurar el intervalo de horas silenciosas en el que
-  no debería producirse el anuncio automático de hora.
-* Formato de hora para las horas silenciosas (activado si las horas
-  silenciosas están activadas): selecciona cómo se presentan las opciones de
-  las horas silenciosas (formatos de 12 o 24 horas).
-* Horas de inicio y fin de las horas silenciosas: selecciona el intervalo de
-  horas y minutos de las horas silenciosas desde los cuadros combinados de
-  horas y minutos.
+To schedule alarms, open NVDA menu, Tools, then select Schedule Alarms. The dialog contents include:
 
-Para programar alarmas, abre el menú de NVDA, Herramientas, Programar
-alarmas. Los contenidos del diálogo incluyen:
+* Alarm duration in: select alarm/timer duration between hours, minutes, and seconds.
+* Duration: enter alarm duration in the unit specified above.
+* Alarm sound: select the alarm sound to be played.
+* Stop and pause buttons: stop or pause a long alarm sound.
 
-* Duración de la alarma en: selecciona la duración de la alarma o el
-  temporizador entre horas, minutos y segundos.
-* Duración: introduce la duración de la alarma en la unidad indicada
-  anteriormente.
-* Sonido de alarma: elige el sonido de alarma que se reproducirá.
-* Botones detener y pausar: detener o pausar un sonido de alarma largo.
+Click OK, and a message will inform you the curretnly selected alarm duration.
 
-Pulsa Aceptar, y un mensaje te informará la duración de la alarma
-seleccionada actualmente.
+[1]: https://addons.nvda-project.org/files/get.php?file=cac
 
-[[!tag stable]]
-
-[1]: https://www.nvaccess.org/addonStore/legacy?file=clock
+[2]: https://addons.nvda-project.org/files/get.php?file=cac-dev

@@ -1,423 +1,469 @@
-# Brazilian Portuguese translation of Clock add-on.
-# Copyright (C) 2020-2021 NVDA Contributors.
-# This file is distributed under the same license as the NVDA package.
-# Ângelo Abrantes <ampa4374@gmail.com>, 2018-2019.
-# Rui Fontes <rui.fontes@tiflotecnia.com>, 2018.
-# Tiago Melo Casal <tcasal@intervox.nce.ufrj.br>, 2020-2021.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: Clock add-on\n"
-"Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
-"POT-Creation-Date: 2020-01-03 03:15+1000\n"
-"PO-Revision-Date: 2024-12-02 09:37-0300\n"
-"Last-Translator: Tiago Melo Casal <tcasal@intervox.nce.ufrj.br>\n"
-"Language-Team: NVDA Brazilian Portuguese translation team (Equipe de "
-"tradução do NVDA para Português Brasileiro) <clever97@gmail.com>\n"
+"Project-Id-Version: nvdaaddons\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2026-04-05 02:57+0000\n"
+"PO-Revision-Date: 2026-04-06 01:48\n"
+"Last-Translator: \n"
+"Language-Team: Portuguese, Brazilian\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.5\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: nvdaaddons\n"
+"X-Crowdin-Project-ID: 780748\n"
+"X-Crowdin-Language: pt-BR\n"
+"X-Crowdin-File: clock.pot\n"
+"X-Crowdin-File-ID: 454\n"
 
 #. Translators: the label of a message box dialog.
-msgid ""
-"The date and time format you were using are not compatible with this version "
-"of the Clock add-on, this will be fixed during installation. Click OK to "
-"confirm these corrections"
+#: addon\installTasks.py:32
+msgid "The date and time format you were using are not compatible with this version of the Clock add-on, this will be fixed during installation. Click OK to confirm these corrections"
 msgstr ""
-"Os formatos de data e hora que estava usando não são compatíveis com esta "
-"versão do complemento Relógio, isso será corrigido durante a instalação. "
-"Pressione OK para confirmar a correção"
 
 #. Translators: the title of a message box dialog.
+#: addon\installTasks.py:36
 msgid "Time and date format corrections"
-msgstr "Correções do formato de data e hora"
+msgstr ""
 
-#, python-brace-format
-msgid "{hours} hours, "
-msgstr "{hours} horas, "
-
-#, python-brace-format
-msgid "{minutes} minutes, "
-msgstr "{minutes} minutos, "
-
-#, python-brace-format
-msgid "{seconds} seconds"
-msgstr "{seconds} segundos"
-
-msgid "0 seconds"
-msgstr "0 segundos"
-
-#. Translators: Script category for Clock addon commands in input gestures dialog.
 #. Translators: This is the label for the clock settings panel.
-#. Add-on summary, usually the user visible name of the addon.
-#. Translators: Summary for this add-on
-#. to be shown on installation and add-on information found in Add-ons Manager.
+#. Translators: Script category for Clock addon commands in input gestures dialog.
+#. Add-on summary/title, usually the user visible name of the add-on
+#. Translators: Summary/title for this add-on
+#. to be shown on installation and add-on information found in add-on store
+#: addon\globalPlugins\clock\clockSettingsGUI.py:28
+#: addon\globalPlugins\clock\__init__.py:174 buildVars.py:21
 msgid "Clock"
-msgstr "Relógio"
-
-#. Translators: The name of the alarm item in NVDA Tools menu.
-msgid "Schedule a&larms..."
-msgstr "Agendar a&larmes..."
-
-#. Translators: The tooltyp text for the alarm item in NVDA Tools menu.
-msgid "Allows you to schedule an alarm"
-msgstr "Permite agendar um alarme"
-
-#. Translators: Message presented in input help mode.
-msgid ""
-"Speaks current time. If pressed twice quickly, speaks current date. If "
-"pressed three times quickly, reports the current day, the week number, the "
-"current year and the days remaining before the end of the year."
 msgstr ""
-"Fala a hora atual. Se pressionado duas vezes rapidamente, fala a data atual. "
-"Se pressionado três vezes rapidamente, informa o dia atual, o número da "
-"semana, o ano atual e os dias restantes para o final do ano."
-
-#, python-brace-format
-msgid "Day {day}, week {week} of {year}, remaining days {remain}."
-msgstr "Dia {day}, semana {week} de {year}, dias restantes {remain}."
-
-#. Translators: Message presented in input help mode.
-msgid ""
-"Clock and calendar layer commands. After pressing this keystroke, press H "
-"for additional help."
-msgstr ""
-"Comandos da camada de relógio e calendário. Depois de pressionar esta tecla "
-"de atalho, pressione H para ajuda adicional."
-
-#. Translators: Message presented in input help mode.
-msgid "Starts, resets or stops the stopwatch."
-msgstr "Inicia, redefine ou para o cronômetro."
-
-msgid "Reset. Running."
-msgstr "Redefinir. Executando."
-
-msgid "Running."
-msgstr "Executando."
-
-#, python-brace-format
-msgid "{0} stopped."
-msgstr "{0} parado."
-
-#. Translators: Message presented in input help mode.
-msgid "Speaks current stopwatch or count-down timer."
-msgstr "Fala o cronômetro atual ou o temporizador de contagem regressiva."
-
-#. Translators: Message presented in input help mode.
-msgid "Gives the remaining and elapsed time before the next alarm."
-msgstr "Dá o tempo restante e decorrido antes do próximo alarme."
-
-#, python-brace-format
-msgid "Elapsed time {elapsed}, remaining time {remaining}."
-msgstr "Tempo decorrido {elapsed}, tempo restante {remaining}."
-
-msgid "No alarm"
-msgstr "Sem alarme"
-
-#. Translators: Message presented in input help mode.
-msgid "Cancel the next alarm."
-msgstr "Cancelar o próximo alarme."
-
-msgid "Alarm cancelled"
-msgstr "Alarme cancelado"
-
-#. Translators: Message presented in input help mode.
-msgid "Resets stopwatch to 0 without restarting it."
-msgstr "Redefine o cronômetro para 0 sem reiniciá-lo."
-
-msgid ""
-"The stopwatch is already reset to 0. Use the clock layer command followed by "
-"s to start it."
-msgstr ""
-"O cronômetro já está redefinido para 0. Use o comando da camada de relógio "
-"seguido por s para iniciá-lo."
-
-msgid "Stopwatch reset."
-msgstr "Cronômetro redefinido."
-
-#. Translators: Message presented in input help mode.
-msgid "Lists available commands in clock command layer."
-msgstr "Lista os comandos disponíveis na camada de comando do relógio."
-
-#. Translators: Message presented in input help mode.
-msgid "Allows to check the next alarm. If pressed twice, cancels it."
-msgstr ""
-"Permite verificar o próximo alarme. Se pressionado duas vezes, cancela-o."
-
-#. Translators: Message presented in input help mode.
-msgid "If an alarm is too long, allows to stop it."
-msgstr "Se um alarme é demasiado longo, permite pará-lo."
-
-msgid "No sound is launched."
-msgstr "Nenhum som é iniciado."
-
-msgid "Sound stopped"
-msgstr "Som parado"
-
-#. Translators: error message when attempting to open more than one alarm settings dialogs.
-msgid "Schedule alarms dialog is already open."
-msgstr "O diálogo agendar alarmes já está aberto."
-
-#. Translators: Message presented in input help mode.
-msgid "Display the clock settings dialog box."
-msgstr "Mostra a caixa de diálogo de configurações do relógio."
-
-#. Translators: Message presented in input help mode.
-msgid "Display schedule alarms dialog box."
-msgstr "Exibe a caixa de diálogo agendar alarmes."
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:32
 msgid "&Time display format:"
-msgstr "Formato de exibição da &hora:"
+msgstr ""
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:35
 msgid "&Date display format:"
-msgstr "Formato de exibição da &data:"
+msgstr ""
 
 #. Translators: This is a choice of the auto announce choices combo box.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:39
 msgid "off"
-msgstr "desativado"
+msgstr ""
 
 #. Translators: This is a choice of the auto announce choices combo box.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:41
+msgid "every 5 minutes"
+msgstr ""
+
+#. Translators: This is a choice of the auto announce choices combo box.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:43
 msgid "every 10 minutes"
-msgstr "a cada 10 minutos"
+msgstr ""
 
 #. Translators: This is a choice of the auto announce choices combo box.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:45
 msgid "every 15 minutes"
-msgstr "a cada 15 minutos"
+msgstr ""
 
 #. Translators: This is a choice of the auto announce choices combo box.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:47
 msgid "every 30 minutes"
-msgstr "a cada 30 minutos"
+msgstr ""
 
 #. Translators: This is a choice of the auto announce choices combo box.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:49
 msgid "every hour"
-msgstr "a cada hora"
+msgstr ""
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:53
 msgid "&Interval:"
-msgstr "&Intervalo:"
+msgstr ""
 
 #. Translators: This is a choice of the time report choices combo box.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:57
 msgid "message and sound"
-msgstr "mensagem e som"
+msgstr ""
 
 #. Translators: This is a choice of the time report choices combo box.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:59
 msgid "message only"
-msgstr "apenas mensagem"
+msgstr ""
 
 #. Translators: This is a choice of the time report choices combo box.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:61
 msgid "sound only"
-msgstr "apenas som"
+msgstr ""
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:65
 msgid "Time &announcement:"
-msgstr "&Anúncio da hora:"
+msgstr ""
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:68
 msgid "Clock chime &sound:"
-msgstr "&Som da badalada do relógio:"
+msgstr ""
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:71
 msgid "&Separate hour and intermediate minute chimes"
-msgstr "&Sinalização separada das horas e dos minutos intermediários"
+msgstr ""
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:74
 msgid "Intermediate minutes chime &sound:"
-msgstr "Minutos intermediários de chime &som:"
+msgstr ""
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:77
 msgid "&Quiet hours"
-msgstr "&Horas silenciosas"
+msgstr ""
 
 #. Translators: This is a choice of the quiet hours time format choices.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:81
 msgid "12-hour format"
-msgstr "formato de 12 horas"
+msgstr ""
 
 #. Translators: This is a choice of the quiet hours time format choices.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:83
 msgid "24-hour format"
-msgstr "formato de 24 horas"
+msgstr ""
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:87
 msgid "Quiet hours time &format:"
-msgstr "Formato de horas silenciosas:"
+msgstr ""
 
 #. Translators: This is the label for an group in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:96
 msgid "Quiet hours start time"
-msgstr "Horário de início das horas silenciosas"
+msgstr ""
 
 #. Translators: This is the label for an group in the Clock settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:99
 msgid "Quiet hours end time"
-msgstr "Horário de término das horas silenciosas"
+msgstr ""
+
+#: addon\globalPlugins\clock\clockSettingsGUI.py:120
+#: addon\globalPlugins\clock\clockSettingsGUI.py:128
+#: addon\globalPlugins\clock\clockSettingsGUI.py:384
+msgid "Add custom sound"
+msgstr ""
 
 #. Translators: the hour label in quiet hours group.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:147
+#: addon\globalPlugins\clock\clockSettingsGUI.py:159
 msgid "Hour:"
-msgstr "Hora:"
+msgstr ""
 
 #. Translators: the minute label in quiet hours group.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:151
+#: addon\globalPlugins\clock\clockSettingsGUI.py:163
 msgid "Minute:"
-msgstr "Minuto:"
+msgstr ""
+
+#: addon\globalPlugins\clock\clockSettingsGUI.py:198
+msgid "Choose a custom sound file"
+msgstr ""
 
 #. Translators: This is the label for the alarm settings panel.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:340
 msgid "Schedule alarms"
-msgstr "Agendar alarmes"
+msgstr ""
 
 #. Translators: This is an item of the alarm duration choices.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:346
 msgid "hours"
-msgstr "horas"
+msgstr ""
 
 #. Translators: This is an item of the alarm duration choices.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:348
 msgid "minutes"
-msgstr "minutos"
+msgstr ""
 
 #. Translators: This is an item of the alarm duration choices.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:350
 msgid "seconds"
-msgstr "segundos"
+msgstr ""
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:354
 msgid "&Alarm duration in:"
-msgstr "&Duração do alarme em:"
+msgstr ""
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:357
 msgid "&Duration:"
-msgstr "&Duração:"
+msgstr ""
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:360
 msgid "A&larm sound:"
-msgstr "Som do a&larme:"
+msgstr ""
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:363
 msgid "&Stop"
-msgstr "Pa&rar"
+msgstr ""
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:366
 msgid "&Pause"
-msgstr "&Pausa"
+msgstr ""
+
+#: addon\globalPlugins\clock\clockSettingsGUI.py:413
+msgid "Choose a custom alarm sound file"
+msgstr ""
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:455
 #, python-brace-format
 msgid "You've chosen an alarm to be triggered in {tm} {unit}"
-msgstr "Escolheu um alarme para ser ativado em {tm} {unit}"
+msgstr ""
 
 #. Translators: The title of the dialog which appears when the user has chosen to trigger an alarm.
+#: addon\globalPlugins\clock\clockSettingsGUI.py:458
 msgid "Confirmation"
-msgstr "Confirmação"
+msgstr ""
 
 #. Translators: A time formating (should be different from other time formattings)
+#: addon\globalPlugins\clock\formats.py:75
 #, python-brace-format
 msgid "It's {hours} o'clock and {minutes} minutes"
-msgstr "São {hours} horas e {minutes} minutos"
+msgstr ""
 
 #. Translators: A time formating (should be different from other time formattings)
+#: addon\globalPlugins\clock\formats.py:77
 #, python-brace-format
 msgid "It's {hours} o'clock, {minutes} minutes and {seconds} seconds"
-msgstr "São {hours} horas, {minutes} minutos e {seconds} segundos"
+msgstr ""
 
 #. Translators: A time formating (should be different from other time formattings)
+#: addon\globalPlugins\clock\formats.py:81
 #, python-brace-format
 msgid "{hours} o'clock, {minutes} minutes"
-msgstr "{hours} horas, {minutes} minutos"
+msgstr ""
 
 #. Translators: A time formating (should be different from other time formattings)
+#: addon\globalPlugins\clock\formats.py:83
 #, python-brace-format
 msgid "{hours} o'clock, {minutes} minutes, {seconds} seconds"
-msgstr "{hours} horas, {minutes} minutos, {seconds} segundos"
+msgstr ""
 
 #. Translators: A time formating (should be different from other time formattings)
+#: addon\globalPlugins\clock\formats.py:87
 #, python-brace-format
 msgid "It's {minutes} past {hours}"
-msgstr "São {hours} e {minutes}"
+msgstr ""
 
 #. Translators: A time formating (should be different from other time formattings)
+#: addon\globalPlugins\clock\formats.py:89
 #, python-brace-format
 msgid "{hours} h {minutes} min"
-msgstr "{hours} h {minutes} min"
+msgstr ""
 
 #. Translators: A time formating (should be different from other time formattings)
+#: addon\globalPlugins\clock\formats.py:91
 #, python-brace-format
 msgid "{hours} h, {minutes} min, {seconds} sec"
-msgstr "{hours} h, {minutes} min, {seconds} seg"
+msgstr ""
 
 #. Translators: A time formating (should be different from other time formattings)
+#: addon\globalPlugins\clock\formats.py:93
 #, python-brace-format
 msgid "It's {hours}:{minutes}"
-msgstr "São {hours}:{minutes}"
+msgstr ""
 
 #. Translators: A time formating (should be different from other time formattings)
+#: addon\globalPlugins\clock\formats.py:95
 #, python-brace-format
 msgid "It's {hours}:{minutes}:{seconds}"
-msgstr "São {hours}:{minutes}:{seconds}"
+msgstr ""
 
 #. Translators: A way to display 24-hour formats in the time display formats list in the settings panel.
+#: addon\globalPlugins\clock\formats.py:112
 #, python-brace-format
 msgid "{fmt} (24-hour format)"
-msgstr "{fmt} formato de 24 horas"
+msgstr ""
 
 #. Translators: A way to display 12-hour formats in the time display formats list in the settings panel.
+#: addon\globalPlugins\clock\formats.py:114
 #, python-brace-format
 msgid "{fmt} (12-hour format)"
-msgstr "{fmt} formato de 12 horas"
+msgstr ""
+
+#. Translators: This is a choice in a list of sounds.
+#: addon\globalPlugins\clock\paths.py:33
+msgid "Custom"
+msgstr ""
+
+#: addon\globalPlugins\clock\__init__.py:74
+#, python-brace-format
+msgid "{hours} hours, "
+msgstr ""
+
+#: addon\globalPlugins\clock\__init__.py:76
+#, python-brace-format
+msgid "{minutes} minutes, "
+msgstr ""
+
+#: addon\globalPlugins\clock\__init__.py:78
+#, python-brace-format
+msgid "{seconds} seconds"
+msgstr ""
+
+#: addon\globalPlugins\clock\__init__.py:79
+msgid "0 seconds"
+msgstr ""
+
+#. Translators: The name of the alarm item in NVDA Tools menu.
+#: addon\globalPlugins\clock\__init__.py:187
+msgid "Schedule a&larms..."
+msgstr ""
+
+#. Translators: The tooltyp text for the alarm item in NVDA Tools menu.
+#: addon\globalPlugins\clock\__init__.py:189
+msgid "Allows you to schedule an alarm"
+msgstr ""
+
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:252
+msgid "Speaks current time. If pressed twice quickly, speaks current date. If pressed three times quickly, reports the current day, the week number, the current year and the days remaining before the end of the year."
+msgstr ""
+
+#: addon\globalPlugins\clock\__init__.py:277
+#, python-brace-format
+msgid "Day {day}, week {week} of {year}, remaining days {remain}."
+msgstr ""
+
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:320
+msgid "Clock and calendar layer commands. After pressing this keystroke, press H for additional help."
+msgstr ""
+
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:339
+msgid "Starts, resets or stops the stopwatch."
+msgstr ""
+
+#: addon\globalPlugins\clock\__init__.py:348
+msgid "Reset. Running."
+msgstr ""
+
+#: addon\globalPlugins\clock\__init__.py:351
+msgid "Running."
+msgstr ""
+
+#: addon\globalPlugins\clock\__init__.py:354
+#, python-brace-format
+msgid "{0} stopped."
+msgstr ""
+
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:359
+msgid "Speaks current stopwatch or count-down timer."
+msgstr ""
+
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:370
+msgid "Gives the remaining and elapsed time before the next alarm."
+msgstr ""
+
+#: addon\globalPlugins\clock\__init__.py:380
+#: addon\globalPlugins\clock\__init__.py:459
+#, python-brace-format
+msgid "Elapsed time {elapsed}, remaining time {remaining}."
+msgstr ""
+
+#: addon\globalPlugins\clock\__init__.py:383
+#: addon\globalPlugins\clock\__init__.py:399
+#: addon\globalPlugins\clock\__init__.py:462
+msgid "No alarm"
+msgstr ""
+
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:389
+msgid "Cancel the next alarm."
+msgstr ""
+
+#: addon\globalPlugins\clock\__init__.py:397
+#: addon\globalPlugins\clock\__init__.py:456
+msgid "Alarm cancelled"
+msgstr ""
+
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:405
+msgid "Resets stopwatch to 0 without restarting it."
+msgstr ""
+
+#: addon\globalPlugins\clock\__init__.py:413
+msgid "The stopwatch is already reset to 0. Use the clock layer command followed by s to start it."
+msgstr ""
+
+#: addon\globalPlugins\clock\__init__.py:417
+msgid "Stopwatch reset."
+msgstr ""
+
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:422
+msgid "Lists available commands in clock command layer."
+msgstr ""
+
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:433
+msgid "Lists available commands in clock command layer, showing them in browse mode."
+msgstr ""
+
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:445
+msgid "Allows to check the next alarm. If pressed twice, cancels it."
+msgstr ""
+
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:468
+msgid "If an alarm is too long, allows to stop it."
+msgstr ""
+
+#: addon\globalPlugins\clock\__init__.py:474
+msgid "No sound is launched."
+msgstr ""
+
+#: addon\globalPlugins\clock\__init__.py:477
+msgid "Sound stopped"
+msgstr ""
+
+#. Translators: error message when attempting to open more than one alarm settings dialogs.
+#: addon\globalPlugins\clock\__init__.py:491
+msgid "Schedule alarms dialog is already open."
+msgstr ""
+
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:497
+msgid "Display the clock settings dialog box."
+msgstr ""
+
+#. Translators: Message presented in input help mode.
+#: addon\globalPlugins\clock\__init__.py:508
+msgid "Display schedule alarms dialog box."
+msgstr ""
 
 #. Add-on description
-#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-msgid ""
-"An advanced clock and calendar for NVDA.\n"
+#. Translators: Long description to be shown for this add-on on add-on information from add-on store
+#: buildVars.py:24
+msgid "An advanced clock and calendar for NVDA.\n"
 "NVDA+F12, get current time.\n"
 "NVDA+F12 pressed twice quickly, get current date.\n"
-"NVDA+F12 pressed three times quickly, reports the current day, the week "
-"number, the current year and the remaining days before the end of the year.\n"
-"For other instructions, press Add-on help button in add-ons manager."
+"NVDA+F12 pressed three times quickly, reports the current day, the week number, the current year and the remaining days before the end of the year.\n"
+"For other instructions, press  actions button in add-on store, then go to help."
 msgstr ""
-"Um relógio e calendário avançados para NVDA.\n"
-"NVDA+F12, obtém a hora atual.\n"
-"NVDA+F12 pressionado duas vezes rapidamente, obtém a data atual.\n"
-"NVDA+F12 pressionado três vezes rapidamente, informa o dia atual, o número "
-"da semana, o ano atual e os dias restantes para o fim do ano.\n"
-"Para outras instruções, pressione o botão ajuda do complemento no gestor de "
-"complementos."
 
-#~ msgid "Clock se&ttings..."
-#~ msgstr "Configurações do &Relógio..."
+#. Brief changelog for this version
+#. Translators: what's new content for the add-on version to be shown in the add-on store
+#: buildVars.py:33
+msgid "Changes for 20260221.0.1\n"
+"Using the latest version of the addonTemplate."
+msgstr ""
 
-#~ msgid "Clock and calendar setup"
-#~ msgstr "Configuração do relógio e calendário"
-
-#~ msgid "Clock setup"
-#~ msgstr "Configuração do relógio"
-
-#~ msgid "Clock setup for times and dates"
-#~ msgstr "Configuração do relógio para horários e datas"
-
-#~ msgid "Alarm settin&gs"
-#~ msgstr "Configurações do &alarme"
-
-#~ msgid ""
-#~ "The value you entered for your quiet hours is erroneous, for a 24-hour "
-#~ "format, the value must be HH:MM, for a 12-hour format, the value must be "
-#~ "HH:MM followed by the AM or PM suffix, please reread the documentation. "
-#~ "So your quiet hours have been deactivated for prevent any error in the "
-#~ "configuration file."
-#~ msgstr ""
-#~ "O valor digitado para as suas horas de silêncio está incorreto; para um "
-#~ "formato de 24 horas, o valor deve ser HH:MM, para um formato de 12 horas, "
-#~ "o valor deve ser HH:MM seguido do sufixo AM ou PM, por favor, leia "
-#~ "novamente a documentação. Por esse motivo, as suas horas de silêncio "
-#~ "foram desativadas para evitar qualquer erro no arquivo de configuração."
-
-#~ msgid "Error"
-#~ msgstr "Erro"
-
-#~ msgid "Alarm setup"
-#~ msgstr "Configuração do alarme"
-
-#~ msgid "Seconds"
-#~ msgstr "Segundos"
-
-#~ msgid "Choose the type of timer &inputs before the alarm rings:"
-#~ msgstr "Escolha o tipo de &entrada do temporizador antes do alarme tocar:"
