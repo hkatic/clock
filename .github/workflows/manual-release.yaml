@@ -7,18 +7,26 @@ on:
         description: "Add-on version, if not defined, will be set to today's date in the format recommended by nvaccess/addonStore"
         required: false
         default: ''
+
       prerelease:
         description: 'True if this is a prerelease'
         type: boolean
         required: false
         default: false
+
+      updateYear:
+        description: 'Update addon_lastTestedNVDAVersion in buildVars.py to current year (optional for stable, automatic for beta/dev)'
+        type: boolean
+        required: false
+        default: false
+
       channel:
         type: choice
         description: Choose a channel for your release
         options:
-        - stable
-        - dev
-        - beta
+          - stable
+          - dev
+          - beta
         default: stable
         required: false
 
@@ -76,52 +84,73 @@ jobs:
       run: echo '${{ env.CUR_YEAR }}'
 
     - name: Checkout code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v4
 
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v6
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
       with:
-        python-version: 3.13.13
+        python-version: 3.11
 
     - name: Install dependencies
       run: |
-        pip install -U pip scons markdown flake8 flake8-tabs mypy
+        pip install -U pip scons markdown ruff mypy
         sudo apt update
         sudo apt install gettext
 
-    - name: Lint with flake8
+    - name: Lint with ruff
       run: |
-        # Stop the build if there are any errors
-        flake8 addon --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 addon --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        python -m ruff check addon
 
     - name: Lint with mypy
       run: |
-        python -m mypy addon
+        python -m mypy addon --install-types --non-interactive
 
     - name: Add add-on version
       run: |
         import re
         version='${{ env.BUILD_VERSION }}'
         year='${{ env.CUR_YEAR }}'
-        with open("buildVars.py", 'r+', encoding='utf-8') as f:
-          text=f.read()
-          pattern=r"\"addon_lastTestedNVDAVersion\": .*?(\d{4})"
-          match=re.search(pattern, text)
-          checkYear=match.group(1)
-          text=re.sub(r"\"addon_version\": .*?,", f"\"addon_version\": \"{version}\",", text)
-          if checkYear<year:
-            text=re.sub(r"\"addon_lastTestedNVDAVersion\": .*?,", f"\"addon_lastTestedNVDAVersion\": \"{year}.1.0\",", text)
-          f.seek(0)
+        updateYear='${{ inputs.updateYear }}' == 'true'
+        channel='${{ inputs.channel }}'
+
+        with open("buildVars.py", "r", encoding="utf-8") as f:
+          text = f.read()
+
+        shouldUpdateYear = channel in ("beta", "dev") or (channel == "stable" and updateYear)
+
+        if shouldUpdateYear:
+          match = re.search(
+            r'addon_lastTestedNVDAVersion="(\d{4})\.\d+\.\d+",',
+            text
+          )
+
+          if match:
+            checkYear = match.group(1)
+
+            if checkYear < year:
+              text = re.sub(
+                r'addon_lastTestedNVDAVersion="\d+\.\d+\.\d+",',
+                f'addon_lastTestedNVDAVersion="{year}.1.0",',
+                text
+              )
+
+        text = re.sub(
+          r'addon_version=".*?",',
+          f'addon_version="{version}",',
+          text
+        )
+
+        with open("buildVars.py", "w", encoding="utf-8") as f:
           f.write(text)
-          f.truncate()
-        with open("changelog.md", 'r+', encoding='utf-8') as f:
-          text=f.read()
-          text=re.sub("Changes for [^\r\n]+", f"Changes for {version}", text)
-          f.seek(0)
+
+        with open("changelog.md", "r", encoding="utf-8") as f:
+          text = f.read()
+
+        text = re.sub("Changes for [^\r\n]+", f"Changes for {version}", text)
+
+        with open("changelog.md", "w", encoding="utf-8") as f:
           f.write(text)
-          f.truncate()
+          
       shell: python 
 
 
@@ -147,7 +176,7 @@ jobs:
       run: sha256sum *.nvda-addon >> sha256.txt
 
     - name: Release
-      uses: softprops/action-gh-release@v3
+      uses: softprops/action-gh-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
