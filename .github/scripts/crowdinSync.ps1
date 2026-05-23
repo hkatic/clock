@@ -53,7 +53,6 @@ if (Test-Path $xliffFile) {
     git diff --staged --quiet
     if ($LASTEXITCODE -ne 0) {
         git commit -m "Update $xliffFile for $addonId"
-        git push
     }
 }
 
@@ -172,9 +171,22 @@ git add addon/locale addon/doc
 git diff --staged --quiet
 if ($LASTEXITCODE -ne 0) {
     git commit -m "Update translations for $addonId from Crowdin (Automatic Sync)"
-    $branch = $env:downloadTranslationsBranch
-    git push -f origin "HEAD:$branch"
-    Write-Host "SUCCESS: Translations committed and pushed."
+    Write-Host "SUCCESS: Translations committed."
 } else {
     Write-Host "DEBUG: No changes in translations to commit."
+}
+
+# Push all generated commits after successful Crowdin synchronization
+$pushOutput = git push 2>&1
+
+Write-Host $pushOutput
+
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "ERROR: Failed to push commits to $repository."
+}
+elseif ($pushOutput -match "Everything up-to-date") {
+    Write-Host "INFO: No new commits needed to be pushed."
+}
+else {
+    Write-Host "SUCCESS: New commits successfully pushed to $repository."
 }
