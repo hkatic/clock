@@ -12,7 +12,6 @@ concurrency:
 
 env:
   crowdinAuthToken: ${{ secrets.CROWDIN_TOKEN }}
-  downloadTranslationsBranch: l10n
   GH_TOKEN: ${{ github.token }}
   CROWDIN_PROJECT_ID: ${{ vars.CROWDIN_PROJECT_ID || 780748 }}
   L10N_UTIL_CONFIG: ${{ vars.L10N_UTIL_CONFIG || 'addon' }}
