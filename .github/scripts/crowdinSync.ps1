@@ -179,6 +179,9 @@ if ($LASTEXITCODE -ne 0) {
 # Push all generated commits after successful Crowdin synchronization
 $pushOutput = git push 2>&1
 
+# Get the full repository name in "owner/repository" format (e.g., hkatic/clock)
+$repository = $env:GITHUB_REPOSITORY
+
 Write-Host $pushOutput
 
 if ($LASTEXITCODE -ne 0) {
