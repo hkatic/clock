@@ -1,9 +1,9 @@
-# Complemento reloj y calendario para NVDA #
+# Complemento reloj y calendario para NVDA
 
-* Autores: Hrvoje Katić, Abdel y colaboradores de NVDA
-* Descargar [versión estable][1]
-
-* Compatibilidad con NVDA: de 2019.3 en adelante
+- Autores: Hrvoje Katić, Abdel y colaboradores de NVDA
+- Descargar [versión estable][1]
+- Download [development version][2]
+- Compatibilidad con NVDA: de 2019.3 en adelante
 
 Este complemento habilita funciones avanzadas de reloj, temporizador de
 alarma   y  calendario para NVDA.
@@ -18,20 +18,20 @@ tales como copiar archivos, instalar programas o cocinar comida.
 
 Notas:
 
-* si instalas el complemento como una actualización, durante el proceso de
+- si instalas el complemento como una actualización, durante el proceso de
   instalación, el asistente detecta si la configuración anterior es
   compatible con la nueva y ofrece corregirla antes de instalar. Simplemente
   debes validar con el botón Aceptar para confirmar.
-* En Windows 10 o posterior, puedes usar la aplicación Reloj y alarmas para
+- En Windows 10 o posterior, puedes usar la aplicación Reloj y alarmas para
   gestionar cronómetros y temporizadores.
 
 ## Teclas de órdenes
 
-* NVDA+f12: obtiene la hora actual
-* NVDA+f12 pulsado dos veces rápidamente: obtiene la fecha actual
-* NVDA+F12 pulsado tres veces rápidamente: anuncia el número de día, número
+- NVDA+f12: obtiene la hora actual
+- NVDA+f12 pulsado dos veces rápidamente: obtiene la fecha actual
+- NVDA+F12 pulsado tres veces rápidamente: anuncia el número de día, número
   de semana, el año actual y los días que faltan hasta fin de año
-* NVDA+shift+f12: entra en la capa del reloj
+- NVDA+shift+f12: entra en la capa del reloj
 
 ## Órdenes sin asignar
 
@@ -42,25 +42,26 @@ de entrada. Expande la categoría Reloj, encuentra las órdenes sin asignar de
 la lista de debajo y selecciona "Añadir". Finalmente, teclea el gesto que te
 gustaría utilizar.
 
-* Tiempo transcurrido y restante antes de la próxima alarma. Al pulsar dos
+- Tiempo transcurrido y restante antes de la próxima alarma. Al pulsar dos
   veces rápidamente este gesto, se cancelará la alarma.
-* Detener sonido de la alarma actual en reproducción.
-* Mostrar cuadro de diálogo para programar alarmas.
+- Detener sonido de la alarma actual en reproducción.
+- Mostrar cuadro de diálogo para programar alarmas.
+- Show layered commands (keys to be pressed after NVDA+Shift+F12).
 
-## Órdenes de capa
+## Layered commands
 
 Para usar las órdenes en capa, pulsa NVDA+Shift+F12 seguido de una de las
 siguientes teclas:
 
-* S: inicia, detiene o reinicia el cronómetro
-* R: pone el cronómetro a 0 sin reiniciarlo
-* A: da el tiempo transcurrido y el tiempo restante antes de la próxima
+- S: inicia, detiene o reinicia el cronómetro
+- R: pone el cronómetro a 0 sin reiniciarlo
+- A: da el tiempo transcurrido y el tiempo restante antes de la próxima
   alarma
-* T: abre el diálogo de programación de alarmas.
-* C: cancela la próxima alarma
-* Espacio: verbaliza el cronómetro o la cuenta atrás actual
-* p: si una alarma es demasiado larga, permite pararla
-* H: lista todas las órdenes de capa (Ayuda)
+- T: abre el diálogo de programación de alarmas.
+- C: cancela la próxima alarma
+- Espacio: verbaliza el cronómetro o la cuenta atrás actual
+- p: si una alarma es demasiado larga, permite pararla
+- H: lista todas las órdenes de capa (Ayuda)
 
 ## Configuración y uso
 
@@ -68,38 +69,39 @@ Para configurar la funcionalidad del reloj, abre el menú de NVDA,
 Preferencias, Opciones, y configura las siguientes opciones desde el panel
 Reloj:
 
-* Formato de visualización de fecha y hora: usa estos cuadros combinados
+- Formato de visualización de fecha y hora: usa estos cuadros combinados
   para configurar cómo anunciará NVDA la hora y la fecha al pulsar NVDA+f12
   una o dos veces rápidamente, respectivamente.
-* Intervalo: elige el intervalo de anuncio de hora desde este cuadro
+- Intervalo: elige el intervalo de anuncio de hora desde este cuadro
   combinado (apagado, cada 10 minutos, 15 minutos, 30 minutos, o cada hora).
-* Anuncio de hora (habilitado si el intervalo no está apagado): elige entre
+- Anuncio de hora (habilitado si el intervalo no está apagado): elige entre
   voz y sonido, sólo sonido o sólo voz.
-* Sonido de campana del reloj (habilitado si el intervalo no está apagado):
+- Sonido de campana del reloj (habilitado si el intervalo no está apagado):
   selecciona el sonido de la campana.
-* Horas silenciosas (habilitada si el intervalo no está apagado): selecciona
+- Separate hour and intermediate minute chimes (enabled if interval is not off, disabled by default): Enable this checkbox to customize chimes for intermediate minutes separately from the hourly chime.
+  - Intermediate minutes chime sound (enabled if "Separate hour and intermediate minute chimes" is checked): Select the clock chime sound specifically for intermediate minutes.
+- Horas silenciosas (habilitada si el intervalo no está apagado): selecciona
   esta casilla para configurar el intervalo de horas silenciosas en el que
   no debería producirse el anuncio automático de hora.
-* Formato de hora para las horas silenciosas (activado si las horas
+- Formato de hora para las horas silenciosas (activado si las horas
   silenciosas están activadas): selecciona cómo se presentan las opciones de
   las horas silenciosas (formatos de 12 o 24 horas).
-* Horas de inicio y fin de las horas silenciosas: selecciona el intervalo de
+- Horas de inicio y fin de las horas silenciosas: selecciona el intervalo de
   horas y minutos de las horas silenciosas desde los cuadros combinados de
   horas y minutos.
 
 Para programar alarmas, abre el menú de NVDA, Herramientas, Programar
 alarmas. Los contenidos del diálogo incluyen:
 
-* Duración de la alarma en: selecciona la duración de la alarma o el
+- Duración de la alarma en: selecciona la duración de la alarma o el
   temporizador entre horas, minutos y segundos.
-* Duración: introduce la duración de la alarma en la unidad indicada
+- Duración: introduce la duración de la alarma en la unidad indicada
   anteriormente.
-* Sonido de alarma: elige el sonido de alarma que se reproducirá.
-* Botones detener y pausar: detener o pausar un sonido de alarma largo.
+- Sonido de alarma: elige el sonido de alarma que se reproducirá.
+- Botones detener y pausar: detener o pausar un sonido de alarma largo.
 
 Pulsa Aceptar, y un mensaje te informará la duración de la alarma
 seleccionada actualmente.
 
-[[!tag stable]]
-
 [1]: https://www.nvaccess.org/addonStore/legacy?file=clock
+[2]: https://addons.nvda-project.org/files/get.php?file=cac-dev

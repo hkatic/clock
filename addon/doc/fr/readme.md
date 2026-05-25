@@ -1,9 +1,9 @@
-# Extension horloge et calendrier  pour NVDA #
+# Extension horloge et calendrier  pour NVDA
 
-* Auteurs : Hrvoje Katić, Abdel et contributeurs de NVDA
-* Télécharger [version stable][1]
-
-* Compatibilité NVDA : 2019.3 et ultérieure
+- Auteurs : Hrvoje Katić, Abdel et contributeurs de NVDA
+- Télécharger [version stable][1]
+- Download [development version][2]
+- Compatibilité NVDA : 2019.3 et ultérieure
 
 Cette extension active les fonctions avancées de l'horloge, de minuterie
 d'alarme et du calendrier pour NVDA.
@@ -19,22 +19,22 @@ de fichiers, l'installation de programmes ou la préparation de repas
 
 Note:
 
-* Si vous installez l'extension en tant que mise à jour, lors du processus
+- Si vous installez l'extension en tant que mise à jour, lors du processus
   d'installation, l'assistant détecte si l'ancienne configuration est
   compatible avec la nouvelle et vous propose de la corriger avant
   l'installation. Il vous suffira alors de valider le bouton OK pour
   confirmer cela.
-* Sous Windows 10 et ultérieure, vous pouvez utiliser des alarmes et une
+- Sous Windows 10 et ultérieure, vous pouvez utiliser des alarmes et une
   application pour l'horloge pour gérer les chronomètres et les minuteries.
 
-## Raccourcis clavier
+## Key commands
 
-* NVDA+F12: obtenir l'heure actuelle
-* NVDA+F12 pressé deux fois rapidement: obtenir la date actuelle
-* NVDA+F12 pressé trois fois rapidement: annoncer le jour actuel, le numéro
+- NVDA+F12: obtenir l'heure actuelle
+- NVDA+F12 pressé deux fois rapidement: obtenir la date actuelle
+- NVDA+F12 pressé trois fois rapidement: annoncer le jour actuel, le numéro
   de la semaine, l'année en cours et les jours qui restent avant la fin de
   l'année.
-* NVDA+Maj+F12: Entrée séquentielle de l'horloge
+- NVDA+Maj+F12: Entrée séquentielle de l'horloge
 
 ## Commandes non assignées
 
@@ -45,25 +45,26 @@ Préférences, puis Gestes de Commandes. Développé la catégorie Horloge, puis
 localisez les commandes non assignées dans la liste ci-dessous et
 sélectionnez "Ajouter", puis entrez le geste que vous souhaitez utiliser.
 
-* Temps écoulé et temps restant avant la prochaine alarme. Appuyer deux fois
+- Temps écoulé et temps restant avant la prochaine alarme. Appuyer deux fois
   rapidement sur ce geste annulera rapidement la prochaine alarme.
-* Arrête de jouer le son de l'alarme actuelle.
-* Afficher la boîte de dialogue Programmer des alarmes.
+- Arrête de jouer le son de l'alarme actuelle.
+- Afficher la boîte de dialogue Programmer des alarmes.
+- Show layered commands (keys to be pressed after NVDA+Shift+F12).
 
 ## Commandes séquentielles
 
 Pour utiliser des commandes séquentielles, appuyez sur NVDA+Maj+F12 suivi de
 l'une des touches suivantes :
 
-* S: Démarre, réinitialise ou arrête le chronomètre;
-* R: Réinitialise le chronomètre à 0 sans le démarrer;
-* A: donne le temps écoulé et restant avant la prochaine alarme;
-* T: Ouvre la boîte de dialogue Programmer des alarmes.
-* C: Annule la prochaine alarme;
-* Espace: Annonce le chronomètre actuel ou le compte à rebours de la
+- S: Démarre, réinitialise ou arrête le chronomètre;
+- R: Réinitialise le chronomètre à 0 sans le démarrer;
+- A: donne le temps écoulé et restant avant la prochaine alarme;
+- T: Ouvre la boîte de dialogue Programmer des alarmes.
+- C: Annule la prochaine alarme;
+- Espace: Annonce le chronomètre actuel ou le compte à rebours de la
   minuterie;
-* p: Si une alarme est trop longue, permet de l'arrêter;
-* H: Répertorie toutes les commandes séquentielles (Aide).
+- p: Si une alarme est trop longue, permet de l'arrêter;
+- H: Répertorie toutes les commandes séquentielles (Aide).
 
 ## Configuration et utilisation
 
@@ -71,38 +72,39 @@ Pour configurer la fonctionnalité de l'horloge, ouvrez le menu NVDA,
 Préférences, puis Paramètres et configurer les options suivantes à partir du
 panneau Horloge:
 
-* Format d'affichage de l'heure: Utilisez ces zones de liste déroulante pour
+- Format d'affichage de l'heure: Utilisez ces zones de liste déroulante pour
   configurer comment NVDA annoncera l'heure et la date lorsque vous appuyez
   une fois ou deux fois rapidement sur NVDA+F12, respectivement.
-* Intervalle: Choisissez l'intervalle de l'annonce de l'heure de cette Zone
+- Intervalle: Choisissez l'intervalle de l'annonce de l'heure de cette Zone
   de liste déroulante (désactivé, toutes les 10 minutes, 15 minutes, 30
   minutes ou toutes les heures).
-* Annonce de l'heure (activée si l'intervalle n'est pas désactivée):
+- Annonce de l'heure (activée si l'intervalle n'est pas désactivée):
   Choisissez entre message et son, message seulement ou son seulement.
-* Son de carillon d'horloge (activée si l'intervalle n'est pas désactivée):
+- Son de carillon d'horloge (activée si l'intervalle n'est pas désactivée):
   Sélectionnez le son de carillon d'horloge.
-* Heures silencieuses (activée si l'intervalle n'est pas désactivée):
+- Separate hour and intermediate minute chimes (enabled if interval is not off, disabled by default): Enable this checkbox to customize chimes for intermediate minutes separately from the hourly chime.
+  - Intermediate minutes chime sound (enabled if "Separate hour and intermediate minute chimes" is checked): Select the clock chime sound specifically for intermediate minutes.
+- Heures silencieuses (activée si l'intervalle n'est pas désactivée):
   Sélectionnez cette case à cocher pour configurer l'intervalle de temps
   dans laquelle l'annonce automatique ne doit pas se produire.
-* Format des heures silencieuses (activée si les heures silencieuses est
+- Format des heures silencieuses (activée si les heures silencieuses est
   activée): Sélectionnez la manière dont les options des heures silencieuses
   sont présentées (au format 12 heures ou 24 heures).
-* Début et fin de la durée des heures silencieuses: Sélectionnez
+- Début et fin de la durée des heures silencieuses: Sélectionnez
   l'intervalle d'heure ou minute pour les heures silencieuses à partir des
   zones de liste déroulante heures et minutes.
 
 Pour planifier les alarmes, ouvrez le menu NVDA, Outils, puis sélectionnez
 Planifier les alarmes. Le contenu de la boîte de dialogue comprend:
 
-* Durée de l'alarme en: Sélectionnez la durée de l'alarme / minuterie entre
+- Durée de l'alarme en: Sélectionnez la durée de l'alarme / minuterie entre
   heures, minutes et secondes.
-* Durée: Entrez la durée de l'alarme dans l'unité spécifiée ci-dessus.
-* Son de l'alarme: Sélectionnez le son de l'alarme à jouer.
-* Les boutons Arrêter ou Pause: Arrête ou met en pause un son d'alarme long.
+- Durée: Entrez la durée de l'alarme dans l'unité spécifiée ci-dessus.
+- Son de l'alarme: Sélectionnez le son de l'alarme à jouer.
+- Les boutons Arrêter ou Pause: Arrête ou met en pause un son d'alarme long.
 
 Cliquez sur OK, et un message vous informera de la durée de l'alarme
 actuellement sélectionnée.
 
-[[!tag stable]]
-
 [1]: https://www.nvaccess.org/addonStore/legacy?file=clock
+[2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
