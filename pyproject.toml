@@ -33,7 +33,7 @@ dependencies = [
 	"markdown-link-attr-modifier==0.2.1",
 	"mdx-gh-links==0.4",
 	# Lint
-	"uv==0.11.6",
+	"uv==0.11.15",
 	"ruff==0.14.5",
 	"pre-commit==4.2.0",
 	"pyright[nodejs]==1.1.407",
