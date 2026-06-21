@@ -1,8 +1,6 @@
 # Clock and calendar Add-on for NVDA #
 
 * Authors: Hrvoje Katić, Abdel and NVDA contributors
-* Download [stable version][1]
-* Download [development version][2]
 * NVDA compatibility: 2019.3 and later
 
 This add-on enables the advanced clock, alarm timer and calendar functionality for NVDA.
@@ -65,7 +63,3 @@ To schedule alarms, open NVDA menu, Tools, then select Schedule Alarms. The dial
 * Stop and pause buttons: stop or pause a long alarm sound.
 
 Click OK, and a message will inform you the curretnly selected alarm duration.
-
-[1]: https://addons.nvda-project.org/files/get.php?file=cac
-
-[2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
