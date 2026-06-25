@@ -1,12 +1,10 @@
 <?xml version="1.0"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en">
-<file id="readme.md" original="https://raw.githubusercontent.com/hkatic/clock/359f03bf35537bb9937070035764122dbe733869/readme.md">
+<file id="readme.md" original="https://raw.githubusercontent.com/hkatic/clock/4a13cb42f991c3873217da3f2c5ccd18ef310ea0/readme.md">
 <skeleton>
 # $(ID:91ce517d-7fae-43b4-97ba-e0c64fba0974)
 
 * $(ID:a96c8e50-7112-4dd4-9e7e-32c82976bc3d)
-* $(ID:c5be4905-76c2-4f80-a110-1aaae154ad38)
-* $(ID:c9317aea-190b-47c6-8696-7d5d4b5937b0)
 * $(ID:233ae1b1-9a72-4ed1-bdc2-0eff571f863c)
 
 $(ID:7de732b2-7642-4f6e-8d1c-0b99dfc54311)
@@ -70,9 +68,6 @@ $(ID:46c1d9ac-0cd0-4a7e-a3fe-83df8f7ed82d)
 
 $(ID:ac70785b-55d3-4996-9b4b-222f90c13d5d)
 
-$(ID:618dbcc1-d2a4-4d1d-abb9-54e89c285ff6)
-
-$(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </skeleton>
 <unit id="91ce517d-7fae-43b4-97ba-e0c64fba0974">
 <notes>
@@ -92,27 +87,9 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 <source>Authors: Hrvoje Katić, Abdel and NVDA contributors</source>
 </segment>
 </unit>
-<unit id="c5be4905-76c2-4f80-a110-1aaae154ad38">
-<notes>
-<note appliesTo="source">line: 5</note>
-<note appliesTo="source">prefix: * </note>
-</notes>
-<segment>
-<source>Download [stable version][1]</source>
-</segment>
-</unit>
-<unit id="c9317aea-190b-47c6-8696-7d5d4b5937b0">
-<notes>
-<note appliesTo="source">line: 6</note>
-<note appliesTo="source">prefix: * </note>
-</notes>
-<segment>
-<source>Download [development version][2]</source>
-</segment>
-</unit>
 <unit id="233ae1b1-9a72-4ed1-bdc2-0eff571f863c">
 <notes>
-<note appliesTo="source">line: 7</note>
+<note appliesTo="source">line: 5</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -121,7 +98,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="7de732b2-7642-4f6e-8d1c-0b99dfc54311">
 <notes>
-<note appliesTo="source">line: 9</note>
+<note appliesTo="source">line: 7</note>
 </notes>
 <segment>
 <source>This add-on enables the advanced clock, alarm timer and calendar functionality for NVDA.</source>
@@ -129,7 +106,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="f1e023d9-9e2e-4593-9ba6-7cc7648b50f2">
 <notes>
-<note appliesTo="source">line: 11</note>
+<note appliesTo="source">line: 9</note>
 </notes>
 <segment>
 <source>You can configure NVDA to announce time and date in formats other than what Windows provides by default. Additionally, you can obtain the current day, week number, as well as the remaining days before the end of the current year, and you can also set automatic time announcement on specified interval. There's also a stopwatch and Alarm timer features built-in to the add-on that lets you time your tasks, such as copying files, installing programs, or cooking meals.</source>
@@ -137,7 +114,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="aa4e0a87-e947-4c0a-9f2d-313f978660cd">
 <notes>
-<note appliesTo="source">line: 13</note>
+<note appliesTo="source">line: 11</note>
 </notes>
 <segment>
 <source>Notes:</source>
@@ -145,7 +122,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="f0d3fc15-e33c-423e-9c38-e383d818ca3a">
 <notes>
-<note appliesTo="source">line: 15</note>
+<note appliesTo="source">line: 13</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -154,7 +131,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="18f747f8-2d1d-49d9-ad0a-00db6bbb4219">
 <notes>
-<note appliesTo="source">line: 16</note>
+<note appliesTo="source">line: 14</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -163,7 +140,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="3bfadf29-2054-4c4a-8c2a-5b6ec6e41b87">
 <notes>
-<note appliesTo="source">line: 18</note>
+<note appliesTo="source">line: 16</note>
 <note appliesTo="source">prefix: ## </note>
 </notes>
 <segment>
@@ -172,7 +149,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="5d666078-51ad-409f-8974-45d736a27b11">
 <notes>
-<note appliesTo="source">line: 20</note>
+<note appliesTo="source">line: 18</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -181,7 +158,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="a12029f8-6ec6-40aa-a321-77d09e7a47f8">
 <notes>
-<note appliesTo="source">line: 21</note>
+<note appliesTo="source">line: 19</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -190,7 +167,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="70b4f990-95aa-44b4-80b5-bf031983dab5">
 <notes>
-<note appliesTo="source">line: 22</note>
+<note appliesTo="source">line: 20</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -199,7 +176,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="c95059b8-47df-4e4b-ad2a-9e7bd7757ca8">
 <notes>
-<note appliesTo="source">line: 23</note>
+<note appliesTo="source">line: 21</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -208,7 +185,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="0e07c76d-c9fb-4911-bd6d-5b185bf3d9a1">
 <notes>
-<note appliesTo="source">line: 25</note>
+<note appliesTo="source">line: 23</note>
 <note appliesTo="source">prefix: ## </note>
 </notes>
 <segment>
@@ -217,7 +194,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="4dd0243d-7301-404b-9230-7bc7563c6599">
 <notes>
-<note appliesTo="source">line: 27</note>
+<note appliesTo="source">line: 25</note>
 </notes>
 <segment>
 <source>The following commands are not assigned by default; if you wish to assign them, use Input Gestures dialog to add custom commands. To do so, open NVDA menu, Preferences, then Input Gestures. Expand Clock category, then locate unassigned commands from the list below and select "Add", then enter the gesture you wish to use.</source>
@@ -225,7 +202,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="11adf53a-f2ad-484d-aa03-d3ce5f8261fa">
 <notes>
-<note appliesTo="source">line: 29</note>
+<note appliesTo="source">line: 27</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -234,7 +211,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="cee593c7-b349-46bb-80e3-5d49f7c48e6d">
 <notes>
-<note appliesTo="source">line: 30</note>
+<note appliesTo="source">line: 28</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -243,7 +220,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="e965b083-acd2-4991-9ee5-460cead9e9b9">
 <notes>
-<note appliesTo="source">line: 31</note>
+<note appliesTo="source">line: 29</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -252,7 +229,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="8026efd6-3574-495c-b224-d1e4b6c9d722">
 <notes>
-<note appliesTo="source">line: 32</note>
+<note appliesTo="source">line: 30</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -261,7 +238,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="04d27086-9555-4ff1-95d0-b308dd5e659a">
 <notes>
-<note appliesTo="source">line: 34</note>
+<note appliesTo="source">line: 32</note>
 <note appliesTo="source">prefix: ## </note>
 </notes>
 <segment>
@@ -270,7 +247,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="c4d07530-85b4-4c6f-9276-93d3d6e5d29e">
 <notes>
-<note appliesTo="source">line: 36</note>
+<note appliesTo="source">line: 34</note>
 </notes>
 <segment>
 <source>To use layered commands, press NVDA+Shift+F12 followed by one of the following keys:</source>
@@ -278,7 +255,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="6df8922d-7a96-4679-8599-95aab54170c0">
 <notes>
-<note appliesTo="source">line: 38</note>
+<note appliesTo="source">line: 36</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -287,7 +264,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="c28116a2-9571-4e0f-82fe-2d46826d4266">
 <notes>
-<note appliesTo="source">line: 39</note>
+<note appliesTo="source">line: 37</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -296,7 +273,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="135aae3c-52d5-4f96-a389-9b772386a8d9">
 <notes>
-<note appliesTo="source">line: 40</note>
+<note appliesTo="source">line: 38</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -305,7 +282,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="0be9cdb7-aea1-4845-aeb6-4826c8f5ba7e">
 <notes>
-<note appliesTo="source">line: 41</note>
+<note appliesTo="source">line: 39</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -314,7 +291,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="0de04017-0997-4f41-8dec-ece237146b17">
 <notes>
-<note appliesTo="source">line: 42</note>
+<note appliesTo="source">line: 40</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -323,7 +300,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="204fda6a-28f0-4305-b758-ecfe698ea12a">
 <notes>
-<note appliesTo="source">line: 43</note>
+<note appliesTo="source">line: 41</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -332,7 +309,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="1a79fbe0-1f1c-4e1a-b96f-7ebe86c9e44f">
 <notes>
-<note appliesTo="source">line: 44</note>
+<note appliesTo="source">line: 42</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -341,7 +318,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="a2aa83f2-9bbd-4d32-ad3d-cbbe31c9d50a">
 <notes>
-<note appliesTo="source">line: 45</note>
+<note appliesTo="source">line: 43</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -350,7 +327,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="69a0048f-e03c-4128-9b57-593068d91445">
 <notes>
-<note appliesTo="source">line: 47</note>
+<note appliesTo="source">line: 45</note>
 <note appliesTo="source">prefix: ## </note>
 </notes>
 <segment>
@@ -359,7 +336,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="d47d9d07-e8da-4ea7-a8cc-de0fe7ad5184">
 <notes>
-<note appliesTo="source">line: 49</note>
+<note appliesTo="source">line: 47</note>
 </notes>
 <segment>
 <source>To configure clock functionality, open NVDA menu, Preferences, then Settings, and configure the following options from Clock panel:</source>
@@ -367,7 +344,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="88778074-80a9-4bfc-8d2e-aab722c2b3dd">
 <notes>
-<note appliesTo="source">line: 51</note>
+<note appliesTo="source">line: 49</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -376,7 +353,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="d472a991-f729-4e50-8e81-26dfe5e14d27">
 <notes>
-<note appliesTo="source">line: 52</note>
+<note appliesTo="source">line: 50</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -385,7 +362,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="8239e593-027c-491b-9f35-622ee341f60a">
 <notes>
-<note appliesTo="source">line: 53</note>
+<note appliesTo="source">line: 51</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -394,7 +371,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="3196aaba-36c1-431a-84c3-47f71300100a">
 <notes>
-<note appliesTo="source">line: 54</note>
+<note appliesTo="source">line: 52</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -403,7 +380,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="96a03f2f-eee2-405b-9fb3-ab0fe0f0fc8b">
 <notes>
-<note appliesTo="source">line: 55</note>
+<note appliesTo="source">line: 53</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -412,7 +389,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="bee88bf3-3913-4e27-bbca-1d0d3e6cb6b0">
 <notes>
-<note appliesTo="source">line: 56</note>
+<note appliesTo="source">line: 54</note>
 <note appliesTo="source">prefix:   * </note>
 </notes>
 <segment>
@@ -421,7 +398,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="81faa7a9-e2a3-4b54-8f85-90a61ea17413">
 <notes>
-<note appliesTo="source">line: 57</note>
+<note appliesTo="source">line: 55</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -430,7 +407,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="f68a43cc-a02e-4fd1-a1b8-27e4bd275a17">
 <notes>
-<note appliesTo="source">line: 58</note>
+<note appliesTo="source">line: 56</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -439,7 +416,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="432b171c-4433-4561-84e7-ccfb01dee031">
 <notes>
-<note appliesTo="source">line: 59</note>
+<note appliesTo="source">line: 57</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -448,7 +425,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="46c1d9ac-0cd0-4a7e-a3fe-83df8f7ed82d">
 <notes>
-<note appliesTo="source">line: 61</note>
+<note appliesTo="source">line: 59</note>
 </notes>
 <segment>
 <source>To schedule alarms, open NVDA menu, Tools, then select Schedule Alarms. The dialog contents include:</source>
@@ -456,7 +433,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="1772b5ff-8b4d-4c0d-8b58-4ebd96d16bed">
 <notes>
-<note appliesTo="source">line: 63</note>
+<note appliesTo="source">line: 61</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -465,7 +442,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="2d2a7eea-5235-4f82-85bc-ac780de978b9">
 <notes>
-<note appliesTo="source">line: 64</note>
+<note appliesTo="source">line: 62</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -474,7 +451,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="a28462c2-7cdc-43e9-899b-5e4fe662cc79">
 <notes>
-<note appliesTo="source">line: 65</note>
+<note appliesTo="source">line: 63</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -483,7 +460,7 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="6ec1f657-aef8-4a8d-a3bc-629fa3492c85">
 <notes>
-<note appliesTo="source">line: 66</note>
+<note appliesTo="source">line: 64</note>
 <note appliesTo="source">prefix: * </note>
 </notes>
 <segment>
@@ -492,26 +469,10 @@ $(ID:fa53342e-fd2b-4259-81f3-74c65f716d69)
 </unit>
 <unit id="ac70785b-55d3-4996-9b4b-222f90c13d5d">
 <notes>
-<note appliesTo="source">line: 68</note>
+<note appliesTo="source">line: 66</note>
 </notes>
 <segment>
 <source>Click OK, and a message will inform you the curretnly selected alarm duration.</source>
-</segment>
-</unit>
-<unit id="618dbcc1-d2a4-4d1d-abb9-54e89c285ff6">
-<notes>
-<note appliesTo="source">line: 70</note>
-</notes>
-<segment>
-<source>[1]: https://addons.nvda-project.org/files/get.php?file=cac</source>
-</segment>
-</unit>
-<unit id="fa53342e-fd2b-4259-81f3-74c65f716d69">
-<notes>
-<note appliesTo="source">line: 72</note>
-</notes>
-<segment>
-<source>[2]: https://addons.nvda-project.org/files/get.php?file=cac-dev</source>
 </segment>
 </unit>
 </file>
