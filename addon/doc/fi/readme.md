@@ -1,94 +1,65 @@
-# Kello ja kalenteri
+# Kello- ja kalenterilisäosa NVDA:lle #
 
-- Tekijät: Hrvoje Katić, Abdel sekä muut NVDA-yhteisön jäsenet
-- Lataa [vakaa versio][1]
-- Yhteensopivuus: NVDA 2019.3 ja uudemmat
-- NVDA compatibility: 2019.3 and later
+* Tekijät: Hrvoje Katić, Abdel ja NVDA-yhteisön osallistujat
+* NVDA-yhteensopivuus: 2019.3 ja uudemmat
 
-Tämä lisäosa lisää NVDA:han edistyneen kellon, ajastimen sekä kalenterin.
+Tämä lisäosa mahdollistaa kehittyneet kello-, hälytysaikastin- ja kalenteritoiminnot NVDA:ssa.
 
-You can configure NVDA to announce time and date in formats other than what Windows provides by default. Additionally, you can obtain the current day, week number, as well as the remaining days before the end of the current year, and you can also set automatic time announcement on specified interval. There's also a stopwatch and Alarm timer features built-in to the add-on that lets you time your tasks, such as copying files, installing programs, or cooking meals.
+Voit määrittää NVDA:n ilmoittamaan ajan ja päivämäärän muodoissa, jotka poikkeavat Windowsin oletusmuodoista. Lisäksi voit saada nykyisen päivän, viikkonumeron sekä jäljellä olevat päivät kuluvan vuoden loppuun, ja voit myös asettaa automaattisen ajan ilmoituksen määritetyin aikavälein. Lisäosa sisältää myös sekuntikellon ja hälytysaikastimen, joiden avulla voit ajoittaa tehtäviäsi, kuten tiedostojen kopiointia, ohjelmien asennusta tai ruoanlaittoa.
 
-Huomautuksia
+## Huomautukset:
 
-- Mikäli asennat lisäosan päivityksenä, ohjattu asennustoiminto tunnistaa,
-  ovatko vanhat asetuksesi yhteensopivia uuden lisäosaversion kanssa ja
-  ehdottaa tarvittaessa niiden korjaamista ennen asennusta, minkä voit
-  hyväksyä painamalla OK-painiketta.
-- Windows 10:ssä ja uudemmissa voit käyttää sekuntikelloa ja ajastinta
-  Hälytykset ja kello -sovelluksella.
+* jos asennat lisäosan päivityksenä, asennuksen aikana ohjattu toiminto havaitsee, onko vanha määritys yhteensopiva uuden kanssa ja tarjoaa sen korjaamista ennen asennusta, minkä jälkeen sinun tarvitsee vain vahvistaa OK-painike.
+* Windows 10:ssä ja uudemmissa voit käyttää Herätykset ja kello -sovellusta sekuntikellon ja ajastimien hallintaan.
 
 ## Näppäinkomennot
 
-- NVDA+F12: Puhu nykyinen kellonaika
-- NVDA+F12 kahdesti painettuna: Puhu nykyinen päivämäärä
-- NVDA+F12 kolmesti painettuna: Ilmoittaa nykyisen päivän, viikon numeron,
-  kuluvan vuoden sekä sen jäljellä olevat päivät
-- NVDA+Vaihto+F12: ota käyttöön kellon komentokerros
+* NVDA+F12: hae nykyinen aika
+* NVDA+F12 painettuna kahdesti nopeasti: hae nykyinen päivämäärä
+* NVDA+F12 painettuna kolme kertaa nopeasti: ilmoittaa nykyisen päivän, viikkonumeron, kuluvan vuoden sekä jäljellä olevat päivät vuoden loppuun
+* NVDA+Shift+F12: siirry kellokerrokseen
 
 ## Määrittämättömät komennot
 
-The following commands are not assigned by default; if you wish to assign them, use Input Gestures dialog to add custom commands. To do so, open NVDA menu, Preferences, then Input Gestures. Expand Clock category, then locate unassigned commands from the list below and select "Add", then enter the gesture you wish to use.
+Seuraavia komentoja ei ole oletuksena määritetty; jos haluat määrittää ne, käytä Syöte-eleet-valintaikkunaa mukautettujen komentojen lisäämiseen. Avaa tätä varten NVDA-valikko, Asetukset ja sitten Syöte-eleet. Laajenna Kello-luokka, etsi alla olevat määrittämättömät komennot ja valitse "Lisää", sitten syötä haluamasi ele.
 
-- Elapsed and remaining time before the next alarm. pressing this gesture twice quickly will cancel the next alarm.
-- Pysäytä tällä hetkellä soiva hälytysääni.
-- Näytä hälytysten ajastusvalintaikkuna.
-- Show layered commands (keys to be pressed after NVDA+Shift+F12).
+* Kulunut ja jäljellä oleva aika ennen seuraavaa hälytystä. tämän eleen nopea kaksoispainallus peruuttaa seuraavan hälytyksen.
+* Pysäytä tällä hetkellä toistuva hälytysääni.
+* Näytä hälytysaikataulun valintaikkuna.
+* Näytä kerrostetut komennot (näppäimet NVDA+Shift+F12 jälkeen).
 
-## Komentokerroksen komennot
+## Kerrostetut komennot
 
-Käytä komentokerroskomentoja painamalla NVDA+Vaihto+F12 ja sitten jotakin
-seuraavista näppäimistä:
+Käyttääksesi kerrostettuja komentoja paina NVDA+Shift+F12 ja sen jälkeen yhtä seuraavista näppäimistä:
 
-- S: Käynnistää, nollaa tai pysäyttää sekuntikellon
-- R: Nollaa sekuntikellon uudelleenkäynnistämättä sitä
-- A: Puhuu kuluneen ja jäljellä olevan ajan ennen seuraavaa hälytystä
-- T: Avaa hälytysten ajoitusvalintaikkunan
-- C: Peruuta seuraava hälytys
-- Välilyönti: Puhuu nykyisen sekuntikellon tai ajastimen
-- P: Lopettaa hälytyksen, mikäli se kestää liian kauan
-- H: Luetteloi kaikki komentokerroksen komennot
+* S: käynnistää, nollaa tai pysäyttää sekuntikellon
+* R: nollaa sekuntikellon ilman uudelleenkäynnistystä
+* A: ilmoittaa kuluneen ja jäljellä olevan ajan ennen seuraavaa hälytystä
+* T: avaa hälytysaikataulun valintaikkunan
+* C: peruuttaa seuraavan hälytyksen
+* Väli: ilmoittaa nykyisen sekuntikellon tai ajastimen
+* P: jos hälytys on liian pitkä, sen voi pysäyttää
+* H: luettelee kaikki kerrostetut komennot (ohje)
 
-## Määrittäminen ja käyttö
+## Määritys ja käyttö
 
-Määritä kello siirtymällä NVDA-valikkoon, avaamalla Asetukset-alivalikko,
-valitsemalla Asetukset ja määrittämällä seuraavat asetukset
-Kello-paneelista:
+Kellotoimintojen määrittämiseksi avaa NVDA-valikko, Asetukset ja sitten Asetukset, ja määritä seuraavat vaihtoehdot Kellopaneelista:
 
-- Kellonajan ja päivämäärän näyttömuoto: Määritä näistä yhdistelmäruuduista,
-  miten NVDA puhuu kellonajan ja päivämäärän painaessasi kerran tai kahdesti
-  NVDA+F12.
-- Kellonajan ilmoitus: Valitse tästä yhdistelmäruudusta kellonajan
-  ilmoittamisen aikaväli (pois käytöstä, 10 minuutin välein, 15 minuutin
-  välein, 30 minuutin välein tai tunnin välein).
-- Kellonajan ilmoittaminen (käytössä, mikäli kellonajan ilmoituksen
-  aikaväliksi ei ole määritetty "pois käytöstä"): Valitse vaihtoehtojen
-  "puheella ja äänellä", "vain äänellä" tai "vain puheella" väliltä.
-- Kellon ääni (käytössä, mikäli kellonajan ilmoituksen aikaväliksi ei ole
-  määritetty "pois käytöstä"): Valitse kellon ääni.
-- Hiljaiset tunnit (käytössä, mikäli kellonajan ilmoituksen aikaväliksi ei
-  ole määritetty "pois käytöstä"): Valitse tämä valintaruutu määrittääksesi
-  hiljaiset tunnit, joiden aikana automaattinen kellonajan puhuminen ei ole
-  käytössä.
-  - Intermediate minutes chime sound (enabled if "Separate hour and intermediate minute chimes" is checked): Select the clock chime sound specifically for intermediate minutes.
-- Hiljaisten tuntien ajan muoto (käytössä, mikäli hiljaiset tunnit ovat
-  käytössä): Valitse, miten hiljaisten tuntien vaihtoehdot näytetään (12
-  tunnin tai 24 tunnin muoto).
-- Hiljaisten tuntien alkamis- ja päättymisajat: Valitse tunnit- ja
-  minuutit-yhdistelmäruuduista hiljaisten tuntien alkamis- ja päättymisaika.
-- Quiet hours start and end times: select hour and minute range for quiet hours from hours and minutes combo boxes.
+* Ajan ja päivämäärän näyttömuoto: käytä näitä yhdistelmäruutuja määrittääksesi, miten NVDA ilmoittaa ajan ja päivämäärän painettaessa NVDA+F12 kerran tai kahdesti nopeasti.
+* Väli: valitse ajan ilmoitusväli tästä yhdistelmäruudusta (pois käytöstä, 10 minuutin välein, 15 minuutin välein, 30 minuutin välein tai joka tunti).
+* Ajan ilmoitus (käytössä, jos väli ei ole pois käytöstä): valitse puheen ja äänen, vain äänen tai vain puheen välillä.
+* Kellon äänimerkki (käytössä, jos väli ei ole pois käytöstä): valitse oletuskellon äänimerkki.
+* Erilliset tunnin ja väliminuttien äänimerkit (käytössä, jos väli ei ole pois käytöstä, oletuksena pois käytöstä): ota käyttöön tämä valintaruutu muokataksesi väliminuttien ääniä erikseen tunnin äänimerkistä.
+  * Väliminuttien äänimerkki (käytössä, jos "erilliset tunnin ja väliminuttien äänimerkit" on valittu): valitse väliminuttien ääni.
+* Hiljaiset tunnit (käytössä, jos väli ei ole pois käytöstä): valitse tämä valintaruutu hiljaisten tuntien alueen määrittämiseksi.
+* Hiljaisten tuntien aikamuoto (käytössä, jos hiljaiset tunnit ovat käytössä): valitse esitysmuoto (12 tai 24 tunnin muoto).
+* Hiljaisten tuntien aloitus- ja lopetusaika: valitse tunti- ja minuuttialue hiljaisille tunneille yhdistelmäruuduista.
 
-To schedule alarms, open NVDA menu, Tools, then select Schedule Alarms. The dialog contents include:
+Hälytysten aikatauluttamiseksi avaa NVDA-valikko, Työkalut ja valitse Aikatauluta hälytykset. Valintaikkuna sisältää:
 
-- Hälytyksen keston yksikkö: Valitse hälytyksen/ajastimen kesto tuntien,
-  minuuttien ja sekuntien väliltä.
-- Kesto: Anna hälytyksen kesto yllä mainitussa yksikössä.
-- Hälytysääni: Valitse soitettava hälytysääni.
-- Lopeta- ja pysäytä-painikkeet: Lopeta tai pysäytä pitkän hälytysäänen
-  soittaminen.
+* Hälytyksen kesto: valitse hälytyksen/ajastimen kesto tunneissa, minuuteissa ja sekunneissa.
+* Kesto: syötä hälytyksen kesto yllä määritellyssä yksikössä.
+* Hälytysääni: valitse toistettava hälytysääni.
+* Pysäytys- ja taukopainikkeet: pysäytä tai keskeytä pitkä hälytysääni.
 
-Paina OK, jonka jälkeen näytetään nykyisen hälytyksen keston kertova
-ilmoitus.
-
-[1]: https://addons.nvda-project.org/files/get.php?file=cac
-[2]: https://www.nvaccess.org/addonStore/legacy?file=clock
+Napsauta OK, ja viesti ilmoittaa valitun hälytyksen keston.

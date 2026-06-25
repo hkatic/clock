@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: nvdaaddons\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2026-05-22 18:58+0000\n"
-"PO-Revision-Date: 2026-06-15 00:47\n"
+"PO-Revision-Date: 2026-06-23 10:07\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "Language: vi_VN\n"
@@ -20,12 +20,12 @@ msgstr ""
 #. Translators: the label of a message box dialog.
 #: addon\installTasks.py:32
 msgid "The date and time format you were using are not compatible with this version of the Clock add-on, this will be fixed during installation. Click OK to confirm these corrections"
-msgstr "Định dạng ngày giờ mà bạn đã dùng không tương thích với phiên bản add-on đồng hồ này. Điều đó sẽ được sửa trong khi cài đặt. Bấm OK để xác nhận việc điều chỉnh"
+msgstr "Định dạng ngày và giờ bạn đang dùng không tương thích với phiên bản add-on Đồng hồ này, lỗi này sẽ được khắc phục trong quá trình cài đặt. Nhấn OK để xác nhận các sửa đổi"
 
 #. Translators: the title of a message box dialog.
 #: addon\installTasks.py:36
 msgid "Time and date format corrections"
-msgstr "Điều chỉnh định dạng ngày và giờ "
+msgstr "Sửa lỗi định dạng ngày và giờ"
 
 #. Translators: This is the label for the clock settings panel.
 #. Translators: Script category for Clock addon commands in input gestures dialog.
@@ -40,12 +40,12 @@ msgstr "Đồng hồ"
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:32
 msgid "&Time display format:"
-msgstr "định dạng giờ &phút "
+msgstr "Định dạng hiển thị &thời gian:"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:35
 msgid "&Date display format:"
-msgstr "định &dạng ngày tháng "
+msgstr "Định dạng hiển thị &ngày:"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:39
@@ -55,7 +55,7 @@ msgstr "tắt"
 #. Translators: This is a choice of the auto announce choices combo box.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:41
 msgid "every 5 minutes"
-msgstr ""
+msgstr "mỗi 5 phút"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:43
@@ -80,17 +80,17 @@ msgstr "mỗi giờ"
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:53
 msgid "&Interval:"
-msgstr ""
+msgstr "Khoảng &thời gian:"
 
 #. Translators: This is a choice of the time report choices combo box.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:57
 msgid "message and sound"
-msgstr ""
+msgstr "thông báo và âm thanh"
 
 #. Translators: This is a choice of the time report choices combo box.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:59
 msgid "message only"
-msgstr ""
+msgstr "chỉ thông báo"
 
 #. Translators: This is a choice of the time report choices combo box.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:61
@@ -100,109 +100,109 @@ msgstr "chỉ âm thanh"
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:65
 msgid "Time &announcement:"
-msgstr "Báo &giờ:"
+msgstr "&Thông báo thời gian:"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:68
 msgid "Clock chime &sound:"
-msgstr "&Chuông đồng hồ:"
+msgstr "Âm thanh báo &giờ:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:71
 msgid "&Separate hour and intermediate minute chimes"
-msgstr ""
+msgstr "Tách biệt âm báo giờ và âm báo phút &giữa giờ"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:74
 msgid "Intermediate minutes chime &sound:"
-msgstr ""
+msgstr "Âm thanh báo phút giữa &giờ:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:77
 msgid "&Quiet hours"
-msgstr "&Giờ yên tĩnh"
+msgstr "Giờ &yên lặng"
 
 #. Translators: This is a choice of the quiet hours time format choices.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:81
 msgid "12-hour format"
-msgstr ""
+msgstr "Định dạng 12 giờ"
 
 #. Translators: This is a choice of the quiet hours time format choices.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:83
 msgid "24-hour format"
-msgstr ""
+msgstr "Định dạng 24 giờ"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:87
 msgid "Quiet hours time &format:"
-msgstr ""
+msgstr "Định dạng thời gian giờ &yên lặng:"
 
 #. Translators: This is the label for an group in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:96
 msgid "Quiet hours start time"
-msgstr ""
+msgstr "Thời gian bắt đầu giờ yên lặng"
 
 #. Translators: This is the label for an group in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:99
 msgid "Quiet hours end time"
-msgstr ""
+msgstr "Thời gian kết thúc giờ yên lặng"
 
 #: addon\globalPlugins\clock\clockSettingsGUI.py:120
 #: addon\globalPlugins\clock\clockSettingsGUI.py:128
 #: addon\globalPlugins\clock\clockSettingsGUI.py:384
 msgid "Add custom sound"
-msgstr ""
+msgstr "Thêm âm thanh tùy chỉnh"
 
 #. Translators: the hour label in quiet hours group.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:147
 #: addon\globalPlugins\clock\clockSettingsGUI.py:159
 msgid "Hour:"
-msgstr ""
+msgstr "Giờ:"
 
 #. Translators: the minute label in quiet hours group.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:151
 #: addon\globalPlugins\clock\clockSettingsGUI.py:163
 msgid "Minute:"
-msgstr ""
+msgstr "Phút:"
 
 #: addon\globalPlugins\clock\clockSettingsGUI.py:198
 msgid "Choose a custom sound file"
-msgstr ""
+msgstr "Chọn một tệp âm thanh tùy chỉnh"
 
 #. Translators: This is the label for the alarm settings panel.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:340
 msgid "Schedule alarms"
-msgstr ""
+msgstr "Lên lịch báo thức"
 
 #. Translators: This is an item of the alarm duration choices.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:346
 msgid "hours"
-msgstr ""
+msgstr "giờ"
 
 #. Translators: This is an item of the alarm duration choices.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:348
 msgid "minutes"
-msgstr ""
+msgstr "phút"
 
 #. Translators: This is an item of the alarm duration choices.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:350
 msgid "seconds"
-msgstr ""
+msgstr "giây"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:354
 msgid "&Alarm duration in:"
-msgstr ""
+msgstr "Thời lượng &báo thức tính bằng:"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:357
 msgid "&Duration:"
-msgstr ""
+msgstr "Thời &lượng:"
 
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:360
 msgid "A&larm sound:"
-msgstr "Â&m đồng hồ bấm giờ :"
+msgstr "Âm thanh &báo thức:"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:363
@@ -212,17 +212,17 @@ msgstr "&Dừng"
 #. Translators: This is the label for a button in the Alarm settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:366
 msgid "&Pause"
-msgstr "&Tạm dừng"
+msgstr "Tạm &dừng"
 
 #: addon\globalPlugins\clock\clockSettingsGUI.py:413
 msgid "Choose a custom alarm sound file"
-msgstr ""
+msgstr "Chọn một tệp âm thanh báo thức tùy chỉnh"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:455
 #, python-brace-format
 msgid "You've chosen an alarm to be triggered in {tm} {unit}"
-msgstr "Bạn đã chọn đồng hồ bấm giờ  trong {tm} {unit}"
+msgstr "Bạn đã chọn kích hoạt báo thức sau {tm} {unit}"
 
 #. Translators: The title of the dialog which appears when the user has chosen to trigger an alarm.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:458
@@ -233,31 +233,31 @@ msgstr "Xác nhận"
 #: addon\globalPlugins\clock\formats.py:75
 #, python-brace-format
 msgid "It's {hours} o'clock and {minutes} minutes"
-msgstr "Bây giờ là {hours} giờ {minutes} phút"
+msgstr "Bây giờ là {hours} giờ và {minutes} phút"
 
 #. Translators: A time formating (should be different from other time formattings)
 #: addon\globalPlugins\clock\formats.py:77
 #, python-brace-format
 msgid "It's {hours} o'clock, {minutes} minutes and {seconds} seconds"
-msgstr "Bây giờ là {hours} giờ {minutes} phút {seconds} giây"
+msgstr "Bây giờ là {hours} giờ, {minutes} phút và {seconds} giây"
 
 #. Translators: A time formating (should be different from other time formattings)
 #: addon\globalPlugins\clock\formats.py:81
 #, python-brace-format
 msgid "{hours} o'clock, {minutes} minutes"
-msgstr "{hours} giờ {minutes} phút"
+msgstr "{hours} giờ, {minutes} phút"
 
 #. Translators: A time formating (should be different from other time formattings)
 #: addon\globalPlugins\clock\formats.py:83
 #, python-brace-format
 msgid "{hours} o'clock, {minutes} minutes, {seconds} seconds"
-msgstr "{hours} giờ {minutes} phút {seconds} giây"
+msgstr "{hours} giờ, {minutes} phút, {seconds} giây"
 
 #. Translators: A time formating (should be different from other time formattings)
 #: addon\globalPlugins\clock\formats.py:87
 #, python-brace-format
 msgid "It's {minutes} past {hours}"
-msgstr "Bây giờ là {minutes} phút của {hours}"
+msgstr "Bây giờ là {hours} giờ qua {minutes} phút"
 
 #. Translators: A time formating (should be different from other time formattings)
 #: addon\globalPlugins\clock\formats.py:89
@@ -269,36 +269,36 @@ msgstr "{hours} giờ {minutes} phút"
 #: addon\globalPlugins\clock\formats.py:91
 #, python-brace-format
 msgid "{hours} h, {minutes} min, {seconds} sec"
-msgstr "{hours} giờ {minutes} phút {seconds} giây"
+msgstr "{hours} giờ, {minutes} phút, {seconds} giây"
 
 #. Translators: A time formating (should be different from other time formattings)
 #: addon\globalPlugins\clock\formats.py:93
 #, python-brace-format
 msgid "It's {hours}:{minutes}"
-msgstr "Bây giờ là {hours}:{minutes}"
+msgstr "Bây giờ là {hours} giờ {minutes} phút"
 
 #. Translators: A time formating (should be different from other time formattings)
 #: addon\globalPlugins\clock\formats.py:95
 #, python-brace-format
 msgid "It's {hours}:{minutes}:{seconds}"
-msgstr "Bây giờ là {hours}:{minutes}:{seconds}"
+msgstr "Bây giờ là {hours} giờ {minutes} phút {seconds} giây"
 
 #. Translators: A way to display 24-hour formats in the time display formats list in the settings panel.
 #: addon\globalPlugins\clock\formats.py:112
 #, python-brace-format
 msgid "{fmt} (24-hour format)"
-msgstr ""
+msgstr "{fmt} (định dạng 24 giờ)"
 
 #. Translators: A way to display 12-hour formats in the time display formats list in the settings panel.
 #: addon\globalPlugins\clock\formats.py:114
 #, python-brace-format
 msgid "{fmt} (12-hour format)"
-msgstr ""
+msgstr "{fmt} (định dạng 12 giờ)"
 
 #. Translators: This is a choice in a list of sounds.
 #: addon\globalPlugins\clock\paths.py:33
 msgid "Custom"
-msgstr ""
+msgstr "Tùy chỉnh"
 
 #: addon\globalPlugins\clock\__init__.py:74
 #, python-brace-format
@@ -322,36 +322,36 @@ msgstr "0 giây"
 #. Translators: The name of the alarm item in NVDA Tools menu.
 #: addon\globalPlugins\clock\__init__.py:187
 msgid "Schedule a&larms..."
-msgstr ""
+msgstr "Lên lịch &báo thức..."
 
 #. Translators: The tooltyp text for the alarm item in NVDA Tools menu.
 #: addon\globalPlugins\clock\__init__.py:189
 msgid "Allows you to schedule an alarm"
-msgstr "cho phép bạn thiết lập đồng hồ bấm giờ "
+msgstr "Cho phép bạn lên lịch báo thức"
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:252
 msgid "Speaks current time. If pressed twice quickly, speaks current date. If pressed three times quickly, reports the current day, the week number, the current year and the days remaining before the end of the year."
-msgstr ""
+msgstr "Đọc thời gian hiện tại. Nếu nhấn hai lần nhanh, đọc ngày hiện tại. Nếu nhấn ba lần nhanh, thông báo ngày hiện tại, số tuần, năm hiện tại và số ngày còn lại trước khi kết thúc năm."
 
 #: addon\globalPlugins\clock\__init__.py:277
 #, python-brace-format
 msgid "Day {day}, week {week} of {year}, remaining days {remain}."
-msgstr "Ngày {day}, Tuần {week} của {year}, Còn lại {remain} ngày."
+msgstr "Ngày {day}, tuần {week} của năm {year}, số ngày còn lại là {remain}."
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:320
 msgid "Clock and calendar layer commands. After pressing this keystroke, press H for additional help."
-msgstr "Các lệnh layer cho đồng hồ và lịch. Sau khi bấm phím lệnh này, bấm H để xem thông tin trợ giúp."
+msgstr "Các lệnh trong lớp lệnh đồng hồ và lịch. Sau khi nhấn tổ hợp phím này, nhấn phím H để xem thêm trợ giúp."
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:339
 msgid "Starts, resets or stops the stopwatch."
-msgstr "Bắt đầu, đặt lại hay dừng đồng hồ bấm giờ."
+msgstr "Bắt đầu, đặt lại hoặc dừng đồng hồ bấm giờ."
 
 #: addon\globalPlugins\clock\__init__.py:348
 msgid "Reset. Running."
-msgstr "Đang khôi phục."
+msgstr "Đã đặt lại. Đang chạy."
 
 #: addon\globalPlugins\clock\__init__.py:351
 msgid "Running."
@@ -365,43 +365,43 @@ msgstr "{0} đã dừng."
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:359
 msgid "Speaks current stopwatch or count-down timer."
-msgstr "đọc đồng hồ bấm giờ hoặc thời gian đếm ngược hiện tại."
+msgstr "Đọc thời gian hiện tại của đồng hồ bấm giờ hoặc đồng hồ đếm ngược."
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:370
 msgid "Gives the remaining and elapsed time before the next alarm."
-msgstr "đọc thời gian còn lại,và thời gian đã qua trước khi kết thúc đồng hồ bấm giờ "
+msgstr "Cho biết thời gian còn lại và thời gian đã trôi qua trước lần báo thức tiếp theo."
 
 #: addon\globalPlugins\clock\__init__.py:380
 #: addon\globalPlugins\clock\__init__.py:459
 #, python-brace-format
 msgid "Elapsed time {elapsed}, remaining time {remaining}."
-msgstr "Thời gian đã qua {elapsed}, thời gian còn lại {remaining}."
+msgstr "Thời gian đã trôi qua {elapsed}, thời gian còn lại {remaining}."
 
 #: addon\globalPlugins\clock\__init__.py:383
 #: addon\globalPlugins\clock\__init__.py:399
 #: addon\globalPlugins\clock\__init__.py:462
 msgid "No alarm"
-msgstr "không chạy đồng hồ bấm giờ "
+msgstr "Không có báo thức"
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:389
 msgid "Cancel the next alarm."
-msgstr "hủy đồng hồ bấm giờ sắp tới "
+msgstr "Hủy lần báo thức tiếp theo."
 
 #: addon\globalPlugins\clock\__init__.py:397
 #: addon\globalPlugins\clock\__init__.py:456
 msgid "Alarm cancelled"
-msgstr "đã hủy đồng hồ bấm giờ "
+msgstr "Đã hủy báo thức"
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:405
 msgid "Resets stopwatch to 0 without restarting it."
-msgstr "Đặt lại đồng hồ bấm giờ là 0 mà không bắt đầu lại."
+msgstr "Đặt lại đồng hồ bấm giờ về 0 mà không khởi động lại."
 
 #: addon\globalPlugins\clock\__init__.py:413
 msgid "The stopwatch is already reset to 0. Use the clock layer command followed by s to start it."
-msgstr "Đồng hồ bấm giờ đã được đặt lại thành 0. dùng lệnh layer rồi bấm s để bắt đầu."
+msgstr "Đồng hồ bấm giờ đã được đặt lại về 0. Hãy sử dụng lệnh của lớp lệnh đồng hồ rồi nhấn phím s để bắt đầu."
 
 #: addon\globalPlugins\clock\__init__.py:417
 msgid "Stopwatch reset."
@@ -410,26 +410,26 @@ msgstr "Đã đặt lại đồng hồ bấm giờ."
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:422
 msgid "Lists available commands in clock command layer."
-msgstr "Liệt kê các lệnh trong command layer của đồng hồ."
+msgstr "Liệt kê các lệnh hiện có trong lớp lệnh đồng hồ."
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:433
 msgid "Lists available commands in clock command layer, showing them in browse mode."
-msgstr ""
+msgstr "Liệt kê các lệnh hiện có trong lớp lệnh đồng hồ và hiển thị trong chế độ duyệt."
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:445
 msgid "Allows to check the next alarm. If pressed twice, cancels it."
-msgstr "Cho phép kiểm tra đồng hồ bấm giờ  tiếp theo. Nếu bấm hai lần thì hủy nó."
+msgstr "Cho phép kiểm tra lần báo thức tiếp theo. Nếu nhấn hai lần, sẽ hủy báo thức đó."
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:468
 msgid "If an alarm is too long, allows to stop it."
-msgstr "nếu âm thanh phát quá lâu , bạn có thể dừng lại nó "
+msgstr "Nếu âm báo thức quá dài, cho phép dừng âm báo đó."
 
 #: addon\globalPlugins\clock\__init__.py:474
 msgid "No sound is launched."
-msgstr "Không có âm thanh nào được gọi."
+msgstr "Không có âm thanh nào đang phát."
 
 #: addon\globalPlugins\clock\__init__.py:477
 msgid "Sound stopped"
@@ -438,7 +438,7 @@ msgstr "Âm thanh đã dừng"
 #. Translators: error message when attempting to open more than one alarm settings dialogs.
 #: addon\globalPlugins\clock\__init__.py:491
 msgid "Schedule alarms dialog is already open."
-msgstr ""
+msgstr "Hộp thoại lên lịch báo thức đang mở."
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:497
@@ -448,7 +448,7 @@ msgstr "Hiển thị hộp thoại cài đặt đồng hồ."
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:508
 msgid "Display schedule alarms dialog box."
-msgstr ""
+msgstr "Hiển thị hộp thoại lên lịch báo thức."
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-on store
@@ -458,7 +458,11 @@ msgid "An advanced clock and calendar for NVDA.\n"
 "NVDA+F12 pressed twice quickly, get current date.\n"
 "NVDA+F12 pressed three times quickly, reports the current day, the week number, the current year and the remaining days before the end of the year.\n"
 "For other instructions, press  actions button in add-on store, then go to help."
-msgstr ""
+msgstr "Một công cụ đồng hồ và lịch nâng cao cho NVDA.\n"
+"NVDA+F12, xem thời gian hiện tại.\n"
+"NVDA+F12 nhấn hai lần nhanh, xem ngày hiện tại.\n"
+"NVDA+F12 nhấn ba lần nhanh, thông báo ngày hiện tại, số tuần, năm hiện tại và số ngày còn lại trước khi kết thúc năm.\n"
+"Để xem các hướng dẫn khác, hãy nhấn nút hành động trong cửa hàng add-on, sau đó đi tới mục trợ giúp."
 
 #. Brief changelog for this version
 #. Translators: what's new content for the add-on version to be shown in the add-on store

@@ -1,92 +1,65 @@
-# Đồng hồ và lịch Add-on cho NVDA #
+# Đồng hồ và Lịch cho NVDA
 
-* Authors: Hrvoje Katić, Abdel and NVDA contributors
-* Download [stable version][1]
-* Download [development version][2]
-* NVDA compatibility: 2019.3 and beyond
+* Tác giả: Hrvoje Katić, Abdel và các cộng tác viên NVDA
+* Tương thích với NVDA 2019.3 trở lên
 
-This add-on enables the advanced clock, alarm timer and calendar
-functionality for NVDA.
+Tiện ích này bổ sung các chức năng đồng hồ, hẹn giờ báo thức và lịch nâng cao cho NVDA.
 
-Thay vì luôn lấy thông tin ngày giờ từ Windows, bạn có thể tùy biến cách mà
-NVDA đọc và hiển thị ngày giờ trong chữ nổi.
+Bạn có thể cấu hình NVDA để thông báo giờ và ngày theo các định dạng khác với định dạng mặc định của Windows. Ngoài ra, bạn có thể biết ngày hiện tại, số tuần trong năm cũng như số ngày còn lại trước khi kết thúc năm hiện tại, đồng thời cũng có thể thiết lập việc thông báo giờ tự động theo khoảng thời gian xác định. Tiện ích cũng tích hợp chức năng đồng hồ bấm giờ và hẹn giờ báo thức, cho phép bạn đo thời gian thực hiện các tác vụ như sao chép tệp, cài đặt chương trình hoặc nấu ăn.
 
-Thêm nữa, bạn có thể lấy thông tin về ngày hiện tại, số tuần, kể cả số ngày
-còn lại trước khi kết thúc năm, và bạn cũng có thể đặt báo giờ tự động trong
-khoảng thời gian nhất định.
+Lưu ý:
 
-There's also a stopwatch and Alarm timer features built-in to the add-on
-that lets you time your tasks, such as copying files, installing programs,
-or cooking meals.
+* Nếu bạn cài đặt tiện ích dưới dạng bản cập nhật, trong quá trình cài đặt, trình hướng dẫn sẽ phát hiện xem cấu hình cũ có tương thích với cấu hình mới hay không và sẽ đề nghị sửa trước khi cài đặt. Sau đó, bạn chỉ cần nhấn nút "OK" để xác nhận.
+* Trên Windows 10 trở lên, bạn có thể sử dụng ứng dụng Đồng hồ để quản lý đồng hồ bấm giờ và các bộ hẹn giờ.
 
-## Lưu ý:
+## Các lệnh chính
 
-Nếu bạn cài đặt add-on ở dạng cập nhật, trong khi thực hiện cài đặt, chương
-trình sẽ kiểm tra việc cấu hình cũ có tương thích với phiên bản mới và chỉnh
-sửa chúng trước khi cài đặt, rồi thì bạn chỉ việc bấm nút Đồng Ý để xác
-nhận.
+* NVDA+F12: thông báo giờ hiện tại
+* Nhấn nhanh NVDA+F12 hai lần: thông báo ngày hiện tại
+* Nhấn nhanh NVDA+F12 ba lần: thông báo ngày hiện tại, số tuần, năm hiện tại và số ngày còn lại trước khi kết thúc năm
+* NVDA+Shift+F12: vào lớp lệnh đồng hồ
 
-## Sử dụng
+## Các lệnh chưa được gán
 
-*	Open the configuration dialog for this add-on from NVDA Settings dialog.
-	*	In the Clock setup panel, the first two Combo Box controls allow you to choose your prefered time and date display formats.
-	*	The Combo Box control labeled "Interval" allows you to set the interval for automatic time announcement (Every 10 minutes, Every 15 minutes, Every 30 minutes, Every hour, or Off).
-	*	The Combo Box control labeled "Time announcement" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure how the automatic time announcement should be reported (Speech and sound, Speech only, or Sound only) when automatic time announcement is working.
-	*	The Combo box control labeled "Clock chime sound" (only visible if the choice "off" is not selected in the interval Combo Box) lets you choose between various clock sounds that will be played when automatic time announcement is working and reported with sound.
-	*	The Checkbox control labeled "Quiet hours" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure time range when automatic time announcement shouldn't occur.
-	*	The Checkbox control labeled "input in 24-hour format" (only visible if quiet hours are enabled) allows you to configure whether you want to input time for quiet hours in 12-hour (A.M. or P.M.), or european 24-hour format.
-	*	The Edit box controls for start and end time (only visible if quiet hours are enabled) let you configure time range for quiet hours. The time should be entered in HH:MM format if the "input in 24-hour format" checkbox is checked, otherwise you must use a 12 hour format as described below.
-	*	When done, tab to the OK button and activate it by pressing Enter to save your settings.
-	*	In the Alarm setup dialog, the first Combo Box control allow you to choose your prefered countdown timer before the alarm ring.
-	*	The Edit box control lets you type your time waiting before the alarm ring. This duration must be specified in 1 or more digits, not a decimal number.
-	*	The Combo box control labeled "Alarm sound" lets you choose between various alarm sounds that will be played when the alarm time arrives.
-	*	The pause button allows you to pause/resume too long alarms.
-	*	The stop button allows you to stop too long alarms.
-	*	When done, tab to the OK button and activate it by pressing Enter. A message should be displayed to remind you of the waiting time before the alarm.
-*	Press NVDA+F12 once to get current time, twice to get current date, or three times to get the current day, week number, as well as the remaining days before the end of the current year.
+Các lệnh sau chưa được gán cử chỉ theo mặc định. Nếu muốn gán, hãy sử dụng hộp thoại Cử chỉ nhập để thêm các lệnh tùy chỉnh. Để thực hiện, mở menu NVDA, chọn Tùy chọn, rồi Cử chỉ nhập. Mở rộng danh mục Đồng hồ, tìm một trong các lệnh chưa được gán dưới đây, chọn "Thêm", rồi nhập cử chỉ bạn muốn sử dụng.
 
-## Các phím lệnh
+* Thông báo thời gian đã trôi qua và thời gian còn lại trước báo thức tiếp theo. Nhấn nhanh cử chỉ này hai lần sẽ hủy báo thức tiếp theo.
+* Dừng âm thanh báo thức đang phát.
+* Hiển thị hộp thoại lập lịch báo thức.
+* Hiển thị các lệnh của lớp lệnh (các phím cần nhấn sau NVDA+Shift+F12).
 
-* NVDA+F12: get current time
-* NVDA+F12 pressed twice quickly: get current date
-* NVDA+F12 pressed three times quickly: reports the current day, the week
-  number, the current year and the remaining days before the end of the
-  year.
-* There is a script that gives the remaining and elapsed time before the
-  next alarm. There is no keyboard gesture assigned to this script, you will
-  have to do it yourself in the "Input gestures" dialog box, in the "Clock"
-  category. pressing this gesture twice quickly will cancel the next alarm.
-* There is another script to stop the sound that is currently playing, its
-  gesture is also not defined. That script can also be called using the
-  clock layer commands described below.
+## Các lệnh theo lớp
 
-## Các lệnh layer
+Để sử dụng các lệnh theo lớp, nhấn NVDA+Shift+F12 rồi nhấn một trong các phím sau:
 
-Để dùng các lệnh layer, bấm NVDA+Shift+F12 rồi một trong các phím sau:
+* S: khởi động, đặt lại hoặc dừng đồng hồ bấm giờ
+* R: đặt lại đồng hồ bấm giờ về 0 mà không khởi động lại
+* A: thông báo thời gian đã trôi qua và thời gian còn lại trước báo thức tiếp theo
+* T: mở hộp thoại lập lịch báo thức.
+* C: hủy báo thức tiếp theo
+* Phím cách: đọc trạng thái hiện tại của đồng hồ bấm giờ hoặc bộ đếm ngược
+* P: nếu âm thanh báo thức kéo dài quá lâu, cho phép dừng báo thức
+* H: liệt kê tất cả các lệnh theo lớp (Trợ giúp)
 
-* S: Bắt đầu, đặt lại hay dừng đồng hồ bấm giờ;
-* R: đặt lại đồng hồ báo giờ là 0 mà không khởi động lại nó;
-* A: cung cấp thời gian đã qua và còn lại trước báo hiệu tiếp theo;
-* C: hủy báo hiệu tiếp theo;
-* Khoảng trắng: thông báo đồng hồ bấm giờ hay thời gian đếm ngược hiện tại;
-* p: nếu báo hiệu quá dài thì cho phép dừng lại;
-* H: liệt kê tất cả lệnh layer.
+## Cấu hình và sử dụng
 
-## Cú pháp dùng cho giờ yên tĩnh
+Để cấu hình chức năng đồng hồ, mở menu NVDA, chọn Tùy chọn, rồi Cài đặt, sau đó cấu hình các tùy chọn sau trong danh mục Đồng hồ:
 
-* To avoid bugs, the quiet hours must follow a rigorous and precise syntax.
-* If you check the "Input in 24-hour format" checkbox, the format must be
-  "HH:MM".
-* If you uncheck the "Input in 24-hour format" checkbox, the format must be
-  "HH:MM AM" or "HH:MM PM", the HH must contain a 12-hour format, from 0 to
-  12 and the "AM"|"PM" suffix can be in lowercase or uppercase.
-* If you check the Quiet hours" checkbox and keep the "Quiet hours start
-  time" or "Quiet hours end time" field empty, or type a mistaken value, the
-  "Quiet hours" checkbox will be unchecked automatically to avoid errorss
-  and a message will be displayed.
+* Định dạng hiển thị giờ và ngày: sử dụng các hộp kết hợp này để cấu hình cách NVDA thông báo giờ và ngày khi bạn nhấn NVDA+F12 một lần hoặc nhấn nhanh hai lần tương ứng.
+* Khoảng thời gian: chọn khoảng thời gian thông báo giờ từ hộp kết hợp này (tắt, mỗi 10 phút, 15 phút, 30 phút hoặc mỗi giờ).
+* Thông báo giờ (được bật nếu khoảng thời gian không tắt): chọn giữa giọng nói và âm thanh, chỉ âm thanh hoặc chỉ giọng nói.
+* Âm thanh điểm chuông đồng hồ (được bật nếu khoảng thời gian không tắt): chọn âm thanh điểm chuông mặc định cho các phút trung gian và đầu mỗi giờ.
+* Tách riêng âm báo đầu giờ và các phút trung gian (được bật nếu khoảng thời gian không tắt, mặc định bị tắt): đánh dấu hộp kiểm này để tùy chỉnh riêng âm báo cho các phút trung gian và âm báo đầu giờ.
+  * Âm thanh điểm chuông cho các phút trung gian (được bật nếu chọn "Tách riêng âm báo đầu giờ và các phút trung gian"): chọn âm thanh điểm chuông dành riêng cho các phút trung gian.
+* Giờ yên tĩnh (được bật nếu khoảng thời gian không tắt): chọn hộp kiểm này để cấu hình khoảng thời gian yên tĩnh, trong đó việc thông báo giờ tự động sẽ không diễn ra.
+* Định dạng thời gian của giờ yên tĩnh (được bật nếu giờ yên tĩnh được bật): chọn cách hiển thị các tùy chọn giờ yên tĩnh (định dạng 12 giờ hoặc 24 giờ).
+* Thời gian bắt đầu và kết thúc giờ yên tĩnh: chọn khoảng giờ và phút cho giờ yên tĩnh từ các hộp kết hợp giờ và phút.
 
-[[!tag dev stable]]
+Để lập lịch báo thức, mở menu NVDA, chọn Công cụ, rồi chọn Lập lịch báo thức. Hộp thoại bao gồm các thành phần sau:
 
-[1]: https://addons.nvda-project.org/files/get.php?file=cac
+* Thời lượng báo thức theo: chọn thời lượng báo thức/hẹn giờ theo giờ, phút hoặc giây.
+* Thời lượng: nhập thời lượng báo thức theo đơn vị đã chọn ở trên.
+* Âm thanh báo thức: chọn âm thanh sẽ được phát khi báo thức kích hoạt.
+* Các nút Dừng và Tạm dừng: dừng hoặc tạm dừng âm thanh báo thức kéo dài.
 
-[2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
+Nhấn OK, một thông báo sẽ cho bạn biết thời lượng báo thức hiện đang được chọn.

@@ -1,86 +1,65 @@
 # Sat i kalendar, dodatak za NVDA
 
-- Autori: Hrvoje Katić, Abdel i NVDA doprinositelji
-- Preuzmi [stabilnu verziju][1]
-- NVDA kompatibilnost: 2019.3 i novije verzije
-- NVDA compatibility: 2019.3 and later
+* Autori: Hrvoje Katić, Abdel i suradnici na NVDA-u
+* Kompatibilnost s NVDA-om: 2019.3 i novije verzije
 
-Ovaj dodatak omogućuje funkcionalnosti za napredni sat, postavljanje alarma
-i kalendar za NVDA.
+Ovaj dodatak omogućuje napredne funkcije sata, mjerača vremena za alarme i kalendara u NVDA-u.
 
-You can configure NVDA to announce time and date in formats other than what Windows provides by default. Additionally, you can obtain the current day, week number, as well as the remaining days before the end of the current year, and you can also set automatic time announcement on specified interval. There's also a stopwatch and Alarm timer features built-in to the add-on that lets you time your tasks, such as copying files, installing programs, or cooking meals.
+Možete konfigurirati NVDA da najavljuje vrijeme i datum u formatima koji se razlikuju od zadanih formata sustava Windows. Osim toga, možete saznati trenutačni dan, broj tjedna, kao i broj preostalih dana do kraja tekuće godine, a možete postaviti i automatsku najavu vremena u određenim vremenskim intervalima. Dodatak također uključuje štopericu i mjerač vremena za alarme koji vam omogućuju mjerenje trajanja raznih zadataka, poput kopiranja datoteka, instalacije programa ili kuhanja.
 
 Napomene:
 
-- if you install the add-on as an update, during the installation process, the wizard detects if the old configuration is compatible with the new one and offers to correct it before installing, then you'll just have to validate the OK button to confirm that.
-- U sustavu Windows 10 i novijim, možeš koristiti aplikaciju Alarmi i sat za
-  upravljanje štopericom i mjeračima vremena.
+* Ako dodatak instalirate kao nadogradnju, tijekom instalacije čarobnjak će otkriti je li stara konfiguracija kompatibilna s novom te će prije instalacije ponuditi njezino ispravljanje. Za potvrdu će biti dovoljno pritisnuti gumb U redu.
+* U sustavu Windows 10 i novijim verzijama možete koristiti aplikaciju Alarmi i sat za upravljanje štopericom i mjeračima vremena.
 
-## Tipkovničke naredbe
+## Tipkovnički prečaci
 
-- NVDA+F12: saznaj trenutačno vrijeme
-- Pritisni NVDA+F12 dvaput brzo: saznaj trenutačni datum
-- Pritisni NVDA+F12 triput brzo: izvještava o trenutačnom danu, broju
-  tjedna, tekućoj godini i o danima koji su preostali do kraja godine
-- NVDA+Shift+F12: uđi u sloj sata
+* NVDA+F12: izgovara trenutačno vrijeme
+* Dvaput brzo pritisnite NVDA+F12: izgovara trenutačni datum
+* Triput brzo pritisnite NVDA+F12: izgovara trenutačni dan, broj tjedna, tekuću godinu i broj preostalih dana do kraja godine
+* NVDA+Shift+F12: ulazi u sloj naredbi sata
 
 ## Nedodijeljene naredbe
 
-The following commands are not assigned by default; if you wish to assign them, use Input Gestures dialog to add custom commands. To do so, open NVDA menu, Preferences, then Input Gestures. Expand Clock category, then locate unassigned commands from the list below and select "Add", then enter the gesture you wish to use.
+Sljedeće naredbe nisu dodijeljene prema zadanim postavkama. Ako ih želite dodijeliti, upotrijebite dijaloški okvir Ulazne geste za dodavanje prilagođenih naredbi. Da biste to učinili, otvorite izbornik NVDA, Postavke, zatim Ulazne geste. Proširite kategoriju Sat, pronađite jednu od nedodijeljenih naredbi s donjeg popisa, odaberite „Dodaj”, a zatim pritisnite željenu gestu.
 
-- Elapsed and remaining time before the next alarm. pressing this gesture twice quickly will cancel the next alarm.
-- Zaustavi trenutačnu reprodukciju zvuka alarma.
-- Prikaži dijaloški okvir zakazanih alarma.
-- Show layered commands (keys to be pressed after NVDA+Shift+F12).
+* Izgovara proteklo i preostalo vrijeme do sljedećeg alarma. Dvostrukim brzim pritiskom ove geste otkazuje se sljedeći alarm.
+* Zaustavlja trenutačno reproducirani zvuk alarma.
+* Prikazuje dijaloški okvir za zakazane alarme.
+* Prikazuje slojevite naredbe (tipke koje treba pritisnuti nakon NVDA+Shift+F12).
 
-## Višeslojne naredbe
+## Slojevite naredbe
 
-Za korištenje višeslojnih naredbi, pritisni NVDA+šift+F12 i zatim jednu od
-sljedećih tipki:
+Za korištenje slojevitih naredbi pritisnite NVDA+Shift+F12, a zatim jednu od sljedećih tipki:
 
-- S: Pokreće, resetira ili zaustavlja štopericu
-- R: Resetira štopericu na nulu bez ponovnog pokretanja
-- A: Izdaje proteklo vrijeme i preostalo vrijeme prije sljedećeg alarma
-- T: Otvara dijalog za zakazivanje alarma.
-- C: Otkaži sljedeći alarm
-- Razmaknica: Izgovara trenutačno stanje štoperice ili odbrojavanja vremena
-- p: Ako alarm traje predugo, može ga se zaustaviti
-- H: Popis svih višeslojnih prečaca (Pomoć)
+* S: Pokreće, ponovno postavlja ili zaustavlja štopericu
+* R: Ponovno postavlja štopericu na 0 bez njezina ponovnog pokretanja
+* A: Izgovara proteklo i preostalo vrijeme do sljedećeg alarma
+* T: Otvara dijaloški okvir za zakazivanje alarma.
+* C: Otkazuje sljedeći alarm
+* Razmaknica: Izgovara trenutačno stanje štoperice ili mjerača vremena za odbrojavanje
+* P: Ako alarm traje predugo, omogućuje njegovo zaustavljanje
+* H: Prikazuje popis svih slojevitih naredbi (Pomoć)
 
-## Configuration and usage
+## Konfiguracija i korištenje
 
-To configure clock functionality, open NvDA menu, Preferences, then
-Settings, and configure the following options from Clock panel:
+Za konfiguriranje funkcija sata otvorite izbornik NVDA, Postavke, zatim Postavke, a potom u kategoriji Sat podesite sljedeće mogućnosti:
 
-- Time and date display format: use these combo boxes to configure how NVDA
-  will announce time and date when you press NVDA+F12 once or twice quickly,
-  respectively.
-- Interval: choose the time announcement interval from this combo box (off,
-  every 10 minutes, 15 minutes, 30 minutes, or every hour).
-- Time announcement (enabled if interval is not off): choose between speech
-  and sound, sound only, or speech only.
-- Clock chime sound (enabled if interval is not off): select the clock chime
-  sound.
-- „Sati mirovanja” (uključeno ako interval nije isključen): odaberi ovaj
-  potvrdni okvir za konfiguriranje vremenskog raspona sata mirovanja u kojem
-  se automatska najava vremena ne primijenjuje.
-  - Intermediate minutes chime sound (enabled if "Separate hour and intermediate minute chimes" is checked): Select the clock chime sound specifically for intermediate minutes.
-- Quiet hours time format (enabled if quiet hours is enabled): select how
-  quiet hours options are presented (12-hour or 24-hour format).
-- Quiet hours start and end times: select hour and minute range for quiet
-  hours from hours and minutes combo boxes.
-- Quiet hours start and end times: select hour and minute range for quiet hours from hours and minutes combo boxes.
+* Format prikaza vremena i datuma: pomoću ovih kombiniranih okvira odredite kako će NVDA izgovarati vrijeme i datum kada jednom ili dvaput brzo pritisnete NVDA+F12.
+* Interval: u ovom kombiniranom okviru odaberite interval automatske najave vremena (isključeno, svakih 10 minuta, 15 minuta, 30 minuta ili svakog sata).
+* Najava vremena (omogućeno ako interval nije isključen): odaberite između govora i zvuka, samo zvuka ili samo govora.
+* Zvuk zvonjave sata (omogućeno ako interval nije isključen): odaberite zadani zvuk zvonjave sata za međuminute i puni sat.
+* Odvojeni zvukovi za puni sat i međuminute (omogućeno ako interval nije isključen, prema zadanim postavkama onemogućeno): označite ovaj potvrdni okvir kako biste zasebno prilagodili zvukove za međuminute i puni sat.
+  * Zvuk zvonjave za međuminute (omogućeno ako je označena mogućnost „Odvojeni zvukovi za puni sat i međuminute”): odaberite zvuk koji će se koristiti posebno za međuminute.
+* Tihi sati (omogućeno ako interval nije isključen): označite ovaj potvrdni okvir kako biste odredili razdoblje tijekom kojeg se automatska najava vremena neće izvršavati.
+* Format vremena za tihe sate (omogućeno ako su tihi sati uključeni): odaberite način prikaza mogućnosti tihih sati (12-satni ili 24-satni format).
+* Vrijeme početka i završetka tihih sati: u kombiniranim okvirima za sate i minute odaberite početak i završetak razdoblja tihih sati.
 
-To schedule alarms, open NVDA menu, Tools, then select Schedule Alarms. The dialog contents include:
+Za zakazivanje alarma otvorite izbornik NVDA, Alati, a zatim odaberite Zakazani alarmi. Dijaloški okvir sadrži sljedeće elemente:
 
-- Alarm duration in: select alarm/timer duration between hours, minutes, and
-  seconds.
-- Duration: enter alarm duration in the unit specified above.
-- Alarm sound: select the alarm sound to be played.
-- Gumbovi „Prekid” i „Pauza”: prekini ili pauziraj duge alarme.
+* Trajanje alarma u: odaberite trajanje alarma ili mjerača vremena u satima, minutama ili sekundama.
+* Trajanje: unesite trajanje alarma u prethodno odabranoj jedinici.
+* Zvuk alarma: odaberite zvuk koji će se reproducirati.
+* Gumbi Zaustavi i Pauza: zaustavljaju ili privremeno prekidaju dugačak zvuk alarma.
 
-Pritisni U redu i poruka će te obavijestiti o trenutačno odabranom trajanju
-alarma.
-
-[1]: https://addons.nvda-project.org/files/get.php?file=cac
-[2]: https://www.nvaccess.org/addonStore/legacy?file=clock
+Kliknite U redu, a poruka će vas obavijestiti o trenutačno odabranom trajanju alarma.

@@ -1,109 +1,65 @@
-# NVDA-Erweiterung für Uhr und Kalender
+# Uhr- und Kalender-Add-on für NVDA #
 
-- Authors: Hrvoje Katić, Abdel and NVDA contributors
-- [Stabile Version herunterladen][1]
-- Download [development version][2]
-- NVDA-Kompatibilität: 2019.3 und neuer
+* Autoren: Hrvoje Katić, Abdel und NVDA-Mitwirkende
+* NVDA-Kompatibilität: 2019.3 und höher
 
-Diese NVDA-Erweiterung aktiviert die erweiterten Funktionen für Uhr, Wecker
-und Kalender.
+Dieses Add-on aktiviert erweiterte Funktionen für Uhr, Alarm-Timer und Kalender in NVDA.
 
-Sie können NVDA so konfigurieren, dass Uhrzeit und Datum in anderen als den
-von Windows standardmäßig bereitgestellten Formaten mitgeteilt
-werden. Darüber hinaus können Sie den aktuellen Tag, die Wochennummer sowie
-die verbleibenden Tage bis zum Ende des laufenden Jahres abrufen und die
-automatische Zeitansage in bestimmten Intervallen einstellen. In die
-Erweiterung sind auch eine Stoppuhr und ein Wecker integriert, mit denen Sie
-Ihre Aufgaben wie das Kopieren von Dateien, das Installieren von Programmen
-oder das Kochen von Mahlzeiten zeitlich festlegen können.
+Sie können NVDA so konfigurieren, dass Uhrzeit und Datum in anderen Formaten als den standardmäßig von Windows bereitgestellten angesagt werden. Zusätzlich können Sie den aktuellen Tag, die Wochennummer sowie die verbleibenden Tage bis zum Jahresende abrufen und außerdem eine automatische Zeitankündigung in festgelegten Intervallen einstellen. Das Add-on enthält außerdem eine Stoppuhr- und Alarm-Timer-Funktion, mit der Sie Ihre Aufgaben zeitlich messen können, z. B. das Kopieren von Dateien, das Installieren von Programmen oder das Kochen von Mahlzeiten.
 
-Anmerkungen:
+## Hinweise:
 
-- Wenn Sie die Erweiterung als Update installieren, erkennt der Assistent
-  während des Installationsvorgangs, ob die alte Konfiguration mit der neuen
-  kompatibel ist und bietet an, die Angaben während der Installation zu
-  berichtigen, dann müssen Sie zur Bestätigung nur auf die Schaltfläche "OK"
-  klicken.
-- Unter Windows 10 und neuer können Sie die Wecker- und Uhr-App verwenden,
-  um Stoppuhr und Timer zu verwalten.
+* Wenn Sie das Add-on als Update installieren, erkennt der Installationsassistent während der Installation, ob die alte Konfiguration mit der neuen kompatibel ist, und bietet an, sie vor der Installation zu korrigieren. Danach müssen Sie nur noch die OK-Schaltfläche bestätigen.
+* Unter Windows 10 und neuer können Sie die App „Alarme und Uhr“ verwenden, um Stoppuhr und Timer zu verwalten.
 
-## Tastenbefehle
+## Tastenkombinationen
 
-- NVDA+F12: Aktuelle Uhrzeit abrufen
-- NVDA+F12 zweimal schnell drücken: Aktuelles Datum abrufen
-- NVDA+F12 dreimal schnell gedrückt: Zeigt den aktuellen Tag, die
-  Wochennummer, das aktuelle Jahr und die verbleibenden Tage bis zum
-  Jahresende an
-- NVDA+Umschalt+F12: Befehl für die Uhr eingeben
+* NVDA+F12: aktuelle Uhrzeit abrufen
+* NVDA+F12 zweimal schnell gedrückt: aktuelles Datum abrufen
+* NVDA+F12 dreimal schnell gedrückt: meldet den aktuellen Tag, die Wochennummer, das aktuelle Jahr und die verbleibenden Tage bis zum Jahresende
+* NVDA+Shift+F12: Uhr-Schicht aktivieren
 
 ## Nicht zugewiesene Befehle
 
-Die folgenden Befehle sind standardmäßig nicht zugewiesen; Wenn Sie sie
-zuweisen möchten, verwenden Sie das Dialogfeld für die Tastenbefehle, um
-benutzerdefinierte Befehle hinzuzufügen. Öffnen Sie dazu das NVDA-Menü,
-Einstellungen und dann Tastenbefehle. Erweitern Sie die Kategorie "Uhr",
-suchen Sie dann in der Liste unten nach nicht zugewiesenen Befehlen und
-wählen Sie "Hinzufügen" aus.
+Die folgenden Befehle sind standardmäßig nicht zugewiesen; wenn Sie sie zuweisen möchten, verwenden Sie den Dialog „Eingabegesten“, um benutzerdefinierte Befehle hinzuzufügen. Öffnen Sie dazu das NVDA-Menü, Einstellungen und dann Eingabegesten. Erweitern Sie die Kategorie „Uhr“, suchen Sie die unten aufgeführten nicht zugewiesenen Befehle und wählen Sie „Hinzufügen“, dann geben Sie die gewünschte Geste ein.
 
-- Verstrichene und verbleibende Zeit bis zum nächsten Alarm. Durch
-  zweimaliges schnelles Drücken diesen Tastenbefehls wird der nächste Alarm
-  abgebrochen.
-- Unterbricht den aktuellen Alarmton.
-- Dialogfeld "Geplante Alarme" anzeigen.
-- Show layered commands (keys to be pressed after NVDA+Shift+F12).
+* Verstrichene und verbleibende Zeit bis zum nächsten Alarm. ein zweimaliges schnelles Drücken dieser Geste bricht den nächsten Alarm ab.
+* Aktuell abgespielten Alarmton stoppen.
+* Dialog zur Planung von Alarmen anzeigen.
+* Geschichtete Befehle anzeigen (Tasten nach NVDA+Shift+F12).
 
-## Befehle
+## Geschichtete Befehle
 
-Um die Befehle zu verwenden, drücken Sie NVDA+Umschalt+F12 gefolgt von einer
-der folgenden Tasten:
+Um geschichtete Befehle zu verwenden, drücken Sie NVDA+Shift+F12 gefolgt von einer der folgenden Tasten:
 
-- S: Startet oder stoppt oder setzt die Stoppuhr zurück
-- R: Setzt die Stoppuhr auf 0 zurück, ohne sie neu zu starten
-- A: Gibt die verstrichene und verbleibende Zeit bis zum nächsten Alarm aus
-- T: Öffnet das Dialogfenster "Alarme planen".
-- C: Abbrechen des nächsten Alarms
-- Leertaste: Sagt die aktuelle Stoppuhr oder den Countdown-Timer an
-- p: Wenn ein Alarm anhält, kann dieser damit gestoppt werden
-- H: Alle Befehle auflisten (Hilfe)
+* S: startet, setzt zurück oder stoppt die Stoppuhr
+* R: setzt die Stoppuhr auf 0 zurück, ohne sie neu zu starten
+* A: gibt die verstrichene und verbleibende Zeit bis zum nächsten Alarm aus
+* T: öffnet den Dialog zur Alarmplanung
+* C: bricht den nächsten Alarm ab
+* Leertaste: spricht die aktuelle Stoppuhr oder den Countdown-Timer
+* P: wenn ein Alarm zu lang ist, kann er gestoppt werden
+* H: listet alle geschichteten Befehle auf (Hilfe)
 
-## Konfiguration und Nutzung
+## Konfiguration und Verwendung
 
-Um die Uhr zu konfigurieren, öffnen Sie das NVDA-Menü, Optionen, dann
-Einstellungen und konfigurieren Sie die folgenden Optionen im Bedienfeld der
-Uhr:
+Um die Uhrfunktion zu konfigurieren, öffnen Sie das NVDA-Menü, Einstellungen, dann Einstellungen, und konfigurieren Sie die folgenden Optionen im Uhr-Bereich:
 
-- Anzeigeformat für Uhrzeit und Datum: Verwenden Sie diese
-  Kombinationsfelder, um zu konfigurieren, wie NVDA Uhrzeit und Datum
-  mitteilt, wenn Sie NVDA+F12 ein- bzw. zweimal schnell drücken.
-- Intervall: Wählen Sie das Intervall für die Zeitansage aus diesem
-  Kombinationsfeld (Ausgeschaltet, Alle 10 Minuten, 15 Minuten, 30 Minuten
-  oder Stündlich).
-- Zeitansage (aktiviert, wenn Intervall nicht ausgeschaltet ist): Wählen Sie
-  zwischen "Ton und Ansage", "Nur Ton" oder "Nur Ansage" aus.
-- Clock chime sound (enabled if interval is not off): Select the default clock chime sound for  intermediate minutes and the top of the hour.
-- Ruhezeiten (aktiviert, wenn Intervall nicht deaktiviert ist): Aktivieren
-  Sie dieses Kontrollkästchen, um den Ruhezeitbereich zu konfigurieren, in
-  dem keine automatische Zeitansage erfolgen soll.
-  - Intermediate minutes chime sound (enabled if "Separate hour and intermediate minute chimes" is checked): Select the clock chime sound specifically for intermediate minutes.
-- Quiet hours (enabled if interval is not off): select this checkbox to configure quiet hours range when automatic time announcement should not occur.
-- Zeitformat für Ruhezeiten (aktiviert, wenn Ruhezeiten aktiviert sind):
-  Wählen Sie aus, wie die Optionen für Ruhezeiten dargestellt werden
-  (12-Stunden- oder 24-Stunden-Format).
-- Start- und Endzeiten für Ruhezeiten: Wählen Sie den Bereich für Stunden
-  und Minuten für die Ruhezeiten aus den Kombinationsfeldern für Stunden und
-  Minuten aus.
+* Anzeigeformat für Uhrzeit und Datum: verwenden Sie diese Kombinationsfelder, um festzulegen, wie NVDA Uhrzeit und Datum ansagt, wenn Sie NVDA+F12 einmal oder zweimal schnell drücken.
+* Intervall: wählen Sie das Zeitansageintervall in diesem Kombinationsfeld (aus, alle 10 Minuten, 15 Minuten, 30 Minuten oder jede Stunde).
+* Zeitankündigung (aktiviert, wenn Intervall nicht aus ist): wählen Sie zwischen Sprache und Ton, nur Ton oder nur Sprache.
+* Uhrenschlagton (aktiviert, wenn Intervall nicht aus ist): wählen Sie den Standard-Uhrenschlagton.
+* Getrennte Stunden- und Zwischenminuten-Schläge (aktiviert, wenn Intervall nicht aus ist, standardmäßig deaktiviert): aktivieren Sie dieses Kontrollkästchen, um die Töne für Zwischenminuten getrennt vom Stundenschlag anzupassen.
+  * Zwischenminuten-Schlagton (aktiviert, wenn „getrennte Stunden- und Zwischenminuten-Schläge“ aktiviert ist): wählen Sie den Ton für Zwischenminuten.
+* Ruhezeiten (aktiviert, wenn Intervall nicht aus ist): aktivieren Sie dieses Kontrollkästchen, um den Zeitraum für Ruhezeiten festzulegen.
+* Ruhezeiten-Zeitformat (aktiviert, wenn Ruhezeiten aktiviert sind): wählen Sie die Darstellung (12- oder 24-Stunden-Format).
+* Beginn- und Endzeiten der Ruhezeiten: wählen Sie den Stunden- und Minutenbereich für Ruhezeiten in den Kombinationsfeldern.
 
-Um Alarme zu planen, öffnen Sie das NVDA-Menü, Werkzeuge, und wählen Sie
-dann den eintrag "Alarme planen" aus. Die Dialogfelder umfassen:
+Um Alarme zu planen, öffnen Sie das NVDA-Menü, Werkzeuge, und wählen Sie „Alarme planen“. Der Dialog enthält:
 
-- Alarmdauer in: Wählen Sie die Alarm-/Weckdauer zwischen Stunden, Minuten
-  und Sekunden.
-- Dauer: Geben Sie die Alarmdauer in der oben angegebenen Einheit ein.
-- Alarmton: Wählen Sie den abzuspielenden Alarmton aus.
-- Stopp und Pause: Stoppen oder pausieren Sie einen anhaltenden Alarmton.
+* Alarmdauer in: wählen Sie die Dauer des Alarms/Timers in Stunden, Minuten und Sekunden.
+* Dauer: geben Sie die Alarmdauer in der oben angegebenen Einheit ein.
+* Alarmton: wählen Sie den abzuspielenden Alarmton.
+* Stop- und Pause-Schaltflächen: stoppen oder pausieren eines langen Alarmtons.
 
-Klicken Sie auf "OK" und eine Meldung informiert Sie über die aktuell
-ausgewählte Alarmdauer.
-
-[1]: https://www.nvaccess.org/addonStore/legacy?file=clock
-[2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
+Klicken Sie auf OK, und eine Meldung informiert Sie über die aktuell ausgewählte Alarmdauer.

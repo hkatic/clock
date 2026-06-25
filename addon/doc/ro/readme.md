@@ -1,97 +1,65 @@
-# Suplimentul Clock and calendar pentru NVDA #
+# Suplimentul Ceas și calendar pentru NVDA #
 
-* Autori: Hrvoje Katić, Abdel și contribuitorii NVDA;
-* Descarcă [versiunea stabilă][1];
-* Descarcă [versiunea în dezvoltare][2].
+* Autori: Hrvoje Katić, Abdel și colaboratori NVDA
+* Compatibilitate NVDA: 2019.3 și versiuni ulterioare
 
+Acest supliment activează funcționalitățile avansate de ceas, cronometru de alarmă și calendar pentru NVDA.
 
-Acest supliment activează ceasul avansat, alarma și calendarul pentru NVDA.
+Puteți configura NVDA să anunțe ora și data în formate diferite de cele furnizate implicit de Windows. În plus, puteți obține ziua curentă, numărul săptămânii, precum și numărul de zile rămase până la sfârșitul anului curent, și puteți seta anunțarea automată a orei la intervale specificate. Suplimentul include și funcții de cronometru și alarmă care vă permit să cronometrați sarcinile dvs., cum ar fi copierea fișierelor, instalarea programelor sau gătitul.
 
-În loc să obțineți mereu data și ora de la Windows, puteți personaliza cum
-să fie spuse sau afișate în braille de NVDA.
+## Note:
 
-În plus, puteți obține ziua curentă, numărul săptămânii, dar și câte zile au
-mai rămas până la sfârșitul anului curent. Puteți să setați anunțarea
-automată a orei într-un interval specificat.
+* dacă instalați suplimentul ca actualizare, în timpul procesului de instalare, asistentul detectează dacă configurația veche este compatibilă cu cea nouă și oferă corectarea acesteia înainte de instalare, apoi trebuie doar să confirmați butonul OK.
+* În Windows 10 și versiunile ulterioare, puteți utiliza aplicația Alarme și Ceas pentru a gestiona cronometrele și alarmele.
 
-De asemenea, sunt implementate în supliment caracteristicile cronometru și
-alarmă, cu ajutorul cărora vă puteți programa activități precum copierea de
-fișiere, instalarea de programe sau, de ce nu, luarea micului dejun, a
-prânzului, a cinei, sau chiar a unei mici gustări.
+## Comenzi rapide
 
-## Notă:
+* NVDA+F12: obține ora curentă
+* NVDA+F12 apăsat de două ori rapid: obține data curentă
+* NVDA+F12 apăsat de trei ori rapid: raportează ziua curentă, numărul săptămânii, anul curent și zilele rămase până la sfârșitul anului
+* NVDA+Shift+F12: intrare în stratul ceasului
 
-Dacă instalați suplimentul ca actualizare, în timpul procesului de
-instalare, vrăjitorul vede dacă configurația veche este compatibilă sau nu
-cu cea nouă și se oferă să o corecteze înainte de instalare, apoi
-dumneavoastră trebuie doar să apăsați butonul OK ca să confirmați această
-acțiune.
+## Comenzi neatribuite
 
-## Folosire
+Următoarele comenzi nu sunt atribuite implicit; dacă doriți să le atribuiți, utilizați dialogul Gesturi de intrare pentru a adăuga comenzi personalizate. Pentru aceasta, deschideți meniul NVDA, Preferințe, apoi Gesturi de intrare. Extindeți categoria Ceas, apoi găsiți comenzile neatribuite din listă și selectați „Adăugare”, apoi introduceți gestul dorit.
 
-*	Open the configuration dialog for this addon from the NVDA tools menu or from the settings panel According to your version of NVDA;
-	*	In the Clock setup dialog, the first two Combo Box controls allow you to choose your prefered time and date display formats;
-	*	The Combo Box control labeled "Interval" allows you to set the interval for automatic time announcement (Every 10 minutes, Every 15 minutes, Every 30 minutes, Every hour, or Off);
-	*	The Combo Box control labeled "Time announcement" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure how the automatic time announcement should be reported (Speech and sound, Speech only, or Sound only) when automatic time announcement is working;
-	*	The Combo box control labeled "Clock chime sound" (only visible if the choice "off" is not selected in the interval Combo Box) lets you choose between various clock sounds that will be played when automatic time announcement is working and reported with sound;
-	*	The Checkbox control labeled "Quiet hours" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure time range when automatic time announcement shouldn't occure;
-	*	The Checkbox control labeled "input in 24-hour format" (only visible if quiet hours are enabled) allows you to configure wether you want to input time for quiet hours in 12-hour (A.M. or P.M.), or european 24-hour format;
-	*	The Edit box controls for start and end time (only visible if quiet hours are enabled) let you configure time range for quiet hours. The time should be entered in HH:MM format if the "input in 24-hour format" checkbox is checked, otherwise you must use a 12 hour format as described below;
-	*	When done, tab to the OK button and activate it by pressing Enter to save your settings;
-	*	In the Alarm setup dialog, the first Combo Box control allow you to choose your prefered countdown timer before the alarm ring;
-	*	The Edit box control lets you type your time waiting before the alarm ring. This duration must be specified in 1 or more digits, not a decimal number;
-	*	The Combo box control labeled "Alarm sound" lets you choose between various alarm sounds that will be played when the alarm time arrives;
-	*	The pause button allows you to pause/resume too long alarms;
-	*	The stop button allows you to stop too long alarms;
-	*	When done, tab to the OK button and activate it by pressing Enter. A message should be displayed to remind you of the waiting time before the alarm;
-*	Press NVDA+F12 once to get current time, twice to get current date, or thrice to get the current day, week number, as well as the remaining days before the end of the current year.
-
-## Comenzi de tastatură
-
-- NVDA+F12, spune ora curentă; - NVDA+F12 apăsat de două ori rapid, spune
-data curentă; - NVDA+F12 apăsat rapid de trei ori, spune ziua curentă,
-numărul sătpămânii dinn an și câte zile mai sunt până la sfârșitul anului.
-
-- There is a script that gives the remaining and elapsed time before the
-next alarm; - There is no keyboard gesture assigned to this script, you will
-have to do it yourself in the "Input gestures" dialog box, in the "Clock"
-category; - This gesture pressed twice quickly, cancel the next alarm; -
-There is another script to stop the sound that is currently playing, its
-gesture is also not defined; - That script can also be called using the
-clock layer commands described below.
+* Timpul scurs și rămas până la următoarea alarmă. apăsarea de două ori rapid a acestui gest va anula următoarea alarmă.
+* Oprește sunetul alarmei aflate în redare.
+* Afișează dialogul pentru programarea alarmelor.
+* Afișează comenzile stratificate (tastele după NVDA+Shift+F12).
 
 ## Comenzi stratificate
 
-Pentru a folosi comenzile stratificate, apăsați NVDA+Shift+F12 urmat de una
-din următoarele taste:
+Pentru a utiliza comenzile stratificate, apăsați NVDA+Shift+F12 urmat de una dintre tastele:
 
-- S: Starts, resets or stops the stopwatch; - R: Resets stopwatch to 0
-without restarting it; - A: gives the remaining and elapsed time before the
-next alarm; - C: Cancel the next alarm; - Space: Speaks current stopwatch or
-count-down timer; - p: If an alarm is too long, allows to stop it; - H: List
-all layered commands (Help).
+* S: pornește, resetează sau oprește cronometrul
+* R: resetează cronometrul la 0 fără repornire
+* A: afișează timpul scurs și timpul rămas până la următoarea alarmă
+* T: deschide dialogul de programare a alarmelor
+* C: anulează următoarea alarmă
+* Spațiu: anunță cronometrul curent sau numărătoarea inversă
+* P: oprește o alarmă prea lungă
+* H: listează toate comenzile stratificate (Ajutor)
 
-## Syntax to use for quiet hours
+## Configurare și utilizare
 
-- To avoid bugs, the quiet hours must follow a rigorous and precise syntax;
-- If you check the "Input in 24-hour format" checkbox, the format must be
-"HH:MM"; - If you uncheck the "Input in 24-hour format" checkbox, the format
-must be "HH:MM AM" or "HH:MM PM", the HH must contain a 12-hour format, from
-0 to 12 and the "AM"|"PM" suffix can be in lowercase or uppercase - If you
-check the Quiet hours" checkbox and keep the "Quiet hours start time" or
-"Quiet hours end time" field empty, or type a mistaken value, the "Quiet
-hours" checkbox will be unchecked automatically, to avoid errors; - A
-message should be displayed to report your error.
+Pentru a configura funcționalitatea ceasului, deschideți meniul NVDA, Preferințe, apoi Setări și configurați următoarele opțiuni din panoul Ceas:
 
-## Compatibilitate
+* Format de afișare a orei și datei: utilizați aceste casete combinate pentru a configura modul în care NVDA va anunța ora și data la apăsarea NVDA+F12 o dată sau de două ori rapid.
+* Interval: alegeți intervalul de anunțare a orei (dezactivat, la fiecare 10 minute, 15 minute, 30 minute sau la fiecare oră).
+* Anunțarea orei (activat dacă intervalul nu este dezactivat): alegeți între vorbire și sunet, doar sunet sau doar vorbire.
+* Sunetul clopoțelului ceasului (activat dacă intervalul nu este dezactivat): selectați sunetul implicit al ceasului.
+* Clopote separate pentru ore și minute intermediare (activat dacă intervalul nu este dezactivat, implicit dezactivat): activați această casetă pentru a personaliza sunetele pentru minutele intermediare separat de sunetul orei.
+  * Sunet pentru minute intermediare (activat dacă „clopote separate pentru ore și minute intermediare” este bifat): selectați sunetul pentru minutele intermediare.
+* Ore liniștite (activat dacă intervalul nu este dezactivat): bifați această casetă pentru a configura intervalul de ore liniștite.
+* Formatul orelor liniștite (activat dacă orele liniștite sunt activate): selectați modul de afișare (format 12 ore sau 24 ore).
+* Ora de început și sfârșit a orelor liniștite: selectați intervalul de ore și minute pentru orele liniștite din casetele combinate.
 
-- Acest supliment este compatibil cu versiunile de NVDA pornind de la
-versiunea 2014.3 până la versiunea 2019.1.
+Pentru a programa alarme, deschideți meniul NVDA, Instrumente, apoi selectați „Programare alarme”. Conținutul dialogului include:
 
+* Durata alarmei: selectați durata alarmei/cronometru în ore, minute și secunde.
+* Durată: introduceți durata alarmei în unitatea specificată mai sus.
+* Sunet alarmă: selectați sunetul alarmei.
+* Butoane oprire și pauză: opriți sau întrerupeți o alarmă lungă.
 
-[[!tag dev stable]]
-
-[1]: https://addons.nvda-project.org/files/get.php?file=cac
-
-[2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
-
+Apăsați OK, iar un mesaj va informa despre durata alarmei selectate.

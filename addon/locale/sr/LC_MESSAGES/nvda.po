@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: nvdaaddons\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2026-05-22 18:58+0000\n"
-"PO-Revision-Date: 2026-06-15 00:46\n"
+"PO-Revision-Date: 2026-06-22 00:29\n"
 "Last-Translator: \n"
 "Language-Team: Serbian (Latin)\n"
 "Language: sr_CS\n"
@@ -20,12 +20,12 @@ msgstr ""
 #. Translators: the label of a message box dialog.
 #: addon\installTasks.py:32
 msgid "The date and time format you were using are not compatible with this version of the Clock add-on, this will be fixed during installation. Click OK to confirm these corrections"
-msgstr "Format vremena i datuma koji ste koristili u prethodnoj verziji dodatka sat nije kompatibilan sa ovom verzijom, ovo će biti ispravljeno u toku instalacije"
+msgstr "Format datuma i vremena koji ste koristili nije kompatibilan sa ovom verzijom dodatka Sat, ovo će biti ispravljeno tokom instalacije. Kliknite OK da potvrdite ove izmene"
 
 #. Translators: the title of a message box dialog.
 #: addon\installTasks.py:36
 msgid "Time and date format corrections"
-msgstr "Popravljanje formata datuma i vremena"
+msgstr "Ispravke formata vremena i datuma"
 
 #. Translators: This is the label for the clock settings panel.
 #. Translators: Script category for Clock addon commands in input gestures dialog.
@@ -40,12 +40,12 @@ msgstr "Sat"
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:32
 msgid "&Time display format:"
-msgstr "Format prikazivanja &vremena:"
+msgstr "&Format prikaza vremena:"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:35
 msgid "&Date display format:"
-msgstr "Format prikazivanja &datuma:"
+msgstr "&Format prikaza datuma:"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:39
@@ -55,27 +55,27 @@ msgstr "isključeno"
 #. Translators: This is a choice of the auto announce choices combo box.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:41
 msgid "every 5 minutes"
-msgstr ""
+msgstr "svakih 5 minuta"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:43
 msgid "every 10 minutes"
-msgstr "na svakih 10 minuta"
+msgstr "svakih 10 minuta"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:45
 msgid "every 15 minutes"
-msgstr "na svakih 15 minuta"
+msgstr "svakih 15 minuta"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:47
 msgid "every 30 minutes"
-msgstr "na svaka 30 minuta"
+msgstr "svakih 30 minuta"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:49
 msgid "every hour"
-msgstr "svakog časa"
+msgstr "svakog sata"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:53
@@ -100,64 +100,64 @@ msgstr "samo zvuk"
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:65
 msgid "Time &announcement:"
-msgstr "&Izgovor vremena:"
+msgstr "Najava &vremena:"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:68
 msgid "Clock chime &sound:"
-msgstr "&Zvuk zvona sata:"
+msgstr "Zvuk otkucaja sata:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:71
 msgid "&Separate hour and intermediate minute chimes"
-msgstr ""
+msgstr "&Odvojeni zvuci punog sata i međuminutnih otkucaja"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:74
 msgid "Intermediate minutes chime &sound:"
-msgstr ""
+msgstr "Zvuk međuminutnih otkucaja:"
 
 #. Translators: This is the label for a checkbox in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:77
 msgid "&Quiet hours"
-msgstr "&Tihi časovi"
+msgstr "&Tihi sati"
 
 #. Translators: This is a choice of the quiet hours time format choices.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:81
 msgid "12-hour format"
-msgstr "12 - časovni format"
+msgstr "12-časovni format"
 
 #. Translators: This is a choice of the quiet hours time format choices.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:83
 msgid "24-hour format"
-msgstr "24 - časovni format"
+msgstr "24-časovni format"
 
 #. Translators: This is the label for a combo box in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:87
 msgid "Quiet hours time &format:"
-msgstr "&Format i vreme za tihe časove:"
+msgstr "Format vremena tihih sati:"
 
 #. Translators: This is the label for an group in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:96
 msgid "Quiet hours start time"
-msgstr "Vreme početka tihih časova"
+msgstr "Početak tihih sati"
 
 #. Translators: This is the label for an group in the Clock settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:99
 msgid "Quiet hours end time"
-msgstr "Vreme kraja tihih časova"
+msgstr "Kraj tihih sati"
 
 #: addon\globalPlugins\clock\clockSettingsGUI.py:120
 #: addon\globalPlugins\clock\clockSettingsGUI.py:128
 #: addon\globalPlugins\clock\clockSettingsGUI.py:384
 msgid "Add custom sound"
-msgstr ""
+msgstr "Dodaj prilagođeni zvuk"
 
 #. Translators: the hour label in quiet hours group.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:147
 #: addon\globalPlugins\clock\clockSettingsGUI.py:159
 msgid "Hour:"
-msgstr "Čas:"
+msgstr "Sat:"
 
 #. Translators: the minute label in quiet hours group.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:151
@@ -167,17 +167,17 @@ msgstr "Minut:"
 
 #: addon\globalPlugins\clock\clockSettingsGUI.py:198
 msgid "Choose a custom sound file"
-msgstr ""
+msgstr "Izaberi prilagođenu zvučnu datoteku"
 
 #. Translators: This is the label for the alarm settings panel.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:340
 msgid "Schedule alarms"
-msgstr "Podešavanje alarma"
+msgstr "Zakazivanje alarma"
 
 #. Translators: This is an item of the alarm duration choices.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:346
 msgid "hours"
-msgstr "časovi"
+msgstr "sati"
 
 #. Translators: This is an item of the alarm duration choices.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:348
@@ -192,7 +192,7 @@ msgstr "sekunde"
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:354
 msgid "&Alarm duration in:"
-msgstr "Trajanje &alarma kao:"
+msgstr "&Trajanje alarma u:"
 
 #. Translators: This is the label for an edit field in the Alarm settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:357
@@ -202,7 +202,7 @@ msgstr "&Trajanje:"
 #. Translators: This is the label for a combo box in the Alarm settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:360
 msgid "A&larm sound:"
-msgstr "zvuk &Alarma:"
+msgstr "Zvuk a&larma:"
 
 #. Translators: This is the label for a button in the Alarm settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:363
@@ -212,17 +212,17 @@ msgstr "&Zaustavi"
 #. Translators: This is the label for a button in the Alarm settings dialog.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:366
 msgid "&Pause"
-msgstr "&Pauziraj"
+msgstr "&Pauza"
 
 #: addon\globalPlugins\clock\clockSettingsGUI.py:413
 msgid "Choose a custom alarm sound file"
-msgstr ""
+msgstr "Izaberi prilagođenu zvučnu datoteku za alarm"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:455
 #, python-brace-format
 msgid "You've chosen an alarm to be triggered in {tm} {unit}"
-msgstr "Izabrali ste da alarm bude aktiviran za {tm} {unit}"
+msgstr "Izabrali ste alarm koji će se aktivirati za {tm} {unit}"
 
 #. Translators: The title of the dialog which appears when the user has chosen to trigger an alarm.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:458
@@ -233,31 +233,31 @@ msgstr "Potvrda"
 #: addon\globalPlugins\clock\formats.py:75
 #, python-brace-format
 msgid "It's {hours} o'clock and {minutes} minutes"
-msgstr "Tačno je {hours} časova i {minutes} minuta"
+msgstr "Sada je {hours} sati i {minutes} minuta"
 
 #. Translators: A time formating (should be different from other time formattings)
 #: addon\globalPlugins\clock\formats.py:77
 #, python-brace-format
 msgid "It's {hours} o'clock, {minutes} minutes and {seconds} seconds"
-msgstr "Tačno je {hours} časova, {minutes} minuta i {seconds} sekunde"
+msgstr "Sada je {hours} sati, {minutes} minuta i {seconds} sekundi"
 
 #. Translators: A time formating (should be different from other time formattings)
 #: addon\globalPlugins\clock\formats.py:81
 #, python-brace-format
 msgid "{hours} o'clock, {minutes} minutes"
-msgstr "{hours} časova, {minutes} minuta"
+msgstr "{hours} sati, {minutes} minuta"
 
 #. Translators: A time formating (should be different from other time formattings)
 #: addon\globalPlugins\clock\formats.py:83
 #, python-brace-format
 msgid "{hours} o'clock, {minutes} minutes, {seconds} seconds"
-msgstr "{hours} časova, {minutes} minuta, {seconds} sekunde"
+msgstr "{hours} sati, {minutes} minuta, {seconds} sekundi"
 
 #. Translators: A time formating (should be different from other time formattings)
 #: addon\globalPlugins\clock\formats.py:87
 #, python-brace-format
 msgid "It's {minutes} past {hours}"
-msgstr "Prošlo je {minutes} od {hours}"
+msgstr "Prošlo je {minutes} minuta posle {hours} sati"
 
 #. Translators: A time formating (should be different from other time formattings)
 #: addon\globalPlugins\clock\formats.py:89
@@ -275,13 +275,13 @@ msgstr "{hours} h, {minutes} min, {seconds} sec"
 #: addon\globalPlugins\clock\formats.py:93
 #, python-brace-format
 msgid "It's {hours}:{minutes}"
-msgstr "Tačno je {hours}:{minutes}"
+msgstr "Sada je {hours}:{minutes}"
 
 #. Translators: A time formating (should be different from other time formattings)
 #: addon\globalPlugins\clock\formats.py:95
 #, python-brace-format
 msgid "It's {hours}:{minutes}:{seconds}"
-msgstr "Tačno je {hours}:{minutes}:{seconds}"
+msgstr "Sada je {hours}:{minutes}:{seconds}"
 
 #. Translators: A way to display 24-hour formats in the time display formats list in the settings panel.
 #: addon\globalPlugins\clock\formats.py:112
@@ -298,12 +298,12 @@ msgstr "{fmt} (12-časovni format)"
 #. Translators: This is a choice in a list of sounds.
 #: addon\globalPlugins\clock\paths.py:33
 msgid "Custom"
-msgstr ""
+msgstr "Prilagođeno"
 
 #: addon\globalPlugins\clock\__init__.py:74
 #, python-brace-format
 msgid "{hours} hours, "
-msgstr "{hours} časova, "
+msgstr "{hours} sati, "
 
 #: addon\globalPlugins\clock\__init__.py:76
 #, python-brace-format
@@ -317,32 +317,32 @@ msgstr "{seconds} sekundi"
 
 #: addon\globalPlugins\clock\__init__.py:79
 msgid "0 seconds"
-msgstr "0 sekunde"
+msgstr "0 sekundi"
 
 #. Translators: The name of the alarm item in NVDA Tools menu.
 #: addon\globalPlugins\clock\__init__.py:187
 msgid "Schedule a&larms..."
-msgstr "Podešavanje a&larma..."
+msgstr "Zakaži a&larme..."
 
 #. Translators: The tooltyp text for the alarm item in NVDA Tools menu.
 #: addon\globalPlugins\clock\__init__.py:189
 msgid "Allows you to schedule an alarm"
-msgstr "Dozvoljavaju vam da podesite alarm"
+msgstr "Omogućava zakazivanje alarma"
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:252
 msgid "Speaks current time. If pressed twice quickly, speaks current date. If pressed three times quickly, reports the current day, the week number, the current year and the days remaining before the end of the year."
-msgstr "Izgovara trenutno vreme. Ako se pritisne dva puta brzo, izgovara trenutni datum. Ako se pritisne 3 puta brzo, prijavljuje trenutni dan, broj nedelje, trenutnu godinu i broj dana do kraja godine."
+msgstr "Izgovara trenutno vreme. Ako se pritisne dvaput brzo, izgovara trenutni datum. Ako se pritisne tri puta brzo, izveštava o trenutnom danu, broju nedelje, trenutnoj godini i preostalim danima do kraja godine."
 
 #: addon\globalPlugins\clock\__init__.py:277
 #, python-brace-format
 msgid "Day {day}, week {week} of {year}, remaining days {remain}."
-msgstr "Dan{day}, nedelja{week} {year} godine, preostalo {remain} dana."
+msgstr "Dan {day}, nedelja {week} od {year}, preostali dani {remain}."
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:320
 msgid "Clock and calendar layer commands. After pressing this keystroke, press H for additional help."
-msgstr "Komande za prečicu sada i kalendara. Nakon što pritisnete ovu prečicu, pritisnite h za dodatnu pomoć."
+msgstr "Komande sloja sata i kalendara. Nakon pritiska ove prečice, pritisnite H za dodatnu pomoć."
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:339
@@ -351,26 +351,26 @@ msgstr "Pokreće, resetuje ili zaustavlja štopericu."
 
 #: addon\globalPlugins\clock\__init__.py:348
 msgid "Reset. Running."
-msgstr "Resetovanje. Pokrenuto."
+msgstr "Resetovano. Pokrenuto."
 
 #: addon\globalPlugins\clock\__init__.py:351
 msgid "Running."
-msgstr "Pokrenuto."
+msgstr "Radi."
 
 #: addon\globalPlugins\clock\__init__.py:354
 #, python-brace-format
 msgid "{0} stopped."
-msgstr "{0} zaustavljen."
+msgstr "{0} zaustavljeno."
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:359
 msgid "Speaks current stopwatch or count-down timer."
-msgstr "Izgovara trenutno vreme štoperice ili odbrojavanja."
+msgstr "Izgovara trenutno stanje štoperice ili odbrojavanja."
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:370
 msgid "Gives the remaining and elapsed time before the next alarm."
-msgstr "Prikazuje proteklo i preostalo vreme do sledećeg alarma."
+msgstr "Prikazuje preostalo i proteklo vreme do sledećeg alarma."
 
 #: addon\globalPlugins\clock\__init__.py:380
 #: addon\globalPlugins\clock\__init__.py:459
@@ -387,7 +387,7 @@ msgstr "Nema alarma"
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:389
 msgid "Cancel the next alarm."
-msgstr "Otkazuje sledeći alarm."
+msgstr "Otkaži sledeći alarm."
 
 #: addon\globalPlugins\clock\__init__.py:397
 #: addon\globalPlugins\clock\__init__.py:456
@@ -397,39 +397,39 @@ msgstr "Alarm otkazan"
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:405
 msgid "Resets stopwatch to 0 without restarting it."
-msgstr "Vraća štopericu na 0 bez ponovnog pokretanja."
+msgstr "Resetuje štopericu na 0 bez ponovnog pokretanja."
 
 #: addon\globalPlugins\clock\__init__.py:413
 msgid "The stopwatch is already reset to 0. Use the clock layer command followed by s to start it."
-msgstr "Štoperica je već vraćena na 0. Koristite prečicu sata i kalendara a zatim slovo s da je pokrenete."
+msgstr "Štoperica je već resetovana na 0. Koristite komandu sloja sata, a zatim s da biste je pokrenuli."
 
 #: addon\globalPlugins\clock\__init__.py:417
 msgid "Stopwatch reset."
-msgstr "Resetovanje štoperice."
+msgstr "Štoperica resetovana."
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:422
 msgid "Lists available commands in clock command layer."
-msgstr "Prikazuje dostupne prečice komande sata i kalendara."
+msgstr "Prikazuje dostupne komande u sloju komandi sata."
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:433
 msgid "Lists available commands in clock command layer, showing them in browse mode."
-msgstr ""
+msgstr "Prikazuje dostupne komande u sloju komandi sata u režimu pregledanja."
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:445
 msgid "Allows to check the next alarm. If pressed twice, cancels it."
-msgstr "Dozvoljava proveru sledećeg alarma. Ako se pritisne 2 puta, otkazuje ga."
+msgstr "Omogućava proveru sledećeg alarma. Ako se pritisne dvaput, otkazuje ga."
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:468
 msgid "If an alarm is too long, allows to stop it."
-msgstr "Ako je alarm predug, dozvoljava njegovo zaustavljanje."
+msgstr "Ako je alarm predug, omogućava njegovo zaustavljanje."
 
 #: addon\globalPlugins\clock\__init__.py:474
 msgid "No sound is launched."
-msgstr "Nijedan zvuk nije pokrenut."
+msgstr "Nema pokrenutog zvuka."
 
 #: addon\globalPlugins\clock\__init__.py:477
 msgid "Sound stopped"
@@ -438,17 +438,17 @@ msgstr "Zvuk zaustavljen"
 #. Translators: error message when attempting to open more than one alarm settings dialogs.
 #: addon\globalPlugins\clock\__init__.py:491
 msgid "Schedule alarms dialog is already open."
-msgstr "Dijalog za podešavanje alarma je već otvoren."
+msgstr "Dijalog za zakazivanje alarma je već otvoren."
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:497
 msgid "Display the clock settings dialog box."
-msgstr "Prikazuje dijalog podešavanja sata."
+msgstr "Prikaži dijalog podešavanja sata."
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:508
 msgid "Display schedule alarms dialog box."
-msgstr "Prikazuje dijalog podešavanja alarma."
+msgstr "Prikaži dijalog za zakazivanje alarma."
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-on store
@@ -465,5 +465,6 @@ msgstr ""
 #: buildVars.py:33
 msgid "Changes for 20260520.0.2\n"
 "Fixed translations for the addon."
-msgstr ""
+msgstr "Izmene za 20260520.0.2\n"
+"Ispravljeni prevodi za dodatak."
 

@@ -1,8 +1,6 @@
 # NVDA 时钟和日历插件 #
 
 * 作者：Hrvoje Katić, Abdel and NVDA contributors
-* 下载 [稳定版][1]
-* 下载 [开发版][2]
 * NVDA 兼容性：2019.3 及更高版本
 
 此插件为 NVDA 启用了高级时钟、闹钟和日历功能。
@@ -65,7 +63,3 @@
 * 停止和暂停按钮：停止或暂停较长的铃声预览。
 
 点击“确认”，随后会显示一个对话框告诉您提醒开始的时间。
-
-[1]: https://addons.nvda-project.org/files/get.php?file=cac
-
-[2]: https://addons.nvda-project.org/files/get.php?file=cac-dev

@@ -1,89 +1,65 @@
-# Rozšírené hodiny a kalendár #
+# Doplnok Hodiny a kalendár pre NVDA #
 
-* Authors: Hrvoje Katić, Abdel and NVDA contributors
-* Download [stable version][1]
-* Download [development version][2]
-* NVDA compatibility: 2019.3 and beyond
+* Autori: Hrvoje Katić, Abdel a prispievatelia NVDA
+* Kompatibilita s NVDA: 2019.3 a novšie
 
-This add-on enables the advanced clock, alarm timer and calendar
-functionality for NVDA.
+Tento doplnok umožňuje pokročilé funkcie hodín, budíka, časovača a kalendára pre NVDA.
 
-Môžete nastaviť spôsob oznamovania času hlasovým výstupom a na braillovskom
-riadku.
+Môžete nastaviť NVDA tak, aby oznamoval čas a dátum v iných formátoch, než aké štandardne poskytuje Windows. Navyše môžete získať aktuálny deň, číslo týždňa, ako aj zostávajúce dni do konca aktuálneho roka a tiež nastaviť automatické oznamovanie času v zadaných intervaloch. V doplnku je tiež stopky a funkcia budíka, ktoré umožňujú merať čas vašich úloh, ako je kopírovanie súborov, inštalácia programov alebo varenie jedál.
 
-Doplnok dokáže oznamovať počet dní do konca roka, číslo týždňa a automaticky
-oznamovať čas.
+## Poznámky:
 
-There's also a stopwatch and Alarm timer features built-in to the add-on
-that lets you time your tasks, such as copying files, installing programs,
-or cooking meals.
-
-## Poznámka:
-
-Doplnok automaticky rozpozná staršiu verziu a na túto skutočnosť
-upozorní. Správu len stačí potvrdiť.
-
-## Použitie
-
-*	Open the configuration dialog for this add-on from NVDA Settings dialog.
-	*	In the Clock setup panel, the first two Combo Box controls allow you to choose your prefered time and date display formats.
-	*	The Combo Box control labeled "Interval" allows you to set the interval for automatic time announcement (Every 10 minutes, Every 15 minutes, Every 30 minutes, Every hour, or Off).
-	*	The Combo Box control labeled "Time announcement" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure how the automatic time announcement should be reported (Speech and sound, Speech only, or Sound only) when automatic time announcement is working.
-	*	The Combo box control labeled "Clock chime sound" (only visible if the choice "off" is not selected in the interval Combo Box) lets you choose between various clock sounds that will be played when automatic time announcement is working and reported with sound.
-	*	The Checkbox control labeled "Quiet hours" (only visible if the choice "off" is not selected in the interval Combo Box) lets you configure time range when automatic time announcement shouldn't occur.
-	*	The Checkbox control labeled "input in 24-hour format" (only visible if quiet hours are enabled) allows you to configure whether you want to input time for quiet hours in 12-hour (A.M. or P.M.), or european 24-hour format.
-	*	The Edit box controls for start and end time (only visible if quiet hours are enabled) let you configure time range for quiet hours. The time should be entered in HH:MM format if the "input in 24-hour format" checkbox is checked, otherwise you must use a 12 hour format as described below.
-	*	When done, tab to the OK button and activate it by pressing Enter to save your settings.
-	*	In the Alarm setup dialog, the first Combo Box control allow you to choose your prefered countdown timer before the alarm ring.
-	*	The Edit box control lets you type your time waiting before the alarm ring. This duration must be specified in 1 or more digits, not a decimal number.
-	*	The Combo box control labeled "Alarm sound" lets you choose between various alarm sounds that will be played when the alarm time arrives.
-	*	The pause button allows you to pause/resume too long alarms.
-	*	The stop button allows you to stop too long alarms.
-	*	When done, tab to the OK button and activate it by pressing Enter. A message should be displayed to remind you of the waiting time before the alarm.
-*	Press NVDA+F12 once to get current time, twice to get current date, or three times to get the current day, week number, as well as the remaining days before the end of the current year.
+* ak nainštalujete doplnok ako aktualizáciu, počas inštalácie sprievodca zistí, či je stará konfigurácia kompatibilná s novou a ponúkne jej opravu pred inštaláciou, potom stačí potvrdiť tlačidlo OK.
+* V systéme Windows 10 a novších môžete použiť aplikáciu Budíky a hodiny na správu stopiek a časovačov.
 
 ## Klávesové skratky
 
-* NVDA+F12: get current time
-* NVDA+F12 pressed twice quickly: get current date
-* NVDA+F12 pressed three times quickly: reports the current day, the week
-  number, the current year and the remaining days before the end of the
-  year.
-* There is a script that gives the remaining and elapsed time before the
-  next alarm. There is no keyboard gesture assigned to this script, you will
-  have to do it yourself in the "Input gestures" dialog box, in the "Clock"
-  category. pressing this gesture twice quickly will cancel the next alarm.
-* There is another script to stop the sound that is currently playing, its
-  gesture is also not defined. That script can also be called using the
-  clock layer commands described below.
+* NVDA+F12: získa aktuálny čas
+* NVDA+F12 stlačené dvakrát rýchlo: získa aktuálny dátum
+* NVDA+F12 stlačené trikrát rýchlo: hlási aktuálny deň, číslo týždňa, aktuálny rok a zostávajúce dni do konca roka
+* NVDA+Shift+F12: vstup do vrstvy hodín
 
-## Zložené Klávesové skratky
+## Nepriradené príkazy
 
-Zložené príkazy pozostávajú zo skratky nvda+shift+F12 nasledovanej písmnom:
+Nasledujúce príkazy nie sú predvolene priradené; ak ich chcete priradiť, použite dialóg „Gestá vstupu“ na pridanie vlastných príkazov. Na to otvorte ponuku NVDA, Nastavenia, potom Gestá vstupu. Rozbaľte kategóriu Hodiny, vyhľadajte nepriradené príkazy zo zoznamu nižšie a zvoľte „Pridať“, potom zadajte gesto, ktoré chcete použiť.
 
-* S: Spusti, vynuluj alebo zastav stopky;
-* R: Vynuluj a zastav stopky;
-* A: Oznámi uplynutý a zostávajúci čas minutníka;
-* C: Prerušiť odpočítavanie minutníka;
-* Medzera: Povedz čas stopiek alebo minutníka;
-* P: Zruš odpočítavanie minutníka;
-* H: Oznám dostupné zložené príkazy.
+* Uplynutý a zostávajúci čas pred ďalším budíkom. dvojité rýchle stlačenie tohto gesta zruší ďalší budík.
+* Zastaviť aktuálne prehrávaný zvuk budíka.
+* Zobraziť dialóg plánovania budíkov.
+* Zobraziť vrstvené príkazy (klávesy po NVDA+Shift+F12).
 
-## Spôsob zadávania času tichých hodín
+## Vrstvené príkazy
 
-* To avoid bugs, the quiet hours must follow a rigorous and precise syntax.
-* If you check the "Input in 24-hour format" checkbox, the format must be
-  "HH:MM".
-* If you uncheck the "Input in 24-hour format" checkbox, the format must be
-  "HH:MM AM" or "HH:MM PM", the HH must contain a 12-hour format, from 0 to
-  12 and the "AM"|"PM" suffix can be in lowercase or uppercase.
-* If you check the Quiet hours" checkbox and keep the "Quiet hours start
-  time" or "Quiet hours end time" field empty, or type a mistaken value, the
-  "Quiet hours" checkbox will be unchecked automatically to avoid errorss
-  and a message will be displayed.
+Na používanie vrstvených príkazov stlačte NVDA+Shift+F12 a potom jednu z nasledujúcich kláves:
 
-[[!tag dev stable]]
+* S: spúšťa, resetuje alebo zastavuje stopky
+* R: resetuje stopky na 0 bez reštartu
+* A: poskytuje uplynutý a zostávajúci čas pred ďalším budíkom
+* T: otvorí dialóg plánovania budíkov
+* C: zruší ďalší budík
+* Medzerník: oznamuje aktuálne stopky alebo odpočítavanie
+* P: ak je budík príliš dlhý, umožňuje ho zastaviť
+* H: zoznam všetkých vrstvených príkazov (Pomoc)
 
-[1]: https://addons.nvda-project.org/files/get.php?file=cac
+## Konfigurácia a použitie
 
-[2]: https://addons.nvda-project.org/files/get.php?file=cac-dev
+Na konfiguráciu funkcií hodín otvorte ponuku NVDA, Nastavenia, potom Nastavenia, a nakonfigurujte nasledujúce možnosti v paneli Hodiny:
+
+* Formát zobrazenia času a dátumu: použite tieto rozbaľovacie polia na nastavenie, ako bude NVDA oznamovať čas a dátum po stlačení NVDA+F12 raz alebo dvakrát rýchlo.
+* Interval: vyberte interval oznamovania času z tohto zoznamu (vypnuté, každých 10 minút, 15 minút, 30 minút alebo každú hodinu).
+* Oznamovanie času (aktivované, ak interval nie je vypnutý): vyberte medzi rečou a zvukom, iba zvukom alebo iba rečou.
+* Zvuk zvonenia hodín (aktivované, ak interval nie je vypnutý): vyberte predvolený zvuk zvonenia hodín.
+* Samostatné zvonenia hodín a medziminút (aktivované, ak interval nie je vypnutý, predvolene vypnuté): povoľte toto začiarkavacie políčko na prispôsobenie zvonení pre medziminúty.
+  * Zvuk medziminútového zvonenia (ak je zapnuté „Samostatné zvonenia hodín a medziminút“): vyberte zvuk pre medziminúty.
+* Tiché hodiny (aktivované, ak interval nie je vypnutý): vyberte toto začiarkavacie políčko na nastavenie obdobia tichých hodín.
+* Formát času tichých hodín (aktivované, ak sú tiché hodiny zapnuté): vyberte, ako sa zobrazujú možnosti (12-hodinový alebo 24-hodinový formát).
+* Začiatok a koniec tichých hodín: vyberte rozsah hodín a minút pre tiché hodiny z rozbaľovacích polí.
+
+Na plánovanie budíkov otvorte ponuku NVDA, Nástroje, potom vyberte Plánovanie budíkov. Dialóg obsahuje:
+
+* Trvanie budíka v: vyberte trvanie budíka/časovača v hodinách, minútach a sekundách.
+* Trvanie: zadajte trvanie budíka v jednotke uvedenej vyššie.
+* Zvuk budíka: vyberte zvuk budíka, ktorý sa prehrá.
+* Tlačidlá zastaviť a pozastaviť: zastavia alebo pozastavia dlhý budík.
+
+Kliknite na OK a zobrazí sa správa s aktuálne zvoleným trvaním budíka.
