@@ -231,12 +231,12 @@ class Interpolation(object):
                 raise TypeError("Invalid input value")
         elif len(args) == 2:
             if isinstance(args[0], (int, float, Angle)) or isinstance(
-                args[1], (int, float, Angle)
+                args[1], (int, float, Angle),
             ):
                 # Insuficient data to interpolate. Raise ValueError exception
                 raise ValueError("Invalid number of input values")
             elif isinstance(args[0], (list, tuple)) and isinstance(
-                args[1], (list, tuple)
+                args[1], (list, tuple),
             ):
                 x = args[0]
                 y = args[1]
@@ -263,8 +263,10 @@ class Interpolation(object):
             # Check that all the arguments are ints, floats or Angles
             all_numbers = True
             for arg in args:
-                all_numbers = (all_numbers
-                               and isinstance(arg, (int, float, Angle)))
+                all_numbers = (
+                    all_numbers
+                    and isinstance(arg, (int, float, Angle))
+                )
             # If any of the values failed the test, raise an exception
             if not all_numbers:
                 raise TypeError("Invalid input value")
@@ -374,8 +376,10 @@ class Interpolation(object):
             val = self._y[start]
         else:
             x = list(self._x)  # Let's make a copy, just in case
-            val = (self._newton_diff(start, end - 1)
-                   - self._newton_diff(start + 1, end)) / (x[start] - x[end])
+            val = (
+                self._newton_diff(start, end - 1)
+                - self._newton_diff(start + 1, end)
+            ) / (x[start] - x[end])
 
         return val
 
@@ -506,8 +510,10 @@ class Interpolation(object):
         xmin = self._x[0]
         xmax = self._x[-1]
         # Check if input value is of correct type
-        if (isinstance(xl, (int, float, Angle))
-                and isinstance(xh, (int, float, Angle))):
+        if (
+            isinstance(xl, (int, float, Angle))
+            and isinstance(xh, (int, float, Angle))
+        ):
             # Check if BOTH values are zero
             if xl == 0 and xh == 0:
                 xl = xmin
@@ -541,7 +547,7 @@ class Interpolation(object):
                 if num_iter >= max_iter:
                     raise ValueError(
                         "Too many iterations: Probably no root\
-                                     exists"
+                                     exists",
                     )
                 num_iter += 1
                 yp = self.derivative(x)
@@ -686,7 +692,7 @@ def main():
         "k = Interpolation([27.0, 27.5, 28.0, 28.5, 29.0],\n\
                       [Angle(0, 54, 36.125), Angle(0, 54, 24.606),\n\
                        Angle(0, 54, 15.486), Angle(0, 54, 8.694),\n\
-                       Angle(0, 54, 4.133)])"
+                       Angle(0, 54, 4.133)])",
     )
 
     print_me("k(28.278)", Angle(k(28.278)).dms_str())

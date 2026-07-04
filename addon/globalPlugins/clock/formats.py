@@ -4,13 +4,14 @@
 # Copyright 2013-2021, released under GPL.
 
 import winKernel
+from typing import Callable
+import addonHandler
 import re
 from datetime import datetime
 import logging
 
 log = logging.getLogger(__name__)
-from typing import Callable
-import addonHandler
+
 addonHandler.initTranslation()
 _: Callable[[str], str]
 # A regular expression to match and facilitate translation for words that are
@@ -22,6 +23,7 @@ rgx = re.compile(ptrn, re.U | re.I)
 # This example should have single digit for hours, minutes and seconds so that one and two digit formats
 # are distinguishable.
 DT_EXAMPLE = datetime(2022, 6, 2, 1, 5, 9)
+
 
 def repl(match):
 	"""
@@ -59,6 +61,7 @@ def timeMarker():
 			tm = "am"
 	return tm
 
+
 def is24HourFormat(fmt):
 	"""
 	A function that indicates if a time format is a 24-hour format.
@@ -68,20 +71,24 @@ def is24HourFormat(fmt):
 	@rtype: bool.
 	"""
 	return "$$H" in fmt
-	
+
 
 timeFormats = (
 	# Translators: A time formating (should be different from other time formattings)
 	_("It's {hours} o'clock and {minutes} minutes").format(hours="$$H", minutes="$$m"),
 	# Translators: A time formating (should be different from other time formattings)
 	_("It's {hours} o'clock, {minutes} minutes and {seconds} seconds").format(
-		hours="$$H", minutes="$$m", seconds="$$s"
+		hours="$$H",
+		minutes="$$m",
+		seconds="$$s",
 	),
 	# Translators: A time formating (should be different from other time formattings)
 	_("{hours} o'clock, {minutes} minutes").format(hours="$$H", minutes="$$mm"),
 	# Translators: A time formating (should be different from other time formattings)
 	_("{hours} o'clock, {minutes} minutes, {seconds} seconds").format(
-		hours="$$H", minutes="$$mm", seconds="$$ss"
+		hours="$$H",
+		minutes="$$mm",
+		seconds="$$ss",
 	),
 	# Translators: A time formating (should be different from other time formattings)
 	_("It's {minutes} past {hours}").format(minutes="$$m", hours="$$H"),
@@ -102,17 +109,21 @@ timeFormats = (
 	"$$HH:$$mm",
 	"$$H:$$m:$$s",
 	"$$H:$$mm:$$ss",
-    "$$H $$mm $$ss",
-    "$$HH $$mm $$ss",
+	"$$H $$mm $$ss",
+	"$$HH $$mm $$ss",
 	"$$H:$$m",
 )
 
-timeDisplayFormats = [(
-	# Translators: A way to display 24-hour formats in the time display formats list in the settings panel.
-	_('{fmt} (24-hour format)') if is24HourFormat(fmt) else
-	# Translators: A way to display 12-hour formats in the time display formats list in the settings panel.
-	_('{fmt} (12-hour format)')
-).format(fmt=winKernel.GetTimeFormatEx(None, 0, DT_EXAMPLE, rgx.sub(repl, fmt))) for fmt in timeFormats]
+timeDisplayFormats = [
+	(
+		# Translators: A way to display 24-hour formats in the time display formats list in the settings panel.
+		_("{fmt} (24-hour format)")
+		if is24HourFormat(fmt)
+		# Translators: A way to display 12-hour formats in the time display formats list in the settings panel.
+		else _("{fmt} (12-hour format)")
+	).format(fmt=winKernel.GetTimeFormatEx(None, 0, DT_EXAMPLE, rgx.sub(repl, fmt)))
+	for fmt in timeFormats
+]
 
 dateFormats = (
 	"dddd, MMMM dd, yyyy",
@@ -124,42 +135,45 @@ dateFormats = (
 	"dd-MM-yyyy",
 	"MM-dd-yyyy",
 	"MM/dd/yyyy",
-	"dd/MM/yyyy"
+	"dd/MM/yyyy",
 )
 
+
 def safeGetTimeFormatEx(locale, flags, timeObj, fmt):
-    """
-    Safe wrapper for winKernel.GetTimeFormatEx.
+	"""
+	Safe wrapper for winKernel.GetTimeFormatEx.
 
-    Older NVDA/ctypes versions accepted flags=None and implicitly treated it as 0.
-    Newer versions of ctypes (NVDA 2024.2+) no longer allow None for DWORD
-    arguments, causing TypeError. This wrapper ensures full backward and forward
-    compatibility by normalizing None -> 0.
+	Older NVDA/ctypes versions accepted flags=None and implicitly treated it as 0.
+	Newer versions of ctypes (NVDA 2024.2+) no longer allow None for DWORD
+	arguments, causing TypeError. This wrapper ensures full backward and forward
+	compatibility by normalizing None -> 0.
 
-    No behavioral changes, just safer argument handling.
-    """
-    if flags is None:
-        flags = 0
-    return winKernel.GetTimeFormatEx(locale, flags, timeObj, fmt)
+	No behavioral changes, just safer argument handling.
+	"""
+	if flags is None:
+		flags = 0
+	return winKernel.GetTimeFormatEx(locale, flags, timeObj, fmt)
+
 
 def safeGetDateFormatEx(locale, flags, dateObj, fmt):
-    """
-    Safe wrapper for winKernel.GetDateFormatEx.
+	"""
+	Safe wrapper for winKernel.GetDateFormatEx.
 
-    Older NVDA/ctypes versions accepted flags=None and implicitly treated it as 0.
-    Newer versions of ctypes (NVDA 2024.2+) no longer allow None for DWORD
-    arguments, causing TypeError. This wrapper ensures full backward and forward
-    compatibility by normalizing None -> 0.
+	Older NVDA/ctypes versions accepted flags=None and implicitly treated it as 0.
+	Newer versions of ctypes (NVDA 2024.2+) no longer allow None for DWORD
+	arguments, causing TypeError. This wrapper ensures full backward and forward
+	compatibility by normalizing None -> 0.
 
-    No behavioral changes, just safer argument handling.
-    """
-    if flags is None:
-        flags = 0
-    try:
-        return winKernel.GetDateFormatEx(locale, flags, dateObj, fmt)
-    except Exception as e:
-        log.debug(f"Clock: Failed GetDateFormatEx for '{fmt}', falling back. Error: {e}")
-        return fmt
+	No behavioral changes, just safer argument handling.
+	"""
+	if flags is None:
+		flags = 0
+	try:
+		return winKernel.GetDateFormatEx(locale, flags, dateObj, fmt)
+	except Exception as e:
+		log.debug(f"Clock: Failed GetDateFormatEx for '{fmt}', falling back. Error: {e}")
+		return fmt
+
 
 def _buildDateDisplayFormats():
 	"""
@@ -175,6 +189,7 @@ def _buildDateDisplayFormats():
 		value = safeGetDateFormatEx(None, None, None, fmt)
 		formatted.append(value)
 	return formatted
+
 
 # Build date display formats safely (NVDA 2024+ compatible).
 dateDisplayFormats = _buildDateDisplayFormats()

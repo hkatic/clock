@@ -188,12 +188,12 @@ class CurveFitting(object):
                 raise TypeError("Invalid input value")
         elif len(args) == 2:
             if isinstance(args[0], (int, float, Angle)) or isinstance(
-                args[1], (int, float, Angle)
+                args[1], (int, float, Angle),
             ):
                 # Insuficient data for curve fitting. Raise ValueError
                 raise ValueError("Invalid number of input values")
             elif isinstance(args[0], (list, tuple)) and isinstance(
-                args[1], (list, tuple)
+                args[1], (list, tuple),
             ):
                 x = args[0]
                 y = args[1]
@@ -220,8 +220,10 @@ class CurveFitting(object):
             # Check that all the arguments are ints, floats or Angles
             all_numbers = True
             for arg in args:
-                all_numbers = (all_numbers
-                               and isinstance(arg, (int, float, Angle)))
+                all_numbers = (
+                    all_numbers
+                    and isinstance(arg, (int, float, Angle))
+                )
             # If any of the values failed the test, raise an exception
             if not all_numbers:
                 raise TypeError("Invalid input value")
@@ -327,8 +329,10 @@ class CurveFitting(object):
         sy = self._T
         sx2 = self._Q
         sy2 = self._W
-        return ((n * sxy - sx * sy) / (sqrt(n * sx2 - sx * sx)
-                                       * sqrt(n * sy2 - sy * sy)))
+        return ((n * sxy - sx * sy) / (
+            sqrt(n * sx2 - sx * sx)
+            * sqrt(n * sy2 - sy * sy)
+        ))
 
     def linear_fitting(self):
         """This method returns a tuple with the 'a', 'b' coefficients of the
@@ -398,12 +402,18 @@ class CurveFitting(object):
         if abs(d) < TOL:
             raise ZeroDivisionError("Input data leads to a division by zero")
 
-        a = (n * q * v + p * r * t + p * q * u
-             - q2 * t - p * p * v - n * r * u) / d
-        b = (n * s * u + p * q * v + q * r * t
-             - q2 * u - p * s * t - n * r * v) / d
-        c = (q * s * t + q * r * u + p * r * v
-             - q2 * v - p * s * u - r * r * t) / d
+        a = (
+            n * q * v + p * r * t + p * q * u
+            - q2 * t - p * p * v - n * r * u
+        ) / d
+        b = (
+            n * s * u + p * q * v + q * r * t
+            - q2 * u - p * s * t - n * r * v
+        ) / d
+        c = (
+            q * s * t + q * r * u + p * r * v
+            - q2 * v - p * s * u - r * r * t
+        ) / d
         return (a, b, c)
 
     def general_fitting(self, f0, f1=lambda *args: 0.0, f2=lambda *args: 0.0):
@@ -474,12 +484,18 @@ class CurveFitting(object):
         if abs(d) < TOL:
             raise ZeroDivisionError("Input data leads to a division by zero")
 
-        a = (u * (r * t - s * s) + v * (q * s - p * t)
-             + w * (p * s - q * r)) / d
-        b = (u * (s * q - p * t) + v * (m * t - q * q)
-             + w * (p * q - m * s)) / d
-        c = (u * (p * s - r * q) + v * (p * q - m * s)
-             + w * (m * r - p * p)) / d
+        a = (
+            u * (r * t - s * s) + v * (q * s - p * t)
+            + w * (p * s - q * r)
+        ) / d
+        b = (
+            u * (s * q - p * t) + v * (m * t - q * q)
+            + w * (p * q - m * s)
+        ) / d
+        c = (
+            u * (p * s - r * q) + v * (p * q - m * s)
+            + w * (m * r - p * p)
+        ) / d
         return (a, b, c)
 
 
@@ -596,8 +612,12 @@ def main():
     a, b, c = cf2.quadratic_fitting()
     # Original curve: y = -2.0*x*x + 3.5*x + 7.0 + noise
     print("Quadratic fitting:")
-    print("   a = {}\tb = {}\tc = {}".format(round(a, 2), round(b, 2),
-                                             round(c, 2)))
+    print(
+        "   a = {}\tb = {}\tc = {}".format(
+            round(a, 2), round(b, 2),
+            round(c, 2),
+        ),
+    )
 
     print("")
 
@@ -661,8 +681,12 @@ def main():
     # Use 'general_fitting()' here
     a, b, c = cf4.general_fitting(sin1, sin2, sin3)
     print("General fitting with f0 = sin(x), f1 = sin(2*x), f2 = sin(3*x):")
-    print("   a = {}\tb = {}\tc = {}".format(round(a, 2), round(b, 2),
-                                             round(c, 2)))
+    print(
+        "   a = {}\tb = {}\tc = {}".format(
+            round(a, 2), round(b, 2),
+            round(c, 2),
+        ),
+    )
 
     print("")
 
@@ -670,8 +694,12 @@ def main():
 
     a, b, c = cf5.general_fitting(sqrt)
     print("General fitting with f0 = sqrt(x), f1 = 0.0 and f2 = 0.0:")
-    print("   a = {}\tb = {}\t\tc = {}".format(round(a, 3), round(b, 3),
-                                               round(c, 3)))
+    print(
+        "   a = {}\tb = {}\t\tc = {}".format(
+            round(a, 3), round(b, 3),
+            round(c, 3),
+        ),
+    )
 
 
 if __name__ == "__main__":

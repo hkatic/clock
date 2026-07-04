@@ -26,7 +26,7 @@ from pymeeus.Interpolation import Interpolation
 from pymeeus.Coordinates import (
     geometric_vsop_pos, apparent_vsop_pos, orbital_elements,
     nutation_longitude, true_obliquity, ecliptical2equatorial,
-    passage_nodes_elliptic
+    passage_nodes_elliptic,
 )
 from pymeeus.Earth import Earth
 from pymeeus.Sun import Sun
@@ -1806,7 +1806,7 @@ ORBITAL_ELEM = [
     [0.00677192, -0.000047765, 0.0000000981, 0.00000000046],    # e
     [3.394662, 0.0010037, -0.00000088, -0.000000007],           # i
     [76.67992, 0.9011206, 0.00040618, -0.000000093],            # Omega
-    [131.563703, 1.4022288, -0.00107618, -0.000005678]          # pie
+    [131.563703, 1.4022288, -0.00107618, -0.000005678],          # pie
 ]
 """This table contains the parameters to compute Venus' orbital elements for
 the mean equinox of date. Based in Table 31.A, page 212"""
@@ -1816,7 +1816,7 @@ ORBITAL_ELEM_J2000 = [
     [181.979801, 58517.815676, 0.00000165, -0.000000002],   # L
     [3.394662, -0.0008568, -0.00003244, 0.000000009],       # i
     [76.67992, -0.2780134, -0.00014257, -0.000000164],      # Omega
-    [131.563703, 0.0048746, -0.00138467, -0.000005695]      # pie
+    [131.563703, 0.0048746, -0.00138467, -0.000005695],      # pie
 ]
 """This table contains the parameters to compute Venus' orbital elements for
 the standard equinox J2000.0. Based on Table 31.B, page 214"""
@@ -2082,13 +2082,15 @@ class Venus(object):
         m = Angle(m).to_positive()
         m = m.rad()
         t = (jde0 - 2451545.0) / 36525.0
-        corr = (-0.0096 + t * (0.0002 - t * 0.00001)
-                + sin(m) * (2.0009 + t * (-0.0033 - t * 0.00001))
-                + cos(m) * (0.598 + t * (-0.0104 + t * 0.00001))
-                + sin(2.0 * m) * (0.0967 + t * (-0.0018 - t * 0.00003))
-                + cos(2.0 * m) * (0.0913 + t * (0.0009 - t * 0.00002))
-                + sin(3.0 * m) * (0.0046 - t * 0.0002)
-                + cos(3.0 * m) * (0.0079 + t * 0.0001))
+        corr = (
+            -0.0096 + t * (0.0002 - t * 0.00001)
+            + sin(m) * (2.0009 + t * (-0.0033 - t * 0.00001))
+            + cos(m) * (0.598 + t * (-0.0104 + t * 0.00001))
+            + sin(2.0 * m) * (0.0967 + t * (-0.0018 - t * 0.00003))
+            + cos(2.0 * m) * (0.0913 + t * (0.0009 - t * 0.00002))
+            + sin(3.0 * m) * (0.0046 - t * 0.0002)
+            + cos(3.0 * m) * (0.0079 + t * 0.0001)
+        )
         to_return = jde0 + corr
         return Epoch(to_return)
 
@@ -2134,13 +2136,15 @@ class Venus(object):
         m = Angle(m).to_positive()
         m = m.rad()
         t = (jde0 - 2451545.0) / 36525.0
-        corr = (0.0099 + t * (-0.0002 - t * 0.00001)
-                + sin(m) * (4.1991 + t * (-0.0121 - t * 0.00003))
-                + cos(m) * (-0.6095 + t * (0.0102 - t * 0.00002))
-                + sin(2.0 * m) * (0.25 + t * (-0.0028 - t * 0.00003))
-                + cos(2.0 * m) * (0.0063 + t * (0.0025 - t * 0.00002))
-                + sin(3.0 * m) * (0.0232 + t * (-0.0005 - t * 0.00001))
-                + cos(3.0 * m) * (0.0031 + t * 0.0004))
+        corr = (
+            0.0099 + t * (-0.0002 - t * 0.00001)
+            + sin(m) * (4.1991 + t * (-0.0121 - t * 0.00003))
+            + cos(m) * (-0.6095 + t * (0.0102 - t * 0.00002))
+            + sin(2.0 * m) * (0.25 + t * (-0.0028 - t * 0.00003))
+            + cos(2.0 * m) * (0.0063 + t * (0.0025 - t * 0.00002))
+            + sin(3.0 * m) * (0.0232 + t * (-0.0005 - t * 0.00001))
+            + cos(3.0 * m) * (0.0031 + t * 0.0004)
+        )
         to_return = jde0 + corr
         return Epoch(to_return)
 
@@ -2189,18 +2193,22 @@ class Venus(object):
         m = Angle(m).to_positive()
         m = m.rad()
         t = (jde0 - 2451545.0) / 36525.0
-        corr = (70.7462 - t * t * 0.00001
-                + sin(m) * (1.1218 + t * (-0.0025 - t * 0.00001))
-                + cos(m) * (0.4538 - t * 0.0066)
-                + sin(2.0 * m) * (0.132 + t * (0.002 - t * 0.00003))
-                + cos(2.0 * m) * (-0.0702 + t * (0.0022 + t * 0.00004))
-                + sin(3.0 * m) * (0.0062 - t * 0.0001)
-                + cos(3.0 * m) * (0.0015 - t * t * 0.00001))
-        elon = (46.3245
-                + sin(m) * (-0.5366 + t * (-0.0003 + t * 0.00001))
-                + cos(m) * (0.3097 + t * (0.0016 - t * 0.00001))
-                + sin(2.0 * m) * (-0.0163)
-                + cos(2.0 * m) * (-0.0075 + t * 0.0001))
+        corr = (
+            70.7462 - t * t * 0.00001
+            + sin(m) * (1.1218 + t * (-0.0025 - t * 0.00001))
+            + cos(m) * (0.4538 - t * 0.0066)
+            + sin(2.0 * m) * (0.132 + t * (0.002 - t * 0.00003))
+            + cos(2.0 * m) * (-0.0702 + t * (0.0022 + t * 0.00004))
+            + sin(3.0 * m) * (0.0062 - t * 0.0001)
+            + cos(3.0 * m) * (0.0015 - t * t * 0.00001)
+        )
+        elon = (
+            46.3245
+            + sin(m) * (-0.5366 + t * (-0.0003 + t * 0.00001))
+            + cos(m) * (0.3097 + t * (0.0016 - t * 0.00001))
+            + sin(2.0 * m) * (-0.0163)
+            + cos(2.0 * m) * (-0.0075 + t * 0.0001)
+        )
         elon = Angle(elon).to_positive()
         to_return = jde0 + corr
         return Epoch(to_return), elon
@@ -2250,18 +2258,22 @@ class Venus(object):
         m = Angle(m).to_positive()
         m = m.rad()
         t = (jde0 - 2451545.0) / 36525.0
-        corr = (-70.76 + t * (0.0002 - t * 0.00001)
-                + sin(m) * (1.0282 + t * (-0.001 - t * 0.00001))
-                + cos(m) * (0.2761 - t * 0.006)
-                + sin(2.0 * m) * (-0.0438 + t * (-0.0023 + t * 0.00002))
-                + cos(2.0 * m) * (0.166 + t * (-0.0037 - t * 0.00004))
-                + sin(3.0 * m) * (0.0036 + t * 0.0001)
-                + cos(3.0 * m) * (-0.0011 + t * t * 0.00001))
-        elon = (46.3173 + t * 0.0001
-                + sin(m) * (0.6916 - t * 0.0024)
-                + cos(m) * (0.6676 - t * 0.0045)
-                + sin(2.0 * m) * (0.0309 - t * 0.0002)
-                + cos(2.0 * m) * (0.0036 - t * 0.0001))
+        corr = (
+            -70.76 + t * (0.0002 - t * 0.00001)
+            + sin(m) * (1.0282 + t * (-0.001 - t * 0.00001))
+            + cos(m) * (0.2761 - t * 0.006)
+            + sin(2.0 * m) * (-0.0438 + t * (-0.0023 + t * 0.00002))
+            + cos(2.0 * m) * (0.166 + t * (-0.0037 - t * 0.00004))
+            + sin(3.0 * m) * (0.0036 + t * 0.0001)
+            + cos(3.0 * m) * (-0.0011 + t * t * 0.00001)
+        )
+        elon = (
+            46.3173 + t * 0.0001
+            + sin(m) * (0.6916 - t * 0.0024)
+            + cos(m) * (0.6676 - t * 0.0045)
+            + sin(2.0 * m) * (0.0309 - t * 0.0002)
+            + cos(2.0 * m) * (0.0036 - t * 0.0001)
+        )
         elon = Angle(elon).to_positive()
         to_return = jde0 + corr
         return Epoch(to_return), elon
@@ -2309,13 +2321,15 @@ class Venus(object):
         m = Angle(m).to_positive()
         m = m.rad()
         t = (jde0 - 2451545.0) / 36525.0
-        corr = (-21.0672 + t * (0.0002 - t * 0.00001)
-                + sin(m) * (1.9396 + t * (-0.0029 - t * 0.00001))
-                + cos(m) * (1.0727 - t * 0.0102)
-                + sin(2.0 * m) * (0.0404 + t * (-0.0023 - t * 0.00001))
-                + cos(2.0 * m) * (0.1305 + t * (-0.0004 - t * 0.00003))
-                + sin(3.0 * m) * (-0.0007 - t * 0.0002)
-                + cos(3.0 * m) * (0.0098))
+        corr = (
+            -21.0672 + t * (0.0002 - t * 0.00001)
+            + sin(m) * (1.9396 + t * (-0.0029 - t * 0.00001))
+            + cos(m) * (1.0727 - t * 0.0102)
+            + sin(2.0 * m) * (0.0404 + t * (-0.0023 - t * 0.00001))
+            + cos(2.0 * m) * (0.1305 + t * (-0.0004 - t * 0.00003))
+            + sin(3.0 * m) * (-0.0007 - t * 0.0002)
+            + cos(3.0 * m) * (0.0098)
+        )
         to_return = jde0 + corr
         return Epoch(to_return)
 
@@ -2362,13 +2376,15 @@ class Venus(object):
         m = Angle(m).to_positive()
         m = m.rad()
         t = (jde0 - 2451545.0) / 36525.0
-        corr = (21.0623 - t * t * 0.00001
-                + sin(m) * (1.9913 + t * (-0.004 - t * 0.00001))
-                + cos(m) * (-0.0407 - t * 0.0077)
-                + sin(2.0 * m) * (0.1351 + t * (-0.0009 - t * 0.00004))
-                + cos(2.0 * m) * (0.0303 + t * 0.0019)
-                + sin(3.0 * m) * (0.0089 - t * 0.0002)
-                + cos(3.0 * m) * (0.0043 + t * 0.0001))
+        corr = (
+            21.0623 - t * t * 0.00001
+            + sin(m) * (1.9913 + t * (-0.004 - t * 0.00001))
+            + cos(m) * (-0.0407 - t * 0.0077)
+            + sin(2.0 * m) * (0.1351 + t * (-0.0009 - t * 0.00004))
+            + cos(2.0 * m) * (0.0303 + t * 0.0019)
+            + sin(3.0 * m) * (0.0089 - t * 0.0002)
+            + cos(3.0 * m) * (0.0043 + t * 0.0001)
+        )
         to_return = jde0 + corr
         return Epoch(to_return)
 
@@ -2525,12 +2541,16 @@ class Venus(object):
         -3.8
         """
 
-        if not (isinstance(sun_dist, float) and isinstance(earth_dist, float)
-                and isinstance(phase_angle, (float, Angle))):
+        if not (
+            isinstance(sun_dist, float) and isinstance(earth_dist, float)
+            and isinstance(phase_angle, (float, Angle))
+        ):
             raise TypeError("Invalid input types")
         i = float(phase_angle)
-        m = (-4.0 + 5.0 * log10(sun_dist * earth_dist) + 0.01322 * i
-             + 0.0000004247 * i * i * i)
+        m = (
+            -4.0 + 5.0 * log10(sun_dist * earth_dist) + 0.01322 * i
+            + 0.0000004247 * i * i * i
+        )
         return round(m, 1)
 
 

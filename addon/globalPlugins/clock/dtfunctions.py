@@ -45,7 +45,7 @@ def parseTime(t: str, parse24hour: Optional[bool] = False) -> datetime:
 	@returns: The time format converted to datetime.datetime format.
 	@rtype : datetime.datetime.
 	"""
-	f = '%H:%M'
+	f = "%H:%M"
 	if parse24hour:
 		res = datetime.strptime(t, f)
 	else:
@@ -62,11 +62,11 @@ def strfNowTime(parse24hour: Optional[bool] = False) -> str:
 	@returns : The current time format converted to a string.
 	@rtype: basestring.
 	"""
-	f = ''
+	f = ""
 	if parse24hour:
-		f = '%H:%M'
+		f = "%H:%M"
 	else:
-		f = '%I:%M %p'
+		f = "%I:%M %p"
 	return datetime.now().strftime(f)
 
 

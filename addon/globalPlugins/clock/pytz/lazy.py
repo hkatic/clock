@@ -79,7 +79,8 @@ class LazyList(list):
         'reverse', 'sort', '__add__', '__radd__', '__iadd__', '__mul__',
         '__rmul__', '__imul__', '__contains__', '__len__', '__nonzero__',
         '__getitem__', '__setitem__', '__delitem__', '__iter__',
-        '__reversed__', '__getslice__', '__setslice__', '__delslice__']
+        '__reversed__', '__getslice__', '__setslice__', '__delslice__',
+    ]
 
     def __new__(cls, fill_iter=None):
 
@@ -134,7 +135,8 @@ class LazySet(set):
         'discard', 'intersection', 'intersection_update', 'isdisjoint',
         'issubset', 'issuperset', 'pop', 'remove',
         'symmetric_difference', 'symmetric_difference_update',
-        'union', 'update')
+        'union', 'update',
+    )
 
     def __new__(cls, fill_iter=None):
 

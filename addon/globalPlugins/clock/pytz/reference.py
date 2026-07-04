@@ -15,7 +15,7 @@ __all__ = [
     'Central',
     'Mountain',
     'Pacific',
-    'UTC'
+    'UTC',
 ]
 
 
@@ -69,9 +69,11 @@ class LocalTimezone(tzinfo):
         return _time.tzname[self._isdst(dt)]
 
     def _isdst(self, dt):
-        tt = (dt.year, dt.month, dt.day,
-              dt.hour, dt.minute, dt.second,
-              dt.weekday(), 0, -1)
+        tt = (
+            dt.year, dt.month, dt.day,
+            dt.hour, dt.minute, dt.second,
+            dt.weekday(), 0, -1,
+        )
         stamp = _time.mktime(tt)
         tt = _time.localtime(stamp)
         return tt.tm_isdst > 0

@@ -26,7 +26,7 @@ from pymeeus.Interpolation import Interpolation
 from pymeeus.Coordinates import (
     geometric_vsop_pos, apparent_vsop_pos, orbital_elements,
     nutation_longitude, true_obliquity, ecliptical2equatorial,
-    passage_nodes_elliptic
+    passage_nodes_elliptic,
 )
 from pymeeus.Earth import Earth
 from pymeeus.Sun import Sun
@@ -3608,7 +3608,7 @@ ORBITAL_ELEM = [
     [0.04849793, 0.000163225, -0.0000004714, -0.00000000201],   # e
     [1.303267, -0.0054965, 0.00000466, -0.000000002],           # i
     [100.464407, 1.0209774, 0.00040315, 0.000000404],           # Omega
-    [14.331207, 1.6126352, 0.00103042, -0.000004464]            # pie
+    [14.331207, 1.6126352, 0.00103042, -0.000004464],            # pie
 ]
 """This table contains the parameters to compute Jupiter's orbital elements for
 the mean equinox of date. Based in Table 31.A, page 213"""
@@ -3618,7 +3618,7 @@ ORBITAL_ELEM_J2000 = [
     [34.351519, 3034.9056606, -0.00008501, 0.000000016],    # L
     [1.303267, -0.0019877, 0.0000332, 0.000000097],         # i
     [100.464407, 0.1767232, 0.000907, -0.000007272],        # Omega
-    [14.331207, 0.2155209, 0.00072211, -0.000004485]        # pie
+    [14.331207, 0.2155209, 0.00072211, -0.000004485],        # pie
 ]
 """This table contains the parameters to compute Jupiter's orbital elements for
 the standard equinox J2000.0. Based on Table 31.B, page 215"""
@@ -3887,15 +3887,17 @@ class Jupiter(object):
         # Compute an auxiliary angle
         aa = 82.74 + 40.76 * t
         aa = Angle(aa).rad()    # Convert to radians
-        corr = (0.1027 + t * (0.0002 - t * 0.00009)
-                + sin(m) * (-2.2637 + t * (0.0163 - t * 0.00003))
-                + cos(m) * (-6.154 + t * (-0.021 + t * 0.00008))
-                + sin(2.0 * m) * (-0.2021 + t * (-0.0017 + t * 0.00001))
-                + cos(2.0 * m) * (0.131 - t * 0.0008)
-                + sin(3.0 * m) * (0.0086)
-                + cos(3.0 * m) * (0.0087 + t * 0.0002)
-                + sin(aa) * (0.0 + t * (0.0144 - t * 0.00008))
-                + cos(aa) * (0.3642 + t * (-0.0019 - t * 0.00029)))
+        corr = (
+            0.1027 + t * (0.0002 - t * 0.00009)
+            + sin(m) * (-2.2637 + t * (0.0163 - t * 0.00003))
+            + cos(m) * (-6.154 + t * (-0.021 + t * 0.00008))
+            + sin(2.0 * m) * (-0.2021 + t * (-0.0017 + t * 0.00001))
+            + cos(2.0 * m) * (0.131 - t * 0.0008)
+            + sin(3.0 * m) * (0.0086)
+            + cos(3.0 * m) * (0.0087 + t * 0.0002)
+            + sin(aa) * (0.0 + t * (0.0144 - t * 0.00008))
+            + cos(aa) * (0.3642 + t * (-0.0019 - t * 0.00029))
+        )
         to_return = jde0 + corr
         return Epoch(to_return)
 
@@ -3944,15 +3946,17 @@ class Jupiter(object):
         # Compute an auxiliary angle
         aa = 82.74 + 40.76 * t
         aa = Angle(aa).rad()    # Convert to radians
-        corr = (-0.1029 - t * t * 0.00009
-                + sin(m) * (-1.9658 + t * (-0.0056 + t * 0.00007))
-                + cos(m) * (6.1537 + t * (0.021 - t * 0.00006))
-                + sin(2.0 * m) * (-0.2081 - t * 0.0013)
-                + cos(2.0 * m) * (-0.1116 - t * 0.001)
-                + sin(3.0 * m) * (0.0074 + t * 0.0001)
-                + cos(3.0 * m) * (-0.0097 - t * 0.0001)
-                + sin(aa) * (0.0 + t * (0.0144 - t * 0.00008))
-                + cos(aa) * (0.3642 + t * (-0.0019 - t * 0.00029)))
+        corr = (
+            -0.1029 - t * t * 0.00009
+            + sin(m) * (-1.9658 + t * (-0.0056 + t * 0.00007))
+            + cos(m) * (6.1537 + t * (0.021 - t * 0.00006))
+            + sin(2.0 * m) * (-0.2081 - t * 0.0013)
+            + cos(2.0 * m) * (-0.1116 - t * 0.001)
+            + sin(3.0 * m) * (0.0074 + t * 0.0001)
+            + cos(3.0 * m) * (-0.0097 - t * 0.0001)
+            + sin(aa) * (0.0 + t * (0.0144 - t * 0.00008))
+            + cos(aa) * (0.3642 + t * (-0.0019 - t * 0.00029))
+        )
         to_return = jde0 + corr
         return Epoch(to_return)
 
@@ -4002,15 +4006,17 @@ class Jupiter(object):
         # Compute an auxiliary angle
         aa = 82.74 + 40.76 * t
         aa = Angle(aa).rad()    # Convert to radians
-        corr = (-60.367 + t * (-0.0001 - t * 0.00009)
-                + sin(m) * (-2.3144 + t * (-0.0124 + t * 0.00007))
-                + cos(m) * (6.7439 + t * (0.0166 - t * 0.00006))
-                + sin(2.0 * m) * (-0.2259 - t * 0.001)
-                + cos(2.0 * m) * (-0.1497 - t * 0.0014)
-                + sin(3.0 * m) * (0.0105 + t * 0.0001)
-                + cos(3.0 * m) * (-0.0098)
-                + sin(aa) * (0.0 + t * (0.0144 - t * 0.00008))
-                + cos(aa) * (0.3642 + t * (-0.0019 - t * 0.00029)))
+        corr = (
+            -60.367 + t * (-0.0001 - t * 0.00009)
+            + sin(m) * (-2.3144 + t * (-0.0124 + t * 0.00007))
+            + cos(m) * (6.7439 + t * (0.0166 - t * 0.00006))
+            + sin(2.0 * m) * (-0.2259 - t * 0.001)
+            + cos(2.0 * m) * (-0.1497 - t * 0.0014)
+            + sin(3.0 * m) * (0.0105 + t * 0.0001)
+            + cos(3.0 * m) * (-0.0098)
+            + sin(aa) * (0.0 + t * (0.0144 - t * 0.00008))
+            + cos(aa) * (0.3642 + t * (-0.0019 - t * 0.00029))
+        )
         to_return = jde0 + corr
         return Epoch(to_return)
 
@@ -4060,15 +4066,17 @@ class Jupiter(object):
         # Compute an auxiliary angle
         aa = 82.74 + 40.76 * t
         aa = Angle(aa).rad()    # Convert to radians
-        corr = (60.3023 + t * (0.0002 - t * 0.00009)
-                + sin(m) * (0.3506 + t * (-0.0034 + t * 0.00004))
-                + cos(m) * (5.3635 + t * (0.0247 - t * 0.00007))
-                + sin(2.0 * m) * (-0.1872 - t * 0.0016)
-                + cos(2.0 * m) * (-0.0037 - t * 0.0005)
-                + sin(3.0 * m) * (0.0012 + t * 0.0001)
-                + cos(3.0 * m) * (-0.0096 - t * 0.0001)
-                + sin(aa) * (0.0 + t * (0.0144 - t * 0.00008))
-                + cos(aa) * (0.3642 + t * (-0.0019 - t * 0.00029)))
+        corr = (
+            60.3023 + t * (0.0002 - t * 0.00009)
+            + sin(m) * (0.3506 + t * (-0.0034 + t * 0.00004))
+            + cos(m) * (5.3635 + t * (0.0247 - t * 0.00007))
+            + sin(2.0 * m) * (-0.1872 - t * 0.0016)
+            + cos(2.0 * m) * (-0.0037 - t * 0.0005)
+            + sin(3.0 * m) * (0.0012 + t * 0.0001)
+            + cos(3.0 * m) * (-0.0096 - t * 0.0001)
+            + sin(aa) * (0.0 + t * (0.0144 - t * 0.00008))
+            + cos(aa) * (0.3642 + t * (-0.0019 - t * 0.00029))
+        )
         to_return = jde0 + corr
         return Epoch(to_return)
 

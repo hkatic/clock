@@ -23,12 +23,13 @@ for path in [CUSTOM_SOUNDS_DIR, CUSTOM_ALARMS_DIR, CUSTOM_CLOCK_TIME_DIR]:
 	if not os.path.exists(path):
 		os.makedirs(path)
 
-LIST_SOUNDS = [os.path.split(path)[-1] for path in glob.glob(os.path.join(SOUNDS_DIR, '*.wav'))]
-LIST_SOUNDS.extend([os.path.split(path)[-1] for path in glob.glob(os.path.join(CUSTOM_CLOCK_TIME_DIR, '*.wav'))])
+LIST_SOUNDS = [os.path.split(path)[-1] for path in glob.glob(os.path.join(SOUNDS_DIR, "*.wav"))]
+LIST_SOUNDS.extend(
+	[os.path.split(path)[-1] for path in glob.glob(os.path.join(CUSTOM_CLOCK_TIME_DIR, "*.wav"))],
+)
 
-LIST_ALARMS = [os.path.split(path)[-1] for path in glob.glob(os.path.join(ALARMS_DIR, '*.wav'))]
-LIST_ALARMS.extend([os.path.split(path)[-1] for path in glob.glob(os.path.join(CUSTOM_ALARMS_DIR, '*.wav'))])
+LIST_ALARMS = [os.path.split(path)[-1] for path in glob.glob(os.path.join(ALARMS_DIR, "*.wav"))]
+LIST_ALARMS.extend([os.path.split(path)[-1] for path in glob.glob(os.path.join(CUSTOM_ALARMS_DIR, "*.wav"))])
 
 # Translators: This is a choice in a list of sounds.
 CUSTOM_SOUND = _("Custom")
-

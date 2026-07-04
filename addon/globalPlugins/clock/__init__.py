@@ -27,33 +27,36 @@ from datetime import datetime
 import wx
 import globalCommands
 import os
+
 sys.path.append(os.path.join(os.path.abspath(os.path.dirname(__file__))))
 from . import convertdate
+
 sys.path.remove(sys.path[-1])
 import time
 from .formats import safeGetTimeFormatEx, safeGetDateFormatEx
 from configobj.validate import VdtTypeError
 
 import addonHandler
+
 addonHandler.initTranslation()
 _: Callable[[str], str]
 
 confspec = {
-	'timeDisplayFormat': 'integer(default=0)',
-	'dateDisplayFormat': 'integer(default=1)',
-	'input24HourFormat': 'boolean(default=False)',
-	'autoAnnounce': 'integer(default=0)',
-	'timeReporting': 'integer(default=0)',
-	'timeIntermediateReportSound': 'string(default="clock_chime1.wav")',
-	'separateReportSounds': 'boolean(default=False)',
-	'timeReportSound': 'string(default="clock_chime1.wav")',
-	'alarmSound': 'string(default="alarm1.wav")',
-	'alarmTimerChoice': 'integer(default=1)',
-	'quietHours': 'boolean(default=False)',
-	'alarmTime': 'float(default=0.0)',
-	'alarmSavedTime': 'float(default=0.0)',
-	'quietHoursStartTime': 'string(default="")',
-	'quietHoursEndTime': 'string(default="")',
+	"timeDisplayFormat": "integer(default=0)",
+	"dateDisplayFormat": "integer(default=1)",
+	"input24HourFormat": "boolean(default=False)",
+	"autoAnnounce": "integer(default=0)",
+	"timeReporting": "integer(default=0)",
+	"timeIntermediateReportSound": 'string(default="clock_chime1.wav")',
+	"separateReportSounds": "boolean(default=False)",
+	"timeReportSound": 'string(default="clock_chime1.wav")',
+	"alarmSound": 'string(default="alarm1.wav")',
+	"alarmTimerChoice": "integer(default=1)",
+	"quietHours": "boolean(default=False)",
+	"alarmTime": "float(default=0.0)",
+	"alarmSavedTime": "float(default=0.0)",
+	"quietHoursStartTime": 'string(default="")',
+	"quietHoursEndTime": 'string(default="")',
 }
 config.conf.spec["clockAndCalendar"] = confspec
 
@@ -131,7 +134,7 @@ def getDayAndWeekOfYear(date: str) -> Tuple[int, ...]:
 			# For the first month, number of days is the same as current date.
 			nDayOfYear = curDay
 			if curMonth > 1:
-				nDayOfYear += sum(monthLengths[:curMonth - 1])
+				nDayOfYear += sum(monthLengths[: curMonth - 1])
 			# Calculation of the weeks number.
 			if nDayOfYear % 7 == 0:
 				if dt.to_jd(curYear, 1, 1) == ndw:
@@ -163,13 +166,14 @@ def checkLocalTimeFormats():
 	opportunity to improve their translations by translating uniquely each time format.
 	"""
 	fmtCounter = Counter(formats.timeFormats)
-	for (fmt, nbOccurrences) in fmtCounter.items():
+	for fmt, nbOccurrences in fmtCounter.items():
 		if nbOccurrences > 1:
-			log.debugWarning(f"The format '{fmt}' appears {nbOccurrences} times for the current localization.")
+			log.debugWarning(
+				f"The format '{fmt}' appears {nbOccurrences} times for the current localization.",
+			)
 
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
-
 	# Translators: Script category for Clock addon commands in input gestures dialog.
 	scriptCategory = _("Clock")
 	clockLayerModeActive = False
@@ -184,45 +188,48 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.toolsMenu = gui.mainFrame.sysTrayIcon.toolsMenu
 		self.alarmSettings = self.toolsMenu.Append(
 			# Translators: The name of the alarm item in NVDA Tools menu.
-			wx.ID_ANY, _("Schedule a&larms..."),
+			wx.ID_ANY,
+			_("Schedule a&larms..."),
 			# Translators: The tooltyp text for the alarm item in NVDA Tools menu.
-			_("Allows you to schedule an alarm")
+			_("Allows you to schedule an alarm"),
 		)
 		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.onAlarmSettingsDialog, self.alarmSettings)
 		self.clock = clockHandler.Clock()
 		self.stopwatch = stopwatchHandler.Stopwatch()
-		conf = config.conf['clockAndCalendar']
+		conf = config.conf["clockAndCalendar"]
 		validationFailed = False
 		try:
-			conf['alarmTime']
+			conf["alarmTime"]
 		except VdtTypeError:
 			validationFailed = True
-			conf.profiles[0]['alarmTime'] = 0.0
+			conf.profiles[0]["alarmTime"] = 0.0
 		try:
-			conf['timeDisplayFormat']
+			conf["timeDisplayFormat"]
 		except VdtTypeError:
 			validationFailed = True
-			conf.profiles[0]['timeDisplayFormat'] = 0
+			conf.profiles[0]["timeDisplayFormat"] = 0
 		try:
-			conf['dateDisplayFormat']
+			conf["dateDisplayFormat"]
 		except VdtTypeError:
-			conf.profiles[0]['dateDisplayFormat'] = 1
+			conf.profiles[0]["dateDisplayFormat"] = 1
 			validationFailed = True
 		# We save the configuration, in case the user would not have checked the
 		# "Save configuration on exit" checkbox in General settings.
 		# Only do this if validation fails.
-		if validationFailed and not config.conf['general']['saveConfigurationOnExit']:
+		if validationFailed and not config.conf["general"]["saveConfigurationOnExit"]:
 			config.conf.save()
-		if not config.conf['clockAndCalendar']['alarmSound'] in paths.LIST_ALARMS:
+		if config.conf["clockAndCalendar"]["alarmSound"] not in paths.LIST_ALARMS:
 			alarmSound = paths.LIST_ALARMS[0]
 		else:
-			alarmSound = config.conf['clockAndCalendar']['alarmSound']
-		if config.conf['clockAndCalendar']['alarmSavedTime'] != 0.0:
-			wakeUp = config.conf['clockAndCalendar']['alarmTime'] - (
-				time.time() - config.conf['clockAndCalendar']['alarmSavedTime']
+			alarmSound = config.conf["clockAndCalendar"]["alarmSound"]
+		if config.conf["clockAndCalendar"]["alarmSavedTime"] != 0.0:
+			wakeUp = config.conf["clockAndCalendar"]["alarmTime"] - (
+				time.time() - config.conf["clockAndCalendar"]["alarmSavedTime"]
 			)
 			alarmHandler.run = alarmHandler.AlarmTimer(
-				wakeUp, alarmHandler.runAlarm, [os.path.join(paths.ALARMS_DIR, alarmSound)]
+				wakeUp,
+				alarmHandler.runAlarm,
+				[os.path.join(paths.ALARMS_DIR, alarmSound)],
 			)
 			alarmHandler.run.start()
 		# Clock layer gestures.
@@ -234,7 +241,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			("c", self.script_cancelAlarm),
 			("space", self.script_timeDisplay),
 			("p", self.script_stopLongAlarm),
-			("h", self.script_getHelp)
+			("h", self.script_getHelp),
 		)
 
 	def terminate(self):
@@ -251,10 +258,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			# Translators: Message presented in input help mode.
 			"Speaks current time. If pressed twice quickly, speaks current date. "
 			"If pressed three times quickly, reports the current day, the week number, "
-			"the current year and the days remaining before the end of the year."
+			"the current year and the days remaining before the end of the year.",
 		),
 		category=globalCommands.SCRCAT_SYSTEM,
-		gesture="kb:NVDA+f12"
+		gesture="kb:NVDA+f12",
 	)
 	def script_reportTimeAndDate(self, gesture):
 		curMode = speech.getState().speechMode
@@ -263,37 +270,45 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		now = datetime.now()
 		if scriptHandler.getLastScriptRepeatCount() == 0:
 			msg = safeGetTimeFormatEx(
-				None, None, now, formats.rgx.sub(
-					formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']]
-				)
+				None,
+				None,
+				now,
+				formats.rgx.sub(
+					formats.repl,
+					formats.timeFormats[config.conf["clockAndCalendar"]["timeDisplayFormat"]],
+				),
 			)
 		elif scriptHandler.getLastScriptRepeatCount() == 1:
 			msg = safeGetDateFormatEx(
-				None, None, None, formats.dateFormats[config.conf['clockAndCalendar']['dateDisplayFormat']]
+				None,
+				None,
+				None,
+				formats.dateFormats[config.conf["clockAndCalendar"]["dateDisplayFormat"]],
 			)
 		else:
 			informations = getDayAndWeekOfYear(safeGetDateFormatEx(None, None, None, "yyyy/M/d"))
 			msg = _(
-				"Day {day}, week {week} of {year}, remaining days {remain}."
+				"Day {day}, week {week} of {year}, remaining days {remain}.",
 			).format(day=informations[0], week=informations[1], year=informations[2], remain=informations[3])
 		ui.message(msg)
 		speech.setSpeechMode(curMode)
+
 	# We remove the docstring from the original dateTime script
 	# to have only one entry in the "System status" category,
 	# it will be automatically restored if the Clock add-on is disabled or uninstalled.
 	globalCommands.commands.script_dateTime.__func__.__doc__ = ""
 
 	def getScript(self, gesture):
-		if (
-			not hasattr(self, "clockLayerModeActive")
-			or (hasattr(self, "clockLayerModeActive") and not self.clockLayerModeActive)
+		if not hasattr(self, "clockLayerModeActive") or (
+			hasattr(self, "clockLayerModeActive") and not self.clockLayerModeActive
 		):
 			return globalPluginHandler.GlobalPlugin.getScript(self, gesture)
 		script = globalPluginHandler.GlobalPlugin.getScript(self, gesture)
 		if not script:
 			return self.script_error
 		self.layeredScriptToRun = next(
-			(x[1] for x in self._clockLayerGestures if x[0] == gesture.mainKeyName), None
+			(x[1] for x in self._clockLayerGestures if x[0] == gesture.mainKeyName),
+			None,
 		)
 		return self.runAndFinish
 
@@ -317,9 +332,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	@scriptHandler.script(
 		description=_(
 			# Translators: Message presented in input help mode.
-			"Clock and calendar layer commands. After pressing this keystroke, press H for additional help."
+			"Clock and calendar layer commands. After pressing this keystroke, press H for additional help.",
 		),
-		gesture="kb:NVDA+shift+f12"
+		gesture="kb:NVDA+shift+f12",
 	)
 	def script_clockLayerCommands(self, gesture):
 		curMode = speech.getState().speechMode
@@ -336,7 +351,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Starts, resets or stops the stopwatch.")
+		description=_("Starts, resets or stops the stopwatch."),
 	)
 	def script_stopwatchRun(self, gesture):
 		curMode = speech.getState().speechMode
@@ -356,7 +371,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Speaks current stopwatch or count-down timer.")
+		description=_("Speaks current stopwatch or count-down timer."),
 	)
 	def script_timeDisplay(self, gesture):
 		curMode = speech.getState().speechMode
@@ -367,7 +382,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Gives the remaining and elapsed time before the next alarm.")
+		description=_("Gives the remaining and elapsed time before the next alarm."),
 	)
 	def script_alarmInfo(self, gesture):
 		curMode = speech.getState().speechMode
@@ -377,7 +392,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			elapsedTime = alarmHandler.run.elapsed()
 			remainingTime = alarmHandler.run.remaining()
 			msg = _(
-				"Elapsed time {elapsed}, remaining time {remaining}."
+				"Elapsed time {elapsed}, remaining time {remaining}.",
 			).format(elapsed=secondsToString(elapsedTime), remaining=secondsToString(remainingTime))
 		else:
 			msg = _("No alarm")
@@ -386,7 +401,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Cancel the next alarm.")
+		description=_("Cancel the next alarm."),
 	)
 	def script_cancelAlarm(self, gesture):
 		curMode = speech.getState().speechMode
@@ -402,15 +417,21 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Resets stopwatch to 0 without restarting it.")
+		description=_("Resets stopwatch to 0 without restarting it."),
 	)
 	def script_stopwatchReset(self, gesture):
 		curMode = speech.getState().speechMode
 		if hasattr(speech.SpeechMode, "onDemand") and curMode == speech.SpeechMode.onDemand:
 			speech.setSpeechMode(speech.SpeechMode.talk)
-		if self.stopwatch.startTime is None and self.stopwatch.stopTime is None and not self.stopwatch.running:
+		if (
+			self.stopwatch.startTime is None
+			and self.stopwatch.stopTime is None
+			and not self.stopwatch.running
+		):
 			ui.message(
-				_("The stopwatch is already reset to 0. Use the clock layer command followed by s to start it.")
+				_(
+					"The stopwatch is already reset to 0. Use the clock layer command followed by s to start it.",
+				),
 			)
 			return
 		self.stopwatch.reset()
@@ -419,30 +440,48 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Lists available commands in clock command layer.")
+		description=_("Lists available commands in clock command layer."),
 	)
 	def script_getHelp(self, gesture):
 		curMode = speech.getState().speechMode
 		if hasattr(speech.SpeechMode, "onDemand") and curMode == speech.SpeechMode.onDemand:
 			speech.setSpeechMode(speech.SpeechMode.talk)
-		ui.message("\n".join(x[0] + " : " + x[1].__doc__ if x[0] != "space" else skipTranslation.translate(x[0]) + " : " + x[1].__doc__ for x in self._clockLayerGestures))  # NOQA: E501
+		ui.message(
+			"\n".join(
+				x[0] + " : " + x[1].__doc__
+				if x[0] != "space"
+				else skipTranslation.translate(x[0]) + " : " + x[1].__doc__
+				for x in self._clockLayerGestures
+			),
+		)  # NOQA: E501
 		speech.setSpeechMode(curMode)
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Lists available commands in clock command layer, showing them in browse mode.")
+		description=_("Lists available commands in clock command layer, showing them in browse mode."),
 	)
 	def script_getHelpInBrowseMode(self, gesture):
 		curMode = speech.getState().speechMode
 		if hasattr(speech.SpeechMode, "onDemand") and curMode == speech.SpeechMode.onDemand:
 			speech.setSpeechMode(speech.SpeechMode.talk)
-		browseableMessageText = "<ul><li>" + ("</li><li>".join(x[0] + " : " + x[1].__doc__ if x[0] != "space" else skipTranslation.translate(x[0]) + " : " + x[1].__doc__ for x in self._clockLayerGestures)) + "</li></ul>"  # NOQA: E501
+		browseableMessageText = (
+			"<ul><li>"
+			+ (
+				"</li><li>".join(
+					x[0] + " : " + x[1].__doc__
+					if x[0] != "space"
+					else skipTranslation.translate(x[0]) + " : " + x[1].__doc__
+					for x in self._clockLayerGestures
+				)
+			)
+			+ "</li></ul>"
+		)  # NOQA: E501
 		ui.browseableMessage(browseableMessageText, self.scriptCategory, isHtml=True)
 		speech.setSpeechMode(curMode)
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Allows to check the next alarm. If pressed twice, cancels it.")
+		description=_("Allows to check the next alarm. If pressed twice, cancels it."),
 	)
 	def script_checkOrCancelAlarm(self, gesture):
 		curMode = speech.getState().speechMode
@@ -456,7 +495,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				msg = _("Alarm cancelled")
 			else:
 				msg = _(
-					"Elapsed time {elapsed}, remaining time {remaining}."
+					"Elapsed time {elapsed}, remaining time {remaining}.",
 				).format(elapsed=secondsToString(elapsedTime), remaining=secondsToString(remainingTime))
 		else:
 			msg = _("No alarm")
@@ -465,7 +504,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("If an alarm is too long, allows to stop it.")
+		description=_("If an alarm is too long, allows to stop it."),
 	)
 	def script_stopLongAlarm(self, gesture):
 		curMode = speech.getState().speechMode
@@ -489,12 +528,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				gui.messageBox,
 				# Translators: error message when attempting to open more than one alarm settings dialogs.
 				_("Schedule alarms dialog is already open."),
-				skipTranslation.translate("Error"), wx.OK | wx.ICON_ERROR
+				skipTranslation.translate("Error"),
+				wx.OK | wx.ICON_ERROR,
 			)
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Display the clock settings dialog box.")
+		description=_("Display the clock settings dialog box."),
 	)
 	def script_activateClockSettingsDialog(self, gesture):
 		curMode = speech.getState().speechMode
@@ -505,7 +545,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@scriptHandler.script(
 		# Translators: Message presented in input help mode.
-		description=_("Display schedule alarms dialog box.")
+		description=_("Display schedule alarms dialog box."),
 	)
 	def script_activateAlarmSettingsDialog(self, gesture):
 		curMode = speech.getState().speechMode

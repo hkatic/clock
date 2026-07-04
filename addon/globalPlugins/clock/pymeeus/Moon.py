@@ -24,7 +24,7 @@ from pymeeus.Angle import Angle
 from pymeeus.Epoch import Epoch, JDE2000
 from pymeeus.Sun import Sun
 from pymeeus.Coordinates import (
-    nutation_longitude, true_obliquity, ecliptical2equatorial
+    nutation_longitude, true_obliquity, ecliptical2equatorial,
 )
 
 """
@@ -96,7 +96,7 @@ PERIODIC_TERMS_LR_TABLE = [
     [0,  2,  1,  0,    -323.0,      1165.0],
     [1,  1, -1,  0,     299.0,         0.0],
     [2,  0,  3,  0,     294.0,         0.0],
-    [2,  0, -1, -2,       0.0,      8752.0]
+    [2,  0, -1, -2,       0.0,      8752.0],
 ]
 """This table contains the periodic terms for the longitude (Sigmal) and
 distance (Sigmar) of the Moon. Units are 0.000001 degree for Sigmal, and 0.001
@@ -217,25 +217,45 @@ class Moon(object):
         # Get the time from J2000.0 in Julian centuries
         t = (epoch - JDE2000) / 36525.0
         # Compute Moon's mean longitude, referred to mean equinox of date
-        Lprime = 218.3164477 + (481267.88123421
-                                + (-0.0015786
-                                   + (1.0/538841.0
-                                       - t/65194000.0) * t) * t) * t
+        Lprime = 218.3164477 + (
+            481267.88123421
+            + (
+                -0.0015786
+                + (
+                    1.0/538841.0
+                    - t/65194000.0
+                ) * t
+            ) * t
+        ) * t
         # Mean elongation of the Moon
-        D = 297.8501921 + (445267.1114034
-                           + (-0.0018819
-                              + (1.0/545868.0 - t/113065000.0) * t) * t) * t
+        D = 297.8501921 + (
+            445267.1114034
+            + (
+                -0.0018819
+                + (1.0/545868.0 - t/113065000.0) * t
+            ) * t
+        ) * t
         # Sun's mean anomaly
         M = 357.5291092 + (35999.0502909 + (-0.0001536 + t/24490000.0) * t) * t
         # Moon's mean anomaly
-        Mprime = 134.9633964 + (477198.8675055
-                                + (0.0087414
-                                   + (1.0/69699.9
-                                      + t/14712000.0) * t) * t) * t
+        Mprime = 134.9633964 + (
+            477198.8675055
+            + (
+                0.0087414
+                + (
+                    1.0/69699.9
+                    + t/14712000.0
+                ) * t
+            ) * t
+        ) * t
         # Moon's argument of latitude
-        F = 93.2720950 + (483202.0175233
-                          + (-0.0036539
-                             + (-1.0/3526000.0 + t/863310000.0) * t) * t) * t
+        F = 93.2720950 + (
+            483202.0175233
+            + (
+                -0.0036539
+                + (-1.0/3526000.0 + t/863310000.0) * t
+            ) * t
+        ) * t
         # Let's compute some additional arguments
         A1 = 119.75 + 131.849 * t
         A2 = 53.09 + 479264.290 * t
@@ -281,8 +301,10 @@ class Moon(object):
             sigmal += coeffl * sin(argument)
             sigmar += coeffr * cos(argument)
         # Add the additive terms to sigmal
-        sigmal += (3958.0 * sin(A1r) + 1962.0 * sin(Lprimer - Fr)
-                   + 318.0 * sin(A2r))
+        sigmal += (
+            3958.0 * sin(A1r) + 1962.0 * sin(Lprimer - Fr)
+            + 318.0 * sin(A2r)
+        )
         # Now use the tabla for sigmab
         sigmab = 0.0
         for i, value in enumerate(PERIODIC_TERMS_B_TABLE):
@@ -297,10 +319,12 @@ class Moon(object):
                 coeffb = coeffb * E2
             sigmab += coeffb * sin(argument)
         # Add the additive terms to sigmab
-        sigmab += (-2235.0 * sin(Lprimer) + 382.0 * sin(A3r)
-                   + 175.0 * sin(A1r - Fr) + 175.0 * sin(A1r + Fr)
-                   + 127.0 * sin(Lprimer - Mprimer)
-                   - 115.0 * sin(Lprimer + Mprimer))
+        sigmab += (
+            -2235.0 * sin(Lprimer) + 382.0 * sin(A3r)
+            + 175.0 * sin(A1r - Fr) + 175.0 * sin(A1r + Fr)
+            + 127.0 * sin(Lprimer - Mprimer)
+            - 115.0 * sin(Lprimer + Mprimer)
+        )
         Lambda = Lprime + (sigmal / 1000000.0)
         Beta = Angle(sigmab / 1000000.0)
         Delta = 385000.56 + (sigmar / 1000.0)
@@ -440,10 +464,16 @@ class Moon(object):
         # Get the time from J2000.0 in Julian centuries
         t = (epoch - JDE2000) / 36525.0
         # Compute Moon's longitude of the mean ascending node
-        Omega = 125.0445479 + (-1934.1362891
-                               + (0.0020754
-                                  + (1.0/476441.0
-                                     - t/60616000.0) * t) * t) * t
+        Omega = 125.0445479 + (
+            -1934.1362891
+            + (
+                0.0020754
+                + (
+                    1.0/476441.0
+                    - t/60616000.0
+                ) * t
+            ) * t
+        ) * t
         Omega = Angle(Omega).to_positive()
         return Omega
 
@@ -475,20 +505,34 @@ class Moon(object):
         # Get the time from J2000.0 in Julian centuries
         t = (epoch - JDE2000) / 36525.0
         # Mean elongation of the Moon
-        D = 297.8501921 + (445267.1114034
-                           + (-0.0018819
-                              + (1.0/545868.0 - t/113065000.0) * t) * t) * t
+        D = 297.8501921 + (
+            445267.1114034
+            + (
+                -0.0018819
+                + (1.0/545868.0 - t/113065000.0) * t
+            ) * t
+        ) * t
         # Sun's mean anomaly
         M = 357.5291092 + (35999.0502909 + (-0.0001536 + t/24490000.0) * t) * t
         # Moon's mean anomaly
-        Mprime = 134.9633964 + (477198.8675055
-                                + (0.0087414
-                                   + (1.0/69699.9
-                                      + t/14712000.0) * t) * t) * t
+        Mprime = 134.9633964 + (
+            477198.8675055
+            + (
+                0.0087414
+                + (
+                    1.0/69699.9
+                    + t/14712000.0
+                ) * t
+            ) * t
+        ) * t
         # Moon's argument of latitude
-        F = 93.2720950 + (483202.0175233
-                          + (-0.0036539
-                             + (-1.0/3526000.0 + t/863310000.0) * t) * t) * t
+        F = 93.2720950 + (
+            483202.0175233
+            + (
+                -0.0036539
+                + (-1.0/3526000.0 + t/863310000.0) * t
+            ) * t
+        ) * t
         # Reduce the angles to a [0 360] range
         D = Angle(Angle.reduce_deg(D)).to_positive()
         Dr = D.rad()
@@ -499,9 +543,11 @@ class Moon(object):
         F = Angle(Angle.reduce_deg(F)).to_positive()
         Fr = F.rad()
         # Compute the periodic terms
-        corr = (-1.4979 * sin(2.0 * (Dr - Fr)) - 0.15 * sin(Mr)
-                - 0.1226 * sin(2.0 * Dr) + 0.1176 * sin(2.0 * Fr)
-                - 0.0801 * sin(2.0 * (Mprimer - Fr)))
+        corr = (
+            -1.4979 * sin(2.0 * (Dr - Fr)) - 0.15 * sin(Mr)
+            - 0.1226 * sin(2.0 * Dr) + 0.1176 * sin(2.0 * Fr)
+            - 0.0801 * sin(2.0 * (Mprimer - Fr))
+        )
         Omega += Angle(corr)
         return Omega
 
@@ -531,9 +577,13 @@ class Moon(object):
         # Get the time from J2000.0 in Julian centuries
         t = (epoch - JDE2000) / 36525.0
         # Compute Moon's longitude of the mean perigee
-        ppii = 83.3532465 + (4069.0137287
-                             + (-0.01032
-                                + (-1.0/80053.0 + t/18999000.0) * t) * t) * t
+        ppii = 83.3532465 + (
+            4069.0137287
+            + (
+                -0.01032
+                + (-1.0/80053.0 + t/18999000.0) * t
+            ) * t
+        ) * t
         ppii = Angle(ppii)
         return ppii
 
@@ -563,16 +613,26 @@ class Moon(object):
         # Get the time from J2000.0 in Julian centuries
         t = (epoch - JDE2000) / 36525.0
         # Mean elongation of the Moon
-        D = 297.8501921 + (445267.1114034
-                           + (-0.0018819
-                              + (1.0/545868.0 - t/113065000.0) * t) * t) * t
+        D = 297.8501921 + (
+            445267.1114034
+            + (
+                -0.0018819
+                + (1.0/545868.0 - t/113065000.0) * t
+            ) * t
+        ) * t
         # Sun's mean anomaly
         M = 357.5291092 + (35999.0502909 + (-0.0001536 + t/24490000.0) * t) * t
         # Moon's mean anomaly
-        Mprime = 134.9633964 + (477198.8675055
-                                + (0.0087414
-                                   + (1.0/69699.9
-                                      + t/14712000.0) * t) * t) * t
+        Mprime = 134.9633964 + (
+            477198.8675055
+            + (
+                0.0087414
+                + (
+                    1.0/69699.9
+                    + t/14712000.0
+                ) * t
+            ) * t
+        ) * t
         # Reduce the angles to a [0 360] range
         D = Angle(Angle.reduce_deg(D)).to_positive()
         Dr = D.rad()
@@ -581,9 +641,11 @@ class Moon(object):
         Mprime = Angle(Angle.reduce_deg(Mprime)).to_positive()
         Mprimer = Mprime.rad()
         # Compute the 'i' angle
-        i = Angle(180.0 - D - 6.289 * sin(Mprimer) + 2.1 * sin(Mr)
-                  - 1.274 * sin(2.0 * Dr - Mprimer) - 0.658 * sin(2.0 * Dr)
-                  - 0.214 * sin(2.0 * Mprimer) - 0.11 * sin(Dr))
+        i = Angle(
+            180.0 - D - 6.289 * sin(Mprimer) + 2.1 * sin(Mr)
+            - 1.274 * sin(2.0 * Dr - Mprimer) - 0.658 * sin(2.0 * Dr)
+            - 0.214 * sin(2.0 * Mprimer) - 0.11 * sin(Dr),
+        )
         k = (1.0 + cos(i.rad())) / 2.0
         return k
 
@@ -686,21 +748,29 @@ class Moon(object):
             k += 0.75
         t = k / 1236.85
         # Compute the time of the 'mean' phase of the Moon
-        jde = (2451550.09766 + 29.530588861 * k
-               + (0.00015437 + (-0.00000015 + 0.00000000073 * t) * t) * t * t)
+        jde = (
+            2451550.09766 + 29.530588861 * k
+            + (0.00015437 + (-0.00000015 + 0.00000000073 * t) * t) * t * t
+        )
         # Eccentricity of Earth's orbit around the Sun
         E = 1.0 + (-0.002516 - 0.0000074 * t) * t
         # Sun's mean anomaly
         M = 2.5534 + 29.1053567 * k + (-0.0000014 - 0.00000011 * t) * t * t
         # Moon's mean anomaly
-        Mprime = (201.5643 + 385.81693528 * k
-                  + (0.0107582 + (0.00001238 - 0.000000058 * t) * t) * t * t)
+        Mprime = (
+            201.5643 + 385.81693528 * k
+            + (0.0107582 + (0.00001238 - 0.000000058 * t) * t) * t * t
+        )
         # Moon's argument of latitude
-        F = (160.7108 + 390.67050284 * k
-             + (-0.0016118 + (-0.00000227 + 0.000000011 * t) * t) * t * t)
+        F = (
+            160.7108 + 390.67050284 * k
+            + (-0.0016118 + (-0.00000227 + 0.000000011 * t) * t) * t * t
+        )
         # Longitude of the ascending node of the lunar orbit
-        Omega = (124.7746 - 1.56375588 * k
-                 + (0.0020672 + 0.00000215 * t) * t * t)
+        Omega = (
+            124.7746 - 1.56375588 * k
+            + (0.0020672 + 0.00000215 * t) * t * t
+        )
         M = Angle(Angle.reduce_deg(M)).to_positive()
         Mr = M.rad()
         Mprime = Angle(Angle.reduce_deg(Mprime)).to_positive()
@@ -756,88 +826,98 @@ class Moon(object):
         corr = 0.0
         w = 0.0
         if target == "new":
-            corr = (-0.4072 * sin(Mprimer) + 0.17241 * E * sin(Mr)
-                    + 0.01608 * sin(2.0 * Mprimer) + 0.01039 * sin(2.0 * Fr)
-                    + 0.00739 * E * sin(Mprimer - Mr)
-                    - 0.00514 * E * sin(Mprimer + Mr)
-                    + 0.00208 * E * E * sin(2.0 * Mr)
-                    - 0.00111 * sin(Mprimer - 2.0 * Fr)
-                    - 0.00057 * sin(Mprimer + 2.0 * Fr)
-                    + 0.00056 * E * sin(2.0 * Mprimer + Mr)
-                    - 0.00042 * sin(3.0 * Mprimer)
-                    + 0.00042 * E * sin(Mr + 2.0 * Fr)
-                    + 0.00038 * E * sin(Mr - 2.0 * Fr)
-                    - 0.00024 * E * sin(2.0 * Mprimer - Mr)
-                    - 0.00017 * sin(Omegar) - 0.00007 * sin(Mprimer + 2.0 * Mr)
-                    + 0.00004 * sin(2.0 * (Mprimer - Fr))
-                    + 0.00004 * sin(3.0 * Mr)
-                    + 0.00003 * sin(Mprimer + Mr - 2.0 * Fr)
-                    + 0.00003 * sin(2.0 * (Mprimer + Fr))
-                    - 0.00003 * sin(Mprimer + Mr + 2.0 * Fr)
-                    + 0.00003 * sin(Mprimer - Mr + 2.0 * Fr)
-                    - 0.00002 * sin(Mprimer - Mr - 2.0 * Fr)
-                    - 0.00002 * sin(3.0 * Mprimer + Mr)
-                    + 0.00002 * sin(4.0 * Mprimer))
+            corr = (
+                -0.4072 * sin(Mprimer) + 0.17241 * E * sin(Mr)
+                + 0.01608 * sin(2.0 * Mprimer) + 0.01039 * sin(2.0 * Fr)
+                + 0.00739 * E * sin(Mprimer - Mr)
+                - 0.00514 * E * sin(Mprimer + Mr)
+                + 0.00208 * E * E * sin(2.0 * Mr)
+                - 0.00111 * sin(Mprimer - 2.0 * Fr)
+                - 0.00057 * sin(Mprimer + 2.0 * Fr)
+                + 0.00056 * E * sin(2.0 * Mprimer + Mr)
+                - 0.00042 * sin(3.0 * Mprimer)
+                + 0.00042 * E * sin(Mr + 2.0 * Fr)
+                + 0.00038 * E * sin(Mr - 2.0 * Fr)
+                - 0.00024 * E * sin(2.0 * Mprimer - Mr)
+                - 0.00017 * sin(Omegar) - 0.00007 * sin(Mprimer + 2.0 * Mr)
+                + 0.00004 * sin(2.0 * (Mprimer - Fr))
+                + 0.00004 * sin(3.0 * Mr)
+                + 0.00003 * sin(Mprimer + Mr - 2.0 * Fr)
+                + 0.00003 * sin(2.0 * (Mprimer + Fr))
+                - 0.00003 * sin(Mprimer + Mr + 2.0 * Fr)
+                + 0.00003 * sin(Mprimer - Mr + 2.0 * Fr)
+                - 0.00002 * sin(Mprimer - Mr - 2.0 * Fr)
+                - 0.00002 * sin(3.0 * Mprimer + Mr)
+                + 0.00002 * sin(4.0 * Mprimer)
+            )
         elif target == "full":
-            corr = (-0.40614 * sin(Mprimer) + 0.17302 * E * sin(Mr)
-                    + 0.01614 * sin(2.0 * Mprimer) + 0.01043 * sin(2.0 * Fr)
-                    + 0.00734 * E * sin(Mprimer - Mr)
-                    - 0.00515 * E * sin(Mprimer + Mr)
-                    + 0.00209 * E * E * sin(2.0 * Mr)
-                    - 0.00111 * sin(Mprimer - 2.0 * Fr)
-                    - 0.00057 * sin(Mprimer + 2.0 * Fr)
-                    + 0.00056 * E * sin(2.0 * Mprimer + Mr)
-                    - 0.00042 * sin(3.0 * Mprimer)
-                    + 0.00042 * E * sin(Mr + 2.0 * Fr)
-                    + 0.00038 * E * sin(Mr - 2.0 * Fr)
-                    - 0.00024 * E * sin(2.0 * Mprimer - Mr)
-                    - 0.00017 * sin(Omegar) - 0.00007 * sin(Mprimer + 2.0 * Mr)
-                    + 0.00004 * sin(2.0 * (Mprimer - Fr))
-                    + 0.00004 * sin(3.0 * Mr)
-                    + 0.00003 * sin(Mprimer + Mr - 2.0 * Fr)
-                    + 0.00003 * sin(2.0 * (Mprimer + Fr))
-                    - 0.00003 * sin(Mprimer + Mr + 2.0 * Fr)
-                    + 0.00003 * sin(Mprimer - Mr + 2.0 * Fr)
-                    - 0.00002 * sin(Mprimer - Mr - 2.0 * Fr)
-                    - 0.00002 * sin(3.0 * Mprimer + Mr)
-                    + 0.00002 * sin(4.0 * Mprimer))
+            corr = (
+                -0.40614 * sin(Mprimer) + 0.17302 * E * sin(Mr)
+                + 0.01614 * sin(2.0 * Mprimer) + 0.01043 * sin(2.0 * Fr)
+                + 0.00734 * E * sin(Mprimer - Mr)
+                - 0.00515 * E * sin(Mprimer + Mr)
+                + 0.00209 * E * E * sin(2.0 * Mr)
+                - 0.00111 * sin(Mprimer - 2.0 * Fr)
+                - 0.00057 * sin(Mprimer + 2.0 * Fr)
+                + 0.00056 * E * sin(2.0 * Mprimer + Mr)
+                - 0.00042 * sin(3.0 * Mprimer)
+                + 0.00042 * E * sin(Mr + 2.0 * Fr)
+                + 0.00038 * E * sin(Mr - 2.0 * Fr)
+                - 0.00024 * E * sin(2.0 * Mprimer - Mr)
+                - 0.00017 * sin(Omegar) - 0.00007 * sin(Mprimer + 2.0 * Mr)
+                + 0.00004 * sin(2.0 * (Mprimer - Fr))
+                + 0.00004 * sin(3.0 * Mr)
+                + 0.00003 * sin(Mprimer + Mr - 2.0 * Fr)
+                + 0.00003 * sin(2.0 * (Mprimer + Fr))
+                - 0.00003 * sin(Mprimer + Mr + 2.0 * Fr)
+                + 0.00003 * sin(Mprimer - Mr + 2.0 * Fr)
+                - 0.00002 * sin(Mprimer - Mr - 2.0 * Fr)
+                - 0.00002 * sin(3.0 * Mprimer + Mr)
+                + 0.00002 * sin(4.0 * Mprimer)
+            )
         elif target == "first" or target == "last":
-            corr = (-0.62801 * sin(Mprimer) + 0.17172 * E * sin(Mr)
-                    - 0.01183 * E * sin(Mprimer + Mr)
-                    + 0.00862 * sin(2.0 * Mprimer) + 0.00804 * sin(2.0 * Fr)
-                    + 0.00454 * E * sin(Mprimer - Mr)
-                    + 0.00204 * E * E * sin(2.0 * Mr)
-                    - 0.0018 * sin(Mprimer - 2.0 * Fr)
-                    - 0.0007 * sin(Mprimer + 2.0 * Fr)
-                    - 0.0004 * sin(3.0 * Mprimer)
-                    - 0.00034 * E * sin(2.0 * Mprimer - Mr)
-                    + 0.00032 * E * sin(Mr + 2.0 * Fr)
-                    + 0.00032 * E * sin(Mr - 2.0 * Fr)
-                    - 0.00028 * E * E * sin(Mprimer + 2.0 * Mr)
-                    + 0.00027 * E * sin(2.0 * Mprimer + Mr)
-                    - 0.00017 * sin(Omegar)
-                    - 0.00005 * sin(Mprimer - Mr - 2.0 * Fr)
-                    + 0.00004 * sin(2.0 * (Mprimer + Fr))
-                    - 0.00004 * sin(Mprimer + Mr + 2.0 * Fr)
-                    + 0.00004 * sin(Mprimer - 2.0 * Mr)
-                    + 0.00003 * sin(Mprimer + Mr - 2.0 * Fr)
-                    + 0.00003 * sin(3.0 * Mr)
-                    + 0.00002 * sin(2.0 * (Mprimer - Fr))
-                    + 0.00002 * sin(Mprimer - Mr + 2.0 * Fr)
-                    - 0.00002 * sin(3.0 * Mprimer + Mr))
-            w = (0.00306 - 0.00038 * E * cos(Mr) + 0.00026 * cos(Mprimer)
-                 - 0.00002 * cos(Mprimer - Mr) + 0.00002 * cos(Mprimer + Mr)
-                 + 0.00002 * cos(2.0 * Fr))
+            corr = (
+                -0.62801 * sin(Mprimer) + 0.17172 * E * sin(Mr)
+                - 0.01183 * E * sin(Mprimer + Mr)
+                + 0.00862 * sin(2.0 * Mprimer) + 0.00804 * sin(2.0 * Fr)
+                + 0.00454 * E * sin(Mprimer - Mr)
+                + 0.00204 * E * E * sin(2.0 * Mr)
+                - 0.0018 * sin(Mprimer - 2.0 * Fr)
+                - 0.0007 * sin(Mprimer + 2.0 * Fr)
+                - 0.0004 * sin(3.0 * Mprimer)
+                - 0.00034 * E * sin(2.0 * Mprimer - Mr)
+                + 0.00032 * E * sin(Mr + 2.0 * Fr)
+                + 0.00032 * E * sin(Mr - 2.0 * Fr)
+                - 0.00028 * E * E * sin(Mprimer + 2.0 * Mr)
+                + 0.00027 * E * sin(2.0 * Mprimer + Mr)
+                - 0.00017 * sin(Omegar)
+                - 0.00005 * sin(Mprimer - Mr - 2.0 * Fr)
+                + 0.00004 * sin(2.0 * (Mprimer + Fr))
+                - 0.00004 * sin(Mprimer + Mr + 2.0 * Fr)
+                + 0.00004 * sin(Mprimer - 2.0 * Mr)
+                + 0.00003 * sin(Mprimer + Mr - 2.0 * Fr)
+                + 0.00003 * sin(3.0 * Mr)
+                + 0.00002 * sin(2.0 * (Mprimer - Fr))
+                + 0.00002 * sin(Mprimer - Mr + 2.0 * Fr)
+                - 0.00002 * sin(3.0 * Mprimer + Mr)
+            )
+            w = (
+                0.00306 - 0.00038 * E * cos(Mr) + 0.00026 * cos(Mprimer)
+                - 0.00002 * cos(Mprimer - Mr) + 0.00002 * cos(Mprimer + Mr)
+                + 0.00002 * cos(2.0 * Fr)
+            )
             if target == "last":
                 w = -w
         # Additional corrections for all phases
-        corr2 = (0.000325 * sin(a1r) + 0.000165 * sin(a2r)
-                 + 0.000164 * sin(a3r) + 0.000126 * sin(a4r)
-                 + 0.000110 * sin(a5r) + 0.000062 * sin(a6r)
-                 + 0.000060 * sin(a7r) + 0.000056 * sin(a8r)
-                 + 0.000047 * sin(a9r) + 0.000042 * sin(a10r)
-                 + 0.000040 * sin(a11r) + 0.000037 * sin(a12r)
-                 + 0.000035 * sin(a13r) + 0.000023 * sin(a14r))
+        corr2 = (
+            0.000325 * sin(a1r) + 0.000165 * sin(a2r)
+            + 0.000164 * sin(a3r) + 0.000126 * sin(a4r)
+            + 0.000110 * sin(a5r) + 0.000062 * sin(a6r)
+            + 0.000060 * sin(a7r) + 0.000056 * sin(a8r)
+            + 0.000047 * sin(a9r) + 0.000042 * sin(a10r)
+            + 0.000040 * sin(a11r) + 0.000037 * sin(a12r)
+            + 0.000035 * sin(a13r) + 0.000023 * sin(a14r)
+        )
         jde += corr + corr2 + w
         jde = Epoch(jde)
         return jde
@@ -894,11 +974,15 @@ class Moon(object):
             k += 0.5
         t = k / 1325.55
         # Compute the time of the 'mean' perigee or apogee
-        jde = (2451534.6698 + 27.55454989 * k
-               + (-0.0006691 + (0.000001098 + 0.0000000052 * t) * t) * t * t)
+        jde = (
+            2451534.6698 + 27.55454989 * k
+            + (-0.0006691 + (0.000001098 + 0.0000000052 * t) * t) * t * t
+        )
         # Moon's mean elongation at jde
-        D = (171.9179 + 335.9106046 * k
-             + (-0.0100383 + (-0.00001156 + 0.000000055 * t) * t) * t * t)
+        D = (
+            171.9179 + 335.9106046 * k
+            + (-0.0100383 + (-0.00001156 + 0.000000055 * t) * t) * t * t
+        )
         # Sun's mean anomaly
         M = 347.3477 + 27.1577721 * k + (-0.000813 - 0.000001 * t) * t * t
         # Moon's argument of latitude
@@ -912,121 +996,129 @@ class Moon(object):
         corr = 0.0
         parallax = 0.0
         if target == "perigee":
-            corr = (-1.6769 * sin(2.0 * Dr) + 0.4589 * sin(4.0 * Dr)
-                    - 0.1856 * sin(6.0 * Dr) + 0.0883 * sin(8.0 * Dr)
-                    + (-0.0773 + 0.00019 * t) * sin(2.0 * Dr - Mr)
-                    + (0.0502 - 0.00013 * t) * sin(Mr) - 0.046 * sin(10.0 * Dr)
-                    + (0.0422 - 0.00011 * t) * sin(4.0 * Dr - Mr)
-                    - 0.0256 * sin(6.0 * Dr - Mr) + 0.0253 * sin(12.0 * Dr)
-                    + 0.0237 * sin(Dr) + 0.0162 * sin(8.0 * Dr - Mr)
-                    - 0.0145 * sin(14.0 * Dr) + 0.0129 * sin(2.0 * Fr)
-                    - 0.0112 * sin(3.0 * Dr) - 0.0104 * sin(10.0 * Dr - Mr)
-                    + 0.0086 * sin(16.0 * Dr) + 0.0069 * sin(12.0 * Dr - Mr)
-                    + 0.0066 * sin(5.0 * Dr) - 0.0053 * sin(2.0 * (Dr + Fr))
-                    - 0.0052 * sin(18.0 * Dr) - 0.0046 * sin(14.0 * Dr - Mr)
-                    - 0.0041 * sin(7.0 * Dr) + 0.004 * sin(2.0 * Dr + Mr)
-                    + 0.0032 * sin(20.0 * Dr) - 0.0032 * sin(Dr + Mr)
-                    + 0.0031 * sin(16.0 * Dr - Mr)
-                    - 0.0029 * sin(4.0 * Dr + Mr) + 0.0027 * sin(9.0 * Dr)
-                    + 0.0027 * sin(4.0 * Dr + 2.0 * Fr)
-                    - 0.0027 * sin(2.0 * (Dr - Mr))
-                    + 0.0024 * sin(4.0 * Dr - 2.0 * Mr)
-                    - 0.0021 * sin(6.0 * Dr - 2.0 * Mr)
-                    - 0.0021 * sin(22.0 * Dr) - 0.0021 * sin(18.0 * Dr - Mr)
-                    + 0.0019 * sin(6.0 * Dr + Mr) - 0.0018 * sin(11.0 * Dr)
-                    - 0.0014 * sin(8.0 * Dr + Mr)
-                    - 0.0014 * sin(4.0 * Dr - 2.0 * Fr)
-                    - 0.0014 * sin(6.0 * Dr + 2.0 * Fr)
-                    + 0.0014 * sin(3.0 * Dr + Mr) - 0.0014 * sin(5.0 * Dr + Mr)
-                    + 0.0013 * sin(13.0 * Dr) + 0.0013 * sin(20.0 * Dr - Mr)
-                    + 0.0011 * sin(3.0 * Dr + 2.0 * Mr)
-                    - 0.0011 * sin(4.0 * Dr + 2.0 * Fr - 2.0 * Mr)
-                    - 0.0010 * sin(Dr + 2.0 * Mr)
-                    - 0.0009 * sin(22.0 * Dr - Mr) - 0.0008 * sin(4.0 * Fr)
-                    + 0.0008 * sin(6.0 * Dr - 2.0 * Fr)
-                    + 0.0008 * sin(2.0 * Dr - 2.0 * Fr + Mr)
-                    + 0.0007 * sin(2.0 * Mr) + 0.0007 * sin(2.0 * Fr - Mr)
-                    + 0.0007 * sin(2.0 * Dr + 4.0 * Fr)
-                    - 0.0006 * sin(2.0 * (Fr - Mr))
-                    - 0.0006 * sin(2.0 * (Dr - Fr + Mr))
-                    + 0.0006 * sin(24.0 * Dr) + 0.0005 * sin(4.0 * (Dr - Fr))
-                    + 0.0005 * sin(2.0 * (Dr + Mr)) - 0.0004 * sin(Dr - Mr))
-            parallax = (3629.215 + 63.224 * cos(2.0 * Dr)
-                        - 6.99 * cos(4.0 * Dr)
-                        + (2.834 - 0.0071 * t) * cos(2.0 * Dr - Mr)
-                        + 1.927 * cos(6.0 * Dr) - 1.263 * cos(Dr)
-                        - 0.702 * cos(8.0 * Dr)
-                        + (0.696 - 0.0017 * t) * cos(Mr) - 0.69 * cos(2.0 * Fr)
-                        + (-0.629 + 0.0016 * t) * cos(4.0 * Dr - Mr)
-                        - 0.392 * cos(2.0 * (Dr - Fr)) + 0.297 * cos(10.0 * Dr)
-                        + 0.26 * cos(6.0 * Dr - Mr) + 0.201 * cos(3.0 * Dr)
-                        - 0.161 * cos(2.0 * Dr + Mr) + 0.157 * cos(Dr + Mr)
-                        - 0.138 * cos(12.0 * Dr) - 0.127 * cos(8.0 * Dr - Mr)
-                        + 0.104 * cos(2.0 * (Dr + Fr))
-                        + 0.104 * cos(2.0 * (Dr - Mr)) - 0.079 * cos(5.0 * Dr)
-                        + 0.068 * cos(14.0 * Dr) + 0.067 * cos(10.0 * Dr - Mr)
-                        + 0.054 * cos(4.0 * Dr + Mr)
-                        - 0.038 * cos(12.0 * Dr - Mr)
-                        - 0.038 * cos(4.0 * Dr - 2.0 * Mr)
-                        + 0.037 * cos(7.0 * Dr)
-                        - 0.037 * cos(4.0 * Dr + 2.0 * Fr)
-                        - 0.035 * cos(16.0 * Dr) - 0.03 * cos(3.0 * Dr + Mr)
-                        + 0.029 * cos(Dr - Mr) - 0.025 * cos(6.0 * Dr + Mr)
-                        + 0.023 * cos(2.0 * Mr) + 0.023 * cos(14.0 * Dr - Mr)
-                        - 0.023 * cos(2.0 * (Dr + Mr))
-                        + 0.022 * cos(6.0 * Dr - 2.0 * Mr)
-                        - 0.021 * cos(2.0 * (Dr - Fr) - Mr)
-                        - 0.020 * cos(9.0 * Dr) + 0.019 * cos(18.0 * Dr)
-                        + 0.017 * cos(6.0 * Dr + 2.0 * Fr)
-                        + 0.014 * cos(2.0 * Fr - Mr)
-                        - 0.014 * cos(16.0 * Dr - Mr)
-                        + 0.013 * cos(4.0 * Dr - 2.0 * Fr)
-                        + 0.012 * cos(8.0 * Dr + Mr) + 0.011 * cos(11.0 * Dr)
-                        + 0.01 * cos(5.0 * Dr + Mr) - 0.01 * cos(20.0 * Dr))
+            corr = (
+                -1.6769 * sin(2.0 * Dr) + 0.4589 * sin(4.0 * Dr)
+                - 0.1856 * sin(6.0 * Dr) + 0.0883 * sin(8.0 * Dr)
+                + (-0.0773 + 0.00019 * t) * sin(2.0 * Dr - Mr)
+                + (0.0502 - 0.00013 * t) * sin(Mr) - 0.046 * sin(10.0 * Dr)
+                + (0.0422 - 0.00011 * t) * sin(4.0 * Dr - Mr)
+                - 0.0256 * sin(6.0 * Dr - Mr) + 0.0253 * sin(12.0 * Dr)
+                + 0.0237 * sin(Dr) + 0.0162 * sin(8.0 * Dr - Mr)
+                - 0.0145 * sin(14.0 * Dr) + 0.0129 * sin(2.0 * Fr)
+                - 0.0112 * sin(3.0 * Dr) - 0.0104 * sin(10.0 * Dr - Mr)
+                + 0.0086 * sin(16.0 * Dr) + 0.0069 * sin(12.0 * Dr - Mr)
+                + 0.0066 * sin(5.0 * Dr) - 0.0053 * sin(2.0 * (Dr + Fr))
+                - 0.0052 * sin(18.0 * Dr) - 0.0046 * sin(14.0 * Dr - Mr)
+                - 0.0041 * sin(7.0 * Dr) + 0.004 * sin(2.0 * Dr + Mr)
+                + 0.0032 * sin(20.0 * Dr) - 0.0032 * sin(Dr + Mr)
+                + 0.0031 * sin(16.0 * Dr - Mr)
+                - 0.0029 * sin(4.0 * Dr + Mr) + 0.0027 * sin(9.0 * Dr)
+                + 0.0027 * sin(4.0 * Dr + 2.0 * Fr)
+                - 0.0027 * sin(2.0 * (Dr - Mr))
+                + 0.0024 * sin(4.0 * Dr - 2.0 * Mr)
+                - 0.0021 * sin(6.0 * Dr - 2.0 * Mr)
+                - 0.0021 * sin(22.0 * Dr) - 0.0021 * sin(18.0 * Dr - Mr)
+                + 0.0019 * sin(6.0 * Dr + Mr) - 0.0018 * sin(11.0 * Dr)
+                - 0.0014 * sin(8.0 * Dr + Mr)
+                - 0.0014 * sin(4.0 * Dr - 2.0 * Fr)
+                - 0.0014 * sin(6.0 * Dr + 2.0 * Fr)
+                + 0.0014 * sin(3.0 * Dr + Mr) - 0.0014 * sin(5.0 * Dr + Mr)
+                + 0.0013 * sin(13.0 * Dr) + 0.0013 * sin(20.0 * Dr - Mr)
+                + 0.0011 * sin(3.0 * Dr + 2.0 * Mr)
+                - 0.0011 * sin(4.0 * Dr + 2.0 * Fr - 2.0 * Mr)
+                - 0.0010 * sin(Dr + 2.0 * Mr)
+                - 0.0009 * sin(22.0 * Dr - Mr) - 0.0008 * sin(4.0 * Fr)
+                + 0.0008 * sin(6.0 * Dr - 2.0 * Fr)
+                + 0.0008 * sin(2.0 * Dr - 2.0 * Fr + Mr)
+                + 0.0007 * sin(2.0 * Mr) + 0.0007 * sin(2.0 * Fr - Mr)
+                + 0.0007 * sin(2.0 * Dr + 4.0 * Fr)
+                - 0.0006 * sin(2.0 * (Fr - Mr))
+                - 0.0006 * sin(2.0 * (Dr - Fr + Mr))
+                + 0.0006 * sin(24.0 * Dr) + 0.0005 * sin(4.0 * (Dr - Fr))
+                + 0.0005 * sin(2.0 * (Dr + Mr)) - 0.0004 * sin(Dr - Mr)
+            )
+            parallax = (
+                3629.215 + 63.224 * cos(2.0 * Dr)
+                - 6.99 * cos(4.0 * Dr)
+                + (2.834 - 0.0071 * t) * cos(2.0 * Dr - Mr)
+                + 1.927 * cos(6.0 * Dr) - 1.263 * cos(Dr)
+                - 0.702 * cos(8.0 * Dr)
+                + (0.696 - 0.0017 * t) * cos(Mr) - 0.69 * cos(2.0 * Fr)
+                + (-0.629 + 0.0016 * t) * cos(4.0 * Dr - Mr)
+                - 0.392 * cos(2.0 * (Dr - Fr)) + 0.297 * cos(10.0 * Dr)
+                + 0.26 * cos(6.0 * Dr - Mr) + 0.201 * cos(3.0 * Dr)
+                - 0.161 * cos(2.0 * Dr + Mr) + 0.157 * cos(Dr + Mr)
+                - 0.138 * cos(12.0 * Dr) - 0.127 * cos(8.0 * Dr - Mr)
+                + 0.104 * cos(2.0 * (Dr + Fr))
+                + 0.104 * cos(2.0 * (Dr - Mr)) - 0.079 * cos(5.0 * Dr)
+                + 0.068 * cos(14.0 * Dr) + 0.067 * cos(10.0 * Dr - Mr)
+                + 0.054 * cos(4.0 * Dr + Mr)
+                - 0.038 * cos(12.0 * Dr - Mr)
+                - 0.038 * cos(4.0 * Dr - 2.0 * Mr)
+                + 0.037 * cos(7.0 * Dr)
+                - 0.037 * cos(4.0 * Dr + 2.0 * Fr)
+                - 0.035 * cos(16.0 * Dr) - 0.03 * cos(3.0 * Dr + Mr)
+                + 0.029 * cos(Dr - Mr) - 0.025 * cos(6.0 * Dr + Mr)
+                + 0.023 * cos(2.0 * Mr) + 0.023 * cos(14.0 * Dr - Mr)
+                - 0.023 * cos(2.0 * (Dr + Mr))
+                + 0.022 * cos(6.0 * Dr - 2.0 * Mr)
+                - 0.021 * cos(2.0 * (Dr - Fr) - Mr)
+                - 0.020 * cos(9.0 * Dr) + 0.019 * cos(18.0 * Dr)
+                + 0.017 * cos(6.0 * Dr + 2.0 * Fr)
+                + 0.014 * cos(2.0 * Fr - Mr)
+                - 0.014 * cos(16.0 * Dr - Mr)
+                + 0.013 * cos(4.0 * Dr - 2.0 * Fr)
+                + 0.012 * cos(8.0 * Dr + Mr) + 0.011 * cos(11.0 * Dr)
+                + 0.01 * cos(5.0 * Dr + Mr) - 0.01 * cos(20.0 * Dr)
+            )
         else:
-            corr = (0.4392 * sin(2.0 * Dr)
-                    + 0.0684 * sin(4.0 * Dr)
-                    + (0.0456 - 0.00011 * t) * sin(Mr)
-                    + (0.0426 - 0.00011 * t) * sin(2.0 * Dr - Mr)
-                    + 0.0212 * sin(2.0 * Fr)
-                    - 0.0189 * sin(Dr)
-                    + 0.0144 * sin(6.0 * Dr)
-                    + 0.0113 * sin(4.0 * Dr - Mr)
-                    + 0.0047 * sin(2.0 * (Dr + Fr))
-                    + 0.0036 * sin(Dr + Mr)
-                    + 0.0035 * sin(8.0 * Dr)
-                    + 0.0034 * sin(6.0 * Dr - Mr)
-                    - 0.0034 * sin(2.0 * (Dr - Fr))
-                    + 0.0022 * sin(2.0 * (Dr - Mr))
-                    - 0.0017 * sin(3.0 * Dr)
-                    + 0.0013 * sin(4.0 * Dr + 2.0 * Fr)
-                    + 0.0011 * sin(8.0 * Dr - Mr)
-                    + 0.0010 * sin(4.0 * Dr - 2.0 * Mr)
-                    + 0.0009 * sin(10.0 * Dr)
-                    + 0.0007 * sin(3.0 * Dr + Mr)
-                    + 0.0006 * sin(2.0 * Mr)
-                    + 0.0005 * sin(2.0 * Dr + Mr)
-                    + 0.0005 * sin(2.0 * (Dr + Mr))
-                    + 0.0004 * sin(6.0 * Dr + 2.0 * Fr)
-                    + 0.0004 * sin(6.0 * Dr - 2.0 * Mr)
-                    + 0.0004 * sin(10.0 * Dr - Mr)
-                    - 0.0004 * sin(5.0 * Dr)
-                    - 0.0004 * sin(4.0 * Dr - 2.0 * Fr)
-                    + 0.0003 * sin(2.0 * Fr + Mr)
-                    + 0.0003 * sin(12.0 * Dr)
-                    + 0.0003 * sin(2.0 * (Dr + Fr) - Mr)
-                    - 0.0003 * sin(Dr - Mr))
-            parallax = (3245.251 - 9.147 * cos(2.0 * Dr) - 0.841 * cos(Dr)
-                        + 0.697 * cos(2.0 * Fr)
-                        + (-0.656 + 0.0016 * t) * cos(Mr)
-                        + 0.355 * cos(4.0 * Dr) + 0.159 * cos(2.0 * Dr - Mr)
-                        + 0.127 * cos(Dr + Mr) + 0.065 * cos(4.0 * Dr - Mr)
-                        + 0.052 * cos(6.0 * Dr) + 0.043 * cos(2.0 * Dr + Mr)
-                        + 0.031 * cos(2.0 * (Dr + Fr))
-                        - 0.023 * cos(2.0 * (Dr - Fr))
-                        + 0.022 * cos(2.0 * (Dr - Mr))
-                        + 0.019 * cos(2.0 * (Dr + Mr)) - 0.016 * cos(2.0 * Mr)
-                        + 0.014 * cos(6.0 * Dr - Mr) + 0.01 * cos(8.0 * Dr))
+            corr = (
+                0.4392 * sin(2.0 * Dr)
+                + 0.0684 * sin(4.0 * Dr)
+                + (0.0456 - 0.00011 * t) * sin(Mr)
+                + (0.0426 - 0.00011 * t) * sin(2.0 * Dr - Mr)
+                + 0.0212 * sin(2.0 * Fr)
+                - 0.0189 * sin(Dr)
+                + 0.0144 * sin(6.0 * Dr)
+                + 0.0113 * sin(4.0 * Dr - Mr)
+                + 0.0047 * sin(2.0 * (Dr + Fr))
+                + 0.0036 * sin(Dr + Mr)
+                + 0.0035 * sin(8.0 * Dr)
+                + 0.0034 * sin(6.0 * Dr - Mr)
+                - 0.0034 * sin(2.0 * (Dr - Fr))
+                + 0.0022 * sin(2.0 * (Dr - Mr))
+                - 0.0017 * sin(3.0 * Dr)
+                + 0.0013 * sin(4.0 * Dr + 2.0 * Fr)
+                + 0.0011 * sin(8.0 * Dr - Mr)
+                + 0.0010 * sin(4.0 * Dr - 2.0 * Mr)
+                + 0.0009 * sin(10.0 * Dr)
+                + 0.0007 * sin(3.0 * Dr + Mr)
+                + 0.0006 * sin(2.0 * Mr)
+                + 0.0005 * sin(2.0 * Dr + Mr)
+                + 0.0005 * sin(2.0 * (Dr + Mr))
+                + 0.0004 * sin(6.0 * Dr + 2.0 * Fr)
+                + 0.0004 * sin(6.0 * Dr - 2.0 * Mr)
+                + 0.0004 * sin(10.0 * Dr - Mr)
+                - 0.0004 * sin(5.0 * Dr)
+                - 0.0004 * sin(4.0 * Dr - 2.0 * Fr)
+                + 0.0003 * sin(2.0 * Fr + Mr)
+                + 0.0003 * sin(12.0 * Dr)
+                + 0.0003 * sin(2.0 * (Dr + Fr) - Mr)
+                - 0.0003 * sin(Dr - Mr)
+            )
+            parallax = (
+                3245.251 - 9.147 * cos(2.0 * Dr) - 0.841 * cos(Dr)
+                + 0.697 * cos(2.0 * Fr)
+                + (-0.656 + 0.0016 * t) * cos(Mr)
+                + 0.355 * cos(4.0 * Dr) + 0.159 * cos(2.0 * Dr - Mr)
+                + 0.127 * cos(Dr + Mr) + 0.065 * cos(4.0 * Dr - Mr)
+                + 0.052 * cos(6.0 * Dr) + 0.043 * cos(2.0 * Dr + Mr)
+                + 0.031 * cos(2.0 * (Dr + Fr))
+                - 0.023 * cos(2.0 * (Dr - Fr))
+                + 0.022 * cos(2.0 * (Dr - Mr))
+                + 0.019 * cos(2.0 * (Dr + Mr)) - 0.016 * cos(2.0 * Mr)
+                + 0.014 * cos(6.0 * Dr - Mr) + 0.01 * cos(8.0 * Dr)
+            )
         jde += corr
         jde = Epoch(jde)
         parallax = Angle(0, 0, parallax)
@@ -1082,16 +1174,24 @@ class Moon(object):
             k += 0.5
         t = k / 1342.23
         # Compute the time without the corrections
-        jde = (2451565.1619 + 27.212220817 * k
-               + (0.0002762 + (0.000000021 - 0.000000000088 * t) * t) * t * t)
+        jde = (
+            2451565.1619 + 27.212220817 * k
+            + (0.0002762 + (0.000000021 - 0.000000000088 * t) * t) * t * t
+        )
         # Compute the following angles in degrees
-        D = (183.638 + 331.73735682 * k
-             + (0.0014852 + (0.00000209 - 0.00000001 * t) * t) * t * t)
+        D = (
+            183.638 + 331.73735682 * k
+            + (0.0014852 + (0.00000209 - 0.00000001 * t) * t) * t * t
+        )
         M = 17.4006 + 26.8203725 * k + (0.0001186 + 0.00000006 * t) * t * t
-        Mprime = (38.3776 + 355.52747313 * k
-                  + (0.0123499 + (0.000014627 - 0.000000069 * t) * t) * t * t)
-        Omega = (123.9767 - 1.44098956 * k
-                 + (0.0020608 + (0.00000214 - 0.000000016 * t) * t) * t * t)
+        Mprime = (
+            38.3776 + 355.52747313 * k
+            + (0.0123499 + (0.000014627 - 0.000000069 * t) * t) * t * t
+        )
+        Omega = (
+            123.9767 - 1.44098956 * k
+            + (0.0020608 + (0.00000214 - 0.000000016 * t) * t) * t * t
+        )
         V = 299.75 + (132.85 - 0.009173 * t) * t
         P = Omega + 272.75 - 2.3 * t
         # Reduce the angles to the [0 360] range, and convert to radians
@@ -1110,23 +1210,25 @@ class Moon(object):
         # Eccentricity of Earth's orbit around the Sun
         E = 1.0 + (-0.002516 - 0.0000074 * t) * t
         # Compute the correction to jde
-        corr = (-0.4721 * sin(Mprimer) - 0.1649 * sin(2.0 * Dr)
-                - 0.0868 * sin(2.0 * Dr - Mprimer)
-                + 0.0084 * sin(2.0 * Dr + Mprimer)
-                - 0.0083 * E * sin(2.0 * Dr - Mr)
-                - 0.0039 * E * sin(2.0 * Dr - Mr - Mprimer)
-                + 0.0034 * sin(2.0 * Mprimer)
-                - 0.0031 * sin(2.0 * (Dr - Mprimer))
-                + 0.0030 * E * sin(2.0 * Dr + Mr)
-                + 0.0028 * E * sin(Mr - Mprimer) + 0.0026 * E * sin(Mr)
-                + 0.0025 * sin(4.0 * Dr) + 0.0024 * sin(Dr)
-                + 0.0022 * E * sin(Mr + Mprimer) + 0.0017 * sin(Omegar)
-                + 0.0014 * sin(4.0 * Dr - Mprimer)
-                + 0.0005 * E * sin(2.0 * Dr + Mr - Mprimer)
-                + 0.0004 * E * sin(2.0 * Dr - Mr + Mprimer)
-                - 0.0003 * E * sin(2.0 * (Dr - Mr))
-                + 0.0003 * E * sin(4.0 * Dr - Mr) + 0.0003 * sin(Vr)
-                + 0.0003 * sin(Pr))
+        corr = (
+            -0.4721 * sin(Mprimer) - 0.1649 * sin(2.0 * Dr)
+            - 0.0868 * sin(2.0 * Dr - Mprimer)
+            + 0.0084 * sin(2.0 * Dr + Mprimer)
+            - 0.0083 * E * sin(2.0 * Dr - Mr)
+            - 0.0039 * E * sin(2.0 * Dr - Mr - Mprimer)
+            + 0.0034 * sin(2.0 * Mprimer)
+            - 0.0031 * sin(2.0 * (Dr - Mprimer))
+            + 0.0030 * E * sin(2.0 * Dr + Mr)
+            + 0.0028 * E * sin(Mr - Mprimer) + 0.0026 * E * sin(Mr)
+            + 0.0025 * sin(4.0 * Dr) + 0.0024 * sin(Dr)
+            + 0.0022 * E * sin(Mr + Mprimer) + 0.0017 * sin(Omegar)
+            + 0.0014 * sin(4.0 * Dr - Mprimer)
+            + 0.0005 * E * sin(2.0 * Dr + Mr - Mprimer)
+            + 0.0004 * E * sin(2.0 * Dr - Mr + Mprimer)
+            - 0.0003 * E * sin(2.0 * (Dr - Mr))
+            + 0.0003 * E * sin(4.0 * Dr - Mr) + 0.0003 * sin(Vr)
+            + 0.0003 * sin(Pr)
+        )
         jde += corr
         jde = Epoch(jde)
         return jde
@@ -1228,134 +1330,142 @@ class Moon(object):
         # Compute the periodic terms for the time of maximum declination
         if (target == 'northern'):
             # Correction for the epoch
-            corr = (0.8975 * cos(Fr) - 0.4726 * sin(Mprimer)
-                    - 0.1030 * sin(2.0 * Fr) - 0.0976 * sin(2.0 * Dr - Mprimer)
-                    - 0.0462 * cos(Mprimer - Fr) - 0.0461 * cos(Mprimer + Fr)
-                    - 0.0438 * sin(2.0 * Dr) + 0.0162 * E * sin(Mr)
-                    - 0.0157 * cos(3.0 * Fr) + 0.0145 * sin(Mprimer + 2.0 * Fr)
-                    + 0.0136 * cos(2.0 * Dr - Fr)
-                    - 0.0095 * cos(2.0 * Dr - Mprimer - Fr)
-                    - 0.0091 * cos(2.0 * Dr - Mprimer + Fr)
-                    - 0.0089 * cos(2.0 * Dr + Fr) + 0.0075 * sin(2.0 * Mprimer)
-                    - 0.0068 * sin(Mprimer - 2.0 * Fr)
-                    + 0.0061 * cos(2.0 * Mprimer - Fr)
-                    - 0.0047 * sin(Mprimer + 3.0 * Fr)
-                    - 0.0043 * E * sin(2.0 * Dr - Mr - Mprimer)
-                    - 0.0040 * cos(Mprimer - 2.0 * Fr)
-                    - 0.0037 * sin(2.0 * (Dr - Mprimer)) + 0.0031 * sin(Fr)
-                    + 0.0030 * sin(2.0 * Dr + Mprimer)
-                    - 0.0029 * cos(Mprimer + 2.0 * Fr)
-                    - 0.0029 * E * sin(2.0 * Dr - Mr)
-                    - 0.0027 * sin(Mprimer + Fr)
-                    + 0.0024 * E * sin(Mr - Mprimer)
-                    - 0.0021 * sin(Mprimer - 3.0 * Fr)
-                    + 0.0019 * sin(2.0 * Mprimer + Fr)
-                    + 0.0018 * cos(2.0 * (Dr - Mprimer) - Fr)
-                    + 0.0018 * sin(3.0 * Fr) + 0.0017 * cos(Mprimer + 3.0 * Fr)
-                    + 0.0017 * cos(2.0 * Mprimer)
-                    - 0.0014 * cos(2.0 * Dr - Mprimer)
-                    + 0.0013 * cos(2.0 * Dr + Mprimer + Fr)
-                    + 0.0013 * cos(Mprimer) + 0.0012 * sin(3.0 * Mprimer + Fr)
-                    + 0.0011 * sin(2.0 * Dr - Mprimer + Fr)
-                    - 0.0011 * cos(2.0 * (Dr - Mprimer)) + 0.001 * cos(Dr + Fr)
-                    + 0.0010 * E * sin(Mr + Mprimer)
-                    - 0.0009 * sin(2.0 * (Dr - Fr))
-                    + 0.0007 * cos(2.0 * Mprimer + Fr)
-                    - 0.0007 * cos(3.0 * Mprimer + Fr))
+            corr = (
+                0.8975 * cos(Fr) - 0.4726 * sin(Mprimer)
+                - 0.1030 * sin(2.0 * Fr) - 0.0976 * sin(2.0 * Dr - Mprimer)
+                - 0.0462 * cos(Mprimer - Fr) - 0.0461 * cos(Mprimer + Fr)
+                - 0.0438 * sin(2.0 * Dr) + 0.0162 * E * sin(Mr)
+                - 0.0157 * cos(3.0 * Fr) + 0.0145 * sin(Mprimer + 2.0 * Fr)
+                + 0.0136 * cos(2.0 * Dr - Fr)
+                - 0.0095 * cos(2.0 * Dr - Mprimer - Fr)
+                - 0.0091 * cos(2.0 * Dr - Mprimer + Fr)
+                - 0.0089 * cos(2.0 * Dr + Fr) + 0.0075 * sin(2.0 * Mprimer)
+                - 0.0068 * sin(Mprimer - 2.0 * Fr)
+                + 0.0061 * cos(2.0 * Mprimer - Fr)
+                - 0.0047 * sin(Mprimer + 3.0 * Fr)
+                - 0.0043 * E * sin(2.0 * Dr - Mr - Mprimer)
+                - 0.0040 * cos(Mprimer - 2.0 * Fr)
+                - 0.0037 * sin(2.0 * (Dr - Mprimer)) + 0.0031 * sin(Fr)
+                + 0.0030 * sin(2.0 * Dr + Mprimer)
+                - 0.0029 * cos(Mprimer + 2.0 * Fr)
+                - 0.0029 * E * sin(2.0 * Dr - Mr)
+                - 0.0027 * sin(Mprimer + Fr)
+                + 0.0024 * E * sin(Mr - Mprimer)
+                - 0.0021 * sin(Mprimer - 3.0 * Fr)
+                + 0.0019 * sin(2.0 * Mprimer + Fr)
+                + 0.0018 * cos(2.0 * (Dr - Mprimer) - Fr)
+                + 0.0018 * sin(3.0 * Fr) + 0.0017 * cos(Mprimer + 3.0 * Fr)
+                + 0.0017 * cos(2.0 * Mprimer)
+                - 0.0014 * cos(2.0 * Dr - Mprimer)
+                + 0.0013 * cos(2.0 * Dr + Mprimer + Fr)
+                + 0.0013 * cos(Mprimer) + 0.0012 * sin(3.0 * Mprimer + Fr)
+                + 0.0011 * sin(2.0 * Dr - Mprimer + Fr)
+                - 0.0011 * cos(2.0 * (Dr - Mprimer)) + 0.001 * cos(Dr + Fr)
+                + 0.0010 * E * sin(Mr + Mprimer)
+                - 0.0009 * sin(2.0 * (Dr - Fr))
+                + 0.0007 * cos(2.0 * Mprimer + Fr)
+                - 0.0007 * cos(3.0 * Mprimer + Fr)
+            )
             # Correction for the declination
-            cor2 = (5.1093 * sin(Fr) + 0.2658 * cos(2.0 * Fr)
-                    + 0.1448 * sin(2.0 * Dr - Fr) - 0.0322 * sin(3.0 * Fr)
-                    + 0.0133 * cos(2.0 * (Dr - Fr)) + 0.0125 * cos(2.0 * Dr)
-                    - 0.0124 * sin(Mprimer - Fr)
-                    - 0.0101 * sin(Mprimer + 2.0 * Fr) + 0.0097 * cos(Fr)
-                    - 0.0087 * E * sin(2.0 * Dr + Mr - Fr)
-                    + 0.0074 * sin(Mprimer + 3.0 * Fr) + 0.0067 * sin(Dr + Fr)
-                    + 0.0063 * sin(Mprimer - 2.0 * Fr)
-                    + 0.0060 * E * sin(2.0 * Dr - Mr - Fr)
-                    - 0.0057 * sin(2.0 * Dr - Mprimer - Fr)
-                    - 0.0056 * cos(Mprimer + Fr)
-                    + 0.0052 * cos(Mprimer + 2.0 * Fr)
-                    + 0.0041 * cos(2.0 * Mprimer + Fr)
-                    - 0.0040 * cos(Mprimer - 3.0 * Fr)
-                    + 0.0038 * cos(2.0 * Mprimer - Fr)
-                    - 0.0034 * cos(Mprimer - 2.0 * Fr)
-                    - 0.0029 * sin(2.0 * Mprimer)
-                    + 0.0029 * sin(3.0 * Mprimer + Fr)
-                    - 0.0028 * E * cos(2.0 * Dr + Mr - Fr)
-                    - 0.0028 * cos(Mprimer - Fr) - 0.0023 * cos(3.0 * Fr)
-                    - 0.0021 * sin(2.0 * Dr + Fr)
-                    + 0.0019 * cos(Mprimer + 3.0 * Fr) + 0.0018 * cos(Dr + Fr)
-                    + 0.0017 * sin(2.0 * Mprimer - Fr)
-                    + 0.0015 * cos(3.0 * Mprimer + Fr)
-                    + 0.0014 * cos(2.0 * (Dr + Mprimer) + Fr)
-                    - 0.0012 * sin(2.0 * (Dr - Mprimer) - Fr)
-                    - 0.0012 * cos(2.0 * Mprimer) - 0.0010 * cos(Mprimer)
-                    - 0.0010 * sin(2.0 * Fr) + 0.0006 * sin(Mprimer + Fr))
+            cor2 = (
+                5.1093 * sin(Fr) + 0.2658 * cos(2.0 * Fr)
+                + 0.1448 * sin(2.0 * Dr - Fr) - 0.0322 * sin(3.0 * Fr)
+                + 0.0133 * cos(2.0 * (Dr - Fr)) + 0.0125 * cos(2.0 * Dr)
+                - 0.0124 * sin(Mprimer - Fr)
+                - 0.0101 * sin(Mprimer + 2.0 * Fr) + 0.0097 * cos(Fr)
+                - 0.0087 * E * sin(2.0 * Dr + Mr - Fr)
+                + 0.0074 * sin(Mprimer + 3.0 * Fr) + 0.0067 * sin(Dr + Fr)
+                + 0.0063 * sin(Mprimer - 2.0 * Fr)
+                + 0.0060 * E * sin(2.0 * Dr - Mr - Fr)
+                - 0.0057 * sin(2.0 * Dr - Mprimer - Fr)
+                - 0.0056 * cos(Mprimer + Fr)
+                + 0.0052 * cos(Mprimer + 2.0 * Fr)
+                + 0.0041 * cos(2.0 * Mprimer + Fr)
+                - 0.0040 * cos(Mprimer - 3.0 * Fr)
+                + 0.0038 * cos(2.0 * Mprimer - Fr)
+                - 0.0034 * cos(Mprimer - 2.0 * Fr)
+                - 0.0029 * sin(2.0 * Mprimer)
+                + 0.0029 * sin(3.0 * Mprimer + Fr)
+                - 0.0028 * E * cos(2.0 * Dr + Mr - Fr)
+                - 0.0028 * cos(Mprimer - Fr) - 0.0023 * cos(3.0 * Fr)
+                - 0.0021 * sin(2.0 * Dr + Fr)
+                + 0.0019 * cos(Mprimer + 3.0 * Fr) + 0.0018 * cos(Dr + Fr)
+                + 0.0017 * sin(2.0 * Mprimer - Fr)
+                + 0.0015 * cos(3.0 * Mprimer + Fr)
+                + 0.0014 * cos(2.0 * (Dr + Mprimer) + Fr)
+                - 0.0012 * sin(2.0 * (Dr - Mprimer) - Fr)
+                - 0.0012 * cos(2.0 * Mprimer) - 0.0010 * cos(Mprimer)
+                - 0.0010 * sin(2.0 * Fr) + 0.0006 * sin(Mprimer + Fr)
+            )
         else:
             # Correction for the epoch
-            corr = (-0.8975 * cos(Fr) - 0.4726 * sin(Mprimer)
-                    - 0.1030 * sin(2.0 * Fr) - 0.0976 * sin(2.0 * Dr - Mprimer)
-                    + 0.0541 * cos(Mprimer - Fr) + 0.0516 * cos(Mprimer + Fr)
-                    - 0.0438 * sin(2.0 * Dr) + 0.0112 * E * sin(Mr)
-                    + 0.0157 * cos(3.0 * Fr) + 0.0023 * sin(Mprimer + 2.0 * Fr)
-                    - 0.0136 * cos(2.0 * Dr - Fr)
-                    + 0.0110 * cos(2.0 * Dr - Mprimer - Fr)
-                    + 0.0091 * cos(2.0 * Dr - Mprimer + Fr)
-                    + 0.0089 * cos(2.0 * Dr + Fr) + 0.0075 * sin(2.0 * Mprimer)
-                    - 0.0030 * sin(Mprimer - 2.0 * Fr)
-                    - 0.0061 * cos(2.0 * Mprimer - Fr)
-                    - 0.0047 * sin(Mprimer + 3.0 * Fr)
-                    - 0.0043 * E * sin(2.0 * Dr - Mr - Mprimer)
-                    + 0.0040 * cos(Mprimer - 2.0 * Fr)
-                    - 0.0037 * sin(2.0 * (Dr - Mprimer)) - 0.0031 * sin(Fr)
-                    + 0.0030 * sin(2.0 * Dr + Mprimer)
-                    + 0.0029 * cos(Mprimer + 2.0 * Fr)
-                    - 0.0029 * E * sin(2.0 * Dr - Mr)
-                    - 0.0027 * sin(Mprimer + Fr)
-                    + 0.0024 * E * sin(Mr - Mprimer)
-                    - 0.0021 * sin(Mprimer - 3.0 * Fr)
-                    - 0.0019 * sin(2.0 * Mprimer + Fr)
-                    - 0.0006 * cos(2.0 * (Dr - Mprimer) - Fr)
-                    - 0.0018 * sin(3.0 * Fr) - 0.0017 * cos(Mprimer + 3.0 * Fr)
-                    + 0.0017 * cos(2.0 * Mprimer)
-                    + 0.0014 * cos(2.0 * Dr - Mprimer)
-                    - 0.0013 * cos(2.0 * Dr + Mprimer + Fr)
-                    - 0.0013 * cos(Mprimer) + 0.0012 * sin(3.0 * Mprimer + Fr)
-                    + 0.0011 * sin(2.0 * Dr - Mprimer + Fr)
-                    + 0.0011 * cos(2.0 * (Dr - Mprimer)) + 0.001 * cos(Dr + Fr)
-                    + 0.0010 * E * sin(Mr + Mprimer)
-                    - 0.0009 * sin(2.0 * (Dr - Fr))
-                    - 0.0007 * cos(2.0 * Mprimer + Fr)
-                    - 0.0007 * cos(3.0 * Mprimer + Fr))
+            corr = (
+                -0.8975 * cos(Fr) - 0.4726 * sin(Mprimer)
+                - 0.1030 * sin(2.0 * Fr) - 0.0976 * sin(2.0 * Dr - Mprimer)
+                + 0.0541 * cos(Mprimer - Fr) + 0.0516 * cos(Mprimer + Fr)
+                - 0.0438 * sin(2.0 * Dr) + 0.0112 * E * sin(Mr)
+                + 0.0157 * cos(3.0 * Fr) + 0.0023 * sin(Mprimer + 2.0 * Fr)
+                - 0.0136 * cos(2.0 * Dr - Fr)
+                + 0.0110 * cos(2.0 * Dr - Mprimer - Fr)
+                + 0.0091 * cos(2.0 * Dr - Mprimer + Fr)
+                + 0.0089 * cos(2.0 * Dr + Fr) + 0.0075 * sin(2.0 * Mprimer)
+                - 0.0030 * sin(Mprimer - 2.0 * Fr)
+                - 0.0061 * cos(2.0 * Mprimer - Fr)
+                - 0.0047 * sin(Mprimer + 3.0 * Fr)
+                - 0.0043 * E * sin(2.0 * Dr - Mr - Mprimer)
+                + 0.0040 * cos(Mprimer - 2.0 * Fr)
+                - 0.0037 * sin(2.0 * (Dr - Mprimer)) - 0.0031 * sin(Fr)
+                + 0.0030 * sin(2.0 * Dr + Mprimer)
+                + 0.0029 * cos(Mprimer + 2.0 * Fr)
+                - 0.0029 * E * sin(2.0 * Dr - Mr)
+                - 0.0027 * sin(Mprimer + Fr)
+                + 0.0024 * E * sin(Mr - Mprimer)
+                - 0.0021 * sin(Mprimer - 3.0 * Fr)
+                - 0.0019 * sin(2.0 * Mprimer + Fr)
+                - 0.0006 * cos(2.0 * (Dr - Mprimer) - Fr)
+                - 0.0018 * sin(3.0 * Fr) - 0.0017 * cos(Mprimer + 3.0 * Fr)
+                + 0.0017 * cos(2.0 * Mprimer)
+                + 0.0014 * cos(2.0 * Dr - Mprimer)
+                - 0.0013 * cos(2.0 * Dr + Mprimer + Fr)
+                - 0.0013 * cos(Mprimer) + 0.0012 * sin(3.0 * Mprimer + Fr)
+                + 0.0011 * sin(2.0 * Dr - Mprimer + Fr)
+                + 0.0011 * cos(2.0 * (Dr - Mprimer)) + 0.001 * cos(Dr + Fr)
+                + 0.0010 * E * sin(Mr + Mprimer)
+                - 0.0009 * sin(2.0 * (Dr - Fr))
+                - 0.0007 * cos(2.0 * Mprimer + Fr)
+                - 0.0007 * cos(3.0 * Mprimer + Fr)
+            )
             # Correction for the declination
-            cor2 = (-5.1093 * sin(Fr) + 0.2658 * cos(2.0 * Fr)
-                    - 0.1448 * sin(2.0 * Dr - Fr) + 0.0322 * sin(3.0 * Fr)
-                    + 0.0133 * cos(2.0 * (Dr - Fr)) + 0.0125 * cos(2.0 * Dr)
-                    - 0.0015 * sin(Mprimer - Fr)
-                    + 0.0101 * sin(Mprimer + 2.0 * Fr) - 0.0097 * cos(Fr)
-                    + 0.0087 * E * sin(2.0 * Dr + Mr - Fr)
-                    + 0.0074 * sin(Mprimer + 3.0 * Fr) + 0.0067 * sin(Dr + Fr)
-                    - 0.0063 * sin(Mprimer - 2.0 * Fr)
-                    - 0.0060 * E * sin(2.0 * Dr - Mr - Fr)
-                    + 0.0057 * sin(2.0 * Dr - Mprimer - Fr)
-                    - 0.0056 * cos(Mprimer + Fr)
-                    - 0.0052 * cos(Mprimer + 2.0 * Fr)
-                    - 0.0041 * cos(2.0 * Mprimer + Fr)
-                    - 0.0040 * cos(Mprimer - 3.0 * Fr)
-                    - 0.0038 * cos(2.0 * Mprimer - Fr)
-                    + 0.0034 * cos(Mprimer - 2.0 * Fr)
-                    - 0.0029 * sin(2.0 * Mprimer)
-                    + 0.0029 * sin(3.0 * Mprimer + Fr)
-                    + 0.0028 * E * cos(2.0 * Dr + Mr - Fr)
-                    - 0.0028 * cos(Mprimer - Fr) + 0.0023 * cos(3.0 * Fr)
-                    + 0.0021 * sin(2.0 * Dr + Fr)
-                    + 0.0019 * cos(Mprimer + 3.0 * Fr) + 0.0018 * cos(Dr + Fr)
-                    - 0.0017 * sin(2.0 * Mprimer - Fr)
-                    + 0.0015 * cos(3.0 * Mprimer + Fr)
-                    + 0.0014 * cos(2.0 * (Dr + Mprimer) + Fr)
-                    + 0.0012 * sin(2.0 * (Dr - Mprimer) - Fr)
-                    - 0.0012 * cos(2.0 * Mprimer) + 0.0010 * cos(Mprimer)
-                    - 0.0010 * sin(2.0 * Fr) + 0.0037 * sin(Mprimer + Fr))
+            cor2 = (
+                -5.1093 * sin(Fr) + 0.2658 * cos(2.0 * Fr)
+                - 0.1448 * sin(2.0 * Dr - Fr) + 0.0322 * sin(3.0 * Fr)
+                + 0.0133 * cos(2.0 * (Dr - Fr)) + 0.0125 * cos(2.0 * Dr)
+                - 0.0015 * sin(Mprimer - Fr)
+                + 0.0101 * sin(Mprimer + 2.0 * Fr) - 0.0097 * cos(Fr)
+                + 0.0087 * E * sin(2.0 * Dr + Mr - Fr)
+                + 0.0074 * sin(Mprimer + 3.0 * Fr) + 0.0067 * sin(Dr + Fr)
+                - 0.0063 * sin(Mprimer - 2.0 * Fr)
+                - 0.0060 * E * sin(2.0 * Dr - Mr - Fr)
+                + 0.0057 * sin(2.0 * Dr - Mprimer - Fr)
+                - 0.0056 * cos(Mprimer + Fr)
+                - 0.0052 * cos(Mprimer + 2.0 * Fr)
+                - 0.0041 * cos(2.0 * Mprimer + Fr)
+                - 0.0040 * cos(Mprimer - 3.0 * Fr)
+                - 0.0038 * cos(2.0 * Mprimer - Fr)
+                + 0.0034 * cos(Mprimer - 2.0 * Fr)
+                - 0.0029 * sin(2.0 * Mprimer)
+                + 0.0029 * sin(3.0 * Mprimer + Fr)
+                + 0.0028 * E * cos(2.0 * Dr + Mr - Fr)
+                - 0.0028 * cos(Mprimer - Fr) + 0.0023 * cos(3.0 * Fr)
+                + 0.0021 * sin(2.0 * Dr + Fr)
+                + 0.0019 * cos(Mprimer + 3.0 * Fr) + 0.0018 * cos(Dr + Fr)
+                - 0.0017 * sin(2.0 * Mprimer - Fr)
+                + 0.0015 * cos(3.0 * Mprimer + Fr)
+                + 0.0014 * cos(2.0 * (Dr + Mprimer) + Fr)
+                + 0.0012 * sin(2.0 * (Dr - Mprimer) - Fr)
+                - 0.0012 * cos(2.0 * Mprimer) + 0.0010 * cos(Mprimer)
+                - 0.0010 * sin(2.0 * Fr) + 0.0037 * sin(Mprimer + Fr)
+            )
         # Add the correction to 'jde'
         jde += corr
         jde = Epoch(jde)
@@ -1424,20 +1534,34 @@ class Moon(object):
         # Get the time from J2000.0 in Julian centuries
         t = (epoch - JDE2000) / 36525.0
         # Mean elongation of the Moon
-        D = 297.8501921 + (445267.1114034
-                           + (-0.0018819
-                              + (1.0/545868.0 - t/113065000.0) * t) * t) * t
+        D = 297.8501921 + (
+            445267.1114034
+            + (
+                -0.0018819
+                + (1.0/545868.0 - t/113065000.0) * t
+            ) * t
+        ) * t
         # Sun's mean anomaly
         M = 357.5291092 + (35999.0502909 + (-0.0001536 + t/24490000.0) * t) * t
         # Moon's mean anomaly
-        Mprime = 134.9633964 + (477198.8675055
-                                + (0.0087414
-                                   + (1.0/69699.9
-                                      + t/14712000.0) * t) * t) * t
+        Mprime = 134.9633964 + (
+            477198.8675055
+            + (
+                0.0087414
+                + (
+                    1.0/69699.9
+                    + t/14712000.0
+                ) * t
+            ) * t
+        ) * t
         # Moon's argument of latitude
-        F = 93.2720950 + (483202.0175233
-                          + (-0.0036539
-                             + (-1.0/3526000.0 + t/863310000.0) * t) * t) * t
+        F = 93.2720950 + (
+            483202.0175233
+            + (
+                -0.0036539
+                + (-1.0/3526000.0 + t/863310000.0) * t
+            ) * t
+        ) * t
         F = Angle(Angle.reduce_deg(F)).to_positive()
         # Compute the mean longitude of the ascending node of lunar orbit
         Omega = Moon.longitude_mean_ascending_node(epoch)
@@ -1476,35 +1600,41 @@ class Moon(object):
         bprimer = asin(-sinW * cosB * sinI - sinB * cosI)
         bprime = Angle(bprimer, radians=True)
         # Compute the expressions from D.H. Eckhardt 1981
-        rho = (-0.02752 * cos(Mprimer) - 0.02245 * sin(Fr)
-               + 0.00684 * cos(Mprimer - 2.0 * Fr) - 0.00293 * cos(2.0 * Fr)
-               - 0.00085 * cos(2.0 * (Fr - Dr))
-               - 0.00054 * cos(Mprimer - 2.0 * Dr) - 0.0002 * sin(Mprimer + Fr)
-               - 0.0002 * cos(Mprimer + 2.0 * Fr) - 0.0002 * cos(Mprimer - Fr)
-               + 0.00014 * cos(Mprimer + 2.0 * (Fr - Dr)))
+        rho = (
+            -0.02752 * cos(Mprimer) - 0.02245 * sin(Fr)
+            + 0.00684 * cos(Mprimer - 2.0 * Fr) - 0.00293 * cos(2.0 * Fr)
+            - 0.00085 * cos(2.0 * (Fr - Dr))
+            - 0.00054 * cos(Mprimer - 2.0 * Dr) - 0.0002 * sin(Mprimer + Fr)
+            - 0.0002 * cos(Mprimer + 2.0 * Fr) - 0.0002 * cos(Mprimer - Fr)
+            + 0.00014 * cos(Mprimer + 2.0 * (Fr - Dr))
+        )
         rho = Angle(rho)
-        sigma = (-0.02816 * sin(Mprimer) + 0.02244 * cos(Fr)
-                 - 0.00682 * sin(Mprimer - 2.0 * Fr) - 0.00279 * sin(2.0 * Fr)
-                 - 0.00083 * sin(2.0 * (Fr - Dr))
-                 + 0.00069 * sin(Mprimer - 2.0 * Dr)
-                 + 0.0004 * cos(Mprimer + Fr) - 0.00025 * sin(2.0 * Mprimer)
-                 - 0.00023 * sin(Mprimer + 2.0 * Fr)
-                 + 0.0002 * cos(Mprimer - Fr) + 0.00019 * sin(Mprimer - Fr)
-                 + 0.00013 * sin(Mprimer + 2.0 * (Fr - Dr))
-                 - 0.0001 * cos(Mprimer - 3.0 * Fr))
+        sigma = (
+            -0.02816 * sin(Mprimer) + 0.02244 * cos(Fr)
+            - 0.00682 * sin(Mprimer - 2.0 * Fr) - 0.00279 * sin(2.0 * Fr)
+            - 0.00083 * sin(2.0 * (Fr - Dr))
+            + 0.00069 * sin(Mprimer - 2.0 * Dr)
+            + 0.0004 * cos(Mprimer + Fr) - 0.00025 * sin(2.0 * Mprimer)
+            - 0.00023 * sin(Mprimer + 2.0 * Fr)
+            + 0.0002 * cos(Mprimer - Fr) + 0.00019 * sin(Mprimer - Fr)
+            + 0.00013 * sin(Mprimer + 2.0 * (Fr - Dr))
+            - 0.0001 * cos(Mprimer - 3.0 * Fr)
+        )
         sigma = Angle(sigma)
-        tau = (0.0252 * E * sin(Mr) + 0.00473 * sin(2.0 * (Mprimer - Fr))
-               - 0.00467 * sin(Mprimer) + 0.00396 * sin(k1r)
-               + 0.00276 * sin(2.0 * (Mprimer - Dr)) + 0.00196 * sin(Omegar)
-               - 0.00183 * cos(Mprimer - Fr)
-               + 0.00115 * sin(Mprimer - 2.0 * Dr)
-               - 0.00096 * sin(Mprimer - Dr) + 0.00046 * sin(2.0 * (Fr - Dr))
-               - 0.00039 * sin(Mprimer - Fr) - 0.00032 * sin(Mprimer - Mr - Dr)
-               + 0.00027 * sin(2.0 * (Mprimer - Dr) - Mr) + 0.00023 * sin(k2r)
-               - 0.00014 * sin(2.0 * Dr) + 0.00014 * cos(2.0 * (Mprimer - Fr))
-               - 0.00012 * sin(Mprimer - 2.0 * Fr)
-               - 0.00012 * sin(2.0 * Mprimer)
-               + 0.00011 * sin(2.0 * (Mprimer - Mr - Dr)))
+        tau = (
+            0.0252 * E * sin(Mr) + 0.00473 * sin(2.0 * (Mprimer - Fr))
+            - 0.00467 * sin(Mprimer) + 0.00396 * sin(k1r)
+            + 0.00276 * sin(2.0 * (Mprimer - Dr)) + 0.00196 * sin(Omegar)
+            - 0.00183 * cos(Mprimer - Fr)
+            + 0.00115 * sin(Mprimer - 2.0 * Dr)
+            - 0.00096 * sin(Mprimer - Dr) + 0.00046 * sin(2.0 * (Fr - Dr))
+            - 0.00039 * sin(Mprimer - Fr) - 0.00032 * sin(Mprimer - Mr - Dr)
+            + 0.00027 * sin(2.0 * (Mprimer - Dr) - Mr) + 0.00023 * sin(k2r)
+            - 0.00014 * sin(2.0 * Dr) + 0.00014 * cos(2.0 * (Mprimer - Fr))
+            - 0.00012 * sin(Mprimer - 2.0 * Fr)
+            - 0.00012 * sin(2.0 * Mprimer)
+            + 0.00011 * sin(2.0 * (Mprimer - Mr - Dr))
+        )
         tau = Angle(tau)
         # Compute the physical librations
         lpp = -tau + (rho * cos(Ar) + sigma * sin(Ar)) * tan(bprimer)
@@ -1547,18 +1677,32 @@ class Moon(object):
         # Get the time from J2000.0 in Julian centuries
         t = (epoch - JDE2000) / 36525.0
         # Mean elongation of the Moon
-        D = 297.8501921 + (445267.1114034
-                           + (-0.0018819
-                              + (1.0/545868.0 - t/113065000.0) * t) * t) * t
+        D = 297.8501921 + (
+            445267.1114034
+            + (
+                -0.0018819
+                + (1.0/545868.0 - t/113065000.0) * t
+            ) * t
+        ) * t
         # Moon's mean anomaly
-        Mprime = 134.9633964 + (477198.8675055
-                                + (0.0087414
-                                   + (1.0/69699.9
-                                      + t/14712000.0) * t) * t) * t
+        Mprime = 134.9633964 + (
+            477198.8675055
+            + (
+                0.0087414
+                + (
+                    1.0/69699.9
+                    + t/14712000.0
+                ) * t
+            ) * t
+        ) * t
         # Moon's argument of latitude
-        F = 93.2720950 + (483202.0175233
-                          + (-0.0036539
-                             + (-1.0/3526000.0 + t/863310000.0) * t) * t) * t
+        F = 93.2720950 + (
+            483202.0175233
+            + (
+                -0.0036539
+                + (-1.0/3526000.0 + t/863310000.0) * t
+            ) * t
+        ) * t
         F = Angle(Angle.reduce_deg(F)).to_positive()
         # Compute the mean longitude of the ascending node of lunar orbit
         Omega = Moon.longitude_mean_ascending_node(epoch)
@@ -1570,23 +1714,27 @@ class Moon(object):
         F = Angle(Angle.reduce_deg(F)).to_positive()
         Fr = F.rad()
         # Compute the expressions from D.H. Eckhardt 1981
-        rho = (-0.02752 * cos(Mprimer) - 0.02245 * sin(Fr)
-               + 0.00684 * cos(Mprimer - 2.0 * Fr) - 0.00293 * cos(2.0 * Fr)
-               - 0.00085 * cos(2.0 * (Fr - Dr))
-               - 0.00054 * cos(Mprimer - 2.0 * Dr) - 0.0002 * sin(Mprimer + Fr)
-               - 0.0002 * cos(Mprimer + 2.0 * Fr) - 0.0002 * cos(Mprimer - Fr)
-               + 0.00014 * cos(Mprimer + 2.0 * (Fr - Dr)))
+        rho = (
+            -0.02752 * cos(Mprimer) - 0.02245 * sin(Fr)
+            + 0.00684 * cos(Mprimer - 2.0 * Fr) - 0.00293 * cos(2.0 * Fr)
+            - 0.00085 * cos(2.0 * (Fr - Dr))
+            - 0.00054 * cos(Mprimer - 2.0 * Dr) - 0.0002 * sin(Mprimer + Fr)
+            - 0.0002 * cos(Mprimer + 2.0 * Fr) - 0.0002 * cos(Mprimer - Fr)
+            + 0.00014 * cos(Mprimer + 2.0 * (Fr - Dr))
+        )
         rho = Angle(rho)
         rhor = rho.rad()
-        sigma = (-0.02816 * sin(Mprimer) + 0.02244 * cos(Fr)
-                 - 0.00682 * sin(Mprimer - 2.0 * Fr) - 0.00279 * sin(2.0 * Fr)
-                 - 0.00083 * sin(2.0 * (Fr - Dr))
-                 + 0.00069 * sin(Mprimer - 2.0 * Dr)
-                 + 0.0004 * cos(Mprimer + Fr) - 0.00025 * sin(2.0 * Mprimer)
-                 - 0.00023 * sin(Mprimer + 2.0 * Fr)
-                 + 0.0002 * cos(Mprimer - Fr) + 0.00019 * sin(Mprimer - Fr)
-                 + 0.00013 * sin(Mprimer + 2.0 * (Fr - Dr))
-                 - 0.0001 * cos(Mprimer - 3.0 * Fr))
+        sigma = (
+            -0.02816 * sin(Mprimer) + 0.02244 * cos(Fr)
+            - 0.00682 * sin(Mprimer - 2.0 * Fr) - 0.00279 * sin(2.0 * Fr)
+            - 0.00083 * sin(2.0 * (Fr - Dr))
+            + 0.00069 * sin(Mprimer - 2.0 * Dr)
+            + 0.0004 * cos(Mprimer + Fr) - 0.00025 * sin(2.0 * Mprimer)
+            - 0.00023 * sin(Mprimer + 2.0 * Fr)
+            + 0.0002 * cos(Mprimer - Fr) + 0.00019 * sin(Mprimer - Fr)
+            + 0.00013 * sin(Mprimer + 2.0 * (Fr - Dr))
+            - 0.0001 * cos(Mprimer - 3.0 * Fr)
+        )
         sigma = Angle(sigma)
         # Compute the parameters 'v', 'x', 'y' and 'w'
         v = Omega + deltaPsi + (sigma / sinI)
@@ -1716,11 +1864,15 @@ def main():
     passage = Moon.moon_passage_nodes(epoch, target="ascending")
     y, m, d, h, mi, s = passage.get_full_date()
     mi += s/60.0
-    print("Passage by the ascending node: {}/{}/{} {}:{}".format(y,
-                                                                 m,
-                                                                 d,
-                                                                 h,
-                                                                 round(mi)))
+    print(
+        "Passage by the ascending node: {}/{}/{} {}:{}".format(
+            y,
+            m,
+            d,
+            h,
+            round(mi),
+        ),
+    )
     # 1987/5/23 6:26
 
     print("")
@@ -1729,8 +1881,12 @@ def main():
     epoch = Epoch(2049, 4, 15.0)
     epo, dec = Moon.moon_maximum_declination(epoch, target='southern')
     y, m, d, h, mi, s = epo.get_full_date()
-    print("Epoch of maximum declination: {}/{}/{} {}:{}".format(y, m, d, h,
-                                                                mi))
+    print(
+        "Epoch of maximum declination: {}/{}/{} {}:{}".format(
+            y, m, d, h,
+            mi,
+        ),
+    )
     # 2049/4/21 14:0
     print_me("Amplitude of maximum declination", dec.dms_str(n_dec=0))
     # -22d 8' 18.0''

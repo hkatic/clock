@@ -50,7 +50,7 @@ def memorized_ttinfo(*args):
         ttinfo = (
             memorized_timedelta(args[0]),
             memorized_timedelta(args[1]),
-            args[2]
+            args[2],
         )
         _ttinfo_cache[args] = ttinfo
         return ttinfo
@@ -184,7 +184,8 @@ class DstTzInfo(BaseTzInfo):
             _tzinfos = {}
             self._tzinfos = _tzinfos
             self._utcoffset, self._dst, self._tzname = (
-                self._transition_info[0])
+                self._transition_info[0]
+            )
             _tzinfos[self._transition_info[0]] = self
             for inf in self._transition_info[1:]:
                 if inf not in _tzinfos:
@@ -192,8 +193,10 @@ class DstTzInfo(BaseTzInfo):
 
     def fromutc(self, dt):
         '''See datetime.tzinfo.fromutc'''
-        if (dt.tzinfo is not None and
-                getattr(dt.tzinfo, '_tzinfos', None) is not self._tzinfos):
+        if (
+            dt.tzinfo is not None and
+            getattr(dt.tzinfo, '_tzinfos', None) is not self._tzinfos
+        ):
             raise ValueError('fromutc: dt.tzinfo is not self')
         dt = dt.replace(tzinfo=None)
         idx = max(0, bisect_right(self._utc_transition_times, dt) - 1)
@@ -321,8 +324,11 @@ class DstTzInfo(BaseTzInfo):
         possible_loc_dt = set()
         for delta in [timedelta(days=-1), timedelta(days=1)]:
             loc_dt = dt + delta
-            idx = max(0, bisect_right(
-                self._utc_transition_times, loc_dt) - 1)
+            idx = max(
+                0, bisect_right(
+                self._utc_transition_times, loc_dt,
+                ) - 1,
+            )
             inf = self._transition_info[idx]
             tzinfo = self._tzinfos[inf]
             loc_dt = tzinfo.normalize(dt.replace(tzinfo=tzinfo))
@@ -345,14 +351,16 @@ class DstTzInfo(BaseTzInfo):
             # hours.
             elif is_dst:
                 return self.localize(
-                    dt + timedelta(hours=6), is_dst=True) - timedelta(hours=6)
+                    dt + timedelta(hours=6), is_dst=True,
+                ) - timedelta(hours=6)
 
             # If we are forcing the post-DST side of the DST transition, we
             # obtain the correct timezone by winding the clock back.
             else:
                 return self.localize(
                     dt - timedelta(hours=6),
-                    is_dst=False) + timedelta(hours=6)
+                    is_dst=False,
+                ) + timedelta(hours=6)
 
         # If we get this far, we have multiple possible timezones - this
         # is an ambiguous case occuring during the end-of-DST transition.
@@ -388,7 +396,8 @@ class DstTzInfo(BaseTzInfo):
         dates = {}  # utc -> local
         for local_dt in filtered_possible_loc_dt:
             utc_time = (
-                local_dt.replace(tzinfo=None) - local_dt.tzinfo._utcoffset)
+                local_dt.replace(tzinfo=None) - local_dt.tzinfo._utcoffset
+            )
             assert utc_time not in dates
             dates[utc_time] = local_dt
         return dates[[min, max][not is_dst](dates)]
@@ -508,11 +517,11 @@ class DstTzInfo(BaseTzInfo):
             dst = 'STD'
         if self._utcoffset > _notime:
             return '<DstTzInfo %r %s+%s %s>' % (
-                self.zone, self._tzname, self._utcoffset, dst
+                self.zone, self._tzname, self._utcoffset, dst,
             )
         else:
             return '<DstTzInfo %r %s%s %s>' % (
-                self.zone, self._tzname, self._utcoffset, dst
+                self.zone, self._tzname, self._utcoffset, dst,
             )
 
     def __reduce__(self):
@@ -522,7 +531,7 @@ class DstTzInfo(BaseTzInfo):
             self.zone,
             _to_seconds(self._utcoffset),
             _to_seconds(self._dst),
-            self._tzname
+            self._tzname,
         )
 
 
@@ -562,8 +571,10 @@ def unpickler(zone, utcoffset=None, dstoffset=None, tzname=None):
     # get changed from the initial guess by the database maintainers to
     # match reality when this information is discovered.
     for localized_tz in tz._tzinfos.values():
-        if (localized_tz._utcoffset == utcoffset and
-                localized_tz._dst == dstoffset):
+        if (
+            localized_tz._utcoffset == utcoffset and
+            localized_tz._dst == dstoffset
+        ):
             return localized_tz
 
     # This (utcoffset, dstoffset) information has been removed from the
