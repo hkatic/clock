@@ -28,7 +28,8 @@ def getWaveFileDuration(sound: str) -> int:
 	@rtype: int.
 	"""
 	import wave
-	with wave.open(sound, 'r') as f:
+
+	with wave.open(sound, "r") as f:
 		frames = f.getnframes()
 		rate = f.getframerate()
 		duration = frames / rate
@@ -45,7 +46,6 @@ AutoAnnounceIntervalEveryHour = 5
 autoAnnounceIntervals: Dict[int, int] = {
 	AutoAnnounceIntervalEvery5Mins: 5,
 	AutoAnnounceIntervalEvery10Mins: 10,
-
 	AutoAnnounceIntervalEvery15Mins: 15,
 	AutoAnnounceIntervalEvery30Mins: 30,
 	AutoAnnounceIntervalEveryHour: 60,
@@ -53,7 +53,6 @@ autoAnnounceIntervals: Dict[int, int] = {
 
 
 class Clock(object):
-
 	def __init__(self) -> None:
 		self._autoAnnounceClockTimer = wx.PyTimer(self._handleClockAnnouncement)
 		self._autoAnnounceClockTimer.Start(1000)
@@ -89,11 +88,14 @@ class Clock(object):
 		now = datetime.now()
 		if self.quietHoursAreActive():
 			return
-		if config.conf["clockAndCalendar"]["separateReportSounds"] == True:
-				if now.minute == 0:
-					waveFile = os.path.join(paths.SOUNDS_DIR, config.conf["clockAndCalendar"]["timeReportSound"])
-				else:
-					waveFile = os.path.join(paths.SOUNDS_DIR, config.conf["clockAndCalendar"]["timeIntermediateReportSound"])
+		if config.conf["clockAndCalendar"]["separateReportSounds"]:
+			if now.minute == 0:
+				waveFile = os.path.join(paths.SOUNDS_DIR, config.conf["clockAndCalendar"]["timeReportSound"])
+			else:
+				waveFile = os.path.join(
+					paths.SOUNDS_DIR,
+					config.conf["clockAndCalendar"]["timeIntermediateReportSound"],
+				)
 		else:
 			waveFile = os.path.join(paths.SOUNDS_DIR, config.conf["clockAndCalendar"]["timeReportSound"])
 		if config.conf["clockAndCalendar"]["timeReporting"] != 1:
@@ -105,18 +107,26 @@ class Clock(object):
 					10 + (1000 * waveFileDuration),
 					ui.message,
 					safeGetTimeFormatEx(
-						None, None, now, formats.rgx.sub(
-							formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']]
-						)
-					)
+						None,
+						None,
+						now,
+						formats.rgx.sub(
+							formats.repl,
+							formats.timeFormats[config.conf["clockAndCalendar"]["timeDisplayFormat"]],
+						),
+					),
 				)
 			else:
 				ui.message(
 					safeGetTimeFormatEx(
-						None, None, now, formats.rgx.sub(
-							formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']]
-						)
-					)
+						None,
+						None,
+						now,
+						formats.rgx.sub(
+							formats.repl,
+							formats.timeFormats[config.conf["clockAndCalendar"]["timeDisplayFormat"]],
+						),
+					),
 				)
 
 	def quietHoursAreActive(self) -> bool:
@@ -128,7 +138,10 @@ class Clock(object):
 			return False
 		nowTime = dtfunctions.strfNowTime(config.conf["clockAndCalendar"]["input24HourFormat"])
 		if dtfunctions.timeInRange(
-			qhStartTime, qhEndTime, nowTime, config.conf["clockAndCalendar"]["input24HourFormat"]
+			qhStartTime,
+			qhEndTime,
+			nowTime,
+			config.conf["clockAndCalendar"]["input24HourFormat"],
 		):
 			return True
 		return False

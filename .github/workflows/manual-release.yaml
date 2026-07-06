@@ -150,8 +150,8 @@ jobs:
 
         with open("changelog.md", "w", encoding="utf-8") as f:
           f.write(text)
-          
-      shell: python 
+
+      shell: python
 
 
     - name: Check if there are any changes

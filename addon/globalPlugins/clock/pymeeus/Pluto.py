@@ -77,7 +77,7 @@ PLUTO_ARGUMENT = [
     (2.0, 0.0, 3.0),
     (3.0, 0.0, -2.0),
     (3.0, 0.0, -1.0),
-    (3.0, 0.0, 0.0)
+    (3.0, 0.0, 0.0),
 ]
 """This table contains Pluto's argument coefficients according to Table 37.A in
 Meeus' book, page 265."""
@@ -126,7 +126,7 @@ PLUTO_LONGITUDE = [
     (1.0, 3.0),
     (-3.0, -1.0),
     (5.0, -3.0),
-    (0.0, 0.0)
+    (0.0, 0.0),
 ]
 """This table contains the periodic terms to compute Pluto's heliocentric
 longitude according to Table 37.A in Meeus' book, page 265"""
@@ -175,7 +175,7 @@ PLUTO_LATITUDE = [
     (0.0, 0.0),
     (0.0, 1.0),
     (0.0, 0.0),
-    (1.0, 0.0)
+    (1.0, 0.0),
 ]
 """This table contains the periodic terms to compute Pluto's heliocentric
 latitude according to Table 37.A in Meeus' book, page 265"""
@@ -224,7 +224,7 @@ PLUTO_RADIUS_VECTOR = [
     (-8.0, 7.0),
     (2.0, -10.0),
     (19.0, 35.0),
-    (10.0, 3.0)
+    (10.0, 3.0),
 ]
 """This table contains the periodic terms to compute Pluto's heliocentric
 radius vector according to Table 37.A in Meeus' book, page 265"""

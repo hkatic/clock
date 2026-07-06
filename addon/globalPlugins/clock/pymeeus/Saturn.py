@@ -19,7 +19,7 @@
 
 
 from math import (
-    sin, cos, tan, acos, atan2, sqrt, radians, log10, asin, fabs
+    sin, cos, tan, acos, atan2, sqrt, radians, log10, asin, fabs,
 )
 from pymeeus.Angle import Angle
 from pymeeus.Epoch import Epoch, JDE2000
@@ -27,7 +27,7 @@ from pymeeus.Interpolation import Interpolation
 from pymeeus.Coordinates import (
     geometric_vsop_pos, apparent_vsop_pos, orbital_elements,
     nutation_longitude, true_obliquity, ecliptical2equatorial,
-    passage_nodes_elliptic
+    passage_nodes_elliptic,
 )
 from pymeeus.Earth import Earth
 from pymeeus.Sun import Sun
@@ -5884,7 +5884,7 @@ ORBITAL_ELEM = [
     [0.05554814, -0.000346641, -0.0000006436, 0.0000000034],    # e
     [2.488879, -0.0037362, -0.00001519, 0.000000087],           # i
     [113.665503, 0.877088, -0.00012176, -0.000002249],          # Omega
-    [93.057237, 1.9637613, 0.00083753, 0.000004928]             # pie
+    [93.057237, 1.9637613, 0.00083753, 0.000004928],             # pie
 ]
 """This table contains the parameters to compute Saturn's orbital elements for
 the mean equinox of date. Based in Table 31.A, page 213"""
@@ -5894,7 +5894,7 @@ ORBITAL_ELEM_J2000 = [
     [50.077444, 1222.1138488, 0.00021004, -0.000000046],    # L
     [2.488879, 0.0025514, -0.00004906, 0.000000017],        # i
     [113.665503, -0.2566722, -0.00018399, 0.00000048],      # Omega
-    [93.057237, 0.5665415, 0.0005285, 0.000004912]          # pie
+    [93.057237, 0.5665415, 0.0005285, 0.000004912],          # pie
 ]
 """This table contains the parameters to compute Saturn's orbital elements for
 the standard equinox J2000.0. Based on Table 31.B, page 215"""
@@ -6170,21 +6170,23 @@ class Saturn(object):
         bb = Angle(bb).rad()
         cc = Angle(cc).rad()
         dd = Angle(dd).rad()
-        corr = (0.0172 + t * (-0.0006 + t * 0.00023)
-                + sin(m) * (-8.5885 + t * (0.0411 + t * 0.0002))
-                + cos(m) * (-1.147 + t * (0.0352 - t * 0.00011))
-                + sin(2.0 * m) * (0.3331 + t * (-0.0034 - t * 0.00001))
-                + cos(2.0 * m) * (0.1145 + t * (-0.0045 + t * 0.00002))
-                + sin(3.0 * m) * (-0.0169 + t * 0.0002)
-                + cos(3.0 * m) * (-0.0109 + t * 0.0004)
-                + sin(aa) * (0.0 + t * (-0.0337 + t * 0.00018))
-                + cos(aa) * (-0.851 + t * (0.0044 + t * 0.00068))
-                + sin(bb) * (0.0 + t * (-0.0064 + t * 0.00004))
-                + cos(bb) * (0.2397 + t * (-0.0012 - t * 0.00008))
-                + sin(cc) * (0.0 - t * 0.001)
-                + cos(cc) * (0.1245 + t * 0.0006)
-                + sin(dd) * (0.0 + t * (0.0024 - t * 0.00003))
-                + cos(dd) * (0.0477 + t * (-0.0005 - t * 0.00006)))
+        corr = (
+            0.0172 + t * (-0.0006 + t * 0.00023)
+            + sin(m) * (-8.5885 + t * (0.0411 + t * 0.0002))
+            + cos(m) * (-1.147 + t * (0.0352 - t * 0.00011))
+            + sin(2.0 * m) * (0.3331 + t * (-0.0034 - t * 0.00001))
+            + cos(2.0 * m) * (0.1145 + t * (-0.0045 + t * 0.00002))
+            + sin(3.0 * m) * (-0.0169 + t * 0.0002)
+            + cos(3.0 * m) * (-0.0109 + t * 0.0004)
+            + sin(aa) * (0.0 + t * (-0.0337 + t * 0.00018))
+            + cos(aa) * (-0.851 + t * (0.0044 + t * 0.00068))
+            + sin(bb) * (0.0 + t * (-0.0064 + t * 0.00004))
+            + cos(bb) * (0.2397 + t * (-0.0012 - t * 0.00008))
+            + sin(cc) * (0.0 - t * 0.001)
+            + cos(cc) * (0.1245 + t * 0.0006)
+            + sin(dd) * (0.0 + t * (0.0024 - t * 0.00003))
+            + cos(dd) * (0.0477 + t * (-0.0005 - t * 0.00006))
+        )
         to_return = jde0 + corr
         return Epoch(to_return)
 
@@ -6240,21 +6242,23 @@ class Saturn(object):
         bb = Angle(bb).rad()
         cc = Angle(cc).rad()
         dd = Angle(dd).rad()
-        corr = (-0.0209 + t * (0.0006 + t * 0.00023)
-                + sin(m) * (4.5795 + t * (-0.0312 - t * 0.00017))
-                + cos(m) * (1.1462 + t * (-0.0351 + t * 0.00011))
-                + sin(2.0 * m) * (0.0985 - t * 0.0015)
-                + cos(2.0 * m) * (0.0733 + t * (-0.0031 + t * 0.00001))
-                + sin(3.0 * m) * (0.0025 - t * 0.0001)
-                + cos(3.0 * m) * (0.005 - t * 0.0002)
-                + sin(aa) * (0.0 + t * (-0.0337 + t * 0.00018))
-                + cos(aa) * (-0.851 + t * (0.0044 + t * 0.00068))
-                + sin(bb) * (0.0 + t * (-0.0064 + t * 0.00004))
-                + cos(bb) * (0.2397 + t * (-0.0012 - t * 0.00008))
-                + sin(cc) * (0.0 - t * 0.001)
-                + cos(cc) * (0.1245 + t * 0.0006)
-                + sin(dd) * (0.0 + t * (0.0024 - t * 0.00003))
-                + cos(dd) * (0.0477 + t * (-0.0005 - t * 0.00006)))
+        corr = (
+            -0.0209 + t * (0.0006 + t * 0.00023)
+            + sin(m) * (4.5795 + t * (-0.0312 - t * 0.00017))
+            + cos(m) * (1.1462 + t * (-0.0351 + t * 0.00011))
+            + sin(2.0 * m) * (0.0985 - t * 0.0015)
+            + cos(2.0 * m) * (0.0733 + t * (-0.0031 + t * 0.00001))
+            + sin(3.0 * m) * (0.0025 - t * 0.0001)
+            + cos(3.0 * m) * (0.005 - t * 0.0002)
+            + sin(aa) * (0.0 + t * (-0.0337 + t * 0.00018))
+            + cos(aa) * (-0.851 + t * (0.0044 + t * 0.00068))
+            + sin(bb) * (0.0 + t * (-0.0064 + t * 0.00004))
+            + cos(bb) * (0.2397 + t * (-0.0012 - t * 0.00008))
+            + sin(cc) * (0.0 - t * 0.001)
+            + cos(cc) * (0.1245 + t * 0.0006)
+            + sin(dd) * (0.0 + t * (0.0024 - t * 0.00003))
+            + cos(dd) * (0.0477 + t * (-0.0005 - t * 0.00006))
+        )
         to_return = jde0 + corr
         return Epoch(to_return)
 
@@ -6311,21 +6315,23 @@ class Saturn(object):
         bb = Angle(bb).rad()
         cc = Angle(cc).rad()
         dd = Angle(dd).rad()
-        corr = (-68.884 + t * (0.0009 + t * 0.00023)
-                + sin(m) * (5.5452 + t * (-0.0279 - t * 0.0002))
-                + cos(m) * (3.0727 + t * (-0.043 + t * 0.00007))
-                + sin(2.0 * m) * (0.1101 + t * (-0.0006 - t * 0.00001))
-                + cos(2.0 * m) * (0.1654 + t * (-0.0043 + t * 0.00001))
-                + sin(3.0 * m) * (0.001 + t * 0.0001)
-                + cos(3.0 * m) * (0.0095 - t * 0.0003)
-                + sin(aa) * (0.0 + t * (-0.0337 + t * 0.00018))
-                + cos(aa) * (-0.851 + t * (0.0044 + t * 0.00068))
-                + sin(bb) * (0.0 + t * (-0.0064 + t * 0.00004))
-                + cos(bb) * (0.2397 + t * (-0.0012 - t * 0.00008))
-                + sin(cc) * (0.0 - t * 0.001)
-                + cos(cc) * (0.1245 + t * 0.0006)
-                + sin(dd) * (0.0 + t * (0.0024 - t * 0.00003))
-                + cos(dd) * (0.0477 + t * (-0.0005 - t * 0.00006)))
+        corr = (
+            -68.884 + t * (0.0009 + t * 0.00023)
+            + sin(m) * (5.5452 + t * (-0.0279 - t * 0.0002))
+            + cos(m) * (3.0727 + t * (-0.043 + t * 0.00007))
+            + sin(2.0 * m) * (0.1101 + t * (-0.0006 - t * 0.00001))
+            + cos(2.0 * m) * (0.1654 + t * (-0.0043 + t * 0.00001))
+            + sin(3.0 * m) * (0.001 + t * 0.0001)
+            + cos(3.0 * m) * (0.0095 - t * 0.0003)
+            + sin(aa) * (0.0 + t * (-0.0337 + t * 0.00018))
+            + cos(aa) * (-0.851 + t * (0.0044 + t * 0.00068))
+            + sin(bb) * (0.0 + t * (-0.0064 + t * 0.00004))
+            + cos(bb) * (0.2397 + t * (-0.0012 - t * 0.00008))
+            + sin(cc) * (0.0 - t * 0.001)
+            + cos(cc) * (0.1245 + t * 0.0006)
+            + sin(dd) * (0.0 + t * (0.0024 - t * 0.00003))
+            + cos(dd) * (0.0477 + t * (-0.0005 - t * 0.00006))
+        )
         to_return = jde0 + corr
         return Epoch(to_return)
 
@@ -6382,21 +6388,23 @@ class Saturn(object):
         bb = Angle(bb).rad()
         cc = Angle(cc).rad()
         dd = Angle(dd).rad()
-        corr = (68.872 + t * (-0.0007 + t * 0.00023)
-                + sin(m) * (5.9399 + t * (-0.04 - t * 0.00015))
-                + cos(m) * (-0.7998 + t * (-0.0266 + t * 0.00014))
-                + sin(2.0 * m) * (0.1738 - t * 0.0032)
-                + cos(2.0 * m) * (-0.0039 + t * (-0.0024 + t * 0.00001))
-                + sin(3.0 * m) * (0.0073 - t * 0.0002)
-                + cos(3.0 * m) * (0.002 - t * 0.0002)
-                + sin(aa) * (0.0 + t * (-0.0337 + t * 0.00018))
-                + cos(aa) * (-0.851 + t * (0.0044 + t * 0.00068))
-                + sin(bb) * (0.0 + t * (-0.0064 + t * 0.00004))
-                + cos(bb) * (0.2397 + t * (-0.0012 - t * 0.00008))
-                + sin(cc) * (0.0 - t * 0.001)
-                + cos(cc) * (0.1245 + t * 0.0006)
-                + sin(dd) * (0.0 + t * (0.0024 - t * 0.00003))
-                + cos(dd) * (0.0477 + t * (-0.0005 - t * 0.00006)))
+        corr = (
+            68.872 + t * (-0.0007 + t * 0.00023)
+            + sin(m) * (5.9399 + t * (-0.04 - t * 0.00015))
+            + cos(m) * (-0.7998 + t * (-0.0266 + t * 0.00014))
+            + sin(2.0 * m) * (0.1738 - t * 0.0032)
+            + cos(2.0 * m) * (-0.0039 + t * (-0.0024 + t * 0.00001))
+            + sin(3.0 * m) * (0.0073 - t * 0.0002)
+            + cos(3.0 * m) * (0.002 - t * 0.0002)
+            + sin(aa) * (0.0 + t * (-0.0337 + t * 0.00018))
+            + cos(aa) * (-0.851 + t * (0.0044 + t * 0.00068))
+            + sin(bb) * (0.0 + t * (-0.0064 + t * 0.00004))
+            + cos(bb) * (0.2397 + t * (-0.0012 - t * 0.00008))
+            + sin(cc) * (0.0 - t * 0.001)
+            + cos(cc) * (0.1245 + t * 0.0006)
+            + sin(dd) * (0.0 + t * (0.0024 - t * 0.00003))
+            + cos(dd) * (0.0477 + t * (-0.0005 - t * 0.00006))
+        )
         to_return = jde0 + corr
         return Epoch(to_return)
 
@@ -6536,14 +6544,18 @@ class Saturn(object):
         # result for the example above is 0.9 (instead of 1.9). However, after
         # carefully checking the formula implemented here, I'm sure that the
         # book has an error
-        if not (isinstance(sun_dist, float) and isinstance(earth_dist, float)
-                and isinstance(delta_U, (float, Angle))
-                and isinstance(B, (float, Angle))):
+        if not (
+            isinstance(sun_dist, float) and isinstance(earth_dist, float)
+            and isinstance(delta_U, (float, Angle))
+            and isinstance(B, (float, Angle))
+        ):
             raise TypeError("Invalid input types")
         delta_U = float(delta_U)
         B = Angle(B).rad()
-        m = (-8.68 + 5.0 * log10(sun_dist * earth_dist) + 0.044 * abs(delta_U)
-             - 2.6 * sin(abs(B)) + 1.25 * sin(B) * sin(B))
+        m = (
+            -8.68 + 5.0 * log10(sun_dist * earth_dist) + 0.044 * abs(delta_U)
+            - 2.6 * sin(abs(B)) + 1.25 * sin(B) * sin(B)
+        )
         return round(m, 1)
 
     @staticmethod
@@ -6692,8 +6704,10 @@ class Saturn(object):
         # Get the Saturnicentic latitude of the Earth
         ir = i.rad()
         Omegar = Omega.rad()
-        B = asin(sin(ir) * cos(betar) * sin(lambdar - Omegar)
-                 - (cos(ir) * sin(betar)))
+        B = asin(
+            sin(ir) * cos(betar) * sin(lambdar - Omegar)
+            - (cos(ir) * sin(betar)),
+        )
         # Compute the size of the ring, in arcseconds
         a = 375.35 / delta
         b = a * sin(fabs(B))
@@ -6704,17 +6718,27 @@ class Saturn(object):
         # Correct l and b for the Sun's aberration as seen from Saturn
         lprime = Angle(ll() - 0.01759 / r)
         bprime = bl - (0.000764 * cos(lr - N.rad())) / r
-        Bprime = asin(sin(ir) * cos(bprime.rad()) * sin(lprime.rad() - Omegar)
-                      - cos(ir) * sin(bprime.rad()))
+        Bprime = asin(
+            sin(ir) * cos(bprime.rad()) * sin(lprime.rad() - Omegar)
+            - cos(ir) * sin(bprime.rad()),
+        )
         Bprime = Angle(Bprime, radians=True)
         # Let's calculate the quantity delta_U, needed to compute the magnitude
         bprimer = bprime.rad()
         diff1 = lprime.rad() - Omegar
-        U1r = atan2((sin(ir) * sin(bprimer) + cos(ir) * cos(bprimer)
-                     * sin(diff1)), (cos(bprimer) * cos(diff1)))
+        U1r = atan2(
+            (
+                sin(ir) * sin(bprimer) + cos(ir) * cos(bprimer)
+                * sin(diff1)
+            ), (cos(bprimer) * cos(diff1)),
+        )
         diff2 = lambdar - Omegar
-        U2r = atan2((sin(ir) * sin(betar) + cos(ir) * cos(bprimer)
-                     * sin(diff2)), (cos(betar) * cos(diff2)))
+        U2r = atan2(
+            (
+                sin(ir) * sin(betar) + cos(ir) * cos(bprimer)
+                * sin(diff2)
+            ), (cos(betar) * cos(diff2)),
+        )
         delta_U = Angle(fabs(U1r - U2r), radians=True)
         B = Angle(B, radians=True)
         dpsi = nutation_longitude(epoch)
@@ -6733,9 +6757,13 @@ class Saturn(object):
         alpha, delta = ecliptical2equatorial(Lambda, Beta, epsilon)
         alphar = alpha.rad()
         deltar = delta.rad()
-        P = atan2((cos(delta0r) * sin(alpha0r - alphar)),
-                  (sin(delta0r) * cos(deltar)
-                   - cos(delta0r) * sin(deltar) * cos(alpha0r - alphar)))
+        P = atan2(
+            (cos(delta0r) * sin(alpha0r - alphar)),
+            (
+                sin(delta0r) * cos(deltar)
+                - cos(delta0r) * sin(deltar) * cos(alpha0r - alphar)
+            ),
+        )
         P = Angle(P, radians=True)
         return B, Bprime, P, delta_U, a, b
 
@@ -6867,10 +6895,14 @@ def main():
     B, Bprime, P, delta_U, a, b = Saturn.ring_parameters(epoch)
     print_me("Saturnicentric latitude of the Earth", round(B, 3))   # 16.442
     print_me("Saturnicentric latitude of the Sun", round(Bprime, 3))  # 14.679
-    print_me("Geocentric position angle of nothern semiminor axis",
-             round(P, 3))   # 6.741
-    print_me("Difference in Saturnicentric longitudes of Sun and Earth",
-             round(delta_U, 3))  # 4.198
+    print_me(
+        "Geocentric position angle of nothern semiminor axis",
+        round(P, 3),
+    )   # 6.741
+    print_me(
+        "Difference in Saturnicentric longitudes of Sun and Earth",
+        round(delta_U, 3),
+    )  # 4.198
     print_me("Size of major axis of outer ring", round(a, 2))   # 35.87
     print_me("Size of minor axis of outer ring", round(b, 2))   # 10.15
 

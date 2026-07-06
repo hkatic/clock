@@ -20,7 +20,7 @@
 
 from math import (
     sqrt, sin, cos, tan, atan, atan2, asin, acos, radians, pi, copysign,
-    degrees
+    degrees,
 )
 from pymeeus.base import TOL, iint
 from pymeeus.Angle import Angle
@@ -287,8 +287,12 @@ def mean_obliquity(*args, **kwargs):
                     * (
                         -249.67
                         + u
-                        * (-39.05 + u * (7.12 + u
-                                         * (27.87 + u * (5.79 + u * 2.45))))
+                        * (
+                            -39.05 + u * (
+                                7.12 + u
+                                * (27.87 + u * (5.79 + u * 2.45))
+                            )
+                        )
                     )
                 )
             )
@@ -491,7 +495,7 @@ def nutation_obliquity(*args, **kwargs):
 
 def precession_equatorial(
     start_epoch, final_epoch, start_ra, start_dec, p_motion_ra=0.0,
-    p_motion_dec=0.0
+    p_motion_dec=0.0,
 ):
     """This function converts the equatorial coordinates (right ascension and
     declination) given for an epoch and a equinox, to the corresponding
@@ -546,8 +550,10 @@ def precession_equatorial(
         p_motion_ra = Angle(p_motion_ra)
     if isinstance(p_motion_dec, (int, float)):
         p_motion_dec = Angle(p_motion_dec)
-    if not (isinstance(p_motion_ra, Angle)
-            and isinstance(p_motion_dec, Angle)):
+    if not (
+        isinstance(p_motion_ra, Angle)
+        and isinstance(p_motion_dec, Angle)
+    ):
         raise TypeError("Invalid input types")
     tt = (start_epoch - JDE2000) / 36525.0
     t = (final_epoch - start_epoch) / 36525.0
@@ -574,10 +580,10 @@ def precession_equatorial(
     theta = Angle(0, 0, theta)
     a = cos(start_dec.rad()) * sin(start_ra.rad() + zeta.rad())
     b = cos(theta.rad()) * cos(start_dec.rad()) * cos(
-        start_ra.rad() + zeta.rad()
+        start_ra.rad() + zeta.rad(),
     ) - sin(theta.rad()) * sin(start_dec.rad())
     c = sin(theta.rad()) * cos(start_dec.rad()) * cos(
-        start_ra.rad() + zeta.rad()
+        start_ra.rad() + zeta.rad(),
     ) + cos(theta.rad()) * sin(start_dec.rad())
     final_ra = atan2(a, b) + z.rad()
     if start_dec > 85.0:  # Coordinates are close to the pole
@@ -592,7 +598,7 @@ def precession_equatorial(
 
 def precession_ecliptical(
     start_epoch, final_epoch, start_lon, start_lat, p_motion_lon=0.0,
-    p_motion_lat=0.0
+    p_motion_lat=0.0,
 ):
     """This function converts the ecliptical coordinates (longitude and
     latitude) given for an epoch and a equinox, to the corresponding
@@ -644,8 +650,10 @@ def precession_ecliptical(
         p_motion_lon = Angle(p_motion_lon)
     if isinstance(p_motion_lat, (int, float)):
         p_motion_lat = Angle(p_motion_lat)
-    if not (isinstance(p_motion_lon, Angle)
-            and isinstance(p_motion_lat, Angle)):
+    if not (
+        isinstance(p_motion_lon, Angle)
+        and isinstance(p_motion_lat, Angle)
+    ):
         raise TypeError("Invalid input types")
     tt = (start_epoch - JDE2000) / 36525.0
     t = (final_epoch - start_epoch) / 36525.0
@@ -671,12 +679,14 @@ def precession_ecliptical(
     # But beware!: There is still a missing constant for pie. We didn't add
     # it before because of the mismatch between degrees and seconds
     pie += 174.876384
-    a = (cos(eta.rad()) * cos(start_lat.rad())
-         * sin(pie.rad() - start_lon.rad()) - sin(eta.rad())
-         * sin(start_lat.rad()))
+    a = (
+        cos(eta.rad()) * cos(start_lat.rad())
+        * sin(pie.rad() - start_lon.rad()) - sin(eta.rad())
+        * sin(start_lat.rad())
+    )
     b = cos(start_lat.rad()) * cos(pie.rad() - start_lon.rad())
     c = cos(eta.rad()) * sin(start_lat.rad()) + sin(eta.rad()) * cos(
-        start_lat.rad()
+        start_lat.rad(),
     ) * sin(pie.rad() - start_lon.rad())
     final_lon = p.rad() + pie.rad() - atan2(a, b)
     final_lat = asin(c)
@@ -747,7 +757,7 @@ def p_motion_equa2eclip(p_motion_ra, p_motion_dec, ra, dec, lat, epsilon):
 
 def precession_newcomb(
     start_epoch, final_epoch, start_ra, start_dec, p_motion_ra=0.0,
-    p_motion_dec=0.0
+    p_motion_dec=0.0,
 ):
     """This function implements the Newcomb precessional equations used in
     the old FK4 system. It takes equatorial coordinates (right ascension
@@ -791,8 +801,10 @@ def precession_newcomb(
         p_motion_ra = Angle(p_motion_ra)
     if isinstance(p_motion_dec, (int, float)):
         p_motion_dec = Angle(p_motion_dec)
-    if not (isinstance(p_motion_ra, Angle)
-            and isinstance(p_motion_dec, Angle)):
+    if not (
+        isinstance(p_motion_ra, Angle)
+        and isinstance(p_motion_dec, Angle)
+    ):
         raise TypeError("Invalid input types")
     tt = (start_epoch - 2415020.3135) / 36524.2199
     t = (final_epoch - start_epoch) / 36524.2199
@@ -809,10 +821,10 @@ def precession_newcomb(
     theta = Angle(0, 0, theta)
     a = cos(start_dec.rad()) * sin(start_ra.rad() + zeta.rad())
     b = cos(theta.rad()) * cos(start_dec.rad()) * cos(
-        start_ra.rad() + zeta.rad()
+        start_ra.rad() + zeta.rad(),
     ) - sin(theta.rad()) * sin(start_dec.rad())
     c = sin(theta.rad()) * cos(start_dec.rad()) * cos(
-        start_ra.rad() + zeta.rad()
+        start_ra.rad() + zeta.rad(),
     ) + cos(theta.rad()) * sin(start_dec.rad())
     final_ra = atan2(a, b) + z.rad()
     if start_dec > 85.0:  # Coordinates are close to the pole
@@ -826,7 +838,7 @@ def precession_newcomb(
 
 
 def motion_in_space(
-    start_ra, start_dec, distance, velocity, p_motion_ra, p_motion_dec, time
+    start_ra, start_dec, distance, velocity, p_motion_ra, p_motion_dec, time,
 ):
     """This function computes the star's true motion through space relative
     to the Sun, allowing to compute the start proper motion at a given
@@ -885,8 +897,10 @@ def motion_in_space(
         p_motion_ra = Angle(p_motion_ra)
     if isinstance(p_motion_dec, (int, float)):
         p_motion_dec = Angle(p_motion_dec)
-    if not (isinstance(p_motion_ra, Angle)
-            and isinstance(p_motion_dec, Angle)):
+    if not (
+        isinstance(p_motion_ra, Angle)
+        and isinstance(p_motion_dec, Angle)
+    ):
         raise TypeError("Invalid input types")
     if not (
         isinstance(distance, (int, float))
@@ -1155,8 +1169,10 @@ def equatorial2galactic(right_ascension, declination):
     """
 
     # First check that input values are of correct types
-    if not (isinstance(right_ascension, Angle)
-            and isinstance(declination, Angle)):
+    if not (
+        isinstance(right_ascension, Angle)
+        and isinstance(declination, Angle)
+    ):
         raise TypeError("Invalid input types")
     ra = right_ascension.rad()
     dec = declination.rad()
@@ -1372,8 +1388,14 @@ def ecliptic_equator(longitude, latitude, obliquity):
     lon = longitude.rad()
     lat = latitude.rad()
     eps = obliquity.rad()
-    q = (atan2((cos(lon) * tan(eps)), (sin(lat)
-                                       * sin(lon) * tan(eps) - cos(lat))))
+    q = (
+        atan2(
+            (cos(lon) * tan(eps)), (
+                sin(lat)
+                * sin(lon) * tan(eps) - cos(lat)
+            ),
+        )
+    )
     q = Angle(q, radians=True)
     return q
 
@@ -1401,8 +1423,10 @@ def diurnal_path_horizon(declination, geo_latitude):
     """
 
     # First check that input values are of correct types
-    if not (isinstance(declination, Angle)
-            and isinstance(geo_latitude, Angle)):
+    if not (
+        isinstance(declination, Angle)
+        and isinstance(geo_latitude, Angle)
+    ):
         raise TypeError("Invalid input types")
     dec = declination.rad()
     lat = geo_latitude.rad()
@@ -1584,8 +1608,10 @@ def times_rise_transit_set(
     return (m1 * 24.0, m0 * 24.0, m2 * 24.0)
 
 
-def refraction_apparent2true(apparent_elevation, pressure=1010.0,
-                             temperature=10.0):
+def refraction_apparent2true(
+    apparent_elevation, pressure=1010.0,
+    temperature=10.0,
+):
     """This function computes the atmospheric refraction converting from the
     apparent elevation (i.e., the observed elevation through the air) to the
     true, 'airless', elevation.
@@ -1633,8 +1659,10 @@ def refraction_apparent2true(apparent_elevation, pressure=1010.0,
     return apparent_elevation - r
 
 
-def refraction_true2apparent(true_elevation, pressure=1010.0,
-                             temperature=10.0):
+def refraction_true2apparent(
+    true_elevation, pressure=1010.0,
+    temperature=10.0,
+):
     """This function computes the atmospheric refraction converting from the
     true, 'airless', elevation (i.e., the one computed from celestial
     coordinates) to the apparent elevation (the observed elevation through the
@@ -1828,8 +1856,12 @@ def minimum_angular_separation(
     # Let's define some auxiliary functions
     def k_factor(d1, d_a):
         """This auxiliary function returns arcseconds, input is in radians"""
-        return (206264.8062 / (1.0 + sin(d1) * sin(d1)
-                               * tan(d_a) * tan(d_a / 2.0)))
+        return (
+            206264.8062 / (
+                1.0 + sin(d1) * sin(d1)
+                * tan(d_a) * tan(d_a / 2.0)
+            )
+        )
 
     def u_factor(k, d1, d_a, d_d):
         """Input is in radians, except for k (arcseconds)"""
@@ -2130,12 +2162,12 @@ def planet_star_conjunction(alpha_list, delta_list, alpha_star, delta_star):
     delta_star_list = [delta_star for _ in range(n_entries)]
     # Call the 'planetary_conjunction()' function. It handles everything else
     return planetary_conjunction(
-        alpha_list, delta_list, alpha_star_list, delta_star_list
+        alpha_list, delta_list, alpha_star_list, delta_star_list,
     )
 
 
 def planet_stars_in_line(
-    alpha_list, delta_list, alpha_star1, delta_star1, alpha_star2, delta_star2
+    alpha_list, delta_list, alpha_star1, delta_star1, alpha_star2, delta_star2,
 ):
     """Given the positions of one planet, this function computes the time when
     it is in a straight line with two other stars.
@@ -2202,8 +2234,10 @@ def planet_stars_in_line(
         d2 = delta2.rad()
         a3 = alpha3.rad()
         d3 = delta3.rad()
-        return (tan(d1) * sin(a2 - a3) + tan(d2) * sin(a3 - a1)
-                + tan(d3) * sin(a1 - a2))
+        return (
+            tan(d1) * sin(a2 - a3) + tan(d2) * sin(a3 - a1)
+            + tan(d3) * sin(a1 - a2)
+        )
 
     # First check that input values are of correct types
     if not (
@@ -2336,12 +2370,18 @@ def straight_line(alpha1, delta1, alpha2, delta2, alpha3, delta3):
     n3 = a1 * b3 - a3 * b1
     psi = acos(
         (l1 * l2 + m1 * m2 + n1 * n2)
-        / (sqrt(l1 * l1 + m1 * m1 + n1 * n1)
-           * sqrt(l2 * l2 + m2 * m2 + n2 * n2)))
+        / (
+            sqrt(l1 * l1 + m1 * m1 + n1 * n1)
+            * sqrt(l2 * l2 + m2 * m2 + n2 * n2)
+        ),
+    )
     omega = asin(
         (a2 * l3 + b2 * m3 + c2 * n3)
-        / (sqrt(a2 * a2 + b2 * b2 + c2 * c2)
-           * sqrt(l3 * l3 + m3 * m3 + n3 * n3)))
+        / (
+            sqrt(a2 * a2 + b2 * b2 + c2 * c2)
+            * sqrt(l3 * l3 + m3 * m3 + n3 * n3)
+        ),
+    )
     return Angle(psi, radians=True), Angle(omega, radians=True)
 
 
@@ -2416,7 +2456,7 @@ def circle_diameter(alpha1, delta1, alpha2, delta2, alpha3, delta3):
         d = a
     else:
         d = (2.0 * a * b * c) / sqrt(
-            (a + b + c) * (a + b - c) * (b + c - a) * (a + c - b)
+            (a + b + c) * (a + b - c) * (b + c - a) * (a + c - b),
         )
     return Angle(d)
 
@@ -2626,8 +2666,10 @@ def apparent_position(epoch, alpha, delta, sun_lon):
     d = delta.rad()
     eps = epsilon.rad()
     # Compute corrections due to nutation
-    dalpha1 = ((cos(eps) + sin(eps) * sin(a) * tan(d)) * dpsi
-               - (cos(a) * tan(d)) * depsilon)
+    dalpha1 = (
+        (cos(eps) + sin(eps) * sin(a) * tan(d)) * dpsi
+        - (cos(a) * tan(d)) * depsilon
+    )
     ddelta1 = (sin(eps) * cos(a)) * dpsi + sin(a) * depsilon
     dalpha1 = Angle(dalpha1)
     ddelta1 = Angle(ddelta1)
@@ -2638,15 +2680,27 @@ def apparent_position(epoch, alpha, delta, sun_lon):
     pie = radians(pie)
     lon = sun_lon.rad()
     k = 20.49552    # The constant of aberration
-    dalpha2 = k * (-(cos(a) * cos(lon) * cos(eps) + sin(a) * sin(lon)) / cos(d)
-                   + e * (cos(a) * cos(pie) * cos(eps)
-                          + sin(a) * sin(pie)) / cos(d))
-    ddelta2 = k * (-(cos(lon) * cos(eps)
-                     * (tan(eps) * cos(d) - sin(a) * sin(d))
-                     + cos(a) * sin(d) * sin(lon))
-                   + e * (cos(pie) * cos(eps) * (tan(eps) * cos(d)
-                                                 - sin(a) * sin(d))
-                          + cos(a) * sin(d) * sin(pie)))
+    dalpha2 = k * (
+        -(cos(a) * cos(lon) * cos(eps) + sin(a) * sin(lon)) / cos(d)
+        + e * (
+            cos(a) * cos(pie) * cos(eps)
+            + sin(a) * sin(pie)
+        ) / cos(d)
+    )
+    ddelta2 = k * (
+        -(
+            cos(lon) * cos(eps)
+            * (tan(eps) * cos(d) - sin(a) * sin(d))
+            + cos(a) * sin(d) * sin(lon)
+        )
+        + e * (
+            cos(pie) * cos(eps) * (
+                tan(eps) * cos(d)
+                - sin(a) * sin(d)
+            )
+            + cos(a) * sin(d) * sin(pie)
+        )
+    )
     dalpha2 = Angle(0, 0, dalpha2)
     ddelta2 = Angle(0, 0, ddelta2)
     # Add the two corrections to the original values
@@ -2736,9 +2790,11 @@ def orbital_equinox2equinox(epoch0, epoch, i0, arg0, lon0):
         omegapsi = atan2(a, b)
         omegapsi = Angle(omegapsi, radians=True)
         lon1 = omegapsi + pie + p
-    domega = atan2(-sin(etar) * sin(lon0r - pir),
-                   sin(i0r) * cos(etar)
-                   - cos(i0r) * sin(etar) * cos(lon0r - pir))
+    domega = atan2(
+        -sin(etar) * sin(lon0r - pir),
+        sin(i0r) * cos(etar)
+        - cos(i0r) * sin(etar) * cos(lon0r - pir),
+    )
     domega = Angle(domega, radians=True)
     arg1 = arg0 + domega
     return i1, arg1, lon1
@@ -2855,8 +2911,10 @@ def orbital_elements(epoch, parameters1, parameters2):
     """
 
     # First check that input values are of correct types
-    if not (isinstance(epoch, Epoch) and isinstance(parameters1, list)
-            and isinstance(parameters2, list)):
+    if not (
+        isinstance(epoch, Epoch) and isinstance(parameters1, list)
+        and isinstance(parameters2, list)
+    ):
         raise TypeError("Invalid input types")
 
     # Define an auxiliary function
@@ -3045,8 +3103,10 @@ def passage_nodes_elliptic(omega, e, a, t, ascending=True):
     0.8493
     """
 
-    if not (isinstance(omega, Angle) and isinstance(e, float)
-            and isinstance(a, float) and isinstance(t, Epoch)):
+    if not (
+        isinstance(omega, Angle) and isinstance(e, float)
+        and isinstance(a, float) and isinstance(t, Epoch)
+    ):
         raise TypeError("Invalid input types")
     # First, get the true anomaly
     if ascending:
@@ -3111,8 +3171,10 @@ def passage_nodes_parabolic(omega, q, t, ascending=True):
     1.3901
     """
 
-    if not (isinstance(omega, Angle) and isinstance(q, float)
-            and isinstance(t, Epoch)):
+    if not (
+        isinstance(omega, Angle) and isinstance(q, float)
+        and isinstance(t, Epoch)
+    ):
         raise TypeError("Invalid input types")
     # First, get the true anomaly
     if ascending:
@@ -3152,11 +3214,15 @@ def phase_angle(sun_dist, earth_dist, sun_earth_dist):
     72.96
     """
 
-    if not (isinstance(sun_dist, float) and isinstance(earth_dist, float)
-            and isinstance(sun_earth_dist, float)):
+    if not (
+        isinstance(sun_dist, float) and isinstance(earth_dist, float)
+        and isinstance(sun_earth_dist, float)
+    ):
         raise TypeError("Invalid input types")
-    angle = acos((sun_dist * sun_dist + earth_dist * earth_dist
-                  - sun_earth_dist * sun_earth_dist)
+    angle = acos((
+        sun_dist * sun_dist + earth_dist * earth_dist
+        - sun_earth_dist * sun_earth_dist
+    )
                  / (2.0 * sun_dist * earth_dist))
     angle = Angle(angle, radians=True)
     return angle
@@ -3185,11 +3251,15 @@ def illuminated_fraction(sun_dist, earth_dist, sun_earth_dist):
     0.647
     """
 
-    if not (isinstance(sun_dist, float) and isinstance(earth_dist, float)
-            and isinstance(sun_earth_dist, float)):
+    if not (
+        isinstance(sun_dist, float) and isinstance(earth_dist, float)
+        and isinstance(sun_earth_dist, float)
+    ):
         raise TypeError("Invalid input types")
-    k = ((sun_dist + earth_dist) * (sun_dist + earth_dist)
-         - sun_earth_dist * sun_earth_dist) / (4.0 * sun_dist * earth_dist)
+    k = (
+        (sun_dist + earth_dist) * (sun_dist + earth_dist)
+        - sun_earth_dist * sun_earth_dist
+    ) / (4.0 * sun_dist * earth_dist)
     return k
 
 
@@ -3209,7 +3279,7 @@ def main():
     e0 = mean_obliquity(1987, 4, 10)
     print(
         "The mean angle between Earth rotation axis and ecliptic axis for "
-        + "1987/4/10 is:"
+        + "1987/4/10 is:",
     )
     print_me("Mean obliquity", e0.dms_str(n_dec=3))  # 23d 26' 27.407''
     epsilon = true_obliquity(1987, 4, 10)
@@ -3243,7 +3313,7 @@ def main():
     pm_ra = Angle(0, 0, 0.03425, ra=True)
     pm_dec = Angle(0, 0, -0.0895)
     alpha, delta = precession_equatorial(
-        start_epoch, final_epoch, alpha0, delta0, pm_ra, pm_dec
+        start_epoch, final_epoch, alpha0, delta0, pm_ra, pm_dec,
     )
     print_me("Final right ascension", alpha.ra_str(n_dec=3))  # 2h 46' 11.331''
     print_me("Final declination", delta.dms_str(n_dec=2))  # 49d 20' 54.54''
@@ -3358,10 +3428,10 @@ def main():
     epsilon = Angle(23.44)
     lon1, lon2, i = ecliptic_horizon(sidereal_time, lat, epsilon)
     print_me(
-        "Longitude of ecliptic point #1 on the horizon", lon1.dms_str(n_dec=1)
+        "Longitude of ecliptic point #1 on the horizon", lon1.dms_str(n_dec=1),
     )  # 169d 21' 29.9''
     print_me(
-        "Longitude of ecliptic point #2 on the horizon", lon2.dms_str(n_dec=1)
+        "Longitude of ecliptic point #2 on the horizon", lon2.dms_str(n_dec=1),
     )  # 349d 21' 29.9''
     print_me("Angle between the ecliptic and the horizon", round(i, 0))  # 62.0
 
@@ -3528,12 +3598,14 @@ def main():
     delta1_list = [delta1_1, delta1_2, delta1_3, delta1_4, delta1_5]
     alpha2_list = [alpha2_1, alpha2_2, alpha2_3, alpha2_4, alpha2_5]
     delta2_list = [delta2_1, delta2_2, delta2_3, delta2_4, delta2_5]
-    pc = planetary_conjunction(alpha1_list, delta1_list, alpha2_list,
-                               delta2_list)
+    pc = planetary_conjunction(
+        alpha1_list, delta1_list, alpha2_list,
+        delta2_list,
+    )
     print_me("Epoch fraction 'n' for planetary conjunction", round(pc[0], 5))
     # 0.23797
     print_me(
-        "Difference in declination at conjunction", pc[1].dms_str(n_dec=1)
+        "Difference in declination at conjunction", pc[1].dms_str(n_dec=1),
     )  # 2d 8' 21.8''
 
     print("")
@@ -3553,12 +3625,18 @@ def main():
     delta_star = Angle(-9, 22, 58.47)
     alpha_list = [alpha_1, alpha_2, alpha_3, alpha_4, alpha_5]
     delta_list = [delta_1, delta_2, delta_3, delta_4, delta_5]
-    pc = planet_star_conjunction(alpha_list, delta_list, alpha_star,
-                                 delta_star)
-    print_me("Epoch fraction 'n' for planetary conjunction with star",
-             round(pc[0], 4))  # 0.2551
-    print_me("Difference in declination with star at conjunction",
-             pc[1].dms_str(n_dec=0))  # 3' 38.0''
+    pc = planet_star_conjunction(
+        alpha_list, delta_list, alpha_star,
+        delta_star,
+    )
+    print_me(
+        "Epoch fraction 'n' for planetary conjunction with star",
+        round(pc[0], 4),
+    )  # 0.2551
+    print_me(
+        "Difference in declination with star at conjunction",
+        pc[1].dms_str(n_dec=0),
+    )  # 3' 38.0''
 
     print("")
 
@@ -3580,10 +3658,14 @@ def main():
     delta_star2 = Angle(28, 2, 12.5)
     alpha_list = [alpha_1, alpha_2, alpha_3, alpha_4, alpha_5]
     delta_list = [delta_1, delta_2, delta_3, delta_4, delta_5]
-    n = planet_stars_in_line(alpha_list, delta_list, alpha_star1, delta_star1,
-                             alpha_star2, delta_star2)
-    print_me("Epoch fraction 'n' when bodies are in a straight line",
-             round(n, 4))  # 0.2233
+    n = planet_stars_in_line(
+        alpha_list, delta_list, alpha_star1, delta_star1,
+        alpha_star2, delta_star2,
+    )
+    print_me(
+        "Epoch fraction 'n' when bodies are in a straight line",
+        round(n, 4),
+    )  # 0.2233
 
     print("")
 
@@ -3598,8 +3680,10 @@ def main():
     psi, omega = straight_line(alpha1, delta1, alpha2, delta2, alpha3, delta3)
     print_me("Angle deviation from a straight line", psi.dms_str(n_dec=0))
     # 7d 31' 1.0''
-    print_me("Angular distance of central point to the straight line",
-             omega.dms_str(n_dec=0))  # -5' 24.0''
+    print_me(
+        "Angular distance of central point to the straight line",
+        omega.dms_str(n_dec=0),
+    )  # -5' 24.0''
 
     print("")
 

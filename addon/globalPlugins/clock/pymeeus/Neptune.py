@@ -24,7 +24,7 @@ from pymeeus.Angle import Angle
 from pymeeus.Epoch import Epoch, JDE2000
 from pymeeus.Coordinates import (
     geometric_vsop_pos, apparent_vsop_pos, orbital_elements,
-    nutation_longitude, true_obliquity, ecliptical2equatorial
+    nutation_longitude, true_obliquity, ecliptical2equatorial,
 )
 from pymeeus.Earth import Earth
 from pymeeus.Sun import Sun
@@ -733,11 +733,11 @@ VSOP87_L = [
     # L4
     [
         [113.998, 3.14159265359, 0.00000000000],
-        [0.605, 3.18211885677, 76.26607127560]
+        [0.605, 3.18211885677, 76.26607127560],
     ],
     # L5
     [
-        [0.874, 3.14159265359, 0.00000000000]
+        [0.874, 3.14159265359, 0.00000000000],
     ],
 ]
 """This table contains Neptune's periodic terms (all of them) from the
@@ -2045,7 +2045,7 @@ ORBITAL_ELEM = [
     [0.00945575, 0.000006033, 0.0, -0.00000000005],         # e
     [1.769953, -0.0093082, -0.00000708, 0.000000027],       # i
     [131.748057, 1.1022039, 0.00025952, -0.000000637],      # Omega
-    [48.120276, 1.4262957, 0.00038434, 0.00000002]          # pie
+    [48.120276, 1.4262957, 0.00038434, 0.00000002],          # pie
 ]
 """This table contains the parameters to compute Neptune's orbital elements for
 the mean equinox of date. Based in Table 31.A, page 213"""
@@ -2055,7 +2055,7 @@ ORBITAL_ELEM_J2000 = [
     [304.348665, 218.4862002, 0.00000059, -0.000000002],    # L
     [1.769953, 0.0002256, 0.00000023, 0.0],                 # i
     [131.748057, -0.0061651, -0.00000219, -0.000000078],    # Omega
-    [48.120276, 0.0291866, 0.0000761, 0.0]                  # pie
+    [48.120276, 0.0291866, 0.0000761, 0.0],                  # pie
 ]
 """This table contains the parameters to compute Neptune's orbital elements for
 the standard equinox J2000.0. Based on Table 31.B, page 215"""
@@ -2327,13 +2327,15 @@ class Neptune(object):
         # Convert to radians
         ee = Angle(ee).rad()
         gg = Angle(gg).rad()
-        corr = (0.0168
-                + sin(m) * (-2.5606 + t * (0.0088 + t * 0.00002))
-                + cos(m) * (-0.8611 + t * (-0.0037 + t * 0.00002))
-                + sin(2.0 * m) * (0.0118 + t * (-0.0004 + t * 0.00001))
-                + cos(2.0 * m) * (0.0307 - t * 0.0003)
-                + cos(ee) * (-0.5964)
-                + cos(gg) * (0.0728))
+        corr = (
+            0.0168
+            + sin(m) * (-2.5606 + t * (0.0088 + t * 0.00002))
+            + cos(m) * (-0.8611 + t * (-0.0037 + t * 0.00002))
+            + sin(2.0 * m) * (0.0118 + t * (-0.0004 + t * 0.00001))
+            + cos(2.0 * m) * (0.0307 - t * 0.0003)
+            + cos(ee) * (-0.5964)
+            + cos(gg) * (0.0728)
+        )
         to_return = jde0 + corr
         return Epoch(to_return)
 
@@ -2385,13 +2387,15 @@ class Neptune(object):
         # Convert to radians
         ee = Angle(ee).rad()
         gg = Angle(gg).rad()
-        corr = (-0.014 + t * t * 0.00001
-                + sin(m) * (-1.3486 + t * (0.001 + t * 0.00001))
-                + cos(m) * (0.8597 + t * 0.0037)
-                + sin(2.0 * m) * (-0.0082 + t * (-0.0002 + t * 0.00001))
-                + cos(2.0 * m) * (0.0037 - t * 0.0003)
-                + cos(ee) * (-0.5964)
-                + cos(gg) * (0.0728))
+        corr = (
+            -0.014 + t * t * 0.00001
+            + sin(m) * (-1.3486 + t * (0.001 + t * 0.00001))
+            + cos(m) * (0.8597 + t * 0.0037)
+            + sin(2.0 * m) * (-0.0082 + t * (-0.0002 + t * 0.00001))
+            + cos(2.0 * m) * (0.0037 - t * 0.0003)
+            + cos(ee) * (-0.5964)
+            + cos(gg) * (0.0728)
+        )
         to_return = jde0 + corr
         return Epoch(to_return)
 

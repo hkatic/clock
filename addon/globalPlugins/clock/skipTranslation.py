@@ -7,5 +7,6 @@
 # Based on implementation made by Alberto Buffolino
 # https://github.com/nvaccess/nvda/issues/4652
 
+
 def translate(text):
 	return _(text)

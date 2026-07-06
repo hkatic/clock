@@ -26,7 +26,7 @@ from pymeeus.Interpolation import Interpolation
 from pymeeus.Coordinates import (
     geometric_vsop_pos, apparent_vsop_pos, orbital_elements,
     nutation_longitude, true_obliquity, ecliptical2equatorial,
-    passage_nodes_elliptic
+    passage_nodes_elliptic,
 )
 from pymeeus.Earth import Earth
 from pymeeus.Sun import Sun
@@ -1636,7 +1636,7 @@ VSOP87_L = [
     ],
     # L5
     [
-        [0.873, 3.14159265359, 0.00000000000]
+        [0.873, 3.14159265359, 0.00000000000],
     ],
 ]
 """This table contains Uranus' periodic terms (all of them) from the planetary
@@ -2174,7 +2174,7 @@ VSOP87_B = [
     # B4
     [
         [5.719, 2.85499529315, 74.78159856730],
-        [0.300, 3.14159265359, 0.00000000000]
+        [0.300, 3.14159265359, 0.00000000000],
     ],
 ]
 """This table contains Uranus' periodic terms (all of them) from the planetary
@@ -4107,7 +4107,7 @@ ORBITAL_ELEM = [
     [0.04638122, -0.000027293, 0.0000000789, 0.00000000024],    # e
     [0.773197, 0.0007744, 0.00003749, -0.000000092],            # i
     [74.005957, 0.5211278, 0.00133947, 0.000018484],            # Omega
-    [173.005291, 1.486379, 0.00021406, 0.000000434]             # pie
+    [173.005291, 1.486379, 0.00021406, 0.000000434],             # pie
 ]
 """This table contains the parameters to compute Uranus's orbital elements for
 the mean equinox of date. Based in Table 31.A, page 213"""
@@ -4117,7 +4117,7 @@ ORBITAL_ELEM_J2000 = [
     [314.055005, 428.4669983, -0.00000486, 0.000000006],    # L
     [0.773197, -0.0016869, 0.00000349, 0.000000016],        # i
     [74.005957, 0.0741431, 0.00040539, 0.000000119],        # Omega
-    [173.005291, 0.0893212, -0.0000947, 0.000000414]        # pie
+    [173.005291, 0.0893212, -0.0000947, 0.000000414],        # pie
 ]
 """This table contains the parameters to compute Uranus's orbital elements for
 the standard equinox J2000.0. Based on Table 31.B, page 215"""
@@ -4389,14 +4389,16 @@ class Uranus(object):
         # Convert to radians
         ee = Angle(ee).rad()
         ff = Angle(ff).rad()
-        corr = (-0.0859 + t * 0.0003
-                + sin(m) * (-3.8179 + t * (-0.0148 + t * 0.00003))
-                + cos(m) * (5.1228 + t * (-0.0105 - t * 0.00002))
-                + sin(2.0 * m) * (-0.0803 + t * 0.0011)
-                + cos(2.0 * m) * (-0.1905 - t * 0.0006)
-                + sin(3.0 * m) * (0.0088 + t * 0.0001)
-                + cos(ee) * (0.885)
-                + cos(ff) * (0.2153))
+        corr = (
+            -0.0859 + t * 0.0003
+            + sin(m) * (-3.8179 + t * (-0.0148 + t * 0.00003))
+            + cos(m) * (5.1228 + t * (-0.0105 - t * 0.00002))
+            + sin(2.0 * m) * (-0.0803 + t * 0.0011)
+            + cos(2.0 * m) * (-0.1905 - t * 0.0006)
+            + sin(3.0 * m) * (0.0088 + t * 0.0001)
+            + cos(ee) * (0.885)
+            + cos(ff) * (0.2153)
+        )
         to_return = jde0 + corr
         return Epoch(to_return)
 
@@ -4448,14 +4450,16 @@ class Uranus(object):
         # Convert to radians
         ee = Angle(ee).rad()
         ff = Angle(ff).rad()
-        corr = (0.0844 - t * 0.0006
-                + sin(m) * (-0.1048 + t * 0.0246)
-                + cos(m) * (-5.1221 + t * (0.0104 + t * 0.00003))
-                + sin(2.0 * m) * (-0.1428 + t * 0.0005)
-                + cos(2.0 * m) * (-0.0148 - t * 0.0013)
-                + cos(3.0 * m) * (0.0055)
-                + cos(ee) * (0.885)
-                + cos(ff) * (0.2153))
+        corr = (
+            0.0844 - t * 0.0006
+            + sin(m) * (-0.1048 + t * 0.0246)
+            + cos(m) * (-5.1221 + t * (0.0104 + t * 0.00003))
+            + sin(2.0 * m) * (-0.1428 + t * 0.0005)
+            + cos(2.0 * m) * (-0.0148 - t * 0.0013)
+            + cos(3.0 * m) * (0.0055)
+            + cos(ee) * (0.885)
+            + cos(ff) * (0.2153)
+        )
         to_return = jde0 + corr
         return Epoch(to_return)
 

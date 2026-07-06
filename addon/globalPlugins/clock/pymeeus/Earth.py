@@ -25,7 +25,7 @@ from pymeeus.Epoch import Epoch
 from pymeeus.Interpolation import Interpolation
 from pymeeus.Coordinates import (
     geometric_vsop_pos, apparent_vsop_pos, orbital_elements,
-    passage_nodes_elliptic
+    passage_nodes_elliptic,
 )
 
 """
@@ -2724,7 +2724,7 @@ ORBITAL_ELEM = [
     [0.01670863, -0.000042037, -0.0000001267, 0.00000000014],   # e
     [0.0, 0.0, 0.0, 0.0],                                       # i
     [174.873176, -0.2410908, 0.00004262, 0.000000001],          # Omega
-    [102.937348, 1.7195366, 0.00045688, -0.000000018]           # pie
+    [102.937348, 1.7195366, 0.00045688, -0.000000018],           # pie
 ]
 """This table contains the parameters to compute Earth's orbital elements for
 the mean equinox of date. Based in Table 31.A, page 212"""
@@ -2734,7 +2734,7 @@ ORBITAL_ELEM_J2000 = [
     [100.466457, 35999.3728565, -0.00000568, -0.000000001],     # L
     [0.0, 0.0130548, -0.00000931, -0.000000034],                # i
     [174.873176, -0.2410908, 0.00004262, 0.000000001],          # Omega
-    [102.937348, 0.3225654, 0.00014799, -0.000000039]           # pie
+    [102.937348, 0.3225654, 0.00014799, -0.000000039],           # pie
 ]
 """This table contains the parameters to compute Earth's orbital elements for
 the standard equinox J2000.0. Based on Table 31.B, page 214"""
@@ -2789,7 +2789,7 @@ class Ellipsoid(object):
         """
 
         return "{}({}, {}, {})".format(
-            self.__class__.__name__, self._a, self._f, self._omega
+            self.__class__.__name__, self._a, self._f, self._omega,
         )
 
     def b(self):
@@ -2909,7 +2909,7 @@ class Earth(object):
 
         return "{}(ellipsoid=Ellipsoid({}, {}, {}))".format(
             self.__class__.__name__, self._ellip._a, self._ellip._f,
-            self._ellip._omega
+            self._ellip._omega,
         )
 
     def rho(self, latitude):
@@ -2937,8 +2937,10 @@ class Earth(object):
             phi = radians(latitude)  # Convert to radians
         else:
             phi = latitude.rad()  # It is an Angle. Call method rad()
-        return (0.9983271 + 0.0016764 * cos(2.0 * phi)
-                - 0.0000035 * cos(4.0 * phi))
+        return (
+            0.9983271 + 0.0016764 * cos(2.0 * phi)
+            - 0.0000035 * cos(4.0 * phi)
+        )
 
     def rho_sinphi(self, latitude, height):
         """Method to compute the rho*sin(phi') term, needed in the calculation
@@ -3253,7 +3255,7 @@ class Earth(object):
         """
 
         return geometric_vsop_pos(
-            epoch, VSOP87_L_J2000, VSOP87_B_J2000, VSOP87_R, tofk5
+            epoch, VSOP87_L_J2000, VSOP87_B_J2000, VSOP87_R, tofk5,
         )
 
     @staticmethod
@@ -3411,13 +3413,17 @@ class Earth(object):
         a4 = Angle(136.95 + 659.306737 * k)
         a5 = Angle(249.52 + 329.653368 * k)
         if perihelion:
-            corr = (1.278 * sin(a1.rad()) - 0.055 * sin(a2.rad())
-                    - 0.091 * sin(a3.rad()) - 0.056 * sin(a4.rad())
-                    - 0.045 * sin(a5.rad()))
+            corr = (
+                1.278 * sin(a1.rad()) - 0.055 * sin(a2.rad())
+                - 0.091 * sin(a3.rad()) - 0.056 * sin(a4.rad())
+                - 0.045 * sin(a5.rad())
+            )
         else:
-            corr = (-1.352 * sin(a1.rad()) + 0.061 * sin(a2.rad())
-                    + 0.062 * sin(a3.rad()) + 0.029 * sin(a4.rad())
-                    + 0.031 * sin(a5.rad()))
+            corr = (
+                -1.352 * sin(a1.rad()) + 0.061 * sin(a2.rad())
+                + 0.062 * sin(a3.rad()) + 0.029 * sin(a4.rad())
+                + 0.031 * sin(a5.rad())
+            )
         jde += corr
         # Compute the epochs half a day before and after
         jde_before = jde - 0.5
@@ -3472,8 +3478,10 @@ class Earth(object):
         return time, r
 
     @staticmethod
-    def parallax_correction(right_ascension, declination, latitude, distance,
-                            hour_angle, height=0.0):
+    def parallax_correction(
+        right_ascension, declination, latitude, distance,
+        hour_angle, height=0.0,
+    ):
         """This function computes the parallaxes in right ascension and
         declination in order to obtain the topocentric values.
 
@@ -3514,12 +3522,14 @@ class Earth(object):
         -15d 46' 30.0''
         """
 
-        if not (isinstance(right_ascension, Angle)
-                and isinstance(declination, Angle)
-                and isinstance(latitude, Angle)
-                and isinstance(distance, float)
-                and isinstance(hour_angle, Angle)
-                and isinstance(height, float)):
+        if not (
+            isinstance(right_ascension, Angle)
+            and isinstance(declination, Angle)
+            and isinstance(latitude, Angle)
+            and isinstance(distance, float)
+            and isinstance(hour_angle, Angle)
+            and isinstance(height, float)
+        ):
             raise TypeError("Invalid input types")
         # Let's start computing the equatorial horizontal parallax
         ang = Angle(0, 0, 8.794)
@@ -3529,21 +3539,27 @@ class Earth(object):
         rho_sinphi = e.rho_sinphi(latitude, height)
         rho_cosphi = e.rho_cosphi(latitude, height)
         # Now, let's compute the correction for the right ascension
-        delta_a = atan2(-rho_cosphi * sin_pi * sin(hour_angle.rad()),
-                        cos(declination.rad()) - rho_cosphi * sin_pi
-                        * cos(hour_angle.rad()))
+        delta_a = atan2(
+            -rho_cosphi * sin_pi * sin(hour_angle.rad()),
+            cos(declination.rad()) - rho_cosphi * sin_pi
+            * cos(hour_angle.rad()),
+        )
         delta_a = Angle(delta_a, radians=True)
         # And finally, the declination already corrected
-        dec = atan2((sin(declination.rad()) - rho_sinphi * sin_pi)
-                    * cos(delta_a.rad()),
-                    cos(declination.rad()) - rho_cosphi * sin_pi
-                    * cos(hour_angle.rad()))
+        dec = atan2(
+            (sin(declination.rad()) - rho_sinphi * sin_pi)
+            * cos(delta_a.rad()),
+            cos(declination.rad()) - rho_cosphi * sin_pi
+            * cos(hour_angle.rad()),
+        )
         dec = Angle(dec, radians=True)
         return (right_ascension + delta_a), dec
 
     @staticmethod
-    def parallax_ecliptical(longitude, latitude, semidiameter, obs_lat,
-                            obliquity, sidereal_time, distance, height=0.0):
+    def parallax_ecliptical(
+        longitude, latitude, semidiameter, obs_lat,
+        obliquity, sidereal_time, distance, height=0.0,
+    ):
         """This function computes the topocentric coordinates of a celestial
         body (Moon or planet) directly from its geocentric values in ecliptical
         coordinates.
@@ -3591,14 +3607,16 @@ class Earth(object):
         16' 25.5''
         """
 
-        if not (isinstance(longitude, Angle)
-                and isinstance(latitude, Angle)
-                and isinstance(semidiameter, Angle)
-                and isinstance(obs_lat, Angle)
-                and isinstance(obliquity, Angle)
-                and isinstance(sidereal_time, Angle)
-                and isinstance(distance, float)
-                and isinstance(height, float)):
+        if not (
+            isinstance(longitude, Angle)
+            and isinstance(latitude, Angle)
+            and isinstance(semidiameter, Angle)
+            and isinstance(obs_lat, Angle)
+            and isinstance(obliquity, Angle)
+            and isinstance(sidereal_time, Angle)
+            and isinstance(distance, float)
+            and isinstance(height, float)
+        ):
             raise TypeError("Invalid input types")
         # Let's start computing the equatorial horizontal parallax
         ang = Angle(0, 0, 8.794)
@@ -3615,16 +3633,26 @@ class Earth(object):
         oblr = obliquity.rad()
         n = cos(lonr) * cos(latr) - rho_cosphi * sin_pi * cos(sidr)
         # Now, compute the topocentric longitude
-        topo_lon = atan2(sin(lonr) * cos(latr)
-                         - sin_pi * (rho_sinphi * sin(oblr)
-                                     + rho_cosphi * cos(oblr) * sin(sidr)), n)
+        topo_lon = atan2(
+            sin(lonr) * cos(latr)
+            - sin_pi * (
+                rho_sinphi * sin(oblr)
+                + rho_cosphi * cos(oblr) * sin(sidr)
+            ), n,
+        )
         topo_lon = Angle(topo_lon, radians=True).to_positive()
         tlonr = topo_lon.rad()
         # Compute the topocentric latitude
-        topo_lat = atan2(cos(tlonr) * (sin(latr)
-                                       - sin_pi * (rho_sinphi * cos(oblr)
-                                                   - rho_cosphi * sin(oblr)
-                                                   * sin(sidr))), n)
+        topo_lat = atan2(
+            cos(tlonr) * (
+                sin(latr)
+                - sin_pi * (
+                    rho_sinphi * cos(oblr)
+                    - rho_cosphi * sin(oblr)
+                    * sin(sidr)
+                )
+            ), n,
+        )
         topo_lat = Angle(topo_lat, radians=True).to_positive()
         # Watch out: Latitude is only valid in the +/-90 deg range
         if abs(topo_lat) > 90.0:
@@ -3677,8 +3705,10 @@ def main():
     # level, and at a certain latitude. It is given as a fraction of equatorial
     # radius
     lat = Angle(65, 45, 30.0)  # We can use an Angle for this
-    print_me("Relative distance to Earth's center, from latitude 65d 45' 30''",
-             e.rho(lat))
+    print_me(
+        "Relative distance to Earth's center, from latitude 65d 45' 30''",
+        e.rho(lat),
+    )
 
     print("")
 
@@ -3727,10 +3757,14 @@ def main():
     lon_bai = Angle(58, 22, 54.0)
     lat_bai = Angle(-34, 36, 12.0)
     dist, error = e.distance(lon_ban, lat_ban, lon_bai, lat_bai)
-    print_me("The distance between Bangkok and Buenos Aires is (km)",
-             round(dist / 1000.0, 2))
-    print_me("The approximate error of the estimation is (meters)",
-             round(error, 0))
+    print_me(
+        "The distance between Bangkok and Buenos Aires is (km)",
+        round(dist / 1000.0, 2),
+    )
+    print_me(
+        "The approximate error of the estimation is (meters)",
+        round(error, 0),
+    )
 
     print("")
 
@@ -3790,8 +3824,10 @@ def main():
     latitude = Angle(33, 21, 22)
     distance = 0.37276
     hour_angle = Angle(288.7958)
-    top_ra, top_dec = Earth.parallax_correction(right_ascension, declination,
-                                                latitude, distance, hour_angle)
+    top_ra, top_dec = Earth.parallax_correction(
+        right_ascension, declination,
+        latitude, distance, hour_angle,
+    )
     print_me("Corrected topocentric right ascension: ", top_ra.ra_str(n_dec=2))
     # 22h 38' 8.54''
     print_me("Corrected topocentric declination", top_dec.dms_str(n_dec=1))
@@ -3808,8 +3844,10 @@ def main():
     sidereal_time = Angle(209, 46, 7.9)
     distance = 0.0024650163
     topo_lon, topo_lat, topo_diam = \
-        Earth.parallax_ecliptical(longitude, latitude, semidiameter, obs_lat,
-                                  obliquity, sidereal_time, distance)
+        Earth.parallax_ecliptical(
+            longitude, latitude, semidiameter, obs_lat,
+            obliquity, sidereal_time, distance,
+        )
     print_me("Corrected topocentric longitude", topo_lon.dms_str(n_dec=1))
     # 181d 48' 5.0''
     print_me("Corrected topocentric latitude", topo_lat.dms_str(n_dec=1))
