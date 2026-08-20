@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: nvdaaddons\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2026-07-09 10:38+0000\n"
-"PO-Revision-Date: 2026-07-31 15:50\n"
+"PO-Revision-Date: 2026-08-18 07:09\n"
 "Last-Translator: \n"
 "Language-Team: Bulgarian\n"
 "Language: bg_BG\n"
@@ -55,7 +55,7 @@ msgstr "Изключено"
 #. Translators: This is a choice of the auto announce choices combo box.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:42
 msgid "every 5 minutes"
-msgstr ""
+msgstr "На всеки 5 минути"
 
 #. Translators: This is a choice of the auto announce choices combo box.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:44
@@ -151,7 +151,7 @@ msgstr "Краен час за \"тихите часове\""
 #: addon\globalPlugins\clock\clockSettingsGUI.py:147
 #: addon\globalPlugins\clock\clockSettingsGUI.py:448
 msgid "Add custom sound"
-msgstr ""
+msgstr "Добавяне на персонализиран звук"
 
 #. Translators: the hour label in quiet hours group.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:173
@@ -167,7 +167,7 @@ msgstr "Минута:"
 
 #: addon\globalPlugins\clock\clockSettingsGUI.py:241
 msgid "Choose a custom sound file"
-msgstr ""
+msgstr "Избор на персонализиран звуков файл"
 
 #. Translators: This is the label for the alarm settings panel.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:398
@@ -216,7 +216,7 @@ msgstr "&Постави на пауза"
 
 #: addon\globalPlugins\clock\clockSettingsGUI.py:480
 msgid "Choose a custom alarm sound file"
-msgstr ""
+msgstr "Избор на персонализиран звуков файл за аларма"
 
 #. Translators: The message displayed after a countdown for an alarm has been chosen.
 #: addon\globalPlugins\clock\clockSettingsGUI.py:523
@@ -298,7 +298,7 @@ msgstr "{fmt} (12-часов формат)"
 #. Translators: This is a choice in a list of sounds.
 #: addon\globalPlugins\clock\paths.py:35
 msgid "Custom"
-msgstr ""
+msgstr "По избор"
 
 #: addon\globalPlugins\clock\__init__.py:77
 #, python-brace-format
@@ -414,7 +414,7 @@ msgstr "Показва наличните команди в командния �
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:461
 msgid "Lists available commands in clock command layer, showing them in browse mode."
-msgstr ""
+msgstr "Извежда наличните команди в командния слой на часовника, като ги показва в режим на разглеждане."
 
 #. Translators: Message presented in input help mode.
 #: addon\globalPlugins\clock\__init__.py:484
@@ -457,12 +457,17 @@ msgid "An advanced clock and calendar for NVDA.\n"
 "NVDA+F12 pressed twice quickly, get current date.\n"
 "NVDA+F12 pressed three times quickly, reports the current day, the week number, the current year and the remaining days before the end of the year.\n"
 "For other instructions, press  actions button in add-on store, then go to help."
-msgstr ""
+msgstr "Усъвършенстван часовник и календар за NVDA.\n"
+"NVDA+F12: докладване на текущия час.\n"
+"Бързо двукратно натискане на NVDA+F12: докладване на текущата дата.\n"
+"Бързо трикратно натискане на NVDA+F12: докладва текущия ден, номера на седмицата, текущата година и оставащите дни преди края на годината.\n"
+"За други инструкции натиснете бутона „Действия“ в магазина за добавки, след което отидете на „Помощ“."
 
 #. Brief changelog for this version
 #. Translators: what's new content for the add-on version to be shown in the add-on store
 #: buildVars.py:33
 msgid "Changes for 20260520.0.2\n"
 "Fixed translations for the addon."
-msgstr ""
+msgstr "Промени във версия 20260520.0.2\n"
+"Поправени са преводи на добавката."
 
