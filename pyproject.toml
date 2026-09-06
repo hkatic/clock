@@ -95,6 +95,7 @@ logger-objects = ["logHandler.log"]
 [tool.pyright]
 venvPath = ".venv"
 venv = "."
+stubPath = ".vscode/typings"
 pythonPlatform = "Windows"
 typeCheckingMode = "strict"
 
@@ -146,7 +147,6 @@ reportInvalidStubStatement = true
 reportInvalidTypeVarUse = true
 reportMatchNotExhaustive = true
 reportMissingModuleSource = true
-reportMissingImports = true
 reportNoOverloadImplementation = true
 reportOptionalContextManager = true
 reportOverlappingOverload = true
@@ -163,7 +163,6 @@ reportUnnecessaryCast = true
 reportUnnecessaryContains = true
 reportUnnecessaryTypeIgnoreComment = true
 reportUntypedClassDecorator = true
-reportUntypedFunctionDecorator = true
 reportUnusedClass = true
 reportUnusedCoroutine = true
 reportUnusedExcept = true
@@ -173,6 +172,8 @@ reportDeprecated = false
 
 # Can be enabled by generating type stubs for modules via pyright CLI
 reportMissingTypeStubs = false
+reportMissingImports = false
+reportUntypedFunctionDecorator = false
 
 # Bad rules
 # These are roughly sorted by compliance to make it easier for devs to focus on enabling them.

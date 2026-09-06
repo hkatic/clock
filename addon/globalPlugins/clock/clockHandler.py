@@ -151,7 +151,10 @@ class Clock(object):
 			if target_minute == 0:
 				return os.path.join(paths.SOUNDS_DIR, config.conf["clockAndCalendar"]["timeReportSound"])
 			else:
-				return os.path.join(paths.SOUNDS_DIR, config.conf["clockAndCalendar"]["timeIntermediateReportSound"])
+				return os.path.join(
+					paths.SOUNDS_DIR,
+					config.conf["clockAndCalendar"]["timeIntermediateReportSound"],
+				)
 		return os.path.join(paths.SOUNDS_DIR, config.conf["clockAndCalendar"]["timeReportSound"])
 
 	def _getBoundaryTime(self, now, secs_to_boundary):
@@ -183,10 +186,14 @@ class Clock(object):
 		now = datetime.now()
 		ui.message(
 			safeGetTimeFormatEx(
-				None, None, now, formats.rgx.sub(
-					formats.repl, formats.timeFormats[config.conf['clockAndCalendar']['timeDisplayFormat']]
-				)
-			)
+				None,
+				None,
+				now,
+				formats.rgx.sub(
+					formats.repl,
+					formats.timeFormats[config.conf["clockAndCalendar"]["timeDisplayFormat"]],
+				),
+			),
 		)
 
 	def reportClock(self) -> None:

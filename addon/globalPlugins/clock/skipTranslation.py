@@ -7,6 +7,13 @@
 # Based on implementation made by Alberto Buffolino
 # https://github.com/nvaccess/nvda/issues/4652
 
+from typing import Callable
+
+import addonHandler
+
+addonHandler.initTranslation()
+_: Callable[[str], str]
+
 
 def translate(text):
 	return _(text)
