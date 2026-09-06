@@ -3,11 +3,14 @@
 # Author: Hrvoje Katich and contributors
 # Copyright 2013-2021, released under GPL.
 
+from typing import Callable
+
 import config
 from configobj.validate import VdtTypeError
 import addonHandler
 
 addonHandler.initTranslation()
+_: Callable[[str], str]
 
 
 def onInstall():
