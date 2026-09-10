@@ -48,7 +48,11 @@ Per configurare le funzionalità dell’orologio, aprire il menu NVDA, Preferenz
 * Formato di visualizzazione di ora e data: utilizzare queste caselle combinate per configurare come NVDA annuncerà ora e data quando si preme NVDA+F12 una o due volte rapidamente.
 * Intervallo: scegliere l’intervallo di annuncio dell’ora da questa casella combinata (disattivato, ogni 10 minuti, 15 minuti, 30 minuti o ogni ora).
 * Annuncio dell’ora (attivato se l’intervallo non è disattivato): scegliere tra voce e suono, solo suono o solo voce.
-* Suono del segnale orario (attivato se l’intervallo non è disattivato): selezionare il suono predefinito del segnale orario.
+  * Speech and sound: the chime plays with precision timing so it finishes exactly on the minute boundary, then the current time is spoken immediately. This means you hear the chime counting down to the exact moment, followed by the spoken time — similar to a broadcast time signal.
+  * BBC pips (clock_cuckoo7): when selected as the chime sound, the five short pips lead into a sixth long pip that lands on the minute boundary, faithfully reproducing a broadcast-style time signal. The spoken time accompanies the sixth pip.
+  * Sound only: plays the chime at the minute boundary. The BBC pips retains its precision timing so the sixth pip still lands on :00.
+  * Speech only: speaks the current time at the minute boundary with no chime.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for intermediate minutes and the top of the hour.
 * Segnali separati per ore e minuti intermedi (attivato se l’intervallo non è disattivato, disattivato per impostazione predefinita): attivare questa casella per personalizzare i segnali dei minuti intermedi separatamente da quelli orari.
   * Suono dei minuti intermedi (attivato se “segnali separati per ore e minuti intermedi” è selezionato): selezionare il suono per i minuti intermedi.
 * Ore silenziose (attivato se l’intervallo non è disattivato): selezionare questa casella per configurare il periodo di ore silenziose.

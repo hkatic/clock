@@ -48,7 +48,11 @@ Para configurar a funcionalidade do relógio, abra o menu NVDA, Preferências, d
 * Formato de exibição da hora e da data: use essas caixas de combinação para configurar como o NVDA anunciará a hora e a data ao pressionar NVDA+F12 uma ou duas vezes rapidamente.
 * Intervalo: escolha o intervalo de anúncio da hora nesta caixa (desligado, a cada 10 minutos, 15 minutos, 30 minutos ou a cada hora).
 * Anúncio da hora (ativado se o intervalo não estiver desligado): escolha entre fala e som, apenas som ou apenas fala.
-* Som do toque do relógio (ativado se o intervalo não estiver desligado): selecione o som padrão do relógio.
+  * Speech and sound: the chime plays with precision timing so it finishes exactly on the minute boundary, then the current time is spoken immediately. This means you hear the chime counting down to the exact moment, followed by the spoken time — similar to a broadcast time signal.
+  * BBC pips (clock_cuckoo7): when selected as the chime sound, the five short pips lead into a sixth long pip that lands on the minute boundary, faithfully reproducing a broadcast-style time signal. The spoken time accompanies the sixth pip.
+  * Sound only: plays the chime at the minute boundary. The BBC pips retains its precision timing so the sixth pip still lands on :00.
+  * Speech only: speaks the current time at the minute boundary with no chime.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for intermediate minutes and the top of the hour.
 * Sinos separados para horas e minutos intermediários (ativado se o intervalo não estiver desligado, desativado por padrão): ative esta caixa de seleção para personalizar os sons dos minutos intermediários separadamente do som da hora.
   * Som dos minutos intermediários (ativado se "sinos separados para horas e minutos intermediários" estiver marcado): selecione o som para os minutos intermediários.
 * Horas silenciosas (ativado se o intervalo não estiver desligado): marque esta caixa para configurar o intervalo de horas silenciosas.

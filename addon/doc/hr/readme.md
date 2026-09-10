@@ -48,7 +48,11 @@ Za konfiguriranje funkcija sata otvorite izbornik NVDA, Postavke, zatim Postavke
 * Format prikaza vremena i datuma: pomoću ovih kombiniranih okvira odredite kako će NVDA izgovarati vrijeme i datum kada jednom ili dvaput brzo pritisnete NVDA+F12.
 * Interval: u ovom kombiniranom okviru odaberite interval automatske najave vremena (isključeno, svakih 10 minuta, 15 minuta, 30 minuta ili svakog sata).
 * Najava vremena (omogućeno ako interval nije isključen): odaberite između govora i zvuka, samo zvuka ili samo govora.
-* Zvuk zvonjave sata (omogućeno ako interval nije isključen): odaberite zadani zvuk zvonjave sata za međuminute i puni sat.
+  * Speech and sound: the chime plays with precision timing so it finishes exactly on the minute boundary, then the current time is spoken immediately. This means you hear the chime counting down to the exact moment, followed by the spoken time — similar to a broadcast time signal.
+  * BBC pips (clock_cuckoo7): when selected as the chime sound, the five short pips lead into a sixth long pip that lands on the minute boundary, faithfully reproducing a broadcast-style time signal. The spoken time accompanies the sixth pip.
+  * Sound only: plays the chime at the minute boundary. The BBC pips retains its precision timing so the sixth pip still lands on :00.
+  * Speech only: speaks the current time at the minute boundary with no chime.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for intermediate minutes and the top of the hour.
 * Odvojeni zvukovi za puni sat i međuminute (omogućeno ako interval nije isključen, prema zadanim postavkama onemogućeno): označite ovaj potvrdni okvir kako biste zasebno prilagodili zvukove za međuminute i puni sat.
   * Zvuk zvonjave za međuminute (omogućeno ako je označena mogućnost „Odvojeni zvukovi za puni sat i međuminute”): odaberite zvuk koji će se koristiti posebno za međuminute.
 * Tihi sati (omogućeno ako interval nije isključen): označite ovaj potvrdni okvir kako biste odredili razdoblje tijekom kojeg se automatska najava vremena neće izvršavati.

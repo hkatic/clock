@@ -48,7 +48,11 @@ Các lệnh sau chưa được gán cử chỉ theo mặc định. Nếu muốn 
 * Định dạng hiển thị giờ và ngày: sử dụng các hộp kết hợp này để cấu hình cách NVDA thông báo giờ và ngày khi bạn nhấn NVDA+F12 một lần hoặc nhấn nhanh hai lần tương ứng.
 * Khoảng thời gian: chọn khoảng thời gian thông báo giờ từ hộp kết hợp này (tắt, mỗi 10 phút, 15 phút, 30 phút hoặc mỗi giờ).
 * Thông báo giờ (được bật nếu khoảng thời gian không tắt): chọn giữa giọng nói và âm thanh, chỉ âm thanh hoặc chỉ giọng nói.
-* Âm thanh điểm chuông đồng hồ (được bật nếu khoảng thời gian không tắt): chọn âm thanh điểm chuông mặc định cho các phút trung gian và đầu mỗi giờ.
+  * Speech and sound: the chime plays with precision timing so it finishes exactly on the minute boundary, then the current time is spoken immediately. This means you hear the chime counting down to the exact moment, followed by the spoken time — similar to a broadcast time signal.
+  * BBC pips (clock_cuckoo7): when selected as the chime sound, the five short pips lead into a sixth long pip that lands on the minute boundary, faithfully reproducing a broadcast-style time signal. The spoken time accompanies the sixth pip.
+  * Sound only: plays the chime at the minute boundary. The BBC pips retains its precision timing so the sixth pip still lands on :00.
+  * Speech only: speaks the current time at the minute boundary with no chime.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for intermediate minutes and the top of the hour.
 * Tách riêng âm báo đầu giờ và các phút trung gian (được bật nếu khoảng thời gian không tắt, mặc định bị tắt): đánh dấu hộp kiểm này để tùy chỉnh riêng âm báo cho các phút trung gian và âm báo đầu giờ.
   * Âm thanh điểm chuông cho các phút trung gian (được bật nếu chọn "Tách riêng âm báo đầu giờ và các phút trung gian"): chọn âm thanh điểm chuông dành riêng cho các phút trung gian.
 * Giờ yên tĩnh (được bật nếu khoảng thời gian không tắt): chọn hộp kiểm này để cấu hình khoảng thời gian yên tĩnh, trong đó việc thông báo giờ tự động sẽ không diễn ra.

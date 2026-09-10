@@ -48,7 +48,11 @@
 * Формат приказа времена и датума: користите ове комбо кутије да подесите како ће NVDA објављивати време и датум када притиснете NVDA+F12 једном или два пута брзо.
 * Интервал: изаберите интервал објављивања времена из ове комбо кутије (искључено, сваких 10 минута, 15 минута, 30 минута или сваки сат).
 * Објављивање времена (активно ако интервал није искључен): изаберите између говора и звука, само звук или само говор.
-* Звук сата (активно ако интервал није искључен): изаберите подразумевани звук сата.
+  * Speech and sound: the chime plays with precision timing so it finishes exactly on the minute boundary, then the current time is spoken immediately. This means you hear the chime counting down to the exact moment, followed by the spoken time — similar to a broadcast time signal.
+  * BBC pips (clock_cuckoo7): when selected as the chime sound, the five short pips lead into a sixth long pip that lands on the minute boundary, faithfully reproducing a broadcast-style time signal. The spoken time accompanies the sixth pip.
+  * Sound only: plays the chime at the minute boundary. The BBC pips retains its precision timing so the sixth pip still lands on :00.
+  * Speech only: speaks the current time at the minute boundary with no chime.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for intermediate minutes and the top of the hour.
 * Одвојени звукови за сате и међуминуте (активно ако интервал није искључен, подразумевано искључено): омогућите ову опцију да прилагодите звукове међуминута одвојено од звука сата.
   * Звук међуминута (активно ако је омогућено „одвојени звукови за сате и међуминуте“): изаберите звук за међуминуте.
 * Тихи сати (активно ако интервал није искључен): изаберите ову опцију да подесите опсег тихих сати.

@@ -48,7 +48,11 @@ For at konfigurere ur-funktionen skal du åbne NVDA-menuen, Indstillinger, deref
 * Visningsformat for tid og dato: brug disse kombinationsfelter til at konfigurere, hvordan NVDA annoncerer tid og dato, når du trykker NVDA+F12 én eller to gange hurtigt.
 * Interval: vælg tidsintervallet for tidsmeddelelse i denne kombinationsboks (fra, hvert 10. minut, 15 minutter, 30 minutter eller hver time).
 * Tidsmeddelelse (aktiveret hvis interval ikke er fra): vælg mellem tale og lyd, kun lyd eller kun tale.
-* Ur-klokkelyd (aktiveret hvis interval ikke er fra): vælg standard klokkelyd.
+  * Speech and sound: the chime plays with precision timing so it finishes exactly on the minute boundary, then the current time is spoken immediately. This means you hear the chime counting down to the exact moment, followed by the spoken time — similar to a broadcast time signal.
+  * BBC pips (clock_cuckoo7): when selected as the chime sound, the five short pips lead into a sixth long pip that lands on the minute boundary, faithfully reproducing a broadcast-style time signal. The spoken time accompanies the sixth pip.
+  * Sound only: plays the chime at the minute boundary. The BBC pips retains its precision timing so the sixth pip still lands on :00.
+  * Speech only: speaks the current time at the minute boundary with no chime.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for intermediate minutes and the top of the hour.
 * Separate time- og mellemlokalminut-klokker (aktiveret hvis interval ikke er fra, deaktiveret som standard): aktiver dette afkrydsningsfelt for at tilpasse mellemlokalminut-lyde separat fra timeklokken.
   * Mellemlokalminut-klokkelyd (aktiveret hvis "separate time- og mellemlokalminut-klokker" er markeret): vælg lyd for mellemlokalminutter.
 * Stille timer (aktiveret hvis interval ikke er fra): vælg dette afkrydsningsfelt for at konfigurere intervallet for stille timer.

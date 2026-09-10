@@ -48,7 +48,11 @@
 * قالب نمایش زمان و تاریخ: از این فهرست‌های کشویی برای تعیین نحوهٔ اعلام زمان و تاریخ توسط NVDA هنگام یک یا دو بار فشردن سریع NVDA+F12 استفاده کنید.
 * بازهٔ زمانی: بازهٔ اعلام خودکار زمان را از این فهرست کشویی انتخاب کنید (خاموش، هر ۱۰ دقیقه، هر ۱۵ دقیقه، هر ۳۰ دقیقه یا هر ساعت).
 * اعلام زمان (در صورتی که بازه خاموش نباشد): یکی از گزینه‌های «گفتار و صدا»، «فقط صدا» یا «فقط گفتار» را انتخاب کنید.
-* صدای زنگ ساعت (در صورتی که بازه خاموش نباشد): صدای پیش‌فرض زنگ ساعت را برای دقیقه‌های میانی و ابتدای هر ساعت انتخاب کنید.
+  * Speech and sound: the chime plays with precision timing so it finishes exactly on the minute boundary, then the current time is spoken immediately. This means you hear the chime counting down to the exact moment, followed by the spoken time — similar to a broadcast time signal.
+  * BBC pips (clock_cuckoo7): when selected as the chime sound, the five short pips lead into a sixth long pip that lands on the minute boundary, faithfully reproducing a broadcast-style time signal. The spoken time accompanies the sixth pip.
+  * Sound only: plays the chime at the minute boundary. The BBC pips retains its precision timing so the sixth pip still lands on :00.
+  * Speech only: speaks the current time at the minute boundary with no chime.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for intermediate minutes and the top of the hour.
 * جداسازی زنگ ابتدای ساعت و دقیقه‌های میانی (در صورتی که بازه خاموش نباشد، به‌طور پیش‌فرض غیرفعال است): این گزینه را فعال کنید تا صدای زنگ دقیقه‌های میانی را جدا از زنگ ابتدای ساعت تنظیم کنید.
   * صدای زنگ دقیقه‌های میانی (در صورتی که گزینهٔ «جداسازی زنگ ابتدای ساعت و دقیقه‌های میانی» فعال باشد): صدای زنگ مخصوص دقیقه‌های میانی را انتخاب کنید.
 * ساعت‌های سکوت (در صورتی که بازه خاموش نباشد): این گزینه را انتخاب کنید تا بازهٔ زمانی‌ای را مشخص کنید که در آن اعلام خودکار زمان انجام نشود.

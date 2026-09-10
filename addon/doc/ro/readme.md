@@ -48,7 +48,11 @@ Pentru a configura funcționalitatea ceasului, deschideți meniul NVDA, Preferin
 * Format de afișare a orei și datei: utilizați aceste casete combinate pentru a configura modul în care NVDA va anunța ora și data la apăsarea NVDA+F12 o dată sau de două ori rapid.
 * Interval: alegeți intervalul de anunțare a orei (dezactivat, la fiecare 10 minute, 15 minute, 30 minute sau la fiecare oră).
 * Anunțarea orei (activat dacă intervalul nu este dezactivat): alegeți între vorbire și sunet, doar sunet sau doar vorbire.
-* Sunetul clopoțelului ceasului (activat dacă intervalul nu este dezactivat): selectați sunetul implicit al ceasului.
+  * Speech and sound: the chime plays with precision timing so it finishes exactly on the minute boundary, then the current time is spoken immediately. This means you hear the chime counting down to the exact moment, followed by the spoken time — similar to a broadcast time signal.
+  * BBC pips (clock_cuckoo7): when selected as the chime sound, the five short pips lead into a sixth long pip that lands on the minute boundary, faithfully reproducing a broadcast-style time signal. The spoken time accompanies the sixth pip.
+  * Sound only: plays the chime at the minute boundary. The BBC pips retains its precision timing so the sixth pip still lands on :00.
+  * Speech only: speaks the current time at the minute boundary with no chime.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for intermediate minutes and the top of the hour.
 * Clopote separate pentru ore și minute intermediare (activat dacă intervalul nu este dezactivat, implicit dezactivat): activați această casetă pentru a personaliza sunetele pentru minutele intermediare separat de sunetul orei.
   * Sunet pentru minute intermediare (activat dacă „clopote separate pentru ore și minute intermediare” este bifat): selectați sunetul pentru minutele intermediare.
 * Ore liniștite (activat dacă intervalul nu este dezactivat): bifați această casetă pentru a configura intervalul de ore liniștite.

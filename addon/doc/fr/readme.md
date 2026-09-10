@@ -48,7 +48,11 @@ Pour configurer les fonctionnalités de l’horloge, ouvrez le menu NVDA, Préf�
 * Format d’affichage de l’heure et de la date : utilisez ces listes déroulantes pour configurer la manière dont NVDA annoncera l’heure et la date lorsque vous appuyez sur NVDA+F12 une ou deux fois rapidement, respectivement.
 * Intervalle : choisissez l’intervalle d’annonce de l’heure dans cette liste (désactivé, toutes les 10 minutes, 15 minutes, 30 minutes ou chaque heure).
 * Annonce de l’heure (activée si l’intervalle n’est pas désactivé) : choisissez entre voix et son, son uniquement ou voix uniquement.
-* Son du carillon de l’horloge (activé si l’intervalle n’est pas désactivé) : sélectionnez le son du carillon par défaut pour les minutes intermédiaires et les heures pleines.
+  * Speech and sound: the chime plays with precision timing so it finishes exactly on the minute boundary, then the current time is spoken immediately. This means you hear the chime counting down to the exact moment, followed by the spoken time — similar to a broadcast time signal.
+  * BBC pips (clock_cuckoo7): when selected as the chime sound, the five short pips lead into a sixth long pip that lands on the minute boundary, faithfully reproducing a broadcast-style time signal. The spoken time accompanies the sixth pip.
+  * Sound only: plays the chime at the minute boundary. The BBC pips retains its precision timing so the sixth pip still lands on :00.
+  * Speech only: speaks the current time at the minute boundary with no chime.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for intermediate minutes and the top of the hour.
 * Carillons séparés pour les heures et les minutes intermédiaires (activé si l’intervalle n’est pas désactivé, désactivé par défaut) : activez cette case à cocher pour personnaliser séparément les carillons des minutes intermédiaires et des heures.
   * Son des minutes intermédiaires (activé si « Carillons séparés pour les heures et les minutes intermédiaires » est coché) : sélectionnez le son du carillon spécifiquement pour les minutes intermédiaires.
 * Heures calmes (activé si l’intervalle n’est pas désactivé) : cochez cette case pour configurer une plage d’heures calmes durant laquelle l’annonce automatique de l’heure ne doit pas se produire.

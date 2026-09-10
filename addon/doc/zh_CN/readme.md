@@ -48,7 +48,11 @@
 * 时间和日期显示格式：使用这两个组合框来设置当您分别快速按 NVDA+F12 一次或两次时 NVDA 应该如何读出时间和日期。
 * 报时间隔：在此组合框中选择报时间隔（关闭、每 10 分钟、15 分钟、30 分钟或每小时）。
 * 报时方式（如果报时间隔未关闭则该设置有效）：在语音和音效、只有音效或只有语音之间进行选择。
-* 时钟铃声（如果报时间隔未关闭则该设置有效）：选择时钟铃声。
+  * Speech and sound: the chime plays with precision timing so it finishes exactly on the minute boundary, then the current time is spoken immediately. This means you hear the chime counting down to the exact moment, followed by the spoken time — similar to a broadcast time signal.
+  * BBC pips (clock_cuckoo7): when selected as the chime sound, the five short pips lead into a sixth long pip that lands on the minute boundary, faithfully reproducing a broadcast-style time signal. The spoken time accompanies the sixth pip.
+  * Sound only: plays the chime at the minute boundary. The BBC pips retains its precision timing so the sixth pip still lands on :00.
+  * Speech only: speaks the current time at the minute boundary with no chime.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for intermediate minutes and the top of the hour.
 * 区分整点与分钟铃声（默认禁用，仅当报时间隔未关闭时生效）：启用此复选框可为分钟报时设置不同于整点报时的铃声。
   * 分钟铃声（仅当选中“区分整点与分钟铃声”时启用）：选择专用于分钟报时的铃声。
 * 免打扰时段（仅在“报时间隔”组合框中未选择“关闭”选项时才可见）允许您设置不自动报时的时间范围。

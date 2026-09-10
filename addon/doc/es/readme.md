@@ -48,7 +48,11 @@ Para configurar las funciones del reloj, abre el menú NVDA, Preferencias, Confi
 * Formato de hora y fecha: usa estos cuadros combinados para configurar cómo NVDA anunciará la hora y la fecha al pulsar NVDA+F12 una o dos veces respectivamente.
 * Intervalo: selecciona el intervalo de anuncio de la hora desde este cuadro combinado (desactivado, cada 10 minutos, 15 minutos, 30 minutos o cada hora).
 * Anuncio de hora (habilitado si el intervalo no está desactivado): elige entre voz y sonido, solo sonido o solo voz.
-* Sonido de campanadas del reloj (habilitado si el intervalo no está desactivado): selecciona el sonido de campanadas predeterminado para los minutos intermedios y la hora en punto.
+  * Speech and sound: the chime plays with precision timing so it finishes exactly on the minute boundary, then the current time is spoken immediately. This means you hear the chime counting down to the exact moment, followed by the spoken time — similar to a broadcast time signal.
+  * BBC pips (clock_cuckoo7): when selected as the chime sound, the five short pips lead into a sixth long pip that lands on the minute boundary, faithfully reproducing a broadcast-style time signal. The spoken time accompanies the sixth pip.
+  * Sound only: plays the chime at the minute boundary. The BBC pips retains its precision timing so the sixth pip still lands on :00.
+  * Speech only: speaks the current time at the minute boundary with no chime.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for intermediate minutes and the top of the hour.
 * Campanadas separadas para horas y minutos intermedios (habilitado si el intervalo no está desactivado, deshabilitado por defecto): activa esta casilla para personalizar las campanadas de los minutos intermedios por separado de la campana de la hora.
   * Sonido de campanadas de minutos intermedios (habilitado si está marcada la opción de campanas separadas): selecciona el sonido para los minutos intermedios.
 * Horas silenciosas (habilitado si el intervalo no está desactivado): activa esta casilla para configurar un rango de horas en el que no se anunciará automáticamente la hora.

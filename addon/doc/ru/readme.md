@@ -48,7 +48,11 @@
 * Формат отображения времени и даты: используйте эти комбинированные списки, чтобы настроить, как NVDA будет озвучивать время и дату при однократном или двукратном нажатии NVDA+F12.
 * Интервал: выберите интервал объявления времени (выключено, каждые 10 минут, 15 минут, 30 минут или каждый час).
 * Объявление времени (если интервал не выключен): выберите между речью и звуком, только звук или только речь.
-* Звук сигнала часов (если интервал не выключен): выберите звук сигнала часов.
+  * Speech and sound: the chime plays with precision timing so it finishes exactly on the minute boundary, then the current time is spoken immediately. This means you hear the chime counting down to the exact moment, followed by the spoken time — similar to a broadcast time signal.
+  * BBC pips (clock_cuckoo7): when selected as the chime sound, the five short pips lead into a sixth long pip that lands on the minute boundary, faithfully reproducing a broadcast-style time signal. The spoken time accompanies the sixth pip.
+  * Sound only: plays the chime at the minute boundary. The BBC pips retains its precision timing so the sixth pip still lands on :00.
+  * Speech only: speaks the current time at the minute boundary with no chime.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for intermediate minutes and the top of the hour.
 * Раздельные сигналы часов и промежуточных минут (если интервал не выключен, по умолчанию отключено): включите этот флажок для настройки сигналов промежуточных минут отдельно от часовых.
   * Звук сигнала промежуточных минут (если включено «раздельные сигналы часов и промежуточных минут»): выберите звук для промежуточных минут.
 * Тихие часы (если интервал не выключен): включите этот флажок для настройки периода тихих часов.

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nvdaaddons\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2026-07-09 10:38+0000\n"
-"PO-Revision-Date: 2026-08-30 09:24\n"
+"POT-Creation-Date: 2026-09-10 13:44+0000\n"
+"PO-Revision-Date: 2026-09-10 13:46\n"
 "Last-Translator: \n"
 "Language-Team: Korean\n"
 "Language: ko_KR\n"
@@ -18,12 +18,12 @@ msgstr ""
 "X-Crowdin-File-ID: 454\n"
 
 #. Translators: the label of a message box dialog.
-#: addon\installTasks.py:34
+#: addon\installTasks.py:37
 msgid "The date and time format you were using are not compatible with this version of the Clock add-on, this will be fixed during installation. Click OK to confirm these corrections"
 msgstr "이 Clock 추가기능 버전에서 사용하신 날짜 및 시간 형식을 지원하지 않습니다. 설치 중에 수정되오니 OK 버튼을 눌러 수정하세요"
 
 #. Translators: the title of a message box dialog.
-#: addon\installTasks.py:38
+#: addon\installTasks.py:41
 msgid "Time and date format corrections"
 msgstr "시간 및 날짜 형식 수정"
 
@@ -462,7 +462,9 @@ msgstr ""
 #. Brief changelog for this version
 #. Translators: what's new content for the add-on version to be shown in the add-on store
 #: buildVars.py:33
-msgid "Changes for 20260520.0.2\n"
+msgid " Changes for 20260906.0.0.\n"
+"    Updated translations, added Bbc pips support.\n"
+"    Changes for 20260520.0.2\n"
 "Fixed translations for the addon."
 msgstr ""
 

@@ -48,7 +48,11 @@
 * تنسيق عرض الوقت والتاريخ: استخدم مربعات التحرير والسرد هذه لضبط كيفية إعلان NVDA للوقت والتاريخ عند الضغط على NVDA+F12 مرة أو مرتين بسرعة.
 * الفاصل الزمني: اختر فاصل إعلان الوقت من مربع التحرير والسرد (إيقاف، كل 10 دقائق، 15 دقيقة، 30 دقيقة، أو كل ساعة).
 * إعلان الوقت (مفعل إذا لم يكن الفاصل على إيقاف): اختر بين الصوت والكلام، الصوت فقط، أو الكلام فقط.
-* صوت جرس الساعة (مفعل إذا لم يكن الفاصل على إيقاف): اختر صوت جرس الساعة الافتراضي.
+  * Speech and sound: the chime plays with precision timing so it finishes exactly on the minute boundary, then the current time is spoken immediately. This means you hear the chime counting down to the exact moment, followed by the spoken time — similar to a broadcast time signal.
+  * BBC pips (clock_cuckoo7): when selected as the chime sound, the five short pips lead into a sixth long pip that lands on the minute boundary, faithfully reproducing a broadcast-style time signal. The spoken time accompanies the sixth pip.
+  * Sound only: plays the chime at the minute boundary. The BBC pips retains its precision timing so the sixth pip still lands on :00.
+  * Speech only: speaks the current time at the minute boundary with no chime.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for intermediate minutes and the top of the hour.
 * أجراس منفصلة للساعات والدقائق الوسيطة (مفعل إذا لم يكن الفاصل على إيقاف، معطّل افتراضيًا): فعّل هذا الخيار لتخصيص أجراس الدقائق الوسيطة بشكل منفصل عن جرس الساعة.
   * صوت الدقائق الوسيطة (مفعل إذا تم تفعيل "الأجراس المنفصلة للساعات والدقائق الوسيطة"): اختر صوت الدقائق الوسيطة.
 * الساعات الهادئة (مفعلة إذا لم يكن الفاصل على إيقاف): حدد هذا الخيار لضبط نطاق الساعات الهادئة.

@@ -48,7 +48,11 @@ Na konfiguráciu funkcií hodín otvorte ponuku NVDA, Nastavenia, potom Nastaven
 * Formát zobrazenia času a dátumu: použite tieto rozbaľovacie polia na nastavenie, ako bude NVDA oznamovať čas a dátum po stlačení NVDA+F12 raz alebo dvakrát rýchlo.
 * Interval: vyberte interval oznamovania času z tohto zoznamu (vypnuté, každých 10 minút, 15 minút, 30 minút alebo každú hodinu).
 * Oznamovanie času (aktivované, ak interval nie je vypnutý): vyberte medzi rečou a zvukom, iba zvukom alebo iba rečou.
-* Zvuk zvonenia hodín (aktivované, ak interval nie je vypnutý): vyberte predvolený zvuk zvonenia hodín.
+  * Speech and sound: the chime plays with precision timing so it finishes exactly on the minute boundary, then the current time is spoken immediately. This means you hear the chime counting down to the exact moment, followed by the spoken time — similar to a broadcast time signal.
+  * BBC pips (clock_cuckoo7): when selected as the chime sound, the five short pips lead into a sixth long pip that lands on the minute boundary, faithfully reproducing a broadcast-style time signal. The spoken time accompanies the sixth pip.
+  * Sound only: plays the chime at the minute boundary. The BBC pips retains its precision timing so the sixth pip still lands on :00.
+  * Speech only: speaks the current time at the minute boundary with no chime.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for intermediate minutes and the top of the hour.
 * Samostatné zvonenia hodín a medziminút (aktivované, ak interval nie je vypnutý, predvolene vypnuté): povoľte toto začiarkavacie políčko na prispôsobenie zvonení pre medziminúty.
   * Zvuk medziminútového zvonenia (ak je zapnuté „Samostatné zvonenia hodín a medziminút“): vyberte zvuk pre medziminúty.
 * Tiché hodiny (aktivované, ak interval nie je vypnutý): vyberte toto začiarkavacie políčko na nastavenie obdobia tichých hodín.

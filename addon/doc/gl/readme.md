@@ -48,7 +48,11 @@ Para configurar a funcionalidade do reloxo, abre o menú NVDA, Preferencias, log
 * Formato de visualización da hora e da data: usa estas caixas combinadas para configurar como NVDA anunciará a hora e a data ao premer NVDA+F12 unha ou dúas veces rapidamente.
 * Intervalo: escolle o intervalo de anuncio da hora nesta caixa (desactivado, cada 10 minutos, 15 minutos, 30 minutos ou cada hora).
 * Anuncio da hora (activado se o intervalo non está desactivado): escolle entre voz e son, só son ou só voz.
-* Son do reloxo (activado se o intervalo non está desactivado): selecciona o son predeterminado do reloxo.
+  * Speech and sound: the chime plays with precision timing so it finishes exactly on the minute boundary, then the current time is spoken immediately. This means you hear the chime counting down to the exact moment, followed by the spoken time — similar to a broadcast time signal.
+  * BBC pips (clock_cuckoo7): when selected as the chime sound, the five short pips lead into a sixth long pip that lands on the minute boundary, faithfully reproducing a broadcast-style time signal. The spoken time accompanies the sixth pip.
+  * Sound only: plays the chime at the minute boundary. The BBC pips retains its precision timing so the sixth pip still lands on :00.
+  * Speech only: speaks the current time at the minute boundary with no chime.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for intermediate minutes and the top of the hour.
 * Sinais separados para horas e minutos intermedios (activado se o intervalo non está desactivado, desactivado por defecto): activa esta caixa para personalizar os sinais dos minutos intermedios por separado do son da hora.
   * Son dos minutos intermedios (activado se “sinais separados para horas e minutos intermedios” está marcado): selecciona o son para os minutos intermedios.
 * Horas silenciosas (activado se o intervalo non está desactivado): marca esta caixa para configurar o intervalo de horas silenciosas.

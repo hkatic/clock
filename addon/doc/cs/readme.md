@@ -48,7 +48,11 @@ Chcete-li nastavit funkce hodin, otevřete nabídku NVDA, zvolte Předvolby, pot
 * Formát zobrazení času a data: Pomocí těchto rozbalovacích seznamů nastavíte, jak bude NVDA oznamovat čas a datum po jednom nebo dvojím rychlém stisknutí NVDA+F12.
 * Interval: Z tohoto rozbalovacího seznamu vyberte interval automatického oznamování času (vypnuto, každých 10 minut, 15 minut, 30 minut nebo každou hodinu).
 * Oznamování času (povoleno, pokud interval není vypnutý): Vyberte mezi řečí a zvukem, pouze zvukem nebo pouze řečí.
-* Zvuk odbíjení hodin (povoleno, pokud interval není vypnutý): Vyberte výchozí zvuk odbíjení pro mezilehlé minuty a celou hodinu.
+  * Speech and sound: the chime plays with precision timing so it finishes exactly on the minute boundary, then the current time is spoken immediately. This means you hear the chime counting down to the exact moment, followed by the spoken time — similar to a broadcast time signal.
+  * BBC pips (clock_cuckoo7): when selected as the chime sound, the five short pips lead into a sixth long pip that lands on the minute boundary, faithfully reproducing a broadcast-style time signal. The spoken time accompanies the sixth pip.
+  * Sound only: plays the chime at the minute boundary. The BBC pips retains its precision timing so the sixth pip still lands on :00.
+  * Speech only: speaks the current time at the minute boundary with no chime.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for intermediate minutes and the top of the hour.
 * Oddělit odbíjení celé hodiny a mezilehlých minut (povoleno, pokud interval není vypnutý, ve výchozím nastavení zakázáno): Zaškrtnutím tohoto políčka můžete nastavit samostatné zvuky odbíjení pro mezilehlé minuty a celou hodinu.
   * Zvuk odbíjení mezilehlých minut (povoleno, pokud je zaškrtnuto „Oddělit odbíjení celé hodiny a mezilehlých minut“): Vyberte zvuk odbíjení určený pro mezilehlé minuty.
 * Tiché hodiny (povoleno, pokud interval není vypnutý): Zaškrtnutím tohoto políčka nastavíte časový rozsah, ve kterém nebude automatické oznamování času probíhat.

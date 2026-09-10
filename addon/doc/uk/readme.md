@@ -48,7 +48,11 @@
 * Формат відображення часу й дати: використовуйте ці поля зі списком, щоб налаштувати, як NVDA повідомлятиме час і дату під час одного або швидкого подвійного натискання NVDA+F12 відповідно.
 * Інтервал: виберіть у цьому полі зі списком інтервал автоматичного повідомлення часу (вимкнено, кожні 10 хвилин, 15 хвилин, 30 хвилин або щогодини).
 * Повідомлення часу (якщо інтервал не вимкнено): виберіть один із варіантів — мовлення і звук, лише звук або лише мовлення.
-* Звук сигналу годинника (якщо інтервал не вимкнено): виберіть типовий звук сигналу годинника для проміжних хвилин і початку кожної години.
+  * Speech and sound: the chime plays with precision timing so it finishes exactly on the minute boundary, then the current time is spoken immediately. This means you hear the chime counting down to the exact moment, followed by the spoken time — similar to a broadcast time signal.
+  * BBC pips (clock_cuckoo7): when selected as the chime sound, the five short pips lead into a sixth long pip that lands on the minute boundary, faithfully reproducing a broadcast-style time signal. The spoken time accompanies the sixth pip.
+  * Sound only: plays the chime at the minute boundary. The BBC pips retains its precision timing so the sixth pip still lands on :00.
+  * Speech only: speaks the current time at the minute boundary with no chime.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for intermediate minutes and the top of the hour.
 * Окремі сигнали для початку години та проміжних хвилин (якщо інтервал не вимкнено; початково вимкнено): установіть цей прапорець, щоб окремо налаштувати сигнали для проміжних хвилин і початку години.
   * Звук сигналу для проміжних хвилин (увімкнено, якщо встановлено прапорець «Окремі сигнали для початку години та проміжних хвилин»): виберіть звук сигналу годинника саме для проміжних хвилин.
 * Тихі години (якщо інтервал не вимкнено): установіть цей прапорець, щоб налаштувати проміжок тихих годин, протягом якого автоматичне повідомлення часу не виконуватиметься.

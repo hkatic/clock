@@ -48,7 +48,11 @@ Ji bo mîhengkirina fonksiyona demjimêrê, menûya NVDA, Tercîh, paşê Mîhen
 * Formata nîşandana dem û dîrokê: van qutiyên kombo bikar bînin da ku hûn awayê ragihandina dem û dîrokê ji hêla NVDA ve saz bikin dema ku hûn carek an du caran bi lez NVDA+F12 bikirtînin.
 * Navber: navbera ragihandina demê ji vê qutiya kombo hilbijêrin (vemirandin, her 10 deqîqeyan, her 15 deqîqeyan, 30 deqîqeyan, an her saetekê).
 * Ragihandina demê (eger navber ne girtî be çalak e): di navbera axaftin û deng, tenê deng, an tenê axaftin de hilbijêrin.
-* Dengê zengila saetê (eger navber ne girtî be çalak e): Ji bo deqeyên navberê û serê saetê dengê zengila saetê yê xwerû hilbijêrin.
+  * Speech and sound: the chime plays with precision timing so it finishes exactly on the minute boundary, then the current time is spoken immediately. This means you hear the chime counting down to the exact moment, followed by the spoken time — similar to a broadcast time signal.
+  * BBC pips (clock_cuckoo7): when selected as the chime sound, the five short pips lead into a sixth long pip that lands on the minute boundary, faithfully reproducing a broadcast-style time signal. The spoken time accompanies the sixth pip.
+  * Sound only: plays the chime at the minute boundary. The BBC pips retains its precision timing so the sixth pip still lands on :00.
+  * Speech only: speaks the current time at the minute boundary with no chime.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for intermediate minutes and the top of the hour.
 * Zengilên demjimêr û deqeyên navîn ên cuda (eger navber ne girtî be çalak e, bi xwerû neçalak e): Vê qutiya kontrolê çalak bike da ku zengilên ji bo deqeyên navîn ji zengila demjimêrî cuda xwerû bikî.
   * Dengê zengila deqeyên navberê (eger "Zengilên saet û deqeyên navberê ji hev cuda" hatibe nîşankirin çalak e): Dengê zengila saetê bi taybetî ji bo deqeyên navberê hilbijêrin.
 * Demjimêrên bêdengiyê (eger navber ne girtî be çalak e): vê qutiya kontrolê hilbijêrin da ku rêza demjimêrên bêdengiyê mîheng bikin dema ku ragihandina demê ya otomatîkî neyê kirin.

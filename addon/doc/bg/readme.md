@@ -48,7 +48,11 @@
 * Формат на показване на часа и датата: използвайте тези комбинирани полета, за да конфигурирате как NVDA ще съобщава часа и датата при натискане на NVDA+F12 веднъж или два пъти бързо.
 * Интервал: изберете интервала за съобщаване на времето от това комбинирано поле (изключено, на всеки 10 минути, 15 минути, 30 минути или всеки час).
 * Съобщаване на време (активно, ако интервалът не е изключен): изберете между реч и звук, само звук или само реч.
-* Звук на часовника (активно, ако интервалът не е изключен): изберете стандартния звук на часовника.
+  * Speech and sound: the chime plays with precision timing so it finishes exactly on the minute boundary, then the current time is spoken immediately. This means you hear the chime counting down to the exact moment, followed by the spoken time — similar to a broadcast time signal.
+  * BBC pips (clock_cuckoo7): when selected as the chime sound, the five short pips lead into a sixth long pip that lands on the minute boundary, faithfully reproducing a broadcast-style time signal. The spoken time accompanies the sixth pip.
+  * Sound only: plays the chime at the minute boundary. The BBC pips retains its precision timing so the sixth pip still lands on :00.
+  * Speech only: speaks the current time at the minute boundary with no chime.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for intermediate minutes and the top of the hour.
 * Отделни сигнали за часове и междинни минути (активно, ако интервалът не е изключен, по подразбиране изключено): активирайте тази отметка, за да персонализирате звуците за междинни минути отделно от часовия сигнал.
   * Звук за междинни минути (активно, ако „отделни сигнали за часове и междинни минути“ е включено): изберете звук за междинните минути.
 * Тихи часове (активно, ако интервалът не е изключен): отметнете това поле, за да конфигурирате диапазон за тихи часове.

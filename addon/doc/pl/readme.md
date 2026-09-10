@@ -48,7 +48,11 @@ Aby skonfigurować funkcje zegara, otwórz menu NVDA, Preferencje, a następnie 
 * Format wyświetlania godziny i daty: użyj tych pól kombi, aby określić sposób ogłaszania godziny i daty po naciśnięciu NVDA+F12 raz lub dwa razy.
 * Interwał: wybierz interwał ogłaszania czasu (wyłączony, co 10 minut, 15 minut, 30 minut lub co godzinę).
 * Ogłaszanie czasu (aktywne, jeśli interwał nie jest wyłączony): wybierz między mową i dźwiękiem, tylko dźwiękiem lub tylko mową.
-* Dźwięk dzwonka zegara (aktywne, jeśli interwał nie jest wyłączony): wybierz domyślny dźwięk dzwonka.
+  * Speech and sound: the chime plays with precision timing so it finishes exactly on the minute boundary, then the current time is spoken immediately. This means you hear the chime counting down to the exact moment, followed by the spoken time — similar to a broadcast time signal.
+  * BBC pips (clock_cuckoo7): when selected as the chime sound, the five short pips lead into a sixth long pip that lands on the minute boundary, faithfully reproducing a broadcast-style time signal. The spoken time accompanies the sixth pip.
+  * Sound only: plays the chime at the minute boundary. The BBC pips retains its precision timing so the sixth pip still lands on :00.
+  * Speech only: speaks the current time at the minute boundary with no chime.
+* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for intermediate minutes and the top of the hour.
 * Oddzielne dzwonki godzin i minut pośrednich (aktywne, jeśli interwał nie jest wyłączony, domyślnie wyłączone): zaznacz, aby dostosować dźwięki osobno.
   * Dźwięk minut pośrednich (aktywne, jeśli włączono oddzielne dzwonki): wybierz dźwięk dla minut pośrednich.
 * Godziny ciszy (aktywne, jeśli interwał nie jest wyłączony): ustaw zakres godzin, w których automatyczne ogłaszanie czasu jest wyłączone.
