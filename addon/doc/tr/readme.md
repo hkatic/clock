@@ -48,11 +48,11 @@ Saat işlevlerini yapılandırmak için NVDA menüsünü açın, Tercihler'i, ar
 * Saat ve tarih görüntüleme biçimi: NVDA+F12 tuşuna sırasıyla bir veya iki kez hızlıca bastığınızda NVDA'nın saati ve tarihi nasıl duyuracağını yapılandırmak için bu birleşik kutuları kullanın.
 * Aralık: bu birleşik kutudan saat duyuru aralığını seçin (kapalı, her 10 dakikada bir, her 15 dakikada bir, her 30 dakikada bir veya her saat başı).
 * Saat duyurusu (aralık kapalı değilse etkin): konuşma ve ses, yalnızca ses veya yalnızca konuşma arasında seçim yapın.
-  * Speech and sound: the chime plays with precision timing so it finishes exactly on the minute boundary, then the current time is spoken immediately. This means you hear the chime counting down to the exact moment, followed by the spoken time — similar to a broadcast time signal.
-  * BBC pips (clock_cuckoo7): when selected as the chime sound, the five short pips lead into a sixth long pip that lands on the minute boundary, faithfully reproducing a broadcast-style time signal. The spoken time accompanies the sixth pip.
-  * Sound only: plays the chime at the minute boundary. The BBC pips retains its precision timing so the sixth pip still lands on :00.
-  * Speech only: speaks the current time at the minute boundary with no chime.
-* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for intermediate minutes and the top of the hour.
+  * Konuşma ve ses: Zil, tam dakika sınırında bitecek şekilde hassas bir zamanlamayla çalar, ardından hemen mevcut saat söylenir. Bu, zilin tam ana kadar geri sayımını duyduğunuz ve ardından saatin söylendiği anlamına gelir; tıpkı bir radyo yayınındaki zaman sinyali gibi.
+  * BBC bip sesleri (clock_cuckoo7): Zil sesi olarak seçildiğinde, beş kısa bip sesi, dakika sınırına denk gelen altıncı uzun bip sesine yol açarak, yayın tarzı bir zaman sinyalini aslına uygun şekilde yeniden üretir. Konuşulan zaman, altıncı bip sesine eşlik eder.
+  * Sadece ses: Dakika sınırında çan sesi çalar. BBC bip sesleri hassas zamanlamasını korur, bu nedenle altıncı bip sesi yine :00'a denk gelir.
+  * Sadece konuşma: Dakika sınırında mevcut saati sesli olarak bildirir, zil sesi çıkarmaz.
+* Saat zil sesi (aralık kapalı değilse etkinleştirilir): Ara dakikalar ve saat başı için varsayılan saat zil sesini seçin.
 * Saat başı ve ara dakikalar için ayrı zil sesleri (aralık kapalı değilse etkin, varsayılan olarak devre dışıdır): ara dakikalar için kullanılacak zil sesini saat başı zil sesinden ayrı olarak özelleştirmek üzere bu onay kutusunu işaretleyin.
   * Ara dakika zil sesi ("Saat başı ve ara dakikalar için ayrı zil sesleri" seçiliyse etkin): yalnızca ara dakikalar için kullanılacak saat zil sesini seçin.
 * Sessiz saatler (aralık kapalı değilse etkin): otomatik saat duyurusunun yapılmayacağı sessiz saat aralığını yapılandırmak için bu onay kutusunu işaretleyin.

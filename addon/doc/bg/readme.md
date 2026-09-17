@@ -48,11 +48,11 @@
 * Формат на показване на часа и датата: използвайте тези комбинирани полета, за да конфигурирате как NVDA ще съобщава часа и датата при натискане на NVDA+F12 веднъж или два пъти бързо.
 * Интервал: изберете интервала за съобщаване на времето от това комбинирано поле (изключено, на всеки 10 минути, 15 минути, 30 минути или всеки час).
 * Съобщаване на време (активно, ако интервалът не е изключен): изберете между реч и звук, само звук или само реч.
-  * Speech and sound: the chime plays with precision timing so it finishes exactly on the minute boundary, then the current time is spoken immediately. This means you hear the chime counting down to the exact moment, followed by the spoken time — similar to a broadcast time signal.
-  * BBC pips (clock_cuckoo7): when selected as the chime sound, the five short pips lead into a sixth long pip that lands on the minute boundary, faithfully reproducing a broadcast-style time signal. The spoken time accompanies the sixth pip.
-  * Sound only: plays the chime at the minute boundary. The BBC pips retains its precision timing so the sixth pip still lands on :00.
-  * Speech only: speaks the current time at the minute boundary with no chime.
-* Clock chime sound (enabled if interval is not off): Select the default clock chime sound for intermediate minutes and the top of the hour.
+  * Реч и звук: сигналът се възпроизвежда с прецизно време, така че завършва точно на границата на минутата, след което текущият час се изговаря незабавно. Това означава, че чувате сигнала да отброява до точния момент, последвано от изговореното време — подобно на сигнал за точен час по ефирно радио.
+  * BBC звуци (clock_cuckoo7): когато е избрано като сигнален звук, петте къси звука водят до шести дълъг звук, който попада на границата на минутите, точно възпроизвеждайки времеви сигнал в стил радио излъчване. Изговореното време придружава шестия звук.
+  * Само звук: възпроизвежда сигнала на границата на минутите. Звуците на BBC запазват своята прецизност във времето, така че шестият звук се възпроизвежда в :00.
+  * Само реч: изговаря текущия час на границата на минутите без звуков сигнал.
+* Звук на часовника (активно, ако интервалът не е изключен): Изберете звуковия сигнал по подразбиране на часовника за междинните минути и началото на часа.
 * Отделни сигнали за часове и междинни минути (активно, ако интервалът не е изключен, по подразбиране изключено): активирайте тази отметка, за да персонализирате звуците за междинни минути отделно от часовия сигнал.
   * Звук за междинни минути (активно, ако „отделни сигнали за часове и междинни минути“ е включено): изберете звук за междинните минути.
 * Тихи часове (активно, ако интервалът не е изключен): отметнете това поле, за да конфигурирате диапазон за тихи часове.
