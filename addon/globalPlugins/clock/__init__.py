@@ -181,7 +181,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def __init__(self):  # noqa: C901
 		super().__init__()
-		if globalVars.appArgs.secure or config.isAppX:
+		if globalVars.appArgs.secure or getattr(config, "isAppX", False):
 			return
 		checkLocalTimeFormats()
 		gui.NVDASettingsDialog.categoryClasses.append(ClockSettingsPanel)
